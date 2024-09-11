@@ -24,12 +24,12 @@ h2 {font-size: 22px; font-weight: 700;}
 /* tab-contents */
 .tab-contents > .tab-cont {height: 200vh; display: none;}
 .tab-contents > .tab-cont.on {display: block;}
-/* .tab-contents > .tab-cont:nth-child(1) {background: lightcoral;}
+.tab-contents > .tab-cont:nth-child(1) {background: lightcoral;}
 .tab-contents > .tab-cont:nth-child(2) {background: lightsalmon;}
 .tab-contents > .tab-cont:nth-child(3) {background: lightyellow;}
 .tab-contents > .tab-cont:nth-child(4) {background: lightgreen;}
 .tab-contents > .tab-cont:nth-child(5) {background: lightblue;}
 .tab-contents > .tab-cont:nth-child(6) {background: lightskyblue;}
-.tab-contents > .tab-cont:nth-child(7) {background: lightgrey;} */
+.tab-contents > .tab-cont:nth-child(7) {background: lightgrey;}
 
 
