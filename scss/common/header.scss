@@ -43,7 +43,7 @@ header {
         & > a {
             font-size: 15px; 
             line-height: 80px;
-            font-weight: 700;
+            font-weight: 500;
 
             &:hover {
                 color: #000; 
@@ -102,7 +102,8 @@ header {
             height: 100%;
             font-size: 15px; 
             line-height: 80px;
-            font-weight: 700;
+            font-weight: 500;
+            color: #666;
 
             &::after {
                 content: '';
@@ -124,6 +125,7 @@ header {
 
         a:hover {
             color: #000;
+            font-weight: 700;
         }
     }
 
@@ -140,9 +142,9 @@ header {
         & > li > a {
             line-height: 40px;
 
-            &:hover {
-                font-weight: 800;
-            }
+            // &:hover {
+            //     font-weight: 700;
+            // }
         }
     }
 

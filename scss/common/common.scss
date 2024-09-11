@@ -2,6 +2,7 @@
 
 @import url(./reset.css); 
 
+
 .blind, .hide{
     position: absolute;
     clip: rect(0 0 0 0);
@@ -14,6 +15,201 @@
     margin: 0 auto; 
     width: 1420px;
 }
+
+
+/* 3depth title 공통 */
+.container {
+    margin-top: 80px;
+}
+.sub-title {
+    display: flex; 
+    align-items: end; 
+    justify-content: space-between;
+    margin-bottom: 30px; 
+    padding: 50px 10px 20px;
+    position: relative;
+
+    &::after { 
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #ddd;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+h2 {
+    font-size: 22px; 
+    font-weight: 700;
+}
+
+.location {
+    display: flex; 
+    align-items: center;
+
+    & > li {
+        margin-right: 30px; 
+        position: relative;
+
+        &:last-child {
+            margin: 0;
+
+            &::after {
+                display: none;
+            }
+
+            & > a {
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+        }
+
+        &::after {
+            content: ""; 
+            display: inline-block; 
+            width: 5px; 
+            height: 5px; 
+            border: 1px solid #777; 
+            border-left: 0;
+            border-bottom: 0; 
+            transform: rotate(45deg); 
+            position: absolute; 
+            top: 5px;
+            right: -15px;
+        }
+
+        & > a {
+            font-size: 13px;
+ 
+            &:hover {
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+        }
+    }
+
+}
+
+/* 3depth tab 공통 */
+.depth3-tab-wrap {
+    /* tab */
+    .tab {
+        display: flex; 
+        align-items: center;
+        margin-bottom: 30px;
+
+        &.on {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1420px;
+        }
+
+        & > li {
+            width: calc(100%/7); 
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid #ddd;
+            border-right: 0;
+            background: #fff; 
+            cursor: pointer;
+
+            &:last-child {
+                border-right: 1px solid #ddd;
+            }
+
+            &.on {
+                border-bottom: 1px solid transparent;
+                font-weight: 700;
+            }
+
+            &:hover {
+                font-weight: 700;
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+        }
+    }
+
+    /* tab-contents */
+    .tab-contents {
+        & > .tab-cont {
+            display: none;
+
+            &.on {
+                display: block;
+            }
+        }
+    }
+}
+
+
+// DEPTH3 스와이퍼 슬라이드 갤러리
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mySwiper2 {
+    height: 80%;
+    width: 100%;
+  }
+
+  .mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+
+  .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+ 
 
 /* 플로팅 메뉴 */
 .floating-menu {
@@ -55,4 +251,35 @@
         background-color: #333;
     }
 }
+
+
+// 가이드
+.desc {
+    margin: 30px 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #00f;
+}
+.rule {
+    li {
+        padding-left: 10px;
+        position: relative;
+        &::after {
+            content: "-";
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+
+        }
+    }
+}
+
+
+
+
+
 
