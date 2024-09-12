@@ -42,6 +42,9 @@
 .center {
     margin: 0 auto; 
     width: 1420px;
+    &.guide {
+        padding: 50px 0;
+    }
 }
 
 
@@ -243,6 +246,7 @@ object-fit: cover;
 .btn-wrap {
     margin: 20px 0;
     display: flex;
+
     &.type1 {
         width: 100%;
         gap: 20px;
@@ -269,6 +273,20 @@ object-fit: cover;
             justify-content: space-between;
         }
     }
+    &.type5 {
+        width: 100%;
+        justify-content: center;
+        .align {
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            width: calc((100% - 20px)/3);
+
+
+        }
+    }
     .btn {
         width: calc((100% - 10px)/2);
         text-align: center;
@@ -283,7 +301,23 @@ object-fit: cover;
             background: #000;
             color: #fff;
         }
-
+        &.btn-03 {
+            background: #ddd;
+            color: #333;
+        }
+        &.btn-04 {
+            margin-right: 10px;
+            padding: 0 20px;
+            width: auto;
+            background: #666;
+            color: #fff;
+        }
+        &.btn-05 {
+            padding: 0 20px;
+            width: auto;
+            background: #474291;
+            color: #fff;
+        }
     }
 }
  
@@ -356,7 +390,134 @@ object-fit: cover;
 }
 
 
+/* 레이어 팝업 */
+.lypop{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:100;
+    background-color:rgba(0, 0, 0, 0.5);
+    -webkit-transition:all .3s ease;
+    transition:all .3s ease;
+    z-index:1000 ;
+    .btn-wrap {
+        margin: 20px 0 0 ;
+        .align {
+            width: auto;
+        }
+    }
+}
+
+.lypop-wp{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:600px;
+    transform:translate(-50%,-50%);
+    border-radius: 8px;
+    overflow: hidden;
+    &.min{
+        width:400px;
+    }
+    &.mid{
+        width:800px;
+    }
+    &.big{
+        width:900px;
+    }
+    &.max{
+        width:1200px;
+    }
+}
+
+.lypop-content{
+    background-color:#fff;
+
+}
+.lypop-title{
+    position:relative;
+    height:52px;
+    background-color:#474291;
+    // background-color:#666;
+    & > strong{
+        display:block;
+        font-size:20px;
+        color:#fff;
+        font-weight:500;
+        padding:15px 30px;
+    }
+}
+
+.lypop-close{
+    position:absolute;
+    top:5px;
+    right:10px;
+    width:40px;
+    height:40px;
+    cursor: pointer;
+    &::before{
+        content: "";
+        position:absolute;
+        left:50%;
+        top:25%;
+        display:inline-block;
+        width:2px;
+        height:18px;
+        transform:rotate(135deg);
+        background-color:#fff;
+    }
+    &::after{
+        content: "";
+        position:absolute;
+        left:50%;
+        top:25%;
+        display:inline-block;
+        width:2px;
+        height:18px;
+        transform:rotate(45deg);
+        background-color:#fff ;
+    }
+}
 
 
+.lypop-ct {
+    padding:30px;
+    // & > .stit {
+    //     display: block; 
+    //     margin-top: 30px;
+    //     margin-bottom: 10px;
+    //     font-weight: 500;
+    //     color:#000;
+    //     &:first-child{
+    //         margin-top: 0;
+    //     }
+    // }
+    // .modal_txt {
+    //     text-align: center;
+    //     color: #000;
+    //     line-height: 1.5;
+    // }
+    // .tbl_search {
+    //     padding: 15px 100px 15px 30px;
+    //     .search_btn{
+    //         right:20px;
+    //         button{
+    //             width: 76px;
+    //         }
+    //         .btnTy2lin2{
+    //             width: 100px;
+    //         }
+
+    //     }
+    // }
+    // .inpTy1 {
+    //     & > textarea {
+    //         transform:rotate(-0.01deg);
+    //     }
+    // }
+}
 
 

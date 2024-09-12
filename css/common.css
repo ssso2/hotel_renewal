@@ -107,6 +107,9 @@
   margin: 0 auto;
   width: 1420px;
 }
+.center.guide {
+  padding: 50px 0;
+}
 
 /* 3depth title 공통 */
 .container {
@@ -312,6 +315,18 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
+.btn-wrap.type5 {
+  width: 100%;
+  justify-content: center;
+}
+.btn-wrap.type5 .align {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type5 .btn {
+  width: calc((100% - 20px) / 3);
+}
 .btn-wrap .btn {
   width: calc((100% - 10px) / 2);
   text-align: center;
@@ -325,6 +340,23 @@ h2 {
 }
 .btn-wrap .btn.btn-02 {
   background: #000;
+  color: #fff;
+}
+.btn-wrap .btn.btn-03 {
+  background: #ddd;
+  color: #333;
+}
+.btn-wrap .btn.btn-04 {
+  margin-right: 10px;
+  padding: 0 20px;
+  width: auto;
+  background: #666;
+  color: #fff;
+}
+.btn-wrap .btn.btn-05 {
+  padding: 0 20px;
+  width: auto;
+  background: #474291;
   color: #fff;
 }
 
@@ -385,4 +417,99 @@ h2 {
   left: 0;
   width: 10px;
   height: 10px;
+}
+
+/* 레이어 팝업 */
+.lypop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+.lypop .btn-wrap {
+  margin: 20px 0 0;
+}
+.lypop .btn-wrap .align {
+  width: auto;
+}
+
+.lypop-wp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.lypop-wp.min {
+  width: 400px;
+}
+.lypop-wp.mid {
+  width: 800px;
+}
+.lypop-wp.big {
+  width: 900px;
+}
+.lypop-wp.max {
+  width: 1200px;
+}
+
+.lypop-content {
+  background-color: #fff;
+}
+
+.lypop-title {
+  position: relative;
+  height: 52px;
+  background-color: #474291;
+}
+.lypop-title > strong {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  padding: 15px 30px;
+}
+
+.lypop-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.lypop-close::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  display: inline-block;
+  width: 2px;
+  height: 18px;
+  transform: rotate(135deg);
+  background-color: #fff;
+}
+.lypop-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  display: inline-block;
+  width: 2px;
+  height: 18px;
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+
+.lypop-ct {
+  padding: 30px;
 }
