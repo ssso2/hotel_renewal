@@ -14,6 +14,7 @@
   <!-- 작성한 CSS 연결 -->
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/sub01_01.css">
   <!-- 스와이퍼 JS 연결 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <!-- AOS 스크롤 애니메이션 연결 -->
@@ -109,32 +110,42 @@
       </div>
     </div>
     <div class="pkg-rec">
-      <span class="rec-btn-left">버튼</span>
-      <span class="rec-btn-right">버튼</span>
-      <span class="rec-page">숫자</span>
-      <div class="rec img">이미지
-        <div>텍스트</div>
-      </div>
-      <div>이미지
-        <div>텍스트</div>
-      </div>
-      <div>이미지
-        <div>텍스트</div>
+      <span class="rec-page"> 01 | 03 </span>
+      <div class="rec-wrapper">
+        <div class="rec-section"><a href="#">
+            <div class="img-wrap">
+              <img src="/img/sub/offerBaby.jpg" alt="">
+            </div>
+            <div class="txt-wrap">
+              <h2 class="rec-inner">Private Moment at Urban Cabana</h2>
+              <p class="rec-inner">날짜</p>
+            </div>
+          </a>
+
+        </div>
+        <div class="rec-img">이미지
+          <span class="rec-inner">텍스트</span>
+          <button class="rec-btn left">icon</button>
+          <button class="rec-btn right">icon</button>
+        </div>
+        <div class="rec-img">이미지
+          <span class="rec-inner">텍스트</span>
+        </div>
       </div>
     </div>
     <div class="center">
-      <div class="pkg-filter-box">
-        <div class="pkg-datepicker">
-          <span>기간조회</span>
-          <button>날짜</button>
-          <input>날짜</input>
-          <span>하이픈</span>
-          <button>날짜</button>
-          <input>날짜</input>
-        </div>
-        <div class="pkg-filter-sort">
-          <span>유형구분</span>
-          <div>
+      <div class="pkg-filter-box-wrapper">
+        <div class="pkg-filter-box">
+          <div class="pkg-datepicker">
+            <span>기간조회</span>
+            <button>날짜</button>
+            <input>날짜</input>
+            <span>하이픈</span>
+            <button>날짜</button>
+            <input>날짜</input>
+          </div>
+          <div class="pkg-filter-sort">
+            <span>유형구분</span>
             <select name="" id="">
               <option value="">전체</option>
               <option value="">커플</option>
@@ -143,34 +154,48 @@
               <option value="">프로모션</option>
             </select>
           </div>
+          <div class="pkg-filter-keyword">
+            <span>키워드</span>
+            <ul>
+              <li>조식</li>
+              <li>라운지혜택</li>
+              <li>기념일</li>
+              <li>야외수영장</li>
+              <li>성인3인</li>
+              <li>2박이상</li>
+              <li>키즈</li>
+            </ul>
+          </div>
+          <div class="pkg-btnbox">
+            <div class="pkg-filter-resetbtn">초기화</div>
+            <div class="pkg-filter-searchbtn">검색</div>
+          </div>
         </div>
-        <div class="pkg-keword">
-          <ul>
-            <li>조식</li>
-            <li>라운지혜택</li>
-            <li>기념일</li>
-            <li>야외수영장</li>
-            <li>성인3인</li>
-            <li>2박이상</li>
-            <li>키즈</li>
-          </ul>
-        </div>
-        <div class="pkg-btnbox">
-          <div class="pkg-filter-resetbtn">초기화</div>
-          <div class="pkg-filter-searchbtn">검색</div>
-        </div>
-        <div class="">
+      </div>
+
+      <div class="pkg-main">
+        <div class="pkg-total">
           <span>총</span>
           <span>숫자</span>
           <span>개 상품</span>
         </div>
+        <div class="pkg-sort">
+          <select name="" id="">
+            <option value="">전체</option>
+            <option value="">커플</option>
+            <option value="">패밀리</option>
+            <option value="">친구</option>
+            <option value="">프로모션</option>
+          </select>
+        </div>
       </div>
+
       <div class="pkg-list">
         <ul>
           <li>
             <span></span>
-            <dl>
-              <dt>골든</dt>
+            <dl class="pkg-list-container">
+              <dt>Golden Holiday Stay : Ballet And Flamenco</dt>
               <dd>이미지</dd>
               <dd>키워드</dd>
               <dd>캔들라이트</dd>
@@ -188,15 +213,15 @@
         <button>5</button>
       </div>
     </div>
-
-    <footer></footer>
-    <article class="floating-menu">
-      <div class="menu">
-        <a href="#" class="circle-btn">예약</a>
-        <a href="#" class="circle-btn">문의</a>
-      </div>
-      <a href="#" class="top-btn">TOP</a>
-    </article>
+  </div>
+  <footer></footer>
+  <article class="floating-menu">
+    <div class="menu">
+      <a href="#" class="circle-btn">예약</a>
+      <a href="#" class="circle-btn">문의</a>
+    </div>
+    <a href="#" class="top-btn">TOP</a>
+  </article>
 </body>
 
 </html>
