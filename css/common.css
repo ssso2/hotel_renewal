@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url(./reset.css);
-@import url(./mixin.scss);
-@import url(./response.scss);
+@import url(./mixin.css);
+@import url(./response.css);
 .blind, .hide {
   position: absolute;
   clip: rect(0 0 0 0);
