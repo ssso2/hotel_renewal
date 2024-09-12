@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신라호텔 서울</title>
+    <!-- 스와이퍼 CSS 연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- 폰트어썸 연결 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 작성한 CSS 연결 -->
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <!-- 제이쿼리 연결 -->
+    <script src="../../js/common/jquery-ui.min.js"></script>
+    <script src="../../js/common/jquery-3.7.1.min.js"></script>
+    <!-- 스와이퍼 JS 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <!-- AOS 스크롤 애니메이션 연결 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 작성한 JS 연결 -->
+    <script src="../../js/common/header.js" defer></script>
+    <script src="../../js/common/common.js" defer></script>
+</head>
+<body>
+    <header class="on">
+        <div class="gnbbg"></div>
+        <div class="center">
+            <h1 class="logo">
+                <a href="#">
+                    <img src="../../img/common/logo.png" alt="">
+                </a>
+            </h1>
+            <ul class="gnb">
+                <li>
+                    <a href="#">스페셜 오퍼</a>
+                    <ul class="depth2">
+                        <li><a href="#">객실패키지</a></li>
+                        <li><a href="#">이벤트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">객실</a>
+                    <ul class="depth2">
+                        <li><a href="#">스탠다드</a></li>
+                        <li><a href="#">이그제큐티브</a></li>
+                        <li><a href="#">스위트</a></li>
+                        <li><a href="#">더 이그제큐티브 라운지</a></li>
+                        <li><a href="#">전체 객실 보기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">다이닝</a>
+                    <ul class="depth2">
+                        <li><a href="#">레스토랑</a></li>
+                        <li><a href="#">라운지 & 바</a></li>
+                        <li><a href="#">베이커리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">라이프스타일</a>
+                    <ul class="depth2">
+                        <li><a href="#">야외수영장</a></li>
+                        <li><a href="#">피트니스</a></li>
+                        <li><a href="#">산책로</a></li>
+                        <li><a href="#">조깅코스</a></li>
+                        <li><a href="#">쇼핑</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">웨딩 & 연회</a>
+                    <ul class="depth2">
+                        <li><a href="#">웨딩</a></li>
+                        <li><a href="#">기업연회</a></li>
+                        <li><a href="#">가족연회</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                    <ul class="depth2">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">문의하기</a></li>
+                        <li><a href="#">오시는길</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- 비로그인시 -->
+            <div class="btn-wrap on">
+                <a href="#" class="join-btn">멤버십 가입</a>
+                <a href="#" class="login-btn">로그인</a>
+            </div>
+            <!-- 로그인시 -->
+            <div class="btn-wrap">
+                <p>손주혜<span>님</span></p>
+                <a href="#" class="logout-btn">로그아웃</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="center">
+            <div class="sub-title">
+                <h2>DEPTH2</h2>
+                <ul class="location">
+                    <li><a href="">홈</a></li>
+                    <li><a href="">depth2</a></li>
+                    <li><a href="">depth3</a></li>
+                </ul>
+            </div>
+            <div class="depth3-tab-wrap">
+                <ul class="tab">
+                    <li class="tab1">Tab-1</li>
+                    <li class="tab2">Tab-2</li>
+                    <li class="tab3">Tab-3</li>
+                    <li class="tab4">Tab-4</li>
+                    <li class="tab5">Tab-5</li>
+                    <li class="tab6">Tab-6</li>
+                    <li class="tab7">Tab-7</li>
+                </ul>
+                <div class="tab-contents">
+                    <div class="tab-cont cont1 on">
+                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                          <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                              </div>
+                              <div class="swiper-slide">
+                                  <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                              </div>
+                          </div>
+                          <div class="swiper-button-next"></div>
+                          <div class="swiper-button-prev"></div>
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-cont cont2">tab-contents-2</div>
+                    <div class="tab-cont cont3">tab-contents-3</div>
+                    <div class="tab-cont cont4">tab-contents-4</div>
+                    <div class="tab-cont cont5">tab-contents-5</div>
+                    <div class="tab-cont cont6">tab-contents-6</div>
+                    <div class="tab-cont cont7">tab-contents-7</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <article class="floating-menu">
+        <div class="menu">
+            <a href="#" class="circle-btn">예약</a>
+            <a href="#" class="circle-btn">문의</a>
+        </div>
+        <a href="#" class="top-btn">TOP</a>
+    </article>
+</body>
+</html>
