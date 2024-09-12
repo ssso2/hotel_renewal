@@ -1,3 +1,32 @@
 .room-top-intro {
-  background-color: #ff0;
+  padding-top: 10px;
+}
+
+.room-box-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.room-box-wrap .room-box {
+  margin-right: 20px;
+  width: calc((100% - 20px) / 2);
+}
+.room-box-wrap .room-box a {
+  display: block;
+  width: 100%;
+}
+.room-box-wrap .room-box a .img-wrap {
+  width: 100%;
+  height: 400px;
+}
+.room-box-wrap .room-box a .img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+.room-box-wrap .room-box a .txt-wrap {
+  padding: 30px 40px;
+  line-height: 1.5;
+}
+.room-box-wrap .room-box:nth-child(2n) {
+  margin-right: 0;
 }
