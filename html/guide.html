@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 구글 웹폰트 연결 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+      <!-- 스와이퍼 CSS 연결 -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- 작성한 CSS 연결 -->
     <link rel="stylesheet" href="../css/common.css">
+    <!-- 스와이퍼 JS 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <!-- 작성한 JS 연결 -->
     <script src="../js/common/common.js" defer></script>
     <title>퍼블리싱 가이드</title>
 </head>
@@ -17,6 +24,11 @@
         <p class="desc">* 기본 규칙</p>
         <ul class="rule">
             <li>class 이름의 단어구분은 "-" 으로 한다. 예시 ) tab-wrap</li>
+            <li>scss 이름은 html 파일명과 동일</li>
+            <li>지금 이 규칙 리스트도 활용하세요. 리스트 양식입니다.</li>
+            <li>기본 글씨는 크기 14px, 굵기 400, line-height 1입니다. line-height는 px 이 아닌 배수로 쓰시는 게 반응형에서 더 편리합니다.</li>
+            <li>가이드로 정해져 있는 부분이라도 더 좋은 아이디어가 있으시다면 언제라도 변경하셔도 좋습니다~!!</li>
+            <li>JS는 제이쿼리와 기본 바닐라 모두 허용합니다.</li>
         </ul>
         <!-- // 기본 규칙 -->
 
@@ -45,7 +57,7 @@
                 <li class="tab7">Tab-7</li>
             </ul>
             <div class="tab-contents">
-                <div class="tab-cont cont1 on">tab-contents-1</div>
+                <div class="tab-cont cont1 on">tab-contents-1</div> 
                 <div class="tab-cont cont2">tab-contents-2</div>
                 <div class="tab-cont cont3">tab-contents-3</div>
                 <div class="tab-cont cont4">tab-contents-4</div>
@@ -57,6 +69,77 @@
         <!-- //3depth 페이지 공통 탭 -->
 
         <!-- 3depth 페이지 공통 슬라이드 갤러리 -->
+        <p class="desc">* 3depth 페이지 공통 슬라이드 갤러리</p>
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+              </div>
+              <div class="swiper-slide">
+                  <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+              </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                </div>
+            </div>
+        </div>
         <!-- //3depth 페이지 공통 슬라이드 갤러리 -->
     </div>
 

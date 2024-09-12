@@ -1,0 +1,135 @@
+@charset "UTF-8";
+.pkg-rec {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 300px;
+    background-color: #ffa;
+}
+.rec-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rec-section {
+    position: relative;
+    justify-content: space-between;
+    width: 500px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 0;
+    .img-wrap {
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .txt-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+// .rec-inner {
+//     position: absolute;
+//     color: #333;
+//     font-size: 20px;
+//     z-index: 1;
+//     background-color: rgba(255, 255, 255, 0.5);
+// }
+.rec-btn {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background-color: #faa;
+    top: 100px;
+    z-index: 1;
+    &.left {
+        border: 1px solid #fff;
+    }
+    &.right {
+        border: 1px solid #fff;
+    }
+}
+.rec-page {
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    top: 150px;
+}
+.pkg-filter-box-wrapper {
+    height: 300px;
+    background-color: #faf;
+}
+.pkg-filter-box {
+    height: 300px;
+    border: 2px solid #353535;
+    display: flex;
+}
+.pkg-datepicker {
+    width: 40%;
+    height: 300px;
+    background-color: #aaa;
+}
+.pkg-filter-sort {
+    width: 10%;
+    height: 300px;
+    background-color: #aaf;
+}
+.pkg-filter-keyword {
+    width: 40%;
+    height: 300px;
+    background-color: #faf;
+    display: flex;
+    & li {
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 30px;
+    }
+}
+.pkg-btnbox {
+    width: 10%;
+    height: 300px;
+    background-color: #cac;
+}
+.pkg-filter-resetbtn,
+.pkg-filter-searchbtn {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 30px;
+}
+.pkg-main {
+    width: 100%;
+    height: 30px;
+    background-color: #aff;
+    display: flex;
+    justify-content: space-between;
+}
+.pkg-list {
+    width: 100%;
+    height: 500px;
+    background-color: #aaa;
+}
+.pkg-list > ul > li {
+    display: inline-block;
+    width: 50%;
+    height: 500px;
+    background-color: #faa;
+    box-sizing: border-box;
+}
+.pkg-list-container > dt {
+    font-size: 1.5rem;
+}
+.pkg-list-container > dd:nth-of-type(1) {
+    color: #0af;
+}

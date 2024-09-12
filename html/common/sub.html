@@ -11,6 +11,9 @@
     <!-- 작성한 CSS 연결 -->
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/common.css">
+    <!-- 제이쿼리 연결 -->
+    <script src="../../js/common/jquery-ui.min.js"></script>
+    <script src="../../js/common/jquery-3.7.1.min.js"></script>
     <!-- 스와이퍼 JS 연결 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <!-- AOS 스크롤 애니메이션 연결 -->
@@ -116,75 +119,75 @@
                 <div class="tab-contents">
                     <div class="tab-cont cont1 on">
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                            <div class="swiper-wrapper">
+                          <div class="swiper-wrapper">
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
                               </div>
                               <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                  <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
                               </div>
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
                           </div>
-                          <div thumbsSlider="" class="swiper mySwiper">
+                          <div class="swiper-button-next"></div>
+                          <div class="swiper-button-prev"></div>
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                              </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                </div>
                             </div>
-                          </div>
+                        </div>
                     </div>
                     <div class="tab-cont cont2">tab-contents-2</div>
                     <div class="tab-cont cont3">tab-contents-3</div>
