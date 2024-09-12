@@ -1,3 +1,19 @@
 .room-top-intro {
   background-color: #ff0;
 }
+
+.room-box {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.room-wrap h4 {
+  background-color: #0f0;
+}
+
+.room-lbox .room-rbox {
+  width: 200px;
+  margin: 50px;
+}
