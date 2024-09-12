@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.login-box {
+    @include position-center;
+    width: 400px;
+    height: 400px;
+    background-color: #faf8f4;
+}
