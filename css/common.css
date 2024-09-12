@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url(./reset.css);
+@import url(./mixin.scss);
+@import url(./response.scss);
 .blind, .hide {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -235,6 +237,7 @@ h2 {
 .rule li {
   padding-left: 10px;
   position: relative;
+  line-height: 1.5;
 }
 .rule li::after {
   content: "-";
