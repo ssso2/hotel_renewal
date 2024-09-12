@@ -2,6 +2,98 @@
 @import url(./reset.css);
 @import url(./mixin.css);
 @import url(./response.css);
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pb-30 {
+  padding-bottom: 30px;
+}
+
+.pb-40 {
+  padding-bottom: 40px;
+}
+
+.pb-50 {
+  padding-bottom: 50px;
+}
+
+.fc-bk {
+  color: #000;
+}
+
+.fc-red {
+  color: #f00;
+}
+
+.fc-blue {
+  color: #00f;
+}
+
 .blind, .hide {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -147,8 +239,7 @@ h2 {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .swiper {
@@ -188,8 +279,53 @@ h2 {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
+}
+
+.btn-wrap {
+  margin: 20px 0;
+  display: flex;
+}
+.btn-wrap.type1 {
+  width: 100%;
+  gap: 20px;
+}
+.btn-wrap.type2 {
+  width: 200px;
+  justify-content: space-between;
+}
+.btn-wrap.type3 {
+  width: 100%;
+  justify-content: center;
+}
+.btn-wrap.type3 .align {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type4 {
+  width: 100%;
+  justify-content: end;
+}
+.btn-wrap.type4 .align {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap .btn {
+  width: calc((100% - 10px) / 2);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.btn-wrap .btn.btn-01 {
+  background: #7A6C64;
+  color: #fff;
+}
+.btn-wrap .btn.btn-02 {
+  background: #000;
+  color: #fff;
 }
 
 /* 플로팅 메뉴 */
@@ -245,9 +381,8 @@ h2 {
   content: "-";
   display: inline-block;
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  transform: translateY(-50%);
   width: 10px;
   height: 10px;
 }
