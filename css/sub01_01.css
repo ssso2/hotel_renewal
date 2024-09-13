@@ -1,33 +1,51 @@
-.pkg-rec {
-  position: relative;
-  display: block;
+.pkg-wrapper {
   width: 100%;
-  height: 300px;
-  background-color: #ffa;
+  min-width: 1420px;
 }
 
-.rec-wrapper {
+.pkg-rec {
+  position: relative;
+  background-color: #ffa;
+}
+.pkg-rec .rec-wrapper {
   display: flex;
   justify-content: space-between;
+}
+.pkg-rec .rec-btn {
+  position: absolute;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  background-color: #faa;
+  top: 120px;
+  display: block;
+}
+.pkg-rec .rec-btn.left {
+  border: 1px solid #fff;
+  left: 600px;
+}
+.pkg-rec .rec-btn.right {
+  border: 1px solid #fff;
+  left: 1200px;
 }
 
 .rec-section {
   position: relative;
-  justify-content: space-between;
-  width: 500px;
-  height: 250px;
+  width: 600px;
+  margin-bottom: 50px;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 15px;
   overflow: hidden;
-  z-index: 0;
 }
 .rec-section .img-wrap {
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  height: 350px;
+  display: block;
 }
 .rec-section .img-wrap img {
   width: 100%;
   height: 100%;
+  display: block;
 }
 .rec-section .txt-wrap {
   position: absolute;
@@ -37,39 +55,53 @@
   height: 100%;
   padding: 30px;
   background: rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
-
-.rec-btn {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  background-color: #faa;
-  top: 100px;
-  z-index: 1;
+.rec-section .txt-wrap h2 {
+  position: absolute;
+  top: 250px;
+  left: 30px;
 }
-.rec-btn.left {
-  border: 1px solid #fff;
+.rec-section .txt-wrap p {
+  position: absolute;
+  top: 280px;
+  left: 30px;
 }
-.rec-btn.right {
-  border: 1px solid #fff;
-}
-
-.rec-page {
+.rec-section .rec-page {
+  display: inline-block;
+  position: absolute;
   background-color: #fff;
-  border-radius: 10px;
-  position: relative;
-  top: 150px;
+  border-radius: 54px;
+  top: 300px;
+  left: 480px;
+  width: 60px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 0.6rem;
 }
 
 .pkg-filter-box-wrapper {
+  display: block;
   height: 300px;
-  background-color: #faf;
 }
 
 .pkg-filter-box {
-  height: 300px;
-  border: 2px solid #353535;
+  height: 250px;
   display: flex;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+}
+
+.pkg-datepicker,
+.pkg-filter-sort,
+.pkg-filter-keyword {
+  padding: 60px 20px 60px 20px;
+}
+.pkg-datepicker p,
+.pkg-filter-sort p,
+.pkg-filter-keyword p {
+  margin-bottom: 15px;
 }
 
 .pkg-datepicker {
@@ -88,18 +120,54 @@
   width: 40%;
   height: 300px;
   background-color: #faf;
-  display: flex;
 }
-.pkg-filter-keyword li {
-  border: 1px solid #ccc;
+.pkg-filter-keyword .keword-wrap {
+  background-color: #0af;
+  height: 100%;
+  border-right: 5px solid #ddd;
+  padding: 0 40px 0 0;
+}
+.pkg-filter-keyword .keword-wrap ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pkg-filter-keyword .keword-wrap li {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
   text-align: center;
-  line-height: 30px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+.pkg-filter-keyword .keword-wrap li:nth-of-type(5) {
+  margin-left: 40px;
+}
+.pkg-filter-keyword .keword-wrap li input[type=checkbox] {
+  display: none;
+}
+.pkg-filter-keyword .keword-wrap li label {
+  display: inline-block;
+  background-color: #ddd;
+  border: 1px solid #333;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  line-height: 1.8rem;
+}
+.pkg-filter-keyword .keword-wrap li input[type=checkbox]:checked + label {
+  color: #ddd;
+  background-color: #333;
 }
 
 .pkg-btnbox {
   width: 10%;
   height: 300px;
   background-color: #cac;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 110px 20px;
+  align-items: center;
 }
 
 .pkg-filter-resetbtn,
@@ -111,32 +179,135 @@
   line-height: 30px;
 }
 
-.pkg-main {
-  width: 100%;
-  height: 30px;
+.pkg-filter-searchbtn {
+  color: #fff;
+  background-color: #333333;
+}
+
+.pkg-section {
+  height: 40px;
+  margin: 20px 0;
+  padding: 10px 0 10px 0;
   background-color: #aff;
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+.pkg-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: #ccc;
+  width: 100%;
+  height: 2px;
 }
 
 .pkg-list {
   width: 100%;
-  height: 500px;
+  height: 100%;
   background-color: #aaa;
 }
 
-.pkg-list > ul > li {
+.pkg-list > ul li {
+  padding: 0;
   display: inline-block;
-  width: 50%;
-  height: 500px;
+  width: 660px;
   background-color: #faa;
-  box-sizing: border-box;
+}
+.pkg-list > ul li a {
+  display: inline;
+}
+.pkg-list > ul li:nth-of-type(2n + 1) {
+  margin-right: 95px;
 }
 
-.pkg-list-container > dt {
+.pkg-list-container {
+  position: relative;
+  width: 100%;
+}
+.pkg-list-container .img-wrapper {
+  display: block;
+  height: 400px;
+}
+.pkg-list-container .img-wrapper img {
+  display: block;
+  width: 660px;
+  height: 400px;
+}
+.pkg-list-container dt {
   font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.pkg-list-container dd,
+.pkg-list-container .pkg-date,
+.pkg-list-container .pkg-pay {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.pkg-list-container .list-keword {
+  display: inline-block;
+  width: 90px;
+  height: 100%;
+  padding: 10px;
+  color: #fff;
+  background-color: #1f453a;
+  border-radius: 5px;
+  text-align: center;
+}
+.pkg-list-container .none {
+  height: 34px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.pkg-list-container dd:nth-last-of-type(1) {
+  height: 30px;
+}
+.pkg-list-container .pkg-pay {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+.pkg-list-container .pkg-rewards {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  background-color: #7a6c64;
+  padding: 6px;
+  font-size: 11px;
+  text-align: center;
+  display: inline-block;
+}
+.pkg-list-container .pkg-rewards img {
+  width: 34px;
+}
+.pkg-list-container .pkg-rewards span {
+  color: #fff;
+  display: block;
 }
 
-.pkg-list-container > dd:nth-of-type(1) {
-  color: #0af;
+.page-container {
+  height: 40px;
+  background-color: #0af;
+}
+.page-container .pkg-paging {
+  display: flex;
+  justify-content: center;
+}
+.page-container button {
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  align-items: center;
+}
+.page-container .active {
+  font-size: large;
+  text-decoration: underline;
+}
+
+.xx {
+  height: 100px;
+  background-color: #7a6c64;
 }
