@@ -320,7 +320,43 @@ object-fit: cover;
         }
     }
 }
- 
+
+// pagenation 
+.pagination{
+    margin-top:20px;
+    height:25px;
+    text-align:center;
+    & > a {display:inline-block;
+        width:25px;
+        height:25px;
+        line-height:25px;
+        margin:0 2px;
+        vertical-align:top;
+        &.on, &:hover{
+            color:#377fd5;
+            font-weight: 700;
+        }
+    }
+    span {
+        line-height: 25px;
+    }
+    .page {
+        background-image:url('../../img/common/bg_pageination.png');
+        background-repeat:no-repeat;
+    }
+    .first { background-position:0 0; 
+    }
+    .pre {
+        background-position: 0 -25px;
+    }
+    .next {
+        background-position:0 -50px;
+    }
+    .end {
+        background-position:0 -75px;
+    }
+}
+
 
 /* 플로팅 메뉴 */
 .floating-menu {

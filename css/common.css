@@ -360,6 +360,43 @@ h2 {
   color: #fff;
 }
 
+.pagination {
+  margin-top: 20px;
+  height: 25px;
+  text-align: center;
+}
+.pagination > a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 2px;
+  vertical-align: top;
+}
+.pagination > a.on, .pagination > a:hover {
+  color: #377fd5;
+  font-weight: 700;
+}
+.pagination span {
+  line-height: 25px;
+}
+.pagination .page {
+  background-image: url("../../img/common/bg_pageination.png");
+  background-repeat: no-repeat;
+}
+.pagination .first {
+  background-position: 0 0;
+}
+.pagination .pre {
+  background-position: 0 -25px;
+}
+.pagination .next {
+  background-position: 0 -50px;
+}
+.pagination .end {
+  background-position: 0 -75px;
+}
+
 /* 플로팅 메뉴 */
 .floating-menu {
   position: fixed;
