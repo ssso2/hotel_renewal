@@ -1,25 +1,92 @@
 main {
+    .cont-tit {
+        padding: 100px 0 10px;
+        font-size: 30px;
+        text-align: center;
+    }
+    // cont1. 메인 비주얼
     .cont1 {
+        margin-top: 80px;
         .swiper {
-            width: 100%; 
-            height: 100vh;
-            .swiper-slide {
-                position: relative;
-                .slideImg {
-                    width: 100%; 
-                    height: 100vh;
-                }
+            width: 100%;
+            height: 650px;
+        }
+      
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            &.slide1 {
+                background: url(../img/main/main-slide-1.jpg)no-repeat center / cover;
             }
-            .slide1 .slideImg {
-                background: url(../img/slide01.jpg) center/cover no-repeat;
+            &.slide2 {
+                background: url(../img/main/main-slide-2.jpg)no-repeat center / cover;
             }
-            .slide2 .slideImg {
-                background: url(../img/slide02.jpg) center/cover no-repeat;
-            }
-            .slide3 .slideImg {
-                background: url(../img/slide03.jpg) center/cover no-repeat;
+            &.slide3 {
+                background: url(../img/main/main-slide-3.jpg)no-repeat center / cover;
             }
         }
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+            bottom: var(--swiper-pagination-bottom, 20px);
+        }
+        .swiper-pagination-bullet {
+            margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 7px);
+            width: 35px;
+            height: 15px;
+            border: 3px solid #fff;
+            border-radius: 16px;
+            background: transparent;
+            opacity: 1;
+            &-active {
+                background: #fff;
+            }
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff;
+        }
+        .swiper-button-next {
+            right: var(--swiper-navigation-sides-offset, 60px);
+        }
+        .swiper-button-prev {
+            left: var(--swiper-navigation-sides-offset, 50px);
+        }
     }
+
+    // cont2. 메인 예약 폼
+    .cont2 {
+        height: 250px;
+        background: #ddd;
+    }
+
+    // cont3. 메인 스페셜 오퍼
+    .cont3 {
+        height: 100vh;
+    }
+
+    // cont4. 객실
+    .cont4 {
+        
+    }
+
+    // cont5. 멤버십 안내
+    .cont5 {
+        
+    }
+
+    // cont6. 갤러리
+    .cont6 {
+        text-align: center;
+    }
+
+
+    .cont6 .title_box p {font-size: 15px; margin-top: 15px;}
+    .cont6 .video_wrap {width: 1100px; overflow: hidden; position: relative; margin: 0 auto;}
+    .cont6 .video_wrap video {width: 100%}
+    .cont6 .video_wrap .vid_btn {position: absolute; cursor: pointer; width: 120px;
+                                    transition:all 0.5s;
+                                    top: 50%; left: 50%; transform:translate(-50%,-50%);}
+    .cont6 .video_wrap .vid_btn.hide {display: none;}
+    .cont6 .video_wrap .vid_btn img {width: 100%;}
 }
 
