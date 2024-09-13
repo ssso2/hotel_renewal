@@ -10,6 +10,7 @@ header {
     transition: all 0.5s; 
     background: #FAF8F4 !important; 
     z-index: 99;
+    border-bottom: 1px solid #eaeaea;
 
     &.on {
         top: 0;
@@ -157,9 +158,5 @@ header {
 
 
 
-main {
-    height: 5000px;
-    background-color: #aaa;
-}
 
 

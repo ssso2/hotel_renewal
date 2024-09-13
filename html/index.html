@@ -13,8 +13,9 @@
     <!-- 폰트어썸 연결 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- 작성한 css 연결-->
-    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/main.css">
     <!-- 제이쿼리 연결 -->
     <script src="../../js/common/jquery-ui.min.js"></script>
     <script src="../../js/common/jquery-3.7.1.min.js"></script>
@@ -101,8 +102,40 @@
         </div>
     </header>
     <main>
-        <section>
-            <img src="../../img/main/슬라이드1.jpg" alt="">
+        <section class="cont1">
+            <div class="swiper"></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide1">
+                        <div class="bg"></div>
+                        <div class="slideImg"></div>
+                        <div class="textBox textBox1">
+                            <h2>아파트멘터리로 결정한 것은<br/>좋은 선택이었습니다.</h2>
+                            <p>아파트멘터리가 고객의 소리에 집착하는 이유.</p>
+                            <a class="view_more" href="#">자세히 보기 <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <div class="bg"></div>
+                        <div class="slideImg"></div>
+                        <div class="textBox textBox2">
+                            <h2>SPACE<br/> BETTERS<br/> LIFE</h2>
+                            <p>6년간 1,000여세대의<br/> 아파트라이프를 바꾼<br/> 리모델링 서비스를 만나보세요.</p>
+                            <a class="view_more" href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/apt/five.php'; ?>">서비스소개 <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide slide3">
+                        <div class="slideImg"></div>
+                        <div class="textBox textBox3">
+                            <h2>FILL YOUR SPACE WITH<br/>THE THINGS YOU LOVE</h2>
+                            <a class="view_more" href="#">자세히 보기 <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </section>
     </main>
 </body>

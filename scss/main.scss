@@ -1,1 +1,25 @@
-main {background: pink;}
+main {
+    .cont1 {
+        .swiper {
+            width: 100%; 
+            height: 100vh;
+            .swiper-slide {
+                position: relative;
+                .slideImg {
+                    width: 100%; 
+                    height: 100vh;
+                }
+            }
+            .slide1 .slideImg {
+                background: url(../img/slide01.jpg) center/cover no-repeat;
+            }
+            .slide2 .slideImg {
+                background: url(../img/slide02.jpg) center/cover no-repeat;
+            }
+            .slide3 .slideImg {
+                background: url(../img/slide03.jpg) center/cover no-repeat;
+            }
+        }
+    }
+}
+
