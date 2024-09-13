@@ -1,26 +1,24 @@
-.join-wrap {
+#shilla-join {
     position: absolute;
-    top: 50%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: 600px;
+    width: 1200px;
+    height: 1200px;
+    font-size: 14px;
     background-color: #faf8f4;
-}
-.clause {
-    width: 800px;
-    height: 100px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    background-color: #faf8f4;
-}
-.info-title {
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
-
-input {
-    margin-left: 5px;
+    .clause-wrap {
+        .join,
+        .agree {
+            margin-top: 50px;
+            text-align: center;
+            color: #333;
+        }
+        .direction {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 300;
+            color: #333;
+        }
+    }
 }

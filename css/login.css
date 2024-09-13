@@ -1,73 +1,61 @@
-div:nth-of-type(1) {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1000px;
-  height: 100px;
-  background-color: #faf8f4;
-  font-size: 1.5em;
-  text-align: center;
-  line-height: 100px;
-  z-index: 1;
-}
-
-div:nth-of-type(2) {
+#shilla-login #login-wrap {
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1000px;
-  height: 450px;
+  width: 800px;
+  height: 600px;
   background-color: #faf8f4;
-  font-size: 2em;
   text-align: center;
 }
-
-div:nth-of-type(3) {
+#shilla-login #login-wrap h2 {
+  margin: 50px;
+  color: #333;
+}
+#shilla-login #login-wrap .hello {
+  margin: 50px;
+  font-size: 16px;
+}
+#shilla-login #login-wrap label {
+  display: inline-block;
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: right;
+}
+#shilla-login #login-wrap #id {
+  margin: 30px;
+  width: 400px;
+  padding: 10px;
+  font-size: 24px;
+}
+#shilla-login #login-wrap #pw {
+  margin: 30px;
+  width: 400px;
+  padding: 10px;
+  font-size: 24px;
+}
+#shilla-login #login-wrap .btn-login {
   position: absolute;
-  top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1000px;
-  height: 50px;
-  background-color: #faf8f4;
-  font-size: 2em;
-  text-align: center;
-  z-index: 0;
-}
-
-.login-box {
-  font-size: 1rem;
-}
-.login-box .info-title {
+  bottom: 100px;
+  transform: translateX(-50%);
+  font-weight: 600;
   display: block;
-  font-size: 1em;
-  margin-top: 50px;
-}
-
-input[type=text] {
-  width: 300px;
-  font-size: 1em;
-}
-
-.login-box {
-  position: relative;
-}
-.login-box input[type=button] {
-  margin-top: 60px;
   width: 200px;
   height: 50px;
   background-color: #7a6c64;
   color: #faf8f4;
-  font-size: 1rem;
+  font-size: 16px;
 }
-
-.login-box2 input[type=button] {
-  margin-top: 20px;
-  width: 100px;
-  height: 30px;
-  background-color: #7a6c64;
-  color: #faf8f4;
-  font-size: 0.7rem;
+#shilla-login #login-wrap .link-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+}
+#shilla-login #login-wrap a {
+  color: #7a6c64;
+  font-size: 16px;
+  margin: 10px;
 }
