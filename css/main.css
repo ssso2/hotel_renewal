@@ -25,18 +25,17 @@ main .title_box .en-tit:after {
   height: 2px;
   background: #7A6C64;
 }
-main .cont1 {
-  margin-top: 80px;
-}
 main .cont1 .swiper {
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 100vh;
 }
 main .cont1 .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 100%;
   height: 100%;
+  position: relative;
+  color: #fff;
 }
 main .cont1 .swiper-slide.slide1 {
   background: url(../img/main/main-slide-1.jpg) no-repeat center/cover;
@@ -44,8 +43,63 @@ main .cont1 .swiper-slide.slide1 {
 main .cont1 .swiper-slide.slide2 {
   background: url(../img/main/main-slide-2.jpg) no-repeat center/cover;
 }
-main .cont1 .swiper-slide.slide3 {
-  background: url(../img/main/main-slide-3.jpg) no-repeat center/cover;
+main .cont1 .swiper-slide::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+main .cont1 .swiper-slide .center {
+  position: relative;
+  height: 100%;
+}
+main .cont1 .swiper-slide .txt-box {
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  text-align: left;
+  z-index: 2;
+}
+main .cont1 .swiper-slide .txt-box > span {
+  padding: 2px 5px;
+  background: #FAF8F4;
+  color: #7A6C64;
+  font-weight: 500;
+  border-radius: 4px;
+}
+main .cont1 .swiper-slide .txt-box > h2 {
+  margin: 15px 0 25px;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+main .cont1 .swiper-slide .txt-box > h2 > span {
+  font-size: 50px;
+}
+main .cont1 .swiper-slide .txt-box > p {
+  font-size: 20px;
+}
+main .cont1 .swiper-slide .pkg-link {
+  position: absolute;
+  bottom: 15%;
+  right: 0;
+  display: inline-block;
+  padding: 20px 30px;
+  border: 5px solid #fff;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s;
+  z-index: 2;
+}
+main .cont1 .swiper-slide .pkg-link:hover {
+  border-color: #7A6C64;
+  background: #fff;
+  color: #7A6C64;
+  font-weight: 700;
 }
 main .cont1 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: var(--swiper-pagination-bottom, 20px);
@@ -73,13 +127,125 @@ main .cont1 .swiper-button-prev {
 }
 main .cont2 {
   height: 250px;
-  background: #F6F6F6;
+}
+main .cont3 {
+  padding: 50px 0 150px;
+  background: #f6f6f6;
 }
 main .cont3 .title_box .en-tit:after {
   width: 220px;
 }
+main .cont3 .special-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+main .cont3 .special-list > li {
+  width: calc((100% - 100px) / 3);
+}
+main .cont3 .special-list > li > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+main .cont3 .special-list > li > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: all 0.5s;
+}
+main .cont3 .special-list > li > a:hover::after {
+  opacity: 1;
+}
+main .cont3 .special-list > li > a:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+main .cont3 .special-list > li > a:hover .img-wrap > img {
+  transform: scale(1.1);
+}
+main .cont3 .special-list > li > a:hover .view-more {
+  opacity: 1;
+}
+main .cont3 .special-list > li > a .img-wrap {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+main .cont3 .special-list > li > a .img-wrap > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+main .cont3 .special-list > li > a .txt-wrap {
+  padding: 30px 20px 50px;
+  height: 200px;
+  background: #fff;
+}
+main .cont3 .special-list > li > a .txt-wrap h3 {
+  margin-bottom: 30px;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+main .cont3 .special-list > li > a .txt-wrap h3 > span {
+  font-size: 30px;
+}
+main .cont3 .special-list > li > a .txt-wrap .date {
+  margin-bottom: 20px;
+  padding-left: 25px;
+  position: relative;
+  font-size: 17px;
+}
+main .cont3 .special-list > li > a .txt-wrap .price {
+  padding-left: 25px;
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+}
+main .cont3 .special-list > li > a .txt-wrap i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 15px;
+}
+main .cont3 .special-list > li > a .view-more {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+}
+main .cont3 .special-list > li > a .view-more > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 150px;
+  background: #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
 main .cont4 {
-  padding-bottom: 180px;
+  padding: 70px 0 170px;
 }
 main .cont4 .title_box .en-tit:after {
   width: 100px;
