@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- 폰트어썸 연결 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS 스크롤 애니메이션 연결 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- 작성한 css 연결-->
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -23,9 +25,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <!-- AOS 스크롤 애니메이션 연결 -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 폰트어썸 연결 -->
+    <!-- <script src="https://kit.fontawesome.com/3584cf828c.js" crossorigin="anonymous"></script> -->
     <!-- 작성한 JS 연결 -->
     <script src="../js/common/header.js" defer></script>
-    <!-- <script src="../js/common/common.js" defer></script> -->
+    <script src="../js/common/common.js" defer></script>
     <script src="../js/main/main.js" defer></script>
 </head>
 <body>
@@ -133,8 +137,11 @@
 
         <!-- s:// cont3. 메인 스페셜 오퍼 -->
         <section class="cont3">
-            <div class="center"></div>
-                <h2 class="cont-tit">스페셜 오퍼</h2>
+            <div class="center">
+                <div class="title_box">
+                    <h2 class="cont-tit">스페셜 오퍼</h2>
+                    <p class="en-tit">SPECIAL OFFERS</p>
+                </div>
                 <ul class="special-list">
                     <li>
                         <a href="#">
@@ -147,11 +154,104 @@
         <!-- e:// cont3. 메인 스페셜 오퍼 -->
 
         <!-- s:// cont4. 객실 -->
-        <section class="cont4"></section>
+        <section class="cont4">
+            <div class="center">
+                <div class="title_box">
+                    <h2 class="cont-tit">객실</h2>
+                    <p class="en-tit">ROOM</p>
+                </div>
+            </div>
+            <div class="back">
+                <div class="center-wrap" data-aos="fade-up">
+                    <div class="center">
+                        <div class="text-box">
+                            <h3><a href="../html/sub/sub02_01_01.html" title="스탠다드 디럭스룸 페이지로 이동">스탠다드 <span>Standard</span></a></h3>
+                            <ul class="type">
+                                <li data-aos="fade-up"><a href="../html/sub/sub02_01_01.html" title="디럭스룸 페이지로 이동">디럭스</a></li>
+                                <li data-aos="fade-up" data-aos-delay="100"><a href="../html/sub/sub02_01_02.html" title="비지니스 디럭스룸 페이지로 이동">비지니스 디럭스</a></li>
+                                <li data-aos="fade-up" data-aos-delay="200"><a href="../html/sub/sub02_01_03.html" title="베리어프리 비지니스 디럭스룸 페이지로 이동">베리어프리 비지니스 디럭스</a></li>
+                                <li data-aos="fade-up" data-aos-delay="300"><a href="../html/sub/sub02_01_04.html" title="그랜드 코너 디럭스룸 페이지로 이동">그랜드 코너 디럭스</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="center-wrap" data-aos="fade-up">
+                    <div class="center">
+                        <div class="text-box">
+                            <h3><a href="../html/sub/sub02_02_01.html" title="이그제큐티브 비지니스 디럭스룸 페이지로 이동">이그제큐티브 <span>Executive</span></a></h3>
+                            <ul class="type">
+                                <li data-aos="fade-up"><a href="../html/sub/sub02_02_01.html" title="이그제큐티브 비지니스 디럭스룸 페이지로 이동">이그제큐티브 비지니스 디럭스</a></li>
+                                <li data-aos="fade-up" data-aos-delay="100"><a href="../html/sub/sub02_02_02.html" title="이그제큐티브 그랜드 디럭스룸 페이지로 이동">이그제큐티브 그랜드 디럭스</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="center-wrap" data-aos="fade-up">
+                    <div class="center">
+                        <div class="text-box">
+                            <h3><a href="../html/sub/sub02_03_01.html" title="수페리어 스위트 룸 페이지로 이동">스위트 <span>Suite</span></a></h3>
+                            <ul class="type">
+                                <li data-aos="fade-up"><a href="../html/sub/sub02_03_01.html" title="수페리어 스위트 룸 페이지로 이동">수페리어 스위트</a></li>
+                                <li data-aos="fade-up" data-aos-delay="100"><a href="../html/sub/sub02_03_02.html" title="코리안 스위트 룸 페이지로 이동">코리안 스위트</a></li>
+                                <li data-aos="fade-up" data-aos-delay="200"><a href="../html/sub/sub02_03_03.html" title="코너 스위트 룸 페이지로 이동">코너 스위트</a></li>
+                                <li data-aos="fade-up" data-aos-delay="300"><a href="../html/sub/sub02_03_04.html" title="프리미어 스위트 룸 페이지로 이동">프리미어 스위트</a></li>
+                                <li data-aos="fade-up" data-aos-delay="400"><a href="../html/sub/sub02_03_05.html" title="로열 스위트 룸 페이지로 이동">로열 스위트</a></li>
+                                <li data-aos="fade-up" data-aos-delay="500"><a href="../html/sub/sub02_03_06.html" title="신라 스위트 룸 페이지로 이동">신라 스위트</a></li>
+                                <li data-aos="fade-up" data-aos-delay="600"><a href="../html/sub/sub02_03_07.html" title="프레지덴셜 스위트 룸 페이지로 이동">프레지덴셜 스위트</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="center-wrap">
+                    <div class="center">
+                        <div class="text-box">
+                            <h3><a href="../html/sub/sub02_04.html" title="이그제큐티브 라운지 페이지로 이동">더 이그제큐티브 라운지 <span>The Executive Lounge</span></a></h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <!-- e:// cont4. 객실 -->
 
         <!-- s:// cont5. 멤버십 안내 -->
-        <section class="cont5"></section>
+        <section class="cont5">
+            <div class="center">
+                <div class="title_box">
+                    <h2 class="cont-tit">신라리워즈</h2>
+                    <p class="en-tit">MEMBERSHIP</p>
+                </div>
+                <ul class="benefit">
+                    <li class="list" data-aos="fade-up">
+                        <a href="#self" title="신라호텔 지점 찾기 팝업 열림" data-lybtn="pop-hotel-box">
+                            <i class="fa-solid fa-hotel"></i>
+                            <h3>신라 지점찾기</h3>
+                            <p>국내외 신라호텔, 신라모노그램, 신라스테이 지점을 검색하고 이용해보세요</p>
+                        </a>
+                    </li>
+                    <li class="list" data-aos="fade-up" data-aos-delay="150">
+                        <a href="https://www.shillahotels.com/membership/offers/shillaS/memShillaS.do" target="_blank" title="신라S 멤버십 안내 페이지 새창 열기">
+                            <i class="fa-brands fa-sketch"></i>
+                            <h3>신라에스 멤버십</h3>
+                            <p>서울 &middot; 제주신라호텔에서 자유롭게 이용 가능한 통합 유료 멤버십, <span>신라 S</span></p>
+                        </a>
+                    </li>
+                    <li class="list" data-aos="fade-up" data-aos-delay="300">
+                        <a href="https://www.shillahotels.com/membership/offers/benefits/memBenefitsIndex.do" target="_blank" title="신라리워즈 회원특전 페이지 새창 열기">
+                            <i class="fa-solid fa-gifts"></i>
+                            <h3>신라 리워즈</h3>
+                            <p>신라 호텔 계열 및 제휴 호텔에서 포인트 혜택 및 특전을 제공하는 통합 멤버십 서비스</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
         <!-- e:// cont5. 멤버십 안내 -->
 
         <!-- s:// cont6. 갤러리 -->
@@ -159,10 +259,9 @@
             <div class="center">
                 <div class="title_box">
                     <h2 class="cont-tit">갤러리</h2>
-                    <p >G A L L E R Y</p>
+                    <p class="en-tit">GALLERY</p>
                 </div>
                 <div class="video_wrap">
-
                     <iframe width="1280" height="720" src="https://www.youtube.com/embed/pBQsNC6-6XU" title="Where the heritage of the Shilla meets local flavor - SMQD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
@@ -174,10 +273,80 @@
 
     <article class="floating-menu">
         <div class="menu">
-            <a href="#" class="circle-btn">예약</a>
-            <a href="#" class="circle-btn">문의</a>
+            <a href="#" class="circle-btn" title="예약 페이지로 이동">예약</a>
+            <a href="#" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
         </div>
         <a href="#" class="top-btn">TOP</a>
     </article>
+
+    <!-- 지점 찾기 팝업 -->
+    <div class="lypop" data-lyOpen="pop-hotel-box">
+        <div class="lypop-wp big">
+            <div class="lypop-content">
+                <div class="lypop-title">
+                    <strong>호텔 찾기</strong>
+                    <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-hotel-box">
+                        <span class="hide">닫기</span>
+                    </a>
+                </div>
+                <div class="lypop-ct">
+                    <div class="hotel-box-wrap">
+                        <div class="country">
+                            <h4>국내</h4>
+                            <div class="area-wrap">
+                                <div class="area">
+                                    <h5>서울 강북</h5>
+                                    <div class="hotel-link-wrap">
+                                        <a href="#">서울 신라호텔</a>
+                                        <a href="https://www.shillastay.com/gwanghwamun/index.do" target="_blank" title="신라스테이 광화문 새창 열기">신라스테이 광화문</a>
+                                        <a href="https://www.shillastay.com/mapo/index.do" target="_blank" title="신라스테이 마포 새창 열기">신라스테이 마포</a>
+                                        <a href="https://www.shillastay.com/seodaemun/index.do" target="_blank" title="신라스테이 서대문 새창 열기">신라스테이 서대문</a>
+                                    </div>
+                                </div>
+                                <div class="area">
+                                    <h5>서울 강남</h5>
+                                    <div class="hotel-link-wrap">
+                                        <a href="https://www.shillastay.com/yeoksam/index.do" target="_blank" title="신라스테이 역삼 새창 열기">신라스테이 역삼</a>
+                                        <a href="https://www.shillastay.com/seocho/index.do" target="_blank" title="신라스테이 서초 새창 열기">신라스테이 서초</a>
+                                        <a href="https://www.shillastay.com/guro/index.do" target="_blank" title="신라스테이 구로 새창 열기">신라스테이 구로</a>
+                                        <a href="https://www.shillastay.com/samsung/index.do" target="_blank" title="신라스테이 삼성 새창 열기">신라스테이 삼성</a>
+                                    </div>
+                                </div>
+                                <div class="area">
+                                    <h5>전국</h5>
+                                    <div class="hotel-link-wrap">
+                                        <a href="https://www.shilla.net/jeju/index.do?lang=ko" target="_blank" title="제주 신라호텔 새창 열기">제주 신라호텔</a>
+                                        <a href="https://www.shillastay.com/dongtan/index.do" target="_blank" title="신라스테이 동탄 새창 열기">신라스테이 동탄</a>
+                                        <a href="https://www.shillastay.com/cheonan/index.do" target="_blank" title="신라스테이 천안 새창 열기">신라스테이 천안</a>
+                                        <a href="https://www.shillastay.com/jeonju/mic/viewMicro.do?contId=PC" target="_blank" title="신라스테이 전주 새창 열기">신라스테이 전주</a>
+                                        <a href="https://www.shillastay.com/ulsan/index.do" target="_blank" title="신라스테이 울산 새창 열기">신라스테이 울산</a>
+                                        <a href="https://www.shillastay.com/haeundae/index.do" target="_blank" title="신라스테이 해운대 새창 열기">신라스테이 해운대</a>
+                                        <a href="https://www.shillastay.com/seobusan/index.do" target="_blank" title="신라스테이 서부산 새창 열기">신라스테이 서부산</a>
+                                        <a href="https://www.shillastay.com/yeosu/index.do" target="_blank" title="신라스테이 여수 새창 열기">신라스테이 여수</a>
+                                        <a href="https://www.shillastay.com/jeju/index.do" target="_blank" title="신라스테이 제주 새창 열기">신라스테이 제주</a>
+                                        <a href="https://www.shillastay.com/ihotewoo/index.do" target="_blank" title="신라스테이 플러스 이호테우 새창 열기">신라스테이 플러스 이호테우</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="country foreign">
+                            <h4>해외</h4>
+                            <div class="area-wrap">
+                                <div class="area ">
+                                    <h5>베트남</h5>
+                                    <div class="hotel-link-wrap">
+                                        <a href="https://www.shillamonogram.com/dnmg/index.do" target="_blank" title="신라모노그램 다낭 새창 열기">신라모노그램 다낭</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-wrap type5">
+                        <button class="btn btn-04" data-lyClose="pop-hotel-box"><span>닫기</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

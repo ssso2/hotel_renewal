@@ -405,14 +405,15 @@ h2 {
 .floating-menu a {
   width: 50px;
   height: 50px;
-  border: 1px solid #fff;
+  border: 1px solid #aaa;
   border-radius: 50%;
   color: #fff;
   line-height: 50px;
   text-align: center;
 }
 .floating-menu a:hover {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid #7A6C64;
+  box-shadow: 2px 2px 5px rgb(82, 82, 82);
 }
 .floating-menu .menu {
   position: fixed;

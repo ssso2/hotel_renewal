@@ -81,7 +81,4 @@ $(function () {
         });
     });
 
-    function newWinpop() {
-        window.open("UI_grid.html", "newWinpop", "width=900, height=600, status=no,toolbar=no,scrollbars=no");
-    }
 }); 
