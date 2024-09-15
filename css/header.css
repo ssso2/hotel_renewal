@@ -4,13 +4,21 @@ header {
   top: -80px;
   left: 0;
   width: 100%;
-  transition: all 0.5s;
-  background: #FAF8F4 !important;
+  transition: all 0.2s;
+  color: #fff;
   z-index: 99;
-  border-bottom: 1px solid #eaeaea;
+}
+header.active {
+  top: 0;
 }
 header.on {
-  top: 0;
+  background: #FAF8F4 !important;
+  color: #666;
+  font-weight: 500;
+  border-bottom: 1px solid #eaeaea;
+}
+header.on .gnb > li::after {
+  background: #aaa;
 }
 header .center {
   display: flex;
@@ -54,7 +62,7 @@ header .logo > a > img {
   height: 0px;
   background: #fff;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 .gnbbg.on {
   height: 240px;
@@ -78,7 +86,7 @@ header .logo > a > img {
   transform: translateY(-50%);
   width: 1px;
   height: 15px;
-  background: #aaa;
+  background: #fff;
 }
 .gnb > li:last-child::after {
   display: none;
@@ -89,8 +97,6 @@ header .logo > a > img {
   height: 100%;
   font-size: 15px;
   line-height: 80px;
-  font-weight: 500;
-  color: #666;
 }
 .gnb > li > a::after {
   content: "";
@@ -102,7 +108,7 @@ header .logo > a > img {
   width: 0;
   height: 1px;
   background: #000;
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 .gnb > li.on > a::after {
   width: 100%;
@@ -119,7 +125,7 @@ header .logo > a > img {
   width: 170px;
   height: 0;
   overflow: hidden;
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 .gnb .depth2 > li > a {
   line-height: 40px;

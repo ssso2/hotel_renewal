@@ -19,8 +19,13 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/main.css">
+    <!-- daterangepicker 연결 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <!-- 제이쿼리 연결 -->
-    <script src="../js/common/jquery-3.7.1.min.js"></script>
+    <!-- <script src="../js/common/jquery-3.7.1.min.js"></script> -->
     <script src="../js/common/jquery-ui.min.js"></script>
     <!-- 스와이퍼 JS 연결 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
@@ -34,7 +39,7 @@
     <script src="../js/main/main.js" defer></script>
 </head>
 <body>
-    <header class="on">
+    <header class="active">
         <div class="gnbbg"></div>
         <div class="center">
             <h1 class="logo">
@@ -117,8 +122,8 @@
                         <div class="center">
                             <div class="txt-box">
                                 <span>Members Only</span>
-                                <h2><span>R</span>EWARDS <span>P</span>RIVATE <span>M</span>OMENT AT <span>U</span>RBAN <span>C</span>ABANA</h2>
-                                <P>어번 아일랜드의 프라이빗한 카바나에서 도심 속 휴식을 즐겨보세요.</P>
+                                <h2><span>R</span>EWARDS <span>R</span>ELAX <span>S</span>PA <span>B</span>LISS</h2>
+                                <P>몸과 마음을 편안하게 만들어주는 스파 프로그램으로 진정한 휴식을 느껴보세요.</P>
                             </div>
                             <a href="#" class="pkg-link">패키지 바로 가기</a>
                         </div>
@@ -127,8 +132,8 @@
                         <div class="center">
                             <div class="txt-box">
                                 <span>Members Only</span>
-                                <h2><span>R</span>ELAX <span>S</span>PA <span>B</span>LISS</h2>
-                                <P>몸과 마음을 편안하게 만들어주는 스파 프로그램으로 진정한 휴식을 느껴보세요.</P>
+                                <h2><span>R</span>EWARDS <span>P</span>RIVATE <span>M</span>OMENT AT <span>U</span>RBAN <span>C</span>ABANA</h2>
+                                <P>어번 아일랜드의 프라이빗한 카바나에서 도심 속 휴식을 즐겨보세요.</P>
                             </div>
                             <a href="#" class="pkg-link">패키지 바로 가기</a>
                         </div>
@@ -143,7 +148,29 @@
 
         <!-- s:// cont2. 메인 예약 폼 -->
         <section class="cont2">
-
+            <div class="center">
+                <div class="reservation-wrap">
+                    <div class="date-wrap">
+                        <span class="tit">CHECK IN / OUT</span>
+                        <input class="date" type="text" name="daterange" value="">
+                    </div>
+                    <div class="room-wrap">
+                        <div class="box room">
+                            <span class="tit">ROOM</span>
+                            <span class="num">1</span>
+                        </div>
+                        <div class="box adult">
+                            <span class="tit">ADULT</span>
+                            <span class="num">1</span>
+                        </div>
+                        <div class="box children">
+                            <span class="tit">CHILDREN</span>
+                            <span class="num">1</span>
+                        </div>
+                    </div>
+                    <a href="#">검색</a>
+                </div>
+            </div>
         </section>
         <!-- e:// cont2. 메인 예약 폼 -->
 

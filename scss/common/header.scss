@@ -7,13 +7,21 @@ header {
     top: -80px; 
     left: 0;  
     width: 100%;
-    transition: all 0.5s; 
-    background: #FAF8F4 !important; 
+    transition: all 0.2s; 
+    color: #fff;
     z-index: 99;
-    border-bottom: 1px solid #eaeaea;
 
-    &.on {
+    &.active {
         top: 0;
+    }
+    &.on {
+        background: #FAF8F4 !important; 
+        color: #666;
+        font-weight: 500;
+        border-bottom: 1px solid #eaeaea;
+        .gnb > li::after {
+            background: #aaa;
+        }
     }
 
     .center {
@@ -68,7 +76,7 @@ header {
     height: 0px;
     background: #fff;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
-    transition: all 0.5s;
+    transition: all 0.4s;
 
     &.on {height: 240px;}
 }
@@ -91,7 +99,7 @@ header {
             transform: translateY(-50%); 
             width: 1px; 
             height: 15px; 
-            background: #aaa;
+            background: #fff;
         }
 
         &:last-child::after {
@@ -104,8 +112,6 @@ header {
             height: 100%;
             font-size: 15px; 
             line-height: 80px;
-            font-weight: 500;
-            color: #666;
 
             &::after {
                 content: '';
@@ -117,7 +123,7 @@ header {
                 width: 0;
                 height: 1px;
                 background: #000;
-                transition: all 0.5s;
+                transition: all 0.4s;
             }
         }
 
@@ -139,14 +145,11 @@ header {
         width: 170px; 
         height: 0;
         overflow: hidden;
-        transition: all 0.5s;
+        transition: all 0.4s;
 
         & > li > a {
             line-height: 40px;
 
-            // &:hover {
-            //     font-weight: 700;
-            // }
         }
     }
 
