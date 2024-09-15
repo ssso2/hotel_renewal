@@ -2,7 +2,8 @@
     header {
         transition: all 0.2s; 
         color: #fff;
-    
+        background: transparent !important;
+        box-shadow: none;
         &.on {
             background: #FAF8F4 !important; 
             color: #666;

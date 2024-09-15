@@ -1,6 +1,8 @@
 .main-header header {
   transition: all 0.2s;
   color: #fff;
+  background: transparent !important;
+  box-shadow: none;
 }
 .main-header header.on {
   background: #FAF8F4 !important;
