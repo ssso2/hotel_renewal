@@ -1,4 +1,147 @@
+@charset "UTF-8";
+/* 하단영역 */
 footer {
-  height: 500px;
-  background: #7A6C64;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eaeaea;
+}
+footer .center {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  padding: 70px 0 120px;
+}
+footer .f_menu {
+  font-size: 14px;
+  line-height: 3;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+footer .f_menu .footer-logo {
+  margin-bottom: 25px;
+  width: 200px;
+}
+footer .f_menu > ul {
+  display: flex;
+}
+footer .f_menu > ul li {
+  margin-right: 20px;
+}
+footer .f_menu > ul li a {
+  color: #000;
+}
+footer .f_menu .sns {
+  margin: 10px 0 30px;
+}
+footer .f_menu .sns li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 50px;
+}
+footer .f_menu .sns li a:hover {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+footer .f_menu .sns li a i {
+  font-size: 15px;
+}
+footer .f_menu .sns li:nth-child(1) a i {
+  font-size: 20px;
+  position: relative;
+  top: 2px;
+}
+footer .f_menu .menu {
+  font-family: "Arimo", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  flex-wrap: wrap;
+}
+footer .f_menu .menu li:hover {
+  text-decoration: underline;
+}
+footer .f_bot {
+  font-family: "Poppins", sans-serif;
+}
+footer .f_bot .f_list {
+  font-size: 14px;
+  line-height: 2.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+footer .f_bot .f_list span {
+  margin-right: 30px;
+}
+footer .f_bot .f_list span:hover {
+  text-decoration: underline;
+}
+footer .f_bot .f_list span::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  background: #999;
+  position: relative;
+  top: 2px;
+  left: 15px;
+}
+footer .f_bot .f_list span:last-child::after {
+  display: none;
+}
+footer .f_bot .f_list span a {
+  color: #000;
+}
+footer .f_bot .f_info {
+  color: #777;
+  list-style: disc inside;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+footer .f_bot .copy span {
+  font-size: 16px;
+  position: relative;
+  top: 1px;
+}
+footer .info {
+  padding-top: 10px;
+  font-size: 12px;
+  line-height: 1.7;
+  font-family: "Roboto", sans-serif;
+}
+footer .info > p {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 40px;
+  font-family: "Poppins", sans-serif;
+}
+footer .info > p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+footer .info > p:nth-of-type(1)::before {
+  background-image: url(../../img/main/mark-seoul-1.jpg);
+}
+footer .info > p:nth-of-type(2)::before {
+  background-image: url(../../img/main/mark-seoul-2.jpg);
+}
+footer .info > p:nth-of-type(3)::before {
+  background-image: url(../../img/main/mark-seoul-3.jpg);
+}
+footer .info > p:nth-of-type(4)::before {
+  background-image: url(../../img/main/mark-seoul-4.jpg);
+}
+footer .info > p:nth-of-type(5)::before {
+  background-image: url(../../img/main/mark-seoul-5.jpg);
 }

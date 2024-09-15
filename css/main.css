@@ -1,3 +1,17 @@
+.main-header header {
+  transition: all 0.2s;
+  color: #fff;
+}
+.main-header header.on {
+  background: #FAF8F4 !important;
+  color: #666;
+  font-weight: 500;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.main-header header.on .gnb > li::after {
+  background: #aaa;
+}
+
 main {
   padding-bottom: 150PX;
 }
@@ -126,7 +140,68 @@ main .cont1 .swiper-button-prev {
   left: var(--swiper-navigation-sides-offset, 50px);
 }
 main .cont2 {
-  height: 250px;
+  padding: 120px 0;
+}
+main .cont2 .reservation-wrap {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+main .cont2 .reservation-wrap .tit {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+main .cont2 .reservation-wrap .date-wrap {
+  position: relative;
+  padding: 2px 0;
+  width: calc((100% - 170px) * 0.45);
+  height: 77px;
+  border: 1px dashed transparent;
+}
+main .cont2 .reservation-wrap .date-wrap .tit {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .cont2 .reservation-wrap .date-wrap .date {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 40px;
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: #000;
+  background: transparent;
+}
+main .cont2 .reservation-wrap .date-wrap:hover {
+  border-color: #7A6C64;
+}
+main .cont2 .reservation-wrap .room-wrap {
+  display: flex;
+  align-items: center;
+  padding: 8.5px 0;
+  width: calc((100% - 170px) * 0.55);
+  border: 1px dashed transparent;
+  cursor: pointer;
+}
+main .cont2 .reservation-wrap .room-wrap .box {
+  width: 33.3333333333%;
+  border-left: 1px solid #ddd;
+  text-align: center;
+}
+main .cont2 .reservation-wrap .room-wrap:hover {
+  border-color: #7A6C64;
+}
+main .cont2 .reservation-wrap .search {
+  display: block;
+  width: 200px;
+  border: 2px solid #7A6C64;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 73px;
 }
 main .cont3 {
   padding: 50px 0 150px;
@@ -149,7 +224,7 @@ main .cont3 .special-list > li > a {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0);
   overflow: hidden;
 }

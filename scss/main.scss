@@ -1,3 +1,19 @@
+.main-header {
+    header {
+        transition: all 0.2s; 
+        color: #fff;
+    
+        &.on {
+            background: #FAF8F4 !important; 
+            color: #666;
+            font-weight: 500;
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+            .gnb > li::after {
+                background: #aaa;
+            }
+        }
+    }
+}
 main {
     padding-bottom: 150PX;
 
@@ -135,7 +151,72 @@ main {
 
     // cont2. 메인 예약 폼
     .cont2 {
-        height: 250px;
+        padding: 120px 0;
+        .reservation-wrap {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            .tit {
+                display: block;
+                margin-bottom: 15px;
+                font-size: 15px;
+
+            }
+
+            .date-wrap {
+                position: relative;
+                padding: 2px 0;
+                width: calc((100% - 170px) * 0.45);
+                height: 77px;
+                border: 1px dashed transparent;
+                .tit {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                .date {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    padding-top: 40px;
+                    width: 100%;
+                    font-size: 30px;
+                    letter-spacing: 1px;
+                    color: #000;
+                    background: transparent;
+                }
+                &:hover {
+                    border-color: #7A6C64;
+                }
+            }
+
+            .room-wrap {
+                display: flex;
+                align-items: center;
+                padding: 8.5px 0;
+                width: calc((100% - 170px) * 0.55);
+                border: 1px dashed transparent;
+                cursor: pointer;
+                .box {
+                    width: calc(100% / 3);
+                    border-left: 1px solid #ddd;
+                    text-align: center;
+                }
+                &:hover {
+                    border-color: #7A6C64;
+                }
+            }
+
+            .search {
+                display: block;
+                width: 200px;
+                border: 2px solid #7A6C64;
+                text-align: center;
+                font-size: 25px;
+                font-weight: 500;
+                line-height: 73px;
+            }
+        }
     }
 
     // cont3. 메인 스페셜 오퍼
@@ -161,7 +242,7 @@ main {
                     display: block;
                     width: 100%;
                     height: 100%;
-                    border-radius: 16px;
+                    border-radius: 8px;
                     box-shadow: 5px 5px 10px rgba(0,0,0,0);
                     overflow: hidden;
                     &::after {
@@ -546,4 +627,6 @@ main {
         }
     }
 }
+
+
 

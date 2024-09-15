@@ -1,45 +1,67 @@
 AOS.init();
 
-// 스와이퍼 API 슬라이드
-var mainSwiper = new Swiper(".cont1 .swiper", {
-    spaceBetween: 30,
-    loop: true,
-    effect: "fade",
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+
+// 메인페이지 Header
+const mainHeader = document.querySelector(".main-header header");
+const mainCont1 = document.querySelector("main > .cont1");
+
+
+// 과거의 스크롤바 위치값
+let lastScrollTop = 0;
+// 스크롤바의 위치값
+let scTop = 0;
+// 메인 비주얼 높이값
+let mainCont1Height = 0;
+
+window.addEventListener("scroll",function(){
+
+    scTop = window.scrollY;
+    mainCont1Height = mainCont1.offsetHeight-300;
+    
+
+    //스크롤바 내리면 헤더는 사라지고 스크롤바 올리면 헤더 나타남
+    if(scTop == 0){
+        mainHeader.classList.add("active");
+    }
+    else if(scTop > lastScrollTop) {
+        mainHeader.classList.remove("active");
+    }
+    else if(scTop > mainCont1Height && scTop < lastScrollTop){
+        mainHeader.classList.add("active");
+        mainHeader.classList.add("on");
+    }
+    else if(scTop < mainCont1Height && scTop < lastScrollTop){
+        mainHeader.classList.remove("on");
+        mainHeader.classList.add("active");
+    }
+
+    lastScrollTop = scTop;
+});
+
+mainHeader.addEventListener("mouseover",function(){
+    if(scTop < mainCont1Height){
+        mainHeader.classList.add("on");
+    }
+    
+});
+mainHeader.addEventListener("mouseleave",function(){
+    if(scTop < mainCont1Height){
+        mainHeader.classList.remove("on");
+    }
 });
 
 
-//비디오 재생버튼
-// const vidPlay = document.querySelector(".play");
-// const vidPause = document.querySelector(".pause");
-// const vidView = document.querySelector(".video_review");
-
-// vidPlay.addEventListener("click",function(){
-
-//     vidPlay.classList.add("hide");
-//     vidPause.classList.remove("hide");
-//     vidView.querySelector("video").play();
-    
-// });
-// vidPause.addEventListener("click",function(){
-
-//     vidPause.classList.add("hide");
-//     vidPlay.classList.remove("hide");
-//     vidView.querySelector("video").pause();
-    
-// });
-// vidView.addEventListener("mouseenter",function(){
-//     vidPlay.style.opacity = 1;
-//     vidPause.style.opacity = 1;
-// });
-// vidView.addEventListener("mouseleave",function(){
-//     vidPlay.style.opacity = 0;
-//     vidPause.style.opacity = 0;
-// });
+// 스와이퍼 API 슬라이드
+var mainSwiper = new Swiper(".cont1 .swiper", {
+  spaceBetween: 30,
+  loop: true,
+  effect: "fade",
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});

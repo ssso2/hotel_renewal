@@ -8,21 +8,24 @@ header {
     left: 0;  
     width: 100%;
     transition: all 0.2s; 
-    color: #fff;
+    color: #666;
     z-index: 99;
+    background: #FAF8F4 !important; 
+    font-weight: 500;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 
     &.active {
         top: 0;
     }
-    &.on {
-        background: #FAF8F4 !important; 
-        color: #666;
-        font-weight: 500;
-        border-bottom: 1px solid #eaeaea;
-        .gnb > li::after {
-            background: #aaa;
-        }
-    }
+    // &.on {
+        // background: #FAF8F4 !important; 
+        // color: #666;
+    //     font-weight: 500;
+    //     box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    //     .gnb > li::after {
+    //         background: #aaa;
+    //     }
+    // }
 
     .center {
         display: flex;
@@ -162,4 +165,5 @@ header {
 
 
 
+// 반응형 
 

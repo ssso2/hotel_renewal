@@ -405,7 +405,6 @@ h2 {
 .floating-menu a {
   width: 50px;
   height: 50px;
-  border: 1px solid #aaa;
   border-radius: 50%;
   color: #fff;
   line-height: 50px;
@@ -430,9 +429,13 @@ h2 {
 }
 .floating-menu .top-btn {
   position: fixed;
-  right: 10px;
+  right: -50px;
   bottom: 30px;
   background-color: #333;
+  transition: all 0.3s;
+}
+.floating-menu .top-btn.on {
+  right: 10px;
 }
 
 .desc {
@@ -550,4 +553,45 @@ h2 {
 
 .lypop-ct {
   padding: 30px;
+}
+
+.daterangepicker {
+  padding: 70px 200px;
+  width: 1420px;
+}
+.daterangepicker.drop-up {
+  margin-top: -10px;
+}
+.daterangepicker .drp-calendar {
+  max-width: none;
+}
+.daterangepicker .drp-calendar.left .calendar-table {
+  padding-right: 150px;
+}
+.daterangepicker .drp-calendar .calendar-table th, .daterangepicker .drp-calendar .calendar-table td {
+  font-size: 20px;
+  line-height: 3;
+}
+.daterangepicker .drp-calendar .calendar-table td {
+  width: 60px;
+  height: auto;
+}
+.daterangepicker .drp-calendar .calendar-table td.active {
+  border-radius: 50%;
+}
+.daterangepicker .drp-buttons {
+  padding-top: 20px;
+  border: none;
+  border-top: 1px solid #eaeaea;
+  line-height: 1;
+}
+.daterangepicker .drp-buttons .btn {
+  font-size: 18px;
+}
+.daterangepicker .drp-selected {
+  margin-right: 30px;
+  padding: 4px 0;
+  font-size: 20px;
+  color: #000;
+  vertical-align: middle;
 }

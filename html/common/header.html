@@ -12,15 +12,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- 폰트어썸 연결 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- 작성한 css 연결-->
-    <link rel="stylesheet" href="../../css/header.css">
+    <!-- AOS 스크롤 애니메이션 연결 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- daterangepicker 연결 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <!-- 제이쿼리 연결 -->
-    <script src="../../js/common/jquery-ui.min.js"></script>
-    <script src="../../js/common/jquery-3.7.1.min.js"></script>
+    <!-- <script src="../js/common/jquery-3.7.1.min.js"></script> -->
+    <script src="../js/common/jquery-ui.min.js"></script>
     <!-- 스와이퍼 JS 연결 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <!-- AOS 스크롤 애니메이션 연결 -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 작성한 css 연결-->
+    <link rel="stylesheet" href="../../css/header.css">
     <!-- 작성한 JS 연결 -->
     <script src="../../js/common/header.js" defer></script>
     <script src="../../js/common/common.js" defer></script>
@@ -98,7 +104,73 @@
                 <p>손주혜<span>님</span></p>
                 <a href="#" class="logout-btn">로그아웃</a>
             </div>
+            <!-- 모바일 햄버거 버튼 -->
+            <div class="m_btn">
+                <div class="menu">
+                    <span class="line one"></span>
+                    <span class="line two"></span>
+                    <span class="line three"></span>
+                </div>
+            </div>
         </div>
     </header>
+    <!-- 모바일 메뉴 -->
+    <div class="m_wrap">
+        <div class="m_top">
+            <!-- 비로그인시 -->
+            <div class="btn-wrap on">
+                <a href="../../html/sub/join.html" class="join-btn">회원가입</a>
+                <a href="../../html/sub/login.html" class="login-btn">로그인</a>
+            </div>
+            <!-- 로그인시 -->
+            <div class="btn-wrap">
+                <p>손주혜<span>님</span></p>
+                <a href="#" class="logout-btn">로그아웃</a>
+            </div>
+            <!-- 닫기 버튼 -->
+            <img class="m_close" src="img/mov-close.png">
+        </div>
+        <ul class="m_gnb">
+            <li>
+                <a href="#">회사소개</a>
+                <ul class="m_sub">
+                    <li><a href="#">순성</a></li>
+                    <li><a href="#">사회공헌</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">안전철학</a>
+                <ul class="m_sub">
+                    <li><a href="#">안전연구소</a></li>
+                    <li><a href="#">안전캠페인</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">브랜드</a>
+                <ul class="m_sub">
+                    <li><a href="#">SOONSUNG</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">뉴스</a>
+                <ul class="m_sub">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">보도자료</a></li>
+                    <li><a href="#">이벤트</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">스토어</a>
+                <ul class="m_sub">
+                    <li><a href="#">온라인</a></li>
+                    <li><a href="#">오프라인</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="m_bot">
+            <a href="#">고객지원</a>
+            <a href="#">정품등록</a>
+        </div>
+    </div>
 </body>
 </html>

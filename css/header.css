@@ -5,20 +5,14 @@ header {
   left: 0;
   width: 100%;
   transition: all 0.2s;
-  color: #fff;
+  color: #666;
   z-index: 99;
+  background: #FAF8F4 !important;
+  font-weight: 500;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 header.active {
   top: 0;
-}
-header.on {
-  background: #FAF8F4 !important;
-  color: #666;
-  font-weight: 500;
-  border-bottom: 1px solid #eaeaea;
-}
-header.on .gnb > li::after {
-  background: #aaa;
 }
 header .center {
   display: flex;

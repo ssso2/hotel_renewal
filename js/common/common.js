@@ -63,6 +63,31 @@ var swiper2 = new Swiper(".mySwiper2", {
 
 
 
+// 플로팅 메뉴
+const topBtn = document.querySelector(".floating-menu .top-btn");
+
+window.addEventListener("scroll",function(){
+    let scTop = window.scrollY;
+
+    if(scTop > 1000){
+        topBtn.classList.add("on");
+    }
+    else{
+        topBtn.classList.remove("on");
+    }
+});
+
+topBtn.addEventListener("click",function(e){
+    e.preventDefault();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+});
+
+
+// 제이쿼리
 $(function () {
 
     // 레이어 팝업
@@ -89,7 +114,7 @@ $(function () {
             "minYear":1000,
             "maxYear": 9999,
             "locale":{"format":'YYYY.MM.DD', 
-                "separator":" ~ ",
+                "separator":" - ",
                 "applyLabel":"확인",
                 "cancelLabel": "취소",
                 "fromLabel":"From",
@@ -102,7 +127,7 @@ $(function () {
             },
             drops:"up" // up, down, auto 중 선택
         },function(start,end,label){
-            console.log('New date range selected:'+start.format('YYYY.MM.DD') + ' ~ ' + end.format('YYYY.MM.DD')+'(predefined range:'+label+')');
+            console.log('New date range selected:'+start.format('YYYY.MM.DD') + ' - ' + end.format('YYYY.MM.DD')+'(predefined range:'+label+')');
     });
 
 }); 

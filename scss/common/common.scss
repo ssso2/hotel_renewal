@@ -365,7 +365,6 @@ h2 {
     a {
         width: 50px;
         height: 50px;
-        border: 1px solid #aaa;
         border-radius: 50%; 
         color: #fff;
         line-height: 50px;
@@ -394,9 +393,13 @@ h2 {
 
     .top-btn {
         position: fixed; 
-        right: 10px; 
+        right: -50px; 
         bottom: 30px; 
         background-color: #333;
+        transition: all 0.3s;
+        &.on {
+            right: 10px; 
+        }
     }
 }
 
@@ -524,3 +527,53 @@ h2 {
 }
 
 
+// daterangepicker 팜업
+.daterangepicker {
+    padding: 70px 200px;
+    width: 1420px;
+
+    &.drop-up {
+        margin-top: -10px;
+    }
+
+    .drp-calendar {
+        max-width: none;
+        &.left {
+            .calendar-table {
+                padding-right: 150px;
+            }
+        }
+        .calendar-table {
+            th,td {
+                font-size: 20px;
+                line-height: 3;
+            }
+            td {
+                width: 60px;
+                height: auto;
+                &.active {
+                    border-radius: 50%;
+                }
+                
+            }
+        }
+    }
+
+    .drp-buttons {
+        padding-top: 20px;
+        border: none;
+        border-top: 1px solid #eaeaea;
+        line-height: 1;
+        .btn {
+            font-size: 18px;
+        }
+    }
+    .drp-selected {
+        margin-right: 30px;
+        padding: 4px 0;
+        font-size: 20px;
+        color: #000;
+        vertical-align: middle;
+    }
+
+}
