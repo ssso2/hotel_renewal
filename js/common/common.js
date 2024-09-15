@@ -64,7 +64,9 @@ var swiper2 = new Swiper(".mySwiper2", {
 
 
 // 플로팅 메뉴
-const topBtn = document.querySelector(".floating-menu .top-btn");
+const topBtn = document.querySelector(".floating-menu > .top-btn");
+console.log(topBtn);
+
 
 window.addEventListener("scroll",function(){
     let scTop = window.scrollY;

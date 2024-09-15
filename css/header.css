@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(./common.css);
 header {
   position: fixed;
@@ -127,4 +128,188 @@ header .logo > a > img {
 .gnb:hover .depth2 {
   padding: 20px 0;
   height: 240px;
+}
+
+.bodyBg {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 98;
+  width: 100%;
+  height: 284vh;
+  display: none;
+}
+
+.m_btn {
+  width: 25px;
+  height: 36px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 50px;
+  position: relative;
+  z-index: 100;
+  display: none;
+}
+.m_btn .menu {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.m_btn .menu .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  border-radius: 10px;
+  background: #555;
+  transition: all 0.3s;
+}
+
+/*메인페이지 햄버거 메뉴 (변경전 상태)*/
+/* 1200px 이하에서 스크롤 이벤트로 header에 move가 붙었을때 햄버거메뉴 색상 변경 */
+header.move .m_btn .menu .line {
+  background: #444;
+}
+
+/*서브페이지 햄버거 메뉴 (변경전 상태)*/
+.m_btn.notmain .menu .line {
+  background: #eaeaea;
+}
+
+.m_btn.notmain.move .menu .line {
+  background: #444;
+}
+
+header.on .m_btn.notmain .line {
+  background: #444;
+}
+
+/*클릭시 라인 x표시로 변경*/
+.m_btn .menu .line.one {
+  top: 10px;
+}
+
+.m_btn .menu .line.two {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.m_btn .menu .line.three {
+  bottom: 10px;
+}
+
+.m_btn.move .menu .line.one {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.m_btn.move .menu .line.two {
+  opacity: 0;
+}
+
+.m_btn.move .menu .line.three {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* 모바일 메뉴 */
+.m_wrap {
+  position: fixed;
+  right: -100%;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 98;
+  padding-top: 100px;
+  overflow: auto;
+}
+
+.m_wrap.move {
+  right: 0;
+}
+
+.m_wrap .m_gnb > li {
+  border-bottom: 1px solid #dadada;
+  transition: all 0.5s;
+}
+
+.m_wrap .m_gnb > li > a {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  color: #444;
+  font-size: 20px;
+  margin-left: 5%;
+  position: relative;
+}
+
+.m_wrap .m_gnb > li > a > span {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.m_wrap .m_gnb > li > a .plus {
+  display: inline-block;
+}
+
+.m_wrap .m_gnb > li.on > a .plus {
+  display: none;
+}
+
+.m_wrap .m_gnb > li.on > a .minus {
+  display: inline-block;
+}
+
+.m_wrap .m_gnb > li .m_sub {
+  display: none;
+  padding: 20px 7%;
+  background: #f9f9f9;
+}
+
+.m_wrap .m_gnb > li.on .m_sub {
+  display: block;
+}
+
+.m_wrap .m_gnb > li .m_sub li {
+  height: 60px;
+}
+
+.m_wrap .m_gnb > li .m_sub li a {
+  display: block;
+  height: 50px;
+  line-height: 60px;
+  color: #444;
+  font-size: 17px;
+}
+
+.m_wrap .m_gnb > li .m_sub li:hover a {
+  color: #111;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1500px) {
+  header .m_btn {
+    display: block;
+  }
+  header .center {
+    height: 80px;
+    align-items: center;
+  }
+  header .center > .btn-wrap {
+    display: none;
+  }
+  .m_wrap {
+    display: block;
+  }
+  .gnb {
+    display: none;
+  }
 }

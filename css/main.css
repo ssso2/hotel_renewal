@@ -44,6 +44,7 @@ main .title_box .en-tit:after {
 main .cont1 .swiper {
   width: 100%;
   height: 100vh;
+  min-height: 900px;
 }
 main .cont1 .swiper-slide {
   background-position: center;
