@@ -13,6 +13,12 @@
 .main-header header.on .gnb > li::after {
   background: #aaa;
 }
+.main-header header.on .m_btn .menu .line {
+  background: #555;
+}
+.main-header .m_btn .menu .line {
+  background: #fff;
+}
 
 main {
   padding-bottom: 150PX;
@@ -342,16 +348,16 @@ main .cont4 .back:hover h3 {
   color: #f5ead5;
 }
 main .cont4 .back:hover:nth-child(2) {
-  background: url(../img/main/bg-standard.jpg) no-repeat bottom 0 left 0/calc(100vw - 17px);
+  background: url(../img/main/bg-standard.jpg) no-repeat bottom 0 left 0/calc(100vw - 10px);
 }
 main .cont4 .back:hover:nth-child(3) {
-  background: url(../img/main/bg-executive.jpg) no-repeat bottom 0 left 0/calc(100vw - 17px);
+  background: url(../img/main/bg-executive.jpg) no-repeat bottom 0 left 0/calc(100vw - 10px);
 }
 main .cont4 .back:hover:nth-child(4) {
-  background: url(../img/main/bg-suite.jpg) no-repeat bottom 0 left 0/calc(100vw - 17px);
+  background: url(../img/main/bg-suite.jpg) no-repeat bottom 0 left 0/calc(100vw - 10px);
 }
 main .cont4 .back:hover:nth-child(5) {
-  background: url(../img/main/bg-lounge.jpg) no-repeat bottom 0 left 0/calc(100vw - 17px);
+  background: url(../img/main/bg-lounge.jpg) no-repeat bottom 0 left 0/calc(100vw - 10px);
 }
 main .cont4 .back:hover::after {
   content: "";
@@ -370,7 +376,7 @@ main .cont4 .back .center-wrap {
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100vw - 17px);
+  width: calc(100vw - 10px);
 }
 main .cont4 .back .center {
   padding: 57px 0;

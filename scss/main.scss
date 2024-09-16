@@ -12,6 +12,18 @@
             .gnb > li::after {
                 background: #aaa;
             }
+            .m_btn .menu .line {
+                background: #555; 
+            }
+        }
+    }
+    // 반응형 GNB
+    // 햄버거 버튼
+    .m_btn {
+        .menu {
+            .line {
+                background: #fff; 
+            }
         }
     }
 }
@@ -370,16 +382,16 @@ main {
                     color: #f5ead5;
                 }
                 &:nth-child(2) {
-                    background: url(../img/main/bg-standard.jpg)no-repeat bottom 0 left 0 / calc(100vw - 17px);
+                    background: url(../img/main/bg-standard.jpg)no-repeat bottom 0 left 0 / calc(100vw - 10px);
                 }
                 &:nth-child(3) {
-                    background: url(../img/main/bg-executive.jpg)no-repeat bottom 0 left 0 / calc(100vw - 17px);
+                    background: url(../img/main/bg-executive.jpg)no-repeat bottom 0 left 0 / calc(100vw - 10px);
                 }
                 &:nth-child(4) {
-                    background: url(../img/main/bg-suite.jpg)no-repeat bottom 0 left 0 / calc(100vw - 17px);
+                    background: url(../img/main/bg-suite.jpg)no-repeat bottom 0 left 0 / calc(100vw - 10px);
                 }
                 &:nth-child(5) {
-                    background: url(../img/main/bg-lounge.jpg)no-repeat bottom 0 left 0 / calc(100vw - 17px);
+                    background: url(../img/main/bg-lounge.jpg)no-repeat bottom 0 left 0 / calc(100vw - 10px);
                 }
                 &::after {
                     content: "";
@@ -401,7 +413,7 @@ main {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: calc(100vw - 17px);
+                width: calc(100vw - 10px);
             }
 
             .center {

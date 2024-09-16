@@ -65,9 +65,7 @@ var swiper2 = new Swiper(".mySwiper2", {
 
 // 플로팅 메뉴
 const topBtn = document.querySelector(".floating-menu > .top-btn");
-console.log(topBtn);
-
-
+// top버튼은 스크롤 위치값이 1000 이상인 곳에서만 나타난다
 window.addEventListener("scroll",function(){
     let scTop = window.scrollY;
 
@@ -78,7 +76,7 @@ window.addEventListener("scroll",function(){
         topBtn.classList.remove("on");
     }
 });
-
+// 탑 버튼을 누르면 부드럽게 최상단으로 이동
 topBtn.addEventListener("click",function(e){
     e.preventDefault();
 
@@ -129,7 +127,7 @@ $(function () {
             },
             drops:"up" // up, down, auto 중 선택
         },function(start,end,label){
-            console.log('New date range selected:'+start.format('YYYY.MM.DD') + ' - ' + end.format('YYYY.MM.DD')+'(predefined range:'+label+')');
+            console.log('New daterange selected:'+start.format('YYYY.MM.DD') + ' - ' + end.format('YYYY.MM.DD')+'(predefined range:'+label+')');
     });
 
 }); 
