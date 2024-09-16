@@ -78,21 +78,19 @@ mainHeader.addEventListener("mouseover",function(){
 
 // 메인헤더에서 마우스를 내렸을 때
 mainHeader.addEventListener("mouseleave",function(){
+
     // 스크롤이 메인 비주얼 안에 있고, 햄버거버튼에 move 클래스가 있다면 
     if(scTop < mainCont1Height && mBtn.classList.contains("move")){
         mainHeader.classList.add("on");  // 메인 헤더에 배경색 유지
         mainLogo.setAttribute("src","../../img/common/logo.png"); // 로고 갈색으로 유지
     }
-    // 스크롤이 메인 비주얼보다 아래에 있고, 햄버거버튼에 move 클래스가 없다면
-    else if(!mBtn.classList.contains("move")){
-        mainHeader.classList.remove("on"); //
-        mainLogo.setAttribute("src","../../img/common/logo-w.png");
+    // 스크롤이 메인 비주얼 안에 있고, 햄버거버튼에 move 클래스가 없다면
+    else if(scTop < mainCont1Height && !mBtn.classList.contains("move")){
+        mainHeader.classList.remove("on"); // 메인 헤더 배경이 투명해지고
+        mainLogo.setAttribute("src","../../img/common/logo-w.png"); // 로고 흰색으로 변경
     }
 
 });
-
-
-
 
 
 // 모바일 햄버거 버튼을 클릭했을 때
@@ -100,31 +98,31 @@ mBtn.addEventListener("click",function(){
 
     // 햄버거버튼에 move 클래스가 없으면서 스크롤의 위치가 메인비주얼보다 아래에 있다면
     if(!mBtn.classList.contains("move") && scTop < mainCont1Height){
-        mWrap.classList.add("move"); // 모바일GNB 가 열림
-        mBtn.classList.add("move");  // 모바일 햄버거 버튼이 X자로 바뀜
+        mWrap.classList.add("move");    // 모바일GNB 가 열림
+        mBtn.classList.add("move");     // 모바일 햄버거 버튼이 X자로 바뀜
         mainHeader.classList.add("on"); // 메인 헤더에 배경색 들어감
         mainLogo.setAttribute("src","../../img/common/logo.png"); // 메인 헤더 로고 색상이 갈색으로 바뀜
     }
 
     // 햄버거버튼에 move 클래스가 없으면서 스크롤의 위치가 메인비주얼 안에 있다면
     else if(!mBtn.classList.contains("move") && scTop > mainCont1Height){
-        mWrap.classList.add("move"); // 모바일GNB 가 열림
-        mBtn.classList.add("move");  // 모바일 햄버거 버튼이 X자로 바뀜
+        mWrap.classList.add("move");    // 모바일GNB 가 열림
+        mBtn.classList.add("move");     // 모바일 햄버거 버튼이 X자로 바뀜
         mainHeader.classList.add("on"); // 메인 헤더에 배경색 들어감
     }
 
     // 햄버거버튼에 move 클래스가 있고, 스크롤의 위치가 메인비주얼보다 아래에 있다면
     else if(mBtn.classList.contains("move") && scTop > mainCont1Height){
-        mWrap.classList.remove("move");
-        mBtn.classList.remove("move");
+        mWrap.classList.remove("move"); // 모바일GNB 가 사라짐
+        mBtn.classList.remove("move");  // 모바일 햄버거 버튼이 원상복구됨
         mainHeader.classList.add("on"); // 메인 헤더에 배경색 들어감
         mainLogo.setAttribute("src","../../img/common/logo.png");
     }
 
     // 햄버거버튼에 move 클래스가 있고, 스크롤의 위치가 메인비주얼 안에 있다면
     else if (mBtn.classList.contains("move") && scTop < mainCont1Height){
-        mWrap.classList.remove("move");
-        mBtn.classList.remove("move");
+        mWrap.classList.remove("move"); // 모바일GNB 가 사라짐
+        mBtn.classList.remove("move");  // 모바일 햄버거 버튼이 원상복구됨
         mainHeader.classList.add("on"); // 메인 헤더에 배경색 들어감
         mainLogo.setAttribute("src","../../img/common/logo.png");
     }
