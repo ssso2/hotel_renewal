@@ -1,3 +1,5 @@
+@import "_response.scss","_color.scss","_mixin.scss";
+
 /* 하단영역 */
 footer {
     display: flex; 
@@ -153,6 +155,90 @@ footer {
             }
             &:nth-of-type(5)::before {
                 background-image: url(../../img/main/mark-seoul-5.jpg);
+            }
+        }
+    }
+}
+
+
+// 반응형
+@media screen and (max-width:1500px){
+    footer {
+        .center {
+            width: 90%; 
+            padding: vw-pc(70 0 120);
+        }
+        .f_menu {
+            font-size: vw-pc(14); 
+            .footer-logo {
+                margin-bottom: vw-pc(25); 
+                width: vw-pc(200);
+            }
+    
+            & > ul {
+                li {
+                    margin-right: vw-pc(20);
+                }
+            } 
+            .sns {
+                margin:vw-pc(10 0 30);
+    
+                li {
+                    a {
+                        width: vw-pc(50); 
+                        height: vw-pc(50); 
+                        line-height: vw-pc(50);
+                        &:hover {
+                            box-shadow: 0 0 vw-pc(7) rgba(0,0,0,0.2);
+                        }
+                        i {
+                            font-size: vw-pc(15);
+                        }
+                    }
+                    &:nth-child(1) a i {
+                        font-size: vw-pc(20); 
+                        top: vw-pc(2);
+                    }
+                }
+            }
+    
+            .menu {
+                font-size: vw-pc(15); 
+            }
+        }
+    
+        .f_bot {
+            .f_list {
+                font-size: vw-pc(15); 
+                span {
+                    margin-right: vw-pc(30);
+                    &::after {
+                        height: vw-pc(15); 
+                        top: vw-pc(2); 
+                        left: vw-pc(15);
+                    }
+                }
+            }
+            .f_info {
+                font-size: vw-pc(12);
+                margin: vw-pc(20 0 30);
+            }
+            .copy span {
+                font-size: vw-pc(16); 
+            }
+        }
+    
+        .info {
+            padding-top: vw-pc(10);
+            font-size: vw-pc(12); 
+    
+            & > p {
+                margin-bottom: vw-pc(20);
+                padding-left: vw-pc(40);
+                &::before {
+                    width:vw-pc(30);
+                    height:vw-pc(25);
+                }
             }
         }
     }

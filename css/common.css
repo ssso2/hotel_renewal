@@ -1,7 +1,5 @@
 @charset "UTF-8";
 @import url(./reset.css);
-@import url(./mixin.css);
-@import url(./response.css);
 .mt-10 {
   margin-top: 10px;
 }
@@ -611,7 +609,281 @@ h2 {
 }
 
 @media screen and (max-width: 1500px) {
+  .mt-10 {
+    margin-top: 0.6666666667vw;
+  }
+  .mt-20 {
+    margin-top: 1.3333333333vw;
+  }
+  .mt-30 {
+    margin-top: 2vw;
+  }
+  .mt-40 {
+    margin-top: 2.6666666667vw;
+  }
+  .mt-50 {
+    margin-top: 3.3333333333vw;
+  }
+  .mb-10 {
+    margin-bottom: 0.6666666667vw;
+  }
+  .mb-20 {
+    margin-bottom: 1.3333333333vw;
+  }
+  .mb-30 {
+    margin-bottom: 2vw;
+  }
+  .mb-40 {
+    margin-bottom: 2.6666666667vw;
+  }
+  .mb-50 {
+    margin-bottom: 3.3333333333vw;
+  }
+  .pt-10 {
+    padding-top: 0.6666666667vw;
+  }
+  .pt-20 {
+    padding-top: 1.3333333333vw;
+  }
+  .pt-30 {
+    padding-top: 2vw;
+  }
+  .pt-40 {
+    padding-top: 2.6666666667vw;
+  }
+  .pt-50 {
+    padding-top: 3.3333333333vw;
+  }
+  .pb-10 {
+    padding-bottom: 0.6666666667vw;
+  }
+  .pb-20 {
+    padding-bottom: 1.3333333333vw;
+  }
+  .pb-30 {
+    padding-bottom: 2vw;
+  }
+  .pb-40 {
+    padding-bottom: 2.6666666667vw;
+  }
+  .pb-50 {
+    padding-bottom: 3.3333333333vw;
+  }
   .center {
     width: 90%;
+  }
+  .center.guide {
+    padding: 3.3333333333vw 0vw;
+  }
+  /* 3depth title 공통 */
+  .container {
+    margin-top: 5.3333333333vw;
+  }
+  .sub-title {
+    margin-bottom: 2vw;
+    padding: 3.3333333333vw 0.6666666667vw 1.3333333333vw;
+  }
+  h2 {
+    font-size: 1.4666666667vw;
+  }
+  .location > li {
+    margin-right: 2vw;
+  }
+  .location > li::after {
+    width: 0.3333333333vw;
+    height: 0.3333333333vw;
+    top: 0.3333333333vw;
+    right: -1vw;
+  }
+  .location > li > a {
+    font-size: 0.8666666667vw;
+  }
+  /* 3depth tab 공통 */
+  .depth3-tab-wrap {
+    /* tab */
+  }
+  .depth3-tab-wrap .tab {
+    margin-bottom: 2vw;
+  }
+  .depth3-tab-wrap .tab.on {
+    width: 94.6666666667vw;
+  }
+  .depth3-tab-wrap .tab > li {
+    line-height: 2.6666666667vw;
+  }
+  .swiper-slide {
+    font-size: 1.2vw;
+  }
+  .swiper {
+    height: 20vw;
+  }
+  .mySwiper2 {
+    height: 33.3333333333vw;
+  }
+  .mySwiper {
+    height: 13.3333333333vw;
+    padding: 0.6666666667vw 0vw;
+  }
+  .btn-wrap {
+    margin: 1.3333333333vw 0vw;
+  }
+  .btn-wrap.type1 {
+    gap: 1.3333333333vw;
+  }
+  .btn-wrap.type2 {
+    width: 13.3333333333vw;
+  }
+  .btn-wrap.type3 .align {
+    width: 13.3333333333vw;
+  }
+  .btn-wrap.type4 .align {
+    width: 13.3333333333vw;
+  }
+  .btn-wrap.type5 .align {
+    width: 20vw;
+  }
+  .btn-wrap.type5 .btn {
+    width: calc((100% - 1.3333333333vw) / 3);
+  }
+  .btn-wrap .btn {
+    width: calc((100% - 0.6666666667vw) / 2);
+    line-height: 2.6666666667vw;
+    border-radius: 0.2666666667vw;
+  }
+  .btn-wrap .btn.btn-04 {
+    margin-right: 0.6666666667vw;
+    padding: 0vw 1.3333333333vw;
+  }
+  .btn-wrap .btn.btn-05 {
+    padding: 0vw 1.3333333333vw;
+  }
+  .pagination {
+    margin-top: 1.3333333333vw;
+    height: 1.6666666667vw;
+  }
+  .pagination > a {
+    width: 1.6666666667vw;
+    height: 1.6666666667vw;
+    line-height: 1.6666666667vw;
+    margin: 0vw 0.1333333333vw;
+  }
+  .pagination span {
+    line-height: 1.6666666667vw;
+  }
+  .pagination .pre {
+    background-position: 0 -1.6666666667vw;
+  }
+  .pagination .next {
+    background-position: 0 -3.3333333333vw;
+  }
+  .pagination .end {
+    background-position: 0 -5vw;
+  }
+  /* 플로팅 메뉴 */
+  .floating-menu a {
+    width: 3.3333333333vw;
+    height: 3.3333333333vw;
+    line-height: 3.3333333333vw;
+  }
+  .floating-menu a:hover {
+    box-shadow: 0.1333333333vw 0.1333333333vw 0.3333333333vw rgb(82, 82, 82);
+  }
+  .floating-menu .menu {
+    right: 0.6666666667vw;
+    gap: 0.6666666667vw;
+  }
+  .floating-menu .top-btn {
+    right: -3.3333333333vw;
+    bottom: 2vw;
+  }
+  .floating-menu .top-btn.on {
+    right: 0.6666666667vw;
+  }
+  .desc {
+    margin: 2vw 0vw 0.6666666667vw;
+    font-size: 1.3333333333vw;
+  }
+  .rule li {
+    padding-left: 0.6666666667vw;
+  }
+  .rule li::after {
+    width: 0.6666666667vw;
+    height: 0.6666666667vw;
+  }
+  /* 레이어 팝업 */
+  .lypop .btn-wrap {
+    margin: 1.3333333333vw 0vw 0vw;
+  }
+  .lypop-wp {
+    width: 40vw;
+    border-radius: 8;
+  }
+  .lypop-wp.min {
+    width: 26.6666666667vw;
+  }
+  .lypop-wp.mid {
+    width: 53.3333333333vw;
+  }
+  .lypop-wp.big {
+    width: 60vw;
+  }
+  .lypop-wp.max {
+    width: 80vw;
+  }
+  .lypop-title {
+    height: 3.4666666667vw;
+  }
+  .lypop-title > strong {
+    font-size: 1.3333333333vw;
+    padding: 1vw 2vw;
+  }
+  .lypop-close {
+    top: 0.3333333333vw;
+    right: 0.6666666667vw;
+    width: 2.6666666667vw;
+    height: 2.6666666667vw;
+  }
+  .lypop-close::before {
+    width: 0.1333333333vw;
+    height: 1.2vw;
+  }
+  .lypop-close::after {
+    width: 0.1333333333vw;
+    height: 1.2vw;
+  }
+  .lypop-ct {
+    padding: 2vw;
+  }
+  .daterangepicker {
+    padding: 4.6666666667vw 10.6666666667vw;
+    width: 90%;
+  }
+  .daterangepicker.drop-up {
+    margin-top: -0.6666666667vw;
+  }
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 8.6666666667vw;
+  }
+  .daterangepicker .drp-calendar .calendar-table th, .daterangepicker .drp-calendar .calendar-table td {
+    font-size: 1.3333333333vw;
+  }
+  .daterangepicker .drp-calendar .calendar-table td {
+    width: 4vw;
+  }
+  .daterangepicker .drp-buttons {
+    padding-top: 1.3333333333vw;
+  }
+  .daterangepicker .drp-buttons .btn {
+    font-size: 1.2vw;
+  }
+  .daterangepicker .drp-selected {
+    margin-right: 2vw;
+    padding: 0.2666666667vw 0vw;
+    font-size: 1.3333333333vw;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .center {
+    width: 95%;
   }
 }
