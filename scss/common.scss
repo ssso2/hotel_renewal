@@ -70,7 +70,7 @@ body::-webkit-scrollbar-track {
     align-items: end; 
     justify-content: space-between;
     margin-bottom: 30px; 
-    padding: 100px 10px 20px;
+    padding: 50px 10px 20px;
     position: relative;
 
     &::after { 
@@ -124,9 +124,9 @@ body::-webkit-scrollbar-track {
                 border: 1px solid #777; 
                 border-left: 0;
                 border-bottom: 0; 
-                transform: rotate(45deg); 
                 position: absolute; 
-                top: 5px;
+                top: 50%;
+                transform: rotate(45deg) translateY(-50%);
                 right: -15px;
             }
     
@@ -148,11 +148,13 @@ body::-webkit-scrollbar-track {
 
 /* 3depth tab 공통 */
 .depth3-tab-wrap {
+    padding-top: 100px;
     /* tab */
     .tab {
         display: flex; 
         align-items: center;
         margin-bottom: 30px;
+        border-bottom: 1px solid #888;
 
         &.on {
             position: fixed;
@@ -163,20 +165,30 @@ body::-webkit-scrollbar-track {
         }
 
         & > li {
+            margin-bottom: -1px;
             width: calc(100%/7); 
             text-align: center;
+            font-size: 16px;
             line-height: 40px;
             border: 1px solid #ddd;
             border-right: 0;
+            border-bottom-color: transparent;
             background: #fff; 
             cursor: pointer;
+
+            & > a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
 
             &:last-child {
                 border-right: 1px solid #ddd;
             }
 
             &.on {
-                border-bottom: 1px solid transparent;
+                border: 1px solid #888;
+                border-bottom: 3px solid #fff;
                 font-weight: 700;
             }
 
@@ -202,66 +214,69 @@ body::-webkit-scrollbar-track {
 
 
 // 3depth 스와이퍼 슬라이드 갤러리
-.swiper {
-    width: 100%;
-    height: 100%;
+.gallery {
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }  
+    
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .swiper {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .mySwiper2 {
+        height: 500px;
+        width: 100%;
+    }
+    
+    .mySwiper {
+        height: 200px;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+    
+    .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+    }
+    
+    .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+    
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}  
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.swiper {
-    width: 100%;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.swiper-slide {
-    background-size: cover;
-    background-position: center;
-}
-
-.mySwiper2 {
-    height: 500px;
-    width: 100%;
-}
-
-.mySwiper {
-    height: 200px;
-    box-sizing: border-box;
-    padding: 10px 0;
-}
-
-.mySwiper .swiper-slide {
-    width: 25%;
-    height: 100%;
-    opacity: 0.4;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-    opacity: 1;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 
 // 버튼 스타일
@@ -641,29 +656,31 @@ body::-webkit-scrollbar-track {
     .sub-title {
         margin-bottom: vw-pc(30); 
         padding: vw-pc(50 10 20);
-    }
-    
-    h2 {
-        font-size: vw-pc(22); 
-    }
-    
-    .location {
-        & > li {
-            margin-right: vw-pc(30); 
-    
-            &::after {
-                width: vw-pc(5); 
-                height: vw-pc(5); 
-                top: vw-pc(5);
-                right: vw-pc(-15);
-            }
-    
-            & > a {
-                font-size: vw-pc(13);
-            }
+
+        h2 {
+            font-size: vw-pc(22); 
         }
-    
+        
+        .location {
+            & > li {
+                margin-right: vw-pc(30); 
+        
+                &::after {
+                    width: vw-pc(5); 
+                    height: vw-pc(5); 
+                    // top: vw-pc(5);
+                    right: vw-pc(-15);
+                }
+        
+                & > a {
+                    font-size: vw-pc(13);
+                }
+            }
+        
+        }
     }
+    
+
     
     /* 3depth tab 공통 */
     .depth3-tab-wrap {
@@ -677,6 +694,7 @@ body::-webkit-scrollbar-track {
     
             & > li {
                 line-height: vw-pc(40);
+                font-size: vw-pc(16);
             }
         }
 
@@ -684,24 +702,26 @@ body::-webkit-scrollbar-track {
     
     
     // 3depth 스와이퍼 슬라이드 갤러리
-    .swiper-slide {
-        font-size: vw-pc(18);
-    }  
+    .gallery {
+        .swiper-slide {
+            font-size: vw-pc(18);
+        }  
+    
+        .swiper {
+            height: vw-pc(300);
+        }
+        
+        .mySwiper2 {
+            height: vw-pc(500);
+        }
+        
+        .mySwiper {
+            height: vw-pc(200);
+            padding: vw-pc(10 0);
+        }
+    }
 
-    .swiper {
-        height: vw-pc(300);
-    }
     
-    .mySwiper2 {
-        height: vw-pc(500);
-    }
-    
-    .mySwiper {
-        height: vw-pc(200);
-        padding: vw-pc(10 0);
-    }
-    
-
     // 버튼 스타일
     .btn-wrap {
         margin: vw-pc(20 0);

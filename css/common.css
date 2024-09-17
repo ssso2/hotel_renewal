@@ -133,7 +133,7 @@ body::-webkit-scrollbar-track {
   align-items: end;
   justify-content: space-between;
   margin-bottom: 30px;
-  padding: 100px 10px 20px;
+  padding: 50px 10px 20px;
   position: relative;
 }
 .sub-title::after {
@@ -181,9 +181,9 @@ body::-webkit-scrollbar-track {
   border: 1px solid #777;
   border-left: 0;
   border-bottom: 0;
-  transform: rotate(45deg);
   position: absolute;
-  top: 5px;
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
   right: -15px;
 }
 .sub-title .location > li > a {
@@ -196,6 +196,7 @@ body::-webkit-scrollbar-track {
 
 /* 3depth tab 공통 */
 .depth3-tab-wrap {
+  padding-top: 100px;
   /* tab */
   /* tab-contents */
 }
@@ -203,6 +204,7 @@ body::-webkit-scrollbar-track {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  border-bottom: 1px solid #888;
 }
 .depth3-tab-wrap .tab.on {
   position: fixed;
@@ -212,19 +214,28 @@ body::-webkit-scrollbar-track {
   width: 1420px;
 }
 .depth3-tab-wrap .tab > li {
+  margin-bottom: -1px;
   width: 14.2857142857%;
   text-align: center;
+  font-size: 16px;
   line-height: 40px;
   border: 1px solid #ddd;
   border-right: 0;
+  border-bottom-color: transparent;
   background: #fff;
   cursor: pointer;
+}
+.depth3-tab-wrap .tab > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .depth3-tab-wrap .tab > li:last-child {
   border-right: 1px solid #ddd;
 }
 .depth3-tab-wrap .tab > li.on {
-  border-bottom: 1px solid transparent;
+  border: 1px solid #888;
+  border-bottom: 3px solid #fff;
   font-weight: 700;
 }
 .depth3-tab-wrap .tab > li:hover {
@@ -239,12 +250,11 @@ body::-webkit-scrollbar-track {
   display: block;
 }
 
-.swiper {
+.gallery .swiper {
   width: 100%;
   height: 100%;
 }
-
-.swiper-slide {
+.gallery .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -252,48 +262,40 @@ body::-webkit-scrollbar-track {
   justify-content: center;
   align-items: center;
 }
-
-.swiper-slide img {
+.gallery .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-.swiper {
+.gallery .swiper {
   width: 100%;
   height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
-
-.swiper-slide {
+.gallery .swiper-slide {
   background-size: cover;
   background-position: center;
 }
-
-.mySwiper2 {
+.gallery .mySwiper2 {
   height: 500px;
   width: 100%;
 }
-
-.mySwiper {
+.gallery .mySwiper {
   height: 200px;
   box-sizing: border-box;
   padding: 10px 0;
 }
-
-.mySwiper .swiper-slide {
+.gallery .mySwiper .swiper-slide {
   width: 25%;
   height: 100%;
   opacity: 0.4;
 }
-
-.mySwiper .swiper-slide-thumb-active {
+.gallery .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
 }
-
-.swiper-slide img {
+.gallery .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
@@ -686,19 +688,18 @@ body::-webkit-scrollbar-track {
     margin-bottom: 2vw;
     padding: 3.3333333333vw 0.6666666667vw 1.3333333333vw;
   }
-  h2 {
+  .sub-title h2 {
     font-size: 1.4666666667vw;
   }
-  .location > li {
+  .sub-title .location > li {
     margin-right: 2vw;
   }
-  .location > li::after {
+  .sub-title .location > li::after {
     width: 0.3333333333vw;
     height: 0.3333333333vw;
-    top: 0.3333333333vw;
     right: -1vw;
   }
-  .location > li > a {
+  .sub-title .location > li > a {
     font-size: 0.8666666667vw;
   }
   /* 3depth tab 공통 */
@@ -713,17 +714,18 @@ body::-webkit-scrollbar-track {
   }
   .depth3-tab-wrap .tab > li {
     line-height: 2.6666666667vw;
+    font-size: 1.0666666667vw;
   }
-  .swiper-slide {
+  .gallery .swiper-slide {
     font-size: 1.2vw;
   }
-  .swiper {
+  .gallery .swiper {
     height: 20vw;
   }
-  .mySwiper2 {
+  .gallery .mySwiper2 {
     height: 33.3333333333vw;
   }
-  .mySwiper {
+  .gallery .mySwiper {
     height: 13.3333333333vw;
     padding: 0.6666666667vw 0vw;
   }

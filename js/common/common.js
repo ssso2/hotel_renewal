@@ -63,6 +63,9 @@ var swiper2 = new Swiper(".mySwiper2", {
 
 
 
+
+
+
 // 플로팅 메뉴
 const topBtn = document.querySelector(".floating-menu > .top-btn");
 // top버튼은 스크롤 위치값이 1000 이상인 곳에서만 나타난다
