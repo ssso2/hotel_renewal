@@ -762,30 +762,30 @@ h2 {
     
     
     /* 플로팅 메뉴 */
-    .floating-menu {
-        a {
-            width: vw-pc(50);
-            height: vw-pc(50);
-            line-height: vw-pc(50);
+    // .floating-menu {
+    //     a {
+    //         width: vw-pc(50);
+    //         height: vw-pc(50);
+    //         line-height: vw-pc(50);
             
-            &:hover {
-                box-shadow: vw-pc(2 2 5) rgba(82,82,82,1);
-            }
-        }
+    //         &:hover {
+    //             box-shadow: vw-pc(2 2 5) rgba(82,82,82,1);
+    //         }
+    //     }
         
-        .menu {
-            right: vw-pc(10); 
-            gap: vw-pc(10);
-        }
+    //     .menu {
+    //         right: vw-pc(10); 
+    //         gap: vw-pc(10);
+    //     }
     
-        .top-btn {
-            right: vw-pc(-50); 
-            bottom: vw-pc(30); 
-            &.on {
-                right: vw-pc(10); 
-            }
-        }
-    }
+    //     .top-btn {
+    //         right: vw-pc(-50); 
+    //         bottom: vw-pc(30); 
+    //         &.on {
+    //             right: vw-pc(10); 
+    //         }
+    //     }
+    // }
     
     
     // 가이드

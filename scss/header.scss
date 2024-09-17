@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url(./common.css); 
 
+
 header {
     position: fixed; 
     top: -80px; 
@@ -343,12 +344,13 @@ header {
         }
         
     }
+    .gnb {
+        display: none;
+    }
+
     .m_wrap {
         display: block;
         width: 100%;
-    }
-    .gnb {
-        display: none;
     }
 }
 

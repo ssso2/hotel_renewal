@@ -301,11 +301,11 @@ header .logo > a > img {
   header .center > .btn-wrap {
     display: none;
   }
+  .gnb {
+    display: none;
+  }
   .m_wrap {
     display: block;
     width: 100%;
-  }
-  .gnb {
-    display: none;
   }
 }

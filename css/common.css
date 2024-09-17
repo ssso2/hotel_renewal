@@ -780,25 +780,6 @@ h2 {
     background-position: 0 -5vw;
   }
   /* 플로팅 메뉴 */
-  .floating-menu a {
-    width: 3.3333333333vw;
-    height: 3.3333333333vw;
-    line-height: 3.3333333333vw;
-  }
-  .floating-menu a:hover {
-    box-shadow: 0.1333333333vw 0.1333333333vw 0.3333333333vw rgb(82, 82, 82);
-  }
-  .floating-menu .menu {
-    right: 0.6666666667vw;
-    gap: 0.6666666667vw;
-  }
-  .floating-menu .top-btn {
-    right: -3.3333333333vw;
-    bottom: 2vw;
-  }
-  .floating-menu .top-btn.on {
-    right: 0.6666666667vw;
-  }
   .desc {
     margin: 2vw 0vw 0.6666666667vw;
     font-size: 1.3333333333vw;
