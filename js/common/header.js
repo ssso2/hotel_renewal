@@ -10,6 +10,7 @@ const depth1 = document.querySelectorAll(".m_gnb > li");
 gnb.addEventListener("mouseover",function(){
     gnbBg.classList.add("on");
 });
+
 gnb.addEventListener("mouseleave",function(){
     gnbBg.classList.remove("on");
 });

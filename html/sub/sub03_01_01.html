@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- 스와이퍼 CSS 연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- 폰트어썸 연결 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- AOS 스크롤 애니메이션 연결 -->
@@ -22,7 +24,7 @@
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/sub-list.css">
+    <link rel="stylesheet" href="../../../css/sub-list.css">
     <!-- 작성한 JS 연결 -->
     <script src="../../js/common/common.js" defer></script>
     <script src="../../js/common/header.js" defer></script>
@@ -185,141 +187,103 @@
     <div class="container">
         <div class="center">
             <div class="sub-title">
-                <div>
-                    <h2>참 미식으로의 초대</h2>
-                    <p class="sub-desc">정통을 뛰어넘는 하이엔드 스타일의 다이닝, 라운지에서 맛보는 스위트 트리트, 눈을 행복하게 하는 감각적인 패스트리까지</p>
-                </div>
+                <h2>라연</h2>
                 <ul class="location">
                     <li><a href="../index.html">홈</a></li>
-                    <li><a href="#self">다이닝</a></li>
+                    <li><a href="../sub/sub03.html">다이닝</a></li>
+                    <li><a href="#self">라연</a></li>
                 </ul>
             </div>
-
-            <div class="sub-list-wrap">
-                <ul class="sub-list">
-                    <li>
-                        <h3>한식</h3>
-                        <a href="../sub/sub03_01_01.html">
-                            <div class="img-wrap">
-                                <img src="../../img/sub/dining-1-01.jpg" alt="">
-                            </div>
-                            <div class="txt-wrap">
-                                <h4>라연</h4>
-                                <p class="desc">전통과 품격의 한식 레스토랑</p>
-                                <p class="position">위치 : 23층</p>
-                                <p class="tel">예약 및 문의 : 02.2230.3367</p>
-                            </div>
-                            <p class="view-more">자세히보기</p>
-                        </a>
-                    </li>
-                    <li>
-                        <h3>프렌치</h3>
-                        <a href="../sub/sub03_01_02.html">
-                            <div class="img-wrap">
-                                <img src="../../img/sub/dining-1-01.jpg" alt="">
-                            </div>
-                            <div class="txt-wrap">
-                                <h4>콘티넨탈</h4>
-                                <p class="desc">전통 프렌치 정찬과 와인</p>
-                                <p class="position">위치 : 23층</p>
-                                <p class="tel">예약 및 문의 : 02.2230.3369</p>
-                            </div>
-                            <p class="view-more">자세히보기</p>
-                        </a>
-                    </li>
-                    <li>
-                        <h3>일식</h3>
-                        <a href="../sub/sub03_01_03.html">
-                            <div class="img-wrap">
-                                <img src="../../img/sub/dining-1-01.jpg" alt="">
-                            </div>
-                            <div class="txt-wrap">
-                                <h4>아리아께</h4>
-                                <p class="desc">오감 만족의 정통 일식당</p>
-                                <p class="position">위치 : 2층</p>
-                                <p class="tel">예약 및 문의 : 02.2230.3356</p>
-                            </div>
-                            <p class="view-more">자세히보기</p>
-                        </a>
-                    </li>
-                    <li>
-                        <h3>중식</h3>
-                        <a href="../sub/sub03_01_04.html">
-                            <div class="img-wrap">
-                                <img src="../../img/sub/dining-1-01.jpg" alt="">
-                            </div>
-                            <div class="txt-wrap">
-                                <h4>팔선</h4>
-                                <p class="desc">중식 명가의 품격</p>
-                                <p class="position">위치 : 2층</p>
-                                <p class="tel">예약 및 문의 : 02.2230.3366</p>
-                            </div>
-                            <p class="view-more">자세히보기</p>
-                        </a>
-                    </li>
+            <div class="depth3-tab-wrap">
+                <ul class="tab">
+                    <li class="tab1">Tab-1</li>
+                    <li class="tab2">Tab-2</li>
+                    <li class="tab3">Tab-3</li>
+                    <li class="tab4">Tab-4</li>
+                    <li class="tab5">Tab-5</li>
+                    <li class="tab6">Tab-6</li>
+                    <li class="tab7">Tab-7</li>
                 </ul>
-                <ul class="sub-list">
-                    <li>
-                        <h3>올 데이 다이닝</h3>
-                        <a href="../sub/sub03_01_05.html">
-                            <div class="img-wrap">
-                                <img src="../../img/sub/dining-1-01.jpg" alt="">
+                <div class="tab-contents">
+                    <div class="tab-cont cont1 on">
+                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-01.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-02.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-03.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-04.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-05.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-06.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-07.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-08.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-09.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-10.jpg">
+                                </div>
                             </div>
-                            <div class="txt-wrap">
-                                <h4>더 파크뷰</h4>
-                                <p class="desc">자연을 닮은 레스토랑</p>
-                                <p class="position">위치 : 1층</p>
-                                <p class="tel">예약 및 문의 : 02.2230.3374</p>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-01.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-02.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-03.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-04.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-05.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-06.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-07.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-08.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-09.jpg">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../img/sub/dining-1-10.jpg">
+                                </div>
                             </div>
-                            <p class="view-more">자세히보기</p>
-                        </a>
-                    </li>
-                    <li>
-                        <h3>라운지 & 바</h3>
-                        <a href="../sub/sub03_02_01.html">
-                            <div class="img-wrap">
-                                <img src="../../img/sub/dining-1-01.jpg" alt="">
-                            </div>
-                            <div class="txt-wrap">
-                                <h4>더 라이브러리</h4>
-                                <p class="desc">신개념의 고품격 사교 공간</p>
-                                <p class="position">위치 : 1층</p>
-                                <p class="tel">예약 및 문의 : 02.2230.3388</p>
-                            </div>
-                            <p class="view-more">자세히보기</p>
-                        </a>
-                    </li>
-                    <li>
-                        <h3>라운지 & 바</h3>
-                        <a href="../sub/sub03_02_02.html">
-                            <div class="img-wrap">
-                                <img src="../../img/sub/dining-1-01.jpg" alt="">
-                            </div>
-                            <div class="txt-wrap">
-                                <h4>더 디스틸러스 라이브러리</h4>
-                                <p class="desc">진귀한 고숙성 위스키 경험</p>
-                                <p class="position">위치 : 1층</p>
-                                <p class="tel">예약 및 문의 : 02.2230.3389</p>
-                            </div>
-                            <p class="view-more">자세히보기</p>
-                        </a>
-                    </li>
-                    <li>
-                        <h3>베이커리</h3>
-                        <a href="../sub/sub03_03.html">
-                            <div class="img-wrap">
-                                <img src="../../img/sub/dining-1-01.jpg" alt="">
-                            </div>
-                            <div class="txt-wrap">
-                                <h4>패스트리 부티크</h4>
-                                <p class="desc">명품 베이커리의 진수</p>
-                                <p class="position">위치 : 1층</p>
-                                <p class="tel">예약 및 문의 : 02.2230.3377</p>
-                            </div>
-                            <p class="view-more">자세히보기</p>
-                        </a>
-                    </li>
-                </ul>
+                        </div>
+                    </div>
+                    <div class="tab-cont cont2">tab-contents-2</div>
+                    <div class="tab-cont cont3">tab-contents-3</div>
+                    <div class="tab-cont cont4">tab-contents-4</div>
+                    <div class="tab-cont cont5">tab-contents-5</div>
+                    <div class="tab-cont cont6">tab-contents-6</div>
+                    <div class="tab-cont cont7">tab-contents-7</div>
+                </div>
             </div>
         </div>
     </div>

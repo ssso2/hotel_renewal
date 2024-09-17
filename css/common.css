@@ -125,7 +125,7 @@ body::-webkit-scrollbar-track {
 
 /* 3depth title 공통 */
 .container {
-  margin-top: 80px;
+  margin: 80px 0 50px;
 }
 
 .sub-title {
@@ -133,44 +133,47 @@ body::-webkit-scrollbar-track {
   align-items: end;
   justify-content: space-between;
   margin-bottom: 30px;
-  padding: 50px 10px 20px;
+  padding: 100px 10px 20px;
   position: relative;
 }
 .sub-title::after {
   content: "";
   display: block;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: #ddd;
   position: absolute;
   left: 0;
   bottom: 0;
 }
-
-h2 {
-  font-size: 22px;
+.sub-title h2 {
+  font-size: 27px;
   font-weight: 700;
 }
-
-.location {
+.sub-title .sub-desc {
+  margin-top: 20px;
+  font-size: 17px;
+  color: #666;
+}
+.sub-title .location {
   display: flex;
   align-items: center;
 }
-.location > li {
+.sub-title .location > li {
   margin-right: 30px;
   position: relative;
 }
-.location > li:last-child {
+.sub-title .location > li:last-child {
   margin: 0;
 }
-.location > li:last-child::after {
+.sub-title .location > li:last-child::after {
   display: none;
 }
-.location > li:last-child > a {
+.sub-title .location > li:last-child > a {
   text-decoration: underline;
   text-underline-position: under;
 }
-.location > li::after {
+.sub-title .location > li::after {
   content: "";
   display: inline-block;
   width: 5px;
@@ -183,10 +186,10 @@ h2 {
   top: 5px;
   right: -15px;
 }
-.location > li > a {
+.sub-title .location > li > a {
   font-size: 13px;
 }
-.location > li > a:hover {
+.sub-title .location > li > a:hover {
   text-decoration: underline;
   text-underline-position: under;
 }
