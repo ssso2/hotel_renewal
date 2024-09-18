@@ -133,6 +133,21 @@ $(function () {
             console.log('New daterange selected:'+start.format('YYYY.MM.DD') + ' - ' + end.format('YYYY.MM.DD')+'(predefined range:'+label+')');
     });
 
+
+    // reservation-popup
+    // 예약의 .room-wrap 클릭하면 룸 수량, 인원수 입력하는 팝업이 나오고, 한 번 더 누르면 닫힌다
+    $(".reservation-wrap .room-wrap").on("click",function(){
+        if(!$(".reservation-popup").hasClass("on")){
+            $(".reservation-popup").addClass("on");
+        }
+        else {$(".reservation-popup").removeClass("on");}
+    });
+
+    // 예약 수량 팝업의 X 버튼 누르면 팝업 닫힘
+    $(".reservation-wrap .close-btn").on("click",function(){
+        $(".reservation-popup").removeClass("on");
+    });
+
 }); 
 
 
