@@ -6,16 +6,25 @@ $(function () {
         let scTop = window.scrollY;
         let dDayPosition = $(".d-day-wrap").offset().top;
         let dDayHeight = $(".d-day-wrap").outerHeight();
+        let scrollY = dDayPosition + dDayHeight - $(window).height();
 
         // 
-        if (scTop >= dDayPosition + dDayHeight - $(window).height()) {
+        if (scTop > scrollY) {
             $(".d-day-wrap").addClass("on");
         }
-        else{
+        else if(scTop <= 1260){
             $(".d-day-wrap").removeClass("on");
         }
 
+
+        console.log("scTop : ",scTop);
+        console.log("scrollY : ",scrollY);
+        
+
     });
 
-    
 });
+
+
+
+
