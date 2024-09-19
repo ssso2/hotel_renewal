@@ -1,0 +1,26 @@
+.room-content-wrap{
+    background-color: aquamarine;
+    .room-content-top{
+        width: 100%;
+        padding: 30px 20px;
+        display: flex;
+        .room-intro{
+            width: 80%;
+        }
+        .room-btn{
+            width: 20%;
+            background-color: #aaa;
+        }
+    }
+    .room-content-bottom{
+        width: 100%;
+        .room-info{
+            padding: 30px 20px;
+            background-color: #0ff;
+        }
+        .room-amenity{
+            display: flex;
+            background-color: #ff0;
+        }
+    }
+}

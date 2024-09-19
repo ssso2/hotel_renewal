@@ -1,0 +1,26 @@
+.room-content-wrap {
+  background-color: aquamarine;
+}
+.room-content-wrap .room-content-top {
+  width: 100%;
+  padding: 30px 20px;
+  display: flex;
+}
+.room-content-wrap .room-content-top .room-intro {
+  width: 80%;
+}
+.room-content-wrap .room-content-top .room-btn {
+  width: 20%;
+  background-color: #aaa;
+}
+.room-content-wrap .room-content-bottom {
+  width: 100%;
+}
+.room-content-wrap .room-content-bottom .room-info {
+  padding: 30px 20px;
+  background-color: #0ff;
+}
+.room-content-wrap .room-content-bottom .room-amenity {
+  display: flex;
+  background-color: #ff0;
+}
