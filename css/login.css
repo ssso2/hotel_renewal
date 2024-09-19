@@ -1,41 +1,61 @@
-div:first-child {
+#shilla-login #login-wrap {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  height: 400px;
+  width: 800px;
+  height: 600px;
   background-color: #faf8f4;
+  text-align: center;
 }
-
-div:last-child {
+#shilla-login #login-wrap h2 {
+  margin: 50px;
+  color: #333;
+}
+#shilla-login #login-wrap .hello {
+  margin: 50px;
+  font-size: 16px;
+}
+#shilla-login #login-wrap label {
+  display: inline-block;
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: right;
+}
+#shilla-login #login-wrap #id {
+  margin: 30px;
+  width: 400px;
+  padding: 10px;
+  font-size: 24px;
+}
+#shilla-login #login-wrap #pw {
+  margin: 30px;
+  width: 400px;
+  padding: 10px;
+  font-size: 24px;
+}
+#shilla-login #login-wrap .btn-login {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 100px;
-  background-color: #faf8f4;
-}
-
-.login-boxlabel {
-  position: relative;
-  margin-top: 100px;
-  margin-left: 50px;
-}
-.login-boxbutton {
-  width: 50px;
-}
-
-.login-box2label {
-  position: relative;
-  margin-top: 100px;
-  margin-left: 50px;
-}
-.login-box2button {
-  width: 50px;
-}
-
-.info-title {
+  bottom: 100px;
+  transform: translateX(-50%);
+  font-weight: 600;
   display: block;
+  width: 200px;
+  height: 50px;
+  background-color: #7a6c64;
+  color: #faf8f4;
+  font-size: 16px;
+}
+#shilla-login #login-wrap .link-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+}
+#shilla-login #login-wrap a {
+  color: #7a6c64;
+  font-size: 16px;
+  margin: 10px;
 }

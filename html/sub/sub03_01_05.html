@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신라호텔 : 다이닝 - 더 파크뷰</title>
+    <!-- 구글 웹폰트 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- 스와이퍼 CSS 연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- 폰트어썸 연결 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS 스크롤 애니메이션 연결 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 제이쿼리 연결 -->
+    <!-- <script src="../js/common/jquery-3.7.1.min.js"></script> -->
+    <script src="../js/common/jquery-ui.min.js"></script>
+    <!-- 스와이퍼 JS 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <!-- 작성한 css 연결-->
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../../css/sub-list.css">
+    <link rel="stylesheet" href="../../../css/sub-detail.css">
+    <!-- 작성한 JS 연결 -->
+    <script src="../../js/common/common.js" defer></script>
+    <script src="../../js/common/header.js" defer></script>
+</head>
+<body>
+    <header class="active">
+        <div class="gnbbg"></div>
+        <div class="center">
+            <h1 class="logo">
+                <a href="#">
+                    <img src="../../img/common/logo.png" alt="">
+                </a>
+            </h1>
+            <ul class="gnb">
+                <li>
+                    <a href="../../html/sub/sub01_01.html">스페셜 오퍼</a>
+                    <ul class="depth2">
+                        <li><a href="../../html/sub/sub01_01.html">객실패키지</a></li>
+                        <li><a href="../../html/sub/sub01_02.html">이벤트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/sub/sub02.html">객실</a>
+                    <ul class="depth2">
+                        <li><a href="../html/sub/sub02_01_01.html">스탠다드</a></li>
+                        <li><a href="../html/sub/sub02_02_01.html">이그제큐티브</a></li>
+                        <li><a href="../html/sub/sub02_03_01.html">스위트</a></li>
+                        <li><a href="../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
+                        <li><a href="../html/sub/sub02.html">전체 객실 보기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../../html/sub/sub03.html">다이닝</a>
+                    <ul class="depth2">
+                        <li><a href="../../html/sub/sub03_01_01.html">레스토랑</a></li>
+                        <li><a href="../../html/sub/sub03_02_01.html">라운지 & 바</a></li>
+                        <li><a href="../../html/sub/sub03_03.html">베이커리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../../html/sub/sub04.html">라이프스타일</a>
+                    <ul class="depth2">
+                        <li><a href="../../html/sub/sub04_01_01.html">야외수영장</a></li>
+                        <li><a href="../../html/sub/sub04_02_01.html">피트니스</a></li>
+                        <li><a href="../../html/sub/sub04_03.html">산책로</a></li>
+                        <li><a href="../../html/sub/sub04_04.html">조깅코스</a></li>
+                        <li><a href="../../html/sub/sub04_05_01.html">쇼핑</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../../html/sub/sub05.html">웨딩 & 연회</a>
+                    <ul class="depth2">
+                        <li><a href="../../html/sub/sub05_01_01.html">웨딩</a></li>
+                        <li><a href="../../html/sub/sub05_02_01.html">기업연회</a></li>
+                        <li><a href="../../html/sub/sub05_03_01.html">가족연회</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../../html/sub/sub06_01.html">고객센터</a>
+                    <ul class="depth2">
+                        <li><a href="../../html/sub/sub06_01.html">연락처</a></li>
+                        <li><a href="../../html/sub/sub06_02.html">FAQ</a></li>
+                        <li><a href="../../html/sub/sub06_03.html">문의하기</a></li>
+                        <li><a href="../../html/sub/sub06_04.html">오시는길</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- 비로그인시 -->
+            <div class="btn-wrap">
+                <a href="../../html/sub/join.html" class="join-btn">회원가입</a>
+                <a href="../../html/sub/login.html" class="login-btn">로그인</a>
+            </div>
+            <!-- 로그인시 -->
+            <div class="btn-wrap login">
+                <p>손주혜<span>님</span></p>
+                <a href="#" class="logout-btn">로그아웃</a>
+            </div>
+            <!-- 모바일 햄버거 버튼 -->
+            <div class="m_btn">
+                <div class="menu">
+                    <span class="line one"></span>
+                    <span class="line two"></span>
+                    <span class="line three"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 모바일 메뉴 -->
+    <div class="m_wrap">
+        <div class="m_top">
+            <!-- 비로그인시 -->
+            <div class="btn-wrap">
+                <a href="../../html/sub/join.html" class="join-btn">회원가입</a>
+                <a href="../../html/sub/login.html" class="login-btn">로그인</a>
+            </div>
+            <!-- 로그인시 -->
+            <div class="btn-wrap login">
+                <p>손주혜<span>님</span></p>
+                <a href="#" class="logout-btn">로그아웃</a>
+            </div>
+        </div>
+        <ul class="m_gnb">
+            <li>
+                <a href="#self">스페셜 오퍼</a>
+                <ul class="m_sub">
+                    <li><a href="../html/sub/sub01_01.html">객실패키지</a></li>
+                    <li><a href="../html/sub/sub01_02.html">이벤트</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#self">객실</a>
+                <ul class="m_sub">
+                    <li><a href="../html/sub/sub02_01_01.html">스탠다드</a></li>
+                    <li><a href="../html/sub/sub02_02_01.html">이그제큐티브</a></li>
+                    <li><a href="../html/sub/sub02_03_01.html">스위트</a></li>
+                    <li><a href="../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
+                    <li><a href="../html/sub/sub02.html">전체 객실 보기</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#self">다이닝</a>
+                <ul class="m_sub">
+                    <li><a href="../html/sub/sub03_01_01.html">레스토랑</a></li>
+                    <li><a href="../html/sub/sub03_02_01.html">라운지 & 바</a></li>
+                    <li><a href="../html/sub/sub03_03.html">베이커리</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#self">라이프스타일</a>
+                <ul class="m_sub">
+                    <li><a href="../html/sub/sub04_01_01.html">야외수영장</a></li>
+                    <li><a href="../html/sub/sub04_02_01.html">피트니스</a></li>
+                    <li><a href="../html/sub/sub04_03.html">산책로</a></li>
+                    <li><a href="../html/sub/sub04_04.html">조깅코스</a></li>
+                    <li><a href="../html/sub/sub04_05_01.html">쇼핑</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#self">웨딩 & 연회</a>
+                <ul class="m_sub">
+                    <li><a href="../html/sub/sub05_01_01.html">웨딩</a></li>
+                    <li><a href="../html/sub/sub05_02_01.html">기업연회</a></li>
+                    <li><a href="../html/sub/sub05_03_01.html">가족연회</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#self">고객센터</a>
+                <ul class="m_sub">
+                    <li><a href="../html/sub/sub06_01.html">연락처</a></li>
+                    <li><a href="../html/sub/sub06_02.html">FAQ</a></li>
+                    <li><a href="../html/sub/sub06_03.html">문의하기</a></li>
+                    <li><a href="../html/sub/sub06_04.html">오시는길</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- 페이지 영역 -->
+    <div class="container">
+        <div class="center">
+            <div class="depth3-tab-wrap">
+                <ul class="tab">
+                    <li class="tab1"><a href="../sub/sub03_01_01.html">라연</a></li>
+                    <li class="tab2"><a href="../sub/sub03_01_02.html">콘티넨탈</a></li>
+                    <li class="tab3"><a href="../sub/sub03_01_03.html">아리아께</a></li>
+                    <li class="tab4"><a href="../sub/sub03_01_04.html">팔선</a></li>
+                    <li class="tab5 on"><a href="../sub/sub03_01_05.html">더 파크뷰</a></li>
+                </ul>
+                <div class="tab-contents">
+                    <div class="tab-cont cont1">
+                        <div class="sub-title">
+                            <h2>라연</h2>
+                            <ul class="location">
+                                <li><a href="../index.html">홈</a></li>
+                                <li><a href="../sub/sub03.html">다이닝</a></li>
+                                <li><a href="#self">라연</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-cont cont2">
+                        <div class="sub-title">
+                            <h2>콘티넨탈</h2>
+                            <ul class="location">
+                                <li><a href="../index.html">홈</a></li>
+                                <li><a href="../sub/sub03.html">다이닝</a></li>
+                                <li><a href="#self">콘티넨탈</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-cont cont3">
+                        <div class="sub-title">
+                            <h2>아리아께</h2>
+                            <ul class="location">
+                                <li><a href="../index.html">홈</a></li>
+                                <li><a href="../sub/sub03.html">다이닝</a></li>
+                                <li><a href="#self">아리아께</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-cont cont4">
+                        <div class="sub-title">
+                            <h2>팔선</h2>
+                            <ul class="location">
+                                <li><a href="../index.html">홈</a></li>
+                                <li><a href="../sub/sub03.html">다이닝</a></li>
+                                <li><a href="#self">팔선</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-cont cont5 on">
+                        <div class="sub-title">
+                            <h2>더 파크뷰</h2>
+                            <ul class="location">
+                                <li><a href="../index.html">홈</a></li>
+                                <li><a href="../sub/sub03.html">다이닝</a></li>
+                                <li><a href="#self">더 파크뷰</a></li>
+                            </ul>
+                        </div>
+                        <div class="gallery">
+                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../../img/sub/dining-5-01.jpg">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../../img/sub/dining-5-02.jpg">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../../img/sub/dining-5-03.jpg">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../../img/sub/dining-5-04.jpg">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <div thumbsSlider="" class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../../img/sub/dining-5-01.jpg">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../../img/sub/dining-5-02.jpg">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../../img/sub/dining-5-03.jpg">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../../img/sub/dining-5-04.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="context">
+                            <div class="Introduction">
+                                <h3>자연을 닮은 레스토랑 <strong>더 파크뷰</strong></h3>
+                                <p class="txt">
+                                    원목과 대리석의 자연 친화적 인테리어와 남산의 녹음이 어우러진 올 데이 다이닝 공간입니다. 라이브 키친에서 신선한 식재료로 즉석에서 조리한 음식을 맛볼 수 있습니다.
+                                </p>
+                                <strong>운영시간 안내</strong>
+                                <ul class="time-info"> 
+                                    <li>
+                                        <div class="time">아침 뷔페</div>
+                                        <div class="info">
+                                            
+                                        </div>
+                                    </li>
+                                </ul>
+                                <strong>운영시간 안내</strong>
+                                <p class="txt small">
+                                    콘티넨탈은 서울의 전경과 함 께 프렌치 정찬을 즐길 수 있는 프렌치 레스토랑입니다.<br>
+                                    국내 및 세계 각국에서 공수한 건강하고 신선한 제철 식자재 및 셰프들의 끊임없는 연구를 기반으로 현대적이고도 독창적으로 구현한 정통 프렌치를 선보입니다.<br>
+                                    세계적인 정상급 와인부터 희소한 와인까지 500여종의 다채로운 셀렉션을 보유한 와인의 메카로도 유명합니다.
+                                </p>
+                            </div>
+                            <ul class="info">
+                                <li class="list">
+                                    <h4>위치</h4>
+                                    <p class="txt">서울신라호텔 1층</p>
+                                </li>
+                                <li class="list">
+                                    <h4>예약 및 문의</h4>
+                                    <p class="txt">Tel&#41; 02-2230-3374</p>
+                                </li>
+                                <li class="list">
+                                    <h4>좌석수</h4>
+                                    <p class="txt">
+                                        총 36석<br>
+                                        룸 1실 (최대 8명 수용 가능하며, 이용 시 별도 요금이 부과됩니다.)
+                                    </p>
+                                </li>
+                            </ul>
+                            <div class="guide">
+                                <div class="list">
+                                    <h4>예약 안내</h4>
+                                    <p class="txt">
+                                        예약 접수 시작일은 '1개월 전 1일' 입니다.<br>
+                                        예&#41; 6월 예약 : 5월 1일 9시부터 가능
+                                    </p>
+                                </div>
+                                <div class="list">
+                                    <h4>공지사항</h4>
+                                    <div class="txt-wrap">
+                                        <p class="txt">
+                                             2024년 7월 12일부로 예약 보증금이 변경되었습니다. <br>
+                                            노쇼에 따른 고객 불편을 방지하고자 보증금 사전결제를 진행하고 있으며 신라리워즈 회원 가입 및 로그인 후 편리하게 온라인 예약 서비스를 이용하시기 바랍니다.
+                                        </p>
+                                        <ul class="txt">
+                                            [예약 보증금 안내]
+                                            <li>예약 시 인원 별 1만원의 예약금이 발생합니다. </li>
+                                        </ul>
+                                        <ul class="txt">
+                                            [예약 취소 / 변경 및 노쇼 안내]
+                                            <li>예약일 2일 전까지는 예약 보증금의 100%가 환불됩니다.</li>
+                                            <li>예약일 1일 전까지 취소 시 예약 보증금의 50%가 환불되며 예약일 당일 취소 또는 노쇼 시 예약 보증금은 환불되지 않습니다.</li>
+                                            <li>예약 변경을 원하실 경우, 기존 예약 취소 후 신규 예약을 진행해 주시기 바랍니다.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="center">
+            <div class="f_menu">
+                <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo">
+                <div>SNS</div>
+                <ul class="sns">
+                    <li><a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a></li>
+                </ul>
+                <div>MENU</div>
+                <ul class="menu">
+                    <li><a href="#self">호텔소개</a></li>
+                    <li><a href="#self">호텔정보</a></li>
+                    <li><a href="#self">층별안내도</a></li>
+                    <li><a href="#self">오시는길</a></li>
+                </ul>
+            </div>
+            <div class="f_bot">
+                <div class="f_list">
+                    <span><a href="#self">이용약관</a></span>
+                    <span><a href="#self">개인정보 처리방침</a></span>
+                    <span><a href="#self">사업자정보확인</a></span>
+                </div>
+                <ul class="f_info">
+                    <li>법인명: (주) 호텔신라</li>
+                    <li>대표자: 이부진 사업자 등록번호: 203.81.43363</li>
+                    <li>통신판매신고번호: 중구00272호</li>
+                    <li>호스팅서비스제공자: 삼성SDS(주)</li>
+                    <li>객실예약 shilla.reserve@samsung.com</li>
+                    <li>주소: 서울특별시 중구 동호로 249</li>
+                    <li>TEL: 02-2233-3131</li>
+                    <li>FAX. 02-2230-3769</li>
+                </ul>
+                <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
+            </div>
+            <div class="info">
+                <p>2024 Forbes Travel Guide<br>국내 최초 6년 연속 5성 호텔 수상</p>
+                <p>한국 능률협회컨설팅 선정 <br>브랜드파워 호텔 부문 7년 연속 1위</p>
+                <p>2024 한국생산성본부 선정<br>국가브랜드경쟁력지수 호텔 부문 1위</p>
+                <p>한국표준협회 평가 <br>실내공기질 인증 획득</p>
+                <p>한국환경산업기술원 평가 <br>친환경 호텔 인증 획득</p>
+            </div>
+        </div>
+    </footer>
+
+    <article class="floating-menu">
+        <div class="menu">
+            <a href="#" class="circle-btn" title="예약 페이지로 이동">예약</a>
+            <a href="#" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
+        </div>
+        <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
+    </article>
+</body>
+</html>
