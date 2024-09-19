@@ -1,0 +1,302 @@
+.pkg-header {
+  width: 1420px;
+  height: 700px;
+}
+.pkg-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pkg-logo {
+  margin-top: 50px;
+  text-align: center;
+  background-color: #aff;
+  position: relative;
+}
+.pkg-logo img {
+  display: inline-block;
+  width: auto;
+  height: 120px;
+  align-items: center;
+}
+
+.pkg-logo::after {
+  content: "";
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: #ddd;
+  width: 1420px;
+  height: 2px;
+}
+
+.pkg-detail {
+  margin-top: 100px;
+  width: 100%;
+  height: 900px;
+  background-color: #faf;
+}
+
+.detail-con {
+  height: 800px;
+  background-color: #aaf;
+}
+
+.detail-list {
+  width: 100%;
+  background-color: #ffa;
+}
+.detail-list .list1 {
+  width: 100%;
+  background-color: #aaa;
+  padding: 15px 0 15px 50px;
+  display: flex;
+}
+.detail-list .list1 span {
+  font-size: 18px;
+  width: 360px;
+  height: 100px;
+  background-color: #d93d3d;
+  display: inline-block;
+}
+.detail-list .list1 span img {
+  display: block;
+  width: 60px;
+  left: 10px;
+  padding: 0 0 5px 15px;
+}
+.detail-list .list1 .list-item {
+  width: 100%;
+  background-color: #aff;
+  display: inline-block;
+  margin: 0 100px 0 100px;
+  font-size: 14px;
+  position: relative;
+}
+.detail-list .list1 .list-item .offer-room {
+  position: absolute;
+  width: 180px;
+  height: 40px;
+  background: #1f453a;
+  color: #fff;
+  top: 25px;
+  right: 50px;
+  text-align: center;
+  line-height: 3;
+}
+
+.detail-list::after {
+  content: "";
+  width: 1420px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+}
+
+.section-title {
+  margin-top: 100px;
+}
+
+.pkg-description-wrap {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.pkg-description-wrap .description1 {
+  width: 450px;
+  height: 500px;
+  background-color: #7a6c64;
+  position: relative;
+}
+.pkg-description-wrap .description1 img {
+  width: 100%;
+  height: 330px;
+}
+.pkg-description-wrap .description1 div {
+  position: absolute;
+  bottom: 0;
+  padding: 20px 0 20px 20px;
+  color: #fff;
+}
+.pkg-description-wrap .description1 div:first-of-type {
+  top: 330px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.pkg-description-wrap .description1 div:last-of-type {
+  top: 360px;
+  line-height: 1.5;
+}
+.pkg-description-wrap .description2,
+.pkg-description-wrap .description3,
+.pkg-description-wrap .description4 {
+  position: relative;
+  display: block;
+  width: 270px;
+  height: 500px;
+  background-color: #ffa;
+}
+.pkg-description-wrap .description2 .description-text,
+.pkg-description-wrap .description3 .description-text,
+.pkg-description-wrap .description4 .description-text {
+  width: 270px;
+  height: 100px;
+  background-color: #fff;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  font-weight: 700;
+  line-height: 4.5;
+}
+.pkg-description-wrap .description2 .description-text:before,
+.pkg-description-wrap .description3 .description-text:before,
+.pkg-description-wrap .description4 .description-text:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #7a6c64;
+  top: 0;
+  left: 0;
+}
+.pkg-description-wrap .description2 img,
+.pkg-description-wrap .description3 img,
+.pkg-description-wrap .description4 img {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.pkg-fitness {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  background-color: #aff;
+}
+.pkg-fitness::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #7a6c64;
+  bottom: 0;
+  left: 0;
+}
+
+.pkg-info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 50px 0 50px 0;
+  padding: 20px 0 30px 20px;
+  background-color: #faf;
+}
+.pkg-info .info-text {
+  font-size: 12px;
+}
+.pkg-info::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #7a6c64;
+  bottom: 0;
+  left: 0;
+}
+
+.other-pkg {
+  width: 100%;
+  height: 500px;
+  background-color: #d93d3d;
+  margin-bottom: 100px;
+}
+.other-pkg .other-title {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.other-list {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.other-item img {
+  width: 450px;
+  height: 250px;
+  display: block;
+}
+.other-item dt {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 20px 0 10px 0;
+}
+.other-item dd {
+  padding: 20px 0 20px 0;
+}
+.other-item dd:first-of-type {
+  position: relative;
+  color: #ddd;
+}
+.other-item dd:first-of-type::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  bottom: 0;
+  left: 0;
+}
+.other-item .other-pay {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.d-day-wrap {
+  margin: 120px auto 0;
+  position: relative;
+  bottom: 0;
+  width: 1420px;
+  height: 100px;
+  background-color: #7a6c64;
+  border-radius: 15px;
+  padding: 20px 0 30px 50px;
+  color: #fff;
+}
+.d-day-wrap.on {
+  position: fixed;
+  bottom: 0;
+  z-index: 50;
+}
+.d-day-wrap.on .d-day {
+  width: 100%;
+}
+.d-day-wrap .d-day {
+  line-height: 4;
+  position: relative;
+}
+.d-day-wrap .d-day .d-day-reservation {
+  position: absolute;
+  width: 350px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: #fff;
+  top: 0;
+  left: 1000px;
+  color: #000;
+  text-align: center;
+  line-height: 4;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: #7a6c64;
+}

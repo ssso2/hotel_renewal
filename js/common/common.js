@@ -60,3 +60,28 @@ var swiper2 = new Swiper(".mySwiper2", {
       swiper: swiper,
     },
 });
+
+
+// 레이어 팝업
+$(function () {
+    $('.lypop_close').on('click', function () {
+        $('.lypop').hide();
+    });
+
+    $('[data-lybtn]').each(function() {
+        var lypop = $(this).attr('data-lybtn'); 
+        $(this).click(function(){            
+            $('.lypop').hide();
+            $('[data-lyOpen ='+lypop+']').show().focus();
+        });   
+        $('[data-lyClose]').click(function(){
+            var lypopClose = $(this).attr('data-lyClose'); 
+            $('[data-lyOpen ='+lypop+']').hide();
+            $('[data-lybtn ='+lypopClose+']').focus();
+        });
+    });
+
+    function newWinpop() {
+        window.open("UI_grid.html", "newWinpop", "width=900, height=600, status=no,toolbar=no,scrollbars=no");
+    }
+}); 

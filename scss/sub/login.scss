@@ -1,0 +1,41 @@
+div:first-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-color: #faf8f4;
+}
+div:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 100px;
+    background-color: #faf8f4;
+}
+.login-box {
+    &label {
+        position: relative;
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+    &button {
+        width: 50px;
+    }
+}
+.login-box2 {
+    &label {
+        position: relative;
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+    &button {
+        width: 50px;
+    }
+}
+.info-title {
+    display: block;
+}

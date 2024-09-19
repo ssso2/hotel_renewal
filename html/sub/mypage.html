@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- 작성한 css 연결-->
         <link rel="stylesheet" href="../../css/header.css" />
-        <link rel="stylesheet" href="../../css/#.css" />
+        <link rel="stylesheet" href="../../css/mypage.css" />
         <!-- 작성자 : SSERA -->
         <!-- 제이쿼리 연결 -->
         <script src="../../js/common/jquery-ui.min.js"></script>
@@ -29,9 +29,20 @@
     </head>
     <body>
         <div class="side-menu">
-            <a href="../sub/mypage.html">개인정보 변경</a>
-            <a href="../sub/reservation.html">예약확인/취소</a>
-            <a href="#">내 문의내역 확인</a>
+            <div class="mypage"><a href="../sub/mypage.html">개인정보 변경</a></div>
+            <div class="reservate"><a href="../sub/reservation.html">예약확인/취소</a></div>
+            <div class="inquiry"><a href="../sub/inquiry.html">내 문의내역 확인</a></div>
+        </div>
+        <div class="mypage-info">
+            <label class="my-info">이름<input type="text" id="id" /></label>
+            <label class="my-info">생년월일<input type="text" id="birth" /></label>
+            <label class="my-info">연락처<input type="text" id="contact" /></label>
+            <label class="my-info">주소<input type="text" id="address" /></label>
+            <label class="my-info">이메일<input type="text" id="mail" /></label>
+            <label class="my-info">아이디<input type="text" id="id" /></label>
+            <label class="my-info">패스워드<input type="text" id="pw" /></label>
+            <label class="my-info">패스워드 확인<input type="text" id="pwchk" /></label>
+            <input type="button" id="submit" value="수정완료" />
         </div>
     </body>
 </html>

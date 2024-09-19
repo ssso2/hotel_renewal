@@ -15,6 +15,11 @@
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/common.css">
   <link rel="stylesheet" href="../../css/sub01_01.css">
+  <!-- 제이쿼리 css 연결 -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+  <!-- 제이쿼리 연결 -->
+  <script src="../../js/common/jquery-3.7.1.min.js"></script>
+  <script src="../../js/common/jquery-ui.min.js"></script>
   <!-- 스와이퍼 JS 연결 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <!-- AOS 스크롤 애니메이션 연결 -->
@@ -22,6 +27,7 @@
   <!-- 작성한 JS 연결 -->
   <script src="../../js/common/header.js" defer></script>
   <script src="../../js/common/common.js" defer></script>
+  <script src="../../js/sub/sub01_01.js" defer></script>
 </head>
 
 <body>
@@ -108,297 +114,1026 @@
           <li><a href="">객실패키지</a></li>
         </ul>
       </div>
-    </div>
-    <!-- 추천상품 -->
-    <div class="pkg-wrapper">
-      <div class="pkg-rec">
-        <div class="rec-btn left">left</div>
-        <div class="rec-btn right">right</div>
-        <div class="rec-wrapper">
-          <div class="rec-section">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="/img/sub/offerPrivate.jpg" alt="">
-              </div>
-              <div class="txt-wrap">
-                <h2 class="rec-inner">Your First Shilla</h2>
-                <p class="rec-inner">2024-07-22 ~ 2024-09-30</p>
-              </div>
-              <span class="rec-page"> 01 | 03 </span>
-            </a>
+      <!--추천상품 -->
+      <div class="pkg-wrapper">
+        <div class="center">
+          <div class="rec-wrapper">
+            <div class="rec-section">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="/img/sub/offerMain1.jpg" alt="">
+                </div>
+                <div class="txt-wrap">
+                  <h2 class="rec-inner">Your First Shilla</h2>
+                  <p class="rec-inner">2024-07-22 ~ 2024-09-30</p>
+                </div>
+                <!-- <span class="rec-page"> 01 | 03 </span> -->
+              </a>
+            </div>
+            <div class="rec-section">
+              <a href="../../html/sub/sub01_01_01.html">
+                <div class="img-wrap">
+                  <img src="/img/sub/offerMain2.jpg" alt="">
+                </div>
+                <div class="txt-wrap">
+                  <h2 class="inner-text">Private Moment at Urban Cabana</h2>
+                  <p class="inner-text"> 2024-09-01 ~ 2024-10-31</p>
+                </div>
+                <!-- <span class="rec-page"> 01 | 03 </span> -->
+              </a>
+            </div>
+            <div class="rec-section">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="/img/sub/offerMain3.jpg" alt="">
+                </div>
+                <div class="txt-wrap">
+                  <h2 class="rec-inner">Sweet Little Chef</h2>
+                  <p class="rec-inner">2024-08-19 ~ 2024-10-26</p>
+                </div>
+                <!-- <span class="rec-page"> 01 | 03 </span> -->
+              </a>
+            </div>
+            <!-- <button class="rec-btn left swiper-button-prev">left</button>
+            <button class="rec-btn right swiper-button-next">right</button> -->
           </div>
-          <div class="rec-section">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="/img/sub/offerMemories.jpg" alt="">
+          <!-- 필터박스 -->
+          <div class="pkg-filter-box-wrapper">
+            <div class="pkg-filter-box">
+              <div class="pkg-datepicker-box">
+                <p>기간조회</p>
+                <span class="pkg-date">
+                  <input type="text" id="datepicker" class="pkg-datepicker">
+                </span>
               </div>
-              <div class="txt-wrap">
-                <h2 class="inner-text">Private Moment at Urban Cabana</h2>
-                <p class="inner-text"> 2024-09-01 ~ 2024-10-31</p>
+              <div class="pkg-filter-sort">
+                <p>유형구분</p>
+                <div class="dropdown type">
+                  <div class="typebox" data-type="all">
+                    전체
+                  </div>
+                  <ul class="dropdown-item-type">
+                    <li class="filter-type" data-type="all">전체</li>
+                    <li class="filter-type" data-type="couple">커플</li>
+                    <li class="filter-type" data-type="familly">패밀리</li>
+                    <li class="filter-type" data-type="friends">친구</li>
+                    <li class="filter-type" data-type="promotion">프로모션</li>
+                  </ul>
+                </div>
               </div>
-              <span class="rec-page"> 01 | 03 </span>
-            </a>
+              <div class="pkg-filter-keyword">
+                <div class="keword-wrap">
+                  <p>키워드</p>
+                  <ul>
+                    <li class="check"> <input type="checkbox" id="check1"><label for="check1">조식</label></li>
+                    <li class="check"> <input type="checkbox" id="check2"><label for="check2">라운지혜택</label></li>
+                    <li class="check"> <input type="checkbox" id="check3"><label for="check3">기념일</label></li>
+                    <li class="check"> <input type="checkbox" id="check4"><label for="check4">야외수영장</label></li>
+                    <li class="check"> <input type="checkbox" id="check5"><label for="check5">성인 3인</label></li>
+                    <li class="check"> <input type="checkbox" id="check6"><label for="check6">2박 이상</label></li>
+                    <li class="check"> <input type="checkbox" id="check7"><label for="check7">키즈</label></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="pkg-btnbox">
+                <button class="pkg-filter-resetbtn">초기화</button>
+                <button class="pkg-filter-searchbtn">검색</button>
+              </div>
+            </div>
           </div>
-          <div class="rec-section">
-            <a href="#">
-              <div class="img-wrap">
-                <img src="/img/sub/offerKids.jpg" alt="">
+          <!--정렬-->
+          <div class="pkg-section">
+            <div class="pkg-total">
+              <span>총</span>
+              <span class="totalnum"></span><span>개 상품</span>
+            </div>
+            <div class="dropdown sort">
+              <div class="sortbox">
+                최신순
               </div>
-              <div class="txt-wrap">
-                <h2 class="rec-inner">Sweet Little Chef</h2>
-                <p class="rec-inner">2024-08-19 ~ 2024-10-26</p>
-              </div>
-              <span class="rec-page"> 01 | 03 </span>
-            </a>
+              <ul class="dropdown-item-sort">
+                <li class="new">최신순</li>
+                <li class="price-desc">높은가격순</li>
+                <li class="price-asc">낮은가격순</li>
+              </ul>
+            </div>
           </div>
+          <!-- 패키지 리스트 -->
+          <div class="pkg-list-box">
+            <ul class="pkg-all" data-type="all">
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBallet.jpg" alt=""></dd>
+                    <dd class="list-keword pmt"><span>프로모션</span></dd>
+                    <dt>Golden Holiday Stay : Ballet And Flamenco</dt>
+                    <dd>캔들라이트 발레&플라멩코 콘서트 (2인) + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-14 ~ 2024-09-17</div>
+                <div class="pkg-pay">540,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMoment.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>기념일</span></dd>
+                    <dt>Everlasting Moment</dt>
+                    <dd>핑크 로즈 데커레이션 + 웰컴 샴페인 + 웨딩베어 인형 + 인 룸 다이닝 디너 or [프리미어 스위트 투숙 시] 콘티넨탈 디너 코스 2인 + 인 룸 다이닝 브런치</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-04-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">1,400,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerNeon.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Neon Brush Experience</dt>
+                    <dd>네온브러쉬 익스피리언스(어번 루프탑) + 진토닉 2잔 + 어번 아일랜드 All Day 입장 + F&B크레딧 5만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-05 ~ 2024-09-26</div>
+                <div class="pkg-pay">376,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerIsland.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Urban Island</dt>
+                    <dd>어번 아일랜드 All Day 입장</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">345,800 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly frineds couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerPrivate.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Fabulous Moment at Urban Cabana</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 카바나 이용 (F1~2) + 발레파킹 1회</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-10-31</div>
+                <div class="pkg-pay">650,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerFamilly.jpg" alt=""></dd>
+                    <dd class="list-keword">조식</dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Urban Family Moment</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 '신라베어 아이스크림' 2개 + 더 파크뷰 조식 + 신라베어 백팩 + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">500,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerTripple.jpg.jpg" alt=""></dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Urban Island for Triple</dt>
+                    <dd>[성인3인] 어번 아일랜드 All Day 입장 + 엑스트라베드 1대 제공</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">342,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBaby.jpg" alt=""></dd>
+                    <dd class="list-keword">2박 이상</dd>
+                    <dt>Your First Shilla</dt>
+                    <dd>[베이비문] 수페리어 스위트 룸 2연박 특별가 + 아뜰리에슈 블랭킷 1개 + 바디 필로우 투숙 중 1개 대여 + F&B크레딧 30만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-14 ~ 2024-09-17</div>
+                <div class="pkg-pay">680,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly friends couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerRounge.jpg" alt=""></dd>
+                    <dd class="list-keword">라운지혜택</dd>
+                    <dt>Exclusive Deluxe Stay</dt>
+                    <dd>더 이그제큐티브 라운지 입장</dd>
+                </a>
+                <div class="pkg-date">2024-07-26 ~ 2024-09-30</div>
+                <div class="pkg-pay">530,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerVacation.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Simply Perfect Vacation</dt>
+                    <dd>12시 Early Check-in + 어번 아일랜드 All Day 입장 + 어번 아일랜드 패트론 칵테일 2잔 & 맥시코식 비프 타코 세트 제공 + 패트론 존 전용 스페셜
+                      오퍼링
+                      + 발레파킹 1회 + [이그제큐티브 객실 한정] 인룸 주류 키트
+                    </dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">380,000원 ~</div>
+                </dl>
+              </li>
+              <!--2페이지-->
+              <li class="product-item" data-type="promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerStay.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Wonderful Feast Stay</dt>
+                    <dd>영빈관 가든 디너 뷔페 + (소인) 마술쇼 관람+ (성인) 와이너리 + 발레파킹 1회
+                      추가혜택</dd>
+                </a>
+                <div class="pkg-date">2024-09-15 ~ 2024-09-17</div>
+                <div class="pkg-pay">620,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerJoyful.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Joyful Moment at Urban Cabana</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 카바나 이용(K1~4) + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-10-31</div>
+                <div class="pkg-pay">520,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerKids.jpg" alt=""></dd>
+                    <dd class="list-keword">키즈</dd>
+                    <dt>Sweet Little Chef</dt>
+                    <dd>[성인2인+소인1인] 키즈 쿠킹 클래스 + 앞치마·모자 세트 + 신라베어 백팩</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">500,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerLimited.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Limited Moment with POLA</dt>
+                    <dd>더 이그제큐티브 라운지 + Science. Art. Love. POLA 트레블 패키지 + 발레파킹 1회
+                    </dd>
+                </a>
+                <div class="pkg-date">2024-07-22 ~ 2024-09-30</div>
+                <div class="pkg-pay">604,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMain3.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>야외수영장</span></dd>
+                    <dt>Urban Moonlight</dt>
+                    <dd>어번 아일랜드 Moonlight 입장 + F&B크레딧 3만원 + 17시 체크인</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-01 ~ 2024-09-29</div>
+                <div class="pkg-pay">360,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMain1.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>야외수영장</span></dd>
+                    <dt>Urban Morning</dt>
+                    <dd>어번 아일랜드 Morning 입장 + F&B크레딧 5만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-01 ~ 2024-09-30</div>
+                <div class="pkg-pay">360,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMemories.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Our Memories</dt>
+                    <dd>15시 스냅 촬영 서비스 + 신라베어 + F&B credit 5만원</dd>
+                </a>
+                <div class="pkg-date">2024-05-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">450,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="all promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBetter.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Better Stay</dt>
+                    <dd>객실 한단계 업그레이드</dd>
+                </a>
+                <div class="pkg-date">2024-08-16 ~ 2025-06-30</div>
+                <div class="pkg-pay">350,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/스페셜오퍼12.jpg" alt=""></dd>
+                    <dd class="list-keword">조식</dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Gathering at The Suite</dt>
+                    <dd>[성인 3인] 더 이그제큐티브 라운지 입장 + 엑스트라베드 1대 제공</dd>
+                </a>
+                <div class="pkg-date">2024-07-25 ~ 2024-09-30</div>
+                <div class="pkg-pay">1,030,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerExperience.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Suite Experience</dt>
+                    <dd>실내 사우나 입장</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-06 ~ 2024-09-30</div>
+                <div class="pkg-pay">800,000 원 ~</div>
+                </dl>
+              </li>
+              <!--3페이지-->
+              <li class="product-item" data-type="couple friends famiily">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMain2.jpg" alt=""></dd>
+                    <dd class="list-keword">조식</dd>
+                    <dt>BREAKFAST PACKAGE</dt>
+                    <dd>For your vibrant day! 뷔페 레스토랑 앤디쉬 2인 조식이 포함된 패키지를 만나보세요.</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">342,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBallet.jpg" alt=""></dd>
+                    <dd class="list-keword pmt"><span>프로모션</span></dd>
+                    <dt>Golden Holiday Stay : Ballet And Flamenco</dt>
+                    <dd>캔들라이트 발레&플라멩코 콘서트 (2인) + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-14 ~ 2024-09-17</div>
+                <div class="pkg-pay">540,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMoment.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>기념일</span></dd>
+                    <dt>Everlasting Moment</dt>
+                    <dd>핑크 로즈 데커레이션 + 웰컴 샴페인 + 웨딩베어 인형 + 인 룸 다이닝 디너 or [프리미어 스위트 투숙 시] 콘티넨탈 디너 코스 2인 + 인 룸 다이닝 브런치</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-04-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">1,400,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerNeon.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Neon Brush Experience</dt>
+                    <dd>네온브러쉬 익스피리언스(어번 루프탑) + 진토닉 2잔 + 어번 아일랜드 All Day 입장 + F&B크레딧 5만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-05 ~ 2024-09-26</div>
+                <div class="pkg-pay">376,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerIsland.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Urban Island</dt>
+                    <dd>어번 아일랜드 All Day 입장</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">345,800 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly frineds couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerPrivate.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Fabulous Moment at Urban Cabana</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 카바나 이용 (F1~2) + 발레파킹 1회</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-10-31</div>
+                <div class="pkg-pay">650,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerFamilly.jpg" alt=""></dd>
+                    <dd class="list-keword">조식</dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Urban Family Moment</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 '신라베어 아이스크림' 2개 + 더 파크뷰 조식 + 신라베어 백팩 + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">500,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerTripple.jpg.jpg" alt=""></dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Urban Island for Triple</dt>
+                    <dd>[성인3인] 어번 아일랜드 All Day 입장 + 엑스트라베드 1대 제공</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">342,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBaby.jpg" alt=""></dd>
+                    <dd class="list-keword">2박 이상</dd>
+                    <dt>Your First Shilla</dt>
+                    <dd>[베이비문] 수페리어 스위트 룸 2연박 특별가 + 아뜰리에슈 블랭킷 1개 + 바디 필로우 투숙 중 1개 대여 + F&B크레딧 30만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-14 ~ 2024-09-17</div>
+                <div class="pkg-pay">680,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly friends couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerRounge.jpg" alt=""></dd>
+                    <dd class="list-keword">라운지혜택</dd>
+                    <dt>Exclusive Deluxe Stay</dt>
+                    <dd>더 이그제큐티브 라운지 입장</dd>
+                </a>
+                <div class="pkg-date">2024-07-26 ~ 2024-09-30</div>
+                <div class="pkg-pay">530,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerVacation.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Simply Perfect Vacation</dt>
+                    <dd>12시 Early Check-in + 어번 아일랜드 All Day 입장 + 어번 아일랜드 패트론 칵테일 2잔 & 맥시코식 비프 타코 세트 제공 + 패트론 존 전용 스페셜
+                      오퍼링
+                      + 발레파킹 1회 + [이그제큐티브 객실 한정] 인룸 주류 키트
+                    </dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">380,000원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerStay.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Wonderful Feast Stay</dt>
+                    <dd>영빈관 가든 디너 뷔페 + (소인) 마술쇼 관람+ (성인) 와이너리 + 발레파킹 1회
+                      추가혜택</dd>
+                </a>
+                <div class="pkg-date">2024-09-15 ~ 2024-09-17</div>
+                <div class="pkg-pay">620,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerJoyful.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Joyful Moment at Urban Cabana</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 카바나 이용(K1~4) + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-10-31</div>
+                <div class="pkg-pay">520,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerKids.jpg" alt=""></dd>
+                    <dd class="list-keword">키즈</dd>
+                    <dt>Sweet Little Chef</dt>
+                    <dd>[성인2인+소인1인] 키즈 쿠킹 클래스 + 앞치마·모자 세트 + 신라베어 백팩</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">500,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerLimited.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Limited Moment with POLA</dt>
+                    <dd>더 이그제큐티브 라운지 + Science. Art. Love. POLA 트레블 패키지 + 발레파킹 1회
+                    </dd>
+                </a>
+                <div class="pkg-date">2024-07-22 ~ 2024-09-30</div>
+                <div class="pkg-pay">604,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMain3.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>야외수영장</span></dd>
+                    <dt>Urban Moonlight</dt>
+                    <dd>어번 아일랜드 Moonlight 입장 + F&B크레딧 3만원 + 17시 체크인</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-01 ~ 2024-09-29</div>
+                <div class="pkg-pay">360,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMain1.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>야외수영장</span></dd>
+                    <dt>Urban Morning</dt>
+                    <dd>어번 아일랜드 Morning 입장 + F&B크레딧 5만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-01 ~ 2024-09-30</div>
+                <div class="pkg-pay">360,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMemories.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Our Memories</dt>
+                    <dd>15시 스냅 촬영 서비스 + 신라베어 + F&B credit 5만원</dd>
+                </a>
+                <div class="pkg-date">2024-05-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">450,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="all promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBetter.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Better Stay</dt>
+                    <dd>객실 한단계 업그레이드</dd>
+                </a>
+                <div class="pkg-date">2024-08-16 ~ 2025-06-30</div>
+                <div class="pkg-pay">350,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/스페셜오퍼12.jpg" alt=""></dd>
+                    <dd class="list-keword">조식</dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Gathering at The Suite</dt>
+                    <dd>[성인 3인] 더 이그제큐티브 라운지 입장 + 엑스트라베드 1대 제공</dd>
+                </a>
+                <div class="pkg-date">2024-07-25 ~ 2024-09-30</div>
+                <div class="pkg-pay">1,030,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerExperience.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Suite Experience</dt>
+                    <dd>실내 사우나 입장</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-06 ~ 2024-09-30</div>
+                <div class="pkg-pay">800,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBallet.jpg" alt=""></dd>
+                    <dd class="list-keword pmt"><span>프로모션</span></dd>
+                    <dt>Golden Holiday Stay : Ballet And Flamenco</dt>
+                    <dd>캔들라이트 발레&플라멩코 콘서트 (2인) + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-14 ~ 2024-09-17</div>
+                <div class="pkg-pay">540,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMoment.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>기념일</span></dd>
+                    <dt>Everlasting Moment</dt>
+                    <dd>핑크 로즈 데커레이션 + 웰컴 샴페인 + 웨딩베어 인형 + 인 룸 다이닝 디너 or [프리미어 스위트 투숙 시] 콘티넨탈 디너 코스 2인 + 인 룸 다이닝 브런치</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-04-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">1,400,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerNeon.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Neon Brush Experience</dt>
+                    <dd>네온브러쉬 익스피리언스(어번 루프탑) + 진토닉 2잔 + 어번 아일랜드 All Day 입장 + F&B크레딧 5만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-05 ~ 2024-09-26</div>
+                <div class="pkg-pay">376,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerIsland.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Urban Island</dt>
+                    <dd>어번 아일랜드 All Day 입장</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">345,800 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly frineds couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerPrivate.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Fabulous Moment at Urban Cabana</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 카바나 이용 (F1~2) + 발레파킹 1회</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-10-31</div>
+                <div class="pkg-pay">650,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerFamilly.jpg" alt=""></dd>
+                    <dd class="list-keword">조식</dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Urban Family Moment</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 '신라베어 아이스크림' 2개 + 더 파크뷰 조식 + 신라베어 백팩 + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">500,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerTripple.jpg.jpg" alt=""></dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Urban Island for Triple</dt>
+                    <dd>[성인3인] 어번 아일랜드 All Day 입장 + 엑스트라베드 1대 제공</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">342,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBaby.jpg" alt=""></dd>
+                    <dd class="list-keword">2박 이상</dd>
+                    <dt>Your First Shilla</dt>
+                    <dd>[베이비문] 수페리어 스위트 룸 2연박 특별가 + 아뜰리에슈 블랭킷 1개 + 바디 필로우 투숙 중 1개 대여 + F&B크레딧 30만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-14 ~ 2024-09-17</div>
+                <div class="pkg-pay">680,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly friends couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerRounge.jpg" alt=""></dd>
+                    <dd class="list-keword">라운지혜택</dd>
+                    <dt>Exclusive Deluxe Stay</dt>
+                    <dd>더 이그제큐티브 라운지 입장</dd>
+                </a>
+                <div class="pkg-date">2024-07-26 ~ 2024-09-30</div>
+                <div class="pkg-pay">530,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerVacation.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Simply Perfect Vacation</dt>
+                    <dd>12시 Early Check-in + 어번 아일랜드 All Day 입장 + 어번 아일랜드 패트론 칵테일 2잔 & 맥시코식 비프 타코 세트 제공 + 패트론 존 전용 스페셜
+                      오퍼링
+                      + 발레파킹 1회 + [이그제큐티브 객실 한정] 인룸 주류 키트
+                    </dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
+                <div class="pkg-pay">380,000원 ~</div>
+                </dl>
+              </li>
+              <!--2페이지-->
+              <li class="product-item" data-type="promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerStay.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Wonderful Feast Stay</dt>
+                    <dd>영빈관 가든 디너 뷔페 + (소인) 마술쇼 관람+ (성인) 와이너리 + 발레파킹 1회
+                      추가혜택</dd>
+                </a>
+                <div class="pkg-date">2024-09-15 ~ 2024-09-17</div>
+                <div class="pkg-pay">620,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerJoyful.jpg" alt=""></dd>
+                    <dd class="list-keword">야외수영장</dd>
+                    <dt>Joyful Moment at Urban Cabana</dt>
+                    <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 카바나 이용(K1~4) + 발레파킹 1회</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-10-31</div>
+                <div class="pkg-pay">520,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerKids.jpg" alt=""></dd>
+                    <dd class="list-keword">키즈</dd>
+                    <dt>Sweet Little Chef</dt>
+                    <dd>[성인2인+소인1인] 키즈 쿠킹 클래스 + 앞치마·모자 세트 + 신라베어 백팩</dd>
+                </a>
+                <div class="pkg-date">2024-09-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">500,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerLimited.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Limited Moment with POLA</dt>
+                    <dd>더 이그제큐티브 라운지 + Science. Art. Love. POLA 트레블 패키지 + 발레파킹 1회
+                    </dd>
+                </a>
+                <div class="pkg-date">2024-07-22 ~ 2024-09-30</div>
+                <div class="pkg-pay">604,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMain3.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>야외수영장</span></dd>
+                    <dt>Urban Moonlight</dt>
+                    <dd>어번 아일랜드 Moonlight 입장 + F&B크레딧 3만원 + 17시 체크인</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-01 ~ 2024-09-29</div>
+                <div class="pkg-pay">360,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMain1.jpg" alt=""></dd>
+                    <dd class="list-keword"><span>야외수영장</span></dd>
+                    <dt>Urban Morning</dt>
+                    <dd>어번 아일랜드 Morning 입장 + F&B크레딧 5만원</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-01 ~ 2024-09-30</div>
+                <div class="pkg-pay">360,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="couple promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerMemories.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Our Memories</dt>
+                    <dd>15시 스냅 촬영 서비스 + 신라베어 + F&B credit 5만원</dd>
+                </a>
+                <div class="pkg-date">2024-05-01 ~ 2024-11-30</div>
+                <div class="pkg-pay">450,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="all promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerBetter.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Better Stay</dt>
+                    <dd>객실 한단계 업그레이드</dd>
+                </a>
+                <div class="pkg-date">2024-08-16 ~ 2025-06-30</div>
+                <div class="pkg-pay">350,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="friends">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/스페셜오퍼12.jpg" alt=""></dd>
+                    <dd class="list-keword">조식</dd>
+                    <dd class="list-keword">성인 3인</dd>
+                    <dt>Gathering at The Suite</dt>
+                    <dd>[성인 3인] 더 이그제큐티브 라운지 입장 + 엑스트라베드 1대 제공</dd>
+                </a>
+                <div class="pkg-date">2024-07-25 ~ 2024-09-30</div>
+                <div class="pkg-pay">1,030,000 원 ~</div>
+                </dl>
+              </li>
+              <li class="product-item" data-type="familly promotion">
+                <a href="#">
+                  <dl class="pkg-list-container">
+                    <dd class="img-wrapper"><img src="/img/sub/offerExperience.jpg" alt=""></dd>
+                    <dd class="list-keword pmt">프로모션</dd>
+                    <dt>Suite Experience</dt>
+                    <dd>실내 사우나 입장</dd>
+                    <span class="pkg-rewards">
+                      <img src="/img/sub/gift-thin.svg" alt="">
+                      <span>리워즈혜택</span>
+                    </span>
+                </a>
+                <div class="pkg-date">2024-08-06 ~ 2024-09-30</div>
+                <div class="pkg-pay">800,000 원 ~</div>
+                </dl>
+              </li>
+            </ul>
+          </div>
+          <div class="page-container">
+            <div class="pkg-paging">
+              <button class="pagepng" id="first-page"></button>
+              <button class="pagepng" id="prev-page"></button>
+              <span id="pagination"></span>
+              <button class="pagepng" id="next-page"></button>
+              <button class="pagepng" id="last-page"> </button>
+            </div>
+          </div>
+          <div class="xx">footer임시</div>
         </div>
       </div>
-      <div class="center">
-        <!-- 필터박스 -->
-        <div class="pkg-filter-box-wrapper">
-          <div class="pkg-filter-box">
-            <div class="pkg-datepicker">
-              <p>기간조회</p>
-              <span class="pkg-datebegin">
-                <input>날짜 <button>icon</button></input>
-              </span>
-              <span class="hbar">-</span>
-              <span class="pkg-dateend">
-                <input>날짜<button></button></input>
-              </span>
-            </div>
-            <div class="pkg-filter-sort">
-              <p>유형구분</p>
-              <select name="" id="">
-                <option value="">전체</option>
-                <option value="">커플</option>
-                <option value="">패밀리</option>
-                <option value="">친구</option>
-                <option value="">프로모션</option>
-              </select>
-            </div>
-            <div class="pkg-filter-keyword">
-              <div class="keword-wrap">
-                <p>키워드</p>
-                <ul>
-                  <li class="check"> <input type="checkbox" id="check1"><label for="check1">조식</label></li>
-                  <li class="check"> <input type="checkbox" id="check2"><label for="check2">라운지혜택</label></li>
-                  <li class="check"> <input type="checkbox" id="check3"><label for="check3">기념일</label></li>
-                  <li class="check"> <input type="checkbox" id="check4"><label for="check4">야외수영장</label></li>
-                  <li class="check"> <input type="checkbox" id="check5"><label for="check5">성인 3인</label></li>
-                  <li class="check"> <input type="checkbox" id="check6"><label for="check6">2박 이상</label></li>
-                  <li class="check"> <input type="checkbox" id="check7"><label for="check7">키즈</label></li>
-                </ul>
-              </div>
-            </div>
-            <div class="pkg-btnbox">
-              <button class="pkg-filter-resetbtn box">초기화</button>
-              <button class="pkg-filter-searchbtn">검색</button>
-            </div>
-          </div>
+      <footer></footer>
+      <article class="floating-menu">
+        <div class="menu">
+          <a href="#" class="circle-btn">예약</a>
+          <a href="#" class="circle-btn">문의</a>
         </div>
-        <div class="pkg-section">
-          <div class="pkg-total">
-            <span>총</span>
-            <span>숫자</span>
-            <span>개 상품</span>
-          </div>
-          <div class="pkg-sort">
-            <select name="" id="">
-              <option value="">최신순</option>
-              <option value="">높은가격순</option>
-              <option value="">낮은가격순</option>
-            </select>
-          </div>
-        </div>
-        <!-- 패키지 리스트 -->
-        <div class="pkg-list">
-          <ul>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerBallet.jpg" alt=""></dd>
-                  <dd class="list-keword none"><span></span></dd>
-                  <dt>Golden Holiday Stay : Ballet And Flamenco</dt>
-                  <dd>캔들라이트 발레&플라멩코 콘서트 (2인) + 발레파킹 1회</dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-09-14 ~ 2024-09-17</div>
-              <div class="pkg-pay">540,000 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerMoment.jpg" alt=""></dd>
-                  <dd class="list-keword"><span>기념일</span></dd>
-                  <dt>Everlasting Moment</dt>
-                  <dd>핑크 로즈 데커레이션 + 웰컴 샴페인 + 웨딩베어 인형 + 인 룸 다이닝 디너</dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-04-01 ~ 2024-11-30</div>
-              <div class="pkg-pay">1,400,000 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerNeon.jpg" alt=""></dd>
-                  <dd class="list-keword">야외수영장</dd>
-                  <dt>Neon Brush Experience</dt>
-                  <dd>네온브러쉬 익스피리언스(어번 루프탑) + 진토닉 2잔 + 어번 아일랜드 All Day 입장 + F&B크레딧 5만원</dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-08-05 ~ 2024-09-26</div>
-              <div class="pkg-pay">376,000 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerIsland.jpg" alt=""></dd>
-                  <dd class="list-keword">야외수영장</dd>
-                  <dt>Urban Island</dt>
-                  <dd>어번 아일랜드 All Day 입장</dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
-              <div class="pkg-pay">345,800 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerPrivate.jpg" alt=""></dd>
-                  <dd class="list-keword">야외수영장</dd>
-                  <dt>Fabulous Moment at Urban Cabana</dt>
-                  <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 카바나 이용 (F1~2) + 발레파킹 1회</dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-09-01 ~ 2024-10-31</div>
-              <div class="pkg-pay">650,000 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerFamilly.jpg" alt=""></dd>
-                  <dd class="list-keword">조식</dd>
-                  <dd class="list-keword">야외수영장</dd>
-                  <dt>Urban Family Moment</dt>
-                  <dd>어번 아일랜드 All Day 입장 + 어번 아일랜드 '신라베어 아이스크림' 2개 + 더 파크뷰 조식 + 신라베어 백팩 + 발레파킹 1회</dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
-              <div class="pkg-pay">500,000 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerTripple.jpg.jpg" alt=""></dd>
-                  <dd class="list-keword">성인 3인</dd>
-                  <dt>[성인3인] 어번 아일랜드 All Day 입장 + 엑스트라베드 1대 제공</dt>
-                  <dd>캔들라이트 발레&플라멩코 콘서트 (2인) + 발레파킹 1회</dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
-              <div class="pkg-pay">342,000 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerBaby.jpg" alt=""></dd>
-                  <dd class="list-keword">2박 이상</dd>
-                  <dt>Your First Shilla</dt>
-                  <dd>[베이비문] 수페리어 스위트 룸 2연박 특별가 + 아뜰리에슈 블랭킷 1개 + 바디 필로우 투숙 중 1개 대여 + F&B크레딧 30만원</dd>
-                  <span class="pkg-rewards">2024-07-22 ~ 2024-09-30
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-09-14 ~ 2024-09-17</div>
-              <div class="pkg-pay">680,000 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerRounge.jpg" alt=""></dd>
-                  <dd class="list-keword">라운지혜택</dd>
-                  <dt>Exclusive Deluxe Stay</dt>
-                  <dd>더 이그제큐티브 라운지 입장</dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-07-26 ~ 2024-09-30</div>
-              <div class="pkg-pay">530,000 원 ~</div>
-              </dl>
-            </li>
-            <li>
-              <a href="#">
-                <dl class="pkg-list-container">
-                  <dd class="img-wrapper"><img src="/img/sub/offerVacation.jpg" alt=""></dd>
-                  <dd class="list-keword">야외수영장</dd>
-                  <dt>Simply Perfect Vacation</dt>
-                  <dd>12시 Early Check-in + 어번 아일랜드 All Day 입장 + 어번 아일랜드 패트론 칵테일 2잔 & 맥시코식 비프 타코 세트 제공 + 패트론 존 전용 스페셜 오퍼링
-                    + 발레파킹 1회 + [이그제큐티브 객실 한정] 인룸 주류 키트
-                  </dd>
-                  <span class="pkg-rewards">
-                    <img src="/img/sub/gift-thin.svg" alt="">
-                    <span>리워즈혜택</span>
-                  </span>
-              </a>
-              <div class="pkg-date">2024-09-01 ~ 2024-11-17</div>
-              <div class="pkg-pay">380,000원 ~</div>
-              </dl>
-            </li>
-          </ul>
-        </div>
-        <div class="page-container">
-          <div class="pkg-paging">
-            <button class="pagenum active">1</button>
-            <button class="pagenum">2</button>
-            <button class="pagenum">3</button>
-            <button class="pagenum">4</button>
-            <button class="pagenum">5</button>
-          </div>
-        </div>
-        <div class="xx">footer임시</div>
-      </div>
-    </div>
-    <footer></footer>
-    <article class="floating-menu">
-      <div class="menu">
-        <a href="#" class="circle-btn">예약</a>
-        <a href="#" class="circle-btn">문의</a>
-      </div>
-      <a href="#" class="top-btn">TOP</a>
-    </article>
+        <a href="#" class="top-btn">TOP</a>
+      </article>
 </body>
 
 </html>
