@@ -28,21 +28,96 @@
         <script src="../../js/common/common.js" defer></script>
     </head>
     <body>
-        <form id="shilla-join" action="../index.html" method="get">
-            <section>
-                <div class="join-wrap">
-                    <div class="clause">약관</div>
-                    <label class="info-title">이름<input type="text" id="name" /></label>
-                    <label class="info-title">생년월일<input type="text" id="birth" /></label>
-                    <label class="info-title">연락처<input type="text" id="contact" /></label>
-                    <label class="info-title">주소<input type="text" id="address" /></label>
-                    <label class="info-title">이메일<input type="text" id="mail" /></label>
-
-                    <label class="info-title">아이디<input type="text" id="id" /></label>
-                    <label class="info-title">패스워드<input type="text" id="pw" /></label>
-                    <label class="info-title">패스워드 확인<input type="text" id="repw" /></label>
+        <!-- 헤더 구간 -->
+        <header class="on">
+            <div class="gnbbg"></div>
+            <div class="center">
+                <h1 class="logo">
+                    <a href="#">
+                        <img src="../../img/common/logo.png" alt="" />
+                    </a>
+                </h1>
+                <ul class="gnb">
+                    <li>
+                        <a href="#">스페셜 오퍼</a>
+                        <ul class="depth2">
+                            <li><a href="#">객실패키지</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">객실</a>
+                        <ul class="depth2">
+                            <li><a href="#">스탠다드</a></li>
+                            <li><a href="#">이그제큐티브</a></li>
+                            <li><a href="#">스위트</a></li>
+                            <li><a href="#">더 이그제큐티브 라운지</a></li>
+                            <li><a href="#">전체 객실 보기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">다이닝</a>
+                        <ul class="depth2">
+                            <li><a href="#">레스토랑</a></li>
+                            <li><a href="#">라운지 & 바</a></li>
+                            <li><a href="#">베이커리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">라이프스타일</a>
+                        <ul class="depth2">
+                            <li><a href="#">야외수영장</a></li>
+                            <li><a href="#">피트니스</a></li>
+                            <li><a href="#">산책로</a></li>
+                            <li><a href="#">조깅코스</a></li>
+                            <li><a href="#">쇼핑</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">웨딩 & 연회</a>
+                        <ul class="depth2">
+                            <li><a href="#">웨딩</a></li>
+                            <li><a href="#">기업연회</a></li>
+                            <li><a href="#">가족연회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">고객센터</a>
+                        <ul class="depth2">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">문의하기</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap on">
+                    <a href="#" class="join-btn">멤버십 가입</a>
+                    <a href="#" class="join-btn">로그인</a>
                 </div>
-            </section>
+                <!-- 로그인시 -->
+                <div class="btn-wrap">
+                    <p>손주혜<span>님</span></p>
+                    <a href="#" class="logout-btn">로그아웃</a>
+                </div>
+            </div>
+        </header>
+        <!-- 회원가입 -->
+        <form id="shilla-join" action="#" method="get">
+            <!-- 약관 동의 -->
+            <div class="clause-wrap">
+                <h2 class="join">신라 멤버십 가입</h2>
+                <h3 class="agree">약관동의</h3>
+                <h4 class="direction">약관 및 개인정보 수집, 이용 사항을 확인하시고 동의여부에 체크해주시기 바랍니다.</h4>
+            </div>
         </form>
+        <!-- 플로팅 메뉴 -->
+        <article class="floating-menu">
+            <div class="menu">
+                <a href="#" class="circle-btn">예약</a>
+                <a href="#" class="circle-btn">문의</a>
+            </div>
+            <a href="#" class="top-btn">TOP</a>
+        </article>
     </body>
 </html>
