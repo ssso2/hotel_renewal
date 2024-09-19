@@ -1,9 +1,14 @@
 .room-top-intro {
-<<<<<<< HEAD
   padding-top: 10px;
+<<<<<<< Updated upstream
+  padding-bottom: 50px;
+}
+.room-top-intro p {
+  padding: 10px;
+  font-size: 18px;
 =======
-  padding: 40px;
->>>>>>> master
+  font-size: 14px;
+>>>>>>> Stashed changes
 }
 
 .room-box-wrap {
@@ -28,7 +33,11 @@
   height: 100%;
 }
 .room-box-wrap .room-box a .txt-wrap {
-  padding: 30px 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
   line-height: 1.5;
 }
 .room-box-wrap .room-box:nth-child(2n) {

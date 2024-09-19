@@ -1,9 +1,18 @@
+.room-wrap{
+    h3{
+        font-size: ;
+    }
+}
 .room-top-intro{
-<<<<<<< HEAD
     padding-top: 10px;
+<<<<<<< Updated upstream
+    padding-bottom: 50px;
+    p{
+        padding: 10px;
+        font-size: 18px;
+    }
 =======
-    padding-top: ;
->>>>>>> master
+>>>>>>> Stashed changes
 }
 .room-box-wrap{
     display: flex;
@@ -24,7 +33,11 @@
                 }
             }
             .txt-wrap{
-                padding: 30px 40px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                padding: 10px 20px;
+                border: 1px solid #000;
+                border-radius: 10px;
                 line-height: 1.5;
             }
         }
