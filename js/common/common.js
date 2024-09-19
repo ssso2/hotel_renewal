@@ -64,32 +64,6 @@ var swiper2 = new Swiper(".mySwiper2", {
 
 
 
-
-
-// 플로팅 메뉴
-const topBtn = document.querySelector(".floating-menu > .top-btn");
-// top버튼은 스크롤 위치값이 1000 이상인 곳에서만 나타난다
-window.addEventListener("scroll",function(){
-    let scTop = window.scrollY;
-
-    if(scTop > 1000){
-        topBtn.classList.add("on");
-    }
-    else{
-        topBtn.classList.remove("on");
-    }
-});
-// 탑 버튼을 누르면 부드럽게 최상단으로 이동
-topBtn.addEventListener("click",function(e){
-    e.preventDefault();
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-});
-
-
 // 제이쿼리
 $(function () {
 
@@ -110,6 +84,36 @@ $(function () {
             $('[data-lybtn ='+lypopClose+']').focus();
         });
     });
+
+
+
+    // 플로팅 메뉴
+    const topBtn = $(".floating-menu > .top-btn");
+    // top버튼은 스크롤 위치값이 1000 이상인 곳에서만 나타난다
+    $(window).on("scroll",function(){
+        let scTop = window.scrollY;
+
+        if(scTop > 1000){
+            topBtn.addClass("on");
+        }
+        else{
+            topBtn.removeClass("on");
+        }
+    });
+    
+    
+    // 탑 버튼을 누르면 부드럽게 최상단으로 이동
+    topBtn.on("click",function(e){
+        e.preventDefault();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+    });
+
+    
+
 
 
     // daterangepicker
@@ -134,6 +138,7 @@ $(function () {
     });
 
 
+    
     // reservation-popup
     // 예약의 .room-wrap 클릭하면 룸 수량, 인원수 입력하는 팝업이 나오고, 한 번 더 누르면 닫힌다
     $(".reservation-wrap .room-wrap").on("click",function(){

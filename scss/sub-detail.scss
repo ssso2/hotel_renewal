@@ -22,6 +22,11 @@
                     color: #333;
                  }
             }
+            strong {
+                display: inline-block;
+                margin: 15px 0 10px;
+                font-size: 18px;
+            }
             .txt {
                 margin-bottom: 20px;
                 font-size: 18px;
@@ -57,9 +62,8 @@
                                 content: "-";
                                 display: block;
                                 position: absolute;
-                                top: 50%;
+                                top: 3px;
                                 left: -10px;
-                                transform: translateY(-50%);
                             }
                         }
                     }
@@ -80,13 +84,14 @@
                         content: "*";
                         display: block;
                         position: absolute;
-                        top: 50%;
-                        left: -15px;
-                        transform: translateY(-50%);
-
+                        top: 3px;
+                        left: 2px;
                     }
                 }
             }
+        }
+        .guide:last-child {
+            border-bottom: 0;
         }
     }
 }
