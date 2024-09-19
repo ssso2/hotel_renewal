@@ -1,14 +1,18 @@
 .room-top-intro {
-  padding-top: 10px;
-<<<<<<< Updated upstream
-  padding-bottom: 50px;
+  font-size: 18px;
 }
 .room-top-intro p {
   padding: 10px;
-  font-size: 18px;
-=======
-  font-size: 14px;
->>>>>>> Stashed changes
+}
+
+.room-wrap h3 {
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+
+.room-top-intro {
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
 .room-box-wrap {
@@ -26,7 +30,7 @@
 }
 .room-box-wrap .room-box a .img-wrap {
   width: 100%;
-  height: 400px;
+  height: 300px;
 }
 .room-box-wrap .room-box a .img-wrap img {
   width: 100%;
@@ -36,8 +40,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 10px 20px;
-  border: 1px solid #000;
-  border-radius: 10px;
+  border: 1px solid #aaa;
   line-height: 1.5;
 }
 .room-box-wrap .room-box:nth-child(2n) {
