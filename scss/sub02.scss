@@ -1,0 +1,48 @@
+.room-wrap{
+    h3{
+        font-size: ;
+    }
+}
+.room-top-intro{
+    padding-top: 10px;
+<<<<<<< Updated upstream
+    padding-bottom: 50px;
+    p{
+        padding: 10px;
+        font-size: 18px;
+    }
+=======
+>>>>>>> Stashed changes
+}
+.room-box-wrap{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .room-box{
+        margin-right: 20px;
+        width: calc((100% - 20px)/2);
+        a{
+            display: block;
+            width: 100%;
+            .img-wrap{
+                width: 100%;
+                height: 400px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .txt-wrap{
+                margin-top: 30px;
+                margin-bottom: 30px;
+                padding: 10px 20px;
+                border: 1px solid #000;
+                border-radius: 10px;
+                line-height: 1.5;
+            }
+        }
+        &:nth-child(2n){
+            margin-right: 0;
+        }
+    }
+}
