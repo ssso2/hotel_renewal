@@ -1,7 +1,5 @@
 @charset "UTF-8";
 @import url(./reset.css);
-@import url(./mixin.css);
-@import url(./response.css);
 .mt-10 {
   margin-top: 10px;
 }
@@ -107,10 +105,27 @@
   margin: 0 auto;
   width: 1420px;
 }
+.center.guide {
+  padding: 50px 0;
+}
+
+/* 스크롤바의 폭 너비 */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #bababa; /* 스크롤바 색상 */
+  border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+body::-webkit-scrollbar-track {
+  background: #eaeaea; /*스크롤바 뒷 배경 색상*/
+}
 
 /* 3depth title 공통 */
 .container {
-  margin-top: 80px;
+  margin: 80px 0 50px;
 }
 
 .sub-title {
@@ -125,37 +140,40 @@
   content: "";
   display: block;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: #ddd;
   position: absolute;
   left: 0;
   bottom: 0;
 }
-
-h2 {
-  font-size: 22px;
+.sub-title h2 {
+  font-size: 27px;
   font-weight: 700;
 }
-
-.location {
+.sub-title .sub-desc {
+  margin-top: 20px;
+  font-size: 17px;
+  color: #666;
+}
+.sub-title .location {
   display: flex;
   align-items: center;
 }
-.location > li {
+.sub-title .location > li {
   margin-right: 30px;
   position: relative;
 }
-.location > li:last-child {
+.sub-title .location > li:last-child {
   margin: 0;
 }
-.location > li:last-child::after {
+.sub-title .location > li:last-child::after {
   display: none;
 }
-.location > li:last-child > a {
+.sub-title .location > li:last-child > a {
   text-decoration: underline;
   text-underline-position: under;
 }
-.location > li::after {
+.sub-title .location > li::after {
   content: "";
   display: inline-block;
   width: 5px;
@@ -163,21 +181,22 @@ h2 {
   border: 1px solid #777;
   border-left: 0;
   border-bottom: 0;
-  transform: rotate(45deg);
   position: absolute;
-  top: 5px;
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
   right: -15px;
 }
-.location > li > a {
+.sub-title .location > li > a {
   font-size: 13px;
 }
-.location > li > a:hover {
+.sub-title .location > li > a:hover {
   text-decoration: underline;
   text-underline-position: under;
 }
 
 /* 3depth tab 공통 */
 .depth3-tab-wrap {
+  padding-top: 100px;
   /* tab */
   /* tab-contents */
 }
@@ -185,6 +204,7 @@ h2 {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  border-bottom: 1px solid #888;
 }
 .depth3-tab-wrap .tab.on {
   position: fixed;
@@ -194,19 +214,28 @@ h2 {
   width: 1420px;
 }
 .depth3-tab-wrap .tab > li {
+  margin-bottom: -1px;
   width: 14.2857142857%;
   text-align: center;
+  font-size: 16px;
   line-height: 40px;
   border: 1px solid #ddd;
   border-right: 0;
+  border-bottom-color: transparent;
   background: #fff;
   cursor: pointer;
+}
+.depth3-tab-wrap .tab > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .depth3-tab-wrap .tab > li:last-child {
   border-right: 1px solid #ddd;
 }
 .depth3-tab-wrap .tab > li.on {
-  border-bottom: 1px solid transparent;
+  border: 1px solid #888;
+  border-bottom: 3px solid #fff;
   font-weight: 700;
 }
 .depth3-tab-wrap .tab > li:hover {
@@ -221,12 +250,11 @@ h2 {
   display: block;
 }
 
-.swiper {
+.gallery .swiper {
   width: 100%;
   height: 100%;
 }
-
-.swiper-slide {
+.gallery .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -234,49 +262,41 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
-.swiper-slide img {
+.gallery .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.swiper {
+.gallery .swiper {
   width: 100%;
   height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
-
-.swiper-slide {
+.gallery .swiper-slide {
   background-size: cover;
   background-position: center;
 }
-
-.mySwiper2 {
+.gallery .mySwiper2 {
   height: 500px;
   width: 100%;
 }
-
-.mySwiper {
+.gallery .mySwiper {
   height: 200px;
   box-sizing: border-box;
   padding: 10px 0;
 }
-
-.mySwiper .swiper-slide {
+.gallery .mySwiper .swiper-slide {
   width: 25%;
   height: 100%;
   opacity: 0.4;
 }
-
-.mySwiper .swiper-slide-thumb-active {
+.gallery .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
 }
-
-.swiper-slide img {
+.gallery .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
@@ -314,6 +334,18 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
+.btn-wrap.type5 {
+  width: 100%;
+  justify-content: center;
+}
+.btn-wrap.type5 .align {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type5 .btn {
+  width: calc((100% - 20px) / 3);
+}
 .btn-wrap .btn {
   width: calc((100% - 10px) / 2);
   text-align: center;
@@ -329,12 +361,65 @@ h2 {
   background: #000;
   color: #fff;
 }
+.btn-wrap .btn.btn-03 {
+  background: #ddd;
+  color: #333;
+}
+.btn-wrap .btn.btn-04 {
+  margin-right: 10px;
+  padding: 0 20px;
+  width: auto;
+  background: #666;
+  color: #fff;
+}
+.btn-wrap .btn.btn-05 {
+  padding: 0 20px;
+  width: auto;
+  background: #474291;
+  color: #fff;
+}
+
+.pagination {
+  margin-top: 20px;
+  height: 25px;
+  text-align: center;
+}
+.pagination > a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 2px;
+  vertical-align: top;
+}
+.pagination > a.on, .pagination > a:hover {
+  color: #377fd5;
+  font-weight: 700;
+}
+.pagination span {
+  line-height: 25px;
+}
+.pagination .page {
+  background-image: url("../../img/common/bg_pageination.png");
+  background-repeat: no-repeat;
+}
+.pagination .first {
+  background-position: 0 0;
+}
+.pagination .pre {
+  background-position: 0 -25px;
+}
+.pagination .next {
+  background-position: 0 -50px;
+}
+.pagination .end {
+  background-position: 0 -75px;
+}
 
 /* 플로팅 메뉴 */
 .floating-menu {
   position: fixed;
-  right: 30px;
-  width: 50px;
+  z-index: 999;
 }
 .floating-menu a {
   width: 50px;
@@ -345,11 +430,12 @@ h2 {
   text-align: center;
 }
 .floating-menu a:hover {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid #7A6C64;
+  box-shadow: 2px 2px 5px rgb(82, 82, 82);
 }
 .floating-menu .menu {
   position: fixed;
-  right: 30px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -362,9 +448,13 @@ h2 {
 }
 .floating-menu .top-btn {
   position: fixed;
-  right: 30px;
+  right: -50px;
   bottom: 30px;
   background-color: #333;
+  transition: all 0.3s;
+}
+.floating-menu .top-btn.on {
+  right: 10px;
 }
 
 .desc {
@@ -387,4 +477,401 @@ h2 {
   left: 0;
   width: 10px;
   height: 10px;
+}
+
+/* 레이어 팝업 */
+.lypop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+.lypop .btn-wrap {
+  margin: 20px 0 0;
+}
+.lypop .btn-wrap .align {
+  width: auto;
+}
+
+.lypop-wp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.lypop-wp.min {
+  width: 400px;
+}
+.lypop-wp.mid {
+  width: 800px;
+}
+.lypop-wp.big {
+  width: 900px;
+}
+.lypop-wp.max {
+  width: 1200px;
+}
+
+.lypop-content {
+  background-color: #fff;
+}
+
+.lypop-title {
+  position: relative;
+  height: 52px;
+  background-color: #474291;
+}
+.lypop-title > strong {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  padding: 15px 30px;
+}
+
+.lypop-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.lypop-close::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  display: inline-block;
+  width: 2px;
+  height: 18px;
+  transform: rotate(135deg);
+  background-color: #fff;
+}
+.lypop-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  display: inline-block;
+  width: 2px;
+  height: 18px;
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+
+.lypop-ct {
+  padding: 30px;
+}
+
+.daterangepicker {
+  padding: 70px 200px;
+  width: 1420px;
+}
+.daterangepicker.drop-up {
+  margin-top: -10px;
+}
+.daterangepicker .drp-calendar {
+  max-width: none;
+}
+.daterangepicker .drp-calendar.left .calendar-table {
+  padding-right: 150px;
+}
+.daterangepicker .drp-calendar .calendar-table th, .daterangepicker .drp-calendar .calendar-table td {
+  font-size: 20px;
+  line-height: 3;
+}
+.daterangepicker .drp-calendar .calendar-table td {
+  width: 60px;
+  height: auto;
+}
+.daterangepicker .drp-calendar .calendar-table td.active {
+  border-radius: 50%;
+}
+.daterangepicker .drp-buttons {
+  padding-top: 20px;
+  border: none;
+  border-top: 1px solid #eaeaea;
+  line-height: 1;
+}
+.daterangepicker .drp-buttons .btn {
+  font-size: 18px;
+}
+.daterangepicker .drp-selected {
+  margin-right: 30px;
+  padding: 4px 0;
+  font-size: 20px;
+  color: #000;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 1500px) {
+  .mt-10 {
+    margin-top: 0.6666666667vw;
+  }
+  .mt-20 {
+    margin-top: 1.3333333333vw;
+  }
+  .mt-30 {
+    margin-top: 2vw;
+  }
+  .mt-40 {
+    margin-top: 2.6666666667vw;
+  }
+  .mt-50 {
+    margin-top: 3.3333333333vw;
+  }
+  .mb-10 {
+    margin-bottom: 0.6666666667vw;
+  }
+  .mb-20 {
+    margin-bottom: 1.3333333333vw;
+  }
+  .mb-30 {
+    margin-bottom: 2vw;
+  }
+  .mb-40 {
+    margin-bottom: 2.6666666667vw;
+  }
+  .mb-50 {
+    margin-bottom: 3.3333333333vw;
+  }
+  .pt-10 {
+    padding-top: 0.6666666667vw;
+  }
+  .pt-20 {
+    padding-top: 1.3333333333vw;
+  }
+  .pt-30 {
+    padding-top: 2vw;
+  }
+  .pt-40 {
+    padding-top: 2.6666666667vw;
+  }
+  .pt-50 {
+    padding-top: 3.3333333333vw;
+  }
+  .pb-10 {
+    padding-bottom: 0.6666666667vw;
+  }
+  .pb-20 {
+    padding-bottom: 1.3333333333vw;
+  }
+  .pb-30 {
+    padding-bottom: 2vw;
+  }
+  .pb-40 {
+    padding-bottom: 2.6666666667vw;
+  }
+  .pb-50 {
+    padding-bottom: 3.3333333333vw;
+  }
+  .center {
+    width: 90%;
+  }
+  .center.guide {
+    padding: 3.3333333333vw 0vw;
+  }
+  /* 3depth title 공통 */
+  .container {
+    margin-top: 5.3333333333vw;
+  }
+  .sub-title {
+    margin-bottom: 2vw;
+    padding: 3.3333333333vw 0.6666666667vw 1.3333333333vw;
+  }
+  .sub-title h2 {
+    font-size: 1.4666666667vw;
+  }
+  .sub-title .location > li {
+    margin-right: 2vw;
+  }
+  .sub-title .location > li::after {
+    width: 0.3333333333vw;
+    height: 0.3333333333vw;
+    right: -1vw;
+  }
+  .sub-title .location > li > a {
+    font-size: 0.8666666667vw;
+  }
+  /* 3depth tab 공통 */
+  .depth3-tab-wrap {
+    /* tab */
+  }
+  .depth3-tab-wrap .tab {
+    margin-bottom: 2vw;
+  }
+  .depth3-tab-wrap .tab.on {
+    width: 94.6666666667vw;
+  }
+  .depth3-tab-wrap .tab > li {
+    line-height: 2.6666666667vw;
+    font-size: 1.0666666667vw;
+  }
+  .gallery .swiper-slide {
+    font-size: 1.2vw;
+  }
+  .gallery .swiper {
+    height: 20vw;
+  }
+  .gallery .mySwiper2 {
+    height: 33.3333333333vw;
+  }
+  .gallery .mySwiper {
+    height: 13.3333333333vw;
+    padding: 0.6666666667vw 0vw;
+  }
+  .btn-wrap {
+    margin: 1.3333333333vw 0vw;
+  }
+  .btn-wrap.type1 {
+    gap: 1.3333333333vw;
+  }
+  .btn-wrap.type2 {
+    width: 13.3333333333vw;
+  }
+  .btn-wrap.type3 .align {
+    width: 13.3333333333vw;
+  }
+  .btn-wrap.type4 .align {
+    width: 13.3333333333vw;
+  }
+  .btn-wrap.type5 .align {
+    width: 20vw;
+  }
+  .btn-wrap.type5 .btn {
+    width: calc((100% - 1.3333333333vw) / 3);
+  }
+  .btn-wrap .btn {
+    width: calc((100% - 0.6666666667vw) / 2);
+    line-height: 2.6666666667vw;
+    border-radius: 0.2666666667vw;
+  }
+  .btn-wrap .btn.btn-04 {
+    margin-right: 0.6666666667vw;
+    padding: 0vw 1.3333333333vw;
+  }
+  .btn-wrap .btn.btn-05 {
+    padding: 0vw 1.3333333333vw;
+  }
+  .pagination {
+    margin-top: 1.3333333333vw;
+    height: 1.6666666667vw;
+  }
+  .pagination > a {
+    width: 1.6666666667vw;
+    height: 1.6666666667vw;
+    line-height: 1.6666666667vw;
+    margin: 0vw 0.1333333333vw;
+  }
+  .pagination span {
+    line-height: 1.6666666667vw;
+  }
+  .pagination .pre {
+    background-position: 0 -1.6666666667vw;
+  }
+  .pagination .next {
+    background-position: 0 -3.3333333333vw;
+  }
+  .pagination .end {
+    background-position: 0 -5vw;
+  }
+  /* 플로팅 메뉴 */
+  .desc {
+    margin: 2vw 0vw 0.6666666667vw;
+    font-size: 1.3333333333vw;
+  }
+  .rule li {
+    padding-left: 0.6666666667vw;
+  }
+  .rule li::after {
+    width: 0.6666666667vw;
+    height: 0.6666666667vw;
+  }
+  /* 레이어 팝업 */
+  .lypop .btn-wrap {
+    margin: 1.3333333333vw 0vw 0vw;
+  }
+  .lypop-wp {
+    width: 40vw;
+    border-radius: 8;
+  }
+  .lypop-wp.min {
+    width: 26.6666666667vw;
+  }
+  .lypop-wp.mid {
+    width: 53.3333333333vw;
+  }
+  .lypop-wp.big {
+    width: 60vw;
+  }
+  .lypop-wp.max {
+    width: 80vw;
+  }
+  .lypop-title {
+    height: 3.4666666667vw;
+  }
+  .lypop-title > strong {
+    font-size: 1.3333333333vw;
+    padding: 1vw 2vw;
+  }
+  .lypop-close {
+    top: 0.3333333333vw;
+    right: 0.6666666667vw;
+    width: 2.6666666667vw;
+    height: 2.6666666667vw;
+  }
+  .lypop-close::before {
+    width: 0.1333333333vw;
+    height: 1.2vw;
+  }
+  .lypop-close::after {
+    width: 0.1333333333vw;
+    height: 1.2vw;
+  }
+  .lypop-ct {
+    padding: 2vw;
+  }
+  .daterangepicker {
+    padding: 4.6666666667vw 10.6666666667vw;
+    width: 90%;
+  }
+  .daterangepicker.drop-up {
+    margin-top: -0.6666666667vw;
+  }
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 8.6666666667vw;
+  }
+  .daterangepicker .drp-calendar .calendar-table th, .daterangepicker .drp-calendar .calendar-table td {
+    font-size: 1.3333333333vw;
+  }
+  .daterangepicker .drp-calendar .calendar-table td {
+    width: 4vw;
+  }
+  .daterangepicker .drp-buttons {
+    padding-top: 1.3333333333vw;
+  }
+  .daterangepicker .drp-buttons .btn {
+    font-size: 1.2vw;
+  }
+  .daterangepicker .drp-selected {
+    margin-right: 2vw;
+    padding: 0.2666666667vw 0vw;
+    font-size: 1.3333333333vw;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .center {
+    width: 95%;
+  }
 }

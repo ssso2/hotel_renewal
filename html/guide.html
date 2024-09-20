@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,9 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- 작성한 CSS 연결 -->
     <link rel="stylesheet" href="../css/common.css">
+    <!-- 제이쿼리 연결 -->
+    <script src="../js/common/jquery-ui.min.js"></script>
+    <script src="../js/common/jquery-3.7.1.min.js"></script>
     <!-- 스와이퍼 JS 연결 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <!-- 작성한 JS 연결 -->
@@ -18,7 +21,7 @@
     <title>퍼블리싱 가이드</title>
 </head>
 <body>
-    <div class="center">
+    <div class="center guide">
         <!-- 기본 규칙 -->
         <h1>GUIDE</h1>
         <p class="desc">* 기본 규칙</p>
@@ -70,76 +73,79 @@
 
         <!-- 3depth 페이지 공통 슬라이드 갤러리 -->
         <p class="desc">* 3depth 페이지 공통 슬라이드 갤러리</p>
-        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <div class="gallery">
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
               </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              <div thumbsSlider="" class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                      </div>
+                  </div>
               </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-              </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-              </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-              </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-              </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-              </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-              </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-              </div>
-              <div class="swiper-slide">
-                  <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-              </div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
         </div>
-        <div thumbsSlider="" class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                </div>
-            </div>
-        </div>
+
         <!-- //3depth 페이지 공통 슬라이드 갤러리 -->
 
         <!-- 버튼 스타일 -->
@@ -170,13 +176,170 @@
             </div>
         </div>
         <p class="desc"> - 버튼 3개 정렬</p>
-        <div class="btn-wrap type4">
+        <div class="btn-wrap type5">
             <div class="align">
                 <a href="#" class="btn btn-01">버튼1</a>
                 <a href="#" class="btn btn-02">버튼2</a>
+                <a href="#" class="btn btn-03">버튼3</a>
             </div>
         </div>
-</div>
+        <!-- // 버튼 스타일 -->
+
+        <!-- pagenation -->
+        <p class="desc"> * pagenation</p>
+        <div class="pagination">
+            <a href="#" class="page first"><span class="hide">맨처음 리스트</span></a>
+            <a href="#" class="page pre"><span class="hide">이전 리스트</span></a>
+            <a href="#"><span>1</span></a>
+            <a href="#"><span>2</span></a>
+            <a href="#"><span>3</span></a>
+            <a href="#"><span>4</span></a>
+            <a href="#"><span>5</span></a>
+            <a href="#"><span>6</span></a>
+            <a href="#"><span>7</span></a>
+            <a href="#"><span>8</span></a>
+            <a href="#"><span>9</span></a>
+            <a href="#" class="page next"><span class="hide">다음 리스트</span></a>
+            <a href="#" class="page end"><span class="hide">마지막 리스트</span></a>
+        </div>
+        <!-- // pagenation -->
+
+        <!-- 레이어 팝업 -->
+        <p class="desc"> * 레이어 팝업</p>
+        <div class="btn-wrap">                                             
+            <button class="btn btn-04" data-lybtn="pop-alert"><span>alert</span></button>
+            <button class="btn btn-04" data-lybtn="pop-confirm"><span>confirm</span></button>
+            <button class="btn btn-04" data-lybtn="pop-eudInfo"><span>600px</span></button>
+            <button class="btn btn-04" data-lybtn="pop-eudInfo2"><span>800px</span></button>
+            <button class="btn btn-04" data-lybtn="pop-eudInfo3"><span>900px</span></button>
+            <button class="btn btn-04" data-lybtn="pop-eudInfo4"><span>1200px</span></button>
+        </div>
+
+        <!-- alert -->
+        <div class="lypop" data-lyOpen="pop-alert" tabindex="0">
+            <div class="lypop-wp min">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>타이틀</strong>
+                    </div>
+                    <div class="lypop-ct">
+                        <p class="modal-txt">텍스트 <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugit explicabo quis, maiores molestiae amet blanditiis provident harum numquam? Consectetur, corporis minima quibusdam aspernatur temporibus ratione debitis ullam labore voluptate.
+                        </p>
+                        <div class="btn-wrap type5">                    
+                            <button class="btn btn-04" data-lyClose="pop-mypage1"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- confirm -->
+        <div class="lypop" data-lyOpen="pop-confirm">
+            <div class="lypop-wp min">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>타이틀</strong>
+                    </div>
+                    <div class="lypop-ct">
+                        <p class="modal-txt">
+                            <span class="fc-blue">텍스트</span> 하시겠습니까?
+                        </p>
+                        <div class="btn-wrap type3">   
+                            <div class="align">
+                                <button class="btn btn-04" data-lyClose="pop-mypagedel"><span>취소</span></button>
+                                <button class="btn btn-05"><span>확인</span></button>
+                            </div>                 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  팝업 600px -->
+        <div class="lypop" data-lyOpen="pop-eudInfo">
+            <div class="lypop-wp">
+            <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>600팝업</strong>
+                        <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-eudInfo3"><span class="hide">닫기</span></a>
+                    </div>
+                    <div class="lypop-ct">
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugit explicabo quis, maiores molestiae amet blanditiis provident harum numquam? Consectetur, corporis minima quibusdam aspernatur temporibus ratione debitis ullam labore voluptate.<br><br>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem repellendus quia perferendis earum necessitatibus iure possimus. Esse optio nulla laboriosam dolor nihil voluptates, voluptatum ipsa doloremque minus natus ullam. Suscipit.
+                        </div>
+                        <div class="btn-wrap type5">
+                            <button class="btn btn-04" data-lyClose="pop-eudInfo3"><span>닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- 팝업 800px -->
+        <div class="lypop" data-lyOpen="pop-eudInfo2">
+            <div class="lypop-wp mid">
+            <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>800팝업</strong>
+                        <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-eudInfo2"><span class="hide">닫기</span></a>
+                    </div>
+                    <div class="lypop-ct">
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugit explicabo quis, maiores molestiae amet blanditiis provident harum numquam? Consectetur, corporis minima quibusdam aspernatur temporibus ratione debitis ullam labore voluptate.<br><br>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem repellendus quia perferendis earum necessitatibus iure possimus. Esse optio nulla laboriosam dolor nihil voluptates, voluptatum ipsa doloremque minus natus ullam. Suscipit.
+                        </div>
+                        <div class="btn-wrap type5">
+                            <button class="btn btn-04" data-lyClose="pop-eudInfo2"><span>닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- 팝업 900px -->
+        <div class="lypop" data-lyOpen="pop-eudInfo3">
+            <div class="lypop-wp big">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>900팝업</strong>
+                        <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-eudInfo"><span class="hide">닫기</span></a>
+                    </div>
+                    <div class="lypop-ct">
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugit explicabo quis, maiores molestiae amet blanditiis provident harum numquam? Consectetur, corporis minima quibusdam aspernatur temporibus ratione debitis ullam labore voluptate.<br><br>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem repellendus quia perferendis earum necessitatibus iure possimus. Esse optio nulla laboriosam dolor nihil voluptates, voluptatum ipsa doloremque minus natus ullam. Suscipit.
+                        </div>
+                        <div class="btn-wrap type5">
+                            <button class="btn btn-04" data-lyClose="pop-eudInfo"><span>닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <!-- 팝업 1200px -->
+        <div class="lypop" data-lyOpen="pop-eudInfo4">
+            <div class="lypop-wp max">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>1200팝업</strong>
+                        <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-eudInfo4">
+                            <span class="hide">닫기</span>
+                        </a>
+                    </div>
+                    <div class="lypop-ct">
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugit explicabo quis, maiores molestiae amet blanditiis provident harum numquam? Consectetur, corporis minima quibusdam aspernatur temporibus ratione debitis ullam labore voluptate.<br><br>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem repellendus quia perferendis earum necessitatibus iure possimus. Esse optio nulla laboriosam dolor nihil voluptates, voluptatum ipsa doloremque minus natus ullam. Suscipit.
+                        </div>
+                        <div class="btn-wrap type5">
+                            <button class="btn btn-04" data-lyClose="pop-eudInfo4"><span>닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 </body>
