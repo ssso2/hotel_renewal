@@ -65,7 +65,20 @@
 }
 .room-floor h3 {
   text-align: center;
+  margin-bottom: 20px;
 }
 .room-floor img {
   width: 400px;
+}
+
+.lounge .context .Introduction .btn-wrap {
+  margin: 0;
+}
+
+.lounge-floor {
+  justify-content: space-around;
+}
+.lounge-floor h3 {
+  text-align: center;
+  margin-bottom: 20px;
 }
