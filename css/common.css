@@ -153,6 +153,7 @@ body::-webkit-scrollbar-track {
 .sub-title h2 {
   font-size: 27px;
   font-weight: 700;
+  color: #7A6C64;
 }
 .sub-title .sub-desc {
   margin-top: 20px;

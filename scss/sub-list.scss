@@ -4,14 +4,29 @@
 .sub-list-wrap {
     h3 {
         margin-bottom: 10px;
-        font-size: 24px;
+        font-size: 22px;
         color: #666;
         letter-spacing: 1px;
     }
+    .sub-title {
+        margin: 0;
+        padding-bottom: 0;
+        &::after {display: none;}
+        h2 {
+            font-size: 25px;
+            color: #666;
+        }
+        .sub-desc {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
+    } 
 
     .sub-list {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         padding: 100px 0;
@@ -20,7 +35,23 @@
             border: none;
         }
 
-        
+        &.line-2 {
+            & > li {
+                width: calc((100% - 75px) / 2);
+                .img-wrap {
+                    height: 300px;
+                }
+            }
+        }
+
+        &.line-3 {
+            & > li {
+                width: calc((100% - 150px) / 3);
+                .img-wrap {
+                    height: 250px;
+                }
+            }
+        }
 
         & > li {
             width: calc((100% - 150px) / 4);
@@ -80,7 +111,7 @@
                 .txt-wrap {
                     padding: 20px 10px 30px;
                     h4 {
-                        font-size: 22px;
+                        font-size: 21px;
                     }
                     p.desc {
                         margin: 10px 0 15px;
