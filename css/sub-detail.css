@@ -8,7 +8,7 @@
 .depth3-tab-wrap .context .Introduction h3 {
   margin-bottom: 30px;
   font-size: 22px;
-  color: #7A6C64;
+  color: #666;
 }
 .depth3-tab-wrap .context .Introduction h3 strong {
   margin-left: 10px;
@@ -27,12 +27,41 @@
 }
 .depth3-tab-wrap .context .Introduction .txt.small {
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.6;
   color: #000;
+}
+.depth3-tab-wrap .context .Introduction .group b {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.depth3-tab-wrap .context .Introduction .tel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 15px;
+}
+.depth3-tab-wrap .context .Introduction .tel > span {
+  width: 120px;
+  color: #7A6C64;
+  font-size: 18px;
+  font-weight: 700;
+}
+.depth3-tab-wrap .context .Introduction .tel > p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #555;
+}
+.depth3-tab-wrap .context .Introduction .tel + strong {
+  margin-top: 30px;
 }
 .depth3-tab-wrap .context .info, .depth3-tab-wrap .context .guide {
   padding: 70px 0 50px;
   border-bottom: 1px solid #ddd;
+}
+.depth3-tab-wrap .context .info + .info, .depth3-tab-wrap .context .guide + .info {
+  padding-top: 0;
 }
 .depth3-tab-wrap .context .info .list, .depth3-tab-wrap .context .guide .list {
   margin-bottom: 20px;
@@ -40,9 +69,17 @@
   font-size: 16px;
   line-height: 1.5;
 }
+.depth3-tab-wrap .context .info .list.tit h4, .depth3-tab-wrap .context .guide .list.tit h4 {
+  font-size: 18px;
+  color: #333;
+}
 .depth3-tab-wrap .context .info .list h4, .depth3-tab-wrap .context .guide .list h4 {
   width: 120px;
   color: #7A6C64;
+}
+.depth3-tab-wrap .context .info .list em, .depth3-tab-wrap .context .guide .list em {
+  display: inline-block;
+  width: 50px;
 }
 .depth3-tab-wrap .context .info .list .txt-wrap .txt, .depth3-tab-wrap .context .guide .list .txt-wrap .txt {
   margin-top: 15px;
