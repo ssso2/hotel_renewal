@@ -1,0 +1,55 @@
+.contact-wrap {
+  position: absolute;
+  width: 1000px;
+  height: 800px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  padding: 20px;
+  align-items: center;
+}
+.contact-wrap .contact-us {
+  margin: 25px 5px;
+  font-weight: bold;
+  color: #333;
+}
+.contact-wrap .contact-tel {
+  width: 900px;
+  height: 200px;
+  margin: 30px;
+  display: flex;
+  text-align: center;
+}
+.contact-wrap .contact-tel .main-tel {
+  width: 400px;
+  margin: 25px;
+  background-color: #f6f6f6;
+}
+.contact-wrap .contact-tel .res-tel {
+  width: 400px;
+  margin: 25px;
+  background-color: #f6f6f6;
+}
+.contact-wrap .rewards {
+  width: 850px;
+  height: 200px;
+  margin: auto;
+  background-color: #f6f6f6;
+}
+.contact-wrap .sns {
+  width: 900px;
+  height: 200px;
+  margin: 30px;
+  display: flex;
+}
+.contact-wrap .sns .insta {
+  width: 400px;
+  margin: 25px;
+  background-color: #f6f6f6;
+}
+.contact-wrap .sns .facebook {
+  width: 400px;
+  margin: 25px;
+  background-color: #f6f6f6;
+}

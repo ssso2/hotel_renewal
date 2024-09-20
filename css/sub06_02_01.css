@@ -1,0 +1,76 @@
+#faq-container {
+  position: absolute;
+  width: 1220px;
+  height: 750px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  padding: 10px;
+}
+#faq-container .faq {
+  margin: 25px 5px;
+  font-weight: bold;
+  color: #333;
+}
+#faq-container .text-container .title {
+  box-sizing: border-box;
+  display: block;
+  width: 1200px;
+  margin: 10px 0px;
+  padding: 20px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+#faq-container .text-container .content {
+  box-sizing: border-box;
+  width: 1200px;
+  min-height: 200px;
+  margin: 10px 0px;
+  padding: 20px;
+  overflow: auto;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: none;
+}
+#faq-container .post-list {
+  margin-top: 50px;
+  width: 1200px;
+  height: 40px;
+}
+#faq-container .post-list .board-nav {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  line-height: 40px;
+  background-color: #eaeaea;
+}
+#faq-container .post-list .post {
+  display: flex;
+  justify-content: space-around;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+#faq-container .post-list .post:hover {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: space-around;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+#faq-container .post-list .post-num {
+  width: 100px;
+  text-align: center;
+}
+#faq-container .post-list .post-title {
+  width: 700px;
+  text-align: center;
+}
+#faq-container .post-list .post-writer,
+#faq-container .post-list .post-date {
+  width: 200px;
+  text-align: center;
+}

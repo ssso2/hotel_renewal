@@ -1,0 +1,68 @@
+#post-container {
+  position: absolute;
+  width: 1220px;
+  height: 750px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  padding: 10px;
+}
+#post-container .ask {
+  margin: 25px 5px;
+  font-weight: bold;
+  color: #333;
+}
+#post-container .text-container .title {
+  box-sizing: border-box;
+  display: block;
+  width: 1200px;
+  padding: 20px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  background-color: #faf8f4;
+}
+#post-container .text-container .content {
+  box-sizing: border-box;
+  width: 1200px;
+  min-height: 500px;
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  resize: none;
+}
+#post-container .button-wrap {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#post-container .button-wrap button {
+  width: 100px;
+  padding: 10px;
+}
+#post-container .button-wrap .list {
+  box-sizing: border-box;
+  background: #eaeaea;
+  color: #333;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}
+#post-container .button-wrap .button-container {
+  display: flex;
+  margin-left: 900px;
+  margin-bottom: 10px;
+}
+#post-container .button-wrap .button-container .delete {
+  box-sizing: border-box;
+  background: #7a6c64;
+  color: #fff;
+  border: 1px solid #7a6c64;
+  border-radius: 10px;
+}
+#post-container .button-wrap .button-container .edit {
+  box-sizing: border-box;
+  background: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 10px;
+}

@@ -1,0 +1,59 @@
+.contact-wrap {
+    position: absolute;
+    width: 1000px;
+    height: 800px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    padding: 20px;
+    align-items: center;
+
+    .contact-us {
+        margin: 25px 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .contact-tel {
+        width: 900px;
+        height: 200px;
+        margin: 30px;
+        display: flex;
+        text-align: center;
+        .main-tel {
+            width: 400px;
+            margin: 25px;
+            background-color: #f6f6f6;
+        }
+        .res-tel {
+            width: 400px;
+            margin: 25px;
+            background-color: #f6f6f6;
+        }
+    }
+    .rewards {
+        width: 850px;
+        height: 200px;
+        margin: auto;
+        background-color: #f6f6f6;
+    }
+
+    .sns {
+        width: 900px;
+        height: 200px;
+        margin: 30px;
+        display: flex;
+
+        .insta {
+            width: 400px;
+            margin: 25px;
+            background-color: #f6f6f6;
+        }
+        .facebook {
+            width: 400px;
+            margin: 25px;
+            background-color: #f6f6f6;
+        }
+    }
+}

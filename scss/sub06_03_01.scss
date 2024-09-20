@@ -2,14 +2,14 @@
     position: absolute;
     width: 1220px;
     height: 750px;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 14px;
     padding: 10px;
 
     .ask {
-        margin: 10px 5px;
+        margin: 25px 5px;
         font-weight: bold;
         color: #333;
     }
@@ -19,45 +19,49 @@
             box-sizing: border-box;
             display: block;
             width: 1200px;
-            height: 50px;
             margin: 10px 0px;
-            padding: 10px;
+            padding: 20px;
             font-weight: bold;
-            border: 1px solid #333;
+            border: 1px solid #ccc;
+            border-radius: 10px;
         }
         #content {
             box-sizing: border-box;
             width: 1200px;
-            height: 550px;
+            min-height: 500px;
             margin: 10px 0px;
-            padding: 10px;
+            padding: 20px;
             overflow: auto;
             text-align: start;
             margin-top: 5px;
-            border: 1px solid #333;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            resize: none;
         }
     }
 
     .button-container {
         display: flex;
-        margin-left: 1080px;
+        margin-left: 980px;
         margin-bottom: 10px;
         button {
             width: 100px;
             margin-left: 10px;
             padding: 10px;
         }
-        #add {
+        #submit {
             box-sizing: border-box;
-            background: #333;
+            background: #7a6c64;
             color: #fff;
-            border: 1px solid #333;
+            border: 1px solid #7a6c64;
+            border-radius: 10px;
         }
         #cancel {
             box-sizing: border-box;
             background: #fff;
             color: #333;
             border: 1px solid #333;
+            border-radius: 10px;
         }
     }
 }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>신라호텔 : 로그인</title>
+        <title>신라호텔 : FAQ</title>
         <!-- 구글 웹폰트 연결 -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- 작성한 css 연결-->
         <link rel="stylesheet" href="../../css/header.css" />
-        <link rel="stylesheet" href="../../css/login.css" />
+        <link rel="stylesheet" href="../../css/sub06_02_01.css" />
         <!-- 작성자 : SSERA -->
         <!-- 제이쿼리 연결 -->
         <script src="../../js/common/jquery-ui.min.js"></script>
@@ -180,28 +180,68 @@
             </ul>
         </div>
 
-        <!-- 로그인 -->
-        <form id="shilla-login" action="#" method="get">
-            <div class="login-wrap" id="login-wrap">
-                <h2>로 그 인</h2>
-                <div class="hello">서울 신라호텔에 오신 것을 환영합니다.</div>
-                <div class="part-id">
-                    <label for="id">아이디 </label>
-                    <input type="text" id="id" autocomplete="none" />
-                </div>
-                <div class="part-pw">
-                    <label for="pw">비밀번호 </label>
-                    <input type="password" id="pw" maxlength="16" />
-                </div>
-
-                <button type="button" class="btn-login">로그인</button>
-
-                <div class="link-wrap">
-                    <a href="../sub/join.html">회원가입</a>
-                    <a href="#">ID/PW찾기</a>
-                </div>
+        <div id="faq-container">
+            <h2 class="faq">FAQ</h2>
+            <div class="text-container">
+                <div class="title">발렛파킹 가능한가요?</div>
+                <div class="content">발렛파킹은 예약 시 신청 고객에 한해 제공되며 1회 이용료는 10,000원입니다.</div>
             </div>
-        </form>
+
+            <div class="post-list">
+                <ul class="board-nav">
+                    <li class="post-num">번호</li>
+                    <li class="post-title">제목</li>
+                    <li class="post-writer">작성자</li>
+                    <li class="post-date">작성일</li>
+                </ul>
+
+                <a href="sub06_02_01.html">
+                    <ul class="post">
+                        <li class="post-num">1</li>
+                        <li class="post-title">호텔 예약은 언제부터 가능한가요?</li>
+                        <li class="post-writer">박세라</li>
+                        <li class="post-date">2024.09.20.</li>
+                    </ul>
+                </a>
+
+                <a href="sub06_02_02.html">
+                    <ul class="post">
+                        <li class="post-num">2</li>
+                        <li class="post-title">발렛파킹 가능한가요?</li>
+                        <li class="post-writer">박세라</li>
+                        <li class="post-date">2024.09.21.</li>
+                    </ul>
+                </a>
+
+                <a href="sub06_02_03.html">
+                    <ul class="post">
+                        <li class="post-num">3</li>
+                        <li class="post-title">예약한 객실을 변경하고 싶습니다.</li>
+                        <li class="post-writer">박세라</li>
+                        <li class="post-date">2024.09.21.</li>
+                    </ul>
+                </a>
+
+                <a href="sub06_02_04.html">
+                    <ul class="post">
+                        <li class="post-num">4</li>
+                        <li class="post-title">크리스마스 패키지 예약은 언제부터인가요?</li>
+                        <li class="post-writer">박세라</li>
+                        <li class="post-date">2024.09.22.</li>
+                    </ul>
+                </a>
+
+                <a href="sub06_02_05.html">
+                    <ul class="post">
+                        <li class="post-num">5</li>
+                        <li class="post-title">다이닝을 예약했는데 일정을 변경하고 싶어요.</li>
+                        <li class="post-writer">박세라</li>
+                        <li class="post-date">2024.09.23.</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+
         <!-- 플로팅 메뉴 -->
         <article class="floating-menu">
             <div class="menu">
