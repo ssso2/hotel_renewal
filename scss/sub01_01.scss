@@ -23,7 +23,7 @@
     height: 290px;
     position: relative;
     // background-color: #faf;
-    border-radius: 15px;
+    border-radius: 8px;
     overflow: hidden;
     .img-wrap > img {
         width: 450px;
@@ -51,10 +51,11 @@
         position: absolute;
         top: 210px;
         left: 20px;
+        font-size: 24px;
     }
     p {
         position: absolute;
-        top: 240px;
+        top: 250px;
         left: 20px;
     }
 }
@@ -250,7 +251,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 80px;
+    padding: 90px;
     align-items: center;
 }
 .pkg-filter-resetbtn,
@@ -286,6 +287,7 @@
 .pkg-total {
     height: 30px;
     line-height: 2.5;
+    font-size: 16px;
     // background-color: #ccc;
 }
 .dropdown {
@@ -378,23 +380,25 @@
         }
     }
     dt {
-        font-size: 1.5rem;
-        margin-bottom: 12px;
+        font-size: 24px;
+        margin: 4px 0 16px 0;
         font-weight: 600;
     }
     dd,
-    .pkg-date,
-    .pkg-pay {
-        display: inline-block;
-        width: 100%;
+    .pkg-date {
+        font-size: 16px;
         margin-bottom: 10px;
-        // background-color: #aaf;
+    }
+    .pkg-pay {
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 34px;
     }
     .list-keword {
         display: inline-block;
         width: 90px;
         height: 100%;
-        padding: 10px;
+        padding: 8px;
         color: #fff;
         background-color: #1f453a;
         border-radius: 5px;
@@ -405,13 +409,9 @@
         color: #fff;
     }
     dd:nth-last-of-type(1) {
-        height: 30px;
+        height: 34px;
     }
-    .pkg-pay {
-        font-size: 1.3rem;
-        color: #ccc;
-        margin-bottom: 20px;
-    }
+
     .pkg-rewards {
         position: absolute;
         top: 0;
@@ -440,21 +440,26 @@
     align-items: center;
     justify-content: center;
     margin: 50px 0 20px 0;
-}
-.pkg-paging button {
-    margin-right: 10px;
-    font-size: 15px;
-}
-.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-.pagepng {
-    background-image: url("../../img/common/bg_pageination.png");
-    width: 25px;
-    height: 25px;
-    border: none;
-    background-color: #fff;
+    #pagination {
+        font-size: 24px;
+    }
+    .pkg-paging {
+        & button {
+            margin-right: 10px;
+            font-size: 15px;
+        }
+    }
+    .active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .pagepng {
+        background-image: url("../../img/common/bg_pageination.png");
+        width: 25px;
+        height: 25px;
+        border: none;
+        background-color: #fff;
+    }
 }
 
 #first-page {

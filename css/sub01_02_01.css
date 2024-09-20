@@ -1,0 +1,124 @@
+.event-header img {
+  width: 100%;
+}
+
+.event-section {
+  width: 100%;
+  padding-bottom: 40px;
+  margin: 100px 0 100px 0;
+  border-bottom: 1px solid #ddd;
+}
+.event-section h2 {
+  font-size: 32px;
+  padding-bottom: 10px;
+}
+.event-section p {
+  font-size: 18px;
+  line-height: 1.2;
+}
+.event-section .main-des {
+  margin: 40px 0 40px 0;
+}
+.event-section .main-des li {
+  line-height: 2;
+}
+.event-section .main-des li:nth-of-type(5) {
+  padding-top: 40px;
+}
+
+.event-pmt {
+  height: 100%;
+  background-color: #faf8f4;
+  padding: 25px 0 25px 25px;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+.event-pmt :first-of-type {
+  font-weight: 700;
+}
+
+.event-li ul {
+  display: flex;
+  margin-bottom: 100px;
+}
+.event-li ul li {
+  padding-right: 400px;
+  line-height: 1.5;
+}
+.event-li ul li img {
+  width: 500px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+.event-li ul li h3 {
+  margin-bottom: 20px;
+}
+
+.a-wrap {
+  margin: 50px 0 25px 0;
+  text-align: right;
+}
+
+.aList {
+  width: 180px;
+  height: 40px;
+  background: #1f453a;
+  color: #fff;
+  text-align: center;
+  line-height: 3;
+}
+
+.other-title {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.other-event {
+  border-top: 2px solid #7a6c64;
+  padding-top: 80px;
+  margin: 200px 0 100px 0;
+  width: 100%;
+  height: 500px;
+}
+.other-event .other-title {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.other-list {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.other-item img {
+  width: 450px;
+  height: 250px;
+  display: block;
+}
+.other-item dt {
+  font-weight: 400;
+  font-size: 22px;
+  margin: 20px 0 0 0;
+}
+.other-item dd {
+  padding: 10px 0 14px 0;
+}
+.other-item dd:first-of-type {
+  position: relative;
+  color: #757575;
+}
+.other-item .other-pay {
+  font-weight: 600;
+  font-size: 24px;
+}

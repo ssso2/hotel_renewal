@@ -1,0 +1,48 @@
+.event-container {
+    width: 100%;
+    height: 1000px;
+    background-color: #faf;
+    padding: 100px 0 100px 0;
+}
+.event-list {
+    width: 100%;
+    height: 600px;
+    background-color: #aaf;
+    overflow: hidden;
+    & li > a {
+        display: flex;
+        .event-img-wrap {
+            width: 700px;
+            height: 500px;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .dinning-tag {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 20%;
+                height: 10%;
+                background-color: #7a6c64;
+                padding: 6px;
+                line-height: 2;
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+    .event-list-des {
+        margin-left: 50px;
+        height: 400px;
+        background-color: #aff;
+        & h3 {
+            font-size: 24px;
+        }
+        & p {
+            font-size: 16px;
+            line-height: 2;
+        }
+    }
+}

@@ -10,7 +10,7 @@
   width: 450px;
   height: 290px;
   position: relative;
-  border-radius: 15px;
+  border-radius: 8px;
   overflow: hidden;
 }
 .rec-section .img-wrap > img {
@@ -40,10 +40,11 @@
   position: absolute;
   top: 210px;
   left: 20px;
+  font-size: 24px;
 }
 .txt-wrap p {
   position: absolute;
-  top: 240px;
+  top: 250px;
   left: 20px;
 }
 
@@ -235,7 +236,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 80px;
+  padding: 90px;
   align-items: center;
 }
 
@@ -273,6 +274,7 @@
 .pkg-total {
   height: 30px;
   line-height: 2.5;
+  font-size: 16px;
 }
 
 .dropdown {
@@ -363,22 +365,25 @@
   height: 400px;
 }
 .pkg-list-container dt {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
+  font-size: 24px;
+  margin: 4px 0 16px 0;
   font-weight: 600;
 }
 .pkg-list-container dd,
-.pkg-list-container .pkg-date,
-.pkg-list-container .pkg-pay {
-  display: inline-block;
-  width: 100%;
+.pkg-list-container .pkg-date {
+  font-size: 16px;
   margin-bottom: 10px;
+}
+.pkg-list-container .pkg-pay {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 34px;
 }
 .pkg-list-container .list-keword {
   display: inline-block;
   width: 90px;
   height: 100%;
-  padding: 10px;
+  padding: 8px;
   color: #fff;
   background-color: #1f453a;
   border-radius: 5px;
@@ -389,12 +394,7 @@
   color: #fff;
 }
 .pkg-list-container dd:nth-last-of-type(1) {
-  height: 30px;
-}
-.pkg-list-container .pkg-pay {
-  font-size: 1.3rem;
-  color: #ccc;
-  margin-bottom: 20px;
+  height: 34px;
 }
 .pkg-list-container .pkg-rewards {
   position: absolute;
@@ -423,18 +423,18 @@
   justify-content: center;
   margin: 50px 0 20px 0;
 }
-
-.pkg-paging button {
+.page-container #pagination {
+  font-size: 24px;
+}
+.page-container .pkg-paging button {
   margin-right: 10px;
   font-size: 15px;
 }
-
-.active {
+.page-container .active {
   font-weight: bold;
   text-decoration: underline;
 }
-
-.pagepng {
+.page-container .pagepng {
   background-image: url("../../img/common/bg_pageination.png");
   width: 25px;
   height: 25px;

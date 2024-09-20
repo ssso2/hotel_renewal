@@ -1,0 +1,49 @@
+.event-container {
+  width: 100%;
+  height: 1000px;
+  background-color: #faf;
+  padding: 100px 0 100px 0;
+}
+
+.event-list {
+  width: 100%;
+  height: 600px;
+  background-color: #aaf;
+  overflow: hidden;
+}
+.event-list li > a {
+  display: flex;
+}
+.event-list li > a .event-img-wrap {
+  width: 700px;
+  height: 500px;
+  position: relative;
+}
+.event-list li > a .event-img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+.event-list li > a .event-img-wrap .dinning-tag {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  height: 10%;
+  background-color: #7a6c64;
+  padding: 6px;
+  line-height: 2;
+  text-align: center;
+  color: #fff;
+}
+.event-list .event-list-des {
+  margin-left: 50px;
+  height: 400px;
+  background-color: #aff;
+}
+.event-list .event-list-des h3 {
+  font-size: 24px;
+}
+.event-list .event-list-des p {
+  font-size: 16px;
+  line-height: 2;
+}
