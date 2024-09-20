@@ -30,6 +30,12 @@
   line-height: 1.4;
   color: #000;
 }
+.depth3-tab-wrap .context .Introduction .group b {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
 .depth3-tab-wrap .context .info, .depth3-tab-wrap .context .guide {
   padding: 70px 0 50px;
   border-bottom: 1px solid #ddd;

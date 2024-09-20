@@ -38,6 +38,14 @@
                     color: #000;
                 }
             }
+            .group {
+                b {
+                    display: inline-block;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
         }
         .info, .guide {
             padding: 70px 0 50px;
