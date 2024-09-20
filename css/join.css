@@ -1,22 +1,90 @@
 #shilla-join {
   position: absolute;
-  top: 90%;
+  width: 1500px;
+  height: 1500px;
+  margin-top: 200px;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1200px;
-  height: 1200px;
   font-size: 14px;
+  padding: 10px;
+}
+#shilla-join .clause-wrap {
+  height: 900px;
   background-color: #faf8f4;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 10px;
 }
-#shilla-join .clause-wrap .join,
-#shilla-join .clause-wrap .agree {
-  margin-top: 50px;
+#shilla-join .clause-wrap .join {
   text-align: center;
-  color: #333;
+  margin-bottom: 10px;
 }
+#shilla-join .clause-wrap .agree,
 #shilla-join .clause-wrap .direction {
-  margin-top: 20px;
-  text-align: center;
-  font-weight: 300;
+  margin-bottom: 20px;
+}
+#shilla-join .clause-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 10px;
+}
+#shilla-join .clause-container .clause {
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fff;
+  overflow: auto;
+}
+#shilla-join .clause-container input {
+  width: 100px;
   color: #333;
+}
+#shilla-join .join-container {
+  margin-top: 20px;
+}
+#shilla-join .join-container .info-title {
+  padding: 10px;
+}
+#shilla-join .join-container .info-group {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+#shilla-join .join-container label {
+  width: 150px;
+  padding: 10px;
+  font-size: 16px;
+}
+#shilla-join .join-container input {
+  display: flex;
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+#shilla-join .join-container #firstname,
+#shilla-join .join-container #lastname {
+  width: 145px;
+  margin-right: 10px;
+}
+#shilla-join .join-container button {
+  position: relative;
+  display: flex;
+  width: 100px;
+}
+#shilla-join .join-container #submit {
+  width: 500px;
+  padding: 10px;
+  left: 30%;
+  font-size: 16px;
+  align-items: center;
+  background-color: #7a6c64;
+  color: white;
+}
+#shilla-join .join-container #submit:hover {
+  background-color: #333;
 }
