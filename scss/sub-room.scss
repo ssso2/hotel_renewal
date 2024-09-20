@@ -93,8 +93,31 @@
                 margin:0
             }
         }
+        .guide{
+            .desc-wrap {
+                padding-top: 30px;
+
+                .desc {
+                        position: relative;
+                        margin: 0 0 10px 0;
+                        padding-left: 15px;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        color: #333;
+
+                        &::before {
+                            content: "*";
+                            display: block;
+                            position: absolute;
+                            top: 3px;
+                            left: 2px;
+                    }
+                }
+            }
+        }
     }
 }
+
 
 .lounge-floor{
     justify-content: space-around;
