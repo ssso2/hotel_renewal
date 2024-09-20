@@ -350,6 +350,17 @@ body::-webkit-scrollbar-track {
 .btn-wrap.type5 .btn {
   width: calc((100% - 20px) / 3);
 }
+.btn-wrap.type6 {
+  width: 100%;
+}
+.btn-wrap.type6 .align {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type6 .btn {
+  width: calc((100% - 20px) / 3);
+}
 .btn-wrap .btn {
   width: calc((100% - 10px) / 2);
   text-align: center;

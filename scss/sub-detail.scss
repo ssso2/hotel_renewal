@@ -4,7 +4,14 @@
 .depth3-tab-wrap {
 
     .gallery {
-        margin: 70px 0 100px;
+        margin: 70px 0;
+        &.no-slide {
+            height: 600px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 
     .context {
@@ -27,6 +34,12 @@
                 margin: 15px 0 10px;
                 font-size: 18px;
             }
+             em {
+                display: block;
+                margin-top: 10px;
+                font-size: 14px;
+                font-weight: 500;
+            }
             .txt {
                 margin-bottom: 20px;
                 font-size: 18px;
@@ -36,6 +49,11 @@
                     font-size: 16px; 
                     line-height: 1.6;
                     color: #000;
+                    & > span {
+                        font-size: 15px;
+                        color: #555;
+                    }
+
                 }
             }
             .group {
@@ -68,6 +86,130 @@
                 }
 
             }
+
+            .flex {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .timetable-wrap {
+                margin: 40px 0;
+                padding-left: 10px;
+                width: 640px;
+            }
+            .timetable {
+                margin: 10px 0;
+                border-top: 1px solid #aaa;
+                border-bottom: 1px solid #aaa;
+                & > li {
+                    display: flex;
+                    border-bottom: 1px solid #ddd;
+                    font-size: 17px;
+                    line-height: 1.6;
+                    &:nth-child(1){
+                        .time {
+                            line-height: 95px;
+                        }
+                    }
+                    &:nth-child(2){
+                        .time {
+                            line-height: 158px;
+                        }
+                    }
+                    &:nth-child(3){
+                        .time {
+                            line-height: 131px;
+                        }
+                    }
+                    .time {
+                        width: 150px;
+                        min-height: 95px;
+                        font-weight: 500;
+                        text-align: center;
+                        background: #f0f0f0;
+                    }
+                    .context {
+                        padding: 20px 30px;
+                        p {
+                            color: #000;
+                        }
+                        span {
+                            color: #666;
+                        }
+                        p + p {
+                            margin-bottom: 10px;
+                        }
+                        span + p {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+
+            }
+        }
+        .info-wrap {
+            margin-top: 70px;
+            & > strong {
+                font-size: 18px;
+                color: #333;
+                & + .info {
+                    padding: 30px 0 0;
+                }
+            }
+
+            &.flex {
+                // display: flex;
+                // align-items: baseline;
+                .info {
+                    // padding-top: 20px;
+                    display: flex;
+                    .list {
+                        margin: 0 20px;
+                        position: relative;
+                        &::after {
+                            content: '';
+                            display: inline-block;
+                            position: absolute;
+                            top: 50%;
+                            right: -20px;
+                            transform: translateY(-50%);
+                            width: 1px;
+                            height: 13px;
+                            background: #666;
+
+                        }
+                        &:last-child::after {
+                            display: none;
+                        }
+                        &:first-child{
+                            margin-left: 0;
+                        }
+                        & > h4 {
+                            margin-right: 15px;
+                            width: auto;
+                        }
+                        
+                    }
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 50px;
+            }
+
+            .info {
+                border: none;
+            }
+            .flex {
+                display: flex;
+                gap: 30px;
+                text-align: center;
+                & > li {
+                    padding: 10px;
+                    border: 1px solid #666;
+                }
+            }
         }
         .info, .guide {
             padding: 70px 0 50px;
@@ -80,12 +222,6 @@
                 display: flex;
                 font-size: 16px;
                 line-height: 1.5;
-                &.tit {
-                    h4 {
-                        font-size: 18px;
-                        color: #333;
-                    }
-                }
 
                 h4 {
                     width: 120px;
@@ -139,3 +275,11 @@
         }
     }
 }
+
+.lypop[data-lyOpen] {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+

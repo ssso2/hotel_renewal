@@ -328,6 +328,19 @@ body::-webkit-scrollbar-track {
 
         }
     }
+    &.type6 {
+        width: 100%;
+        .align {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            width: calc((100% - 20px)/3);
+
+
+        }
+    }
     .btn {
         width: calc((100% - 10px)/2);
         text-align: center;
