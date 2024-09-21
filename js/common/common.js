@@ -116,7 +116,7 @@ $(function () {
 
 
 
-    // daterangepicker
+    // daterangepicker - 메인
     $('input[name="daterange"]').daterangepicker({
             "minYear":1000,
             "maxYear": 9999,
@@ -136,6 +136,27 @@ $(function () {
         },function(start,end,label){
             console.log('New daterange selected:'+start.format('YYYY.MM.DD') + ' - ' + end.format('YYYY.MM.DD')+'(predefined range:'+label+')');
     });
+    // daterangepicker - 예약
+    $('input[name="daterange2"]').daterangepicker({
+            "minYear":1000,
+            "maxYear": 9999,
+            "locale":{"format":'YYYY.MM.DD', 
+                "separator":" - ",
+                "applyLabel":"확인",
+                "cancelLabel": "취소",
+                "fromLabel":"From",
+                "toLabel":"To",
+                "customRangeLabel":"Custom",
+                "weekLabel": "주",
+                "daysOfWeek":["일","월","화","수","목","금","토"],
+                "monthNames":["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+                "firstDay":1
+            },
+            drops:"down" // up, down, auto 중 선택
+        },function(start,end,label){
+            console.log('New daterange selected:'+start.format('YYYY.MM.DD') + ' - ' + end.format('YYYY.MM.DD')+'(predefined range:'+label+')');
+    });
+
 
 
     
