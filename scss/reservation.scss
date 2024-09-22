@@ -239,7 +239,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        justify-content: sp;
         font-size: 16px;
         line-height: 70px;
         border-bottom: 1px solid #eaeaea;
@@ -257,7 +256,11 @@
     }
     .keyword-sorting {
         display: flex;
-        .sorting {
+        .keyword-wrap {
+
+        }
+
+        .sorting-wrap {
             position: relative;
             margin-left: 30px;
             
@@ -288,6 +291,63 @@
         }
     }
 
+    .keyword-box {
+        border: none;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+        
+        &.on {
+            height: 167px;
+            border: 1px solid #ddd;
+            border-top: 0;
+        }
+        .top-wrap {
+            padding: 20px 50px 20px 30px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span {
+                font-size: 18px;
+                font-weight: 500;
+            }
+            button {font-size: 15px;}
+        }
+        .bottom-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 50px 30px 30px;
+            
+            .chk-boxs {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                & > li {
+                    margin-right: 50px;
+                    // margin-top: 30px;
+                    font-size: 15px;
+                }
+
+                // label {
+                    
+                // }
+                input {
+                    margin-right: 5px;
+                    position: relative;
+                    top: 1px;
+                }
+            }
+            button {
+                padding: 10px 30px;
+                background: #7A6C64;
+                font-size: 15px;
+                color: #fff;
+            }
+        }
+    }
+
     .tab-cont  {
         & > li {
             display: flex;
@@ -299,7 +359,6 @@
                 display: flex;
                 gap: 30px;
                 .img-wrap {
-
                     width: 300px;
                     height: 200px;
                     img {
@@ -343,6 +402,10 @@
                 display: flex;
                 align-items: center;
                 gap: 30px;
+                .price {
+                    font-size: 25px;
+                    font-weight: 500;
+                }
                 .btn {
                     padding-left: 30px;
                     width: 150px;
@@ -352,6 +415,7 @@
                     font-weight: 500;
                     color: #fff;
                     text-align: left;
+                    border-radius: 0;
                 }
             }
         }

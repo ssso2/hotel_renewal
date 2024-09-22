@@ -214,7 +214,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  justify-content: sp;
   font-size: 16px;
   line-height: 70px;
   border-bottom: 1px solid #eaeaea;
@@ -235,15 +234,15 @@
 .search-results-wrap .keyword-sorting {
   display: flex;
 }
-.search-results-wrap .keyword-sorting .sorting {
+.search-results-wrap .keyword-sorting .sorting-wrap {
   position: relative;
   margin-left: 30px;
 }
-.search-results-wrap .keyword-sorting .sorting .selected {
+.search-results-wrap .keyword-sorting .sorting-wrap .selected {
   padding: 0 50px 0 20px;
   cursor: pointer;
 }
-.search-results-wrap .keyword-sorting .sorting .select-sort {
+.search-results-wrap .keyword-sorting .sorting-wrap .select-sort {
   position: absolute;
   top: 70px;
   left: 0;
@@ -253,13 +252,64 @@
   background: #fff;
   display: none;
 }
-.search-results-wrap .keyword-sorting .sorting .select-sort > li {
+.search-results-wrap .keyword-sorting .sorting-wrap .select-sort > li {
   cursor: pointer;
   padding: 10px 48px 10px 20px;
 }
-.search-results-wrap .keyword-sorting .sorting .select-sort > li:hover {
+.search-results-wrap .keyword-sorting .sorting-wrap .select-sort > li:hover {
   font-weight: 500;
   background: #eaeaea;
+}
+.search-results-wrap .keyword-box {
+  border: none;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.search-results-wrap .keyword-box.on {
+  height: 167px;
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+.search-results-wrap .keyword-box .top-wrap {
+  padding: 20px 50px 20px 30px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-results-wrap .keyword-box .top-wrap span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.search-results-wrap .keyword-box .top-wrap button {
+  font-size: 15px;
+}
+.search-results-wrap .keyword-box .bottom-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 50px 30px 30px;
+}
+.search-results-wrap .keyword-box .bottom-wrap .chk-boxs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.search-results-wrap .keyword-box .bottom-wrap .chk-boxs > li {
+  margin-right: 50px;
+  font-size: 15px;
+}
+.search-results-wrap .keyword-box .bottom-wrap .chk-boxs input {
+  margin-right: 5px;
+  position: relative;
+  top: 1px;
+}
+.search-results-wrap .keyword-box .bottom-wrap button {
+  padding: 10px 30px;
+  background: #7A6C64;
+  font-size: 15px;
+  color: #fff;
 }
 .search-results-wrap .tab-cont > li {
   display: flex;
@@ -314,6 +364,10 @@
   align-items: center;
   gap: 30px;
 }
+.search-results-wrap .tab-cont > li .r-box .price {
+  font-size: 25px;
+  font-weight: 500;
+}
 .search-results-wrap .tab-cont > li .r-box .btn {
   padding-left: 30px;
   width: 150px;
@@ -323,4 +377,5 @@
   font-weight: 500;
   color: #fff;
   text-align: left;
+  border-radius: 0;
 }
