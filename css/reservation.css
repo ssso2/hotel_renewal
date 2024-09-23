@@ -344,6 +344,9 @@
   font-size: 15px;
   color: #fff;
 }
+.search-results-wrap .room-type-select {
+  display: block;
+}
 .search-results-wrap .tab-cont {
   display: none;
 }
@@ -351,11 +354,13 @@
   display: block;
 }
 .search-results-wrap .tab-cont > li {
+  padding: 50px 0;
+  border-bottom: 1px solid #ddd;
+}
+.search-results-wrap .tab-cont > li .box-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 0;
-  border-bottom: 1px solid #ddd;
 }
 .search-results-wrap .tab-cont > li .l-box {
   display: flex;

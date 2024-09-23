@@ -383,15 +383,22 @@
         }
     }
 
+    .room-type-select {
+        display: block;
+    }
+
     .tab-cont  {
         display: none;
         &.on {display: block;}
         & > li {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             padding: 50px 0;
             border-bottom: 1px solid #ddd;
+            .box-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+            }
             .l-box {
                 display: flex;
                 gap: 30px;
