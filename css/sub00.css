@@ -349,32 +349,32 @@
   display: inline;
 }
 
-.pkg-list-container {
+.list-container {
   position: relative;
   width: 100%;
 }
-.pkg-list-container .img-wrapper {
+.list-container .img-wrapper {
   display: block;
   height: 420px;
 }
-.pkg-list-container .img-wrapper img {
+.list-container .img-wrapper img {
   display: block;
   width: 680px;
   height: 400px;
 }
-.pkg-list-container dt {
+.list-container dt {
   font-size: 1.5rem;
   margin-bottom: 12px;
   font-weight: 600;
 }
-.pkg-list-container dd,
-.pkg-list-container .pkg-date,
-.pkg-list-container .pkg-pay {
+.list-container dd,
+.list-container .pkg-date,
+.list-container .pkg-pay {
   display: inline-block;
   width: 100%;
   margin-bottom: 10px;
 }
-.pkg-list-container .list-keword {
+.list-container .list-keword {
   display: inline-block;
   width: 90px;
   height: 100%;
@@ -384,19 +384,19 @@
   border-radius: 5px;
   text-align: center;
 }
-.pkg-list-container .pmt {
+.list-container .pmt {
   background-color: #d20a10;
   color: #fff;
 }
-.pkg-list-container dd:nth-last-of-type(1) {
+.list-container dd:nth-last-of-type(1) {
   height: 30px;
 }
-.pkg-list-container .pkg-pay {
+.list-container .pkg-pay {
   font-size: 1.3rem;
   color: #ccc;
   margin-bottom: 20px;
 }
-.pkg-list-container .pkg-rewards {
+.list-container .pkg-rewards {
   position: absolute;
   top: 0;
   right: 0;
@@ -407,10 +407,10 @@
   text-align: center;
   display: inline-block;
 }
-.pkg-list-container .pkg-rewards img {
+.list-container .pkg-rewards img {
   width: 34px;
 }
-.pkg-list-container .pkg-rewards span {
+.list-container .pkg-rewards span {
   color: #fff;
   display: block;
 }
