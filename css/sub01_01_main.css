@@ -381,9 +381,9 @@
 }
 .list-container .list-keword {
   display: inline-block;
-  width: 90px;
+  width: auto;
+  padding: 8px 15px;
   height: 100%;
-  padding: 8px;
   color: #fff;
   background-color: #1f453a;
   border-radius: 5px;
@@ -423,12 +423,13 @@
   justify-content: center;
   margin: 50px 0 20px 0;
 }
-.page-container #pagination {
-  font-size: 24px;
+.page-container .pkg-paging {
+  display: flex;
 }
 .page-container .pkg-paging button {
-  margin-right: 10px;
-  font-size: 15px;
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 20px;
 }
 .page-container .active {
   font-weight: bold;

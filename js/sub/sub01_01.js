@@ -69,16 +69,6 @@ $(function () {
     });
     $("#datepicker").datepicker("setDate", "today");
 });
-//상단이동
-$(function () {
-    var targetOffset = $(".pkg-section").offset().top - 90;
-    $(".pkg-paging button").on("click", function () {
-        $("html, body").animate({ scrollTop: targetOffset }, "fast");
-    });
-    $("#pagination").on("click", function () {
-        $("html, body").animate({ scrollTop: targetOffset }, "fast");
-    });
-});
 
 // 초기화
 $(".pkg-filter-resetbtn").click(function () {
@@ -163,14 +153,22 @@ $(document).ready(function () {
         });
     }
 
-    // 이전, 다음, 첫 페이지, 마지막 페이지 버튼 상태 제어 함수
+    // 이전, 첫 페이지, 다음, 마지막 페이지 버튼 상태 제어
     function updateControlButtons(totalPages) {
-        $("#prev-page").prop("disabled", currentPage === 1);
-        $("#next-page").prop("disabled", currentPage === totalPages);
-        $("#first-page").prop("disabled", currentPage === 1);
-        $("#last-page").prop("disabled", currentPage === totalPages);
+        // 첫페이지일 때 이전, 처음으로 버튼 안보이기
+        $("#prev-page").css("display", currentPage === 1 ? "none" : "block");
+        $("#first-page").css("display", currentPage === 1 ? "none" : "block");
+        // 다음, 마지막 페이지 버튼 상태 제어
+        // 마지막페이지일 때 다음, 마지막으로 버튼 안보이기
+        $("#next-page").css(
+            "display",
+            currentPage === totalPages ? "none" : "block"
+        );
+        $("#last-page").css(
+            "display",
+            currentPage === totalPages ? "none" : "block"
+        );
     }
-
     // 이전/다음/첫/마지막 페이지 클릭 핸들러
     $("#prev-page").on("click", function () {
         if (currentPage > 1) {
@@ -207,6 +205,7 @@ $(document).ready(function () {
     paginateItems(productItems); // 전체 상품을 페이지네이션에 맞춰 출력
 });
 
+// 페이지 이동 고민하기
 $(function () {
     var targetOffset = $(".pkg-section").offset().top - 90;
     $(".pkg-paging button").on("click", function () {
