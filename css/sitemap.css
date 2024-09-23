@@ -1,0 +1,23 @@
+.sitemap-wrap {
+  width: 100%;
+}
+.sitemap-wrap .sitemap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 70px 0 70px 0;
+  border-bottom: 1px solid #ddd;
+}
+.sitemap-wrap .sitemap .map-list {
+  width: 220px;
+  padding-left: 20px;
+}
+.sitemap-wrap .sitemap .map-list .map-title {
+  border-bottom: 2px solid #7a6c64;
+  line-height: 3;
+  font-weight: 700;
+}
+.sitemap-wrap .sitemap .map-list a {
+  display: block;
+  margin-top: 16px;
+}

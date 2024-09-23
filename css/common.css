@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url(./reset.css);
+.mt-0 {
+  margin-top: 0 !important;
+}
+
 .mt-10 {
   margin-top: 10px !important;
 }
@@ -18,6 +22,10 @@
 
 .mt-50 {
   margin-top: 50px !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
 }
 
 .mb-10 {
@@ -40,6 +48,10 @@
   margin-bottom: 50px !important;
 }
 
+.pt-0 {
+  padding-top: 0 !important;
+}
+
 .pt-10 {
   padding-top: 10px !important;
 }
@@ -58,6 +70,10 @@
 
 .pt-50 {
   padding-top: 50px !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
 }
 
 .pb-10 {
@@ -113,6 +129,15 @@
   padding: 50px 0;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex-direction: column;
+}
+
 /* 스크롤바의 폭 너비 */
 body::-webkit-scrollbar {
   width: 10px;
@@ -159,6 +184,7 @@ body::-webkit-scrollbar-track {
   margin-top: 20px;
   font-size: 17px;
   color: #666;
+  line-height: 1.5;
 }
 .sub-title .location {
   display: flex;
@@ -220,7 +246,8 @@ body::-webkit-scrollbar-track {
 }
 .depth3-tab-wrap .tab > li {
   margin-bottom: -1px;
-  width: 14.2857142857%;
+  min-width: 14.2857142857%;
+  padding: 0px 10px;
   text-align: center;
   font-size: 16px;
   line-height: 40px;
@@ -351,6 +378,38 @@ body::-webkit-scrollbar-track {
 .btn-wrap.type5 .btn {
   width: calc((100% - 20px) / 3);
 }
+.btn-wrap.type6 {
+  width: 100%;
+}
+.btn-wrap.type6 .align {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type6 .btn {
+  width: calc((100% - 20px) / 3);
+}
+.btn-wrap.btn-200 {
+  width: 100%;
+}
+.btn-wrap.btn-200 .btn {
+  margin-right: 10px;
+  width: 200px;
+}
+.btn-wrap.btn-250 {
+  width: 100%;
+}
+.btn-wrap.btn-250 .btn {
+  margin-right: 10px;
+  width: 250px;
+}
+.btn-wrap.btn-300 {
+  width: 100%;
+}
+.btn-wrap.btn-300 .btn {
+  margin-right: 10px;
+  width: 300px;
+}
 .btn-wrap .btn {
   width: calc((100% - 10px) / 2);
   text-align: center;
@@ -472,7 +531,8 @@ body::-webkit-scrollbar-track {
 .rule li {
   padding-left: 10px;
   position: relative;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
 }
 .rule li::after {
   content: "-";
@@ -577,6 +637,14 @@ body::-webkit-scrollbar-track {
 .lypop-ct {
   padding: 30px;
 }
+.lypop-ct.scroll {
+  padding: 10px 0;
+  height: 500px;
+}
+.lypop-ct.scroll iframe {
+  width: 100%;
+  height: 100%;
+}
 
 .daterangepicker {
   padding: 70px 200px;
@@ -620,258 +688,8 @@ body::-webkit-scrollbar-track {
 }
 
 @media screen and (max-width: 1500px) {
-  .mt-10 {
-    margin-top: 0.6666666667vw;
-  }
-  .mt-20 {
-    margin-top: 1.3333333333vw;
-  }
-  .mt-30 {
-    margin-top: 2vw;
-  }
-  .mt-40 {
-    margin-top: 2.6666666667vw;
-  }
-  .mt-50 {
-    margin-top: 3.3333333333vw;
-  }
-  .mb-10 {
-    margin-bottom: 0.6666666667vw;
-  }
-  .mb-20 {
-    margin-bottom: 1.3333333333vw;
-  }
-  .mb-30 {
-    margin-bottom: 2vw;
-  }
-  .mb-40 {
-    margin-bottom: 2.6666666667vw;
-  }
-  .mb-50 {
-    margin-bottom: 3.3333333333vw;
-  }
-  .pt-10 {
-    padding-top: 0.6666666667vw;
-  }
-  .pt-20 {
-    padding-top: 1.3333333333vw;
-  }
-  .pt-30 {
-    padding-top: 2vw;
-  }
-  .pt-40 {
-    padding-top: 2.6666666667vw;
-  }
-  .pt-50 {
-    padding-top: 3.3333333333vw;
-  }
-  .pb-10 {
-    padding-bottom: 0.6666666667vw;
-  }
-  .pb-20 {
-    padding-bottom: 1.3333333333vw;
-  }
-  .pb-30 {
-    padding-bottom: 2vw;
-  }
-  .pb-40 {
-    padding-bottom: 2.6666666667vw;
-  }
-  .pb-50 {
-    padding-bottom: 3.3333333333vw;
-  }
   .center {
     width: 90%;
-  }
-  .center.guide {
-    padding: 3.3333333333vw 0vw;
-  }
-  /* 3depth title 공통 */
-  .container {
-    margin-top: 5.3333333333vw;
-  }
-  .sub-title {
-    margin-bottom: 2vw;
-    padding: 3.3333333333vw 0.6666666667vw 1.3333333333vw;
-  }
-  .sub-title h2 {
-    font-size: 1.4666666667vw;
-  }
-  .sub-title .location > li {
-    margin-right: 2vw;
-  }
-  .sub-title .location > li::after {
-    width: 0.3333333333vw;
-    height: 0.3333333333vw;
-    right: -1vw;
-  }
-  .sub-title .location > li > a {
-    font-size: 0.8666666667vw;
-  }
-  /* 3depth tab 공통 */
-  .depth3-tab-wrap {
-    /* tab */
-  }
-  .depth3-tab-wrap .tab {
-    margin-bottom: 2vw;
-  }
-  .depth3-tab-wrap .tab.on {
-    width: 94.6666666667vw;
-  }
-  .depth3-tab-wrap .tab > li {
-    line-height: 2.6666666667vw;
-    font-size: 1.0666666667vw;
-  }
-  .gallery .swiper-slide {
-    font-size: 1.2vw;
-  }
-  .gallery .swiper {
-    height: 20vw;
-  }
-  .gallery .mySwiper2 {
-    height: 33.3333333333vw;
-  }
-  .gallery .mySwiper {
-    height: 13.3333333333vw;
-    padding: 0.6666666667vw 0vw;
-  }
-  .btn-wrap {
-    margin: 1.3333333333vw 0vw;
-  }
-  .btn-wrap.type1 {
-    gap: 1.3333333333vw;
-  }
-  .btn-wrap.type2 {
-    width: 13.3333333333vw;
-  }
-  .btn-wrap.type3 .align {
-    width: 13.3333333333vw;
-  }
-  .btn-wrap.type4 .align {
-    width: 13.3333333333vw;
-  }
-  .btn-wrap.type5 .align {
-    width: 20vw;
-  }
-  .btn-wrap.type5 .btn {
-    width: calc((100% - 1.3333333333vw) / 3);
-  }
-  .btn-wrap .btn {
-    width: calc((100% - 0.6666666667vw) / 2);
-    line-height: 2.6666666667vw;
-    border-radius: 0.2666666667vw;
-  }
-  .btn-wrap .btn.btn-04 {
-    margin-right: 0.6666666667vw;
-    padding: 0vw 1.3333333333vw;
-  }
-  .btn-wrap .btn.btn-05 {
-    padding: 0vw 1.3333333333vw;
-  }
-  .pagination {
-    margin-top: 1.3333333333vw;
-    height: 1.6666666667vw;
-  }
-  .pagination > a {
-    width: 1.6666666667vw;
-    height: 1.6666666667vw;
-    line-height: 1.6666666667vw;
-    margin: 0vw 0.1333333333vw;
-  }
-  .pagination span {
-    line-height: 1.6666666667vw;
-  }
-  .pagination .pre {
-    background-position: 0 -1.6666666667vw;
-  }
-  .pagination .next {
-    background-position: 0 -3.3333333333vw;
-  }
-  .pagination .end {
-    background-position: 0 -5vw;
-  }
-  /* 플로팅 메뉴 */
-  .desc {
-    margin: 2vw 0vw 0.6666666667vw;
-    font-size: 1.3333333333vw;
-  }
-  .rule li {
-    padding-left: 0.6666666667vw;
-  }
-  .rule li::after {
-    width: 0.6666666667vw;
-    height: 0.6666666667vw;
-  }
-  /* 레이어 팝업 */
-  .lypop .btn-wrap {
-    margin: 1.3333333333vw 0vw 0vw;
-  }
-  .lypop-wp {
-    width: 40vw;
-    border-radius: 8;
-  }
-  .lypop-wp.min {
-    width: 26.6666666667vw;
-  }
-  .lypop-wp.mid {
-    width: 53.3333333333vw;
-  }
-  .lypop-wp.big {
-    width: 60vw;
-  }
-  .lypop-wp.max {
-    width: 80vw;
-  }
-  .lypop-title {
-    height: 3.4666666667vw;
-  }
-  .lypop-title > strong {
-    font-size: 1.3333333333vw;
-    padding: 1vw 2vw;
-  }
-  .lypop-close {
-    top: 0.3333333333vw;
-    right: 0.6666666667vw;
-    width: 2.6666666667vw;
-    height: 2.6666666667vw;
-  }
-  .lypop-close::before {
-    width: 0.1333333333vw;
-    height: 1.2vw;
-  }
-  .lypop-close::after {
-    width: 0.1333333333vw;
-    height: 1.2vw;
-  }
-  .lypop-ct {
-    padding: 2vw;
-  }
-  .daterangepicker {
-    padding: 4.6666666667vw 10.6666666667vw;
-    width: 90%;
-  }
-  .daterangepicker.drop-up {
-    margin-top: -0.6666666667vw;
-  }
-  .daterangepicker .drp-calendar.left .calendar-table {
-    padding-right: 8.6666666667vw;
-  }
-  .daterangepicker .drp-calendar .calendar-table th, .daterangepicker .drp-calendar .calendar-table td {
-    font-size: 1.3333333333vw;
-  }
-  .daterangepicker .drp-calendar .calendar-table td {
-    width: 4vw;
-  }
-  .daterangepicker .drp-buttons {
-    padding-top: 1.3333333333vw;
-  }
-  .daterangepicker .drp-buttons .btn {
-    font-size: 1.2vw;
-  }
-  .daterangepicker .drp-selected {
-    margin-right: 2vw;
-    padding: 0.2666666667vw 0vw;
-    font-size: 1.3333333333vw;
   }
 }
 @media screen and (max-width: 1240px) {
