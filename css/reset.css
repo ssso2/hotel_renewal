@@ -30,7 +30,7 @@ input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {display: none;}
 input {border:0;background:#fff;width:inherit;vertical-align:middle;}
 input:placeholder {color:#aaa;}
-input {-webkit-appearance:none;-webkit-border-radius:0;font-family:inherit;color:inherit;font-weight: 500;}
+input {font-family:inherit;color:inherit;font-weight: 500;}
 blockquote, q {quotes:none;}
 blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
 a {margin:0;padding:0;text-decoration:none;background:transparent;color:inherit;display: inline-block;}
