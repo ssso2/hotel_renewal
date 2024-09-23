@@ -25,20 +25,23 @@
   border-bottom: 1px solid #ddd;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .depth3-tab-wrap .context .amenity h3 {
   width: 100%;
 }
 .depth3-tab-wrap .context .amenity .list {
   margin-bottom: 20px;
+  margin-right: 10px;
   display: flex;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
 }
 .depth3-tab-wrap .context .amenity .list h4 {
-  width: 120px;
+  width: 100px;
   color: #7A6C64;
+}
+.depth3-tab-wrap .context .amenity .list .txt-wrap {
+  width: 240px;
 }
 .depth3-tab-wrap .context .amenity .list .txt-wrap .txt {
   margin-top: 15px;
