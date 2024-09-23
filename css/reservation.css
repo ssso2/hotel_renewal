@@ -57,7 +57,7 @@
 .reservation .reservation-wrap .room-wrap:hover {
   border-color: #7A6C64;
 }
-.reservation .reservation-wrap .search {
+.reservation .reservation-wrap .reservation-search-btn {
   display: block;
   width: 200px;
   border: 2px solid #7A6C64;
@@ -206,9 +206,16 @@
   font-size: 22px;
   display: none;
 }
+.reservation .no-select.on {
+  display: block;
+}
 
 .search-results-wrap {
   margin-top: 30px;
+  display: none;
+}
+.search-results-wrap.on {
+  display: block;
 }
 .search-results-wrap .tab-wrap {
   display: flex;
@@ -311,6 +318,12 @@
   font-size: 15px;
   color: #fff;
 }
+.search-results-wrap .tab-cont {
+  display: none;
+}
+.search-results-wrap .tab-cont.on {
+  display: block;
+}
 .search-results-wrap .tab-cont > li {
   display: flex;
   align-items: center;
@@ -334,7 +347,7 @@
   display: inline-block;
   margin-bottom: 8px;
   padding: 5px 10px;
-  background: #7A6C64;
+  background: #af9b8f;
   color: #fff;
   font-weight: 500;
   border-radius: 4px;

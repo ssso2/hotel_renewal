@@ -64,7 +64,7 @@
             }
         }
 
-        .search {
+        .reservation-search-btn {
             display: block;
             width: 200px;
             border: 2px solid #7A6C64;
@@ -230,11 +230,14 @@
         text-align: center;
         font-size: 22px;
         display: none;
+        &.on {display: block;}
     }
 
 }
 .search-results-wrap {
     margin-top: 30px;
+    display: none;
+    &.on {display: block;}
     .tab-wrap {
         display: flex;
         align-items: center;
@@ -349,6 +352,8 @@
     }
 
     .tab-cont  {
+        display: none;
+        &.on {display: block;}
         & > li {
             display: flex;
             align-items: center;
@@ -371,7 +376,7 @@
                         display: inline-block;
                         margin-bottom: 8px;
                         padding: 5px 10px;
-                        background: #7A6C64;
+                        background: #af9b8f;
                         color: #fff;
                         font-weight: 500;
                         border-radius: 4px;
