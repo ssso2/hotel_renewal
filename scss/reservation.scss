@@ -243,13 +243,13 @@
         align-items: center;
         justify-content: space-between;
         font-size: 16px;
-        line-height: 70px;
+        // line-height: 70px;
         border-bottom: 1px solid #eaeaea;
     }
     .tab {
         display: flex;
         & > li {
-            padding: 0 30px;
+            padding: 27px 30px;
             cursor: pointer;
             &:hover {
                 font-weight: 700;
@@ -259,8 +259,11 @@
     }
     .keyword-sorting {
         display: flex;
+        align-items: center;
         .keyword-wrap {
-
+            .keyword-btn {
+                font-size: 16px;
+            }
         }
 
         .sorting-wrap {
@@ -268,7 +271,7 @@
             margin-left: 30px;
             
             .selected {
-                padding: 0 50px 0 20px;
+                padding: 27px 50px 27px 20px;
                 cursor: pointer;
             }
             .select-sort {
@@ -279,13 +282,21 @@
                 border-radius: 8px;
                 line-height: 40px;
                 background: #fff;
+                z-index: 2;
                 display: none;
+
+                &.on {
+                    display: block;
+                }
 
                 & > li {
                     cursor: pointer;
-                    padding: 10px 48px 10px 20px;
+                    padding: 5px 48px 5px 20px;
                     &:hover {
                         font-weight: 500;
+                        // background: #eaeaea;
+                    }
+                    &.on {
                         background: #eaeaea;
                     }
                 }
@@ -317,15 +328,24 @@
             }
             button {
                 position: relative;
-                padding: 0 20px 0 20px;
+                padding-left: 20px;
+                margin-right: 20px;
                 font-size: 15px;
+                border: 1px solid transparent;
 
                 &::after {
                     content: "";
                     display: inline-block;
                     position: absolute;
-                    top: 0;
+                    top: 4px;
                     left: 0;
+                    width: 15px;
+                    height: 15px;
+                    background: url(../img/icon/btn_refresh.png)no-repeat center / 100% auto;
+                }
+
+                &:hover {
+                    border-bottom-color: #aaa;
                 }
             }
         }

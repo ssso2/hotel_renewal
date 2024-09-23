@@ -1,8 +1,15 @@
-const reservationSearchBtn = document.querySelector(".reservation-search-btn");
-const noSelect = document.querySelector(".no-select");
-const searchResults = document.querySelector(".search-results-wrap");
-const searchResultsTab = document.querySelectorAll(".search-results-wrap .tab > li");
-const searchResultsTabCont = document.querySelectorAll(".search-results-wrap .tab-cont");
+const reservationSearchBtn = document.querySelector(".reservation-search-btn"); //예약 폼 검색 버튼
+const noSelect = document.querySelector(".no-select"); // 검색하기 전 결과 없을 때 화면
+const searchResults = document.querySelector(".search-results-wrap"); // 검색하기 누른 후 결과 리스트 나오는 화면
+const sortSelected = document.querySelector(".keyword-sorting .selected"); // 낮은 가격순(정렬하기) 버튼
+const selectSort = document.querySelector(".keyword-sorting .select-sort"); // 정렬하기 버튼 눌렀을 때 나오는 정렬 기준 변경 리스트
+const selectSortLi = document.querySelector(".keyword-sorting .select-sort > li"); // 정렬하기 버튼 눌렀을 때 나오는 정렬 기준 변경 리스트의 li 하나하나
+
+const keywordBtn = document.querySelector(".keyword-sorting .keyword-btn"); // 키워드 버튼
+const keywordBox = document.querySelector(".keyword-box"); // 키워드 버튼 누르면 나오고 사라지는 키워드 박스
+const searchResultsTab = document.querySelectorAll(".search-results-wrap .tab > li"); //패키지/객실 탭 구분 버튼
+const searchResultsTabCont = document.querySelectorAll(".search-results-wrap .tab-cont"); // 패키지/객실 탭 버튼에 따라 나오는 내용 부분
+
 
 // 예약 페이지 검색 버튼 놀렀을 때 아래 검색 내용 보이게 하기
 reservationSearchBtn.addEventListener("click",function(){
@@ -21,5 +28,36 @@ for(let i = 0; i < searchResultsTab.length; i++){
         searchResultsTabCont[i].classList.add("on");
     });
 }
+
+
+for(let i = 0; i < selectSortLi.length; i++){
+    selectSortLi[i].addEventListener("click",function(){
+        for(let j = 0; j < selectSortLi.length; j++){
+            selectSortLi[j].classList.remove("on");
+        }
+        selectSortLi[i].classList.on("on");
+    });
+}
+
+
+viewHide(sortSelected,selectSort);
+viewHide(keywordBtn,keywordBox);
+
+
+// 버튼을 눌렀을 때 활성화 class가 붙어있으면 없애주고, 없으면 넣어준다.
+function viewHide(btn,item){
+    btn.addEventListener("click",function(){
+        if(!item.classList.contains("on")){
+            item.classList.add("on");
+        }
+        else {
+            item.classList.remove("on");
+        }
+    });
+}
+
+
+
+
 
 

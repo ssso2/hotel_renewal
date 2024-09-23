@@ -222,14 +222,13 @@
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
-  line-height: 70px;
   border-bottom: 1px solid #eaeaea;
 }
 .search-results-wrap .tab {
   display: flex;
 }
 .search-results-wrap .tab > li {
-  padding: 0 30px;
+  padding: 27px 30px;
   cursor: pointer;
 }
 .search-results-wrap .tab > li:hover {
@@ -240,13 +239,17 @@
 }
 .search-results-wrap .keyword-sorting {
   display: flex;
+  align-items: center;
+}
+.search-results-wrap .keyword-sorting .keyword-wrap .keyword-btn {
+  font-size: 16px;
 }
 .search-results-wrap .keyword-sorting .sorting-wrap {
   position: relative;
   margin-left: 30px;
 }
 .search-results-wrap .keyword-sorting .sorting-wrap .selected {
-  padding: 0 50px 0 20px;
+  padding: 27px 50px 27px 20px;
   cursor: pointer;
 }
 .search-results-wrap .keyword-sorting .sorting-wrap .select-sort {
@@ -257,14 +260,20 @@
   border-radius: 8px;
   line-height: 40px;
   background: #fff;
+  z-index: 2;
   display: none;
+}
+.search-results-wrap .keyword-sorting .sorting-wrap .select-sort.on {
+  display: block;
 }
 .search-results-wrap .keyword-sorting .sorting-wrap .select-sort > li {
   cursor: pointer;
-  padding: 10px 48px 10px 20px;
+  padding: 5px 48px 5px 20px;
 }
 .search-results-wrap .keyword-sorting .sorting-wrap .select-sort > li:hover {
   font-weight: 500;
+}
+.search-results-wrap .keyword-sorting .sorting-wrap .select-sort > li.on {
   background: #eaeaea;
 }
 .search-results-wrap .keyword-box {
@@ -290,7 +299,24 @@
   font-weight: 500;
 }
 .search-results-wrap .keyword-box .top-wrap button {
+  position: relative;
+  padding-left: 20px;
+  margin-right: 20px;
   font-size: 15px;
+  border: 1px solid transparent;
+}
+.search-results-wrap .keyword-box .top-wrap button::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: url(../img/icon/btn_refresh.png) no-repeat center/100% auto;
+}
+.search-results-wrap .keyword-box .top-wrap button:hover {
+  border-bottom-color: #aaa;
 }
 .search-results-wrap .keyword-box .bottom-wrap {
   display: flex;
