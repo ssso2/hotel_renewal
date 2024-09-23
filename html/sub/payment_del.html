@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고객센터 : 오시는 길</title>
+    <title>신라호텔 : 예약 확인 및 결제</title>
     <!-- 구글 웹폰트 연결 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/sub-list.css">
     <link rel="stylesheet" href="../../css/sub-detail.css">
-    <link rel="stylesheet" href="../../css/sub06_04.css">
+    <link rel="stylesheet" href="../../css/payment.css">
     <!-- 작성한 JS 연결 -->
     <script src="../../js/common/common.js" defer></script>
     <script src="../../js/common/header.js" defer></script>
@@ -187,38 +187,57 @@
     </div>
 
     <!-- 페이지 영역 -->
-    <div class="container">
+    <div class="container payment">
         <div class="center">
             <div class="depth3-tab-wrap">
                 <div class="tab-contents">
                     <div class="tab-cont cont on">
                         <div class="sub-title">
-                            <h2>오시는 길</h2>
+                            <h2>예약 확인 및 결제</h2>
                             <ul class="location">
                                 <li><a href="../../html/index.html">홈</a></li>
-                                <li><a href="#self">오시는 길</a></li>
+                                <li><a href="../../html/sub/reservation.html">예약</a></li>
+                                <li><a href="#self">예약 확인 및 결제</a></li>
                             </ul>
                         </div>
-                        <div class="map" id="map">
-                            <img src="../../img/sub/map.png" alt="">
-                        </div>
                         <div class="context">
-                            <ul class="info">
+                            <ul class = "info">
+                                <h3>예약확인</h3>
                                 <li class="list">
-                                    <h4>주소</h4>
-                                    <p class="txt">서울시 중구 동호로 249 (우편번호 : 04605)</p>
+                                    <h4>객실</h4>
+                                    <div>
+                                        <input type="text" name="room-name" id="room-name" value="디럭스">
+                                    </div>
                                 </li>
                                 <li class="list">
-                                    <h4>대표전화</h4>
-                                    <p class="txt">
-                                        02-2233-3131
-                                    </p>
+                                    <h4>CHECK IN / OUT</h4>
+                                    <div>
+                                        <input type="text" value="2024.09.23" readonly> -
+                                        <input type="text" value="2024.09.24" readonly>
+                                    </div>
+                                </li>
+                                <li class="list">
+                                    <h4>투숙 인원</h4>
+                                    <div class="txt-wrap">
+                                        <ul class="txt">
+                                            <li>성인 : <input type="number" value="2"> 명
+                                            </li>
+                                            <li>어린이 : <input type="number" value="1"> 명
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="list">
+                                    <h4>요금 합계<br/>(부가세 포함)</h4>
+                                    <div>
+                                        <input type="text" value="583,000" readonly>원
+                                    </div>
                                 </li>
                             </ul>
                             <ul class = "guide">
-                                <h3>교통편</h3>
+                                <h3>옵션 사항</h3>
                                 <li class="list">
-                                    <h4>자가용 이용시</h4>
+                                    <h4>조식</h4>
                                     <div class="txt-wrap">
                                         <ul class="txt">
                                             <li>분당방면 : 한남대교 → 장충단길 → 서울신라호텔/신라면세점</li>
@@ -228,7 +247,7 @@
                                     </div>
                                 </li>
                                 <li class="list">
-                                    <h4>버스 이용시</h4>
+                                    <h4>체크인 예정시간</h4>
                                     <div class="txt-wrap">
                                         <ul class="txt">
                                             <p>장충체육관 앞 하차 (노선번호: 144,301,7212)</p>
@@ -236,7 +255,7 @@
                                     </div>
                                 </li>
                                 <li class="list">
-                                    <h4>지하철 이용시</h4>
+                                    <h4>추가 요청사항</h4>
                                     <div class="txt-wrap">
                                         <ul class="txt">
                                             <p>지하철3호선 동대입구역 5번출구</p>
@@ -304,6 +323,5 @@
         </div>
         <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
     </article>
-
 </body>
 </html>
