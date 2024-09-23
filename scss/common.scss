@@ -4,22 +4,26 @@
 @import "_response.scss","_color.scss","_mixin.scss";
 
 
+.mt-0 {margin-top: 0 !important;}
 .mt-10 {margin-top: 10px !important;}
 .mt-20 {margin-top: 20px !important;}
 .mt-30 {margin-top: 30px !important;}
 .mt-40 {margin-top: 40px !important;}
 .mt-50 {margin-top: 50px !important;}
+.mb-0 {margin-bottom: 0 !important;}
 .mb-10 {margin-bottom: 10px !important;}
 .mb-20 {margin-bottom: 20px !important;}
 .mb-30 {margin-bottom: 30px !important;}
 .mb-40 {margin-bottom: 40px !important;}
 .mb-50 {margin-bottom: 50px !important;}
 
+.pt-0 {padding-top: 0 !important;}
 .pt-10 {padding-top: 10px !important;}
 .pt-20 {padding-top: 20px !important;}
 .pt-30 {padding-top: 30px !important;}
 .pt-40 {padding-top: 40px !important;}
 .pt-50 {padding-top: 50px !important;}
+.pb-0 {padding-bottom: 0 !important;}
 .pb-10 {padding-bottom: 10px !important;}
 .pb-20 {padding-bottom: 20px !important;}
 .pb-30 {padding-bottom: 30px !important;}
@@ -48,6 +52,13 @@
         padding: 50px 0;
     }
 }
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {flex-direction: column;}
 
 /* 스크롤바의 폭 너비 */
 body::-webkit-scrollbar {
@@ -96,6 +107,7 @@ body::-webkit-scrollbar-track {
         margin-top: 20px;
         font-size: 17px;
         color: #666;
+        line-height: 1.5;
     }
     
     .location {
@@ -327,6 +339,40 @@ body::-webkit-scrollbar-track {
 
         }
     }
+    &.type6 {
+        width: 100%;
+        .align {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            width: calc((100% - 20px)/3);
+
+
+        }
+    }
+    &.btn-200 {
+        width: 100%;
+        .btn {
+            margin-right: 10px;
+            width: 200px;
+        }
+    }
+    &.btn-250 {
+        width: 100%;
+        .btn {
+            margin-right: 10px;
+            width: 250px;
+        }
+    }
+    &.btn-300 {
+        width: 100%;
+        .btn {
+            margin-right: 10px;
+            width: 300px;
+        }
+    }
     .btn {
         width: calc((100% - 10px)/2);
         text-align: center;
@@ -455,7 +501,8 @@ body::-webkit-scrollbar-track {
     li {
         padding-left: 10px;
         position: relative;
-        line-height: 1.5;
+        font-size: 16px;
+        line-height: 1.6;
         &::after {
             content: "-";
             display: inline-block;
@@ -468,6 +515,7 @@ body::-webkit-scrollbar-track {
         }
     }
 }
+
 
 
 /* 레이어 팝업 */
@@ -564,6 +612,15 @@ body::-webkit-scrollbar-track {
 
 .lypop-ct {
     padding:30px;
+    &.scroll {
+        padding: 10px 0;
+        height: 500px;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 
 
@@ -622,309 +679,9 @@ body::-webkit-scrollbar-track {
 // 반응형
 @media screen and (max-width:1500px){
 
-    .mt-10 {margin-top: vw-pc(10);}
-    .mt-20 {margin-top: vw-pc(20);}
-    .mt-30 {margin-top: vw-pc(30);}
-    .mt-40 {margin-top: vw-pc(40);}
-    .mt-50 {margin-top: vw-pc(50);}
-    .mb-10 {margin-bottom: vw-pc(10);}
-    .mb-20 {margin-bottom: vw-pc(20);}
-    .mb-30 {margin-bottom: vw-pc(30);}
-    .mb-40 {margin-bottom: vw-pc(40);}
-    .mb-50 {margin-bottom: vw-pc(50);}
-    
-    .pt-10 {padding-top: vw-pc(10);}
-    .pt-20 {padding-top: vw-pc(20);}
-    .pt-30 {padding-top: vw-pc(30);}
-    .pt-40 {padding-top: vw-pc(40);}
-    .pt-50 {padding-top: vw-pc(50);}
-    .pb-10 {padding-bottom: vw-pc(10);}
-    .pb-20 {padding-bottom: vw-pc(20);}
-    .pb-30 {padding-bottom: vw-pc(30);}
-    .pb-40 {padding-bottom: vw-pc(40);}
-    .pb-50 {padding-bottom: vw-pc(50);}
-
     .center {
         width: 90%;
-        &.guide {
-            padding: vw-pc(50 0);
-        }
-    }
-    
-    
-    /* 3depth title 공통 */
-    .container {
-        margin-top: vw-pc(80);
-    }
-    .sub-title {
-        margin-bottom: vw-pc(30); 
-        padding: vw-pc(50 10 20);
 
-        h2 {
-            font-size: vw-pc(22); 
-        }
-        
-        .location {
-            & > li {
-                margin-right: vw-pc(30); 
-        
-                &::after {
-                    width: vw-pc(5); 
-                    height: vw-pc(5); 
-                    // top: vw-pc(5);
-                    right: vw-pc(-15);
-                }
-        
-                & > a {
-                    font-size: vw-pc(13);
-                }
-            }
-        
-        }
-    }
-    
-
-    
-    /* 3depth tab 공통 */
-    .depth3-tab-wrap {
-        /* tab */
-        .tab {
-            margin-bottom: vw-pc(30);
-    
-            &.on {
-                width: vw-pc(1420);
-            }
-    
-            & > li {
-                line-height: vw-pc(40);
-                font-size: vw-pc(16);
-            }
-        }
-
-    }
-    
-    
-    // 3depth 스와이퍼 슬라이드 갤러리
-    .gallery {
-        .swiper-slide {
-            font-size: vw-pc(18);
-        }  
-    
-        .swiper {
-            height: vw-pc(300);
-        }
-        
-        .mySwiper2 {
-            height: vw-pc(500);
-        }
-        
-        .mySwiper {
-            height: vw-pc(200);
-            padding: vw-pc(10 0);
-        }
-    }
-
-    
-    // 버튼 스타일
-    .btn-wrap {
-        margin: vw-pc(20 0);
-    
-        &.type1 {
-            gap: vw-pc(20);
-        }
-        &.type2 {
-            width: vw-pc(200);
-        }
-        &.type3 {
-            .align {
-                width: vw-pc(200);
-            }
-        }
-        &.type4 {
-            .align {
-                width: vw-pc(200);
-            }
-        }
-        &.type5 {
-            .align {
-                width: vw-pc(300);
-            }
-            .btn {
-                width: calc((100% - vw-pc(20))/3);
-            }
-        }
-        .btn {
-            width: calc((100% - vw-pc(10))/2);
-            line-height: vw-pc(40);
-            border-radius: vw-pc(4);
-
-            &.btn-04 {
-                margin-right: vw-pc(10);
-                padding: vw-pc(0 20);
-            }
-            &.btn-05 {
-                padding: vw-pc(0 20);
-            }
-        }
-    }
-    
-    // pagenation 
-    .pagination{
-        margin-top:vw-pc(20);
-        height:vw-pc(25);
-        & > a {
-            width:vw-pc(25);
-            height:vw-pc(25);
-            line-height:vw-pc(25);
-            margin:vw-pc(0 2);
-        }
-        span {
-            line-height: vw-pc(25);
-        }
-        .pre {
-            background-position: 0 vw-pc(-25);
-        }
-        .next {
-            background-position:0 vw-pc(-50);
-        }
-        .end {
-            background-position:0 vw-pc(-75);
-        }
-    }
-    
-    
-    /* 플로팅 메뉴 */
-    // .floating-menu {
-    //     a {
-    //         width: vw-pc(50);
-    //         height: vw-pc(50);
-    //         line-height: vw-pc(50);
-            
-    //         &:hover {
-    //             box-shadow: vw-pc(2 2 5) rgba(82,82,82,1);
-    //         }
-    //     }
-        
-    //     .menu {
-    //         right: vw-pc(10); 
-    //         gap: vw-pc(10);
-    //     }
-    
-    //     .top-btn {
-    //         right: vw-pc(-50); 
-    //         bottom: vw-pc(30); 
-    //         &.on {
-    //             right: vw-pc(10); 
-    //         }
-    //     }
-    // }
-    
-    
-    // 가이드
-    .desc {
-        margin: vw-pc(30 0 10);
-        font-size: vw-pc(20);
-    }
-    .rule {
-        li {
-            padding-left: vw-pc(10);
-            &::after {
-                width: vw-pc(10);
-                height: vw-pc(10);
-    
-            }
-        }
-    }
-    
-    
-    /* 레이어 팝업 */
-    .lypop{
-        .btn-wrap {
-            margin: vw-pc(20 0 0);
-        }
-    }
-    
-    .lypop-wp{
-        width:vw-pc(600);
-        border-radius: 8;
-        &.min{
-            width:vw-pc(400);
-        }
-        &.mid{
-            width:vw-pc(800);
-        }
-        &.big{
-            width:vw-pc(900);
-        }
-        &.max{
-            width:vw-pc(1200);
-        }
-    }
-
-    .lypop-title{
-        height:vw-pc(52);
-        & > strong{
-            font-size:vw-pc(20);
-            padding:vw-pc(15 30);
-        }
-    }
-    
-    .lypop-close{
-        top:vw-pc(5);
-        right:vw-pc(10);
-        width:vw-pc(40);
-        height:vw-pc(40);
-        &::before{
-            width:vw-pc(2);
-            height:vw-pc(18);
-        }
-        &::after{
-            width:vw-pc(2);
-            height:vw-pc(18);
-        }
-    }
-    
-    .lypop-ct {
-        padding:vw-pc(30);
-    }
-    
-    // daterangepicker 팜업
-    .daterangepicker {
-        padding: vw-pc(70 160);
-        width: 90%;
-    
-        &.drop-up {
-            margin-top: vw-pc(-10);
-        }
-    
-        .drp-calendar {
-            &.left {
-                .calendar-table {
-                    padding-right: vw-pc(130);
-                }
-            }
-            .calendar-table {
-                th,td {
-                    font-size: vw-pc(20);
-                }
-                td {
-                    width: vw-pc(60);
-                }
-            }
-        }
-    
-        .drp-buttons {
-            padding-top: vw-pc(20);
-            .btn {
-                font-size: vw-pc(18);
-            }
-        }
-        .drp-selected {
-            margin-right: vw-pc(30);
-            padding: vw-pc(4 0);
-            font-size: vw-pc(20);
-        }
-    
     }
 
 
