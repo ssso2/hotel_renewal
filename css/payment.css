@@ -6,8 +6,6 @@
   margin-bottom: 3%;
   font-size: 25px;
 }
-.payment .depth3-tab-wrap .context .info input {
-  width: 200px;
-  height: 25px;
-  border: 1px solid #999;
+.payment .depth3-tab-wrap .context .info .txt {
+  font-size: 14px;
 }
