@@ -181,7 +181,8 @@ body::-webkit-scrollbar-track {
 
         & > li {
             margin-bottom: -1px;
-            width: calc(100%/7); 
+            min-width: calc(100%/7);
+            padding: 0px 10px; 
             text-align: center;
             font-size: 16px;
             line-height: 40px;
