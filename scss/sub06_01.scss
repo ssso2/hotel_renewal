@@ -2,58 +2,93 @@
     position: absolute;
     width: 1000px;
     height: 800px;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 14px;
     padding: 20px;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .contact-tel,
+    .find-out,
+    .sns {
+        width: 900px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .main-tel,
+        .res-tel,
+        .rewards,
+        .mail {
+            width: 400px;
+            margin: 20px;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            border-top: 5px solid #ccc;
+            transition: border-color 0.3s;
+
+            &:hover {
+                border-top: 5px solid #333;
+            }
+        }
+    }
+
+    p {
+        margin: 5px;
+        display: block;
+    }
 
     .contact-us {
-        margin: 25px 5px;
+        margin: 50px auto;
         font-weight: bold;
+        color: #333;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .fa-solid,
+    .fa-brands {
+        width: 50px;
+        height: 50px;
+        font-size: 50px;
+        margin: 10px;
+        display: inline-block;
+        color: #333;
+        transition: color 0.3s;
+    }
+
+    .contact-tel .main-tel:hover .fa-solid,
+    .contact-tel .res-tel:hover .fa-solid {
         color: #333;
     }
 
-    .contact-tel {
-        width: 900px;
-        height: 200px;
-        margin: 30px;
-        display: flex;
+    a {
+        width: 400px;
+        margin: 20px;
+        padding: 10px;
+        display: block;
         text-align: center;
-        .main-tel {
-            width: 400px;
-            margin: 25px;
-            background-color: #f6f6f6;
-        }
-        .res-tel {
-            width: 400px;
-            margin: 25px;
-            background-color: #f6f6f6;
-        }
-    }
-    .rewards {
-        width: 850px;
-        height: 200px;
-        margin: auto;
-        background-color: #f6f6f6;
-    }
+        border-top: 5px solid #ccc;
+        transition: border-color 0.3s;
 
-    .sns {
-        width: 900px;
-        height: 200px;
-        margin: 30px;
-        display: flex;
-
-        .insta {
-            width: 400px;
-            margin: 25px;
-            background-color: #f6f6f6;
+        &:hover {
+            border-top: 5px solid #333;
+            font-weight: 400;
         }
-        .facebook {
-            width: 400px;
-            margin: 25px;
-            background-color: #f6f6f6;
+
+        .fa-solid,
+        .fa-brands {
+            transition: color 0.3s;
+        }
+
+        &:hover .fa-solid,
+        &:hover .fa-brands {
+            color: #333;
         }
     }
 }

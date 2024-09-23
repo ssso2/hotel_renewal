@@ -184,7 +184,17 @@
             <h2 class="ask">문의 내용</h2>
             <div class="text-container">
                 <div class="title">제목입니다.</div>
-                <div class="content">내용입니다.</div>
+                <div class="content">
+                    내용입니다.
+                    <div class="reply-container">
+                        <div class="reply">
+                            <div class="reply-text">
+                                <input type="text" id="reply" />
+                                <button id="plus">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="button-wrap">
                 <a href="sub06_03.html"><button class="list">목록으로</button></a>
@@ -193,6 +203,42 @@
                     <button class="delete">삭제</button>
                 </div>
             </div>
+            <script>
+                $(function () {
+                    $('#plus').click(function (e) {
+                        e.preventDefault();
+                        const commentText = $('#content').val();
+                        if (commentText.trim() == '') return;
+
+                        const commentDiv = $('<div class="comment"></div>');
+                        const commentInput = $('<input type="text" readonly>');
+                        commentInput.val(commentText);
+
+                        const editButton = $('<button class="edit">수정</button>');
+                        const deleteButton = $('<button class="delete">삭제</button>');
+
+                        //수정
+                        editButton.click(function () {
+                            if (commentInput.prop('readonly')) {
+                                commentInput.prop('readonly', false);
+                                editButton.text('완료');
+                            } else {
+                                commentInput.prop('readonly', true);
+                                editButton.text('수정');
+                            }
+                        });
+
+                        //삭제
+                        deleteButton.click(function () {
+                            commentDiv.remove();
+                        });
+
+                        commentDiv.append(commentInput).append(editButton).append(deleteButton);
+                        $('.reply-container').append(commentDiv);
+                        $('#content').val('');
+                    });
+                });
+            </script>
         </div>
     </body>
 </html>

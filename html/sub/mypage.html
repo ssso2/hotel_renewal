@@ -28,21 +28,286 @@
         <script src="../../js/common/common.js" defer></script>
     </head>
     <body>
-        <div class="side-menu">
-            <div class="mypage"><a href="../sub/mypage.html">개인정보 변경</a></div>
-            <div class="reservate"><a href="../sub/reservation.html">예약확인/취소</a></div>
-            <div class="inquiry"><a href="../sub/inquiry.html">내 문의내역 확인</a></div>
+        <header class="active">
+            <div class="gnbbg"></div>
+            <div class="center">
+                <h1 class="logo">
+                    <a href="#">
+                        <img src="../../img/common/logo.png" alt="" />
+                    </a>
+                </h1>
+                <ul class="gnb">
+                    <li>
+                        <a href="../../html/sub/sub01_01.html">스페셜 오퍼</a>
+                        <ul class="depth2">
+                            <li><a href="../../html/sub/sub01_01.html">객실패키지</a></li>
+                            <li><a href="../../html/sub/sub01_02.html">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../html/sub/sub02.html">객실</a>
+                        <ul class="depth2">
+                            <li><a href="../html/sub/sub02_01_01.html">스탠다드</a></li>
+                            <li><a href="../html/sub/sub02_02_01.html">이그제큐티브</a></li>
+                            <li><a href="../html/sub/sub02_03_01.html">스위트</a></li>
+                            <li><a href="../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
+                            <li><a href="../html/sub/sub02.html">전체 객실 보기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../../html/sub/sub03.html">다이닝</a>
+                        <ul class="depth2">
+                            <li><a href="../../html/sub/sub03_01_01.html">레스토랑</a></li>
+                            <li><a href="../../html/sub/sub03_02_01.html">라운지 & 바</a></li>
+                            <li><a href="../../html/sub/sub03_03.html">베이커리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../../html/sub/sub04.html">라이프스타일</a>
+                        <ul class="depth2">
+                            <li><a href="../../html/sub/sub04_01_01.html">야외수영장</a></li>
+                            <li><a href="../../html/sub/sub04_02_01.html">피트니스</a></li>
+                            <li><a href="../../html/sub/sub04_03.html">산책로</a></li>
+                            <li><a href="../../html/sub/sub04_04.html">조깅코스</a></li>
+                            <li><a href="../../html/sub/sub04_05_01.html">쇼핑</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../../html/sub/sub05.html">웨딩 & 연회</a>
+                        <ul class="depth2">
+                            <li><a href="../../html/sub/sub05_01_01.html">웨딩</a></li>
+                            <li><a href="../../html/sub/sub05_02_01.html">기업연회</a></li>
+                            <li><a href="../../html/sub/sub05_03_01.html">가족연회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../../html/sub/sub06_01.html">고객센터</a>
+                        <ul class="depth2">
+                            <li><a href="../../html/sub/sub06_01.html">연락처</a></li>
+                            <li><a href="../../html/sub/sub06_02.html">FAQ</a></li>
+                            <li><a href="../../html/sub/sub06_03.html">문의하기</a></li>
+                            <li><a href="../../html/sub/sub06_04.html">오시는길</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap">
+                    <a href="../../html/sub/join.html" class="join-btn">회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인</a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login">
+                    <p>손주혜<span>님</span></p>
+                    <a href="#" class="logout-btn">로그아웃</a>
+                </div>
+                <!-- 모바일 햄버거 버튼 -->
+                <div class="m_btn">
+                    <div class="menu">
+                        <span class="line one"></span>
+                        <span class="line two"></span>
+                        <span class="line three"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 모바일 메뉴 -->
+        <div class="m_wrap">
+            <div class="m_top">
+                <!-- 비로그인시 -->
+                <div class="btn-wrap">
+                    <a href="../../html/sub/join.html" class="join-btn">회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인</a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login">
+                    <p>손주혜<span>님</span></p>
+                    <a href="#" class="logout-btn">로그아웃</a>
+                </div>
+            </div>
+            <ul class="m_gnb">
+                <li>
+                    <a href="#self">스페셜 오퍼</a>
+                    <ul class="m_sub">
+                        <li><a href="../html/sub/sub01_01.html">객실패키지</a></li>
+                        <li><a href="../html/sub/sub01_02.html">이벤트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#self">객실</a>
+                    <ul class="m_sub">
+                        <li><a href="../html/sub/sub02_01_01.html">스탠다드</a></li>
+                        <li><a href="../html/sub/sub02_02_01.html">이그제큐티브</a></li>
+                        <li><a href="../html/sub/sub02_03_01.html">스위트</a></li>
+                        <li><a href="../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
+                        <li><a href="../html/sub/sub02.html">전체 객실 보기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#self">다이닝</a>
+                    <ul class="m_sub">
+                        <li><a href="../html/sub/sub03_01_01.html">레스토랑</a></li>
+                        <li><a href="../html/sub/sub03_02_01.html">라운지 & 바</a></li>
+                        <li><a href="../html/sub/sub03_03.html">베이커리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#self">라이프스타일</a>
+                    <ul class="m_sub">
+                        <li><a href="../html/sub/sub04_01_01.html">야외수영장</a></li>
+                        <li><a href="../html/sub/sub04_02_01.html">피트니스</a></li>
+                        <li><a href="../html/sub/sub04_03.html">산책로</a></li>
+                        <li><a href="../html/sub/sub04_04.html">조깅코스</a></li>
+                        <li><a href="../html/sub/sub04_05_01.html">쇼핑</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#self">웨딩 & 연회</a>
+                    <ul class="m_sub">
+                        <li><a href="../html/sub/sub05_01_01.html">웨딩</a></li>
+                        <li><a href="../html/sub/sub05_02_01.html">기업연회</a></li>
+                        <li><a href="../html/sub/sub05_03_01.html">가족연회</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#self">고객센터</a>
+                    <ul class="m_sub">
+                        <li><a href="../html/sub/sub06_01.html">연락처</a></li>
+                        <li><a href="../html/sub/sub06_02.html">FAQ</a></li>
+                        <li><a href="../html/sub/sub06_03.html">문의하기</a></li>
+                        <li><a href="../html/sub/sub06_04.html">오시는길</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <div class="mypage-info">
-            <label class="my-info">이름<input type="text" id="id" /></label>
-            <label class="my-info">생년월일<input type="text" id="birth" /></label>
-            <label class="my-info">연락처<input type="text" id="contact" /></label>
-            <label class="my-info">주소<input type="text" id="address" /></label>
-            <label class="my-info">이메일<input type="text" id="mail" /></label>
-            <label class="my-info">아이디<input type="text" id="id" /></label>
-            <label class="my-info">패스워드<input type="text" id="pw" /></label>
-            <label class="my-info">패스워드 확인<input type="text" id="pwchk" /></label>
-            <input type="button" id="submit" value="수정완료" />
+
+        <div class="container">
+            <!-- 사이드 메뉴 -->
+            <div class="depth3-tab-wrap">
+                <ul class="tab">
+                    <li class="tab1 on"><a href="../sub/mypage.html">회원정보 수정</a></li>
+                    <li class="tab2"><a href="../sub/myreservation.html">예약내역 확인</a></li>
+                    <li class="tab3"><a href="../sub/sub03_01_03.html">문의내역 확인</a></li>
+                </ul>
+                <div class="content">
+                    <!-- 비밀번호 확인 (회원정보 수정 전) -->
+                    <div class="change-info-chk" id="change-info-chk">
+                        <h2 class="title">비밀번호 확인</h2>
+                        <label><input type="password" id="pw-chk" /></label>
+                        <input type="button" id="btn-confirm" value="확인" onclick="pw_chk()" />
+                        <p id="error-message" style="color: red; display: none"></p>
+                    </div>
+
+                    <!-- 회원정보 수정 -->
+                    <div class="mypage-info" id="mypage-info" style="display: none">
+                        <h2 class="title">회원정보 수정</h2>
+                        <label class="my-info">
+                            <p>아이디</p>
+                            <input type="text" id="user-id" />
+                        </label>
+                        <label class="my-info">
+                            <p>패스워드</p>
+                            <input type="password" id="pw" />
+                        </label>
+                        <label class="my-info">
+                            <p>패스워드 확인</p>
+                            <input type="password" id="pwchk" />
+                        </label>
+                        <label class="my-info">
+                            <p>이름</p>
+                            <input type="text" id="id" />
+                        </label>
+                        <label class="my-info">
+                            <p>생년월일</p>
+                            <input type="text" id="birth" />
+                        </label>
+                        <label class="my-info">
+                            <p>연락처</p>
+                            <input type="text" id="contact" />
+                        </label>
+                        <label class="my-info">
+                            <p>이메일</p>
+                            <input type="text" id="mail" />
+                        </label>
+                        <input type="button" id="submit" value="수정완료" />
+                    </div>
+
+                    <!-- 예약확인/취소 -->
+                    <div class="reservate-info" id="reservate-info" style="display: none">
+                        <h2 class="title">예약확인/취소</h2>
+                        <div class="reservation">
+                            <div class="reser-room">예약 객실</div>
+                            <div class="reser-package">예약 패키지</div>
+                            <div class="reser-dining">예약 다이닝</div>
+                        </div>
+                    </div>
+
+                    <!-- 내 문의내역 확인 -->
+                    <div class="inquiry-info" id="inquiry-info" style="display: none">
+                        <h2 class="title">내 문의내역 확인</h2>
+                        <div class="myinquiry"></div>
+                    </div>
+
+                    <!-- 회원 탈퇴 -->
+                    <div class="withdrawal" id="withdrawal" style="display: none">
+                        <div class="withdrawal-chk" id="withdrawal-chk">
+                            <h2 class="title">비밀번호 확인</h2>
+                            <label><input type="password" id="pw-chk2" /></label>
+                            <input type="button" id="btn-confirm" value="확인" onclick="pw_chk2()" />
+                            <p id="error-message" style="color: red; display: none"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <script>
+            const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
+
+            function show_page(section) {
+                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'withdrawal'];
+                sections.forEach(id => {
+                    document.getElementById(id).style.display = id === section ? 'block' : 'none';
+                });
+            }
+
+            function pw_chk() {
+                const inputPassword = document.getElementById('pw-chk').value; //입력한 비밀번호
+                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
+
+                if (inputPassword === correctPassword) {
+                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
+                    errorMessage.style.display = 'none';
+                    show_page('mypage-info'); //비밀번호가 맞으면 개인정보 변경 페이지 보여줌
+                } else {
+                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
+                    document.getElementById('pw-chk').value = ''; //비밀번호 입력란 초기화
+                    errorMessage.style.display = 'block';
+                }
+            }
+
+            function pw_chk2() {
+                const inputPassword = document.getElementById('pw-chk2').value; //입력한 비밀번호
+                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
+
+                if (inputPassword === correctPassword) {
+                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
+                    errorMessage.style.display = 'none';
+                    show_page('withdrawal'); //회원탈퇴 페이지
+                } else {
+                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
+                    document.getElementById('pw-chk2').value = ''; //비밀번호 입력란 초기화
+                    errorMessage.style.display = 'block';
+                }
+            }
+        </script>
+
+        <!-- 플로팅 메뉴 -->
+        <article class="floating-menu">
+            <div class="menu">
+                <a href="#" class="circle-btn">예약</a>
+                <a href="#" class="circle-btn">문의</a>
+            </div>
+            <a href="#" class="top-btn">TOP</a>
+        </article>
     </body>
 </html>

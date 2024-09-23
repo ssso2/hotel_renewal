@@ -1,0 +1,106 @@
+#shilla-join {
+    position: absolute;
+    width: 1500px;
+    margin-top: 200px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    padding: 10px;
+
+    .join-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 30px;
+        padding: 20px;
+
+        .info-title {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: 650px;
+            padding: 10px;
+        }
+
+        .info-group {
+            display: flex;
+            flex-direction: column;
+            margin-left: 300px;
+
+            .input-container {
+                display: flex;
+                align-items: center;
+                margin-top: 30px;
+
+                label {
+                    width: 150px;
+                    font-size: 16px;
+                }
+
+                input {
+                    width: 500px;
+                    padding: 10px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    margin-left: 10px;
+                    #pid {
+                        width: 500px;
+                    }
+                }
+
+                #id-chk {
+                    width: 100px;
+                    height: 40px;
+                    margin-left: 10px;
+                    background-color: #7a6c64;
+                    color: #faf8f4;
+                    &:hover {
+                        background-color: #333;
+                    }
+                }
+            }
+            .error-message {
+                color: #f00;
+                font-size: 12px;
+                margin-top: 5px;
+                margin-left: 170px;
+                height: 10px;
+                line-height: 1;
+                display: block;
+            }
+
+            select {
+                width: 150px;
+                padding: 10px;
+                margin-left: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+        }
+
+        #firstname {
+            width: 240px;
+            margin-right: 10px;
+        }
+        #lastname {
+            width: 240px;
+        }
+
+        #submit {
+            width: 500px;
+            margin-left: 460px;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #7a6c64;
+            color: #fff;
+            border: none;
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+}

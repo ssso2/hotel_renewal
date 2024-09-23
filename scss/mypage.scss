@@ -1,37 +1,231 @@
-.side-menu {
-    margin-top: 10%;
-    position: absolute;
-    display: block;
-    width: 200px;
-    height: 250px;
-    background-color: #faf8f4;
+.container {
+    display: flex;
+    width: 100%;
 
-    .mypage,
-    .reservate,
-    .inquiry {
-        position: relative;
-        margin-top: 50px;
-        margin-left: 20px;
+    .depth3-tab-wrap {
+        .tab {
+            width: 1600px;
+            margin-left: 50px;
+            li {
+                border: 1px solid #ccc;
+                width: 500px;
+                margin-left: 25px;
+            }
+        }
     }
 }
 
-.mypage-info {
-    position: absolute;
-    margin-top: 10%;
-    margin-left: 20%;
-    display: block;
-    width: 800px;
-    height: 500px;
-    background-color: #faf8f4;
-}
+.content {
+    width: 1000px;
+    height: 50vh;
+    top: 30%;
+    margin-top: 250px;
+    margin-left: 500px;
+    padding: 20px;
 
-.my-info {
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
+    .change-info-chk {
+        display: block;
+        align-items: center;
+        margin-bottom: 20px;
 
-input {
-    margin-left: 5px;
+        label {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        #pw-chk {
+            width: 400px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+            &:focus {
+                border-color: #333;
+            }
+        }
+
+        #btn-confirm {
+            width: 150px;
+            padding: 10px;
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #7a6c64;
+            border: 2px solid #7a6c64;
+            box-sizing: border-box;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #333;
+                border-color: #333;
+            }
+        }
+    }
+
+    .mypage-info {
+        display: block;
+        width: 1000px;
+        margin-left: 300px;
+        margin-top: 50px;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .my-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            p {
+                width: 100px;
+                margin: 0;
+                text-align: left;
+            }
+
+            label {
+                text-align: right;
+                margin-right: 50px;
+                font-size: 16px;
+                color: #333;
+            }
+
+            input {
+                width: 400px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 14px;
+                box-sizing: border-box;
+            }
+        }
+
+        #submit {
+            width: 980px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #7a6c64;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+
+    .reservate-info {
+        display: block;
+        width: 1000px;
+        transform: translate(0%, -30%);
+        padding: 20px;
+        border-top: 2px solid #333;
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .sub-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .reservation {
+            width: 980px;
+            height: 500px;
+            padding: 20px;
+            display: flex;
+            .reser-room,
+            .reser-package,
+            .reser-dining {
+                box-sizing: border-box;
+                width: 300px;
+                height: 50px;
+                font-size: 16px;
+                line-height: 50px;
+                text-align: center;
+                border-inline-start: 1px solid #ccc;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                &:hover {
+                    background-color: #333;
+                    color: #fff;
+                }
+            }
+            .reser-dining {
+                box-sizing: border-box;
+                border-inline-end: 1px solid #ccc;
+            }
+        }
+    }
+
+    .inquiry-info {
+        display: block;
+        width: 1000px;
+        transform: translate(0%, -30%);
+        padding: 20px;
+        border-top: 2px solid #333;
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .myinquiry {
+            width: 980px;
+            height: 500px;
+            padding: 20px;
+            border: 2px solid #ccc;
+        }
+    }
+
+    .withdrawal {
+        display: block;
+        width: 1000px;
+        transform: translate(0%, -30%);
+        padding: 20px;
+        border-top: 2px solid #333;
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .withdrawal-chk {
+            display: block;
+            align-items: center;
+            margin-bottom: 20px;
+
+            label {
+                font-size: 24px;
+                margin-right: 10px;
+            }
+
+            #pw-chk2 {
+                width: 400px;
+                padding: 10px;
+                margin-top: 10px;
+                border: 2px solid #ccc;
+                box-sizing: border-box;
+                border-radius: 5px;
+
+                &:focus {
+                    border-color: #333;
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,96 @@
+#shilla-join {
+  position: absolute;
+  width: 1500px;
+  margin-top: 200px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  padding: 10px;
+}
+#shilla-join .join-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+  padding: 20px;
+}
+#shilla-join .join-container .info-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 650px;
+  padding: 10px;
+}
+#shilla-join .join-container .info-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+}
+#shilla-join .join-container .info-group .input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+#shilla-join .join-container .info-group .input-container label {
+  width: 150px;
+  font-size: 16px;
+}
+#shilla-join .join-container .info-group .input-container input {
+  width: 500px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+#shilla-join .join-container .info-group .input-container input #pid {
+  width: 500px;
+}
+#shilla-join .join-container .info-group .input-container #id-chk {
+  width: 100px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: #7a6c64;
+  color: #faf8f4;
+}
+#shilla-join .join-container .info-group .input-container #id-chk:hover {
+  background-color: #333;
+}
+#shilla-join .join-container .info-group .error-message {
+  color: #f00;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 170px;
+  height: 10px;
+  line-height: 1;
+  display: block;
+}
+#shilla-join .join-container .info-group select {
+  width: 150px;
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#shilla-join .join-container #firstname {
+  width: 240px;
+  margin-right: 10px;
+}
+#shilla-join .join-container #lastname {
+  width: 240px;
+}
+#shilla-join .join-container #submit {
+  width: 500px;
+  margin-left: 460px;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  background-color: #7a6c64;
+  color: #fff;
+  border: none;
+}
+#shilla-join .join-container #submit:hover {
+  background-color: #333;
+}

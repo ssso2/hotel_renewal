@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+.container .depth3-tab-wrap .tab {
+  width: 1600px;
+  margin-left: 50px;
+}
+.container .depth3-tab-wrap .tab li {
+  border: 1px solid #ccc;
+  width: 500px;
+  margin-left: 25px;
+}
+
+.content {
+  width: 1000px;
+  height: 50vh;
+  top: 30%;
+  margin-top: 20px;
+  margin-left: 300px;
+  padding: 20px;
+}
+.content .reservate-info {
+  width: 1100px;
+  margin-top: 20px;
+  padding: 20px;
+  display: block;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.content .reservate-info .reservation {
+  display: block;
+}
+.content .reservate-info .reservation .reser-room {
+  width: 1000px;
+  height: 300px;
+  margin-left: 25px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.content .reservate-info .reservation .reser-package {
+  width: 1000px;
+  height: 300px;
+  margin-left: 25px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-size: 16px;
+}
