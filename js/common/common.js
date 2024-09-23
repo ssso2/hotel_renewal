@@ -6,7 +6,6 @@ const tabContents = document.querySelectorAll(".depth3-tab-wrap .tab-cont");
 for(let i = 0; i < tabs.length; i++){
     tabs[i].addEventListener("click",function(){
         for(let j = 0; j < tabs.length; j++){
-            console.log(j);
             tabs[j].classList.remove("on");
             tabContents[j].classList.remove("on");
         }
