@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신라호텔 서울</title>
+  <!-- 스와이퍼 CSS 연결 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- 폰트어썸 연결 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- 작성한 CSS 연결 -->
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/sub01_02.css">
+  <!-- 제이쿼리 css 연결 -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+  <!-- 제이쿼리 연결 -->
+  <script src="../../js/common/jquery-3.7.1.min.js"></script>
+  <script src="../../js/common/jquery-ui.min.js"></script>
+  <!-- 스와이퍼 JS 연결 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <!-- AOS 스크롤 애니메이션 연결 -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 작성한 JS 연결 -->
+  <script src="../../js/common/header.js" defer></script>
+  <script src="../../js/common/common.js" defer></script>
+</head>
+
+<body>
+  <header class="on">
+    <div class="gnbbg"></div>
+    <div class="center">
+      <h1 class="logo">
+        <a href="#">
+          <img src="../../img/common/logo.png" alt="">
+        </a>
+      </h1>
+      <ul class="gnb">
+        <li>
+          <a href="#">스페셜 오퍼</a>
+          <ul class="depth2">
+            <li><a href="#">객실패키지</a></li>
+            <li><a href="#">이벤트</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">객실</a>
+          <ul class="depth2">
+            <li><a href="#">스탠다드</a></li>
+            <li><a href="#">이그제큐티브</a></li>
+            <li><a href="#">스위트</a></li>
+            <li><a href="#">더 이그제큐티브 라운지</a></li>
+            <li><a href="#">전체 객실 보기</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">다이닝</a>
+          <ul class="depth2">
+            <li><a href="#">레스토랑</a></li>
+            <li><a href="#">라운지 & 바</a></li>
+            <li><a href="#">베이커리</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">라이프스타일</a>
+          <ul class="depth2">
+            <li><a href="#">야외수영장</a></li>
+            <li><a href="#">피트니스</a></li>
+            <li><a href="#">산책로</a></li>
+            <li><a href="#">조깅코스</a></li>
+            <li><a href="#">쇼핑</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">웨딩 & 연회</a>
+          <ul class="depth2">
+            <li><a href="#">웨딩</a></li>
+            <li><a href="#">기업연회</a></li>
+            <li><a href="#">가족연회</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">고객센터</a>
+          <ul class="depth2">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">문의하기</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- 비로그인시 -->
+      <div class="btn-wrap on">
+        <a href="#" class="join-btn">멤버십 가입</a>
+        <a href="#" class="login-btn">로그인</a>
+      </div>
+      <!-- 로그인시 -->
+      <div class="btn-wrap">
+        <p>손주혜<span>님</span></p>
+        <a href="#" class="logout-btn">로그아웃</a>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="center">
+      <div class="sub-title">
+        <h2>이벤트</h2>
+        <ul class="location">
+          <li><a href="">홈</a></li>
+          <li><a href="../../html/sub/sub01_01.html">스페셜오퍼</a></li>
+          <li><a href="">이벤트</a></li>
+        </ul>
+      </div>
+
+      <!--다이닝이벤트 리스트-->
+      <div class="event-container">
+        <ul class="event-list list-item">
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventVietnam2.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">The Parkview</p>
+              <h3>Taste of Vietnam</h3>
+              <p class="offer-des">더 파크뷰에서 경험하는 베트남 미식 여행</p>
+              <p class="offer-date">2024-09-24 ~ 2024-09-26</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">92,000 원</p>
+              <a href="../../html/sub/sub01_02_01.html" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventSweet2.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">Pastry Boutique</p>
+              <h3>A Marriage of Sweet Aromas</h3>
+              <p class="offer-des">패스트리 부티크에서 샤인머스캣 쇼트케이크를 선보입니다.</p>
+              <p class="offer-date">2024-09-09 ~ 2024-11-30</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">92,000 원</p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventMenu.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">Ariake</p>
+              <h3>秋麗 - Akiurara Event Menu</h3>
+              <p class="offer-des">아키우라라 가을 이벤트 메뉴</p>
+              <p class="offer-date">2024-09-09 ~ 2024-10-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">180,000 원 ~ 270,000 원</p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventPopera2.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">The Library</p>
+              <h3>Popera Whisky Serenade</h3>
+              <p class="offer-des">팝페라 공연과 함께 즐기는 위스키와 푸드</p>
+              <p class="offer-date">2024-09-27 ~ 2024-10-05</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">290,000 원 ~</p>
+              <a href="../../html/sub/sub01_02_03.html" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventBingsky2.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">The Library</p>
+              <h3>A Match Made In Heaven, Bingsky</h3>
+              <p class="offer-des">더 라이브러리 벌집꿀 아포카토 빙수와 위스키</p>
+              <p class="offer-date">2024-09-09 ~ 2024-11-30</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">118,000 원</p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventTea.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">The Library</p>
+              <h3>Rich Autumn Royal Tea</h3>
+              <p class="offer-des">가을의 풍성함을 담은 로열티 세트</p>
+              <p class="offer-date">2024-09-24 ~ 2024-09-26</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">120,000 원</p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventHaute.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">The Parkview</p>
+              <h3>Haute Cuisine</h3>
+              <p class="offer-des">시그니처 메뉴로 구성된 요리와 함께 한정된 룸에서만 제공되는 Haute Cuisine</p>
+              <p class="offer-date">2024-09-24 ~ 2024-09-26</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay"></p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventOcean.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">Palsun</p>
+              <h3>Ocean Breeze</h3>
+              <p class="offer-des">이벤트 메뉴 Ocean Breeze</p>
+              <p class="offer-date">2024-08-02 ~ 2024-10-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">250,000 원</p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventWhisky2.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">The Distillers Library</p>
+              <h3>The Exclusive Launch of The Balvenie Limited Edition Whisky</h3>
+              <p class="offer-des">더 디스틸러스 라이브러리에서만 만나볼 수 있는 발베니 한정판 위스키</p>
+              <p class="offer-date">2024-08-27 ~ 2024-12-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay"></p>
+              <a href="../../html/sub/sub01_02_04.html" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventMemory2.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">Continental</p>
+              <h3>An Enchanting Memory</h3>
+              <p class="offer-des">테이블 L'amour 105에서 영원히 기억에 남을 프로포즈 순간</p>
+              <p class="offer-date">2024-08-27 ~ 2024-12-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">1,300,000 원</p>
+              <a href="../../html/sub/sub01_02_02.html" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventDelights.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">The Library</p>
+              <h3>Aperitivo Delights</h3>
+              <p class="offer-des">더 라이브러리에서 새롭게 선보이는 Bar 메뉴와 페어링 와인</p>
+              <p class="offer-date">2024-08-27 ~ 2024-12-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">140,000 원</p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventMi.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">Palsun</p>
+              <h3>美肴</h3>
+              <p class="offer-des">이벤트 메뉴 '미효'</p>
+              <p class="offer-date">2024-08-27 ~ 2024-12-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">135,000 원 ~ 160,000 원</p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventTeddy2.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">Pastry Boutique</p>
+              <h3>Shilla Bear X Blue Dragon Keyring Limited Edition</h3>
+              <p class="offer-des">패스트리 부티크의 24년 한정판 블루 드래곤 키링</p>
+              <p class="offer-date">2024-08-27 ~ 2024-12-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay">45,000 원</p>
+              <a href="../../html/sub/sub01_02_05.html" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventBirth.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <p class="list-keword">The Parkview</p>
+              <h3>Birthday Bear Key Ring Special</h3>
+              <p class="offer-des">더 파크뷰 생일자 키링 이벤트</p>
+              <p class="offer-date">2024-08-27 ~ 2024-12-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay"></p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 이벤트-->
+      <h2 class="event-title">EVENT</h2>
+      <div class="event-container">
+        <ul class="event-list list-item">
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventBeer.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <h3>Urban Island Sip & Snack Hour</h3>
+              <p class="offer-des">어번 아일랜드에서 즐기는 해피 아워!</p>
+              <p class="offer-date">2024-09-10 ~ 2024-09-30</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay"></p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventDj.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <h3>Urban DJ Night Serenade</h3>
+              <p class="offer-des">어번 아일랜드에서 DJ가 들려주는 다양한 음악의 향연</p>
+              <p class="offer-date">2024-09-10 ~ 2024-09-30</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay"></p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/eventKids.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <h3>Kids Lounge 운영 안내</h3>
+              <p class="offer-des">수백여 권의 도서와 자연 소재의 원목 장난감으로 가득 채워진 공간에서 소중한 추억을 만들어 보세요.</p>
+              <p class="offer-date">2024-03-04 ~ 2024-12-31</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay"></p>
+              <a href="../../html/sub/sub01_02_06.html" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+          <li class="list-container eventstyle">
+            <div class="img-wrapper">
+              <img src="/img/sub/offerMain1.jpg" alt="">
+            </div>
+            <div class="txt-wrapper">
+              <h3>Urban Cabana</h3>
+              <p class="offer-des">어번 아일랜드의 프라이빗한 카바나에서 즐기는 도심 속 여유로운 휴식</p>
+              <p class="offer-date">2024-03-22 ~ 2024-11-17</p>
+            </div>
+            <div class="bottom-wrapper">
+              <p class="offer-pay"></p>
+              <a href="#" class="event-btn">자세히 보기</a>
+            </div>
+          </li>
+      </div>
+    </div>
+  </div>
+
+  <!--footer-->
+  <footer>
+    <div class="center">
+      <div class="f_menu">
+        <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo">
+        <div>SNS</div>
+        <ul class="sns">
+          <li><a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i
+                class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i
+                class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i
+                class="fa-solid fa-blog"></i></a></li>
+        </ul>
+        <div>MENU</div>
+        <ul class="menu">
+          <li><a href="#self">호텔소개</a></li>
+          <li><a href="#self">호텔정보</a></li>
+          <li><a href="#self">층별안내도</a></li>
+          <li><a href="#self">오시는길</a></li>
+        </ul>
+      </div>
+      <div class="f_bot">
+        <div class="f_list">
+          <span><a href="#self">이용약관</a></span>
+          <span><a href="#self">개인정보 처리방침</a></span>
+          <span><a href="#self">사업자정보확인</a></span>
+        </div>
+        <ul class="f_info">
+          <li>법인명: (주) 호텔신라</li>
+          <li>대표자: 이부진 사업자 등록번호: 203.81.43363</li>
+          <li>통신판매신고번호: 중구00272호</li>
+          <li>호스팅서비스제공자: 삼성SDS(주)</li>
+          <li>객실예약 shilla.reserve@samsung.com</li>
+          <li>주소: 서울특별시 중구 동호로 249</li>
+          <li>TEL: 02-2233-3131</li>
+          <li>FAX. 02-2230-3769</li>
+        </ul>
+        <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
+      </div>
+      <div class="info">
+        <p>2024 Forbes Travel Guide<br>국내 최초 6년 연속 5성 호텔 수상</p>
+        <p>한국 능률협회컨설팅 선정 <br>브랜드파워 호텔 부문 7년 연속 1위</p>
+        <p>2024 한국생산성본부 선정<br>국가브랜드경쟁력지수 호텔 부문 1위</p>
+        <p>한국표준협회 평가 <br>실내공기질 인증 획득</p>
+        <p>한국환경산업기술원 평가 <br>친환경 호텔 인증 획득</p>
+      </div>
+    </div>
+  </footer>
+
+  <article class="floating-menu">
+    <div class="menu">
+      <a href="#" class="circle-btn" title="예약 페이지로 이동">예약</a>
+      <a href="#" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
+    </div>
+    <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
+  </article>
+</body>
+
+</html>
