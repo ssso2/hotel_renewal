@@ -10,6 +10,14 @@ const keywordBox = document.querySelector(".keyword-box"); // 키워드 버튼 �
 const searchResultsTab = document.querySelectorAll(".search-results-wrap .tab > li"); //패키지/객실 탭 구분 버튼
 const searchResultsTabCont = document.querySelectorAll(".search-results-wrap .tab-cont"); // 패키지/객실 탭 버튼에 따라 나오는 내용 부분
 
+const reservationBtn = document.querySelectorAll(".r-box .btn"); // 예약하기 버튼
+const roomTypeSelect = document.querySelectorAll(".room-type-select"); //룸 타입 선택하기 박스 전체
+const roomTypeRadio = document.querySelectorAll(".room-type-select input[type='radio']"); // 침대타입 선택하는 인풋 라디오버튼
+const cartBtn = document.querySelectorAll(".cart-btn"); //보관함담기 버튼
+
+console.log(reservationBtn.length);
+console.log(roomTypeSelect.length);
+
 
 // 예약 페이지 검색 버튼 놀렀을 때 아래 검색 내용 보이게 하기
 reservationSearchBtn.addEventListener("click",function(){
@@ -29,18 +37,12 @@ for(let i = 0; i < searchResultsTab.length; i++){
     });
 }
 
-
-for(let i = 0; i < selectSortLi.length; i++){
-    selectSortLi[i].addEventListener("click",function(){
-        for(let j = 0; j < selectSortLi.length; j++){
-            selectSortLi[j].classList.remove("on");
-        }
-        selectSortLi[i].classList.on("on");
-    });
+// 예약하기 갯수만큼 
+for(let i = 0; i < reservationBtn.length; i++){
+    viewHide(reservationBtn[i],roomTypeSelect[i]);
 }
 
-
-viewHide(sortSelected,selectSort);
+viewHide(keywordBtn,keywordBox);
 viewHide(keywordBtn,keywordBox);
 
 

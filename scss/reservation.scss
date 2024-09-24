@@ -385,24 +385,28 @@
 
     .room-type-select {
         margin-top: 50px;
-        display: block;
+        display: none;
         border: 1px solid #ddd;
+        &.on {display: block;}
         .tit {
             padding: 20px 30px;
             background: #eaeaea;
+            font-size: 18px;
+            font-weight: 500;
         }
         .bed-type {
             .box {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 20px 30px;
+                padding: 20px 50px 20px 30px;
                 font-size: 18px;
-                // & + .box {
-                //     border-top: 1px solid #ddd;
-                // }
-                & > 
-                 input {
+
+                &:hover {
+                    border: 1px solid #7A6C64;
+                }
+
+                input {
                     width: 18px;
                     height: 18px;
                 }
@@ -424,6 +428,13 @@
                     width: 33px;
                     height: 20px;
                     background: url(../img/icon/bedtype_01.png) no-repeat center / cover;
+                }
+                // 보관함 담기 버튼
+                button {
+                    padding: 10px 20px;
+                    font-size: 15px;
+                    background: #7A6C64;
+                    color: #fff;
                 }
             }
         }
