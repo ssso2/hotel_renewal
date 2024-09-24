@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/reservation.css">
     <!-- 작성한 JS 연결 -->
-    <script src="../../js/common/common.js" defer></script>
     <script src="../../js/common/header.js" defer></script>
+    <script src="../../js/common/common.js" defer></script>
     <script src="../../js/sub/reservation.js" defer></script>
 </head>
 <body>
@@ -274,13 +274,12 @@
                         </ul>
                         <div class="keyword-sorting">
                             <div class="keyword-wrap">
-                                <span class="keyword-btn">키워드</span>
-
+                                <button class="keyword-btn">키워드</button>
                             </div>
                             <div class="sorting-wrap">
                                 <div class="selected">낮은 가격 순</div>
                                 <ul class="select-sort">
-                                    <li>낮은 가격 순</li>
+                                    <li class="on">낮은 가격 순</li>
                                     <li>높은 가격 순</li>
                                     <li>최신 순</li>
                                     <li>인기 순</li>
@@ -289,104 +288,143 @@
                             </div>
                         </div>
                     </div>
-                    <div class="keyword-box on">
-                        <div class="top-wrap">
-                            <span>키워드 검색</span>
-                            <button type="reset">선택해제</button>
-                        </div>
-                        <div class="bottom-wrap">
-                            <ul class="chk-boxs">
-                                <li>
-                                    <input type="checkbox" name="keyword" id="breakfast" value="breakfast">
-                                    <label for="breakfast">조식</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="keyword" id="lounge">
-                                    <label for="lounge">라운지 혜택</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="keyword" id="special-day">
-                                    <label for="special-day">기념일</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="keyword" id="outdoor-pool">
-                                    <label for="outdoor-pool">야외수영장</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="keyword" id="adults-3">
-                                    <label for="adults-3">성인3인</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="keyword" id="more-than-2day">
-                                    <label for="more-than-2day">2박이상</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" name="keyword" id="kids">
-                                    <label for="kids">키즈</label>
-                                </li>
-                            </ul>
-                            <button type="button">적용</button>
-                        </div>
+                    <div class="keyword-box">
+                        <form action="">
+                            <div class="top-wrap">
+                                <span>키워드 검색</span>
+                                <button type="reset">선택해제</button>
+                            </div>
+                            <div class="bottom-wrap">
+                                <ul class="chk-boxs">
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="breakfast" value="breakfast">
+                                        <label for="breakfast">조식</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="lounge">
+                                        <label for="lounge">라운지 혜택</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="special-day">
+                                        <label for="special-day">기념일</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="outdoor-pool">
+                                        <label for="outdoor-pool">야외수영장</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="adults-3">
+                                        <label for="adults-3">성인3인</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="more-than-2day">
+                                        <label for="more-than-2day">2박이상</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="kids">
+                                        <label for="kids">키즈</label>
+                                    </li>
+                                </ul>
+                                <button type="button">적용</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="tab-cont-wrap">
                         <ul class="tab-cont package on">
                             <li>
-                                <div class="l-box">
-                                    <div class="img-wrap">
-                                        <img src="../../img/sub/cabana-01.jpg" alt="">
+                                <div class="box-wrap">
+                                    <div class="l-box">
+                                        <div class="img-wrap">
+                                            <img src="../../img/sub/cabana-01.jpg" alt="">
+                                        </div>
+                                        <div class="txt-wrap">
+                                            <div class="context">
+                                                <span class="badge">추천</span>
+                                                <h3 class="tit">Member Exclusive</h3>
+                                                <p class="desc">리워즈 회원 전용 객실 할인</p>
+                                                <button type="button" class="pop-btn" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
-                                    <div class="txt-wrap">
-                                        <div class="context">
-                                            <span class="badge">추천</span>
-                                            <h3 class="tit">Member Exclusive</h3>
-                                            <p class="desc">리워즈 회원 전용 객실 할인</p>
-                                            <button type="button" class="pop-btn" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                                    <div class="r-box">
+                                        <div class="price"><em></em> 468,000원 ~</div>
+                                        <div class="btn-wrap">
+                                            <button type="button" class="btn">예약하기</button>
                                         </div>
                                     </div>
-                                    
                                 </div>
-                                <div class="r-box">
-                                    <div class="price"><em></em> 468,000원 ~</div>
-                                    <div class="btn-wrap">
-                                        <button type="button" class="btn">예약하기</button>
-                                    </div>
-                                    <ul class="room-type-select">
-                                        <li>
-
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="room-type-select">
+                                    <li>
+                                        <div class="tit">[standard]Deluxe</div>
+                                        <div class="bed-type">
+                                            <div class="box">
+                                                <div>
+                                                    <input type="radio" name="standars-deluxe" id="standars-deluxe-double">
+                                                    <label for="standars-deluxe-double">Double</label>
+                                                </div>
+                                                <button type="button" class="cart-btn">보관함 담기</button>
+                                            </div>
+                                            <div class="box twin">
+                                                <div>
+                                                    <input type="radio" name="standars-deluxe" id="standars-deluxe-twin">
+                                                    <label for="standars-deluxe-twin">Twin</label>
+                                                </div>
+                                                <button type="button" class="cart-btn">보관함 담기</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
-                        <ul class="tab-cont room">
+                        <ul class="tab-cont package">
                             <li>
-                                <div class="l-box">
-                                    <div class="img-wrap">
-                                        <img src="../../img/sub/cabana-02.jpg" alt="">
+                                <div class="box-wrap">
+                                    <div class="l-box">
+                                        <div class="img-wrap">
+                                            <img src="../../img/sub/cabana-02.jpg" alt="">
+                                        </div>
+                                        <div class="txt-wrap">
+                                            <div class="context">
+                                                <span class="badge">추천</span>
+                                                <h3 class="tit">Member Exclusive</h3>
+                                                <p class="desc">리워즈 회원 전용 객실 할인</p>
+                                                <button type="button" class="pop-btn" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
-                                    <div class="txt-wrap">
-                                        <div class="context">
-                                            <span class="badge">추천</span>
-                                            <h3 class="tit">Member Exclusive</h3>
-                                            <p class="desc">리워즈 회원 전용 객실 할인</p>
-                                            <button type="button" class="pop-btn" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                                    <div class="r-box">
+                                        <div class="price"><em></em> 468,000원 ~</div>
+                                        <div class="btn-wrap">
+                                            <button type="button" class="btn">예약하기</button>
                                         </div>
                                     </div>
-                                    
                                 </div>
-                                <div class="r-box">
-                                    <div class="price"><em></em> 468,000원 ~</div>
-                                    <div class="btn-wrap">
-                                        <button type="button" class="btn">예약하기</button>
-                                    </div>
-                                    <ul class="room-type-select">
-                                        <li>
-
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="room-type-select">
+                                    <li>
+                                        <div class="tit">[standard]Deluxe</div>
+                                        <div class="bed-type">
+                                            <div class="box">
+                                                <div>
+                                                    <input type="radio" name="standars-deluxe" id="standars-deluxe-double">
+                                                    <label for="standars-deluxe-double">Double</label>
+                                                </div>
+                                                <button type="button" class="cart-btn">보관함 담기</button>
+                                            </div>
+                                            <div class="box twin">
+                                                <div>
+                                                    <input type="radio" name="standars-deluxe" id="standars-deluxe-twin">
+                                                    <label for="standars-deluxe-twin">Twin</label>
+                                                </div>
+                                                <button type="button" class="cart-btn">보관함 담기</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>

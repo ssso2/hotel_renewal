@@ -243,13 +243,13 @@
         align-items: center;
         justify-content: space-between;
         font-size: 16px;
-        line-height: 70px;
+        // line-height: 70px;
         border-bottom: 1px solid #eaeaea;
     }
     .tab {
         display: flex;
         & > li {
-            padding: 0 30px;
+            padding: 27px 30px;
             cursor: pointer;
             &:hover {
                 font-weight: 700;
@@ -259,8 +259,11 @@
     }
     .keyword-sorting {
         display: flex;
+        align-items: center;
         .keyword-wrap {
-
+            .keyword-btn {
+                font-size: 16px;
+            }
         }
 
         .sorting-wrap {
@@ -268,7 +271,8 @@
             margin-left: 30px;
             
             .selected {
-                padding: 0 50px 0 20px;
+                padding: 27px 0 27px 20px;
+                width: 150px;
                 cursor: pointer;
             }
             .select-sort {
@@ -279,13 +283,22 @@
                 border-radius: 8px;
                 line-height: 40px;
                 background: #fff;
+                z-index: 2;
                 display: none;
+
+                &.on {
+                    display: block;
+                }
 
                 & > li {
                     cursor: pointer;
-                    padding: 10px 48px 10px 20px;
+                    padding: 5px 0 5px 20px;
+                    width: 148px;
                     &:hover {
                         font-weight: 500;
+                        // background: #eaeaea;
+                    }
+                    &.on {
                         background: #eaeaea;
                     }
                 }
@@ -317,15 +330,24 @@
             }
             button {
                 position: relative;
-                padding: 0 20px 0 20px;
+                padding-left: 20px;
+                margin-right: 20px;
                 font-size: 15px;
+                border: 1px solid transparent;
 
                 &::after {
                     content: "";
                     display: inline-block;
                     position: absolute;
-                    top: 0;
+                    top: 4px;
                     left: 0;
+                    width: 15px;
+                    height: 15px;
+                    background: url(../img/icon/btn_refresh.png)no-repeat center / 100% auto;
+                }
+
+                &:hover {
+                    border-bottom-color: #aaa;
                 }
             }
         }
@@ -363,15 +385,75 @@
         }
     }
 
+    .room-type-select {
+        margin-top: 50px;
+        display: none;
+        border: 1px solid #ddd;
+        &.on {display: block;}
+        .tit {
+            padding: 20px 30px;
+            background: #eaeaea;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .bed-type {
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 50px 20px 30px;
+                font-size: 18px;
+
+                &:hover {
+                    border: 1px solid #7A6C64;
+                }
+
+                input {
+                    width: 18px;
+                    height: 18px;
+                }
+                 label {
+                    padding-left: 55px;
+                    position: relative;
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 2px;
+                        left: 10px;
+                        width: 28px;
+                        height: 20px;
+                        background: url(../img/icon/bedtype_02.png) no-repeat center / cover;
+                    }
+                }
+                &.twin  label::before {
+                    width: 33px;
+                    height: 20px;
+                    background: url(../img/icon/bedtype_01.png) no-repeat center / cover;
+                }
+                // 보관함 담기 버튼
+                button {
+                    padding: 10px 20px;
+                    font-size: 15px;
+                    background: #7A6C64;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
     .tab-cont  {
         display: none;
         &.on {display: block;}
         & > li {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             padding: 50px 0;
             border-bottom: 1px solid #ddd;
+            .box-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+            }
             .l-box {
                 display: flex;
                 gap: 30px;
