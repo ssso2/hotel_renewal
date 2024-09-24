@@ -271,7 +271,8 @@
             margin-left: 30px;
             
             .selected {
-                padding: 27px 50px 27px 20px;
+                padding: 27px 0 27px 20px;
+                width: 150px;
                 cursor: pointer;
             }
             .select-sort {
@@ -291,7 +292,8 @@
 
                 & > li {
                     cursor: pointer;
-                    padding: 5px 48px 5px 20px;
+                    padding: 5px 0 5px 20px;
+                    width: 148px;
                     &:hover {
                         font-weight: 500;
                         // background: #eaeaea;

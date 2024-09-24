@@ -249,7 +249,8 @@
   margin-left: 30px;
 }
 .search-results-wrap .keyword-sorting .sorting-wrap .selected {
-  padding: 27px 50px 27px 20px;
+  padding: 27px 0 27px 20px;
+  width: 150px;
   cursor: pointer;
 }
 .search-results-wrap .keyword-sorting .sorting-wrap .select-sort {
@@ -268,7 +269,8 @@
 }
 .search-results-wrap .keyword-sorting .sorting-wrap .select-sort > li {
   cursor: pointer;
-  padding: 5px 48px 5px 20px;
+  padding: 5px 0 5px 20px;
+  width: 148px;
 }
 .search-results-wrap .keyword-sorting .sorting-wrap .select-sort > li:hover {
   font-weight: 500;

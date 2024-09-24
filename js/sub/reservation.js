@@ -3,7 +3,7 @@ const noSelect = document.querySelector(".no-select"); // 검색하기 전 결�
 const searchResults = document.querySelector(".search-results-wrap"); // 검색하기 누른 후 결과 리스트 나오는 화면
 const sortSelected = document.querySelector(".keyword-sorting .selected"); // 낮은 가격순(정렬하기) 버튼
 const selectSort = document.querySelector(".keyword-sorting .select-sort"); // 정렬하기 버튼 눌렀을 때 나오는 정렬 기준 변경 리스트
-const selectSortLi = document.querySelector(".keyword-sorting .select-sort > li"); // 정렬하기 버튼 눌렀을 때 나오는 정렬 기준 변경 리스트의 li 하나하나
+const selectSortLi = document.querySelectorAll(".keyword-sorting .select-sort > li"); // 정렬하기 버튼 눌렀을 때 나오는 정렬 기준 변경 리스트의 li 하나하나
 
 const keywordBtn = document.querySelector(".keyword-sorting .keyword-btn"); // 키워드 버튼
 const keywordBox = document.querySelector(".keyword-box"); // 키워드 버튼 누르면 나오고 사라지는 키워드 박스
@@ -14,9 +14,6 @@ const reservationBtn = document.querySelectorAll(".r-box .btn"); // 예약하기
 const roomTypeSelect = document.querySelectorAll(".room-type-select"); //룸 타입 선택하기 박스 전체
 const roomTypeRadio = document.querySelectorAll(".room-type-select input[type='radio']"); // 침대타입 선택하는 인풋 라디오버튼
 const cartBtn = document.querySelectorAll(".cart-btn"); //보관함담기 버튼
-
-console.log(reservationBtn.length);
-console.log(roomTypeSelect.length);
 
 
 // 예약 페이지 검색 버튼 놀렀을 때 아래 검색 내용 보이게 하기
@@ -37,12 +34,24 @@ for(let i = 0; i < searchResultsTab.length; i++){
     });
 }
 
+for(let i = 0; i < selectSortLi.length; i++){
+    selectSortLi[i].addEventListener("click",function(){
+        for(let j = 0; j < selectSortLi.length; j++){
+            selectSortLi[j].classList.remove("on");
+        }
+        selectSortLi[i].classList.add("on");
+        sortSelected.innerHTML = selectSortLi[i].textContent;
+        selectSort.classList.remove("on");
+    });
+}
+
+
 // 예약하기 갯수만큼 
 for(let i = 0; i < reservationBtn.length; i++){
     viewHide(reservationBtn[i],roomTypeSelect[i]);
 }
 
-viewHide(keywordBtn,keywordBox);
+viewHide(sortSelected,selectSort);
 viewHide(keywordBtn,keywordBox);
 
 
@@ -58,7 +67,9 @@ function viewHide(btn,item){
     });
 }
 
-
+if(selectSort.classList.contains("on")){
+    
+}
 
 
 
