@@ -1,7 +1,3 @@
-.map img {
-  width: 100%;
-}
-
 .payment {
   padding: 120px 0;
 }
@@ -78,6 +74,23 @@
   left: -10px;
   transform: translateY(-11.25px);
 }
+.payment .content .info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.payment .content .info h3 {
+  width: 100%;
+}
+.payment .content .info .room-img {
+  width: 50%;
+}
+.payment .content .info .room-img img {
+  width: 100%;
+}
+.payment .content .info .rsv-info {
+  margin: 50px 0px;
+}
 .payment .content .info input {
   font-size: 16px;
 }
@@ -86,6 +99,9 @@
   font-weight: 500;
   color: #666;
   font-size: 16px;
+}
+.payment .content .info .room-img {
+  margin-bottom: 30px;
 }
 .payment .content .option h4 {
   margin: 20px 0px;
@@ -178,13 +194,14 @@
   margin: 10px;
 }
 .payment .content .total {
-  margin: 30px 0px;
-  font-size: 30px;
+  background-color: #333;
+  padding: 30px 0px;
+  font-size: 25px;
   font-weight: 500;
-  color: #333;
+  color: #fff;
   text-align: center;
 }
 .payment .content .btn-wrap {
   width: 50%;
-  margin: 0 auto;
+  margin: 30px auto;
 }
