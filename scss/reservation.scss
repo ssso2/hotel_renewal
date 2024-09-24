@@ -315,7 +315,19 @@
                 font-size: 18px;
                 font-weight: 500;
             }
-            button {font-size: 15px;}
+            button {
+                position: relative;
+                padding: 0 20px 0 20px;
+                font-size: 15px;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
         }
         .bottom-wrap {
             display: flex;
