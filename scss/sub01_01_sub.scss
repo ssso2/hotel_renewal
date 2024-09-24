@@ -13,7 +13,9 @@
 
 .pkg-header {
     width: 100%;
-    height: 468px;
+    height: auto;
+    //비율계산
+    aspect-ratio: 1/0.32957746;
     img {
         width: 100%;
         height: 100%;
@@ -71,8 +73,8 @@
     background-color: #7a6c64;
     border-radius: 15px;
     color: #fff;
-    position: sticky;
-    z-index: 500;
+    // position: sticky;
+    // z-index: 500;
     .d-day {
         width: 100%;
         height: 50%;
@@ -100,6 +102,7 @@
 }
 .pkg-description-wrap {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
@@ -108,6 +111,7 @@
         background-color: #faf8f4;
         img {
             width: 100%;
+            display: block;
             object-fit: cover;
         }
         div {
@@ -131,27 +135,40 @@
     }
     .description {
         width: calc(20% - 10px);
+        display: block;
         border-top: 1px solid #333;
+        &:hover {
+            background-color: #faf8f4;
+            text-decoration: underline;
+        }
         .description-text {
             width: 270px;
             height: 100px;
-            background-color: #fff;
             padding: 10px 0 10px 0;
             text-align: center;
             font-weight: 700;
             line-height: 4.5;
         }
-        & > a {
-            width: 100%;
-            height: 100%;
+        .img-wrap {
+            overflow: hidden;
+            a {
+                img {
+                    transition: transform 1s ease;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
         }
         img {
+            display: inline-block;
             width: 100%;
-            height: 486px; // 반응형고민해보기
+            min-height: 484px; // 반응형고민해보기
             object-fit: cover;
         }
     }
 }
+
 .pkg-fitness {
     line-height: 2;
 }
