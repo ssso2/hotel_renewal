@@ -207,7 +207,7 @@
                                 <span class="reply-title">댓글</span>
                                 <span class="user-name">관리자</span>
                                 <input type="text" class="new-reply" style="background-color: #fff" value="댓글 예시입니다." />
-                                <span class="time">9/24 16:39<button class="edit">수정</button> <button class="delete">삭제</button></span>
+                                <span class="time">9/24 16:39<button class="edit">수정</button><button class="delete">삭제</button></span>
                             </div>
                         </div>
                         <div class="reply">
@@ -261,7 +261,7 @@
                         });
 
                         // 등록된 댓글을 reply-box에 추가 (순서: 사용자명 - 댓글 내용 - 작성 시간 - 수정 - 삭제)
-                        registeredReply.append(userName).append(commentInput).append('<span class="time"> 9/24 16:53 </span>', editButton).append(deleteButton);
+                        registeredReply.append(userName).append(commentInput).append('<span class="time"> 9/24 16:53 ', editButton).append(deleteButton, '</span>');
                         $('.reply-box').append(registeredReply); // 댓글을 reply-box에 추가
                         $('.user-name').val('');
                         $('#reply').val(''); // 댓글 입력란 초기화
