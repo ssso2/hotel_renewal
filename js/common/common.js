@@ -1,4 +1,4 @@
-// 3depth tab 공통
+// 3depth tab 공통 변수
 const depth3Tab = document.querySelector(".depth3-tab-wrap > .tab");
 const tabs = document.querySelectorAll(".depth3-tab-wrap .tab > li");
 const tabContents = document.querySelectorAll(".depth3-tab-wrap .tab-cont");
@@ -6,7 +6,6 @@ const tabContents = document.querySelectorAll(".depth3-tab-wrap .tab-cont");
 for (let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener("click", function () {
         for (let j = 0; j < tabs.length; j++) {
-            console.log(j);
             tabs[j].classList.remove("on");
             tabContents[j].classList.remove("on");
         }
@@ -14,29 +13,6 @@ for (let i = 0; i < tabs.length; i++) {
         tabContents[i].classList.add("on");
     });
 }
-
-// 3depth 탭이 화면 위로 붙음
-// window.addEventListener("scroll",function(){
-//     // 스크롤바의 위치값
-//     let scTop = window.scrollY;
-//     let headerHeight = header.clientHeight;
-//     let depth3TabTop = depth3Tab.offsetTop;
-
-//     if(scTop > depth3TabTop){
-
-//         if(header.classList.contains("on")){
-//             depth3Tab.style.top = headerHeight + "px";
-//             depth3Tab.classList.add("on");
-//         }
-//         else{
-//             depth3Tab.style.top = 0;
-//             depth3Tab.classList.add("on");
-//         }
-//     }
-//     else{
-//         depth3Tab.classList.remove("on");
-//     }
-// });
 
 // DEPTH3 스와이퍼 슬라이드 갤러리
 var swiper = new Swiper(".mySwiper", {
@@ -103,7 +79,7 @@ $(function () {
         });
     });
 
-    // daterangepicker
+    // daterangepicker - 메인
     $('input[name="daterange"]').daterangepicker(
         {
             minYear: 1000,
@@ -135,6 +111,51 @@ $(function () {
                 firstDay: 1,
             },
             drops: "up", // up, down, auto 중 선택
+        },
+        function (start, end, label) {
+            console.log(
+                "New daterange selected:" +
+                    start.format("YYYY.MM.DD") +
+                    " - " +
+                    end.format("YYYY.MM.DD") +
+                    "(predefined range:" +
+                    label +
+                    ")"
+            );
+        }
+    );
+    // daterangepicker - 예약
+    $('input[name="daterange2"]').daterangepicker(
+        {
+            minYear: 1000,
+            maxYear: 9999,
+            locale: {
+                format: "YYYY.MM.DD",
+                separator: " - ",
+                applyLabel: "확인",
+                cancelLabel: "취소",
+                fromLabel: "From",
+                toLabel: "To",
+                customRangeLabel: "Custom",
+                weekLabel: "주",
+                daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
+                monthNames: [
+                    "1월",
+                    "2월",
+                    "3월",
+                    "4월",
+                    "5월",
+                    "6월",
+                    "7월",
+                    "8월",
+                    "9월",
+                    "10월",
+                    "11월",
+                    "12월",
+                ],
+                firstDay: 1,
+            },
+            drops: "down", // up, down, auto 중 선택
         },
         function (start, end, label) {
             console.log(

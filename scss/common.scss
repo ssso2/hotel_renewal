@@ -34,6 +34,7 @@
     margin-bottom: 50px !important;
 }
 
+<<<<<<< HEAD
 .pt-10 {
     padding-top: 10px !important;
 }
@@ -68,6 +69,33 @@
 .bd-none {
     border: none !important;
 }
+=======
+.mt-0 {margin-top: 0 !important;}
+.mt-10 {margin-top: 10px !important;}
+.mt-20 {margin-top: 20px !important;}
+.mt-30 {margin-top: 30px !important;}
+.mt-40 {margin-top: 40px !important;}
+.mt-50 {margin-top: 50px !important;}
+.mb-0 {margin-bottom: 0 !important;}
+.mb-10 {margin-bottom: 10px !important;}
+.mb-20 {margin-bottom: 20px !important;}
+.mb-30 {margin-bottom: 30px !important;}
+.mb-40 {margin-bottom: 40px !important;}
+.mb-50 {margin-bottom: 50px !important;}
+
+.pt-0 {padding-top: 0 !important;}
+.pt-10 {padding-top: 10px !important;}
+.pt-20 {padding-top: 20px !important;}
+.pt-30 {padding-top: 30px !important;}
+.pt-40 {padding-top: 40px !important;}
+.pt-50 {padding-top: 50px !important;}
+.pb-0 {padding-bottom: 0 !important;}
+.pb-10 {padding-bottom: 10px !important;}
+.pb-20 {padding-bottom: 20px !important;}
+.pb-30 {padding-bottom: 30px !important;}
+.pb-40 {padding-bottom: 40px !important;}
+.pb-50 {padding-bottom: 50px !important;}
+>>>>>>> master
 
 .fc-bk {
     color: #000 !important;
@@ -95,6 +123,13 @@
         padding: 50px 0;
     }
 }
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {flex-direction: column;}
 
 /* 스크롤바의 폭 너비 */
 body::-webkit-scrollbar {
@@ -142,6 +177,7 @@ body::-webkit-scrollbar-track {
         margin-top: 20px;
         font-size: 17px;
         color: #666;
+        line-height: 1.5;
     }
 
     .location {
@@ -211,7 +247,12 @@ body::-webkit-scrollbar-track {
 
         & > li {
             margin-bottom: -1px;
+<<<<<<< HEAD
             width: calc(100% / 7);
+=======
+            min-width: calc(100%/7);
+            padding: 0px 10px; 
+>>>>>>> master
             text-align: center;
             font-size: 16px;
             line-height: 40px;
@@ -364,6 +405,40 @@ body::-webkit-scrollbar-track {
             width: calc((100% - 20px) / 3);
         }
     }
+    &.type6 {
+        width: 100%;
+        .align {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            width: calc((100% - 20px)/3);
+
+
+        }
+    }
+    &.btn-200 {
+        width: 100%;
+        .btn {
+            margin-right: 10px;
+            width: 200px;
+        }
+    }
+    &.btn-250 {
+        width: 100%;
+        .btn {
+            margin-right: 10px;
+            width: 250px;
+        }
+    }
+    &.btn-300 {
+        width: 100%;
+        .btn {
+            margin-right: 10px;
+            width: 300px;
+        }
+    }
     .btn {
         width: calc((100% - 10px) / 2);
         text-align: center;
@@ -420,8 +495,13 @@ body::-webkit-scrollbar-track {
         line-height: 25px;
     }
     .page {
+<<<<<<< HEAD
         background-image: url("../img/common/bg_pageination.png");
         background-repeat: no-repeat;
+=======
+        background-image:url('../img/common/bg_pageination.png');
+        background-repeat:no-repeat;
+>>>>>>> master
     }
     .first {
         background-position: 0 0;
@@ -493,7 +573,8 @@ body::-webkit-scrollbar-track {
     li {
         padding-left: 10px;
         position: relative;
-        line-height: 1.5;
+        font-size: 16px;
+        line-height: 1.6;
         &::after {
             content: "-";
             display: inline-block;
@@ -506,6 +587,11 @@ body::-webkit-scrollbar-track {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 /* 레이어 팝업 */
 .lypop {
     display: none;
@@ -597,7 +683,20 @@ body::-webkit-scrollbar-track {
 }
 
 .lypop-ct {
+<<<<<<< HEAD
     padding: 30px;
+=======
+    padding:30px;
+    &.scroll {
+        padding: 10px 0;
+        height: 500px;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+>>>>>>> master
 }
 
 // daterangepicker 팜업
@@ -683,6 +782,7 @@ body::-webkit-scrollbar-track {
         margin-bottom: vw-pc(50);
     }
 
+<<<<<<< HEAD
     .pt-10 {
         padding-top: vw-pc(10);
     }
@@ -984,6 +1084,11 @@ body::-webkit-scrollbar-track {
             padding: vw-pc(4 0);
             font-size: vw-pc(20);
         }
+=======
+    .center {
+        width: 90%;
+
+>>>>>>> master
     }
 }
 

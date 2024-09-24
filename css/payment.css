@@ -1,0 +1,207 @@
+.payment {
+  padding: 120px 0;
+}
+.payment h2 {
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: 30px;
+  color: #7A6C64;
+}
+.payment .content {
+  border-top: 2px solid #7A6C64;
+}
+.payment .content h3 {
+  margin: 30px 0px;
+  font-size: 22px;
+  color: #333;
+  letter-spacing: 1px;
+}
+.payment .content .info, .payment .content .option, .payment .content .guide, .payment .content .agr {
+  font-size: 16px;
+  padding: 40px 0 50px;
+  border-bottom: 1px solid #ddd;
+}
+.payment .content .info .desc-wrap, .payment .content .option .desc-wrap, .payment .content .guide .desc-wrap, .payment .content .agr .desc-wrap {
+  padding-top: 30px;
+}
+.payment .content .info .desc-wrap .desc, .payment .content .option .desc-wrap .desc, .payment .content .guide .desc-wrap .desc, .payment .content .agr .desc-wrap .desc {
+  position: relative;
+  margin: 0 0 10px 0;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+.payment .content .info .desc-wrap .desc::before, .payment .content .option .desc-wrap .desc::before, .payment .content .guide .desc-wrap .desc::before, .payment .content .agr .desc-wrap .desc::before {
+  content: "*";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+.payment .content .list {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  display: flex;
+  line-height: 1.5;
+}
+.payment .content .list h4 {
+  font-size: 18px;
+  width: 300px;
+  color: #7A6C64;
+}
+.payment .content .list .box {
+  margin-right: 20px;
+}
+.payment .content .list .txt-wrap {
+  width: calc(100% - 300px);
+}
+.payment .content .list .txt-wrap .txt {
+  margin-top: 15px;
+}
+.payment .content .list .txt-wrap .txt:first-child {
+  margin: 0;
+}
+.payment .content .list .txt-wrap .txt > li {
+  margin-left: 10px;
+  position: relative;
+}
+.payment .content .list .txt-wrap .txt > li::before {
+  content: "-";
+  display: block;
+  position: absolute;
+  top: 11.25px;
+  left: -10px;
+  transform: translateY(-11.25px);
+}
+.payment .content .info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.payment .content .info h3 {
+  width: 100%;
+}
+.payment .content .info .room-img {
+  width: 50%;
+}
+.payment .content .info .room-img img {
+  width: 100%;
+}
+.payment .content .info .rsv-info {
+  margin: 50px 0px;
+}
+.payment .content .info input {
+  font-size: 16px;
+}
+.payment .content .info span {
+  line-height: 1.2;
+  font-weight: 500;
+  color: #666;
+  font-size: 16px;
+}
+.payment .content .info .room-img {
+  margin-bottom: 30px;
+}
+.payment .content .option h4 {
+  margin: 20px 0px;
+}
+.payment .content .option .count-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  padding: 20px 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+.payment .content .option .count-wrap .btn-down, .payment .content .option .count-wrap .btn-up {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+.payment .content .option .count-wrap .btn-down::before, .payment .content .option .count-wrap .btn-up::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background: #000;
+}
+.payment .content .option .count-wrap .btn-up::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 100%;
+  background: #000;
+}
+.payment .content .option .count-wrap > p {
+  width: 150px;
+  margin-right: 50px;
+}
+.payment .content .option .count-wrap .num {
+  margin: 0px 30px;
+  font-weight: 500;
+}
+.payment .content .option select {
+  width: 350px;
+  margin: 20px 0px;
+  text-align: center;
+}
+.payment .content .option textarea {
+  width: 60%;
+  margin-top: 20px;
+}
+.payment .content .guide .chk-wrap {
+  padding: 10px 0px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #ddd;
+}
+.payment .content .guide .chk-wrap input {
+  margin: 10px;
+}
+.payment .content .agr {
+  font-size: 16px;
+}
+.payment .content .agr h4 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #7A6C64;
+}
+.payment .content .agr .txt-box {
+  padding: 20px;
+  border: 1px solid #333;
+  line-height: 1.5;
+}
+.payment .content .agr .txt-box p {
+  padding: 10px;
+}
+.payment .content .agr .chk-wrap {
+  font-size: 18px;
+  margin: 20px;
+  text-align: right;
+}
+.payment .content .agr .chk-wrap input {
+  margin: 10px;
+}
+.payment .content .total {
+  background-color: #333;
+  padding: 30px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+.payment .content .btn-wrap {
+  width: 50%;
+  margin: 30px auto;
+}

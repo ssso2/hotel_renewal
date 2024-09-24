@@ -1,0 +1,105 @@
+.depth3-tab-wrap .context .Introduction .room-title {
+  font-size: 40px;
+  color: #333;
+}
+.depth3-tab-wrap .context .Introduction .room-top-txt {
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: #7A6C64;
+}
+.depth3-tab-wrap .context .Introduction .btn-wrap {
+  width: 50%;
+  margin: 0 auto;
+  gap: 10px;
+}
+.depth3-tab-wrap .context .info h3, .depth3-tab-wrap .context .guide h3, .depth3-tab-wrap .context .amenity h3 {
+  margin-bottom: 3%;
+  font-size: 25px;
+}
+.depth3-tab-wrap .context .guide .list h4 {
+  width: 200px;
+  color: #7A6C64;
+}
+.depth3-tab-wrap .context .amenity {
+  padding: 70px 0 50px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+}
+.depth3-tab-wrap .context .amenity h3 {
+  width: 100%;
+}
+.depth3-tab-wrap .context .amenity .list {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  display: flex;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.depth3-tab-wrap .context .amenity .list h4 {
+  width: 100px;
+  color: #7A6C64;
+}
+.depth3-tab-wrap .context .amenity .list .txt-wrap {
+  width: 240px;
+}
+.depth3-tab-wrap .context .amenity .list .txt-wrap .txt {
+  margin-top: 15px;
+}
+.depth3-tab-wrap .context .amenity .list .txt-wrap .txt:first-child {
+  margin: 0;
+}
+.depth3-tab-wrap .context .amenity .list .txt-wrap .txt > li {
+  margin-left: 10px;
+  position: relative;
+}
+.depth3-tab-wrap .context .amenity .list .txt-wrap .txt > li::before {
+  content: "-";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+}
+
+.room-floor {
+  display: flex;
+  justify-content: space-around;
+}
+.room-floor h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.room-floor img {
+  width: 400px;
+}
+
+.lounge .context .Introduction .btn-wrap {
+  margin: 0;
+}
+.lounge .context .guide .desc-wrap {
+  padding-top: 30px;
+}
+.lounge .context .guide .desc-wrap .desc {
+  position: relative;
+  margin: 0 0 10px 0;
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+.lounge .context .guide .desc-wrap .desc::before {
+  content: "*";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+
+.lounge-floor {
+  justify-content: space-around;
+}
+.lounge-floor h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}

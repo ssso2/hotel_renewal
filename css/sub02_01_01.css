@@ -1,0 +1,9 @@
+.btn-wrap .btn {
+  width: 100%;
+  line-height: 50px;
+}
+
+.info h3, .guide h3 {
+  margin-bottom: 3%;
+  font-size: 25px;
+}

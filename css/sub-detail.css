@@ -1,5 +1,15 @@
 .depth3-tab-wrap .gallery {
-  margin: 70px 0 100px;
+  margin: 70px 0;
+}
+.depth3-tab-wrap .gallery.no-slide {
+  height: 600px;
+}
+.depth3-tab-wrap .gallery.no-slide img {
+  width: 100%;
+  height: 100%;
+}
+.depth3-tab-wrap .min-h-48 {
+  min-height: 48px;
 }
 .depth3-tab-wrap .context .Introduction {
   padding-bottom: 50px;
@@ -9,6 +19,7 @@
   margin-bottom: 30px;
   font-size: 22px;
   color: #666;
+  line-height: 1.5;
 }
 .depth3-tab-wrap .context .Introduction h3 strong {
   margin-left: 10px;
@@ -20,6 +31,12 @@
   margin: 15px 0 10px;
   font-size: 18px;
 }
+.depth3-tab-wrap .context .Introduction em {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
 .depth3-tab-wrap .context .Introduction .txt {
   margin-bottom: 20px;
   font-size: 18px;
@@ -29,6 +46,14 @@
   font-size: 16px;
   line-height: 1.6;
   color: #000;
+}
+.depth3-tab-wrap .context .Introduction .txt.small > span {
+  font-size: 15px;
+  color: #555;
+}
+.depth3-tab-wrap .context .Introduction .txt.main {
+  font-size: 22px;
+  font-weight: 500;
 }
 .depth3-tab-wrap .context .Introduction .group b {
   display: inline-block;
@@ -56,6 +81,184 @@
 .depth3-tab-wrap .context .Introduction .tel + strong {
   margin-top: 30px;
 }
+.depth3-tab-wrap .context .Introduction .operating-hours {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-top: 15px;
+}
+.depth3-tab-wrap .context .Introduction .operating-hours > span {
+  margin-right: 30px;
+  color: #7A6C64;
+  font-size: 17px;
+  font-weight: 500;
+}
+.depth3-tab-wrap .context .Introduction .operating-hours > p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #555;
+}
+.depth3-tab-wrap .context .Introduction .flex {
+  align-items: center;
+  justify-content: space-between;
+}
+.depth3-tab-wrap .context .Introduction .timetable-wrap {
+  margin: 40px 0;
+  padding-left: 10px;
+  width: 640px;
+}
+.depth3-tab-wrap .context .Introduction .timetable {
+  margin: 10px 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li:nth-child(1) .time {
+  line-height: 95px;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li:nth-child(2) .time {
+  line-height: 158px;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li:nth-child(3) .time {
+  line-height: 131px;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li .time {
+  width: 150px;
+  min-height: 95px;
+  font-weight: 500;
+  text-align: center;
+  background: #f0f0f0;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li .context {
+  padding: 20px 30px;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li .context p {
+  color: #000;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li .context span {
+  color: #666;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li .context p + p {
+  margin-bottom: 10px;
+}
+.depth3-tab-wrap .context .Introduction .timetable > li .context span + p {
+  margin-top: 10px;
+}
+.depth3-tab-wrap .context .card {
+  margin: 0 50px 70px 0;
+  width: calc((100% - 50px) / 2);
+}
+.depth3-tab-wrap .context .card:nth-child(2n) {
+  margin-right: 0;
+}
+.depth3-tab-wrap .context .card strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #7A6C64;
+  letter-spacing: 1px;
+}
+.depth3-tab-wrap .context .card .img-wrap {
+  width: 100%;
+  aspect-ratio: 1/0.5;
+}
+.depth3-tab-wrap .context .card .img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+.depth3-tab-wrap .context .card .txt-wrap {
+  margin-top: 15px;
+  min-height: 124px;
+  line-height: 1.5;
+}
+.depth3-tab-wrap .context .card .txt-wrap .main {
+  font-size: 20px;
+  font-weight: 500;
+}
+.depth3-tab-wrap .context .card .txt-wrap .sub {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.depth3-tab-wrap .context .card .info {
+  padding: 30px 0 10px;
+}
+.depth3-tab-wrap .context .card.full {
+  margin: 0;
+  width: 100%;
+}
+.depth3-tab-wrap .context .card.full .img-wrap {
+  width: 100%;
+  aspect-ratio: 1/0.2;
+}
+.depth3-tab-wrap .context .card.full .txt-wrap {
+  min-height: auto;
+}
+.depth3-tab-wrap .context .info-wrap {
+  margin-top: 70px;
+}
+.depth3-tab-wrap .context .info-wrap > strong {
+  font-size: 18px;
+  color: #333;
+}
+.depth3-tab-wrap .context .info-wrap > strong + .info {
+  padding: 30px 0 0;
+}
+.depth3-tab-wrap .context .info-wrap.flex {
+  flex-wrap: wrap;
+}
+.depth3-tab-wrap .context .info-wrap:last-child {
+  padding-bottom: 50px;
+}
+.depth3-tab-wrap .context .info-wrap .info {
+  border: none;
+}
+.depth3-tab-wrap .context .info-wrap .info + .desc-wrap {
+  padding: 0;
+}
+.depth3-tab-wrap .context .info-wrap .info.flex {
+  gap: 0;
+}
+.depth3-tab-wrap .context .info-wrap .info.flex .list {
+  margin: 0 20px;
+  padding: 0;
+  position: relative;
+  border: none;
+}
+.depth3-tab-wrap .context .info-wrap .info.flex .list::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 13px;
+  background: #666;
+}
+.depth3-tab-wrap .context .info-wrap .info.flex .list:last-child::after {
+  display: none;
+}
+.depth3-tab-wrap .context .info-wrap .info.flex .list:first-child {
+  margin-left: 0;
+}
+.depth3-tab-wrap .context .info-wrap .info.flex .list > h4 {
+  margin-right: 15px;
+  width: auto;
+}
+.depth3-tab-wrap .context .info-wrap .flex {
+  display: flex;
+  gap: 30px;
+  text-align: center;
+}
+.depth3-tab-wrap .context .info-wrap .flex > li {
+  padding: 10px;
+  border: 1px solid #666;
+}
 .depth3-tab-wrap .context .info, .depth3-tab-wrap .context .guide {
   padding: 70px 0 50px;
   border-bottom: 1px solid #ddd;
@@ -68,10 +271,6 @@
   display: flex;
   font-size: 16px;
   line-height: 1.5;
-}
-.depth3-tab-wrap .context .info .list.tit h4, .depth3-tab-wrap .context .guide .list.tit h4 {
-  font-size: 18px;
-  color: #333;
 }
 .depth3-tab-wrap .context .info .list h4, .depth3-tab-wrap .context .guide .list h4 {
   width: 120px;
@@ -98,10 +297,13 @@
   top: 3px;
   left: -10px;
 }
-.depth3-tab-wrap .context .info .desc-wrap, .depth3-tab-wrap .context .guide .desc-wrap {
+.depth3-tab-wrap .context .guide:last-child {
+  border-bottom: 0;
+}
+.depth3-tab-wrap .context .desc-wrap {
   padding-top: 30px;
 }
-.depth3-tab-wrap .context .info .desc-wrap .desc, .depth3-tab-wrap .context .guide .desc-wrap .desc {
+.depth3-tab-wrap .context .desc-wrap .desc {
   position: relative;
   margin: 0 0 10px 0;
   padding-left: 15px;
@@ -109,13 +311,86 @@
   line-height: 1.5;
   color: #333;
 }
-.depth3-tab-wrap .context .info .desc-wrap .desc::before, .depth3-tab-wrap .context .guide .desc-wrap .desc::before {
+.depth3-tab-wrap .context .desc-wrap .desc::before {
   content: "*";
   display: block;
   position: absolute;
   top: 3px;
   left: 2px;
 }
-.depth3-tab-wrap .context .guide:last-child {
-  border-bottom: 0;
+.depth3-tab-wrap .context .desc-wrap .sub-tit {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  font-weight: 500;
+}
+.depth3-tab-wrap .context .schedule {
+  margin-top: 30px;
+}
+.depth3-tab-wrap .context .schedule .tit {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #666;
+  font-weight: 500;
+}
+.depth3-tab-wrap .context .schedule .desc {
+  position: relative;
+  margin: 0;
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+.depth3-tab-wrap .context .schedule .desc::before {
+  content: "*";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+.depth3-tab-wrap .context .table {
+  margin: 20px 0;
+  width: 100%;
+  overflow: auto;
+}
+.depth3-tab-wrap .context table {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.depth3-tab-wrap .context table thead tr {
+  border: 2px solid #e7e0d4;
+  border-left: 0;
+  border-right: 0;
+  background: #f3f0e9;
+}
+.depth3-tab-wrap .context table tbody th {
+  background: #FAF8F4;
+}
+.depth3-tab-wrap .context table tbody tr {
+  border-bottom: 1px solid #ebe5dc;
+}
+.depth3-tab-wrap .context table th, .depth3-tab-wrap .context table td {
+  padding: 20px 0;
+  border-right: 1px solid #e7e0d4;
+}
+.depth3-tab-wrap .context table th {
+  color: #666;
+}
+.depth3-tab-wrap .context table thead th:last-child {
+  border: none;
+}
+.depth3-tab-wrap .context table td:last-child {
+  border: none;
+}
+.depth3-tab-wrap .context .min-h-none .txt-wrap {
+  min-height: auto;
+}
+
+.lypop[data-lyOpen] img {
+  width: 100%;
+  height: 100%;
 }
