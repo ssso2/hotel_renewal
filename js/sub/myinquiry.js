@@ -1,25 +1,19 @@
-$(function () {
-    $('.inquiry-title').on('click', function () {
-        if (!$('.inquiry-content').hasClass('on')) {
-            $('.inquiry-content').parents().siblings().find('.inquiry-content').removeClass('on');
-            $(this).siblings('.inquiry-content').addClass('on');
-            // } else {
-            //     $(this).removeClass('on');
-            // }
+const inquiryTitle = document.querySelectorAll(".inquiry-title");// 내 문의내역 제목
+const inquiryContent = document.querySelectorAll(".inquiry-content"); // 내 문의내역 본문
+
+// 내 문의내역 아코디언
+for(let i = 0; i < inquiryTitle.length; i++){
+    inquiryTitle[i].addEventListener("click",function(){
+        for(let j = 0; j < inquiryTitle.length; j++){
+            inquiryContent[j].classList.remove("on")
+        }
+
+        if(!inquiryTitle[i].classList.contains("on")){
+            inquiryContent[i].classList.add("on");
+        }
+        else {
+            inquiryContent[i].classList.remove("on");
         }
     });
 
-    // for (let i = 0; i < $('.inquiry-title').length; i++) {
-    //     $('.inquiry-title')[i].on('click', function () {
-    //         for (let j = 0; j < $('.inquiry-title').length; j++) {
-    //             $('.inquiry-content')[j].removeClass('on');
-    //         }
-
-    //         if (!$('.inquiry-content').hasClass('on')) {
-    //             $('.inquiry-content')[i].addClass('on');
-    //         } else {
-    //             $('.inquiry-content')[i].siblings().removeClass('on');
-    //         }
-    //     });
-    // }
-});
+}
