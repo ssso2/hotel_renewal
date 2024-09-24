@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="../../css/header.css" />
         <link rel="stylesheet" href="../../css/common.css" />
         <link rel="stylesheet" href="../../css/footer.css" />
-        <link rel="stylesheet" href="../../css/mypage.css" />
+        <link rel="stylesheet" href="../../css/myinquiry.css" />
         <!-- 작성자 : SSERA -->
         <!-- 제이쿼리 연결 -->
         <script src="../../js/common/jquery-ui.min.js"></script>
@@ -186,156 +186,96 @@
             <div class="center">
                 <div class="depth3-tab-wrap">
                     <ul class="tab">
-                        <li class="tab1 on"><a href="mypage.html">회원정보 수정</a></li>
+                        <li class="tab1"><a href="mypage.html">회원정보 수정</a></li>
                         <li class="tab2"><a href="myreservation.html">예약내역 확인</a></li>
-                        <li class="tab3"><a href="myinquiry.html">문의내역 확인</a></li>
+                        <li class="tab3 on"><a href="myinquiry.html">문의내역 확인</a></li>
                     </ul>
-                    <div class="content">
-                        <!-- 비밀번호 확인 (회원정보 수정 전) -->
-                        <div class="change-info-chk" id="change-info-chk">
-                            <h2 class="title">비밀번호 확인</h2>
-                            <label><input type="password" id="pw-chk" /></label>
-                            <p id="error-message" style="color: red; display: none"></p>
-                            <input type="button" id="btn-confirm" value="확인" onclick="pw_chk()" />
-                        </div>
-
-                        <!-- 회원정보 수정 -->
-                        <div class="mypage-info" id="mypage-info" style="display: none">
-                            <h2 class="title">회원정보 수정</h2>
-                            <label class="my-info">
-                                <p>아이디</p>
-                                <input type="text" id="user-id" />
-                            </label>
-                            <label class="my-info">
-                                <p>패스워드</p>
-                                <input type="password" id="pw" />
-                            </label>
-                            <label class="my-info">
-                                <p>패스워드 확인</p>
-                                <input type="password" id="pwchk" />
-                            </label>
-                            <label class="my-info">
-                                <p>이름</p>
-                                <input type="text" id="id" />
-                            </label>
-                            <label class="my-info">
-                                <p>생년월일</p>
-                                <input type="text" id="birth" />
-                            </label>
-                            <label class="my-info">
-                                <p>연락처</p>
-                                <input type="text" id="contact" />
-                            </label>
-                            <label class="my-info">
-                                <p>이메일</p>
-                                <input type="text" id="mail" />
-                            </label>
-                            <input type="button" id="edit" value="수정완료" />
+                </div>
+                <div id="board-container">
+                    <div class="inquiry-info" id="inquiry-info">
+                        <div class="myinquiry">
+                            <h2 class="title">내 문의 내역</h2>
+                            <ul class="board-nav">
+                                <li class="post-num">번호</li>
+                                <li class="post-title">제목</li>
+                                <li class="post-date">작성일</li>
+                                <li class="post-status">답변 상태</li>
+                            </ul>
+                            <ul class="inquiry-list">
+                                <li class="inquiry-item">
+                                    <ul class="inquiry-details">
+                                        <li class="post-num">1</li>
+                                        <li class="inquiry-title">예약한 객실을 변경하고 싶습니다.</li>
+                                        <li class="inquiry-date">2024-09-20</li>
+                                        <li class="inquiry-status">답변 대기</li>
+                                    </ul>
+                                    <div class="inquiry-content">예약한 객실을 변경하고 싶습니다. 가능할까요?</div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+
+                <!-- 푸터/플로팅 -->
+                <footer>
+                    <div class="center">
+                        <div class="f_menu">
+                            <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo" />
+                            <div>SNS</div>
+                            <ul class="sns">
+                                <li>
+                                    <a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a>
+                                </li>
+                            </ul>
+                            <div>MENU</div>
+                            <ul class="menu">
+                                <li><a href="#self">호텔소개</a></li>
+                                <li><a href="#self">호텔정보</a></li>
+                                <li><a href="#self">층별안내도</a></li>
+                                <li><a href="#self">오시는길</a></li>
+                            </ul>
+                        </div>
+                        <div class="f_bot">
+                            <div class="f_list">
+                                <span><a href="#self">이용약관</a></span>
+                                <span><a href="#self">개인정보 처리방침</a></span>
+                                <span><a href="#self">사업자정보확인</a></span>
+                            </div>
+                            <ul class="f_info">
+                                <li>법인명: (주) 호텔신라</li>
+                                <li>대표자: 이부진 사업자 등록번호: 203.81.43363</li>
+                                <li>통신판매신고번호: 중구00272호</li>
+                                <li>호스팅서비스제공자: 삼성SDS(주)</li>
+                                <li>객실예약 shilla.reserve@samsung.com</li>
+                                <li>주소: 서울특별시 중구 동호로 249</li>
+                                <li>TEL: 02-2233-3131</li>
+                                <li>FAX. 02-2230-3769</li>
+                            </ul>
+                            <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
+                        </div>
+                        <div class="info">
+                            <p>2024 Forbes Travel Guide<br />국내 최초 6년 연속 5성 호텔 수상</p>
+                            <p>한국 능률협회컨설팅 선정 <br />브랜드파워 호텔 부문 7년 연속 1위</p>
+                            <p>2024 한국생산성본부 선정<br />국가브랜드경쟁력지수 호텔 부문 1위</p>
+                            <p>한국표준협회 평가 <br />실내공기질 인증 획득</p>
+                            <p>한국환경산업기술원 평가 <br />친환경 호텔 인증 획득</p>
+                        </div>
+                    </div>
+                </footer>
+                <article class="floating-menu">
+                    <div class="menu">
+                        <a href="#" class="circle-btn" title="예약 페이지로 이동">예약</a>
+                        <a href="#" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
+                    </div>
+                    <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
+                </article>
             </div>
         </div>
-
-        <script>
-            const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
-
-            function show_page(section) {
-                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'withdrawal'];
-                sections.forEach(id => {
-                    document.getElementById(id).style.display = id === section ? 'block' : 'none';
-                });
-            }
-
-            function pw_chk() {
-                const inputPassword = document.getElementById('pw-chk').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
-
-                if (inputPassword === correctPassword) {
-                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
-                    errorMessage.style.display = 'none';
-                    show_page('mypage-info'); //비밀번호가 맞으면 개인정보 변경 페이지 보여줌
-                } else {
-                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
-                    document.getElementById('pw-chk').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
-                }
-            }
-
-            function pw_chk2() {
-                const inputPassword = document.getElementById('pw-chk2').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
-
-                if (inputPassword === correctPassword) {
-                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
-                    errorMessage.style.display = 'none';
-                    show_page('withdrawal'); //회원탈퇴 페이지
-                } else {
-                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
-                    document.getElementById('pw-chk2').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
-                }
-            }
-        </script>
-
-        <!-- 푸터/플로팅 -->
-        <footer>
-            <div class="center">
-                <div class="f_menu">
-                    <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo" />
-                    <div>SNS</div>
-                    <ul class="sns">
-                        <li>
-                            <a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a>
-                        </li>
-                    </ul>
-                    <div>MENU</div>
-                    <ul class="menu">
-                        <li><a href="#self">호텔소개</a></li>
-                        <li><a href="#self">호텔정보</a></li>
-                        <li><a href="#self">층별안내도</a></li>
-                        <li><a href="#self">오시는길</a></li>
-                    </ul>
-                </div>
-                <div class="f_bot">
-                    <div class="f_list">
-                        <span><a href="#self">이용약관</a></span>
-                        <span><a href="#self">개인정보 처리방침</a></span>
-                        <span><a href="#self">사업자정보확인</a></span>
-                    </div>
-                    <ul class="f_info">
-                        <li>법인명: (주) 호텔신라</li>
-                        <li>대표자: 이부진 사업자 등록번호: 203.81.43363</li>
-                        <li>통신판매신고번호: 중구00272호</li>
-                        <li>호스팅서비스제공자: 삼성SDS(주)</li>
-                        <li>객실예약 shilla.reserve@samsung.com</li>
-                        <li>주소: 서울특별시 중구 동호로 249</li>
-                        <li>TEL: 02-2233-3131</li>
-                        <li>FAX. 02-2230-3769</li>
-                    </ul>
-                    <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
-                </div>
-                <div class="info">
-                    <p>2024 Forbes Travel Guide<br />국내 최초 6년 연속 5성 호텔 수상</p>
-                    <p>한국 능률협회컨설팅 선정 <br />브랜드파워 호텔 부문 7년 연속 1위</p>
-                    <p>2024 한국생산성본부 선정<br />국가브랜드경쟁력지수 호텔 부문 1위</p>
-                    <p>한국표준협회 평가 <br />실내공기질 인증 획득</p>
-                    <p>한국환경산업기술원 평가 <br />친환경 호텔 인증 획득</p>
-                </div>
-            </div>
-        </footer>
-        <article class="floating-menu">
-            <div class="menu">
-                <a href="#" class="circle-btn" title="예약 페이지로 이동">예약</a>
-                <a href="#" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
-            </div>
-            <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
-        </article>
     </body>
 </html>

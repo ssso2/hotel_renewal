@@ -1,0 +1,115 @@
+.form-wrap {
+    position: static;
+    margin-top: 100px;
+    top: 100%;
+    left: 50%;
+    font-size: 14px;
+    padding: 10px;
+
+    .join-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        margin-bottom: 20px;
+
+        .info-title {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 10px;
+            margin-left: 600px;
+        }
+
+        .info-group {
+            display: flex;
+            flex-direction: column;
+
+            .input-container {
+                display: flex;
+                align-items: center;
+                margin-top: 30px;
+                margin-left: 300px;
+                label {
+                    width: 150px;
+                    font-size: 16px;
+                }
+
+                input {
+                    width: 500px;
+                    padding: 10px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    margin-left: 10px;
+                    #pid {
+                        width: 500px;
+                    }
+                }
+
+                #id-chk {
+                    width: 100px;
+                    height: 40px;
+                    margin-left: 10px;
+                    background-color: #7a6c64;
+                    color: #faf8f4;
+                    &:hover {
+                        background-color: #333;
+                    }
+                }
+            }
+            .error-message {
+                color: #f00;
+                font-size: 12px;
+                margin-top: 5px;
+                margin-left: 470px;
+                height: 10px;
+                line-height: 1;
+                display: block;
+            }
+
+            select {
+                width: 160px;
+                padding: 10px;
+                margin-left: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+        }
+
+        #firstname {
+            width: 240px;
+            margin-right: 10px;
+        }
+        #lastname {
+            width: 240px;
+        }
+        #start,
+        #middle,
+        #last {
+            width: 150px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        #year,
+        #month,
+        #day {
+            text-align: center;
+        }
+
+        #submit {
+            width: 500px;
+            margin-left: 460px;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #7a6c64;
+            color: #fff;
+            border: none;
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+}

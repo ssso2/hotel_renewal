@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>신라호텔 : 마이페이지</title>
+        <title>신라호텔 : 회원가입</title>
         <!-- 구글 웹폰트 연결 -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="../../css/header.css" />
         <link rel="stylesheet" href="../../css/common.css" />
         <link rel="stylesheet" href="../../css/footer.css" />
-        <link rel="stylesheet" href="../../css/mypage.css" />
+        <link rel="stylesheet" href="../../css/myinfo.css" />
         <!-- 작성자 : SSERA -->
         <!-- 제이쿼리 연결 -->
         <script src="../../js/common/jquery-ui.min.js"></script>
@@ -182,101 +182,217 @@
             </ul>
         </div>
 
-        <div class="container">
+        <script>
+            $(document).ready(function () {
+                let today = new Date();
+                let year = today.getFullYear();
+                console.log(year);
+
+                for (i = year; i >= 1930; i--) {
+                    $('#year').append('<option value="' + i + '">' + i + '년 </option>');
+                }
+
+                for (i = 1; i <= 12; i++) {
+                    $('#month').append('<option value="' + i + '">' + i + '월 </option>');
+                }
+
+                for (i = 1; i <= 31; i++) {
+                    $('#day').append('<option value="' + i + '">' + i + '일 </option>');
+                }
+
+                let startnum = ['010', '02', '031', '032', '033', '041', '042', '043', '044', '051', '052', '053', '054', '055', '061', '062', '063', '064'];
+                for (t = 0; t < startnum.length; t++) {
+                    $('#start').append('<option value="' + startnum[t] + '">' + startnum[t] + '</option>');
+                }
+            });
+        </script>
+
+        <div class="form-wrap">
             <div class="center">
-                <div class="depth3-tab-wrap">
-                    <ul class="tab">
-                        <li class="tab1 on"><a href="mypage.html">회원정보 수정</a></li>
-                        <li class="tab2"><a href="myreservation.html">예약내역 확인</a></li>
-                        <li class="tab3"><a href="myinquiry.html">문의내역 확인</a></li>
-                    </ul>
-                    <div class="content">
-                        <!-- 비밀번호 확인 (회원정보 수정 전) -->
-                        <div class="change-info-chk" id="change-info-chk">
-                            <h2 class="title">비밀번호 확인</h2>
-                            <label><input type="password" id="pw-chk" /></label>
-                            <p id="error-message" style="color: red; display: none"></p>
-                            <input type="button" id="btn-confirm" value="확인" onclick="pw_chk()" />
+                <form id="shilla-join" action="#" method="get">
+                    <!-- 개인정보 입력란 생년월일 넣기 연락처는 셀렉트박스로 -->
+                    <div class="join-container">
+                        <h3 class="info-title">개인정보 입력</h3>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="ko-name">국문 이름 <font color="#F00">*</font> </label>
+                                <input type="text" id="ko-name" placeholder="홍길동" />
+                            </div>
+                            <span class="error-message" id="koname-error"></span>
                         </div>
 
-                        <!-- 회원정보 수정 -->
-                        <div class="mypage-info" id="mypage-info" style="display: none">
-                            <h2 class="title">회원정보 수정</h2>
-                            <label class="my-info">
-                                <p>아이디</p>
-                                <input type="text" id="user-id" />
-                            </label>
-                            <label class="my-info">
-                                <p>패스워드</p>
-                                <input type="password" id="pw" />
-                            </label>
-                            <label class="my-info">
-                                <p>패스워드 확인</p>
-                                <input type="password" id="pwchk" />
-                            </label>
-                            <label class="my-info">
-                                <p>이름</p>
-                                <input type="text" id="id" />
-                            </label>
-                            <label class="my-info">
-                                <p>생년월일</p>
-                                <input type="text" id="birth" />
-                            </label>
-                            <label class="my-info">
-                                <p>연락처</p>
-                                <input type="text" id="contact" />
-                            </label>
-                            <label class="my-info">
-                                <p>이메일</p>
-                                <input type="text" id="mail" />
-                            </label>
-                            <input type="button" id="edit" value="수정완료" />
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="en-name">영문 이름</label>
+                                <input type="text" id="firstname" placeholder="First name" class="name-input" />
+                                <input type="text" id="lastname" placeholder="Last name" class="name-input" />
+                            </div>
+                            <span class="error-message" id="enname-error"></span>
                         </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="birth">생년월일</label>
+                                <select name="yy" id="year"></select>
+                                <select name="mm" id="month"></select>
+                                <select name="dd" id="day"></select>
+                            </div>
+                            <span class="error-message" id="birth-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="pid">아이디 <font color="#F00">*</font></label>
+                                <input type="text" id="pid" minlength="6" placeholder="영문자, 숫자로 구성 (6자 이상)" />
+                                <button type="button" id="id-chk">중복확인</button>
+                            </div>
+                            <span class="error-message" id="id-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="pw">패스워드 <font color="#F00">*</font></label>
+                                <input type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자(!,@,#,$,%,~) 포함한 12자 이상 16자 이내" />
+                            </div>
+                            <span class="error-message" id="pw-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="pwchk">패스워드확인 <font color="#F00">*</font></label>
+                                <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자(!,@,#,$,%,~) 포함한 12자 이상 16자 이내" />
+                            </div>
+                            <span class="error-message" id="pwchk-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="tel">연락처 <font color="#F00">*</font></label>
+                                <select name="start" id="start"></select>
+                                -
+                                <input type="text" id="middle" maxlength="4" />
+                                -
+                                <input type="text" id="last" maxlength="4" />
+                            </div>
+                            <span class="error-message" id="tel-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="mail">이메일 <font color="#F00">*</font></label>
+                                <input type="text" id="mail" placeholder="honggildong@naver.com" />
+                            </div>
+                            <span class="error-message" id="mail-error"></span>
+                        </div>
+
+                        <button type="submit" id="submit">가입하기</button>
                     </div>
-                </div>
+
+                    <script>
+                        // 가입하기 버튼을 클릭했을 때 코드 실행
+                        document.getElementById('submit').addEventListener('click', function () {
+                            // 각 입력란이 공란일 때로 설정
+                            const koname = document.getElementById('ko-name').value.trim();
+                            const firstname = document.getElementById('firstname').value.trim();
+                            const lastname = document.getElementById('lastname').value.trim();
+                            const pid = document.getElementById('pid').value.trim();
+                            const pw = document.getElementById('pw').value.trim();
+                            const pwchk = document.getElementById('pwchk').value.trim();
+                            const middleNum = document.getElementById('middle').value.trim();
+                            const lastNum = document.getElementById('last').value.trim();
+                            const mail = document.getElementById('mail').value.trim();
+
+                            let valid = true; // 유효성 초기값은 true
+
+                            // 오류 메시지 초기화
+                            const errorMessages = document.querySelectorAll('.error-message');
+                            errorMessages.forEach(message => (message.textContent = ''));
+
+                            // 이름 유효성 검사
+                            if (!koname) {
+                                document.getElementById('koname-error').textContent = '이름을 입력하세요.';
+                                valid = false;
+                            }
+
+                            // 아이디 유효성 검사
+                            const idtype = /^[A-Za-z0-9]$/;
+                            if (!pid) {
+                                document.getElementById('id-error').textContent = '아이디를 입력하세요.';
+                                valid = false;
+                            } else if (pid.length < 6) {
+                                document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
+                                valid = false;
+                            } else if (!idtype.test(pid)) {
+                                document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용가능합니다.';
+                                valid = false;
+                            } else if (!idchk) {
+                                document.getElementById('id-error').textContent = '중복확인을 해주세요.';
+                                valid = false;
+                            }
+
+                            // 패스워드 유효성 검사 -- 특수문자의 범위를 명확하게
+                            const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%~]).{12,16}$/;
+                            if (!pw) {
+                                document.getElementById('pw-error').textContent = '패스워드를 입력하세요.';
+                                valid = false;
+                            } else if (!pwtype.test(pw)) {
+                                document.getElementById('pw-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다. (특수문자 !,@,#,$,%,~ 사용 가능)';
+                                valid = false;
+                            }
+
+                            if (!pwchk) {
+                                document.getElementById('pwchk-error').textContent = '패스워드를 입력하세요.';
+                                valid = false;
+                            } else if (!pwtype.test(pwchk)) {
+                                document.getElementById('pwchk-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다. (특수문자 !,@,#,$,%,~ 사용 가능)';
+                                valid = false;
+                            }
+
+                            // 패스워드 확인 유효성 검사
+                            if (pwchk !== pw) {
+                                document.getElementById('pwchk-error').textContent = '패스워드가 일치하지 않습니다.';
+                                valid = false;
+                            }
+
+                            // 연락처 유효성 검사
+                            const teltype = /^\d{4,}$/;
+                            if (!middleNum || !lastNum) {
+                                document.getElementById('tel-error').textContent = '연락처를 입력하세요.';
+                                valid = false;
+                            } else if (!(teltype.test(middleNum) && teltype.test(lastNum))) {
+                                document.getElementById('tel-error').textContent = '연락처의 자리수를 확인하세요.';
+                                valid = false;
+                            }
+
+                            // 이메일 유효성 검사
+                            const mailtype = /^[A-Za-z0-9][A-Za-z0-9._]*@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+                            // ex) shilla123@shilla1.co.kr < 정규식 수정
+                            // 도메인 선택, 직접 입력 가능하게
+                            if (!mail) {
+                                document.getElementById('mail-error').textContent = '이메일을 입력하세요.';
+                                valid = false;
+                            } else if (!mailtype.test(mail)) {
+                                document.getElementById('mail-error').textContent = '정확한 이메일 주소를 입력하세요.';
+                                valid = false;
+                            }
+
+                            // 모든 유효성 검사 통과 시 -- 추후 수정할 부분 (가입 완료되면서 메인페이지로 이동하기)
+                            if (valid) {
+                                alert('신라리워즈 가입을 환영합니다.');
+                            }
+                        });
+
+                        // 중복확인 버튼을 클릭했을 때
+                        let idchk = false;
+                        document.getElementById('id-chk').addEventListener('click', function () {
+                            alert('중복확인이 완료되었습니다.');
+                            idchk = true;
+                        });
+                    </script>
+                </form>
             </div>
         </div>
-
-        <script>
-            const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
-
-            function show_page(section) {
-                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'withdrawal'];
-                sections.forEach(id => {
-                    document.getElementById(id).style.display = id === section ? 'block' : 'none';
-                });
-            }
-
-            function pw_chk() {
-                const inputPassword = document.getElementById('pw-chk').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
-
-                if (inputPassword === correctPassword) {
-                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
-                    errorMessage.style.display = 'none';
-                    show_page('mypage-info'); //비밀번호가 맞으면 개인정보 변경 페이지 보여줌
-                } else {
-                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
-                    document.getElementById('pw-chk').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
-                }
-            }
-
-            function pw_chk2() {
-                const inputPassword = document.getElementById('pw-chk2').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
-
-                if (inputPassword === correctPassword) {
-                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
-                    errorMessage.style.display = 'none';
-                    show_page('withdrawal'); //회원탈퇴 페이지
-                } else {
-                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
-                    document.getElementById('pw-chk2').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
-                }
-            }
-        </script>
 
         <!-- 푸터/플로팅 -->
         <footer>

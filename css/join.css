@@ -1,22 +1,99 @@
-#shilla-join {
-  position: absolute;
-  top: 90%;
+@charset "UTF-8";
+.form-wrap {
+  position: static;
+  margin-top: 100px;
+  top: 100%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1200px;
-  height: 1200px;
   font-size: 14px;
+  padding: 10px;
+}
+.form-wrap .clause-wrap {
   background-color: #faf8f4;
-}
-#shilla-join .clause-wrap .join,
-#shilla-join .clause-wrap .agree {
+  border-radius: 5px;
+  padding: 20px;
   margin-top: 50px;
-  text-align: center;
-  color: #333;
 }
-#shilla-join .clause-wrap .direction {
-  margin-top: 20px;
+.form-wrap .clause-wrap .join {
   text-align: center;
-  font-weight: 300;
-  color: #333;
+  margin-bottom: 50px;
+}
+.form-wrap .clause-wrap .agree,
+.form-wrap .clause-wrap .direction {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-wrap .clause-wrap #check-all {
+  margin-top: 20px;
+  margin-left: 43%;
+  text-align: center;
+}
+.form-wrap .clause-container {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  gap: 20px;
+}
+.form-wrap .clause-container .clause {
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fff;
+  overflow: auto;
+}
+.form-wrap .clause-container b {
+  margin-top: 30px;
+}
+.form-wrap .checkbox {
+  display: flex;
+  align-items: center;
+}
+.form-wrap .checkbox #agree-all,
+.form-wrap .checkbox #chk1,
+.form-wrap .checkbox #chk2,
+.form-wrap .checkbox #chk3 {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin-right: 5px;
+  background-color: #fff;
+  border: 2px solid #333;
+}
+.form-wrap .checkbox #agree-all:checked,
+.form-wrap .checkbox #chk1:checked,
+.form-wrap .checkbox #chk2:checked,
+.form-wrap .checkbox #chk3:checked {
+  background-color: #333;
+}
+.form-wrap .checkbox #agree-all:checked::after,
+.form-wrap .checkbox #chk1:checked::after,
+.form-wrap .checkbox #chk2:checked::after,
+.form-wrap .checkbox #chk3:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 16px;
+  font-style: initial;
+  text-align: center;
+  line-height: 15px;
+}
+.form-wrap #btn-next {
+  width: 33.3333333333%;
+  height: 40px;
+  padding: 10px;
+  margin-left: 33.3333333333%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #7a6c64;
+  color: #fff;
 }

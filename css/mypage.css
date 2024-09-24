@@ -1,36 +1,123 @@
-.side-menu {
-  margin-top: 10%;
-  position: absolute;
-  display: block;
-  width: 200px;
-  height: 250px;
-  background-color: #faf8f4;
+.container {
+  display: flex;
+  width: 100%;
 }
-.side-menu .mypage,
-.side-menu .reservate,
-.side-menu .inquiry {
+.container .depth3-tab-wrap .tab li {
+  width: 33.3333333333%;
+}
+
+.content {
   position: relative;
-  margin-top: 50px;
-  margin-left: 20px;
+  padding: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
-
-.mypage-info {
+.content .change-info-chk,
+.content .mypage-info,
+.content .reservate-info,
+.content .inquiry-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  margin-top: 10%;
-  margin-left: 20%;
-  display: block;
-  width: 800px;
-  height: 500px;
-  background-color: #faf8f4;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-.my-info {
+.content .change-info-chk {
+  display: flex;
+}
+.content .change-info-chk label {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.content .change-info-chk #pw-chk,
+.content .change-info-chk #btn-confirm {
+  display: inline-block;
+  vertical-align: middle;
+}
+.content .change-info-chk #pw-chk {
+  width: 400px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.content .change-info-chk #pw-chk:focus {
+  border-color: #333;
+}
+.content .change-info-chk #btn-confirm {
+  width: 150px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #7a6c64;
+  border: 2px solid #7a6c64;
+  box-sizing: border-box;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.content .change-info-chk #btn-confirm:hover {
+  background-color: #333;
+  border-color: #333;
+}
+.content .mypage-info {
   display: block;
-  margin-top: 30px;
+  position: relative;
+  margin-top: -100px;
+  margin-bottom: -100px;
+  padding: 20px;
+  transform: none;
+  top: 0;
+  left: 0;
+}
+.content .mypage-info .title {
+  text-align: center;
   margin-bottom: 20px;
-  margin-left: 20px;
+  color: #333;
 }
-
-input {
-  margin-left: 5px;
+.content .mypage-info .my-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.content .mypage-info .my-info p {
+  width: 100px;
+  margin: 0;
+  text-align: left;
+}
+.content .mypage-info .my-info label {
+  text-align: right;
+  margin-right: 50px;
+  font-size: 16px;
+  color: #333;
+}
+.content .mypage-info .my-info input {
+  justify-content: center;
+  width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.content .mypage-info #edit {
+  margin-left: 420px;
+  width: 500px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #7a6c64;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.content .mypage-info #edit:hover {
+  background-color: #333;
 }

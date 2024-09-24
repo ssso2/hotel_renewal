@@ -1,37 +1,143 @@
-.side-menu {
-    margin-top: 10%;
-    position: absolute;
-    display: block;
-    width: 200px;
-    height: 250px;
-    background-color: #faf8f4;
+.container {
+    display: flex;
+    width: 100%;
 
-    .mypage,
-    .reservate,
-    .inquiry {
-        position: relative;
-        margin-top: 50px;
-        margin-left: 20px;
+    .depth3-tab-wrap {
+        .tab {
+            li {
+                width: calc(100% / 3);
+            }
+        }
     }
 }
 
-.mypage-info {
-    position: absolute;
-    margin-top: 10%;
-    margin-left: 20%;
-    display: block;
-    width: 800px;
-    height: 500px;
-    background-color: #faf8f4;
-}
+.content {
+    position: relative;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 
-.my-info {
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
+    .change-info-chk,
+    .mypage-info,
+    .reservate-info,
+    .inquiry-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-input {
-    margin-left: 5px;
+    .change-info-chk {
+        display: flex;
+        label {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        #pw-chk,
+        #btn-confirm {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #pw-chk {
+            width: 400px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+            &:focus {
+                border-color: #333;
+            }
+        }
+
+        #btn-confirm {
+            width: 150px;
+            padding: 10px;
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #7a6c64;
+            border: 2px solid #7a6c64;
+            box-sizing: border-box;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #333;
+                border-color: #333;
+            }
+        }
+    }
+
+    .mypage-info {
+        display: block;
+        position: relative;
+        margin-top: -100px;
+        margin-bottom: -100px;
+        padding: 20px;
+        transform: none;
+        top: 0;
+        left: 0;
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .my-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            p {
+                width: 100px;
+                margin: 0;
+                text-align: left;
+            }
+
+            label {
+                text-align: right;
+                margin-right: 50px;
+                font-size: 16px;
+                color: #333;
+            }
+
+            input {
+                justify-content: center;
+                width: 400px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 14px;
+                box-sizing: border-box;
+            }
+        }
+
+        #edit {
+            margin-left: 420px;
+            width: 500px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #7a6c64;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
 }

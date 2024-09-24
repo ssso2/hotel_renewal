@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>신라호텔 : 마이페이지</title>
+        <title>신라호텔 : 문의하기</title>
         <!-- 구글 웹폰트 연결 -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="../../css/header.css" />
         <link rel="stylesheet" href="../../css/common.css" />
         <link rel="stylesheet" href="../../css/footer.css" />
-        <link rel="stylesheet" href="../../css/mypage.css" />
+        <link rel="stylesheet" href="../../css/sub06_03_02.css" />
         <!-- 작성자 : SSERA -->
         <!-- 제이쿼리 연결 -->
         <script src="../../js/common/jquery-ui.min.js"></script>
@@ -49,11 +49,11 @@
                     <li>
                         <a href="../html/sub/sub02.html">객실</a>
                         <ul class="depth2">
-                            <li><a href="../../html/sub/sub02_01_01.html">스탠다드</a></li>
-                            <li><a href="../../html/sub/sub02_02_01.html">이그제큐티브</a></li>
-                            <li><a href="../../html/sub/sub02_03_01.html">스위트</a></li>
-                            <li><a href="../../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
-                            <li><a href="../../html/sub/sub02.html">전체 객실 보기</a></li>
+                            <li><a href="../html/sub/sub02_01_01.html">스탠다드</a></li>
+                            <li><a href="../html/sub/sub02_02_01.html">이그제큐티브</a></li>
+                            <li><a href="../html/sub/sub02_03_01.html">스위트</a></li>
+                            <li><a href="../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
+                            <li><a href="../html/sub/sub02.html">전체 객실 보기</a></li>
                         </ul>
                     </li>
                     <li>
@@ -181,102 +181,94 @@
                 </li>
             </ul>
         </div>
+        <script>
+            //작성시간 표시 스크립트 -- 추후 db 로 !!!
+            const nowtime = new Date();
+            const month = nowtime.getMonth() + 1;
+            const date = nowtime.getDate();
+            const hours = nowtime.getHours();
+            const minutes = nowtime.getMinutes();
 
-        <div class="container">
+            const registeredTime = '${month}/${date} ${hours}:${minutes}'; // 작성시간 표시
+        </script>
+
+        <div class="container board">
             <div class="center">
-                <div class="depth3-tab-wrap">
-                    <ul class="tab">
-                        <li class="tab1 on"><a href="mypage.html">회원정보 수정</a></li>
-                        <li class="tab2"><a href="myreservation.html">예약내역 확인</a></li>
-                        <li class="tab3"><a href="myinquiry.html">문의내역 확인</a></li>
-                    </ul>
+                <h2 class="ask">문의 내용</h2>
+                <div class="text-container">
+                    <div class="title">크리스마스 패키지로 예약 변경 가능한가요?</div>
                     <div class="content">
-                        <!-- 비밀번호 확인 (회원정보 수정 전) -->
-                        <div class="change-info-chk" id="change-info-chk">
-                            <h2 class="title">비밀번호 확인</h2>
-                            <label><input type="password" id="pw-chk" /></label>
-                            <p id="error-message" style="color: red; display: none"></p>
-                            <input type="button" id="btn-confirm" value="확인" onclick="pw_chk()" />
+                        <p>크리스마스에 객실 숙박을 예약했습니다.</p>
+                        <p>그런데 얼마 전 크리스마스 패키지가 저렴하게 나왔던데요, 혹시 패키지로 예약 변경한가요?</p>
+                    </div>
+                    <div class="reply-container">
+                        <div class="reply-box">
+                            <div class="reply-content">
+                                <span class="reply-title">댓글</span>
+                                <span class="user-name">관리자</span>
+                                <input type="text" class="new-reply" style="background-color: #fff" value="댓글 예시입니다." />
+                                <span class="time">9/24 16:39<button class="edit">수정</button> <button class="delete">삭제</button></span>
+                            </div>
                         </div>
-
-                        <!-- 회원정보 수정 -->
-                        <div class="mypage-info" id="mypage-info" style="display: none">
-                            <h2 class="title">회원정보 수정</h2>
-                            <label class="my-info">
-                                <p>아이디</p>
-                                <input type="text" id="user-id" />
-                            </label>
-                            <label class="my-info">
-                                <p>패스워드</p>
-                                <input type="password" id="pw" />
-                            </label>
-                            <label class="my-info">
-                                <p>패스워드 확인</p>
-                                <input type="password" id="pwchk" />
-                            </label>
-                            <label class="my-info">
-                                <p>이름</p>
-                                <input type="text" id="id" />
-                            </label>
-                            <label class="my-info">
-                                <p>생년월일</p>
-                                <input type="text" id="birth" />
-                            </label>
-                            <label class="my-info">
-                                <p>연락처</p>
-                                <input type="text" id="contact" />
-                            </label>
-                            <label class="my-info">
-                                <p>이메일</p>
-                                <input type="text" id="mail" />
-                            </label>
-                            <input type="button" id="edit" value="수정완료" />
+                        <div class="reply">
+                            <div class="reply-text">
+                                <span class="user-name">관리자</span>
+                                <input type="text" id="reply" />
+                                <button id="plus">등록</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="button-wrap">
+                    <a href="sub06_03.html"><button class="list">목록으로</button></a>
+                    <div class="button-container">
+                        <a href="sub06_03_03.html"><button class="edit">수정</button></a>
+                        <a href="#"><button class="delete">삭제</button></a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <script>
-            const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
+            <script>
+                $(function () {
+                    $('#plus').click(function (e) {
+                        // 등록 버튼을 누르면
+                        e.preventDefault();
 
-            function show_page(section) {
-                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'withdrawal'];
-                sections.forEach(id => {
-                    document.getElementById(id).style.display = id === section ? 'block' : 'none';
+                        // 공란일 때는 등록 안 됨
+                        if ($('#reply').val().trim() == '') return;
+
+                        // 새로운 댓글 생성
+                        const registeredReply = $('<div class="reply-content"></div>');
+                        const userName = $('<span class="user-name"></span>').text($('.user-name').html());
+                        const commentInput = $('<input type="text" class="new-reply" readonly>').val($('#reply').val());
+                        const editButton = $('<button class="edit">수정</button>'); // 수정 버튼
+                        const deleteButton = $('<button class="delete">삭제</button>'); // 삭제 버튼
+
+                        // 수정 버튼 클릭 이벤트
+                        editButton.click(function () {
+                            if (commentInput.prop('readonly')) {
+                                commentInput.prop('readonly', false).css('background', '#FFF');
+                                editButton.text('완료');
+                            } else {
+                                commentInput.prop('readonly', true).css('background', '#eee');
+                                editButton.text('수정');
+                            }
+                        });
+
+                        // 삭제 버튼 클릭 이벤트
+                        deleteButton.click(function () {
+                            registeredReply.remove();
+                        });
+
+                        // 등록된 댓글을 reply-box에 추가 (순서: 사용자명 - 댓글 내용 - 작성 시간 - 수정 - 삭제)
+                        registeredReply.append(userName).append(commentInput).append('<span class="time"> 9/24 16:53 </span>', editButton).append(deleteButton);
+                        $('.reply-box').append(registeredReply); // 댓글을 reply-box에 추가
+                        $('.user-name').val('');
+                        $('#reply').val(''); // 댓글 입력란 초기화
+                    });
                 });
-            }
-
-            function pw_chk() {
-                const inputPassword = document.getElementById('pw-chk').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
-
-                if (inputPassword === correctPassword) {
-                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
-                    errorMessage.style.display = 'none';
-                    show_page('mypage-info'); //비밀번호가 맞으면 개인정보 변경 페이지 보여줌
-                } else {
-                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
-                    document.getElementById('pw-chk').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
-                }
-            }
-
-            function pw_chk2() {
-                const inputPassword = document.getElementById('pw-chk2').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
-
-                if (inputPassword === correctPassword) {
-                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
-                    errorMessage.style.display = 'none';
-                    show_page('withdrawal'); //회원탈퇴 페이지
-                } else {
-                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
-                    document.getElementById('pw-chk2').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
-                }
-            }
-        </script>
+            </script>
+        </div>
 
         <!-- 푸터/플로팅 -->
         <footer>

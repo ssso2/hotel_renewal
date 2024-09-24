@@ -218,7 +218,8 @@ header .logo > a > img {
 }
 .m_wrap .m_top .btn-wrap a:hover {
   text-decoration: underline;
-  text-emphasis-position: under;
+  -webkit-text-emphasis-position: under;
+          text-emphasis-position: under;
 }
 .m_wrap .m_top .btn-wrap.login {
   display: none;

@@ -1,63 +1,74 @@
-#shilla-login {
-    #login-wrap {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 800px;
-        height: 600px;
-        background-color: #faf8f4;
+.form-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 14px;
+    padding: 10px;
+
+    .login-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+
+        .part-id,
+        .part-pw {
+            border-bottom: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+        }
+
         h2 {
-            margin: 50px;
+            margin: 20px 0;
             color: #333;
         }
+
         .hello {
-            margin: 50px;
+            margin: 20px 0;
             font-size: 16px;
         }
+
         label {
             display: inline-block;
-            width: 100px;
-            padding: 10px;
+            width: 150px;
+            margin: 10px;
+            padding: 17px;
             font-size: 16px;
-            text-align: right;
+            text-align: left;
+            background: linear-gradient(90deg, rgba(234, 234, 234, 1) 0%, rgba(255, 255, 255, 1) 100%);
         }
-        #id {
-            margin: 30px;
-            width: 400px;
-            padding: 10px;
-            font-size: 24px;
-        }
+
+        #id,
         #pw {
-            margin: 30px;
+            margin: 15px 0;
             width: 400px;
             padding: 10px;
             font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
         }
+
         .btn-login {
-            position: absolute;
-            left: 50%;
-            bottom: 100px;
-            transform: translateX(-50%);
             font-weight: 600;
-            display: block;
             width: 200px;
             height: 50px;
             background-color: #7a6c64;
             color: #faf8f4;
             font-size: 16px;
+            margin: 20px 0;
         }
+
         .link-wrap {
-            position: absolute;
-            left: 50%;
-            bottom: 50px;
-            transform: translateX(-50%);
+            width: 150px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
         }
+
         a {
             color: #7a6c64;
             font-size: 16px;
-            margin: 10px;
         }
     }
 }
