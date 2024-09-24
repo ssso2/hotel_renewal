@@ -1,25 +1,28 @@
-.center {
+.rec-swiper {
     width: 800px;
     margin-top: 50px;
-}
-.rec-swiper {
-    width: 100%;
-    text-align: center;
-    background-color: #af0;
+    background-color: #afa;
+    padding: 20px;
 }
 .swiper-wrapper {
-    width: 190%;
+    width: 210%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    /* align-items: center; */
     background-color: #ff0;
 }
+/* .swiper-button-prev {
+    display: none;
+} */
 /* .swiper-slide > img {
     display: block;
     width: 100%;
     object-fit: cover;
 }
-.swiper-button-prev {
+*/
+/* .swiper-button-prev {
+    display: none;
     position: absolute;
     width: 50px;
     background: #f00;
@@ -27,14 +30,17 @@
     transform: translateY(-50%);
     z-index: 1;
 } */
-
-.swiper-slide {
+*/ .swiper-slide {
     width: 100%;
+    height: auto;
     /* position: relative; */
     /* text-align: center; */
-    background-color: #faf;
 }
 
 .swiper-slide img {
+    display: block;
     width: 100%; /* 이미지를 슬라이드 너비에 맞춤 */
+    height: 90%;
+    /* object-fit: cover; */
+    overflow: hidden;
 }

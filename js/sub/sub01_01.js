@@ -1,5 +1,5 @@
-// 드롭다운리스트
 $(function () {
+    // 드롭다운리스트
     $(".sortbox").click(function () {
         $(".dropdown.sort").toggleClass("on");
     });
@@ -16,68 +16,53 @@ $(function () {
         $(".typebox").text(selectedType);
         $(".dropdown.type").removeClass("on");
     });
-    //데이트피커
-    $(function () {
-        $("#datepicker").datepicker({
-            maxDate: "+2Y",
-            dayNames: [
-                "일요일",
-                "월요일",
-                "화요일",
-                "수요일",
-                "목요일",
-                "금요일",
-                "토요일",
-            ],
-            dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+
+    // daterangepicker
+    // if (window.location.pathname === "/html/sub/sub01_01.html") {
+    //     applyAutoUpdate = false;
+    // }
+    $('input[name="daterange3"]').daterangepicker({
+        minYear: 1000,
+        maxYear: 9999,
+        autoUpdateInput: false,
+        locale: {
+            format: "YYYY.MM.DD",
+            separator: " - ",
+            applyLabel: "확인",
+            cancelLabel: "취소",
+            fromLabel: "From",
+            toLabel: "To",
+            customRangeLabel: "Custom",
+            weekLabel: "주",
+            daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
             monthNames: [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
+                "1월",
+                "2월",
+                "3월",
+                "4월",
+                "5월",
+                "6월",
+                "7월",
+                "8월",
+                "9월",
+                "10월",
+                "11월",
+                "12월",
             ],
-            monthNamesShort: [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-            ],
-            showMonthAfterYear: true,
-            showOtherMonths: false,
-            yearSuffix: ".",
-            dateFormat: "yy-mm-dd",
-            showOn: "both",
-            buttonImage: "../../img/icon/icon-plan.png",
-            buttonImageOnly: true,
-        });
+            firstDay: 1,
+        },
+        drops: "down", // up, down, auto 중 선택
     });
-    $("#datepicker").datepicker("setDate", "today");
 });
 
-// 초기화
+// 초기화 버튼 눌렀을 때 날짜, 유형구분, 키워드 초기상태로 만들기
 $(".pkg-filter-resetbtn").click(function () {
     $(".pkg-datepicker input[type='text']").val("");
     $(".typebox").text("전체");
     $(".pkg-filter-keyword input[type='checkbox']").prop("checked", false);
 });
 
-//필터타입+페이지네이션최종
+// 필터타입 + 페이지네이션
 $(document).ready(function () {
     const productItems = $(".product-item"); // 모든 상품 리스트 항목들
     const searchButton = $(".pkg-filter-searchbtn"); // 검색 버튼
@@ -101,6 +86,7 @@ $(document).ready(function () {
     function applyFilter() {
         // "전체" 선택 시, 모든 상품을 표시
         if (selectedType === "전체" || selectedType === "all") {
+            // selectedType === "all" : 패키지가 유형구분없이 전체했을때만 노출되도록 하는 경우
             filteredItems = productItems;
         } else {
             // 필터링된 상품들 가져오기
@@ -117,28 +103,30 @@ $(document).ready(function () {
         currentPage = 1; // 필터 선택 또는 검색 시 첫 페이지로 돌아감
         paginateItems(filteredItems); // 필터링된 상품들을 페이지에 맞게 표시
     }
-    // 필터링된 항목을 페이지에 맞게 나누어 출력하는 함수 원본
+    // 필터링된 항목을 페이지에 맞게 나누어 출력하는 함수
     function paginateItems(items) {
         const totalPages = Math.ceil(items.length / itemsPerPage); // 총 페이지 수 계산
         if (currentPage > totalPages) currentPage = 1; // 현재 페이지가 전체 페이지를 넘지 않도록 설정
 
-        // 페이지네이션 버튼 갱신
-        $("#pagination").empty(); // 기존 페이지 버튼 초기화
+        // 필터링된 항목을 출력할 때 페이지네이션 버튼 갱신
+        $("#pagination").empty(); // 기존 페이지 버튼 지우기
         for (let i = 1; i <= totalPages; i++) {
+            // 페이지를 1부터 전체페이지까지 반복
             const pageButton = $("<button></button>").text(i);
             pageButton.on("click", function () {
                 currentPage = i; // 클릭한 페이지로 이동
                 paginateItems(items); // 클릭한 페이지의 항목들만 표시
             });
             if (i === currentPage) {
+                // 현재페이지 스타일 추가적용
                 pageButton.addClass("active");
             }
-            $("#pagination").append(pageButton);
+            $("#pagination").append(pageButton); // 생성된 숫자에 버튼태그 생성
         }
 
         // 첫 페이지의 항목 표시
         displayPage(items);
-        updateControlButtons(totalPages); // 이전/다음 버튼 상태 업데이트
+        updateControlButtons(totalPages); // 이전,다음 버튼 상태 업데이트
     }
 
     // 현재 페이지에 맞는 항목들만 표시하는 함수
@@ -169,7 +157,7 @@ $(document).ready(function () {
             currentPage === totalPages ? "none" : "block"
         );
     }
-    // 이전/다음/첫/마지막 페이지 클릭 핸들러
+    // 이전,다음,첫페이지,마지막 페이지 클릭시 필터링된 항목 보여주기
     $("#prev-page").on("click", function () {
         if (currentPage > 1) {
             currentPage--;
@@ -177,7 +165,6 @@ $(document).ready(function () {
             paginateItems(filteredItems);
         }
     });
-
     $("#next-page").on("click", function () {
         const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
         if (currentPage < totalPages) {
@@ -186,13 +173,11 @@ $(document).ready(function () {
             paginateItems(filteredItems);
         }
     });
-
     $("#first-page").on("click", function () {
         currentPage = 1;
         displayPage(filteredItems);
         paginateItems(filteredItems);
     });
-
     $("#last-page").on("click", function () {
         currentPage = Math.ceil(filteredItems.length / itemsPerPage);
         displayPage(filteredItems);

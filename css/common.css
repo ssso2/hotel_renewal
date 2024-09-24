@@ -96,7 +96,8 @@
   color: #00f !important;
 }
 
-.blind, .hide {
+.blind,
+.hide {
   position: absolute;
   clip: rect(0 0 0 0);
   margin: -1px;
@@ -153,7 +154,7 @@ body::-webkit-scrollbar-track {
 .sub-title h2 {
   font-size: 27px;
   font-weight: 700;
-  color: #7A6C64;
+  color: #7a6c64;
 }
 .sub-title .sub-desc {
   margin-top: 20px;
@@ -357,7 +358,7 @@ body::-webkit-scrollbar-track {
   font-weight: 500;
 }
 .btn-wrap .btn.btn-01 {
-  background: #7A6C64;
+  background: #7a6c64;
   color: #fff;
 }
 .btn-wrap .btn.btn-02 {
@@ -403,7 +404,7 @@ body::-webkit-scrollbar-track {
   line-height: 25px;
 }
 .pagination .page {
-  background-image: url("../../img/common/bg_pageination.png");
+  background-image: url("../img/common/bg_pageination.png");
   background-repeat: no-repeat;
 }
 .pagination .first {
@@ -433,7 +434,7 @@ body::-webkit-scrollbar-track {
   text-align: center;
 }
 .floating-menu a:hover {
-  border: 1px solid #7A6C64;
+  border: 1px solid #7a6c64;
   box-shadow: 2px 2px 5px rgb(82, 82, 82);
 }
 .floating-menu .menu {
@@ -447,7 +448,7 @@ body::-webkit-scrollbar-track {
   gap: 10px;
 }
 .floating-menu .circle-btn {
-  background-color: #7A6C64;
+  background-color: #7a6c64;
 }
 .floating-menu .top-btn {
   position: fixed;
@@ -590,7 +591,8 @@ body::-webkit-scrollbar-track {
 .daterangepicker .drp-calendar.left .calendar-table {
   padding-right: 150px;
 }
-.daterangepicker .drp-calendar .calendar-table th, .daterangepicker .drp-calendar .calendar-table td {
+.daterangepicker .drp-calendar .calendar-table th,
+.daterangepicker .drp-calendar .calendar-table td {
   font-size: 20px;
   line-height: 3;
 }
@@ -855,7 +857,8 @@ body::-webkit-scrollbar-track {
   .daterangepicker .drp-calendar.left .calendar-table {
     padding-right: 8.6666666667vw;
   }
-  .daterangepicker .drp-calendar .calendar-table th, .daterangepicker .drp-calendar .calendar-table td {
+  .daterangepicker .drp-calendar .calendar-table th,
+  .daterangepicker .drp-calendar .calendar-table td {
     font-size: 1.3333333333vw;
   }
   .daterangepicker .drp-calendar .calendar-table td {
