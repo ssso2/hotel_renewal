@@ -1,4 +1,4 @@
-const reservationSearchBtn = document.querySelector(".reservation-search-btn");
+ const reservationSearchBtn = document.querySelector(".reservation-search-btn");
 const noSelect = document.querySelector(".no-select");
 const searchResults = document.querySelector(".search-results-wrap");
 const searchResultsTab = document.querySelectorAll(".search-results-wrap .tab > li");
