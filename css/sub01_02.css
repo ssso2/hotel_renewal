@@ -31,7 +31,8 @@
   display: block;
   width: 100%;
   height: 440px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .event-container .list-item .list-container .txt-wrapper .list-keword,
 .event-container .list-item .eventstyle .txt-wrapper .list-keword {
@@ -217,7 +218,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .other-event .other-list .other-item a dl {
   width: 100%;

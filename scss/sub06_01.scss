@@ -1,94 +1,65 @@
+.container {
+    display: flex;
+    width: 100%;
+}
+
 .contact-wrap {
-    position: absolute;
-    width: 1000px;
-    height: 800px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 14px;
     padding: 20px;
     align-items: center;
     display: flex;
     flex-direction: column;
+}
 
-    .contact-tel,
-    .find-out,
-    .sns {
-        width: 900px;
-        margin: 20px auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+.comment {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
 
-        .main-tel,
-        .res-tel,
-        .rewards,
-        .mail {
-            width: 400px;
-            margin: 20px;
-            padding: 10px;
-            display: block;
-            text-align: center;
-            border-top: 5px solid #ccc;
-            transition: border-color 0.3s;
-
-            &:hover {
-                border-top: 5px solid #333;
-            }
-        }
+.main-tel,
+.res-tel,
+.main-restaurant {
+    width: 300px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f6f6f6;
+    &:hover {
+        background-color: #eaeaea;
+        transition: 0.5s;
     }
+}
 
-    p {
-        margin: 5px;
-        display: block;
-    }
+.restaurant {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
 
-    .contact-us {
-        margin: 50px auto;
-        font-weight: bold;
-        color: #333;
-        text-align: center;
-        font-size: 24px;
-    }
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-    .fa-solid,
-    .fa-brands {
-        width: 50px;
-        height: 50px;
-        font-size: 50px;
-        margin: 10px;
-        display: inline-block;
-        color: #333;
-        transition: color 0.3s;
-    }
+.main-tel p:first-of-type,
+.res-tel p:first-of-type,
+.main-restaurant p:first-of-type {
+    font-weight: bold;
+}
 
-    .contact-tel .main-tel:hover .fa-solid,
-    .contact-tel .res-tel:hover .fa-solid {
-        color: #333;
-    }
+p {
+    margin-top: 15px;
+    display: block;
+}
 
-    a {
-        width: 400px;
-        margin: 20px;
-        padding: 10px;
-        display: block;
-        text-align: center;
-        border-top: 5px solid #ccc;
-        transition: border-color 0.3s;
-
-        &:hover {
-            border-top: 5px solid #333;
-            font-weight: 400;
-        }
-
-        .fa-solid,
-        .fa-brands {
-            transition: color 0.3s;
-        }
-
-        &:hover .fa-solid,
-        &:hover .fa-brands {
-            color: #333;
-        }
-    }
+.contact-us {
+    margin: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
 }

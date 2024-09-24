@@ -1,19 +1,15 @@
-#board-container {
-  position: absolute;
-  width: 1220px;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.container {
+  margin: 150px 0;
+  width: 100%;
   font-size: 14px;
   padding: 10px;
 }
-#board-container .title {
+.container .title {
   margin: 25px 5px;
   font-weight: bold;
   color: #333;
 }
-#board-container .board-nav {
-  width: 1200px;
+.container .board-nav {
   height: 50px;
   font-weight: bold;
   display: flex;
@@ -22,69 +18,37 @@
   line-height: 50px;
   background-color: #faf8f4;
 }
-#board-container .post {
-  width: 1200px;
+.container .post {
   height: 50px;
   display: flex;
   justify-content: space-around;
   line-height: 50px;
   border-bottom: 1px solid #ccc;
 }
-#board-container .post:hover {
-  width: 1200px;
-  height: 50px;
-  background-color: #f6f6f6;
-  display: flex;
-  justify-content: space-around;
-  line-height: 50px;
-  border-bottom: 1px solid #ccc;
+.container .post .post-title:hover {
+  font-weight: 600;
 }
-#board-container .post-num {
+.container .post-num {
   width: 100px;
   text-align: center;
 }
-#board-container .post-title {
+.container .post-title {
   width: 700px;
   text-align: center;
 }
-#board-container .post-writer,
-#board-container .post-date {
+.container .post-writer,
+.container .post-date {
   width: 200px;
   text-align: center;
 }
-#board-container .search-wrap {
+.container .search-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#board-container .search-wrap .btn-wrap {
+.container .search-wrap .btn-wrap {
   width: 100px;
 }
-#board-container .search-wrap .btn {
+.container .search-wrap .btn {
   width: 100%;
-}
-#board-container .search {
-  width: 300px;
-  height: 40px;
-  line-height: 10px;
-  margin: 10px;
-  color: #333;
-  border: 1px solid #333;
-  border-radius: 10px;
-  display: flex;
-  overflow: hidden;
-}
-#board-container .search a {
-  height: 100%;
-}
-#board-container .search input {
-  display: inline-block;
-  width: 100%;
-  padding: 10px;
-}
-#board-container .search span {
-  color: #333;
-  font-weight: 600;
-  line-height: 40px;
-  margin-right: 10px;
 }

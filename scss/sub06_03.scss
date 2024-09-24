@@ -1,9 +1,5 @@
-#board-container {
-    position: absolute;
-    width: 1220px;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.container {
+    width: 100%;
     font-size: 14px;
     padding: 10px;
 
@@ -12,8 +8,8 @@
         font-weight: bold;
         color: #333;
     }
+
     .board-nav {
-        width: 1200px;
         height: 50px;
         font-weight: bold;
         display: flex;
@@ -22,31 +18,28 @@
         line-height: 50px;
         background-color: #faf8f4;
     }
+
     .post {
-        width: 1200px;
         height: 50px;
         display: flex;
         justify-content: space-around;
         line-height: 50px;
         border-bottom: 1px solid #ccc;
+        .post-title:hover {
+            font-weight: 600;
+        }
     }
-    .post:hover {
-        width: 1200px;
-        height: 50px;
-        background-color: #f6f6f6;
-        display: flex;
-        justify-content: space-around;
-        line-height: 50px;
-        border-bottom: 1px solid #ccc;
-    }
+
     .post-num {
         width: 100px;
         text-align: center;
     }
+
     .post-title {
         width: 700px;
         text-align: center;
     }
+
     .post-writer,
     .post-date {
         width: 200px;
@@ -57,33 +50,40 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin: 10px 0;
+
         .btn-wrap {
             width: 100px;
+            margin-left: 10px;
         }
+
         .btn {
             width: 100%;
         }
     }
+
     .search {
         width: 300px;
         height: 40px;
-        line-height: 10px;
         margin: 10px;
-        color: #333;
-        border: 1px solid #333;
+        color: #ccc;
+        border: 1px solid #ccc;
         border-radius: 10px;
         display: flex;
         overflow: hidden;
+
         a {
             height: 100%;
         }
+
         input {
             display: inline-block;
             width: 100%;
             padding: 10px;
         }
+
         span {
-            color: #333;
+            color: #aaa;
             font-weight: 600;
             line-height: 35px;
             margin-right: 10px;

@@ -1,76 +1,84 @@
-#faq-container {
-  position: absolute;
-  width: 1220px;
-  height: 750px;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.container {
+  display: flex;
+  width: 100%;
   font-size: 14px;
   padding: 10px;
 }
-#faq-container .faq {
+.container .faq {
   margin: 25px 5px;
   font-weight: bold;
   color: #333;
 }
-#faq-container .text-container .title {
+.container .text-container .title {
   box-sizing: border-box;
   display: block;
-  width: 1200px;
-  margin: 10px 0px;
+  margin: 10px 0;
   padding: 20px;
   font-weight: bold;
   border: 1px solid #ccc;
   border-radius: 10px;
 }
-#faq-container .text-container .content {
+.container .text-container .content {
   box-sizing: border-box;
-  width: 1200px;
   min-height: 200px;
-  margin: 10px 0px;
+  margin: 10px 0;
   padding: 20px;
   overflow: auto;
-  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 10px;
   resize: none;
 }
-#faq-container .post-list {
+.container .post-list {
+  align-items: center;
   margin-top: 50px;
-  width: 1200px;
-  height: 40px;
 }
-#faq-container .post-list .board-nav {
+.container .post-list .board-nav {
   font-weight: bold;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
   line-height: 40px;
   background-color: #eaeaea;
 }
-#faq-container .post-list .post {
+.container .post-list .board-nav .post-num {
+  flex: 0 0 10%;
+}
+.container .post-list .board-nav .post-title {
+  flex: 0 0 70%;
+}
+.container .post-list .board-nav .post-writer,
+.container .post-list .board-nav .post-date {
+  flex: 0 0 10%;
+}
+.container .post-list .post {
   display: flex;
-  justify-content: space-around;
   line-height: 40px;
   border-bottom: 1px solid #ccc;
+  justify-content: space-between;
 }
-#faq-container .post-list .post:hover {
-  background-color: #f6f6f6;
-  display: flex;
-  justify-content: space-around;
-  line-height: 40px;
-  border-bottom: 1px solid #ccc;
+.container .post-list .post .post-num {
+  flex: 0 0 10%;
+  text-align: center;
 }
-#faq-container .post-list .post-num {
+.container .post-list .post .post-title {
+  flex: 0 0 70%;
+  text-align: center;
+}
+.container .post-list .post .post-title:hover {
+  font-weight: 600;
+}
+.container .post-list .post .post-writer,
+.container .post-list .post .post-date {
+  flex: 0 0 10%;
+  text-align: center;
+}
+.container .list {
   width: 100px;
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 14px;
   text-align: center;
-}
-#faq-container .post-list .post-title {
-  width: 700px;
-  text-align: center;
-}
-#faq-container .post-list .post-writer,
-#faq-container .post-list .post-date {
-  width: 200px;
-  text-align: center;
+  background-color: #7a6c64;
+  color: #fff;
+  border-radius: 5px;
 }

@@ -1,101 +1,67 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
 .contact-wrap {
-  position: absolute;
-  width: 1000px;
-  height: 800px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 14px;
   padding: 20px;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
-.contact-wrap .contact-tel,
-.contact-wrap .find-out,
-.contact-wrap .sns {
-  width: 900px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.contact-wrap .contact-tel .main-tel,
-.contact-wrap .contact-tel .res-tel,
-.contact-wrap .contact-tel .rewards,
-.contact-wrap .contact-tel .mail,
-.contact-wrap .find-out .main-tel,
-.contact-wrap .find-out .res-tel,
-.contact-wrap .find-out .rewards,
-.contact-wrap .find-out .mail,
-.contact-wrap .sns .main-tel,
-.contact-wrap .sns .res-tel,
-.contact-wrap .sns .rewards,
-.contact-wrap .sns .mail {
-  width: 400px;
-  margin: 20px;
-  padding: 10px;
-  display: block;
+
+.comment {
+  font-size: 14px;
+  margin-top: 10px;
   text-align: center;
-  border-top: 5px solid #ccc;
-  transition: border-color 0.3s;
+  font-weight: 300;
+  margin-bottom: 20px;
 }
-.contact-wrap .contact-tel .main-tel:hover,
-.contact-wrap .contact-tel .res-tel:hover,
-.contact-wrap .contact-tel .rewards:hover,
-.contact-wrap .contact-tel .mail:hover,
-.contact-wrap .find-out .main-tel:hover,
-.contact-wrap .find-out .res-tel:hover,
-.contact-wrap .find-out .rewards:hover,
-.contact-wrap .find-out .mail:hover,
-.contact-wrap .sns .main-tel:hover,
-.contact-wrap .sns .res-tel:hover,
-.contact-wrap .sns .rewards:hover,
-.contact-wrap .sns .mail:hover {
-  border-top: 5px solid #333;
+
+.main-tel,
+.res-tel,
+.main-restaurant {
+  width: 300px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: #f6f6f6;
 }
-.contact-wrap p {
-  margin: 5px;
+.main-tel:hover,
+.res-tel:hover,
+.main-restaurant:hover {
+  background-color: #eaeaea;
+  transition: 0.5s;
+}
+
+.restaurant {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-tel p:first-of-type,
+.res-tel p:first-of-type,
+.main-restaurant p:first-of-type {
+  font-weight: bold;
+}
+
+p {
+  margin-top: 15px;
   display: block;
 }
-.contact-wrap .contact-us {
-  margin: 50px auto;
+
+.contact-us {
+  margin: 20px;
   font-weight: bold;
   color: #333;
   text-align: center;
   font-size: 24px;
-}
-.contact-wrap .fa-solid,
-.contact-wrap .fa-brands {
-  width: 50px;
-  height: 50px;
-  font-size: 50px;
-  margin: 10px;
-  display: inline-block;
-  color: #333;
-  transition: color 0.3s;
-}
-.contact-wrap .contact-tel .main-tel:hover .fa-solid,
-.contact-wrap .contact-tel .res-tel:hover .fa-solid {
-  color: #333;
-}
-.contact-wrap a {
-  width: 400px;
-  margin: 20px;
-  padding: 10px;
-  display: block;
-  text-align: center;
-  border-top: 5px solid #ccc;
-  transition: border-color 0.3s;
-}
-.contact-wrap a:hover {
-  border-top: 5px solid #333;
-  font-weight: 400;
-}
-.contact-wrap a .fa-solid,
-.contact-wrap a .fa-brands {
-  transition: color 0.3s;
-}
-.contact-wrap a:hover .fa-solid, .contact-wrap a:hover .fa-brands {
-  color: #333;
 }

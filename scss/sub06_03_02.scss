@@ -1,10 +1,5 @@
-#post-container {
-    position: absolute;
-    width: 1220px;
-    height: 750px;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.container.board {
+    width: 100%;
     font-size: 14px;
     padding: 10px;
 
@@ -13,69 +8,132 @@
         font-weight: bold;
         color: #333;
     }
+    .user-name {
+        display: inline-block;
+        width: 60px;
+        line-height: 35px;
+        padding: 10px;
+        font-size: 14px;
+    }
 
     .text-container {
         .title {
             box-sizing: border-box;
             display: block;
-            width: 1200px;
             padding: 20px;
             font-weight: bold;
-            border: 1px solid #ccc;
-            background-color: #faf8f4;
+            border: 1px solid #e0e0e0;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .content {
             box-sizing: border-box;
-            width: 1200px;
             min-height: 500px;
             padding: 20px;
             overflow: auto;
-            border: 1px solid #ccc;
+            border: 1px solid #e0e0e0;
             border-top: none;
-            resize: none;
-        }
-        .reply {
-            margin-top: 350px;
-            margin-left: 80px;
-            position: fixed;
-            box-sizing: border-box;
-            width: 1000px;
-            min-height: 100px;
-            padding: 20px;
-            overflow: auto;
-            border: 1px solid #ccc;
             border-radius: 10px;
-            background-color: #f6f6f6;
-            resize: none;
-            #reply {
-                width: 900px;
-                height: 40px;
-                padding: 10px;
-                font-size: 16px;
-            }
-            #plus {
-                width: 50px;
-                padding: 5px;
-                font-size: 14px;
-                background-color: #ccc;
-                color: #333;
-                border-radius: 5px;
-            }
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .comment {
-            margin-top: 350px;
-            margin-left: 80px;
-            position: fixed;
-            box-sizing: border-box;
-            width: 1000px;
-            min-height: 100px;
-            padding: 20px;
-            overflow: auto;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #f6f6f6;
-            resize: none;
+        .reply-container {
+            margin-top: 20px;
+
+            .new-reply {
+                width: calc(100% - 80px);
+                height: 30px;
+                padding: 10px;
+                margin-left: 10px;
+                margin-bottom: 5px;
+                background-color: #eee;
+                border: 1px solid #eee;
+            }
+
+            .reply-box,
+            .reply-content {
+                font-size: 0;
+            }
+            .reply,
+            .reply-box {
+                box-sizing: border-box;
+                min-height: 50px;
+                padding: 15px;
+                margin-bottom: 20px;
+                border: 1px solid #e0e0e0;
+                border-radius: 10px;
+                position: relative;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+                .reply-content {
+                    &.user-name {
+                        margin-top: 5px;
+                    }
+                    .reply-title {
+                        display: block;
+                        margin-left: 10px;
+                        font-size: 22px;
+                        font-weight: 600;
+                        color: #333;
+                    }
+                    .time {
+                        display: inline-block;
+                        margin-left: 80px;
+                        align-content: center;
+                        font-size: 14px;
+                        color: #333;
+                    }
+                    .edit,
+                    .delete {
+                        width: 50px;
+                        height: 30px;
+                        background-color: #ccc;
+                        margin-left: 10px;
+                        margin-bottom: 5px;
+                        border-radius: 5px;
+                    }
+                }
+
+                .reply-text {
+                    display: flex;
+                    align-items: center;
+
+                    #reply {
+                        flex: 1;
+                        height: 30px;
+                        padding: 10px;
+                        font-size: 14px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        margin-left: 10px;
+                        margin-right: 10px;
+
+                        &:focus {
+                            border-color: #7a6c64;
+                        }
+                    }
+
+                    button {
+                        height: 30px;
+                        padding: 0 10px;
+                        font-size: 14px;
+                        background-color: #7a6c64;
+                        color: #fff;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: background-color 0.5s;
+
+                        &:hover {
+                            background-color: #333;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -83,29 +141,46 @@
         display: flex;
         margin-top: 10px;
         margin-bottom: 10px;
+
         button {
             width: 100px;
             padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
+
         .list {
             box-sizing: border-box;
-            background: #eaeaea;
-            color: #333;
-            border: 1px solid #eaeaea;
+            background: #7a6c64;
+            color: #fff;
+            border: 1px solid #7a6c64;
             border-radius: 10px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #6a5b54;
+            }
         }
+
         .button-container {
             display: flex;
-            margin-left: 890px;
-            margin-bottom: 10px;
+            justify-content: flex-end;
+            width: 100%; // 버튼 컨테이너의 너비를 100%로 설정
+
             .delete {
                 box-sizing: border-box;
                 background: #7a6c64;
                 color: #fff;
                 border: 1px solid #7a6c64;
                 border-radius: 10px;
-                margin-right: 10px;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #6a5b54;
+                }
             }
+
             .edit {
                 box-sizing: border-box;
                 background: #fff;
@@ -113,6 +188,11 @@
                 border: 1px solid #333;
                 border-radius: 10px;
                 margin-right: 10px;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                }
             }
         }
     }

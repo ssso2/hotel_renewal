@@ -290,7 +290,16 @@
   font-weight: 500;
 }
 .search-results-wrap .keyword-box .top-wrap button {
+  position: relative;
+  padding: 0 20px 0 20px;
   font-size: 15px;
+}
+.search-results-wrap .keyword-box .top-wrap button::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .search-results-wrap .keyword-box .bottom-wrap {
   display: flex;

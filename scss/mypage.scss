@@ -4,33 +4,44 @@
 
     .depth3-tab-wrap {
         .tab {
-            width: 1600px;
-            margin-left: 50px;
             li {
-                border: 1px solid #ccc;
-                width: 500px;
-                margin-left: 25px;
+                width: calc(100% / 3);
             }
         }
     }
 }
 
 .content {
-    width: 1000px;
-    height: 50vh;
-    top: 30%;
-    margin-top: 250px;
-    margin-left: 500px;
+    position: relative;
     padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    .change-info-chk,
+    .mypage-info,
+    .reservate-info,
+    .inquiry-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
     .change-info-chk {
-        display: block;
-        align-items: center;
-        margin-bottom: 20px;
-
+        display: flex;
         label {
             font-size: 24px;
             margin-right: 10px;
+        }
+
+        #pw-chk,
+        #btn-confirm {
+            display: inline-block;
+            vertical-align: middle;
         }
 
         #pw-chk {
@@ -68,11 +79,13 @@
 
     .mypage-info {
         display: block;
-        width: 1000px;
-        margin-left: 300px;
-        margin-top: 50px;
-        transform: translate(-50%, -50%);
+        position: relative;
+        margin-top: -100px;
+        margin-bottom: -100px;
         padding: 20px;
+        transform: none;
+        top: 0;
+        left: 0;
 
         .title {
             text-align: center;
@@ -84,6 +97,8 @@
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
 
             p {
                 width: 100px;
@@ -99,6 +114,7 @@
             }
 
             input {
+                justify-content: center;
                 width: 400px;
                 padding: 10px;
                 border: 1px solid #ccc;
@@ -108,8 +124,9 @@
             }
         }
 
-        #submit {
-            width: 980px;
+        #edit {
+            margin-left: 420px;
+            width: 500px;
             padding: 10px;
             border: none;
             border-radius: 5px;
@@ -120,111 +137,6 @@
 
             &:hover {
                 background-color: #333;
-            }
-        }
-    }
-
-    .reservate-info {
-        display: block;
-        width: 1000px;
-        transform: translate(0%, -30%);
-        padding: 20px;
-        border-top: 2px solid #333;
-
-        .title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .sub-title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .reservation {
-            width: 980px;
-            height: 500px;
-            padding: 20px;
-            display: flex;
-            .reser-room,
-            .reser-package,
-            .reser-dining {
-                box-sizing: border-box;
-                width: 300px;
-                height: 50px;
-                font-size: 16px;
-                line-height: 50px;
-                text-align: center;
-                border-inline-start: 1px solid #ccc;
-                border-top: 1px solid #ccc;
-                border-bottom: 1px solid #ccc;
-                &:hover {
-                    background-color: #333;
-                    color: #fff;
-                }
-            }
-            .reser-dining {
-                box-sizing: border-box;
-                border-inline-end: 1px solid #ccc;
-            }
-        }
-    }
-
-    .inquiry-info {
-        display: block;
-        width: 1000px;
-        transform: translate(0%, -30%);
-        padding: 20px;
-        border-top: 2px solid #333;
-
-        .title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .myinquiry {
-            width: 980px;
-            height: 500px;
-            padding: 20px;
-            border: 2px solid #ccc;
-        }
-    }
-
-    .withdrawal {
-        display: block;
-        width: 1000px;
-        transform: translate(0%, -30%);
-        padding: 20px;
-        border-top: 2px solid #333;
-
-        .title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .withdrawal-chk {
-            display: block;
-            align-items: center;
-            margin-bottom: 20px;
-
-            label {
-                font-size: 24px;
-                margin-right: 10px;
-            }
-
-            #pw-chk2 {
-                width: 400px;
-                padding: 10px;
-                margin-top: 10px;
-                border: 2px solid #ccc;
-                box-sizing: border-box;
-                border-radius: 5px;
-
-                &:focus {
-                    border-color: #333;
-                }
             }
         }
     }

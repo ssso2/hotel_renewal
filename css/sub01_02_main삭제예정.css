@@ -111,7 +111,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .other-event .other-list .other-item a dl {
   width: 100%;

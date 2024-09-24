@@ -1,10 +1,6 @@
-#faq-container {
-    position: absolute;
-    width: 1220px;
-    height: 750px;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.container {
+    display: flex;
+    width: 100%;
     font-size: 14px;
     padding: 10px;
 
@@ -18,64 +14,85 @@
         .title {
             box-sizing: border-box;
             display: block;
-            width: 1200px;
-            margin: 10px 0px;
+            margin: 10px 0;
             padding: 20px;
             font-weight: bold;
             border: 1px solid #ccc;
             border-radius: 10px;
         }
+
         .content {
             box-sizing: border-box;
-            width: 1200px;
             min-height: 200px;
-            margin: 10px 0px;
+            margin: 10px 0;
             padding: 20px;
             overflow: auto;
-            margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 10px;
             resize: none;
         }
     }
+
     .post-list {
+        align-items: center;
         margin-top: 50px;
-        width: 1200px;
-        height: 40px;
 
         .board-nav {
             font-weight: bold;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             text-align: center;
             line-height: 40px;
             background-color: #eaeaea;
+
+            .post-num {
+                flex: 0 0 10%;
+            }
+
+            .post-title {
+                flex: 0 0 70%;
+            }
+
+            .post-writer,
+            .post-date {
+                flex: 0 0 10%;
+            }
         }
+
         .post {
             display: flex;
-            justify-content: space-around;
             line-height: 40px;
             border-bottom: 1px solid #ccc;
+            justify-content: space-between;
+
+            .post-num {
+                flex: 0 0 10%;
+                text-align: center;
+            }
+
+            .post-title {
+                flex: 0 0 70%;
+                text-align: center;
+                &:hover {
+                    font-weight: 600;
+                }
+            }
+
+            .post-writer,
+            .post-date {
+                flex: 0 0 10%;
+                text-align: center;
+            }
         }
-        .post:hover {
-            background-color: #f6f6f6;
-            display: flex;
-            justify-content: space-around;
-            line-height: 40px;
-            border-bottom: 1px solid #ccc;
-        }
-        .post-num {
-            width: 100px;
-            text-align: center;
-        }
-        .post-title {
-            width: 700px;
-            text-align: center;
-        }
-        .post-writer,
-        .post-date {
-            width: 200px;
-            text-align: center;
-        }
+    }
+    .list {
+        width: 100px;
+        padding: 10px;
+        margin-top: 30px;
+        font-size: 14px;
+        text-align: center;
+        background-color: #7a6c64;
+        color: #fff;
+        border-radius: 5px;
     }
 }

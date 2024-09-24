@@ -2,32 +2,40 @@
   display: flex;
   width: 100%;
 }
-.container .depth3-tab-wrap .tab {
-  width: 1600px;
-  margin-left: 50px;
-}
 .container .depth3-tab-wrap .tab li {
-  border: 1px solid #ccc;
-  width: 500px;
-  margin-left: 25px;
+  width: 33.3333333333%;
 }
 
 .content {
-  width: 1000px;
-  height: 50vh;
-  top: 30%;
-  margin-top: 250px;
-  margin-left: 500px;
+  position: relative;
   padding: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.content .change-info-chk,
+.content .mypage-info,
+.content .reservate-info,
+.content .inquiry-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .content .change-info-chk {
-  display: block;
-  align-items: center;
-  margin-bottom: 20px;
+  display: flex;
 }
 .content .change-info-chk label {
   font-size: 24px;
   margin-right: 10px;
+}
+.content .change-info-chk #pw-chk,
+.content .change-info-chk #btn-confirm {
+  display: inline-block;
+  vertical-align: middle;
 }
 .content .change-info-chk #pw-chk {
   width: 400px;
@@ -59,11 +67,13 @@
 }
 .content .mypage-info {
   display: block;
-  width: 1000px;
-  margin-left: 300px;
-  margin-top: 50px;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin-top: -100px;
+  margin-bottom: -100px;
   padding: 20px;
+  transform: none;
+  top: 0;
+  left: 0;
 }
 .content .mypage-info .title {
   text-align: center;
@@ -74,6 +84,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .content .mypage-info .my-info p {
   width: 100px;
@@ -87,6 +99,7 @@
   color: #333;
 }
 .content .mypage-info .my-info input {
+  justify-content: center;
   width: 400px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -94,8 +107,9 @@
   font-size: 14px;
   box-sizing: border-box;
 }
-.content .mypage-info #submit {
-  width: 980px;
+.content .mypage-info #edit {
+  margin-left: 420px;
+  width: 500px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -104,102 +118,6 @@
   font-size: 16px;
   cursor: pointer;
 }
-.content .mypage-info #submit:hover {
+.content .mypage-info #edit:hover {
   background-color: #333;
-}
-.content .reservate-info {
-  display: block;
-  width: 1000px;
-  transform: translate(0%, -30%);
-  padding: 20px;
-  border-top: 2px solid #333;
-}
-.content .reservate-info .title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-.content .reservate-info .sub-title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-.content .reservate-info .reservation {
-  width: 980px;
-  height: 500px;
-  padding: 20px;
-  display: flex;
-}
-.content .reservate-info .reservation .reser-room,
-.content .reservate-info .reservation .reser-package,
-.content .reservate-info .reservation .reser-dining {
-  box-sizing: border-box;
-  width: 300px;
-  height: 50px;
-  font-size: 16px;
-  line-height: 50px;
-  text-align: center;
-  border-inline-start: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-}
-.content .reservate-info .reservation .reser-room:hover,
-.content .reservate-info .reservation .reser-package:hover,
-.content .reservate-info .reservation .reser-dining:hover {
-  background-color: #333;
-  color: #fff;
-}
-.content .reservate-info .reservation .reser-dining {
-  box-sizing: border-box;
-  border-inline-end: 1px solid #ccc;
-}
-.content .inquiry-info {
-  display: block;
-  width: 1000px;
-  transform: translate(0%, -30%);
-  padding: 20px;
-  border-top: 2px solid #333;
-}
-.content .inquiry-info .title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-.content .inquiry-info .myinquiry {
-  width: 980px;
-  height: 500px;
-  padding: 20px;
-  border: 2px solid #ccc;
-}
-.content .withdrawal {
-  display: block;
-  width: 1000px;
-  transform: translate(0%, -30%);
-  padding: 20px;
-  border-top: 2px solid #333;
-}
-.content .withdrawal .title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-.content .withdrawal .withdrawal-chk {
-  display: block;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.content .withdrawal .withdrawal-chk label {
-  font-size: 24px;
-  margin-right: 10px;
-}
-.content .withdrawal .withdrawal-chk #pw-chk2 {
-  width: 400px;
-  padding: 10px;
-  margin-top: 10px;
-  border: 2px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-.content .withdrawal .withdrawal-chk #pw-chk2:focus {
-  border-color: #333;
 }

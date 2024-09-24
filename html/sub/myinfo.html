@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- 작성한 css 연결-->
         <link rel="stylesheet" href="../../css/header.css" />
+        <link rel="stylesheet" href="../../css/common.css" />
+        <link rel="stylesheet" href="../../css/footer.css" />
         <link rel="stylesheet" href="../../css/myinfo.css" />
         <!-- 작성자 : SSERA -->
         <!-- 제이쿼리 연결 -->
@@ -47,11 +49,11 @@
                     <li>
                         <a href="../html/sub/sub02.html">객실</a>
                         <ul class="depth2">
-                            <li><a href="../html/sub/sub02_01_01.html">스탠다드</a></li>
-                            <li><a href="../html/sub/sub02_02_01.html">이그제큐티브</a></li>
-                            <li><a href="../html/sub/sub02_03_01.html">스위트</a></li>
-                            <li><a href="../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
-                            <li><a href="../html/sub/sub02.html">전체 객실 보기</a></li>
+                            <li><a href="../../html/sub/sub02_01_01.html">스탠다드</a></li>
+                            <li><a href="../../html/sub/sub02_02_01.html">이그제큐티브</a></li>
+                            <li><a href="../../html/sub/sub02_03_01.html">스위트</a></li>
+                            <li><a href="../../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
+                            <li><a href="../../html/sub/sub02.html">전체 객실 보기</a></li>
                         </ul>
                     </li>
                     <li>
@@ -180,221 +182,276 @@
             </ul>
         </div>
 
+        <script>
+            $(document).ready(function () {
+                let today = new Date();
+                let year = today.getFullYear();
+                console.log(year);
+
+                for (i = year; i >= 1930; i--) {
+                    $('#year').append('<option value="' + i + '">' + i + '년 </option>');
+                }
+
+                for (i = 1; i <= 12; i++) {
+                    $('#month').append('<option value="' + i + '">' + i + '월 </option>');
+                }
+
+                for (i = 1; i <= 31; i++) {
+                    $('#day').append('<option value="' + i + '">' + i + '일 </option>');
+                }
+
+                let startnum = ['010', '02', '031', '032', '033', '041', '042', '043', '044', '051', '052', '053', '054', '055', '061', '062', '063', '064'];
+                for (t = 0; t < startnum.length; t++) {
+                    $('#start').append('<option value="' + startnum[t] + '">' + startnum[t] + '</option>');
+                }
+            });
+        </script>
+
         <div class="form-wrap">
-            <form id="shilla-join" action="#" method="get">
-                <!-- 개인정보 입력란 생년월일 넣기 연락처는 셀렉트박스로 -->
-                <div class="join-container">
-                    <h3 class="info-title">개인정보 입력</h3>
+            <div class="center">
+                <form id="shilla-join" action="#" method="get">
+                    <!-- 개인정보 입력란 생년월일 넣기 연락처는 셀렉트박스로 -->
+                    <div class="join-container">
+                        <h3 class="info-title">개인정보 입력</h3>
 
-                    <div class="info-group">
-                        <div class="input-container">
-                            <label for="ko-name">국문 이름 <font color="#F00">*</font> </label>
-                            <input type="text" id="ko-name" />
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="ko-name">국문 이름 <font color="#F00">*</font> </label>
+                                <input type="text" id="ko-name" placeholder="홍길동" />
+                            </div>
+                            <span class="error-message" id="koname-error"></span>
                         </div>
-                        <span class="error-message" id="koname-error"></span>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="en-name">영문 이름</label>
+                                <input type="text" id="firstname" placeholder="First name" class="name-input" />
+                                <input type="text" id="lastname" placeholder="Last name" class="name-input" />
+                            </div>
+                            <span class="error-message" id="enname-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="birth">생년월일</label>
+                                <select name="yy" id="year"></select>
+                                <select name="mm" id="month"></select>
+                                <select name="dd" id="day"></select>
+                            </div>
+                            <span class="error-message" id="birth-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="pid">아이디 <font color="#F00">*</font></label>
+                                <input type="text" id="pid" minlength="6" placeholder="영문자, 숫자로 구성 (6자 이상)" />
+                                <button type="button" id="id-chk">중복확인</button>
+                            </div>
+                            <span class="error-message" id="id-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="pw">패스워드 <font color="#F00">*</font></label>
+                                <input type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자(!,@,#,$,%,~) 포함한 12자 이상 16자 이내" />
+                            </div>
+                            <span class="error-message" id="pw-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="pwchk">패스워드확인 <font color="#F00">*</font></label>
+                                <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자(!,@,#,$,%,~) 포함한 12자 이상 16자 이내" />
+                            </div>
+                            <span class="error-message" id="pwchk-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="tel">연락처 <font color="#F00">*</font></label>
+                                <select name="start" id="start"></select>
+                                -
+                                <input type="text" id="middle" maxlength="4" />
+                                -
+                                <input type="text" id="last" maxlength="4" />
+                            </div>
+                            <span class="error-message" id="tel-error"></span>
+                        </div>
+
+                        <div class="info-group">
+                            <div class="input-container">
+                                <label for="mail">이메일 <font color="#F00">*</font></label>
+                                <input type="text" id="mail" placeholder="honggildong@naver.com" />
+                            </div>
+                            <span class="error-message" id="mail-error"></span>
+                        </div>
+
+                        <button type="submit" id="submit">가입하기</button>
                     </div>
 
-                    <div class="info-group">
-                        <div class="input-container">
-                            <label for="en-name">영문 이름</label>
-                            <input type="text" id="firstname" placeholder="First name" class="name-input" />
-                            <input type="text" id="lastname" placeholder="Last name" class="name-input" />
-                        </div>
-                        <span class="error-message" id="enname-error"></span>
-                    </div>
+                    <script>
+                        // 가입하기 버튼을 클릭했을 때 코드 실행
+                        document.getElementById('submit').addEventListener('click', function () {
+                            // 각 입력란이 공란일 때로 설정
+                            const koname = document.getElementById('ko-name').value.trim();
+                            const firstname = document.getElementById('firstname').value.trim();
+                            const lastname = document.getElementById('lastname').value.trim();
+                            const pid = document.getElementById('pid').value.trim();
+                            const pw = document.getElementById('pw').value.trim();
+                            const pwchk = document.getElementById('pwchk').value.trim();
+                            const middleNum = document.getElementById('middle').value.trim();
+                            const lastNum = document.getElementById('last').value.trim();
+                            const mail = document.getElementById('mail').value.trim();
 
-                    <div class="info-group">
-                        <div class="input-container">
-                            <label for="birth">생년월일</label>
-                            <select name="yy" id="year"></select>
-                            년
-                            <select name="mm" id="month"></select>
-                            월
-                            <select name="dd" id="day"></select>
-                            일
-                        </div>
-                        <span class="error-message" id="birth-error"></span>
-                    </div>
+                            let valid = true; // 유효성 초기값은 true
 
-                    <div class="info-group">
-                        <div class="input-container">
-                            <label for="pid">아이디 <font color="#F00">*</font></label>
-                            <input type="text" id="pid" />
-                            <button type="button" id="id-chk">중복확인</button>
-                        </div>
-                        <span class="error-message" id="id-error"></span>
-                    </div>
+                            // 오류 메시지 초기화
+                            const errorMessages = document.querySelectorAll('.error-message');
+                            errorMessages.forEach(message => (message.textContent = ''));
 
-                    <div class="info-group">
-                        <div class="input-container">
-                            <label for="pw">패스워드 <font color="#F00">*</font></label>
-                            <input type="password" id="pw" />
-                        </div>
-                        <span class="error-message" id="pw-error"></span>
-                    </div>
+                            // 이름 유효성 검사
+                            if (!koname) {
+                                document.getElementById('koname-error').textContent = '이름을 입력하세요.';
+                                valid = false;
+                            }
 
-                    <div class="info-group">
-                        <div class="input-container">
-                            <label for="pwchk">패스워드확인 <font color="#F00">*</font></label>
-                            <input type="password" id="pwchk" />
-                        </div>
-                        <span class="error-message" id="pwchk-error"></span>
-                    </div>
+                            // 아이디 유효성 검사
+                            const idtype = /^[A-Za-z0-9]$/;
+                            if (!pid) {
+                                document.getElementById('id-error').textContent = '아이디를 입력하세요.';
+                                valid = false;
+                            } else if (pid.length < 6) {
+                                document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
+                                valid = false;
+                            } else if (!idtype.test(pid)) {
+                                document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용가능합니다.';
+                                valid = false;
+                            } else if (!idchk) {
+                                document.getElementById('id-error').textContent = '중복확인을 해주세요.';
+                                valid = false;
+                            }
 
-                    <div class="info-group">
-                        <div class="input-container">
-                            <label for="tel">연락처 <font color="#F00">*</font></label>
-                            <input type="tel" id="tel" placeholder="하이픈(-)제외하고 입력" />
-                        </div>
-                        <span class="error-message" id="tel-error"></span>
-                    </div>
+                            // 패스워드 유효성 검사 -- 특수문자의 범위를 명확하게
+                            const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%~]).{12,16}$/;
+                            if (!pw) {
+                                document.getElementById('pw-error').textContent = '패스워드를 입력하세요.';
+                                valid = false;
+                            } else if (!pwtype.test(pw)) {
+                                document.getElementById('pw-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다. (특수문자 !,@,#,$,%,~ 사용 가능)';
+                                valid = false;
+                            }
 
-                    <div class="info-group">
-                        <div class="input-container">
-                            <label for="mail">이메일 <font color="#F00">*</font></label>
-                            <input type="text" id="mail" />
-                        </div>
-                        <span class="error-message" id="mail-error"></span>
-                    </div>
+                            if (!pwchk) {
+                                document.getElementById('pwchk-error').textContent = '패스워드를 입력하세요.';
+                                valid = false;
+                            } else if (!pwtype.test(pwchk)) {
+                                document.getElementById('pwchk-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다. (특수문자 !,@,#,$,%,~ 사용 가능)';
+                                valid = false;
+                            }
 
-                    <button type="submit" id="submit">가입하기</button>
-                </div>
+                            // 패스워드 확인 유효성 검사
+                            if (pwchk !== pw) {
+                                document.getElementById('pwchk-error').textContent = '패스워드가 일치하지 않습니다.';
+                                valid = false;
+                            }
 
-                <script>
-                    $(document).ready(function () {
-                        let today = new Date();
-                        let year = today.getFullYear();
-                        console.log(year);
+                            // 연락처 유효성 검사
+                            const teltype = /^\d{4,}$/;
+                            if (!middleNum || !lastNum) {
+                                document.getElementById('tel-error').textContent = '연락처를 입력하세요.';
+                                valid = false;
+                            } else if (!(teltype.test(middleNum) && teltype.test(lastNum))) {
+                                document.getElementById('tel-error').textContent = '연락처의 자리수를 확인하세요.';
+                                valid = false;
+                            }
 
-                        //년도 selectbox 만들기
-                        for (i = 1900; i <= year; i++) {
-                            $('#year').append('<option value="' + i + '">' + i + '</option>');
-                        }
+                            // 이메일 유효성 검사
+                            const mailtype = /^[A-Za-z0-9][A-Za-z0-9._]*@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+                            // ex) shilla123@shilla1.co.kr < 정규식 수정
+                            // 도메인 선택, 직접 입력 가능하게
+                            if (!mail) {
+                                document.getElementById('mail-error').textContent = '이메일을 입력하세요.';
+                                valid = false;
+                            } else if (!mailtype.test(mail)) {
+                                document.getElementById('mail-error').textContent = '정확한 이메일 주소를 입력하세요.';
+                                valid = false;
+                            }
 
-                        //월 selectbox 만들기
-                        for (i = 1; i <= 12; i++) {
-                            $('#month').append('<option value="' + i + '">' + i + '</option>');
-                        }
+                            // 모든 유효성 검사 통과 시 -- 추후 수정할 부분 (가입 완료되면서 메인페이지로 이동하기)
+                            if (valid) {
+                                alert('신라리워즈 가입을 환영합니다.');
+                            }
+                        });
 
-                        //일 selectbox 만들기
-                        for (i = 1; i <= 31; i++) {
-                            $('#day').append('<option value="' + i + '">' + i + '</option>');
-                        }
-                    });
-
-                    // 중복확인 버튼을 클릭했을 때
-                    let idchk = false;
-                    document.getElementById('id-chk').addEventListener('click', function () {
-                        alert('중복확인이 완료되었습니다.');
-                        idchk = true;
-                    });
-
-                    // 가입하기 버튼을 클릭했을 때 코드 실행
-                    document.getElementById('submit').addEventListener('click', function () {
-                        // 각 입력란이 공란일 때로 설정
-                        const koname = document.getElementById('ko-name').value.trim();
-                        const firstname = document.getElementById('firstname').value.trim();
-                        const lastname = document.getElementById('lastname').value.trim();
-                        const pid = document.getElementById('pid').value.trim();
-                        const pw = document.getElementById('pw').value.trim();
-                        const pwchk = document.getElementById('pwchk').value.trim();
-                        const tel = document.getElementById('tel').value.trim();
-                        const mail = document.getElementById('mail').value.trim();
-
-                        let valid = true; // 유효성 초기값은 true
-
-                        // 오류 메시지 초기화
-                        const errorMessages = document.querySelectorAll('.error-message');
-                        errorMessages.forEach(message => (message.textContent = ''));
-
-                        // 이름 유효성 검사
-                        if (!koname) {
-                            document.getElementById('koname-error').textContent = '이름을 입력하세요.';
-                            valid = false;
-                        }
-
-                        /* 필수입력사항 아니므로 제외
-                        if (!firstname || !lastname) {
-                            document.getElementById('enname-error').textContent = '영문 성/이름을 확인하세요.';
-                            valid = false;
-                        }
-                        */
-
-                        // 아이디 유효성 검사 -- 최대 길이 설정/영문자 숫자만 포함
-                        if (!pid) {
-                            document.getElementById('id-error').textContent = '아이디를 입력하세요.';
-                            valid = false;
-                        } else if (pid.length < 6) {
-                            document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
-                            valid = false;
-                        } else if (!idchk) {
-                            document.getElementById('id-error').textContent = '중복확인을 해주세요.';
-                            valid = false;
-                        }
-
-                        // 패스워드 유효성 검사 -- 특수문자의 범위를 명확하게
-                        const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W]).{12,16}$/;
-                        if (!pw) {
-                            document.getElementById('pw-error').textContent = '패스워드를 입력하세요.';
-                            valid = false;
-                        } else if (!pwtype.test(pw)) {
-                            document.getElementById('pw-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.';
-                            valid = false;
-                        }
-
-                        if (!pwchk) {
-                            document.getElementById('pwchk-error').textContent = '패스워드를 입력하세요.';
-                            valid = false;
-                        } else if (!pwtype.test(pwchk)) {
-                            document.getElementById('pwchk-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.';
-                            valid = false;
-                        }
-
-                        // 패스워드 확인 유효성 검사
-                        if (pwchk !== pw) {
-                            document.getElementById('pwchk-error').textContent = '패스워드가 일치하지 않습니다.';
-                            valid = false;
-                        }
-
-                        // 연락처 유효성 검사 -- 000 000 0000 / 000 0000 0000
-                        // 02 같은 지역번호, 010 같은 핸드폰 번호 <셀렉트
-                        const teltype = /^\d{9,11}$/;
-                        if (!tel) {
-                            document.getElementById('tel-error').textContent = '연락처를 입력하세요.';
-                            valid = false;
-                        } else if (!teltype.test(tel)) {
-                            document.getElementById('tel-error').textContent = '연락처는 하이픈을 제외하고 9자~11자여야 합니다.';
-                            valid = false;
-                        }
-
-                        // 이메일 유효성 검사
-                        const mailtype = /^[A-Za-z0-9][A-Za-z0-9._]*@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
-                        // ex) shilla123@shilla1.co.kr < 정규식 수정
-                        // 도메인 선택, 직접 입력 가능하게
-                        if (!mail) {
-                            document.getElementById('mail-error').textContent = '이메일을 입력하세요.';
-                            valid = false;
-                        } else if (!mailtype.test(mail)) {
-                            document.getElementById('mail-error').textContent = '정확한 이메일 주소를 입력하세요.';
-                            valid = false;
-                        }
-
-                        // 모든 유효성 검사 통과 시 -- 추후 수정할 부분 (가입 완료되면서 메인페이지로 이동하기)
-                        if (valid) {
-                            alert('신라리워즈 가입을 환영합니다.');
-                        }
-                    });
-                </script>
-            </form>
+                        // 중복확인 버튼을 클릭했을 때
+                        let idchk = false;
+                        document.getElementById('id-chk').addEventListener('click', function () {
+                            alert('중복확인이 완료되었습니다.');
+                            idchk = true;
+                        });
+                    </script>
+                </form>
+            </div>
         </div>
 
-        <!-- 플로팅 메뉴 -->
+        <!-- 푸터/플로팅 -->
+        <footer>
+            <div class="center">
+                <div class="f_menu">
+                    <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo" />
+                    <div>SNS</div>
+                    <ul class="sns">
+                        <li>
+                            <a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a>
+                        </li>
+                    </ul>
+                    <div>MENU</div>
+                    <ul class="menu">
+                        <li><a href="#self">호텔소개</a></li>
+                        <li><a href="#self">호텔정보</a></li>
+                        <li><a href="#self">층별안내도</a></li>
+                        <li><a href="#self">오시는길</a></li>
+                    </ul>
+                </div>
+                <div class="f_bot">
+                    <div class="f_list">
+                        <span><a href="#self">이용약관</a></span>
+                        <span><a href="#self">개인정보 처리방침</a></span>
+                        <span><a href="#self">사업자정보확인</a></span>
+                    </div>
+                    <ul class="f_info">
+                        <li>법인명: (주) 호텔신라</li>
+                        <li>대표자: 이부진 사업자 등록번호: 203.81.43363</li>
+                        <li>통신판매신고번호: 중구00272호</li>
+                        <li>호스팅서비스제공자: 삼성SDS(주)</li>
+                        <li>객실예약 shilla.reserve@samsung.com</li>
+                        <li>주소: 서울특별시 중구 동호로 249</li>
+                        <li>TEL: 02-2233-3131</li>
+                        <li>FAX. 02-2230-3769</li>
+                    </ul>
+                    <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
+                </div>
+                <div class="info">
+                    <p>2024 Forbes Travel Guide<br />국내 최초 6년 연속 5성 호텔 수상</p>
+                    <p>한국 능률협회컨설팅 선정 <br />브랜드파워 호텔 부문 7년 연속 1위</p>
+                    <p>2024 한국생산성본부 선정<br />국가브랜드경쟁력지수 호텔 부문 1위</p>
+                    <p>한국표준협회 평가 <br />실내공기질 인증 획득</p>
+                    <p>한국환경산업기술원 평가 <br />친환경 호텔 인증 획득</p>
+                </div>
+            </div>
+        </footer>
         <article class="floating-menu">
             <div class="menu">
-                <a href="#" class="circle-btn">예약</a>
-                <a href="#" class="circle-btn">문의</a>
+                <a href="#" class="circle-btn" title="예약 페이지로 이동">예약</a>
+                <a href="#" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
             </div>
-            <a href="#" class="top-btn">TOP</a>
+            <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
     </body>
 </html>

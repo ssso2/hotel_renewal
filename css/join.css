@@ -1,41 +1,39 @@
 @charset "UTF-8";
-#shilla-join {
-  position: absolute;
-  width: 1500px;
-  margin-top: 200px;
-  top: 60%;
+.form-wrap {
+  position: static;
+  margin-top: 100px;
+  top: 100%;
   left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 14px;
   padding: 10px;
 }
-#shilla-join .clause-wrap {
+.form-wrap .clause-wrap {
   background-color: #faf8f4;
   border-radius: 5px;
   padding: 20px;
   margin-top: 50px;
 }
-#shilla-join .clause-wrap .join {
+.form-wrap .clause-wrap .join {
   text-align: center;
   margin-bottom: 50px;
 }
-#shilla-join .clause-wrap .agree,
-#shilla-join .clause-wrap .direction {
+.form-wrap .clause-wrap .agree,
+.form-wrap .clause-wrap .direction {
   text-align: center;
   margin-bottom: 20px;
 }
-#shilla-join .clause-wrap #check-all {
+.form-wrap .clause-wrap #check-all {
   margin-top: 20px;
   margin-left: 43%;
   text-align: center;
 }
-#shilla-join .clause-container {
+.form-wrap .clause-container {
   display: flex;
   flex-direction: column;
   margin: 15px;
   gap: 20px;
 }
-#shilla-join .clause-container .clause {
+.form-wrap .clause-container .clause {
   height: 200px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -43,17 +41,17 @@
   background-color: #fff;
   overflow: auto;
 }
-#shilla-join .clause-container b {
+.form-wrap .clause-container b {
   margin-top: 30px;
 }
-#shilla-join .checkbox {
+.form-wrap .checkbox {
   display: flex;
   align-items: center;
 }
-#shilla-join .checkbox #agree-all,
-#shilla-join .checkbox #chk1,
-#shilla-join .checkbox #chk2,
-#shilla-join .checkbox #chk3 {
+.form-wrap .checkbox #agree-all,
+.form-wrap .checkbox #chk1,
+.form-wrap .checkbox #chk2,
+.form-wrap .checkbox #chk3 {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -65,16 +63,16 @@
   background-color: #fff;
   border: 2px solid #333;
 }
-#shilla-join .checkbox #agree-all:checked,
-#shilla-join .checkbox #chk1:checked,
-#shilla-join .checkbox #chk2:checked,
-#shilla-join .checkbox #chk3:checked {
+.form-wrap .checkbox #agree-all:checked,
+.form-wrap .checkbox #chk1:checked,
+.form-wrap .checkbox #chk2:checked,
+.form-wrap .checkbox #chk3:checked {
   background-color: #333;
 }
-#shilla-join .checkbox #agree-all:checked::after,
-#shilla-join .checkbox #chk1:checked::after,
-#shilla-join .checkbox #chk2:checked::after,
-#shilla-join .checkbox #chk3:checked::after {
+.form-wrap .checkbox #agree-all:checked::after,
+.form-wrap .checkbox #chk1:checked::after,
+.form-wrap .checkbox #chk2:checked::after,
+.form-wrap .checkbox #chk3:checked::after {
   content: "✓";
   position: absolute;
   top: 0;
@@ -87,11 +85,11 @@
   text-align: center;
   line-height: 15px;
 }
-#shilla-join #btn-next {
-  width: 500px;
+.form-wrap #btn-next {
+  width: 33.3333333333%;
   height: 40px;
-  margin-left: 460px;
   padding: 10px;
+  margin-left: 33.3333333333%;
   margin-top: 50px;
   margin-bottom: 50px;
   font-size: 16px;

@@ -1,113 +1,184 @@
-#post-container {
-  position: absolute;
-  width: 1220px;
-  height: 750px;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.container.board {
+  width: 100%;
   font-size: 14px;
   padding: 10px;
 }
-#post-container .ask {
+.container.board .ask {
   margin: 25px 5px;
   font-weight: bold;
   color: #333;
 }
-#post-container .text-container .title {
+.container.board .user-name {
+  display: inline-block;
+  width: 60px;
+  line-height: 35px;
+  padding: 10px;
+  font-size: 14px;
+}
+.container.board .text-container .title {
   box-sizing: border-box;
   display: block;
-  width: 1200px;
   padding: 20px;
   font-weight: bold;
-  border: 1px solid #ccc;
-  background-color: #faf8f4;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-#post-container .text-container .content {
+.container.board .text-container .content {
   box-sizing: border-box;
-  width: 1200px;
   min-height: 500px;
   padding: 20px;
   overflow: auto;
-  border: 1px solid #ccc;
+  border: 1px solid #e0e0e0;
   border-top: none;
-  resize: none;
-}
-#post-container .text-container .reply {
-  margin-top: 350px;
-  margin-left: 80px;
-  position: fixed;
-  box-sizing: border-box;
-  width: 1000px;
-  min-height: 100px;
-  padding: 20px;
-  overflow: auto;
-  border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f6f6f6;
-  resize: none;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-#post-container .text-container .reply #reply {
-  width: 900px;
-  height: 40px;
+.container.board .text-container .reply-container {
+  margin-top: 20px;
+}
+.container.board .text-container .reply-container .new-reply {
+  width: calc(100% - 80px);
+  height: 30px;
   padding: 10px;
-  font-size: 16px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  background-color: #eee;
+  border: 1px solid #eee;
 }
-#post-container .text-container .reply #plus {
-  width: 50px;
-  padding: 5px;
-  font-size: 14px;
-  background-color: #ccc;
+.container.board .text-container .reply-container .reply-box,
+.container.board .text-container .reply-container .reply-content {
+  font-size: 0;
+}
+.container.board .text-container .reply-container .reply,
+.container.board .text-container .reply-container .reply-box {
+  box-sizing: border-box;
+  min-height: 50px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.container.board .text-container .reply-container .reply .reply-content.user-name,
+.container.board .text-container .reply-container .reply-box .reply-content.user-name {
+  margin-top: 5px;
+}
+.container.board .text-container .reply-container .reply .reply-content .reply-title,
+.container.board .text-container .reply-container .reply-box .reply-content .reply-title {
+  display: block;
+  margin-left: 10px;
+  font-size: 22px;
+  font-weight: 600;
   color: #333;
+}
+.container.board .text-container .reply-container .reply .reply-content .time,
+.container.board .text-container .reply-container .reply-box .reply-content .time {
+  display: inline-block;
+  margin-left: 80px;
+  align-content: center;
+  font-size: 14px;
+  color: #333;
+}
+.container.board .text-container .reply-container .reply .reply-content .edit,
+.container.board .text-container .reply-container .reply .reply-content .delete,
+.container.board .text-container .reply-container .reply-box .reply-content .edit,
+.container.board .text-container .reply-container .reply-box .reply-content .delete {
+  width: 50px;
+  height: 30px;
+  background-color: #ccc;
+  margin-left: 10px;
+  margin-bottom: 5px;
   border-radius: 5px;
 }
-#post-container .text-container .comment {
-  margin-top: 350px;
-  margin-left: 80px;
-  position: fixed;
-  box-sizing: border-box;
-  width: 1000px;
-  min-height: 100px;
-  padding: 20px;
-  overflow: auto;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f6f6f6;
-  resize: none;
+.container.board .text-container .reply-container .reply .reply-text,
+.container.board .text-container .reply-container .reply-box .reply-text {
+  display: flex;
+  align-items: center;
 }
-#post-container .button-wrap {
+.container.board .text-container .reply-container .reply .reply-text #reply,
+.container.board .text-container .reply-container .reply-box .reply-text #reply {
+  flex: 1;
+  height: 30px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.container.board .text-container .reply-container .reply .reply-text #reply:focus,
+.container.board .text-container .reply-container .reply-box .reply-text #reply:focus {
+  border-color: #7a6c64;
+}
+.container.board .text-container .reply-container .reply .reply-text button,
+.container.board .text-container .reply-container .reply-box .reply-text button {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 14px;
+  background-color: #7a6c64;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+.container.board .text-container .reply-container .reply .reply-text button:hover,
+.container.board .text-container .reply-container .reply-box .reply-text button:hover {
+  background-color: #333;
+  color: #fff;
+}
+.container.board .button-wrap {
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#post-container .button-wrap button {
+.container.board .button-wrap button {
   width: 100px;
   padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
-#post-container .button-wrap .list {
-  box-sizing: border-box;
-  background: #eaeaea;
-  color: #333;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-}
-#post-container .button-wrap .button-container {
-  display: flex;
-  margin-left: 890px;
-  margin-bottom: 10px;
-}
-#post-container .button-wrap .button-container .delete {
+.container.board .button-wrap .list {
   box-sizing: border-box;
   background: #7a6c64;
   color: #fff;
   border: 1px solid #7a6c64;
   border-radius: 10px;
   margin-right: 10px;
+  transition: background-color 0.3s;
 }
-#post-container .button-wrap .button-container .edit {
+.container.board .button-wrap .list:hover {
+  background-color: #6a5b54;
+}
+.container.board .button-wrap .button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.container.board .button-wrap .button-container .delete {
+  box-sizing: border-box;
+  background: #7a6c64;
+  color: #fff;
+  border: 1px solid #7a6c64;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+.container.board .button-wrap .button-container .delete:hover {
+  background-color: #6a5b54;
+}
+.container.board .button-wrap .button-container .edit {
   box-sizing: border-box;
   background: #fff;
   color: #333;
   border: 1px solid #333;
   border-radius: 10px;
   margin-right: 10px;
+  transition: background-color 0.3s;
+}
+.container.board .button-wrap .button-container .edit:hover {
+  background-color: #f0f0f0;
 }
