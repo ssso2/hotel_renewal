@@ -1,5 +1,9 @@
 $(function(){
+    $().click(function(){
+        
+    })
     $("#pay").click(function(e){
+
         if($("#in-time :selected").val()==""){ 
             alert("체크인 예정 시간을 확인해주세요.")
             return false
