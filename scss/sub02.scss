@@ -35,11 +35,9 @@
             width: 100%;
             .img-wrap{
                 width: 100%;
-                height: 300px;
                 img{
                     border-radius: 10px;
                     width: 100%;
-                    height: 100%;
                 }
             }
             .txt-wrap{
@@ -63,6 +61,116 @@
         }
         &:nth-child(2n){
             margin-right: 0;
+        }
+    }
+}
+
+//반응형
+@media screen and (max-width: 1500px) {
+    .center {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .center {
+        width: 95%;
+    }
+    .room-intro{
+        font-size: 16px;
+        .room-intro-txt{
+            font-size: 20px;
+        }
+        .room-txt{
+            font-size: 18px;
+        }
+    }
+    .room-wrap{
+        h3{
+            font-size: 25px;
+        }
+    }
+    .room-box-wrap{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .room-box{
+            margin-right: 20px;
+            width: calc((100% - 20px)/2);
+            a{
+                .txt-wrap{
+                    h4{
+                        font-size: 20px;
+                    }
+                    .room-top-txt{
+                        font-size: 14px;
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .center {
+        width: 95%;
+    }
+    .room-intro{
+        font-size: 18px;
+        margin-bottom: 50px;
+        .room-intro-txt{
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+        .room-txt{
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    }
+    .room-wrap{
+        h3{
+            font-size: 40px;
+            margin: 30px 0px;
+        }
+    }
+    .room-top-intro{
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+    .room-box-wrap{
+        display: block;
+        .room-box{
+            margin-right: 40px;
+            width: 100%;
+            a{
+                display: block;
+                width: 100%;
+                .img-wrap{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .txt-wrap{
+                    margin-top: 10px;
+                    margin-bottom: 50px;
+                    padding: 10px 20px;
+                    h4{
+                        margin-bottom: 20px;
+                        font-size: 22px;
+                    }
+                    .room-top-txt{
+                        margin-bottom: 10px;
+                        font-size: 18px;
+                    }
+                }
+            }
+            &:nth-child(2n){
+                margin-right: 0;
+            }
         }
     }
 }
