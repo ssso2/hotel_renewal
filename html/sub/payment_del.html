@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신라호텔 : 객실 - 더 이그제큐티브 라운지</title>
+    <title>신라호텔 : 예약 확인 및 결제</title>
     <!-- 구글 웹폰트 연결 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/sub-list.css">
     <link rel="stylesheet" href="../../css/sub-detail.css">
-    <link rel="stylesheet" href="../../css/sub-room.css">
+    <link rel="stylesheet" href="../../css/payment.css">
     <!-- 작성한 JS 연결 -->
     <script src="../../js/common/common.js" defer></script>
     <script src="../../js/common/header.js" defer></script>
@@ -37,7 +37,7 @@
         <div class="gnbbg"></div>
         <div class="center">
             <h1 class="logo">
-                <a href="../index.html">
+                <a href="#">
                     <img src="../../img/common/logo.png" alt="">
                 </a>
             </h1>
@@ -187,150 +187,82 @@
     </div>
 
     <!-- 페이지 영역 -->
-    <div class="container lounge">
+    <div class="container payment">
         <div class="center">
             <div class="depth3-tab-wrap">
                 <div class="tab-contents">
                     <div class="tab-cont cont on">
                         <div class="sub-title">
-                            <h2>더 이그제큐티브 라운지</h2>
+                            <h2>예약 확인 및 결제</h2>
                             <ul class="location">
                                 <li><a href="../../html/index.html">홈</a></li>
-                                <li><a href="../../html/sub/sub02.html">객실</a></li>
-                                <li><a href="#self">더 이그제큐티브 라운지</a></li>
+                                <li><a href="../../html/sub/reservation.html">예약</a></li>
+                                <li><a href="#self">예약 확인 및 결제</a></li>
                             </ul>
-                        </div>
-                        <div class="gallery">
-                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge01.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge02.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge03.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge04.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge05.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge06.jpg">
-                                    </div>
-                                </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div>
-                            <div thumbsSlider="" class="swiper mySwiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge01.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge02.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge03.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge04.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge05.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/executiveLounge06.jpg">
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="context">
-                            <div class="Introduction">
-                                <h3 class="room-title">더 이그제큐티브 라운지</h3>
-                                <p class="room-top-txt">세계 어느 곳에서도 찾을 수 없는 최고 수준의 더 이그제큐티브 라운지</p>
-                                <p class="txt">
-                                    신라만의 품격이 묻어나는 차별화된 비즈니스 라이프스타일을 제안합니다.
-                                </p>
-                                <p class="txt">
-                                    더 이그제큐티브 라운지는 고급스러운 펜트하우스의 응접실을 콘셉트로 구현한 투숙객 전용 비즈니스 공간입니다.<br/>
-                                    23층 최상층에 위치해 남산의 사계절 풍광과 도시의 전경이 그림처럼 펼쳐지는 더 이그제큐티브 라운지에서 특별한 다이닝 경험을 체험해보시기 바랍니다.
-                                </p>
-                                <div class="btn-wrap type2">
-                                    <button class="btn btn-01" data-lybtn="pop-eudInfo3"><span>Floor Map</span></button>
-                                </div>
-
-                            </div>
-                            <ul class = "guide">
-                                <h3>상세 운영 시간</h3>
+                            <ul class = "info">
+                                <h3>예약확인</h3>
                                 <li class="list">
-                                    <h4>Breakfast</h4>
+                                    <h4>객실</h4>
+                                    <div>
+                                        <input type="text" name="room-name" id="room-name" value="디럭스">
+                                    </div>
+                                </li>
+                                <li class="list">
+                                    <h4>CHECK IN / OUT</h4>
+                                    <div>
+                                        <input type="text" value="2024.09.23" readonly> -
+                                        <input type="text" value="2024.09.24" readonly>
+                                    </div>
+                                </li>
+                                <li class="list">
+                                    <h4>투숙 인원</h4>
                                     <div class="txt-wrap">
                                         <ul class="txt">
-                                            06:30 ~ 10:00
-                                            <li>단, 토, 일요일 및 공휴일은 06:30~10:30</li>
-                                            <li>호텔 사정에 따라 더 파크뷰 조식으로 대체 제공될 수 있으며, 체크인 시 확인 가능합니다.</li>
+                                            <li>성인 : <input type="number" value="2"> 명
+                                            </li>
+                                            <li>어린이 : <input type="number" value="1"> 명
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="list">
-                                    <h4>Afternoon Tea</h4>
-                                    <div class="txt-wrap">
-                                        <ul class="txt">
-                                            15:30 ~ 17:00
-                                        </ul>
+                                    <h4>요금 합계<br/>(부가세 포함)</h4>
+                                    <div>
+                                        <input type="text" value="583,000" readonly>원
                                     </div>
                                 </li>
-                                <li class="list">
-                                    <h4>Happy Hour</h4>
-                                    <div class="txt-wrap">
-                                        <ul class="txt">
-                                            18:00 ~ 22:00
-                                        </ul>
-                                    </div>
-                                </li>
-                                <div class="desc-wrap">
-                                    <p class = "desc">음료 테이크 아웃 서비스 미제공</p>
-                                    <p class = "desc">더 이그제큐티브 라운지는 평일 주중에 한해(금·토·일 및 공휴일 제외) 투숙객께서 동반하신 외부 고객 2인까지 유료 입장 가능합니다.</p>
-                                </div>
-
                             </ul>
-                            
-                            <div class="guide">
-                                <h3>더 이그제큐티브 라운지 혜택</h3>
-                                <div class="list">
-                                    <h4>체크인/체크아웃</h4>
+                            <ul class = "guide">
+                                <h3>옵션 사항</h3>
+                                <li class="list">
+                                    <h4>조식</h4>
                                     <div class="txt-wrap">
                                         <ul class="txt">
-                                            더 이그제큐티브 라운지에서의 신속한 익스프레스 체크인/체크아웃 서비스
+                                            <li>분당방면 : 한남대교 → 장충단길 → 서울신라호텔/신라면세점</li>
+                                            <li>강남방면 : 동호대교 → 장충체육관 앞 사거리에서 좌회전 → 서울신라호텔/신라면세점</li>
+                                            <li>용산방면 : 남산2호터널 통과 후 좌회전 → 서울신라호텔/신라면세점</li>
                                         </ul>
                                     </div>
-                                </div>
-                                <div class="list">
-                                    <h4>라운지 서비스</h4>
+                                </li>
+                                <li class="list">
+                                    <h4>체크인 예정시간</h4>
                                     <div class="txt-wrap">
                                         <ul class="txt">
-                                            <li>더 이그제큐티브 라운지 내 회의실은 투숙 기간 동안 1회(1시간) 무료 이용 가능(사전 예약 필요)</li>
-                                            <li>개별 컨시어지 서비스</li>
-                                            <li>국내외 신문, 잡지 등 비치</li>
-                                            <li>라운지 및 객실에서의 무료 인터넷</li>
-                                            <li>라운지는 투숙객 전용 비즈니스 공간으로 만 13세 이상 고객에 한해 출입이 가능합니다.</li>
-                                            <li>더 이그제큐티브 라운지 포함 투숙객께서는 평일 주중에 한해(금, 토, 일 및 공휴일 제외) 동반하신 외부 고객 2인까지 유료로 입장 가능</li>
+                                            <p>장충체육관 앞 하차 (노선번호: 144,301,7212)</p>
                                         </ul>
                                     </div>
-                                </div>
-                                <div class="desc-wrap">
-                                    <p class="desc">
-                                        투숙일 기준 9월 21일부터 주말 및 공휴일 11시~15시는 성인 보호자의 보호하에 만 13세 미만 고객도 입장 가능합니다.
-                                    </p>
-                                    <p class="desc">
-                                        피별도 대관 행사가 예정되어 있을 경우에는 입장에 제한이 있을 수 있습니다.
-                                    </p>
-                                </div>
-                            </div>
+                                </li>
+                                <li class="list">
+                                    <h4>추가 요청사항</h4>
+                                    <div class="txt-wrap">
+                                        <ul class="txt">
+                                            <p>지하철3호선 동대입구역 5번출구</p>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -376,43 +308,20 @@
             </div>
             <div class="info">
                 <p>2024 Forbes Travel Guide<br>국내 최초 6년 연속 5성 호텔 수상</p>
-                <p>한국 능률협회컨설팅 선정 <br>브랜드파워 호텔 부문 7년 연속 1위</p>
+                <p>한국 능률협회컨설팅 선정<br>브랜드파워 호텔 부문 7년 연속 1위</p>
                 <p>2024 한국생산성본부 선정<br>국가브랜드경쟁력지수 호텔 부문 1위</p>
-                <p>한국표준협회 평가 <br>실내공기질 인증 획득</p>
-                <p>한국환경산업기술원 평가 <br>친환경 호텔 인증 획득</p>
+                <p>한국표준협회 평가<br>실내공기질 인증 획득</p>
+                <p>한국환경산업기술원 평가<br>친환경 호텔 인증 획득</p>
             </div>
         </div>
     </footer>
 
     <article class="floating-menu">
         <div class="menu">
-            <a href="../../html/sub/reservation.html" class="circle-btn" title="예약 페이지로 이동">예약</a>
-            <a href="../../html/sub/sub06_03.html" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
+            <a href="#" class="circle-btn" title="예약 페이지로 이동">예약</a>
+            <a href="#" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
         </div>
         <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
     </article>
-    <!-- 객실도면 팝업 -->
-
-    <div class="lypop" data-lyOpen="pop-eudInfo3">
-        <div class="lypop-wp big">
-            <div class="lypop-content">
-                <div class="lypop-title">
-                    <strong>객실 도면</strong>
-                    <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-eudInfo"><span class="hide">닫기</span></a>
-                </div>
-                <div class="lypop-ct">
-                    <ul class="lounge-floor">
-                        <li>
-                        <h3>더 이그제큐티브 라운지</h3>
-                        <img src="../../img/sub/loungeFloor.jpg" alt="">
-                        </li>
-                    </ul>
-                    <div class="btn-wrap type5">
-                        <button class="btn btn-04" data-lyClose="pop-eudInfo"><span>닫기</span></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  
 </body>
 </html>
