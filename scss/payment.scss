@@ -67,6 +67,7 @@
             }
         
             .txt-wrap {
+                width: calc(100% - 300px);
                 .txt {
                     margin-top: 15px;
                     &:first-child {margin: 0;}

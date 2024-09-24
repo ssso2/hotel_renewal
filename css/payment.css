@@ -57,6 +57,9 @@
 .payment .content .list .box {
   margin-right: 20px;
 }
+.payment .content .list .txt-wrap {
+  width: calc(100% - 300px);
+}
 .payment .content .list .txt-wrap .txt {
   margin-top: 15px;
 }
