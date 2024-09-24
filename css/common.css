@@ -462,7 +462,7 @@ body::-webkit-scrollbar-track {
   line-height: 25px;
 }
 .pagination .page {
-  background-image: url("../../img/common/bg_pageination.png");
+  background-image: url("../img/common/bg_pageination.png");
   background-repeat: no-repeat;
 }
 .pagination .first {

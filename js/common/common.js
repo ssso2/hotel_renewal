@@ -1,4 +1,4 @@
-// 3depth tab 공통
+// 3depth tab 공통 변수
 const depth3Tab = document.querySelector(".depth3-tab-wrap > .tab");
 const tabs = document.querySelectorAll(".depth3-tab-wrap .tab > li");
 const tabContents = document.querySelectorAll(".depth3-tab-wrap .tab-cont");
@@ -13,31 +13,6 @@ for(let i = 0; i < tabs.length; i++){
         tabContents[i].classList.add("on");
     });
 }
-
-
-// 3depth 탭이 화면 위로 붙음
-// window.addEventListener("scroll",function(){
-//     // 스크롤바의 위치값
-//     let scTop = window.scrollY;
-//     let headerHeight = header.clientHeight;
-//     let depth3TabTop = depth3Tab.offsetTop;
-
-//     if(scTop > depth3TabTop){
-        
-//         if(header.classList.contains("on")){
-//             depth3Tab.style.top = headerHeight + "px";
-//             depth3Tab.classList.add("on");
-//         }
-//         else{
-//             depth3Tab.style.top = 0;
-//             depth3Tab.classList.add("on");
-//         }
-//     }
-//     else{
-//         depth3Tab.classList.remove("on");
-//     }
-// });
-
 
 
 // DEPTH3 스와이퍼 슬라이드 갤러리
@@ -59,7 +34,6 @@ var swiper2 = new Swiper(".mySwiper2", {
       swiper: swiper,
     }
 });
-
 
 
 
@@ -110,9 +84,6 @@ $(function () {
             behavior:"smooth"
         });
     });
-
-    
-
 
 
     // daterangepicker - 메인
@@ -174,6 +145,4 @@ $(function () {
     });
 
 }); 
-
-
 
