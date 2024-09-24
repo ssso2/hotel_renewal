@@ -15,10 +15,15 @@
                 line-height: 3;
                 font-weight: 700;
             }
-            a {
+            h3 {
+                margin-top: 22px;
+            }
+            & a {
                 display: block;
-                margin-top: 16px;
-                // background-color: #f0f;
+                margin-bottom: 12px;
+            }
+            a:hover {
+                text-decoration: underline;
             }
         }
     }
