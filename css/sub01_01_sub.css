@@ -64,8 +64,6 @@
   background-color: #7a6c64;
   border-radius: 15px;
   color: #fff;
-  position: sticky;
-  z-index: 500;
 }
 .d-day-wrap .d-day {
   width: 100%;
