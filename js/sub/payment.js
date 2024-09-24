@@ -1,6 +1,47 @@
 $(function(){
-    $().click(function(){
-        
+    $(".adult > .btn-down").click(function(){
+        let currentNumber = parseInt($(".adult > .num").text());
+        if(currentNumber > 0){
+            currentNumber -= 1;
+        }
+        $(".adult > .num").text(currentNumber);
+    })
+    $(".adult > .btn-up").click(function(){
+        let memberNumber = parseInt($(".adult > .mem-num").text());
+        let currentNumber = parseInt($(".adult > .num").text());
+        if(currentNumber < memberNumber){
+            currentNumber += 1;
+        }
+        $(".adult > .num").text(currentNumber);
+    })
+    $(".child > .btn-down").click(function(){
+        let currentNumber = parseInt($(".child > .num").text());
+        if(currentNumber > 0){
+            currentNumber -= 1;
+        }
+        $(".child > .num").text(currentNumber);
+    })
+    $(".child > .btn-up").click(function(){
+        let memberNumber = parseInt($(".child > .mem-num").text());
+        let currentNumber = parseInt($(".child > .num").text());
+        if(currentNumber < memberNumber){
+            currentNumber += 1;
+        }
+        $(".child > .num").text(currentNumber);
+    })
+    $(".bed > .btn-down").click(function(){
+        let currentNumber = parseInt($(".bed > .num").text());
+        if(currentNumber > 0){
+            currentNumber -= 1;
+        }
+        $(".bed > .num").text(currentNumber);
+    })
+    $(".bed > .btn-up").click(function(){
+        let currentNumber = parseInt($(".bed > .num").text());
+        if(currentNumber < 1){
+            currentNumber += 1;
+        }
+        $(".bed > .num").text(currentNumber);
     })
     $("#pay").click(function(e){
 
