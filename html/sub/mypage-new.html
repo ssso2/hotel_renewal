@@ -198,7 +198,7 @@
                     </ul>
                     <div class="content">
                         <!-- 회원정보 수정 -->
-                        <div class="mypage-info" id="mypage-info">
+                        <div class="mypage-info user-info-wrap" id="mypage-info">
                             <h2 class="title">회원정보</h2>
                             <div class="my-info">
                                 <p>아이디</p>
@@ -220,7 +220,7 @@
                                 <p>이메일</p>
                                 <span class="user-info">abcd@naver.com</span>
                             </div>
-                            <input type="button" id="edit" value="수정완료" data-lybtn="pop-alert"/>
+                            <input type="button" id="edit" value="회원정보수정"  onclick="location.href ='./mypage.html'"/>
                         </div>
                     </div>
                 </div>
@@ -329,23 +329,6 @@
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
 
-        <!-- alert -->
-        <div class="lypop" data-lyOpen="pop-alert" tabindex="0">
-            <div class="lypop-wp min">
-                <div class="lypop-content">
-                    <div class="lypop-title">
-                        <strong>타이틀</strong>
-                    </div>
-                    <div class="lypop-ct">
-                        <p class="modal-txt" style="padding: 20px 0; font-size: 18px; font-weight: 500;text-align: center;">
-                            회원 정보 수정이 완료 되었습니다.
-                        </p>
-                        <div class="btn-wrap type5">
-                            <button class="btn btn-04" data-lyClose="pop-mypage1"onclick="location.href ='#'"><span>확인</span></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </body>
 </html>
