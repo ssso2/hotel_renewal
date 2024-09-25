@@ -72,7 +72,7 @@ window.addEventListener("scroll",function(){
 mainHeader.addEventListener("mouseover",function(){
 
     mainHeader.classList.add("on"); //메인 헤더에 배경색이 들어가고 
-    mainLogo.setAttribute("src","../../img/common/logo.png"); //로고가 갈색으로 변경됨
+    mainLogo.setAttribute("src","../img/common/logo.png"); //로고가 갈색으로 변경됨
 
 });
 
@@ -82,12 +82,12 @@ mainHeader.addEventListener("mouseleave",function(){
     // 스크롤이 메인 비주얼 안에 있고, 햄버거버튼에 move 클래스가 있다면 
     if(scTop < mainCont1Height && mBtn.classList.contains("move")){
         mainHeader.classList.add("on");  // 메인 헤더에 배경색 유지
-        mainLogo.setAttribute("src","../../img/common/logo.png"); // 로고 갈색으로 유지
+        mainLogo.setAttribute("src","../img/common/logo.png"); // 로고 갈색으로 유지
     }
     // 스크롤이 메인 비주얼 안에 있고, 햄버거버튼에 move 클래스가 없다면
     else if(scTop < mainCont1Height && !mBtn.classList.contains("move")){
         mainHeader.classList.remove("on"); // 메인 헤더 배경이 투명해지고
-        mainLogo.setAttribute("src","../../img/common/logo-w.png"); // 로고 흰색으로 변경
+        mainLogo.setAttribute("src","../img/common/logo-w.png"); // 로고 흰색으로 변경
     }
 
 });
