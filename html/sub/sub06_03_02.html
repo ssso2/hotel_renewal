@@ -35,7 +35,7 @@
             <div class="center">
                 <h1 class="logo">
                     <a href="../index.html">
-                        <img src="../../img/common/logo.png" alt="">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -92,21 +92,22 @@
                         </ul>
                     </li>
                 </ul>
-                    <!-- 비로그인시 -->
-                    <div class="btn-wrap on">
-                        <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                        <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-                    </div>
-                    <!-- 로그인시 -->
-                    <div class="btn-wrap login">
-                        <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
-                            <i class="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </a>
-                        <a href="../../html/index.html" class="logout-btn">로그아웃
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap on">
+                    <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login">
+                    <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
+                        <i class="fa-regular fa-user"></i>
+                        <p>손주혜<span>님</span></p>
+                    </a>
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
                 <!-- 모바일 햄버거 버튼 -->
                 <div class="m_btn">
                     <div class="menu">
@@ -186,7 +187,7 @@
                 </li>
             </ul>
         </div>
-        <script>
+        <!-- <script>
             //작성시간 표시 스크립트 -- 추후 db 로 !!!
             const nowtime = new Date();
             const month = nowtime.getMonth() + 1;
@@ -195,7 +196,7 @@
             const minutes = nowtime.getMinutes();
 
             const registeredTime = '${month}/${date} ${hours}:${minutes}'; // 작성시간 표시
-        </script>
+        </script> -->
 
         <div class="container board">
             <div class="center">
@@ -228,7 +229,7 @@
                     <a href="sub06_03.html"><button class="list">목록으로</button></a>
                     <div class="button-container">
                         <a href="sub06_03_03.html"><button class="edit">수정</button></a>
-                        <a href="#"><button class="delete">삭제</button></a>
+                        <button class="delete" data-lybtn="pop-delete"><span>삭제</span></button>
                     </div>
                 </div>
             </div>
@@ -279,12 +280,18 @@
         <footer>
             <div class="center">
                 <div class="f_menu">
-                    <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo">
+                    <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo" />
                     <div>SNS</div>
                     <ul class="sns">
-                        <li><a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a></li>
+                        <li>
+                            <a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a>
+                        </li>
                     </ul>
                     <div>MENU</div>
                     <ul class="menu">
@@ -313,15 +320,15 @@
                     <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
                 </div>
                 <div class="info">
-                    <p>2024 Forbes Travel Guide<br>국내 최초 6년 연속 5성 호텔 수상</p>
-                    <p>한국 능률협회컨설팅 선정 <br>브랜드파워 호텔 부문 7년 연속 1위</p>
-                    <p>2024 한국생산성본부 선정<br>국가브랜드경쟁력지수 호텔 부문 1위</p>
-                    <p>한국표준협회 평가 <br>실내공기질 인증 획득</p>
-                    <p>한국환경산업기술원 평가 <br>친환경 호텔 인증 획득</p>
+                    <p>2024 Forbes Travel Guide<br />국내 최초 6년 연속 5성 호텔 수상</p>
+                    <p>한국 능률협회컨설팅 선정 <br />브랜드파워 호텔 부문 7년 연속 1위</p>
+                    <p>2024 한국생산성본부 선정<br />국가브랜드경쟁력지수 호텔 부문 1위</p>
+                    <p>한국표준협회 평가 <br />실내공기질 인증 획득</p>
+                    <p>한국환경산업기술원 평가 <br />친환경 호텔 인증 획득</p>
                 </div>
             </div>
         </footer>
-    
+
         <article class="floating-menu">
             <div class="menu">
                 <a href="../../html/sub/reservation.html" class="circle-btn" title="예약 페이지로 이동">예약</a>
@@ -329,5 +336,26 @@
             </div>
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
+
+        <div class="lypop" data-lyOpen="pop-delete">
+            <div class="lypop-wp min">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>게시물 삭제</strong>
+                    </div>
+                    <div class="lypop-ct">
+                        <p class="modal-txt"><span class="fc-blue">삭제</span> 하시겠습니까?</p>
+                        <div class="btn-wrap type3">
+                            <div class="align">
+                                <button class="btn btn-04" data-lyClose="pop-delete"><span>취소</span></button>
+                                <a href="sub06_03.html">
+                                    <button class="btn btn-05"><span>확인</span></button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

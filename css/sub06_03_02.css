@@ -182,3 +182,7 @@
 .container.board .button-wrap .button-container .edit:hover {
   background-color: #f0f0f0;
 }
+
+.lypop-title {
+  background-color: #7a6c64;
+}
