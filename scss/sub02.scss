@@ -1,6 +1,7 @@
 .room-intro{
     font-size: 18px;
     margin-bottom: 50px;
+    line-height: 1.5;
     .room-intro-txt{
         margin-bottom: 30px;
         font-size: 22px;
@@ -118,59 +119,15 @@
     .center {
         width: 95%;
     }
-    .room-intro{
-        font-size: 18px;
-        margin-bottom: 50px;
-        .room-intro-txt{
-            margin-bottom: 30px;
-            font-size: 22px;
-        }
-        .room-txt{
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-    }
-    .room-wrap{
-        h3{
-            font-size: 40px;
-            margin: 30px 0px;
-        }
-    }
-    .room-top-intro{
-        padding-top: 10px;
-        padding-bottom: 30px;
-    }
     .room-box-wrap{
         display: block;
         margin-bottom: 50px;
         .room-box{
-            margin-right: 40px;
             width: 100%;
             a{
-                display: block;
-                width: 100%;
-                .img-wrap{
-                    width: 100%;
-                    img{
-                        width: 100%;
-                    }
-                }
                 .txt-wrap{
-                    margin-top: 10px;
                     margin-bottom: 30px;
-                    padding: 10px 20px;
-                    h4{
-                        margin-bottom: 20px;
-                        font-size: 22px;
-                    }
-                    .room-top-txt{
-                        margin-bottom: 10px;
-                        font-size: 18px;
-                    }
                 }
-            }
-            &:nth-child(2n){
-                margin-right: 0;
             }
         }
     }
