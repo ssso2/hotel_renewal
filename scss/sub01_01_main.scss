@@ -251,7 +251,7 @@
 .sortbox,
 .typebox {
     height: 30px;
-    background: url(../../img/icon/icn_collps01.png) no-repeat right 10px center;
+    background: url(../img/icon/icn_collps01.png) no-repeat right 10px center;
     background-size: 10px auto;
     padding-left: 8px;
     line-height: 2;
@@ -280,7 +280,7 @@
 }
 .dropdown.on > .sortbox,
 .dropdown.on > .typebox {
-    background-image: url(../../img/icon/icn_collps02.png);
+    background-image: url(../../ShillaSeoul_teamproject/img/icon/icn_collps01.png);
 }
 
 .dropdown-item-sort > li,
@@ -421,7 +421,7 @@
         text-decoration: underline;
     }
     .pagepng {
-        background-image: url("../../img/common/bg_pageination.png");
+        background-image: url("../../ShillaSeoul_teamproject/img/icon/icn_collps02.png");
         width: 25px;
         height: 25px;
         border: none;
