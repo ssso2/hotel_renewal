@@ -1,5 +1,4 @@
 .form-wrap {
-    position: static;
     margin-top: 100px;
     top: 100%;
     left: 50%;
@@ -23,10 +22,38 @@
             margin-bottom: 20px;
         }
 
-        #check-all {
+        .check-all {
             margin-top: 20px;
-            margin-left: 43%;
-            text-align: center;
+            justify-content: center;
+            #agree-all {
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                background-color: #fff;
+                border: 2px solid #333;
+
+                &:checked {
+                    background-color: #333;
+                }
+                &:checked::after {
+                    content: '✓';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    color: #fff;
+                    font-size: 16px;
+                    font-style: initial;
+                    text-align: center;
+                    line-height: 15px;
+                }
+            }
+        }
+
+        .checkbox {
+            margin-top: 20px;
         }
     }
 
@@ -53,7 +80,6 @@
         display: flex;
         align-items: center;
 
-        #agree-all,
         #chk1,
         #chk2,
         #chk3 {
@@ -88,9 +114,7 @@
         width: calc(100% / 3);
         height: 40px;
         padding: 10px;
-        margin-left: calc(100% / 3);
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin: 50px auto;
         font-size: 16px;
         text-align: center;
         background-color: #7a6c64;

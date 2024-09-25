@@ -17,21 +17,36 @@
     }
 
     .text-container {
-        .title {
-            box-sizing: border-box;
-            display: block;
-            padding: 20px;
-            font-weight: bold;
-            border: 1px solid #e0e0e0;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .title-wrap {
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 20px 30px;
+                border: 1px solid #e0e0e0;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                .subject {
+                    font-size: 16px;
+                    font-weight: 800;
+                    text-align: left;
+                }
+                .writer,
+                .submit-time {
+                    text-align: right;
+                    line-height: 1.7;
+                }
+            }
         }
 
         .content {
             box-sizing: border-box;
             min-height: 500px;
-            padding: 20px;
+            line-height: 1.7;
+            padding: 20px 30px;
             overflow: auto;
             border: 1px solid #e0e0e0;
             border-top: none;
