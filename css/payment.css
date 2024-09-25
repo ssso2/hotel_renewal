@@ -210,19 +210,16 @@
     width: 95%;
   }
   .payment {
-    padding: 120px 0;
+    padding: 80px 0;
   }
   .payment h2 {
-    margin-bottom: 100px;
-    text-align: center;
-    font-size: 30px;
-    color: #7A6C64;
+    margin-bottom: 60px;
   }
   .payment .content {
     border-top: 2px solid #7A6C64;
   }
   .payment .content h3 {
-    margin: 30px 0px;
+    margin: 20px 0px;
     font-size: 22px;
     color: #333;
     letter-spacing: 1px;
@@ -230,35 +227,10 @@
   .payment .content .info, .payment .content .option, .payment .content .guide, .payment .content .agr {
     font-size: 16px;
     padding: 40px 0 50px;
-    border-bottom: 1px solid #ddd;
-  }
-  .payment .content .info .desc-wrap, .payment .content .option .desc-wrap, .payment .content .guide .desc-wrap, .payment .content .agr .desc-wrap {
-    padding-top: 30px;
-  }
-  .payment .content .info .desc-wrap .desc, .payment .content .option .desc-wrap .desc, .payment .content .guide .desc-wrap .desc, .payment .content .agr .desc-wrap .desc {
-    position: relative;
-    margin: 0 0 10px 0;
-    padding-left: 15px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #333;
-  }
-  .payment .content .info .desc-wrap .desc::before, .payment .content .option .desc-wrap .desc::before, .payment .content .guide .desc-wrap .desc::before, .payment .content .agr .desc-wrap .desc::before {
-    content: "*";
-    display: block;
-    position: absolute;
-    top: 3px;
-    left: 2px;
-  }
-  .payment .content .list {
-    margin-bottom: 20px;
-    display: flex;
-    line-height: 1.5;
   }
   .payment .content .list h4 {
     font-size: 18px;
     width: 300px;
-    color: #7A6C64;
   }
   .payment .content .list .box {
     margin-right: 20px;
@@ -293,14 +265,14 @@
     width: 100%;
   }
   .payment .content .info .room-img {
-    width: 50%;
-    margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 0px;
   }
   .payment .content .info .room-img img {
     width: 100%;
   }
   .payment .content .info .rsv-info {
-    margin-top: 50px;
+    margin-top: 0px;
   }
   .payment .content .info input {
     font-size: 16px;
