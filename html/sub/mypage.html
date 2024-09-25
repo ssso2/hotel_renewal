@@ -99,7 +99,7 @@
                     </div>
                     <!-- 로그인시 -->
                     <div class="btn-wrap login on">
-                        <a href="../../html/sub/mypage.html" class="user-name-btn" title="마이페이지로 이동">
+                        <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
                             <i class="fa-regular fa-user"></i>
                             <p>손주혜<span>님</span></p>
                         </a>
@@ -247,7 +247,7 @@
             const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
 
             function show_page(section) {
-                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info'];
+                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'withdrawal'];
                 sections.forEach(id => {
                     document.getElementById(id).style.display = id === section ? 'block' : 'none';
                 });
@@ -357,7 +357,7 @@
                             회원 정보 수정이 완료 되었습니다.
                         </p>
                         <div class="btn-wrap type5">
-                            <button class="btn btn-04" data-lyClose="pop-mypage1"onclick="location.href ='./mypage-new.html'"><span>확인</span></button>
+                            <button class="btn btn-04" data-lyClose="pop-mypage1" onclick="location.href ='./mypage-new.html'"><span>확인</span></button>
                         </div>
                     </div>
                 </div>
