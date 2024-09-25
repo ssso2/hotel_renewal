@@ -19,7 +19,7 @@
         justify-content: space-between;
         overflow: hidden;
         .list-container {
-            width: calc(50% - 20px);
+            width: calc((100% - 40px) / 2);
             border: 1px solid #ddd;
             margin-bottom: 40px;
             .txt-wrapper,
@@ -28,11 +28,13 @@
             }
             .img-wrapper {
                 width: 100%;
+                aspect-ratio: 1/0.639534;
                 margin-bottom: 16px;
+                overflow: hidden;
                 img {
                     display: block;
                     width: 100%;
-                    height: 440px;
+                    height: 100%;
                     object-fit: cover;
                 }
             }
@@ -49,9 +51,9 @@
                     text-align: center;
                 }
                 h3 {
-                    font-size: 30px;
+                    font-size: 22px;
                     font-weight: 700;
-                    padding: 20px 0 20px 0;
+                    padding: 20px 0;
                     @include ellipsis;
                 }
                 .offer-des {
@@ -92,12 +94,12 @@
     width: 100%;
     padding: 120px 0 20px 0;
     margin-bottom: 20px;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
     border-bottom: 1px solid #ddd;
 }
 
-// 스페셜오퍼 > 이벤트 상세페이지
+// 스페셜오퍼 > 이벤트 상세페이지(sub_01_02_0N.html)
 .event-header {
     width: 100%;
     img {
@@ -110,11 +112,11 @@
     margin: 100px 0 100px 0;
     border-bottom: 1px solid #ddd;
     h2 {
-        font-size: 32px;
+        font-size: 28px;
         padding-bottom: 10px;
     }
     p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.2;
     }
     .main-des {
@@ -177,7 +179,7 @@
         width: 100%;
         background-color: #fff;
         text-align: center;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 600;
         margin-bottom: 20px;
     }
@@ -230,330 +232,51 @@
     }
 }
 
-// 반응형
-@media screen and (max-width: 1500px) {
-    @mixin flex-center($justify: center, $align: center) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    @mixin ellipsis() {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    .event-container {
-        width: 100%;
-        height: 100%;
-        .list-item {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            overflow: hidden;
-            .list-container {
-                width: calc(50% - 20px);
-                border: 1px solid #ddd;
-                margin-bottom: 40px;
-                .txt-wrapper,
-                .bottom-wrapper {
-                    margin: 10px 24px 20px 24px;
-                }
-                .img-wrapper {
-                    width: 100%;
-                    margin-bottom: 16px;
-                    img {
-                        display: block;
-                        width: 100%;
-                        height: 440px;
-                        object-fit: cover;
-                    }
-                }
-                .txt-wrapper {
-                    font-size: 16px;
-                    .list-keword {
-                        display: inline-block;
-                        width: auto;
-                        padding: 8px 15px;
-                        height: 100%;
-                        color: #fff;
-                        background-color: #1f453a;
-                        border-radius: 5px;
-                        text-align: center;
-                    }
-                    h3 {
-                        font-size: 30px;
-                        font-weight: 700;
-                        padding: 20px 0 20px 0;
-                        @include ellipsis;
-                    }
-                    .offer-des {
-                        min-height: 42px;
-                        line-height: 1.3;
-                    }
-                    .offer-date {
-                        color: #757575;
-                        padding: 20px 0;
-                        border-bottom: 1px solid #757575;
-                    }
-                }
-                .bottom-wrapper {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    .offer-pay {
-                        font-weight: 600;
-                        font-size: 24px;
-                    }
-                    .event-btn {
-                        width: 130px;
-                        height: 40px;
-                        border: 1px solid #333;
-                        @include flex-center;
-                        &:hover {
-                            transition: background-color 0.4s ease;
-                            background-color: #7a6c64;
-                            color: #fff;
-                            border: none;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .event-title {
-        width: 100%;
-        padding: 120px 0 20px 0;
-        margin-bottom: 20px;
-        font-size: 30px;
-        font-weight: 700;
-        border-bottom: 1px solid #ddd;
-    }
-
-    // 스페셜오퍼 > 이벤트 상세페이지
-    .event-header {
-        width: 100%;
-        img {
-            width: 100%;
-        }
-    }
-    .event-section {
-        width: 100%;
-        padding-bottom: 40px;
-        margin: 100px 0 100px 0;
-        border-bottom: 1px solid #ddd;
-        h2 {
-            font-size: 32px;
-            padding-bottom: 10px;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.2;
-        }
-        .main-des {
-            margin: 40px 0 40px 0;
-            li {
-                line-height: 2;
-            }
-            li:nth-of-type(5) {
-                padding-top: 40px;
-            }
-        }
-    }
-    .event-pmt {
-        height: 100%;
-        background-color: #faf8f4;
-        padding: 25px 0 25px 25px;
-        line-height: 2;
-        margin-bottom: 50px;
-        & :first-of-type {
-            font-weight: 700;
-        }
-    }
-    .event-li {
-        & ul {
-            display: flex;
-            margin-bottom: 100px;
-            & li {
-                width: 100%;
-                margin-right: 300px;
-                line-height: 1.5;
-                img {
-                    width: 500px;
-                    height: 300px;
-                    margin-bottom: 20px;
-                }
-                & h3 {
-                    margin-bottom: 20px;
-                }
-            }
-        }
-    }
-    .a-wrap {
-        margin-bottom: 25px;
-        text-align: right;
-    }
-    .aList {
-        width: 180px;
-        height: 40px;
-        background: #7a6c64;
-        color: #fff;
-        text-align: center;
-        line-height: 3;
-    }
-    .other-event {
-        border-top: 2px solid #7a6c64;
-        padding: 100px 0 140px 0;
-        margin-top: 100px;
-        width: 100%;
-        .other-title {
-            width: 100%;
-            background-color: #fff;
-            text-align: center;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        .other-list {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            .other-item {
-                width: 30%;
-                overflow: hidden;
-                a {
-                    display: block;
-                    width: 100%;
-                    .img-box {
-                        width: 100%;
-                        position: relative;
-                        padding-top: 56.25%; // 일정높이 유지 16:9 비율
-                        overflow: hidden;
-                        img {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
-                    dl {
-                        width: 100%;
-                        dt {
-                            width: 100%;
-                            font-weight: 400;
-                            font-size: 22px;
-                            margin: 20px 0 20px 0;
-                            @include ellipsis();
-                        }
-                        .other-date {
-                            color: #ccc;
-                            border-bottom: 1px solid #ccc;
-                            padding-bottom: 20px;
-                        }
-                        .other-pay {
-                            padding-top: 20px;
-                            font-weight: 600;
-                            font-size: 24px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 //참고용
 // 박스영역의 너비 100%
 // 468/1420*100
 
 // 반응형
 @media screen and (max-width: 1500px) {
-    @mixin flex-center($justify: center, $align: center) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    @mixin ellipsis() {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+}
+// 태블릿
+@media screen and (max-width: 1240px) {
+}
+
+// 모바일
+@media screen and (max-width: 768px) {
     .event-container {
         width: 100%;
         height: 100%;
         .list-item {
             width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
             overflow: hidden;
             .list-container {
-                width: calc(50% - 20px);
-                border: 1px solid #ddd;
-                margin-bottom: 40px;
-                .txt-wrapper,
-                .bottom-wrapper {
-                    margin: 10px 24px 20px 24px;
-                }
+                width: 100%;
                 .img-wrapper {
-                    width: 100%;
-                    margin-bottom: 16px;
-                    img {
-                        display: block;
-                        width: 100%;
-                        height: 440px;
-                        object-fit: cover;
-                    }
+                    aspect-ratio: 2.204761;
                 }
                 .txt-wrapper {
-                    font-size: 16px;
-                    .list-keword {
-                        display: inline-block;
-                        width: auto;
-                        padding: 8px 15px;
-                        height: 100%;
-                        color: #fff;
-                        background-color: #1f453a;
-                        border-radius: 5px;
-                        text-align: center;
-                    }
+                    font-size: 13px;
                     h3 {
-                        font-size: 30px;
-                        font-weight: 700;
-                        padding: 20px 0 20px 0;
-                        @include ellipsis;
+                        font-size: 18px;
+                        padding: 14px 0;
                     }
                     .offer-des {
-                        min-height: 42px;
-                        line-height: 1.3;
+                        min-height: 20px;
+                        line-height: 1;
                     }
                     .offer-date {
-                        color: #757575;
-                        padding: 20px 0;
-                        border-bottom: 1px solid #757575;
+                        padding: 10px 0;
                     }
                 }
                 .bottom-wrapper {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
                     .offer-pay {
-                        font-weight: 600;
-                        font-size: 24px;
+                        font-size: 20px;
                     }
                     .event-btn {
-                        width: 130px;
-                        height: 40px;
-                        border: 1px solid #333;
-                        @include flex-center;
-                        &:hover {
-                            transition: background-color 0.4s ease;
-                            background-color: #7a6c64;
-                            color: #fff;
-                            border: none;
-                        }
+                        font-size: 12px;
+                        width: 120px;
                     }
                 }
             }
@@ -563,7 +286,7 @@
         width: 100%;
         padding: 120px 0 20px 0;
         margin-bottom: 20px;
-        font-size: 30px;
+        font-size: 22px;
         font-weight: 700;
         border-bottom: 1px solid #ddd;
     }
@@ -700,11 +423,4 @@
             }
         }
     }
-}
-// 태블릿
-@media screen and (max-width: 1240px) {
-}
-
-// 모바일
-@media screen and (max-width: 640px) {
 }
