@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+.container .depth3-tab-wrap .tab li {
+  width: 50%;
+}
+.container .depth3-tab-wrap .lost-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0;
+}
+.container .depth3-tab-wrap .lost-info .lost-id {
+  margin: 20px auto;
+}
+.container .depth3-tab-wrap .lost-info .comment {
+  text-align: center;
+}
+.container .depth3-tab-wrap .lost-info .comment p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px auto;
+}
+.container .depth3-tab-wrap .lost-info .indentity-confirm {
+  width: 150px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 30px;
+  font-size: 16px;
+  background-color: #7a6c64;
+  border: 2px solid #7a6c64;
+  box-sizing: border-box;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .depth3-tab-wrap .lost-info .indentity-confirm:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+.pw-chk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0;
+}
+.pw-chk .my-pw {
+  margin: 20px auto;
+}
+.pw-chk .comment {
+  text-align: center;
+}
+.pw-chk .comment p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px auto;
+}
+.pw-chk #edit {
+  width: 150px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 30px;
+  font-size: 16px;
+  background-color: #7a6c64;
+  border: 2px solid #7a6c64;
+  box-sizing: border-box;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pw-chk #edit:hover {
+  background-color: #333;
+  border-color: #333;
+}
+.pw-chk .input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.pw-chk .input-container label {
+  width: 100px;
+  font-size: 16px;
+  text-align: left;
+}
+.pw-chk .input-container input {
+  width: 400px;
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
