@@ -17,10 +17,6 @@ $(function () {
         $(".dropdown.type").removeClass("on");
     });
 
-    // daterangepicker
-    // if (window.location.pathname === "/html/sub/sub01_01.html") {
-    //     applyAutoUpdate = false;
-    // }
     $('input[name="daterange3"]').daterangepicker({
         minYear: 1000,
         maxYear: 9999,

@@ -11,6 +11,7 @@ const searchResultsTab = document.querySelectorAll(".search-results-wrap .tab > 
 const searchResultsTabCont = document.querySelectorAll(".search-results-wrap .tab-cont"); // 패키지/객실 탭 버튼에 따라 나오는 내용 부분
 
 const reservationBtn = document.querySelectorAll(".r-box .btn"); // 예약하기 버튼
+const arrowIcon1 = document.querySelectorAll(".r-box .btn i"); // 예약하기 버튼안에 있는 화살표 아이콘
 const roomTypeSelect = document.querySelectorAll(".room-type-select"); //룸 타입 선택하기 박스 전체
 const roomTypeRadio = document.querySelectorAll(".room-type-select input[type='radio']"); // 침대타입 선택하는 인풋 라디오버튼
 const cartBtn = document.querySelectorAll(".cart-btn"); //보관함담기 버튼
@@ -42,13 +43,23 @@ for(let i = 0; i < selectSortLi.length; i++){
         selectSortLi[i].classList.add("on");
         sortSelected.innerHTML = selectSortLi[i].textContent;
         selectSort.classList.remove("on");
+        sortSelected.classList.remove("on");
     });
 }
 
 
 // 예약하기 갯수만큼 
 for(let i = 0; i < reservationBtn.length; i++){
-    viewHide(reservationBtn[i],roomTypeSelect[i]);
+    reservationBtn[i].addEventListener("click",function(){
+        if(!roomTypeSelect[i].classList.contains("on")){
+            roomTypeSelect[i].classList.add("on");
+            reservationBtn[i].innerHTML = '닫기<i class="fa-solid fa-chevron-up"></i>';
+        }
+        else {
+            roomTypeSelect[i].classList.remove("on");
+            reservationBtn[i].innerHTML = '예약하기<i class="fa-solid fa-chevron-down"></i>';
+        }
+    });
 }
 
 viewHide(sortSelected,selectSort);
@@ -60,9 +71,11 @@ function viewHide(btn,item){
     btn.addEventListener("click",function(){
         if(!item.classList.contains("on")){
             item.classList.add("on");
+            btn.classList.add("on");
         }
         else {
             item.classList.remove("on");
+            btn.classList.remove("on");
         }
     });
 }

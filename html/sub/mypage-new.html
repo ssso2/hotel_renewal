@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>신라호텔 : FAQ</title>
+        <title>신라호텔 : 마이페이지</title>
         <!-- 구글 웹폰트 연결 -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="../../css/header.css" />
         <link rel="stylesheet" href="../../css/common.css" />
         <link rel="stylesheet" href="../../css/footer.css" />
-        <link rel="stylesheet" href="../../css/sub06_02_01.css" />
+        <link rel="stylesheet" href="../../css/mypage.css" />
         <!-- 작성자 : SSERA -->
         <!-- 제이쿼리 연결 -->
         <script src="../../js/common/jquery-ui.min.js"></script>
@@ -93,12 +93,12 @@
                     </li>
                 </ul>
                     <!-- 비로그인시 -->
-                    <div class="btn-wrap on">
+                    <div class="btn-wrap">
                         <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
                         <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
                     </div>
                     <!-- 로그인시 -->
-                    <div class="btn-wrap login">
+                    <div class="btn-wrap login on">
                         <a href="../../html/sub/mypage.html" class="user-name-btn" title="마이페이지로 이동">
                             <i class="fa-regular fa-user"></i>
                             <p>손주혜<span>님</span></p>
@@ -189,72 +189,101 @@
 
         <div class="container">
             <div class="center">
-                <h2 class="faq">FAQ</h2>
-                <div class="text-container">
-                    <div class="title">크리스마스 패키지 예약은 언제부터인가요?</div>
-                    <div class="content">패키지의 경우 이용일 60일 전부터 예약이 가능하며, 크리스마스 패키지의 경우 평균적으로 11월 초에 예약이 오픈됩니다.</div>
-                </div>
-
-                <!-- 목록 보기 -->
-                <div class="post-list">
-                    <ul class="board-nav">
-                        <li class="post-num">번호</li>
-                        <li class="post-title">제목</li>
-                        <li class="post-writer">작성자</li>
-                        <li class="post-date">작성일</li>
+                <div class="depth3-tab-wrap">
+                    <ul class="tab">
+                        <li class="tab0 on"><a href="mypage-new.html">회원정보</a></li>
+                        <li class="tab1"><a href="mypage.html">회원정보 수정</a></li>
+                        <li class="tab2"><a href="myreservation.html">예약내역 확인</a></li>
+                        <li class="tab3"><a href="myinquiry.html">문의내역 확인</a></li>
                     </ul>
-
-                    <ul class="post">
-                        <li class="post-num">1</li>
-                        <li class="post-title"><a href="sub06_02_01.html">호텔 예약은 언제부터 가능한가요?</a></li>
-                        <li class="post-writer">박세라</li>
-                        <li class="post-date">2024.09.20.</li>
-                    </ul>
-
-                    <ul class="post">
-                        <li class="post-num">2</li>
-                        <li class="post-title"><a href="sub06_02_02.html">발렛파킹 가능한가요?</a></li>
-                        <li class="post-writer">박세라</li>
-                        <li class="post-date">2024.09.21.</li>
-                    </ul>
-
-                    <ul class="post">
-                        <li class="post-num">3</li>
-                        <li class="post-title"><a href="sub06_02_03.html">예약한 객실을 변경하고 싶습니다.</a></li>
-                        <li class="post-writer">박세라</li>
-                        <li class="post-date">2024.09.21.</li>
-                    </ul>
-
-                    <ul class="post">
-                        <li class="post-num">4</li>
-                        <li class="post-title"><a href="sub06_02_04.html">크리스마스 패키지 예약은 언제부터인가요?</a></li>
-                        <li class="post-writer">박세라</li>
-                        <li class="post-date">2024.09.22.</li>
-                    </ul>
-
-                    <ul class="post">
-                        <li class="post-num">5</li>
-                        <li class="post-title"><a href="sub06_02_05.html">다이닝을 예약했는데 일정을 변경하고 싶어요.</a></li>
-                        <li class="post-writer">박세라</li>
-                        <li class="post-date">2024.09.23.</li>
-                    </ul>
-                </div>
-                <div class="list">
-                    <a href="sub06_02.html" type="button" id="btn-list">목록보기</a>
+                    <div class="content">
+                        <!-- 회원정보 수정 -->
+                        <div class="mypage-info" id="mypage-info">
+                            <h2 class="title">회원정보</h2>
+                            <div class="my-info">
+                                <p>아이디</p>
+                                <span class="user-info">center20240722</span>
+                            </div>
+                            <div class="my-info">
+                                <p>이름</p>
+                                <span class="user-info">손주혜</span>
+                            </div>
+                            <div class="my-info">
+                                <p>생년월일</p>
+                                <span class="user-info">1982년 5월 14일</span>
+                            </div>
+                            <div class="my-info">
+                                <p>연락처</p>
+                                <span class="user-info">010-0000-0000</span>
+                            </div>
+                            <div class="my-info">
+                                <p>이메일</p>
+                                <span class="user-info">abcd@naver.com</span>
+                            </div>
+                            <input type="button" id="edit" value="수정완료" data-lybtn="pop-alert"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
+
+            function show_page(section) {
+                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'withdrawal'];
+                sections.forEach(id => {
+                    document.getElementById(id).style.display = id === section ? 'block' : 'none';
+                });
+            }
+
+            function pw_chk() {
+                const inputPassword = document.getElementById('pw-chk').value; //입력한 비밀번호
+                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
+
+                if (inputPassword === correctPassword) {
+                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
+                    errorMessage.style.display = 'none';
+                    show_page('mypage-info'); //비밀번호가 맞으면 개인정보 변경 페이지 보여줌
+                } else {
+                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
+                    document.getElementById('pw-chk').value = ''; //비밀번호 입력란 초기화
+                    errorMessage.style.display = 'block';
+                }
+            }
+
+            function pw_chk2() {
+                const inputPassword = document.getElementById('pw-chk2').value; //입력한 비밀번호
+                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
+
+                if (inputPassword === correctPassword) {
+                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
+                    errorMessage.style.display = 'none';
+                    show_page('withdrawal'); //회원탈퇴 페이지
+                } else {
+                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
+                    document.getElementById('pw-chk2').value = ''; //비밀번호 입력란 초기화
+                    errorMessage.style.display = 'block';
+                }
+            }
+        </script>
 
         <!-- 푸터/플로팅 -->
         <footer>
             <div class="center">
                 <div class="f_menu">
-                    <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo">
+                    <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo" />
                     <div>SNS</div>
                     <ul class="sns">
-                        <li><a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a></li>
+                        <li>
+                            <a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a>
+                        </li>
                     </ul>
                     <div>MENU</div>
                     <ul class="menu">
@@ -283,15 +312,15 @@
                     <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
                 </div>
                 <div class="info">
-                    <p>2024 Forbes Travel Guide<br>국내 최초 6년 연속 5성 호텔 수상</p>
-                    <p>한국 능률협회컨설팅 선정 <br>브랜드파워 호텔 부문 7년 연속 1위</p>
-                    <p>2024 한국생산성본부 선정<br>국가브랜드경쟁력지수 호텔 부문 1위</p>
-                    <p>한국표준협회 평가 <br>실내공기질 인증 획득</p>
-                    <p>한국환경산업기술원 평가 <br>친환경 호텔 인증 획득</p>
+                    <p>2024 Forbes Travel Guide<br />국내 최초 6년 연속 5성 호텔 수상</p>
+                    <p>한국 능률협회컨설팅 선정 <br />브랜드파워 호텔 부문 7년 연속 1위</p>
+                    <p>2024 한국생산성본부 선정<br />국가브랜드경쟁력지수 호텔 부문 1위</p>
+                    <p>한국표준협회 평가 <br />실내공기질 인증 획득</p>
+                    <p>한국환경산업기술원 평가 <br />친환경 호텔 인증 획득</p>
                 </div>
             </div>
         </footer>
-    
+
         <article class="floating-menu">
             <div class="menu">
                 <a href="../../html/sub/reservation.html" class="circle-btn" title="예약 페이지로 이동">예약</a>
@@ -299,5 +328,24 @@
             </div>
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
+
+        <!-- alert -->
+        <div class="lypop" data-lyOpen="pop-alert" tabindex="0">
+            <div class="lypop-wp min">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>타이틀</strong>
+                    </div>
+                    <div class="lypop-ct">
+                        <p class="modal-txt" style="padding: 20px 0; font-size: 18px; font-weight: 500;text-align: center;">
+                            회원 정보 수정이 완료 되었습니다.
+                        </p>
+                        <div class="btn-wrap type5">
+                            <button class="btn btn-04" data-lyClose="pop-mypage1"onclick="location.href ='#'"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
