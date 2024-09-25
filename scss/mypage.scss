@@ -31,6 +31,22 @@
         transform: translate(-50%, -50%);
     }
 
+    .user-info-wrap {
+     
+        font-size: 18px;
+        .my-info {
+            justify-content: left !important;
+            width: 400px !important;
+            p {
+                padding-left: 30px;
+                width: 150px !important;
+            }
+            .user-info {padding-left: 30px;}
+        }
+
+    }
+
+
     .change-info-chk {
         display: flex;
         label {
@@ -94,9 +110,11 @@
         .my-info {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
             justify-content: center;
             flex-wrap: wrap;
+            width: 500px;
+            line-height: 2.5;
+            margin: 0 auto;
 
             p {
                 width: 100px;
@@ -123,7 +141,8 @@
         }
 
         #edit {
-            margin-left: 420px;
+            display: block;
+            margin: 50px auto;
             width: 500px;
             padding: 10px;
             border: none;
