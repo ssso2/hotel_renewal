@@ -368,6 +368,7 @@
                 .offer-des {
                     min-height: 42px;
                     line-height: 1.3;
+                    @include ellipsis();
                 }
                 .offer-date {
                     color: #757575;
