@@ -21,16 +21,40 @@ header .center {
   justify-content: space-between;
 }
 header .center > .btn-wrap {
-  display: block;
+  display: none;
   margin: 0;
 }
+header .center > .btn-wrap.on {
+  display: block;
+}
 header .center > .btn-wrap.login {
-  display: none;
+  line-height: 1;
+}
+header .center > .btn-wrap.login.on {
+  display: flex;
+  align-items: center;
+}
+header .center > .btn-wrap.login p {
+  margin: 0 30px 0 5px;
+  font-size: 17px;
+}
+header .center > .btn-wrap.login p span {
+  margin-left: 5px;
+  font-size: 15px;
+}
+header .center > .btn-wrap.login .logout-btn {
+  line-height: 1;
+}
+header .center > .btn-wrap.login .logout-btn + i {
+  position: relative;
+  top: 2px;
+  right: -3px;
 }
 header .center > .btn-wrap > a {
   font-size: 15px;
   line-height: 80px;
   font-weight: 500;
+  display: inline-block;
 }
 header .center > .btn-wrap > a:hover {
   color: #000;
@@ -39,8 +63,27 @@ header .center > .btn-wrap > a:hover {
 header .center > .btn-wrap > a:last-child {
   margin-left: 30px;
 }
+header .center > .btn-wrap > a.join-btn {
+  margin-right: 20px;
+}
+header .center > .btn-wrap > a.join-btn i {
+  margin-right: 5px;
+}
+header .center > .btn-wrap > a.user-name-btn {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+header .center > .btn-wrap > a.user-name-btn i {
+  position: relative;
+  top: 1px;
+}
+header .center > .btn-wrap > a.login-btn i {
+  margin-left: 5px;
+}
 header .logo {
   width: 150px;
+  height: 39px;
 }
 header .logo > a {
   width: 100%;

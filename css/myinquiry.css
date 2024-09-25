@@ -6,7 +6,8 @@
   width: 33.3333333333%;
 }
 .container #board-container {
-  margin-top: 20px;
+  margin-top: 100px;
+  margin-bottom: 140px;
 }
 .container #board-container .inquiry-info .myinquiry .title {
   margin-top: 80px;
