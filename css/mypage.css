@@ -98,8 +98,8 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 500px;
-  line-height: 2.5;
-  margin: 0 auto;
+  line-height: 1.5;
+  margin: 0 auto 20px;
 }
 .content .mypage-info .my-info p {
   width: 100px;
