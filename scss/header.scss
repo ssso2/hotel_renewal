@@ -23,17 +23,19 @@ header {
         justify-content: space-between;
 
         & > .btn-wrap {
-            display: block;
+            display: none;
             margin: 0;
+
+            &.on {display: block;}
     
             &.login {
-                display: none;
+                line-height: 1;
                 &.on {
                     display: flex;
                     align-items: center;
                 }
                 p {
-                    margin-right: 30px;
+                    margin:0 30px 0 5px;
                     font-size: 17px;
                     span {
                         margin-left: 5px;
@@ -68,6 +70,19 @@ header {
 
                 &.join-btn {
                     margin-right: 20px;
+                    i {margin-right: 5px;}
+                }
+                &.user-name-btn {
+                    line-height: 1;
+                    display: flex;
+                    align-items: center;
+                    i {
+                        position: relative;
+                        top: 1px;
+                    }
+                }
+                &.login-btn {
+                    i {margin-left: 5px;}
                 }
             }
         }

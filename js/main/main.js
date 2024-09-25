@@ -46,21 +46,23 @@ window.addEventListener("scroll",function(){
     if(scTop == 0){
         mainHeader.classList.add("active");
         mWrap.style.paddingTop = 80 + "px"
+        // mainLogo.setAttribute("src","../img/common/logo-w.png"); // 로고 흰색으로 변경
     }
     else if(scTop > lastScrollTop) {
         mainHeader.classList.remove("active");
         mWrap.style.paddingTop = 0 + "px"
+        // mainLogo.setAttribute("src","../img/common/logo.png"); //로고가 갈색으로 변경됨
     }
     else if(scTop > mainCont1Height && scTop < lastScrollTop){
         mainHeader.classList.add("active");
         mainHeader.classList.add("on");
-        mainLogo.setAttribute("src","../../img/common/logo.png");
+        mainLogo.setAttribute("src","../img/common/logo.png");
         mWrap.style.paddingTop = 80 + "px"
     }
     else if(scTop < mainCont1Height && scTop < lastScrollTop){
         mainHeader.classList.remove("on");
         mainHeader.classList.add("active");
-        mainLogo.setAttribute("src","../../img/common/logo-w.png");
+        mainLogo.setAttribute("src","../img/common/logo-w.png");
         mWrap.style.paddingTop = 80 + "px"
     }
 
