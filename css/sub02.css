@@ -132,6 +132,7 @@
   }
   .room-box-wrap {
     display: block;
+    margin-bottom: 50px;
   }
   .room-box-wrap .room-box {
     margin-right: 40px;
@@ -149,7 +150,7 @@
   }
   .room-box-wrap .room-box a .txt-wrap {
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     padding: 10px 20px;
   }
   .room-box-wrap .room-box a .txt-wrap h4 {
