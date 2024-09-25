@@ -235,7 +235,7 @@
                                 <p>이메일</p>
                                 <input type="text" id="mail" />
                             </label>
-                            <input type="button" id="edit" value="수정완료" />
+                            <input type="button" id="edit" value="수정완료" data-lybtn="pop-alert"/>
                         </div>
                     </div>
                 </div>
@@ -343,5 +343,24 @@
             </div>
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
+
+        <!-- alert -->
+        <div class="lypop" data-lyOpen="pop-alert" tabindex="0">
+            <div class="lypop-wp min">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>타이틀</strong>
+                    </div>
+                    <div class="lypop-ct">
+                        <p class="modal-txt" style="padding: 20px 0; font-size: 18px; font-weight: 500;text-align: center;">
+                            회원 정보 수정이 완료 되었습니다.
+                        </p>
+                        <div class="btn-wrap type5">
+                            <button class="btn btn-04" data-lyClose="pop-mypage1"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
