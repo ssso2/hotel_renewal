@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="../../css/header.css" />
         <link rel="stylesheet" href="../../css/common.css" />
         <link rel="stylesheet" href="../../css/footer.css" />
-        <link rel="stylesheet" href="../../css/myreservation.css" />
+        <link rel="stylesheet" href="../../css/findid.css" />
         <!-- 작성자 : SSERA -->
         <!-- 제이쿼리 연결 -->
         <script src="../../js/common/jquery-ui.min.js"></script>
@@ -186,44 +186,41 @@
             <div class="center">
                 <div class="depth3-tab-wrap">
                     <ul class="tab">
-                        <li class="tab1"><a href="mypage.html">회원정보 수정</a></li>
-                        <li class="tab2 on"><a href="myreservation.html">예약내역 확인</a></li>
-                        <li class="tab3"><a href="myinquiry.html">문의내역 확인</a></li>
+                        <li class="tab1 on"><a href="findid.html">아이디 찾기</a></li>
+                        <li class="tab2"><a href="findpw.html">비밀번호 찾기</a></li>
                     </ul>
-                    <div class="content">
-                        <!-- 예약확인/취소 -->
-                        <div class="reservate-info" id="reservate-info">
-                            <div class="reservation">
-                                <!-- 객실 예약 내역 -->
-                                <div class="info-title">객실 예약내역</div>
-                                <div class="reser-room">
-                                    <div class="room"><img src="../../img/sub/roomSuiteRoyal01.jpg" /></div>
-                                    <div class="reservation-info">
-                                        <div class="info-item">객실타입: 이그제큐티브</div>
-                                        <div class="info-item">예약일자: 2023-09-24 ~ 2023-09-25(1박)</div>
-                                        <div class="info-item">체크인 시간: 15:00</div>
-                                        <div class="info-item">체크아웃 시간: 11:00</div>
-                                        <div class="info-item">이용 인원: 2명</div>
-                                    </div>
-                                </div>
-                                <!-- 패키지 예약 내역 -->
-                                <div class="info-title">패키지 예약내역</div>
-                                <div class="reser-package">
-                                    <div class="package"><img src="../../img/sub/urban-01.jpg" /></div>
-                                    <div class="reservation-info">
-                                        <div class="info-item">패키지명: [성인3인] 어번 아일랜드 All Day 입장 + 엑스트라베드 1대 제공</div>
-                                        <div class="info-item">예약일자: 2023-10-24 ~ 2023-10-25(1박)</div>
-                                        <div class="info-item">체크인 시간: 15:00</div>
-                                        <div class="info-item">체크아웃 시간: 11:00</div>
-                                        <div class="info-item">이용 인원: 2명</div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="lost-info" id="lost-info">
+                        <h2 class="lost-id">아이디를 잊으셨나요?</h2>
+                        <div class="comment">
+                            <p>휴대폰 본인인증을 통해 아이디를 확인하실 수 있습니다.</p>
+                            <p>휴대폰 인증의 경우 회원님 명의로 되어있는 휴대폰 번호를 통해서 본인확인 과정을 거치게 됩니다.</p>
+                            <p>회원님의 개인정보와 일치하지 않는 소유자의 휴대폰일 경우, 확인이 이루어지지 않습니다.</p>
                         </div>
+                        <button type="button" class="indentity-confirm" onclick="show_page('id-chk')">본인인증</button>
                     </div>
+
+                    <!-- 아이디 확인 페이지 -->
+                </div>
+                <div class="id-chk" id="id-chk" style="display: none">
+                    <h2 class="my-id">아이디 확인</h2>
+                    <div class="comment">
+                        <p>고객님의 아이디는</p>
+                        <span>endorp*****</span>
+                        <p>입니다.</p>
+                    </div>
+                    <input type="button" id="login" value="로그인 하기" />
                 </div>
             </div>
         </div>
+        <script>
+            function show_page(section) {
+                const sections = ['lost-info', 'id-chk'];
+                sections.forEach(id => {
+                    document.getElementById(id).style.display = id === section ? 'flex' : 'none';
+                });
+            }
+        </script>
+
         <!-- 푸터/플로팅 -->
         <footer>
             <div class="center">
