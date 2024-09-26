@@ -383,7 +383,10 @@ header {
         .center {
             height: 80px;
             align-items: center;
-            & > .btn-wrap {display: none;}
+            & > .btn-wrap {
+                display: none;
+                &.on {display: none;}
+            }
         }
         
     }
