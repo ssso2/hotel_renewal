@@ -746,4 +746,61 @@ body::-webkit-scrollbar-track {
     color: #000;
     vertical-align: middle;
   }
+  /* 3depth tab 공통 */
+  .depth3-tab-wrap {
+    padding-top: 100px;
+    /* tab */
+  }
+  .depth3-tab-wrap .tab {
+    border-bottom: 0;
+    flex-wrap: wrap;
+  }
+  .depth3-tab-wrap .tab > li {
+    margin-bottom: 0;
+    margin-right: -1px;
+    min-width: 25%;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-right: 0;
+  }
+  .depth3-tab-wrap .tab > li:last-child, .depth3-tab-wrap .tab > li:nth-child(4) {
+    border-right: 1px solid #ddd;
+  }
+  .depth3-tab-wrap .tab > li:nth-child(5), .depth3-tab-wrap .tab > li:nth-child(6), .depth3-tab-wrap .tab > li:nth-child(7) {
+    border-top: transparent;
+  }
+  .depth3-tab-wrap .tab > li.on {
+    border: 1px solid #7a6c64;
+    background-color: #7a6c64;
+    color: #fff;
+  }
+  /* 레이어 팝업 */
+  .lypop-wp.mid {
+    width: 95vw !important;
+  }
+  .lypop-wp.big {
+    width: 95vw !important;
+  }
+  .lypop-wp.max {
+    width: 95vw !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .center {
+    width: 95%;
+  }
+  /* 3depth tab 공통 */
+  .depth3-tab-wrap {
+    /* tab */
+  }
+  .depth3-tab-wrap .tab > li {
+    font-size: 12px;
+  }
+  /* 레이어 팝업 */
+  .lypop .btn-wrap {
+    margin: 70px 0 0;
+  }
+  .lypop-wp {
+    width: 95vw !important;
+  }
 }
