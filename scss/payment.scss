@@ -10,12 +10,14 @@
     .content{
         border-top: 2px solid #7A6C64;
 
-
+        
         h3 {
-            margin: 60px 0;
+            margin: 40px 0;
             font-size: 25px;
             color:  #333;
             letter-spacing: 1px;
+            padding: 20px 0;
+            border-bottom: 1px solid #292929;
         }
         
         .info, .option, .guide, .agr {
@@ -85,13 +87,13 @@
         .info{
             display: flex;
             flex-wrap: wrap;
-            gap: 50px;
             h3{
                 width: 100%;
             }
             .room-img{
                 width: 50%;
                 margin-bottom: 30px;
+                margin-right: 40px;
                 img{
                     width: 100%;
                 }
@@ -237,7 +239,6 @@
     
         .content{    
             h3 {
-                margin: 0 0 60px;
                 text-align: center;
             }
             

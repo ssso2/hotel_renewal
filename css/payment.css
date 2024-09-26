@@ -11,10 +11,12 @@
   border-top: 2px solid #7A6C64;
 }
 .payment .content h3 {
-  margin: 60px 0;
+  margin: 40px 0;
   font-size: 25px;
   color: #333;
   letter-spacing: 1px;
+  padding: 20px 0;
+  border-bottom: 1px solid #292929;
 }
 .payment .content .info, .payment .content .option, .payment .content .guide, .payment .content .agr {
   font-size: 16px;
@@ -79,7 +81,6 @@
 .payment .content .info {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
 }
 .payment .content .info h3 {
   width: 100%;
@@ -87,6 +88,7 @@
 .payment .content .info .room-img {
   width: 50%;
   margin-bottom: 30px;
+  margin-right: 40px;
 }
 .payment .content .info .room-img img {
   width: 100%;
@@ -217,7 +219,6 @@
     margin-bottom: 60px;
   }
   .payment .content h3 {
-    margin: 0 0 60px;
     text-align: center;
   }
   .payment .content .info, .payment .content .option, .payment .content .guide, .payment .content .agr {
