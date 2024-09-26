@@ -461,7 +461,8 @@ main {
                     }
                     .img-wrap {
                         width: 100%;
-                        height: 250px;
+                        height: auto;
+                        aspect-ratio: 1 / 0.568181;
                         overflow: hidden;
                         & > img {
                             width: 100%;
@@ -902,5 +903,1041 @@ main {
             }
         }
     }
+}
+
+// 태블릿
+@media screen and (max-width:1240px){
+
+    main {
+
+        // cont1. 메인 비주얼
+        .cont1 {
+            .swiper {
+                height: 70vh;
+                min-height: 600px;
+            }
+          
+            .swiper-slide {
+                .txt-box {
+                    position: absolute;
+                    left: 50px;
+                    bottom: 15%;
+                    text-align: left;
+                    z-index: 2;
+                    & > span {
+                        padding: 2px 5px;
+                        background: #FAF8F4;
+                        color: #7A6C64;
+                        font-weight: 500;
+                        border-radius: 4px;
+                    }
+                    & > h2 {
+                        margin: 15px 0 25px;
+                        font-size: 35px;
+                        letter-spacing: 2px;
+                        & > span {
+                            font-size: 45px;
+                        }
+                    }
+                    & > p {
+                        font-size: 19px;
+                        width: 70%;
+                        line-height: 1.5;
+                    }
+                }
+    
+                .pkg-link {
+                    bottom: 15%;
+                    right: 20px;
+                    padding: 15px 25px;
+                    font-size: 19px;
+                }
+            }
+            .swiper-pagination-bullets.swiper-pagination-horizontal {
+                bottom: var(--swiper-pagination-bottom, 15px);
+            }
+            .swiper-button-next {
+                right: var(--swiper-navigation-sides-offset, 20px);
+            }
+            .swiper-button-prev {
+                left: var(--swiper-navigation-sides-offset, 20px);
+            }
+        }
+    
+        // cont2. 메인 예약 폼
+        .cont2 {
+            padding: 100px 0;
+            .reservation-wrap {
+                font-size: 25px;
+    
+                .date-wrap {
+                    width: calc((100% - 120px) * 0.55);
+                    .date {
+                        font-size: 25px;
+                    }
+                }
+    
+                .room-wrap {
+                    width: calc((100% - 120px) * 0.45);
+                }
+    
+                .search {
+                    width: 120px;
+                    font-size: 25px;
+                }
+    
+                .reservation-popup {
+                    padding: 30px;
+                    
+                    .popup-left {
+                        width: 65%;
+                        & > li {
+    
+                            .tit {
+                                margin: 0;
+                                font-size: 20px;
+                            }
+    
+                            .count-wrap {
+                                // padding: 20px 10px;
+                                font-size: 18px;
+                                .btn-down, .btn-up {
+                                    width: 15px;
+                                    height: 15px;
+                                }
+                                & > p {
+                                    margin: 0 20px;
+                                }
+                            }
+                        }
+    
+                    }
+    
+                    .popup-right {
+                        width: 30%;
+                        .desc {
+                            margin: 0;
+                            font-size: 15px;
+                            font-weight: 400;
+                            line-height: 1.7;
+                            color: #666;
+                        }
+    
+                        & > button {
+                            margin-top: 10px;
+                            padding: 10px 0;
+                            width: 150px;
+                            font-size: 18px;
+                        }
+                    }
+    
+                    .close-btn {
+                        top: 10px;
+                        right: 10px;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    
+        // cont3. 메인 스페셜 오퍼
+        .cont3 {
+            padding: 20px 0 120px;
+            .special-list {
+                & > li {
+                    width: calc((100% - 50px) / 2);
+
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    
+        // cont4. 객실
+        .cont4 {
+            padding:20px 0 120px;
+
+            .back {
+                position: relative;
+                min-height: 200px;
+                width: 0;
+                transition: all 0.5s;
+    
+                &:hover {
+                    width: 100%;
+                    color: #fff;
+                    h3 {
+                        color: #f5ead5;
+                    }
+                    &:nth-child(2) {
+                        background: url(../img/main/bg-standard.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    }
+                    &:nth-child(3) {
+                        background: url(../img/main/bg-executive.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    }
+                    &:nth-child(4) {
+                        background: url(../img/main/bg-suite.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    }
+                    &:nth-child(5) {
+                        background: url(../img/main/bg-lounge.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    }
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 200px;
+                        background: rgba(0,0,0,0.5);
+                    }
+                }
+                &:nth-child(5) {
+                    .center {
+                        padding: 81px 0;
+                        h3 > a {
+                            margin: 0;
+                        }
+                    }
+                }
+                .center-wrap {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: calc(100vw - 10px);
+                }
+    
+                .center {
+                    padding: 57px 0;
+                    min-height: 200px;
+                    border-bottom: 1px solid #ddd;
+    
+                    h3 {
+                        & > a {
+                            margin-bottom: 20px;
+                            font-size: 27px;
+                            letter-spacing: 1.3px;
+                            & > span {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                    .type {
+                        display: flex;
+                        align-items: center;
+                        & > li {
+                            padding: 0 20px;
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child > a::after {
+                                display: none;
+                            }
+                            & > a {
+                                position: relative;
+                                font-size: 20px;
+                                font-weight: 500;
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    right: -20px;
+                                    width: 1px;
+                                    height: 20px;
+                                    background: #aaa;
+                                }
+                                &::before {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        bottom: -10px;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        width: 0;
+                                        height: 1px;
+                                        background: #fff;
+                                        transition: all 0.2s;
+                                }
+                                &:hover {
+                                    &::before {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        // cont5. 멤버십 안내
+        .cont5 {
+            padding: 20px 0 120px;
+            background: #F6F6F6;
+            text-align: center;
+            .title_box {
+                .en-tit {
+                    &:after {
+                        width: 180px;
+                    }
+                }
+            }
+    
+            .benefit {
+                display: flex;
+                justify-content: space-between;
+                .list {
+                    position: relative;
+                    width: calc((100% - 300px) / 3);
+                    text-align: left;
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        top: 50%;
+                        right: -50px;
+                        transform: translateY(-50%);
+                        width: 1px;
+                        height: 100%;
+                        background: #cacaca;
+                    }
+                    &:last-child::after {
+                        display: none;
+                    }
+                    &:nth-child(1) > a:hover > h3::after {
+                        width: 95px;
+                    }
+                    &:nth-child(2) > a:hover > h3::after {
+                        width: 110px;
+                    }
+                    &:nth-child(3) > a:hover > h3::after {
+                        width: 80px;
+                    }
+                    & > a {
+                        display: block;
+                        padding-left: 90px;
+                        width: 100%;
+                        height: 100%;
+    
+    
+                        > i {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            font-size: 60px;
+                        }
+                        > h3 {
+                            margin-bottom: 10px;
+                            position: relative;
+                            &::after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                bottom: -5px;
+                                left: 0;
+                                width: 0;
+                                height: 1px;
+                                background: #000;
+                                transition: all 0.2s;
+                            }
+                        }
+                        > p {
+                            line-height: 1.4;
+                        }
+                    }
+                }
+            }
+    
+    
+        }
+    
+        // cont6. 갤러리
+        .cont6 {
+            padding: 70px 0;
+            text-align: center;
+            .title_box {
+                .en-tit {
+                    &:after {
+                        width: 130px;
+                    }
+                }
+            }
+            iframe {
+                border-radius: 16px;
+            }
+        }
+    
+    
+    }
+    
+}
+
+// 모바일
+@media screen and (max-width:768px){
+
+    main {
+        padding-bottom: 150PX;
+    
+        .title_box {
+            text-align: center;
+            .cont-tit {
+                padding: 70px 0 10px;
+                font-size: 30px;
+                letter-spacing: 2PX;
+            }
+            .en-tit {
+                position: relative;
+                padding: 10px 0 50px;
+                font-size: 17px;
+                letter-spacing: 3PX;
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 2px;
+                    background: #7A6C64;
+                }
+            }
+        }
+        // cont1. 메인 비주얼
+        .cont1 {
+            .swiper {
+                height: 70vh;
+                min-height: 600px;
+            }
+          
+            .swiper-slide {
+                .txt-box {
+                    left: 50%;
+                    bottom: 40%;
+                    transform: translateX(-50%);
+                    width: calc(100% - 120px);
+                    & > h2 {
+                        width: 100%;
+                        font-size: 30px;
+                        & > span {
+                            font-size: 40px;
+                        }
+                    }
+                    & > p {
+                        width: 100%;
+                        font-size: 18px;
+                        line-height: 1.5;
+                    }
+                }
+    
+                .pkg-link {
+                    bottom: 15%;
+                    right: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 10px 20px;
+                    text-align: center;
+                    border: 4px solid #fff;
+                    font-size: 18px;
+                }
+            }
+            .swiper-pagination-bullets.swiper-pagination-horizontal {
+                bottom: var(--swiper-pagination-bottom, 10px);
+            }
+            .swiper-pagination-bullet {
+                width: 25px;
+                height: 12px;
+                border: 2px solid #fff;
+            }
+            .swiper-button-next {
+                right: var(--swiper-navigation-sides-offset, 10px);
+            }
+            .swiper-button-prev {
+                left: var(--swiper-navigation-sides-offset, 10px);
+            }
+        }
+    
+        // cont2. 메인 예약 폼
+        .cont2 {
+            padding: 120px 0;
+            .reservation-wrap {
+                display: flex;
+                align-items: center;
+                font-size: 30px;
+                position: relative;
+    
+                .tit {
+                    display: block;
+                    margin-bottom: 15px;
+                    font-size: 15px;
+    
+                }
+    
+                .date-wrap {
+                    position: relative;
+                    padding: 2px 0;
+                    width: calc((100% - 170px) * 0.45);
+                    height: 77px;
+                    border: 1px dashed transparent;
+                    .tit {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                    .date {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        padding-top: 40px;
+                        width: 100%;
+                        font-size: 30px;
+                        letter-spacing: 1px;
+                        color: #000;
+                        background: transparent;
+                    }
+                    &:hover {
+                        border-color: #7A6C64;
+                    }
+                }
+    
+                .room-wrap {
+                    display: flex;
+                    align-items: center;
+                    padding: 8.5px 0;
+                    width: calc((100% - 170px) * 0.55);
+                    border: 1px dashed transparent;
+                    cursor: pointer;
+                    .box {
+                        width: calc(100% / 3);
+                        border-left: 1px solid #ddd;
+                        text-align: center;
+                    }
+                    &:hover {
+                        border-color: #7A6C64;
+                    }
+                }
+    
+                .search {
+                    display: block;
+                    width: 200px;
+                    border: 2px solid #7A6C64;
+                    text-align: center;
+                    font-size: 25px;
+                    font-weight: 500;
+                    line-height: 73px;
+                }
+    
+                .reservation-popup {
+                    & > form {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    position: absolute;
+                    bottom: 100px;
+                    left: 0;
+                    display: none;
+                    padding: 100px 200px;
+                    border: 1px solid #ddd;
+                    width: 100%;
+                    background: #fff;
+                    z-index: 2;
+    
+                    &.on {display: block;}
+                    
+                    .popup-left {
+                        width: 70%;
+                        & > li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 50px;
+    
+                            .tit {
+                                margin: 0;
+                                font-size: 25px;
+                            }
+    
+                            .count-wrap {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 20px 10px;
+                                border-bottom: 1px solid #ddd;
+                                font-size: 18px;
+                                .btn-down, .btn-up {
+                                    position: relative;
+                                    width: 18px;
+                                    height: 18px;
+                                    &::before {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 0;
+                                        transform: translateY(-50%);
+                                        width: 100%;
+                                        height: 1px;
+                                        background: #000;
+                                    }
+                                }
+                                .btn-up {
+                                    &::after {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%,-50%);
+                                        width: 1px;
+                                        height: 100%;
+                                        background: #000;
+                                    }
+                                }
+                                & > p {
+                                    margin: 0 50px;
+    
+                                    .num {
+                                        margin-left: 5px;
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+    
+                            &:first-child {
+                                .count-wrap {
+                                    border-bottom-color: #333;
+                                }
+                            }
+    
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+    
+                    }
+    
+                    .popup-right {
+                        width: 22%;
+                        .desc {
+                            margin: 0;
+                            font-size: 17px;
+                            font-weight: 400;
+                            line-height: 1.7;
+                            color: #666;
+                        }
+    
+                        & > button {
+                            display: inline-block;
+                            margin-top: 10px;
+                            padding: 15px 0;
+                            border: 2px solid #333;
+                            width: 180px;
+                            text-align: center;
+                            font-size: 20px;
+                            font-weight: 500;
+                        }
+                    }
+    
+                    .close-btn {
+                        position: absolute;
+                        top: 30px;
+                        right: 30px;
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+    
+                        &::before, &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            // top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background: #000;
+                        }
+                        &::before {
+                            width: 1px;
+                            height: 100%;
+                            top: 50%; 
+                            transform: translateY(-50%) rotate(45deg);
+                        }
+                        &::after {
+                            width: 1px;
+                            height: 100%;
+                            bottom: 50%; 
+                            transform: translateY(50%) rotate(-45deg);
+                        }
+    
+                    }
+                }
+            }
+        }
+    
+        // cont3. 메인 스페셜 오퍼
+        .cont3 {
+            padding: 50px 0 150px;
+            background: #f6f6f6;
+            .title_box {
+                position: relative;
+                .en-tit {
+                    &:after {
+                        width: 220px;
+                    }
+                }
+                .view-more {
+                    display: inline-block;
+                    position: absolute;
+                    bottom: 50px;
+                    right: 0;
+                    font-size: 20px;
+                    &:hover {
+                        text-decoration: underline;
+                        text-underline-position: under;
+                        text-decoration-color: #999;
+                    }
+                    & > span {
+                        display: inline-block;
+                        margin-right: 10px;
+                        font-size: 20px;
+                        
+                    }
+                }
+            }
+            .special-list {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                & > li {
+                    width: calc((100% - 100px) / 3);
+                    & > a {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 8px;
+                        box-shadow: 5px 5px 10px rgba(0,0,0,0);
+                        overflow: hidden;
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(255,255,255,0.5);
+                            opacity: 0;
+                            transition: all 0.5s;
+                        }
+                        &:hover::after {
+                            opacity: 1;
+                        }
+                        &:hover {
+                            box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+                            .img-wrap {
+                                & > img {
+                                    transform: scale(1.1);
+                                }
+                            }
+                            .view-more {
+                                opacity: 1;
+                            }
+                        }
+                        .img-wrap {
+                            width: 100%;
+                            height: 250px;
+                            overflow: hidden;
+                            & > img {
+                                width: 100%;
+                                height: 100%;
+                                transition: all 0.5s;
+                            }
+                        }
+                        .txt-wrap {
+                            padding: 30px 20px 50px;
+                            height: 200px;
+                            background: #fff;
+                            h3 {
+                                margin-bottom: 30px;
+                                font-size: 23px;
+                                font-weight: 600;
+                                letter-spacing: 1.2px;
+                                & > span {
+                                    font-size: 30px;
+                                }
+                            }
+                            .date {
+                                margin-bottom: 20px;
+                                padding-left: 25px;
+                                position: relative;
+                                font-size: 17px;
+                            }
+                            .price {
+                                padding-left: 25px;
+                                position: relative;
+                                font-size: 18px;
+                                font-weight: 600;
+                            }
+                            i {
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                transform: translateY(-50%);
+                                font-size: 15px;
+                            }
+                        }
+                        .view-more {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            transition: all 0.4s;
+                            & > span {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%,-50%);
+                                width: 150px;
+                                aspect-ratio: 1/1;
+                                border-radius: 50%;
+                                text-align: center;
+                                font-size: 17px;
+                                font-weight: 500;
+                                line-height: 150px;
+                                background: #fff;
+                                box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        // cont4. 객실
+        .cont4 {
+            padding:70px 0 170px;
+            
+            .title_box {
+                .en-tit {
+                    &:after {
+                        width: 100px;
+                    }
+                }
+            }
+            .back {
+                position: relative;
+                min-height: 200px;
+                width: 0;
+                transition: all 0.5s;
+    
+                &:hover {
+                    width: 100%;
+                    color: #fff;
+                    h3 {
+                        color: #f5ead5;
+                    }
+                    &:nth-child(2) {
+                        background: url(../img/main/bg-standard.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    }
+                    &:nth-child(3) {
+                        background: url(../img/main/bg-executive.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    }
+                    &:nth-child(4) {
+                        background: url(../img/main/bg-suite.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    }
+                    &:nth-child(5) {
+                        background: url(../img/main/bg-lounge.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    }
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 200px;
+                        background: rgba(0,0,0,0.5);
+                    }
+                }
+                &:nth-child(5) {
+                    .center {
+                        padding: 81px 0;
+                        h3 > a {
+                            margin: 0;
+                        }
+                    }
+                }
+                .center-wrap {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: calc(100vw - 10px);
+                }
+    
+                .center {
+                    padding: 57px 0;
+                    min-height: 200px;
+                    border-bottom: 1px solid #ddd;
+    
+                    h3 {
+                        & > a {
+                            margin-bottom: 30px;
+                            font-size: 35px;
+                            letter-spacing: 1.3px;
+                            & > span {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                    .type {
+                        display: flex;
+                        align-items: center;
+                        & > li {
+                            padding: 0 20px;
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:last-child > a::after {
+                                display: none;
+                            }
+                            & > a {
+                                position: relative;
+                                font-size: 20px;
+                                font-weight: 500;
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    right: -20px;
+                                    width: 1px;
+                                    height: 20px;
+                                    background: #aaa;
+                                }
+                                &::before {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        bottom: -10px;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        width: 0;
+                                        height: 1px;
+                                        background: #fff;
+                                        transition: all 0.2s;
+                                }
+                                &:hover {
+                                    &::before {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        // cont5. 멤버십 안내
+        .cont5 {
+            padding: 20px 0 120px;
+            background: #F6F6F6;
+            text-align: center;
+            .title_box {
+                .en-tit {
+                    &:after {
+                        width: 180px;
+                    }
+                }
+            }
+    
+            .benefit {
+                display: flex;
+                justify-content: space-between;
+                .list {
+                    position: relative;
+                    width: calc((100% - 300px) / 3);
+                    text-align: left;
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        top: 50%;
+                        right: -50px;
+                        transform: translateY(-50%);
+                        width: 1px;
+                        height: 100%;
+                        background: #cacaca;
+                    }
+                    &:last-child::after {
+                        display: none;
+                    }
+                    &:nth-child(1) > a:hover > h3::after {
+                        width: 95px;
+                    }
+                    &:nth-child(2) > a:hover > h3::after {
+                        width: 110px;
+                    }
+                    &:nth-child(3) > a:hover > h3::after {
+                        width: 80px;
+                    }
+                    & > a {
+                        display: block;
+                        padding-left: 90px;
+                        width: 100%;
+                        height: 100%;
+    
+    
+                        > i {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            font-size: 60px;
+                        }
+                        > h3 {
+                            margin-bottom: 10px;
+                            position: relative;
+                            &::after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                bottom: -5px;
+                                left: 0;
+                                width: 0;
+                                height: 1px;
+                                background: #000;
+                                transition: all 0.2s;
+                            }
+                        }
+                        > p {
+                            line-height: 1.4;
+                        }
+                    }
+                }
+            }
+    
+    
+        }
+    
+        // cont6. 갤러리
+        .cont6 {
+            padding: 70px 0;
+            text-align: center;
+            .title_box {
+                .en-tit {
+                    &:after {
+                        width: 130px;
+                    }
+                }
+            }
+            iframe {
+                border-radius: 16px;
+            }
+        }
+    
+    
+    }
+    
 }
 
