@@ -238,6 +238,9 @@ body::-webkit-scrollbar-track {
   margin-bottom: 30px;
   border-bottom: 1px solid #888;
 }
+.depth3-tab-wrap .tab.mo-show {
+  display: none;
+}
 .depth3-tab-wrap .tab.on {
   position: fixed;
   top: 0;

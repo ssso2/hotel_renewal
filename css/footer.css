@@ -144,3 +144,13 @@ footer .info > p:nth-of-type(4)::before {
 footer .info > p:nth-of-type(5)::before {
   background-image: url(../../img/main/mark-seoul-5.jpg);
 }
+
+@media screen and (max-width: 768px) {
+  footer .center {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  footer .f_bot {
+    order: 3;
+  }
+}
