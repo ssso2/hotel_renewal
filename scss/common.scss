@@ -721,16 +721,72 @@ body::-webkit-scrollbar-track {
         width: 90%;
     }
 
+    /* 플로팅 메뉴 */
+    .floating-menu {
+        .menu {
+            top: 83%;
+        }
+    }
+
     // daterangepicker 팜업
     .daterangepicker {
-        padding: 50px 100px;
-        width: auto;
-
+        padding: 50px 120px;
+        width: 98%;
+        left: 10px !important;
     }
 }
 
 @media screen and (max-width: 1240px) {
     .center {
         width: 95%;
+    }
+
+    // daterangepicker 팜업
+    .daterangepicker {
+        padding: 30px;
+
+        &.drop-up {
+            margin-top: -10px;
+        }
+
+        .drp-calendar {
+            max-width: none;
+            &.left {
+                .calendar-table {
+                    padding-right: 50px;
+                }
+            }
+            .calendar-table {
+                th,
+                td {
+                    font-size: 20px;
+                    line-height: 3;
+                }
+                td {
+                    width: 60px;
+                    height: auto;
+                    &.active {
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+        .drp-buttons {
+            padding-top: 20px;
+            border: none;
+            border-top: 1px solid #eaeaea;
+            line-height: 1;
+            .btn {
+                font-size: 18px;
+            }
+        }
+        .drp-selected {
+            margin-right: 30px;
+            padding: 4px 0;
+            font-size: 20px;
+            color: #000;
+            vertical-align: middle;
+        }
     }
 }
