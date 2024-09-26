@@ -692,13 +692,58 @@ body::-webkit-scrollbar-track {
   .center {
     width: 90%;
   }
+  /* 플로팅 메뉴 */
+  .floating-menu .menu {
+    top: 83%;
+  }
   .daterangepicker {
-    padding: 50px 100px;
-    width: auto;
+    padding: 50px 120px;
+    width: 98%;
+    left: 10px !important;
   }
 }
 @media screen and (max-width: 1240px) {
   .center {
     width: 95%;
+  }
+  .daterangepicker {
+    padding: 30px;
+  }
+  .daterangepicker.drop-up {
+    margin-top: -10px;
+  }
+  .daterangepicker .drp-calendar {
+    max-width: none;
+  }
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 50px;
+  }
+  .daterangepicker .drp-calendar .calendar-table th,
+  .daterangepicker .drp-calendar .calendar-table td {
+    font-size: 20px;
+    line-height: 3;
+  }
+  .daterangepicker .drp-calendar .calendar-table td {
+    width: 60px;
+    height: auto;
+  }
+  .daterangepicker .drp-calendar .calendar-table td.active {
+    border-radius: 50%;
+  }
+  .daterangepicker .drp-buttons {
+    padding-top: 20px;
+    border: none;
+    border-top: 1px solid #eaeaea;
+    line-height: 1;
+  }
+  .daterangepicker .drp-buttons .btn {
+    font-size: 18px;
+  }
+  .daterangepicker .drp-selected {
+    margin-right: 30px;
+    padding: 4px 0;
+    font-size: 20px;
+    color: #000;
+    vertical-align: middle;
   }
 }
