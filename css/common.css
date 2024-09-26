@@ -692,6 +692,10 @@ body::-webkit-scrollbar-track {
   .center {
     width: 90%;
   }
+  .daterangepicker {
+    padding: 50px 100px;
+    width: auto;
+  }
 }
 @media screen and (max-width: 1240px) {
   .center {
