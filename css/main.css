@@ -514,7 +514,7 @@ main .cont4 .back:hover::after {
   content: "";
   display: block;
   width: 100%;
-  height: 200px;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
 main .cont4 .back:nth-child(5) .center {
@@ -890,175 +890,40 @@ main .cont6 iframe {
   main .cont4 {
     padding: 20px 0 120px;
   }
-  main .cont4 .back {
-    position: relative;
-    min-height: 200px;
-    width: 0;
-    transition: all 0.5s;
-  }
-  main .cont4 .back:hover {
-    width: 100%;
-    color: #fff;
-  }
-  main .cont4 .back:hover h3 {
-    color: #f5ead5;
-  }
-  main .cont4 .back:hover:nth-child(2) {
-    background: url(../img/main/bg-standard.jpg) no-repeat bottom 0 left 0/auto 100%;
-  }
-  main .cont4 .back:hover:nth-child(3) {
-    background: url(../img/main/bg-executive.jpg) no-repeat bottom 0 left 0/auto 100%;
-  }
-  main .cont4 .back:hover:nth-child(4) {
-    background: url(../img/main/bg-suite.jpg) no-repeat bottom 0 left 0/auto 100%;
-  }
-  main .cont4 .back:hover:nth-child(5) {
-    background: url(../img/main/bg-lounge.jpg) no-repeat bottom 0 left 0/auto 100%;
-  }
-  main .cont4 .back:hover::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 200px;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  main .cont4 .back:nth-child(5) .center {
-    padding: 81px 0;
-  }
-  main .cont4 .back:nth-child(5) .center h3 > a {
-    margin: 0;
+  main .cont4 .back:nth-child(4) {
+    min-height: 229px;
   }
   main .cont4 .back .center-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100vw - 10px);
+    height: 100%;
   }
   main .cont4 .back .center {
-    padding: 57px 0;
-    min-height: 200px;
-    border-bottom: 1px solid #ddd;
+    height: 100%;
   }
   main .cont4 .back .center h3 > a {
-    margin-bottom: 20px;
+    padding-left: 20px;
     font-size: 27px;
-    letter-spacing: 1.3px;
-  }
-  main .cont4 .back .center h3 > a > span {
-    font-size: 28px;
   }
   main .cont4 .back .center .type {
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap;
   }
   main .cont4 .back .center .type > li {
+    margin-bottom: 15px;
     padding: 0 20px;
   }
   main .cont4 .back .center .type > li:first-child {
-    padding-left: 0;
-  }
-  main .cont4 .back .center .type > li:last-child > a::after {
-    display: none;
+    padding-left: 20px;
   }
   main .cont4 .back .center .type > li > a {
-    position: relative;
-    font-size: 20px;
-    font-weight: 500;
-  }
-  main .cont4 .back .center .type > li > a::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -20px;
-    width: 1px;
-    height: 20px;
-    background: #aaa;
-  }
-  main .cont4 .back .center .type > li > a::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 1px;
-    background: #fff;
-    transition: all 0.2s;
-  }
-  main .cont4 .back .center .type > li > a:hover::before {
-    width: 100%;
+    font-size: 18px;
   }
   main .cont5 {
     padding: 20px 0 120px;
-    background: #F6F6F6;
-    text-align: center;
-  }
-  main .cont5 .title_box .en-tit:after {
-    width: 180px;
-  }
-  main .cont5 .benefit {
-    display: flex;
-    justify-content: space-between;
   }
   main .cont5 .benefit .list {
-    position: relative;
-    width: calc((100% - 300px) / 3);
-    text-align: left;
+    width: calc((100% - 90px) / 3);
   }
   main .cont5 .benefit .list::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 100%;
-    background: #cacaca;
-  }
-  main .cont5 .benefit .list:last-child::after {
-    display: none;
-  }
-  main .cont5 .benefit .list:nth-child(1) > a:hover > h3::after {
-    width: 95px;
-  }
-  main .cont5 .benefit .list:nth-child(2) > a:hover > h3::after {
-    width: 110px;
-  }
-  main .cont5 .benefit .list:nth-child(3) > a:hover > h3::after {
-    width: 80px;
-  }
-  main .cont5 .benefit .list > a {
-    display: block;
-    padding-left: 90px;
-    width: 100%;
-    height: 100%;
-  }
-  main .cont5 .benefit .list > a > i {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 60px;
-  }
-  main .cont5 .benefit .list > a > h3 {
-    margin-bottom: 10px;
-    position: relative;
-  }
-  main .cont5 .benefit .list > a > h3::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: #000;
-    transition: all 0.2s;
-  }
-  main .cont5 .benefit .list > a > p {
-    line-height: 1.4;
+    right: -15px;
   }
   main .cont6 {
     padding: 70px 0;
@@ -1073,7 +938,7 @@ main .cont6 iframe {
 }
 @media screen and (max-width: 768px) {
   main {
-    padding-bottom: 150PX;
+    padding-bottom: 100PX;
   }
   main .title_box {
     text-align: center;
@@ -1146,13 +1011,12 @@ main .cont6 iframe {
     left: var(--swiper-navigation-sides-offset, 10px);
   }
   main .cont2 {
-    padding: 120px 0;
+    padding: 80px 0;
   }
   main .cont2 .reservation-wrap {
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 20px;
   }
   main .cont2 .reservation-wrap .tit {
     display: block;
@@ -1160,55 +1024,27 @@ main .cont6 iframe {
     font-size: 15px;
   }
   main .cont2 .reservation-wrap .date-wrap {
-    position: relative;
-    padding: 2px 0;
-    width: calc((100% - 170px) * 0.45);
-    height: 77px;
-    border: 1px dashed transparent;
+    width: 50%;
   }
   main .cont2 .reservation-wrap .date-wrap .tit {
-    position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    font-size: 14px;
   }
   main .cont2 .reservation-wrap .date-wrap .date {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-top: 40px;
-    width: 100%;
-    font-size: 30px;
-    letter-spacing: 1px;
-    color: #000;
-    background: transparent;
-  }
-  main .cont2 .reservation-wrap .date-wrap:hover {
-    border-color: #7A6C64;
+    font-size: 17px;
+    bottom: 7px;
   }
   main .cont2 .reservation-wrap .room-wrap {
-    display: flex;
-    align-items: center;
-    padding: 8.5px 0;
-    width: calc((100% - 170px) * 0.55);
-    border: 1px dashed transparent;
-    cursor: pointer;
+    width: 50%;
   }
-  main .cont2 .reservation-wrap .room-wrap .box {
-    width: 33.3333333333%;
-    border-left: 1px solid #ddd;
-    text-align: center;
-  }
-  main .cont2 .reservation-wrap .room-wrap:hover {
-    border-color: #7A6C64;
+  main .cont2 .reservation-wrap .room-wrap .tit {
+    font-size: 14px;
   }
   main .cont2 .reservation-wrap .search {
-    display: block;
-    width: 200px;
-    border: 2px solid #7A6C64;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 73px;
+    margin-top: 50px;
+    width: 170px;
+    line-height: 50px;
+    font-size: 23px;
   }
   main .cont2 .reservation-wrap .reservation-popup {
     position: absolute;
@@ -1339,31 +1175,7 @@ main .cont6 iframe {
     transform: translateY(50%) rotate(-45deg);
   }
   main .cont3 {
-    padding: 50px 0 150px;
-    background: #f6f6f6;
-  }
-  main .cont3 .title_box {
-    position: relative;
-  }
-  main .cont3 .title_box .en-tit:after {
-    width: 220px;
-  }
-  main .cont3 .title_box .view-more {
-    display: inline-block;
-    position: absolute;
-    bottom: 50px;
-    right: 0;
-    font-size: 20px;
-  }
-  main .cont3 .title_box .view-more:hover {
-    text-decoration: underline;
-    text-underline-position: under;
-    text-decoration-color: #999;
-  }
-  main .cont3 .title_box .view-more > span {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 20px;
+    padding: 0;
   }
   main .cont3 .special-list {
     display: flex;
@@ -1372,292 +1184,61 @@ main .cont6 iframe {
     justify-content: space-between;
   }
   main .cont3 .special-list > li {
-    width: calc((100% - 100px) / 3);
-  }
-  main .cont3 .special-list > li > a {
-    position: relative;
-    display: block;
+    margin-bottom: 70px;
     width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0);
-    overflow: hidden;
-  }
-  main .cont3 .special-list > li > a::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 0;
-    transition: all 0.5s;
-  }
-  main .cont3 .special-list > li > a:hover::after {
-    opacity: 1;
-  }
-  main .cont3 .special-list > li > a:hover {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-  }
-  main .cont3 .special-list > li > a:hover .img-wrap > img {
-    transform: scale(1.1);
-  }
-  main .cont3 .special-list > li > a:hover .view-more {
-    opacity: 1;
-  }
-  main .cont3 .special-list > li > a .img-wrap {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-  }
-  main .cont3 .special-list > li > a .img-wrap > img {
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s;
-  }
-  main .cont3 .special-list > li > a .txt-wrap {
-    padding: 30px 20px 50px;
-    height: 200px;
-    background: #fff;
-  }
-  main .cont3 .special-list > li > a .txt-wrap h3 {
-    margin-bottom: 30px;
-    font-size: 23px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-  }
-  main .cont3 .special-list > li > a .txt-wrap h3 > span {
-    font-size: 30px;
-  }
-  main .cont3 .special-list > li > a .txt-wrap .date {
-    margin-bottom: 20px;
-    padding-left: 25px;
-    position: relative;
-    font-size: 17px;
-  }
-  main .cont3 .special-list > li > a .txt-wrap .price {
-    padding-left: 25px;
-    position: relative;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  main .cont3 .special-list > li > a .txt-wrap i {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    font-size: 15px;
-  }
-  main .cont3 .special-list > li > a .view-more {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.4s;
-  }
-  main .cont3 .special-list > li > a .view-more > span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 150px;
-    background: #fff;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   }
   main .cont4 {
-    padding: 70px 0 170px;
+    padding: 20px 0 120px;
   }
-  main .cont4 .title_box .en-tit:after {
-    width: 100px;
-  }
-  main .cont4 .back {
-    position: relative;
-    min-height: 200px;
-    width: 0;
-    transition: all 0.5s;
-  }
-  main .cont4 .back:hover {
-    width: 100%;
-    color: #fff;
-  }
-  main .cont4 .back:hover h3 {
-    color: #f5ead5;
-  }
-  main .cont4 .back:hover:nth-child(2) {
-    background: url(../img/main/bg-standard.jpg) no-repeat bottom 0 left 0/auto 100%;
-  }
-  main .cont4 .back:hover:nth-child(3) {
-    background: url(../img/main/bg-executive.jpg) no-repeat bottom 0 left 0/auto 100%;
-  }
-  main .cont4 .back:hover:nth-child(4) {
-    background: url(../img/main/bg-suite.jpg) no-repeat bottom 0 left 0/auto 100%;
-  }
-  main .cont4 .back:hover:nth-child(5) {
-    background: url(../img/main/bg-lounge.jpg) no-repeat bottom 0 left 0/auto 100%;
-  }
-  main .cont4 .back:hover::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 200px;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  main .cont4 .back:nth-child(5) .center {
-    padding: 81px 0;
-  }
-  main .cont4 .back:nth-child(5) .center h3 > a {
-    margin: 0;
+  main .cont4 .back:nth-child(4) {
+    min-height: 229px;
   }
   main .cont4 .back .center-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100vw - 10px);
+    height: 100%;
   }
   main .cont4 .back .center {
-    padding: 57px 0;
-    min-height: 200px;
-    border-bottom: 1px solid #ddd;
+    height: 100%;
   }
   main .cont4 .back .center h3 > a {
-    margin-bottom: 30px;
-    font-size: 35px;
-    letter-spacing: 1.3px;
-  }
-  main .cont4 .back .center h3 > a > span {
-    font-size: 28px;
+    padding-left: 20px;
+    font-size: 27px;
   }
   main .cont4 .back .center .type {
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap;
   }
   main .cont4 .back .center .type > li {
+    margin-bottom: 15px;
     padding: 0 20px;
   }
   main .cont4 .back .center .type > li:first-child {
-    padding-left: 0;
-  }
-  main .cont4 .back .center .type > li:last-child > a::after {
-    display: none;
+    padding-left: 20px;
   }
   main .cont4 .back .center .type > li > a {
-    position: relative;
-    font-size: 20px;
-    font-weight: 500;
-  }
-  main .cont4 .back .center .type > li > a::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -20px;
-    width: 1px;
-    height: 20px;
-    background: #aaa;
-  }
-  main .cont4 .back .center .type > li > a::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 1px;
-    background: #fff;
-    transition: all 0.2s;
-  }
-  main .cont4 .back .center .type > li > a:hover::before {
-    width: 100%;
+    font-size: 18px;
   }
   main .cont5 {
-    padding: 20px 0 120px;
-    background: #F6F6F6;
-    text-align: center;
-  }
-  main .cont5 .title_box .en-tit:after {
-    width: 180px;
+    padding: 0;
   }
   main .cont5 .benefit {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
   }
   main .cont5 .benefit .list {
-    position: relative;
-    width: calc((100% - 300px) / 3);
-    text-align: left;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
   }
-  main .cont5 .benefit .list::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 100%;
-    background: #cacaca;
-  }
-  main .cont5 .benefit .list:last-child::after {
-    display: none;
-  }
-  main .cont5 .benefit .list:nth-child(1) > a:hover > h3::after {
-    width: 95px;
-  }
-  main .cont5 .benefit .list:nth-child(2) > a:hover > h3::after {
-    width: 110px;
-  }
-  main .cont5 .benefit .list:nth-child(3) > a:hover > h3::after {
-    width: 80px;
+  main .cont5 .benefit .list:last-child {
+    margin-bottom: 0;
+    border: none;
   }
   main .cont5 .benefit .list > a {
-    display: block;
     padding-left: 90px;
-    width: 100%;
-    height: 100%;
   }
   main .cont5 .benefit .list > a > i {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 60px;
-  }
-  main .cont5 .benefit .list > a > h3 {
-    margin-bottom: 10px;
-    position: relative;
-  }
-  main .cont5 .benefit .list > a > h3::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: #000;
-    transition: all 0.2s;
-  }
-  main .cont5 .benefit .list > a > p {
-    line-height: 1.4;
+    font-size: 50px;
   }
   main .cont6 {
-    padding: 70px 0;
-    text-align: center;
-  }
-  main .cont6 .title_box .en-tit:after {
-    width: 130px;
-  }
-  main .cont6 iframe {
-    border-radius: 16px;
+    padding: 0;
   }
 }
