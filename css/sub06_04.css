@@ -3,6 +3,25 @@
 }
 
 .depth3-tab-wrap .context .guide h3 {
-  margin-bottom: 3%;
+  margin-bottom: 30px;
   font-size: 25px;
+}
+.depth3-tab-wrap .context .txt-wrap {
+  width: calc(100% - 120px);
+}
+
+@media screen and (max-width: 1500px) {
+  .center {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .center {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .center {
+    width: 95%;
+  }
 }
