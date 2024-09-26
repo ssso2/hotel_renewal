@@ -222,6 +222,7 @@ body::-webkit-scrollbar-track {
         align-items: center;
         margin-bottom: 30px;
         border-bottom: 1px solid #888;
+        &.mo-show {display: none;}
 
         &.on {
             position: fixed;
@@ -787,6 +788,75 @@ body::-webkit-scrollbar-track {
             font-size: 20px;
             color: #000;
             vertical-align: middle;
+        }
+    }
+
+    /* 3depth tab 공통 */
+    .depth3-tab-wrap {
+        /* tab */
+        .tab {
+            display: none;
+            &.mo-show {
+                display: flex;
+                & > li {
+                    min-width: calc(100% / 4);
+                }
+            }
+
+            &.on {
+                position: fixed;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 1420px;
+            }
+
+            & > li {
+                margin-bottom: -1px;
+                min-width: calc(100% / 7);
+                padding: 0px 10px;
+                text-align: center;
+                font-size: 16px;
+                line-height: 40px;
+                border: 1px solid #ddd;
+                border-right: 0;
+                border-bottom-color: transparent;
+                background: #fff;
+                cursor: pointer;
+
+                & > a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:last-child {
+                    border-right: 1px solid #ddd;
+                }
+
+                &.on {
+                    border: 1px solid #888;
+                    border-bottom: 3px solid #fff;
+                    font-weight: 700;
+                }
+
+                &:hover {
+                    font-weight: 700;
+                    text-decoration: underline;
+                    text-underline-position: under;
+                }
+            }
+        }
+
+        /* tab-contents */
+        .tab-contents {
+            & > .tab-cont {
+                display: none;
+
+                &.on {
+                    display: block;
+                }
+            }
         }
     }
 }
