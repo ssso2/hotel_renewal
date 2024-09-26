@@ -344,6 +344,9 @@ header .logo > a > img {
   header .center > .btn-wrap {
     display: none;
   }
+  header .center > .btn-wrap.on {
+    display: none;
+  }
   .gnb {
     display: none;
   }
