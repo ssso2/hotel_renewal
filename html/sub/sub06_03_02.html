@@ -370,43 +370,45 @@
             const registeredTime = '${month}/${date} ${hours}:${minutes}';
 
             $(function () {
+                //댓글 등록 눌렀을 때
                 $('#plus').click(function (e) {
-                    // 등록 버튼을 누르면
-                    e.preventDefault();
-
                     // 공란일 때는 등록 안 됨
                     if ($('#reply').val().trim() == '') return;
 
-                    // 새로운 댓글 추가 생성
+                    // 작성한 댓글 누적
                     const registeredReply = $('<div class="reply-content"></div>');
                     const userName = $('<span class="user-name"></span>').text($('.user-name').html());
                     const commentInput = $('<div class="reply-content"></div>').val($('#reply').val());
                     const commentEdit = $('<textarea class="new-reply"></textarea>').val($('#reply').val());
+                    const time = $('<span class="time"></span>').text($('.time').html());
+
+                    const addinfo = $('<div class="reply-info"></div>');
+
                     const editButton = $('<button class="edit">수정</button>'); // 수정 버튼
                     const deleteButton = $('<button class="delete">삭제</button>'); // 삭제 버튼
 
-                    // 수정 버튼 클릭 이벤트
-                    editButton.click(function () {
-                        if (commentEdit.prop('readonly')) {
-                            commentEdit.prop('readonly', false).css('background', '#FFF');
-                            editButton.text('완료');
-                        } else {
-                            commentEdit.prop('readonly', true).css('background', '#eee');
-                            editButton.text('수정');
-                        }
-                    });
-
-                    // 삭제 버튼 클릭 이벤트
-                    deleteButton.click(function () {
-                        registeredReply.remove();
-                    });
-
                     // 등록된 댓글을 reply-box에 추가 (순서: 사용자명 - 댓글 내용 - 작성 시간 - 수정 - 삭제)
-                    registeredReply.append(userName).append(commentInput).append(commentEdit).append(editButton).append(deleteButton);
+                    registeredReply.append(userName).append(commentInput).append(commentEdit).append(addinfo);
                     $('.reply-box').append(registeredReply); // 댓글을 reply-box에 추가
                     $('.user-name').val('');
                     $('#reply').val(''); // 댓글 입력란 초기화
                 });
+            });
+
+            // 수정 버튼 클릭 이벤트
+            editButton.click(function () {
+                if (commentEdit.prop('readonly')) {
+                    commentEdit.prop('readonly', false).css('background', '#eee');
+                    editButton.text('완료');
+                } else {
+                    commentEdit.prop('readonly', true).css('background', '#FFF');
+                    editButton.text('수정');
+                }
+            });
+
+            // 삭제 버튼 클릭 이벤트
+            deleteButton.click(function () {
+                registeredReply.remove();
             });
         </script>
     </body>

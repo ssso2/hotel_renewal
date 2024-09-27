@@ -302,7 +302,8 @@ body::-webkit-scrollbar-track {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .gallery .swiper {
   width: 100%;
@@ -335,7 +336,8 @@ body::-webkit-scrollbar-track {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .btn-wrap {
@@ -556,7 +558,6 @@ body::-webkit-scrollbar-track {
   height: 100%;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 1000;
 }

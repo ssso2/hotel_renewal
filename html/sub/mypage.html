@@ -35,7 +35,7 @@
             <div class="center">
                 <h1 class="logo">
                     <a href="../index.html">
-                        <img src="../../img/common/logo.png" alt="">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -92,21 +92,22 @@
                         </ul>
                     </li>
                 </ul>
-                    <!-- 비로그인시 -->
-                    <div class="btn-wrap">
-                        <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                        <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-                    </div>
-                    <!-- 로그인시 -->
-                    <div class="btn-wrap login on">
-                        <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
-                            <i class="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </a>
-                        <a href="../../html/index.html" class="logout-btn">로그아웃
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap">
+                    <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login on">
+                    <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
+                        <i class="fa-regular fa-user"></i>
+                        <p>손주혜<span>님</span></p>
+                    </a>
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
                 <!-- 모바일 햄버거 버튼 -->
                 <div class="m_btn">
                     <div class="menu">
@@ -209,18 +210,6 @@
                         <div class="mypage-info" id="mypage-info" style="display: none">
                             <h2 class="title">회원정보 수정</h2>
                             <label class="my-info">
-                                <p>아이디</p>
-                                <input type="text" id="user-id" />
-                            </label>
-                            <label class="my-info">
-                                <p>패스워드</p>
-                                <input type="password" id="pw" />
-                            </label>
-                            <label class="my-info">
-                                <p>패스워드 확인</p>
-                                <input type="password" id="pwchk" />
-                            </label>
-                            <label class="my-info">
                                 <p>이름</p>
                                 <input type="text" id="id" />
                             </label>
@@ -236,7 +225,7 @@
                                 <p>이메일</p>
                                 <input type="text" id="mail" />
                             </label>
-                            <input type="button" id="edit" value="수정완료" data-lybtn="pop-alert"/>
+                            <input type="button" id="edit" value="수정완료" data-lybtn="pop-alert" />
                         </div>
                     </div>
                 </div>
@@ -247,7 +236,7 @@
             const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
 
             function show_page(section) {
-                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'withdrawal'];
+                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'mypage-info-new'];
                 sections.forEach(id => {
                     document.getElementById(id).style.display = id === section ? 'block' : 'none';
                 });
@@ -350,12 +339,10 @@
             <div class="lypop-wp min">
                 <div class="lypop-content">
                     <div class="lypop-title">
-                        <strong>타이틀</strong>
+                        <strong>수정완료</strong>
                     </div>
                     <div class="lypop-ct">
-                        <p class="modal-txt" style="padding: 20px 0; font-size: 18px; font-weight: 500;text-align: center;">
-                            회원 정보 수정이 완료 되었습니다.
-                        </p>
+                        <p class="modal-txt" style="padding: 20px 0; font-size: 18px; font-weight: 500; text-align: center">회원정보 수정이 완료 되었습니다.</p>
                         <div class="btn-wrap type5">
                             <button class="btn btn-04" data-lyClose="pop-mypage1" onclick="location.href ='./mypage-new.html'"><span>확인</span></button>
                         </div>

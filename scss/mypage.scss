@@ -34,11 +34,11 @@
     .user-info-wrap {
         font-size: 18px;
         .my-info {
-            justify-content: left !important;
-            width: 400px !important;
+            justify-content: left;
+            width: 400px;
             p {
                 padding-left: 30px;
-                width: 150px !important;
+                width: 150px;
             }
             .user-info {
                 padding-left: 30px;
@@ -101,6 +101,75 @@
         left: 0;
 
         .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .my-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 500px;
+            line-height: 1.5;
+            margin: 0 auto 20px;
+
+            p {
+                width: 100px;
+                margin: 0;
+                text-align: left;
+            }
+
+            label {
+                text-align: right;
+                margin-right: 50px;
+                font-size: 16px;
+                color: #333;
+            }
+
+            input {
+                justify-content: center;
+                width: 400px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 14px;
+                box-sizing: border-box;
+            }
+        }
+
+        #edit {
+            display: block;
+            margin: 50px auto;
+            width: 500px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #7a6c64;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+}
+
+//반응형
+@media screen and (max-width: 768px) {
+    .mypage-info {
+        display: block;
+        position: relative;
+        padding: 20px;
+        transform: none;
+        top: 0;
+        left: 0;
+
+        .title {
+            position: relative;
             text-align: center;
             margin-bottom: 20px;
             color: #333;

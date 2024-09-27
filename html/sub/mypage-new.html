@@ -35,7 +35,7 @@
             <div class="center">
                 <h1 class="logo">
                     <a href="../index.html">
-                        <img src="../../img/common/logo.png" alt="">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -92,21 +92,22 @@
                         </ul>
                     </li>
                 </ul>
-                    <!-- 비로그인시 -->
-                    <div class="btn-wrap">
-                        <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                        <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-                    </div>
-                    <!-- 로그인시 -->
-                    <div class="btn-wrap login on">
-                        <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
-                            <i class="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </a>
-                        <a href="../../html/index.html" class="logout-btn">로그아웃
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap">
+                    <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login on">
+                    <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
+                        <i class="fa-regular fa-user"></i>
+                        <p>손주혜<span>님</span></p>
+                    </a>
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
                 <!-- 모바일 햄버거 버튼 -->
                 <div class="m_btn">
                     <div class="menu">
@@ -198,7 +199,7 @@
                     </ul>
                     <div class="content">
                         <!-- 회원정보 수정 -->
-                        <div class="mypage-info user-info-wrap" id="mypage-info">
+                        <div class="mypage-info user-info-wrap" id="mypage-info-new">
                             <h2 class="title">회원정보</h2>
                             <div class="my-info">
                                 <p>아이디</p>
@@ -220,7 +221,7 @@
                                 <p>이메일</p>
                                 <span class="user-info">abcd@naver.com</span>
                             </div>
-                            <input type="button" id="edit" value="회원정보수정"  onclick="location.href ='./mypage.html'"/>
+                            <input type="button" id="edit" value="회원정보수정" onclick="location.href ='./mypage.html'" />
                         </div>
                     </div>
                 </div>
@@ -231,7 +232,7 @@
             const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
 
             function show_page(section) {
-                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'withdrawal'];
+                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'mypage-info-new'];
                 sections.forEach(id => {
                     document.getElementById(id).style.display = id === section ? 'block' : 'none';
                 });
@@ -328,7 +329,5 @@
             </div>
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
-
-
     </body>
 </html>
