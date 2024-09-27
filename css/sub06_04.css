@@ -3,8 +3,10 @@
 }
 
 .depth3-tab-wrap .context .guide h3 {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-size: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid #292929;
 }
 .depth3-tab-wrap .context .txt-wrap {
   width: calc(100% - 120px);
@@ -23,5 +25,8 @@
 @media screen and (max-width: 768px) {
   .center {
     width: 95%;
+  }
+  .depth3-tab-wrap .context .guide h3 {
+    text-align: center;
   }
 }
