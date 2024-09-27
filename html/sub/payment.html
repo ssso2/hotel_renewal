@@ -390,7 +390,7 @@
                         </div>
                         <div class="btn-wrap type1">
                             <a href="../../html/sub/reservation.html" class="btn btn-03">이전으로 돌아가기</a>
-                            <a href="#" class="btn btn-01" id="pay">결제하기</a>
+                            <a href="#" class="btn btn-01" id="pay" data-lybtn="pop-alert">결제하기</a>
                         </div>
                     </div>
                 </ul>
@@ -451,5 +451,23 @@
         </div>
         <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
     </article>
+
+    <!-- alert -->
+    <div class="lypop payment" data-lyOpen="pop-alert" tabindex="0">
+        <div class="lypop-wp min">
+            <div class="lypop-content">
+                <div class="lypop-title">
+                    <strong>알림</strong>
+                </div>
+                <div class="lypop-ct">
+                    <p class="modal-txt">
+                    </p>
+                    <div class="btn-wrap type5">
+                        <button class="btn btn-04 join-alert-chk-btn" data-lyClose="pop-alert"><span>확인</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
