@@ -126,7 +126,7 @@
   line-height: 158px;
 }
 .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(3) .time {
-  line-height: 131px;
+  line-height: 170px;
 }
 .depth3-tab-wrap .context .Introduction .timetable > li .time {
   width: 150px;
@@ -419,5 +419,28 @@
   }
   .depth3-tab-wrap .context .info-wrap .flex {
     gap: 15px;
+  }
+  .depth3-tab-wrap .context .Introduction h3 strong {
+    font-size: 30px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable-wrap {
+    padding-left: 0;
+    width: 100%;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li {
+    font-size: 15px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(2) .time {
+    line-height: 147px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(3) .time {
+    line-height: 157px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li .time {
+    width: 90px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li .context {
+    padding: 20px 10px;
+    width: calc(100% - 90px);
   }
 }

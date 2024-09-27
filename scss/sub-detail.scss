@@ -145,7 +145,7 @@
                     }
                     &:nth-child(3){
                         .time {
-                            line-height: 131px;
+                            line-height: 170px;
                         }
                     }
                     .time {
@@ -481,6 +481,40 @@
             .info-wrap {
                 .flex {
                     gap: 15px;
+                }
+            }
+            .Introduction {
+                h3 {
+                     strong {
+                        font-size: 30px;
+                     }
+                }
+                .timetable-wrap {
+                    padding-left: 0;
+                    width: 100%;
+                }
+                .timetable {
+                    & > li {
+                        font-size: 15px;
+                        &:nth-child(2){
+                            .time {
+                                line-height: 147px;
+                            }
+                        }
+                        &:nth-child(3){
+                            .time {
+                                line-height: 157px;
+                            }
+                        }
+                        .time {
+                            width: 90px;
+                        }
+                        .context {
+                            padding: 20px 10px;
+                            width: calc(100% - 90px);
+                        }
+                    }
+    
                 }
             }
         }
