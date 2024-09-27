@@ -4,13 +4,13 @@
   top: 100%;
   left: 50%;
   font-size: 14px;
-  padding: 10px;
+  padding: 20px;
 }
 .form-wrap .clause-wrap {
   background-color: #faf8f4;
   border-radius: 5px;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .form-wrap .clause-wrap .join {
   text-align: center;
@@ -21,24 +21,29 @@
   text-align: center;
   margin-bottom: 20px;
 }
-.form-wrap .clause-wrap .check-all {
+.form-wrap .clause-wrap #check-all {
   margin-top: 20px;
+  align-items: center;
   justify-content: center;
+  display: flex;
+  margin: 30px auto 20px;
 }
-.form-wrap .clause-wrap .check-all #agree-all {
+.form-wrap .clause-wrap #check-all #agree-all {
+  position: relative;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   width: 20px;
   height: 20px;
   border-radius: 10px;
+  margin-right: 5px;
   background-color: #fff;
   border: 2px solid #333;
 }
-.form-wrap .clause-wrap .check-all #agree-all:checked {
+.form-wrap .clause-wrap #check-all #agree-all:checked {
   background-color: #333;
 }
-.form-wrap .clause-wrap .check-all #agree-all:checked::after {
+.form-wrap .clause-wrap #check-all #agree-all:checked::after {
   content: "✓";
   position: absolute;
   top: 0;
@@ -51,14 +56,11 @@
   text-align: center;
   line-height: 15px;
 }
-.form-wrap .clause-wrap .checkbox {
-  margin-top: 20px;
-}
 .form-wrap .clause-container {
   display: flex;
   flex-direction: column;
   margin: 15px;
-  gap: 20px;
+  gap: 10px;
 }
 .form-wrap .clause-container .clause {
   height: 200px;
@@ -110,12 +112,47 @@
   line-height: 15px;
 }
 .form-wrap #btn-next {
-  width: 33.3333333333%;
-  height: 40px;
-  padding: 10px;
+  display: block;
   margin: 50px auto;
-  font-size: 16px;
-  text-align: center;
+  width: 33.3333333333%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
   background-color: #7a6c64;
   color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1240px) {
+  .form-wrap .clause-wrap .direction {
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 30px;
+  }
+  .clause-container .clause {
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+    overflow: auto;
+    line-height: 20px;
+  }
+  .clause-container b {
+    margin-top: 30px;
+  }
+  .clause-container #btn-next {
+    display: block;
+    margin: 50px auto;
+    width: 33.3333333333%;
+    min-width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7a6c64;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+  }
 }

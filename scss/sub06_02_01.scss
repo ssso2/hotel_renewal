@@ -46,16 +46,16 @@
             background-color: #eaeaea;
 
             .post-num {
-                flex: 0 0 10%;
+                width: 10%;
             }
 
             .post-title {
-                flex: 0 0 70%;
+                width: 70%;
             }
 
             .post-writer,
             .post-date {
-                flex: 0 0 10%;
+                width: 10%;
             }
         }
 
@@ -66,21 +66,27 @@
             justify-content: space-between;
 
             .post-num {
-                flex: 0 0 10%;
+                width: 10%;
                 text-align: center;
             }
 
             .post-title {
-                flex: 0 0 70%;
+                width: 70%;
                 text-align: center;
                 &:hover {
                     font-weight: 600;
+                }
+                a {
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
 
             .post-writer,
             .post-date {
-                flex: 0 0 10%;
+                width: 10%;
                 text-align: center;
             }
         }
@@ -94,5 +100,51 @@
         background-color: #7a6c64;
         color: #fff;
         border-radius: 5px;
+    }
+}
+
+// 반응형
+@media screen and (max-width: 1240px) {
+    .container {
+        .post-list {
+            align-items: center;
+            margin-top: 50px;
+
+            .board-nav {
+                .post-num {
+                    width: 10%;
+                }
+
+                .post-title {
+                    width: 50%;
+                }
+
+                .post-writer,
+                .post-date {
+                    width: 20%;
+                }
+            }
+
+            .post {
+                .post-num {
+                    width: 10%;
+                    text-align: center;
+                }
+
+                .post-title {
+                    width: 50%;
+                    text-align: center;
+                    &:hover {
+                        font-weight: 600;
+                    }
+                }
+
+                .post-writer,
+                .post-date {
+                    width: 20%;
+                    text-align: center;
+                }
+            }
+        }
     }
 }

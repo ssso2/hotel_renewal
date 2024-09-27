@@ -17,6 +17,9 @@
   line-height: 50px;
   background-color: #faf8f4;
 }
+.container .board-nav .post-title {
+  text-align: center;
+}
 .container .post {
   height: 50px;
   display: flex;
@@ -28,16 +31,20 @@
   font-weight: 600;
 }
 .container .post-num {
-  width: 100px;
+  width: 10%;
   text-align: center;
 }
 .container .post-title {
-  width: 700px;
+  width: 70%;
   text-align: center;
+  padding-left: 20px;
+}
+.container .post-title i {
+  margin-right: 5px;
 }
 .container .post-writer,
 .container .post-date {
-  width: 200px;
+  width: 10%;
   text-align: center;
 }
 .container .search-wrap {
@@ -76,4 +83,103 @@
   font-weight: 600;
   line-height: 35px;
   margin-right: 10px;
+}
+
+@media screen and (max-width: 1240px) {
+  .container .title {
+    margin: 25px 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  .container .board-nav {
+    height: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    line-height: 50px;
+    background-color: #faf8f4;
+  }
+  .container .board-nav .post-num {
+    display: none;
+    width: 10%;
+    text-align: center;
+  }
+  .container .board-nav .post-title {
+    width: 50%;
+    text-align: center;
+  }
+  .container .board-nav .post-writer,
+  .container .board-nav .post-date {
+    width: 20%;
+    text-align: center;
+  }
+  .container .post {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+  }
+  .container .post .post-num {
+    display: none;
+    width: 10%;
+    text-align: center;
+  }
+  .container .post .post-title {
+    width: 50%;
+    text-align: left;
+  }
+  .container .post .post-title .post-title:hover {
+    font-weight: 600;
+  }
+  .container .post .post-title a {
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .container .post .post-writer,
+  .container .post .post-date {
+    width: 20%;
+    text-align: center;
+  }
+  .container .search-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  .container .search-wrap .btn-wrap {
+    width: 20%;
+    max-width: 100px;
+  }
+  .container .search-wrap .btn {
+    width: 100%;
+  }
+  .container .search {
+    width: 50%;
+    max-width: 300px;
+    height: 40px;
+    margin: 10px;
+    color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+  }
+  .container .search a {
+    height: 100%;
+  }
+  .container .search input {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+  }
+  .container .search span {
+    color: #aaa;
+    font-weight: 600;
+    line-height: 35px;
+    margin-right: 10px;
+  }
 }

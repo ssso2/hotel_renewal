@@ -23,6 +23,7 @@
   font-size: 14px;
   font-weight: 400;
   margin: 10px auto;
+  line-height: 30px;
 }
 .container .depth3-tab-wrap .lost-info .indentity-confirm {
   width: 150px;
@@ -57,6 +58,7 @@
   font-size: 14px;
   font-weight: 400;
   margin: 10px auto;
+  line-height: 30px;
 }
 .id-chk .comment span {
   font-size: 18px;

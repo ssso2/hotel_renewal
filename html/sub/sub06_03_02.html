@@ -196,29 +196,53 @@
                         <div class="title">
                             <p class="subject">크리스마스 패키지로 예약 변경 가능한가요?</p>
                             <div class="writer-wrap">
-                                <p class="writer">작성자 : 박세라</p>
-                                <p class="submit-time">작성시간 : 9/24 13:30</p>
+                                <p class="writer">박세라</p>
+                                <p class="submit-time">9/24 13:30</p>
                             </div>
                         </div>
                     </div>
                     <div class="content">
                         <p>크리스마스에 객실 숙박을 예약했습니다.</p>
-                        <p>그런데 얼마 전 크리스마스 패키지가 저렴하게 나왔던데요, 혹시 패키지로 예약 변경한가요?</p>
+                        <p>그런데 얼마 전 크리스마스 패키지가 저렴하게 나왔던데요, 혹시 패키지로 예약 변경 가능한가요?</p>
                     </div>
                     <div class="reply-container">
+                        <!-- 댓글 창 -->
+                        <span class="reply-title">댓글</span>
                         <div class="reply-box">
+                            <!-- 댓글 창 전체 박스 -->
                             <div class="reply-content">
-                                <span class="reply-title">댓글</span>
-                                <span class="user-name">관리자</span>
-                                <input type="text" class="new-reply" style="background-color: #fff" value="댓글 예시입니다." />
-                                <span class="time">9/24 16:39<button class="edit">수정</button><button class="delete">삭제</button></span>
+                                <!-- 댓글 상단 작성자 이름 들어갈 박스 -->
+                                <span class="name">관리자님의 댓글</span>
+                            </div>
+                            <textarea class="new-reply">
+고객님, 안녕하세요. 호텔신라입니다.
+크리스마스 패키지는 현재 예약이 가능하나, 먼저 예약하신 숙박 건에 대한 취소가 별도로 필요합니다.
+시즌 패키지는 한정 기간만 운영되므로 먼저 패키지 예약을 진행하신 후에
+기예약된 숙박건에 대해 취소를 진행하시면 성심성의껏 도와드리겠습니다.
+항상 호텔신라와 함께 편안한 휴식 보내시길 바랍니다. 감사합니다.
+                            </textarea>
+
+                            <div class="reply-info">
+                                <!-- 작성시간, 수정, 삭제 들어갈 박스-->
+                                <span class="time">9/24 16:39 등록</span>
+                                <button class="edit">수정</button>
+                                <button class="delete" data-lybtn="pop-delete-reply">삭제</button>
                             </div>
                         </div>
-                        <div class="reply">
-                            <div class="reply-text">
-                                <span class="user-name">관리자</span>
-                                <input type="text" id="reply" />
-                                <button id="plus">등록</button>
+
+                        <span class="reply-title">댓글쓰기</span>
+                        <div class="reply-box-sec">
+                            <!-- 댓글 창 전체 박스 -->
+                            <div class="reply-content-ing">
+                                <!-- 댓글 상단 작성자 이름 들어갈 박스 -->
+                                <span class="user-name">박세라</span>
+                            </div>
+                            <textarea id="reply" placeholder="댓글을 작성하세요."></textarea>
+
+                            <div class="reply-info">
+                                <!-- 작성시간, 수정, 삭제 들어갈 박스-->
+                                <span class="time">9/24 16:39</span>
+                                <button id="plus">댓글등록</button>
                             </div>
                         </div>
                     </div>
@@ -314,6 +338,27 @@
             </div>
         </div>
 
+        <div class="lypop" data-lyOpen="pop-delete-reply">
+            <div class="lypop-wp min">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>댓글 삭제</strong>
+                    </div>
+                    <div class="lypop-ct">
+                        <p class="modal-txt"><span class="fc-blue">삭제</span> 하시겠습니까?</p>
+                        <div class="btn-wrap type3">
+                            <div class="align">
+                                <button class="btn btn-04" data-lyClose="pop-delete-reply"><span>취소</span></button>
+                                <a href="sub06_03.html">
+                                    <button class="btn btn-05"><span>확인</span></button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script>
             //작성시간 표시 스크립트 -- 추후 db 로 !!!
             const nowtime = new Date();
@@ -332,20 +377,21 @@
                     // 공란일 때는 등록 안 됨
                     if ($('#reply').val().trim() == '') return;
 
-                    // 새로운 댓글 생성
+                    // 새로운 댓글 추가 생성
                     const registeredReply = $('<div class="reply-content"></div>');
                     const userName = $('<span class="user-name"></span>').text($('.user-name').html());
-                    const commentInput = $('<input type="text" class="new-reply" readonly>').val($('#reply').val());
+                    const commentInput = $('<div class="reply-content"></div>').val($('#reply').val());
+                    const commentEdit = $('<textarea class="new-reply"></textarea>').val($('#reply').val());
                     const editButton = $('<button class="edit">수정</button>'); // 수정 버튼
                     const deleteButton = $('<button class="delete">삭제</button>'); // 삭제 버튼
 
                     // 수정 버튼 클릭 이벤트
                     editButton.click(function () {
-                        if (commentInput.prop('readonly')) {
-                            commentInput.prop('readonly', false).css('background', '#FFF');
+                        if (commentEdit.prop('readonly')) {
+                            commentEdit.prop('readonly', false).css('background', '#FFF');
                             editButton.text('완료');
                         } else {
-                            commentInput.prop('readonly', true).css('background', '#eee');
+                            commentEdit.prop('readonly', true).css('background', '#eee');
                             editButton.text('수정');
                         }
                     });
@@ -356,7 +402,7 @@
                     });
 
                     // 등록된 댓글을 reply-box에 추가 (순서: 사용자명 - 댓글 내용 - 작성 시간 - 수정 - 삭제)
-                    registeredReply.append(userName).append(commentInput).append('<span class="time"> 9/24 16:53 ', editButton).append(deleteButton, '</span>');
+                    registeredReply.append(userName).append(commentInput).append(commentEdit).append(editButton).append(deleteButton);
                     $('.reply-box').append(registeredReply); // 댓글을 reply-box에 추가
                     $('.user-name').val('');
                     $('#reply').val(''); // 댓글 입력란 초기화

@@ -33,22 +33,45 @@
   text-align: center;
 }
 .container .post-title {
-  width: 700px;
+  width: calc(100% - 500px);
   text-align: center;
+}
+.container .post-title a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container .post-writer,
 .container .post-date {
   width: 200px;
   text-align: center;
 }
-.container .search-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.container .search-wrap .btn-wrap {
-  width: 100px;
-}
-.container .search-wrap .btn {
-  width: 100%;
+
+@media screen and (max-width: 1240px) {
+  .container {
+    margin: 150px 0;
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .container .post-num {
+    width: 10%;
+    text-align: center;
+  }
+  .container .post-title {
+    width: 50%;
+    text-align: center;
+  }
+  .container .post-title a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .container .post-writer,
+  .container .post-date {
+    width: 20%;
+    text-align: center;
+  }
 }

@@ -32,7 +32,6 @@
     }
 
     .user-info-wrap {
-     
         font-size: 18px;
         .my-info {
             justify-content: left !important;
@@ -41,11 +40,11 @@
                 padding-left: 30px;
                 width: 150px !important;
             }
-            .user-info {padding-left: 30px;}
+            .user-info {
+                padding-left: 30px;
+            }
         }
-
     }
-
 
     .change-info-chk {
         display: flex;

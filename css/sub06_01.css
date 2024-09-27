@@ -13,10 +13,9 @@
 
 .comment {
   font-size: 14px;
-  margin-top: 10px;
   text-align: center;
   font-weight: 300;
-  margin-bottom: 20px;
+  line-height: 20px;
 }
 
 .main-tel,
@@ -24,7 +23,7 @@
 .main-restaurant {
   width: 300px;
   height: 100px;
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
   text-align: center;
   background-color: #f6f6f6;
@@ -44,7 +43,7 @@
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .main-tel p:first-of-type,

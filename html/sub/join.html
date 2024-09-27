@@ -1149,18 +1149,18 @@
                             const chk1 = document.getElementById('chk1').checked;
                             const chk2 = document.getElementById('chk2').checked;
                             const chk3 = document.getElementById('chk3').checked;
-                            let alertText = document.querySelector(".lypop.join .modal-txt");
-                            let joinAlertChkBtn = document.querySelector(".join-alert-chk-btn");
+                            let alertText = document.querySelector('.lypop.join .modal-txt');
+                            let joinAlertChkBtn = document.querySelector('.join-alert-chk-btn');
 
                             let valid = false;
                             if (!chk1 || !chk2 || !chk3) {
-                                alertText.innerHTML = "먼저 약관에 동의하셔야 합니다.";
+                                alertText.innerHTML = '먼저 약관에 동의하셔야 합니다.';
                                 valid = false;
                                 return;
                             } else {
                                 valid = true;
-                                alertText.innerHTML = "본인인증 후 가입을 진행합니다.";
-                                joinAlertChkBtn.setAttribute("onclick","location.href='./myinfo.html'");
+                                alertText.innerHTML = '본인인증 후 가입을 진행합니다.';
+                                joinAlertChkBtn.setAttribute('onclick', "location.href='./myinfo.html'");
                             }
                         });
                     </script>
@@ -1229,18 +1229,15 @@
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
 
-
         <!-- alert -->
         <div class="lypop join" data-lyOpen="pop-alert" tabindex="0">
             <div class="lypop-wp min">
                 <div class="lypop-content">
                     <div class="lypop-title">
-                        <strong>타이틀</strong>
+                        <strong>회원가입</strong>
                     </div>
                     <div class="lypop-ct">
-                        <p class="modal-txt">
-                            먼저 약관에 동의하셔야 합니다.
-                        </p>
+                        <p class="modal-txt">먼저 약관에 동의하셔야 합니다.</p>
                         <div class="btn-wrap type5">
                             <button class="btn btn-04 join-alert-chk-btn" data-lyClose="pop-mypage1"><span>확인</span></button>
                         </div>
