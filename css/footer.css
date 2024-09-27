@@ -6,7 +6,6 @@ footer {
   border-top: 1px solid #eaeaea;
 }
 footer .center {
-  width: 70%;
   display: flex;
   justify-content: space-between;
   padding: 70px 0 120px;
@@ -144,4 +143,14 @@ footer .info > p:nth-of-type(4)::before {
 }
 footer .info > p:nth-of-type(5)::before {
   background-image: url(../../img/main/mark-seoul-5.jpg);
+}
+
+@media screen and (max-width: 768px) {
+  footer .center {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  footer .f_bot {
+    order: 3;
+  }
 }

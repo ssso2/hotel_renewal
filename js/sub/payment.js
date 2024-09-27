@@ -1,48 +1,73 @@
 $(function(){
-    $(".adult > .btn-down").click(function(){
-        let currentNumber = parseInt($(".adult > .num").text());
+    // 어른 조식 +,- 클릭
+    $(".adult > .button-wrap > .btn-down").click(function(){
+        let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
+        let currentNumber = parseInt($(".adult > .button-wrap > .num").text());
         if(currentNumber > 0){
             currentNumber -= 1;
+            totalPrice -= 60000;
         }
-        $(".adult > .num").text(currentNumber);
+        $(".adult > .button-wrap > .num").text(currentNumber);
+        $(".total-wrap > .total > .total-price").text(totalPrice);
     })
-    $(".adult > .btn-up").click(function(){
+    $(".adult > .button-wrap > .btn-up").click(function(){
+        let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
         let memberNumber = parseInt($(".adult > .mem-num").text());
-        let currentNumber = parseInt($(".adult > .num").text());
+        let currentNumber = parseInt($(".adult > .button-wrap > .num").text());
         if(currentNumber < memberNumber){
             currentNumber += 1;
+            totalPrice += 60000;
         }
-        $(".adult > .num").text(currentNumber);
+        $(".adult >  .button-wrap > .num").text(currentNumber);
+        $(".total-wrap > .total > .total-price").text(totalPrice);
     })
-    $(".child > .btn-down").click(function(){
-        let currentNumber = parseInt($(".child > .num").text());
+
+    // 어린이 조식 +,- 클릭
+    $(".child > .button-wrap > .btn-down").click(function(){
+        let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
+        let currentNumber = parseInt($(".child > .button-wrap > .num").text());
         if(currentNumber > 0){
             currentNumber -= 1;
+            totalPrice -= 38000;
         }
-        $(".child > .num").text(currentNumber);
+        $(".child > .button-wrap > .num").text(currentNumber);
+        $(".total-wrap > .total > .total-price").text(totalPrice);
     })
-    $(".child > .btn-up").click(function(){
+    $(".child > .button-wrap > .btn-up").click(function(){
+        let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
         let memberNumber = parseInt($(".child > .mem-num").text());
-        let currentNumber = parseInt($(".child > .num").text());
+        let currentNumber = parseInt($(".child > .button-wrap > .num").text());
         if(currentNumber < memberNumber){
             currentNumber += 1;
+            totalPrice += 38000;
         }
-        $(".child > .num").text(currentNumber);
+        $(".child > .button-wrap > .num").text(currentNumber);
+        $(".total-wrap > .total > .total-price").text(totalPrice);
     })
-    $(".bed > .btn-down").click(function(){
-        let currentNumber = parseInt($(".bed > .num").text());
+
+    // 엑스트라베드 +,- 클릭
+    $(".bed > .button-wrap > .btn-down").click(function(){
+        let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
+        let currentNumber = parseInt($(".bed > .button-wrap > .num").text());
         if(currentNumber > 0){
             currentNumber -= 1;
+            totalPrice -= 66000;
         }
-        $(".bed > .num").text(currentNumber);
+        $(".bed > .button-wrap > .num").text(currentNumber);
+        $(".total-wrap > .total > .total-price").text(totalPrice);
     })
-    $(".bed > .btn-up").click(function(){
-        let currentNumber = parseInt($(".bed > .num").text());
+    $(".bed > .button-wrap > .btn-up").click(function(){
+        let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
+        let currentNumber = parseInt($(".bed > .button-wrap > .num").text());
         if(currentNumber < 1){
             currentNumber += 1;
+            totalPrice += 66000;
         }
-        $(".bed > .num").text(currentNumber);
+        $(".bed > .button-wrap > .num").text(currentNumber);
+        $(".total-wrap > .total > .total-price").text(totalPrice);
     })
+    
+    //결제하기 버튼 클릭시 alert
     $("#pay").click(function(e){
 
         if($("#in-time :selected").val()==""){ 
