@@ -190,6 +190,7 @@ body::-webkit-scrollbar-track {
 .sub-title .location {
   display: flex;
   align-items: center;
+  min-width: 110px;
 }
 .sub-title .location > li {
   margin-right: 30px;
@@ -316,13 +317,15 @@ body::-webkit-scrollbar-track {
   background-position: center;
 }
 .gallery .mySwiper2 {
-  height: 500px;
+  height: auto;
   width: 100%;
+  aspect-ratio: 1/0.444444;
 }
 .gallery .mySwiper {
-  height: 200px;
+  height: auto;
   box-sizing: border-box;
   padding: 10px 0;
+  aspect-ratio: 1/0.119767;
 }
 .gallery .mySwiper .swiper-slide {
   width: 25%;
@@ -698,12 +701,14 @@ body::-webkit-scrollbar-track {
   }
   /* 플로팅 메뉴 */
   .floating-menu .menu {
-    top: 83%;
+    top: auto;
+    transform: none;
+    bottom: 100px;
   }
   .daterangepicker {
     padding: 50px 120px;
-    width: 98%;
-    left: 10px !important;
+    width: 86%;
+    left: 20px !important;
   }
 }
 @media screen and (max-width: 1240px) {
@@ -778,6 +783,15 @@ body::-webkit-scrollbar-track {
     background-color: #7a6c64;
     color: #fff;
   }
+  .gallery .mySwiper {
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px 0;
+    aspect-ratio: 1/0.231296;
+  }
+  .gallery .mySwiper .swiper-slide {
+    width: 50%;
+  }
   /* 레이어 팝업 */
   .lypop-wp.mid {
     width: 95vw !important;
@@ -793,11 +807,18 @@ body::-webkit-scrollbar-track {
   .center {
     width: 95%;
   }
+  .sub-title.column {
+    flex-direction: column;
+  }
+  .sub-title.column .location {
+    margin-top: 10px;
+  }
   /* 3depth tab 공통 */
   .depth3-tab-wrap {
     /* tab */
   }
   .depth3-tab-wrap .tab > li {
+    padding: 0px 5px;
     font-size: 12px;
   }
   /* 레이어 팝업 */
@@ -806,5 +827,9 @@ body::-webkit-scrollbar-track {
   }
   .lypop-wp {
     width: 95vw !important;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 30px;
   }
 }
