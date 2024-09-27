@@ -1,5 +1,5 @@
+// 드롭다운리스트
 $(function () {
-    // 드롭다운리스트
     $(".sortbox").click(function () {
         $(".dropdown.sort").toggleClass("on");
     });
@@ -194,5 +194,25 @@ $(function () {
     });
     $("#pagination").on("click", function () {
         $("html, body").animate({ scrollTop: targetOffset }, "fast");
+    });
+});
+
+// 아코디언
+$(function () {
+    $(".accordion-trigger").click(function (e) {
+        // 클릭된 요소에만 active 클래스 토글
+        $(this).toggleClass("active");
+        $(".des-wrap").css("display", "block");
+
+        // 해당 요소의 다음 요소인 .des-wrap을 slideToggle
+        $(this).parent().next().slideToggle("slow");
+
+        // 다른 .accordion-trigger 요소가 열려 있다면 닫기
+        $(".accordion-trigger")
+            .not(this)
+            .removeClass("active")
+            .parent()
+            .next()
+            .slideUp("slow");
     });
 });

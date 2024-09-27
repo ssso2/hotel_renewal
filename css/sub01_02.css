@@ -86,7 +86,7 @@
 
 .event-title {
   width: 100%;
-  padding: 120px 0 20px 0;
+  padding: 80px 0 20px 0;
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 700;
@@ -103,7 +103,7 @@
 .event-section {
   width: 100%;
   padding-bottom: 40px;
-  margin: 100px 0 100px 0;
+  margin: 40px 0 50px 0;
   border-bottom: 1px solid #ddd;
 }
 .event-section h2 {
@@ -112,16 +112,16 @@
 }
 .event-section p {
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 .event-section .main-des {
-  margin: 40px 0 40px 0;
+  margin: 10px 0 40px 0;
 }
 .event-section .main-des li {
   line-height: 2;
 }
 .event-section .main-des li:nth-of-type(5) {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .event-pmt {
@@ -135,30 +135,29 @@
   font-weight: 700;
 }
 
-.event-li ul {
+.event-li .event-wrap {
   display: flex;
+  width: 100%;
   margin-bottom: 100px;
 }
-.event-li ul li {
-  width: 100%;
-  margin-right: 300px;
+.event-li .event-wrap .event-detail {
+  width: 50%;
+  margin-right: auto;
   line-height: 1.5;
 }
-.event-li ul li img {
-  width: 500px;
-  height: 300px;
+.event-li .event-wrap .event-detail h3 {
   margin-bottom: 20px;
 }
-.event-li ul li h3 {
+.event-li .event-wrap .event-detail img {
+  width: 90%;
+  aspect-ratio: 1/0.588692;
   margin-bottom: 20px;
 }
 
 .a-wrap {
-  margin-bottom: 25px;
   text-align: right;
 }
-
-.aList {
+.a-wrap .aList {
   width: 180px;
   height: 40px;
   background: #7a6c64;
@@ -169,13 +168,12 @@
 
 .other-event {
   border-top: 2px solid #7a6c64;
-  padding: 100px 0 140px 0;
+  padding: 80px 0 140px 0;
   margin-top: 100px;
   width: 100%;
 }
 .other-event .other-title {
   width: 100%;
-  background-color: #fff;
   text-align: center;
   font-size: 22px;
   font-weight: 600;
@@ -195,18 +193,14 @@
   width: 100%;
 }
 .other-event .other-list .other-item a .img-box {
-  width: 100%;
-  position: relative;
-  padding-top: 56.25%;
+  aspect-ratio: 1/0.653018;
   overflow: hidden;
+  border-radius: 6px;
 }
 .other-event .other-list .other-item a .img-box img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 .other-event .other-list .other-item a dl {
   width: 100%;
@@ -247,15 +241,14 @@
     aspect-ratio: 2.204761;
   }
   .event-container .list-item .list-container .txt-wrapper {
-    font-size: 13px;
+    font-size: 14px;
   }
   .event-container .list-item .list-container .txt-wrapper h3 {
-    font-size: 18px;
-    padding: 14px 0;
+    font-size: 20px;
+    padding: 14px 0 10px 0;
   }
   .event-container .list-item .list-container .txt-wrapper .offer-des {
     min-height: 20px;
-    line-height: 1;
   }
   .event-container .list-item .list-container .txt-wrapper .offer-date {
     padding: 10px 0;
@@ -264,146 +257,108 @@
     font-size: 20px;
   }
   .event-container .list-item .list-container .bottom-wrapper .event-btn {
-    font-size: 12px;
+    font-size: 13px;
     width: 120px;
   }
   .event-title {
-    width: 100%;
-    padding: 120px 0 20px 0;
-    margin-bottom: 20px;
+    padding-top: 40px;
     font-size: 22px;
-    font-weight: 700;
-    border-bottom: 1px solid #ddd;
   }
   .event-header {
     width: 100%;
+    aspect-ratio: 1/0.4769934;
   }
   .event-header img {
+    display: block;
     width: 100%;
+    height: 100%;
   }
   .event-section {
     width: 100%;
-    padding-bottom: 40px;
-    margin: 100px 0 100px 0;
-    border-bottom: 1px solid #ddd;
+    margin: 20px 0 60px 0;
   }
   .event-section h2 {
-    font-size: 32px;
-    padding-bottom: 10px;
+    font-size: 20px;
   }
   .event-section p {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.2;
   }
   .event-section .main-des {
-    margin: 40px 0 40px 0;
+    margin: 10px 0 0 0;
   }
   .event-section .main-des li {
-    line-height: 2;
-  }
-  .event-section .main-des li:nth-of-type(5) {
-    padding-top: 40px;
-  }
-  .event-pmt {
-    height: 100%;
-    background-color: #faf8f4;
-    padding: 25px 0 25px 25px;
-    line-height: 2;
-    margin-bottom: 50px;
-  }
-  .event-pmt :first-of-type {
-    font-weight: 700;
-  }
-  .event-li ul {
-    display: flex;
-    margin-bottom: 100px;
-  }
-  .event-li ul li {
-    width: 100%;
-    margin-right: 300px;
     line-height: 1.5;
   }
-  .event-li ul li img {
-    width: 500px;
-    height: 300px;
-    margin-bottom: 20px;
+  .event-section .main-des li:nth-of-type(5) {
+    padding-top: 26px;
   }
-  .event-li ul li h3 {
-    margin-bottom: 20px;
+  .event-pmt {
+    font-size: 13px;
   }
-  .a-wrap {
-    margin-bottom: 25px;
-    text-align: right;
+  .event-li .event-wrap {
+    display: block;
+    margin-bottom: 0px;
   }
-  .aList {
-    width: 180px;
-    height: 40px;
-    background: #7a6c64;
-    color: #fff;
-    text-align: center;
-    line-height: 3;
-  }
-  .other-event {
-    border-top: 2px solid #7a6c64;
-    padding: 100px 0 140px 0;
-    margin-top: 100px;
-    width: 100%;
-  }
-  .other-event .other-title {
-    width: 100%;
-    background-color: #fff;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  .other-event .other-list {
+  .event-li .event-wrap .event-detail {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  .event-li .event-wrap .event-detail h3 {
+    font-size: 18px;
+    margin-bottom: 0px;
+    display: inline-block;
+    width: 50%;
+  }
+  .event-li .event-wrap .event-detail img {
+    display: inline-block;
+  }
+  .event-li .event-wrap .event-detail .img-txt {
+    padding-left: 50px;
+  }
+  .a-wrap {
+    padding: 40px 0 40px 0;
+  }
+  .a-wrap a {
+    display: flex;
+    justify-content: center;
+  }
+  .other-event {
+    border-top: 1px solid #7a6c64;
+    padding: 0;
+    margin-top: 0px;
+  }
+  .other-event .other-title {
+    font-size: 18px;
+    margin-top: 60px;
+  }
+  .other-event .other-list {
+    display: block;
   }
   .other-event .other-list .other-item {
-    width: 30%;
-    overflow: hidden;
+    width: 100%;
   }
   .other-event .other-list .other-item a {
-    display: block;
-    width: 100%;
+    margin-bottom: 40px;
   }
   .other-event .other-list .other-item a .img-box {
-    width: 100%;
-    position: relative;
-    padding-top: 56.25%;
-    overflow: hidden;
-  }
-  .other-event .other-list .other-item a .img-box img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .other-event .other-list .other-item a dl {
-    width: 100%;
+    padding-top: 0%;
+    aspect-ratio: 2.204761;
   }
   .other-event .other-list .other-item a dl dt {
-    width: 100%;
-    font-weight: 400;
-    font-size: 22px;
-    margin: 20px 0 20px 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+    padding: 12px 0;
   }
   .other-event .other-list .other-item a dl .other-date {
-    color: #ccc;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
+    border-bottom-style: none;
+    padding-bottom: 0;
+    margin-bottom: 12px;
   }
   .other-event .other-list .other-item a dl .other-pay {
-    padding-top: 20px;
-    font-weight: 600;
-    font-size: 24px;
+    padding: 0;
+    font-size: 18px;
   }
 }

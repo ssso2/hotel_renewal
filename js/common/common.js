@@ -18,9 +18,14 @@ for (let i = 0; i < tabs.length; i++) {
 var swiper = new Swiper(".mySwiper", {
     loop: true,
     spaceBetween: 10,
-    slidesPerView: 4,
+    slidesPerView: 2,
     freeMode: true,
     watchSlidesProgress: true,
+    breakpoints: {
+        1240: {
+            slidesPerView: 4,
+        },
+    }
 });
 var swiper2 = new Swiper(".mySwiper2", {
     loop: true,

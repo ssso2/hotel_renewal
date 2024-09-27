@@ -227,7 +227,7 @@
                             <li class="list">
                                 <h4>객실 요금</h4>
                                 <div class="box price">
-                                    <span class="rsv-price">468,000</span>
+                                    <span class="rsv-price">468000</span>
                                     <span>원</span>
                                 </div>
                             </li>
@@ -348,7 +348,7 @@
                         </div>
                     </ul>
                     <div class="agr">
-                        <h3>개인정보 수집이용 동의</h3>
+                        <h3>개인정보 수집ㆍ이용 동의</h3>
                         <div class="collect-agr">
                             <h4>필수적인 개인정보의 수집ㆍ이용에 관한 사항</h4>
                             <div class="txt-box">
@@ -382,14 +382,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="total">
-                        <span class="">요금 합계 : </span>
-                        <span>468000</span>
-                        <span>원</span>
-                    </div>
-                    <div class="btn-wrap type1">
-                        <a href="../../html/sub/reservation.html" class="btn btn-03">이전으로 돌아가기</a>
-                        <a href="#" class="btn btn-01" id="pay">결제하기</a>
+                    <div class="total-wrap">
+                        <div class="total">
+                            <span>요금 합계 : </span>
+                            <span class="total-price">468000</span>
+                            <span>원</span>
+                        </div>
+                        <div class="btn-wrap type1">
+                            <a href="../../html/sub/reservation.html" class="btn btn-03">이전으로 돌아가기</a>
+                            <a href="#" class="btn btn-01" id="pay" data-lybtn="pop-alert">결제하기</a>
+                        </div>
                     </div>
                 </ul>
             </div>
@@ -449,5 +451,23 @@
         </div>
         <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
     </article>
+
+    <!-- alert -->
+    <div class="lypop payment" data-lyOpen="pop-alert" tabindex="0">
+        <div class="lypop-wp min">
+            <div class="lypop-content">
+                <div class="lypop-title">
+                    <strong>알림</strong>
+                </div>
+                <div class="lypop-ct">
+                    <p class="modal-txt">
+                    </p>
+                    <div class="btn-wrap type5">
+                        <button class="btn btn-04 join-alert-chk-btn" data-lyClose="pop-alert"><span>확인</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
