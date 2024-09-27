@@ -467,6 +467,23 @@
                 margin-right: 0;
                 width: 100%;
             }
+            .info-wrap {
+                .info.flex {
+                    flex-wrap: wrap;
+                    text-align: left;
+                    .list {
+                        margin: 0 0  20px 0;
+                        width: 100%;
+                        &::after {
+                            display: none;
+                        }
+                        h4 {
+                            margin: 0;
+                            width: 120px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
