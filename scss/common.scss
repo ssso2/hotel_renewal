@@ -725,15 +725,17 @@ body::-webkit-scrollbar-track {
     /* 플로팅 메뉴 */
     .floating-menu {
         .menu {
-            top: 83%;
+            top: auto;
+            transform: none;
+            bottom: 100px;
         }
     }
 
     // daterangepicker 팜업
     .daterangepicker {
         padding: 50px 120px;
-        width: 98%;
-        left: 10px !important;
+        width: 86%;
+        left: 20px !important;
     }
 }
 
