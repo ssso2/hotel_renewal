@@ -706,8 +706,20 @@ body::-webkit-scrollbar-track {
   }
   .daterangepicker {
     padding: 50px 120px;
-    width: 86%;
+    width: 1080px;
     left: 20px !important;
+  }
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 100px;
+  }
+  .daterangepicker .drp-calendar .calendar-table th,
+  .daterangepicker .drp-calendar .calendar-table td {
+    font-size: 18px;
+    line-height: 50px;
+  }
+  .daterangepicker .drp-calendar .calendar-table td {
+    width: 50px;
+    height: auto;
   }
 }
 @media screen and (max-width: 1240px) {
@@ -716,43 +728,25 @@ body::-webkit-scrollbar-track {
   }
   .daterangepicker {
     padding: 30px;
-  }
-  .daterangepicker.drop-up {
-    margin-top: -10px;
-  }
-  .daterangepicker .drp-calendar {
-    max-width: none;
+    width: 700px;
+    left: 10px !important;
   }
   .daterangepicker .drp-calendar.left .calendar-table {
     padding-right: 50px;
   }
   .daterangepicker .drp-calendar .calendar-table th,
   .daterangepicker .drp-calendar .calendar-table td {
-    font-size: 20px;
-    line-height: 3;
+    font-size: 17px;
+    line-height: 40px;
   }
   .daterangepicker .drp-calendar .calendar-table td {
-    width: 60px;
-    height: auto;
-  }
-  .daterangepicker .drp-calendar .calendar-table td.active {
-    border-radius: 50%;
-  }
-  .daterangepicker .drp-buttons {
-    padding-top: 20px;
-    border: none;
-    border-top: 1px solid #eaeaea;
-    line-height: 1;
+    width: 40px;
   }
   .daterangepicker .drp-buttons .btn {
-    font-size: 18px;
+    font-size: 17px;
   }
   .daterangepicker .drp-selected {
-    margin-right: 30px;
-    padding: 4px 0;
-    font-size: 20px;
-    color: #000;
-    vertical-align: middle;
+    font-size: 17px;
   }
   /* 3depth tab 공통 */
   .depth3-tab-wrap {
@@ -811,6 +805,43 @@ body::-webkit-scrollbar-track {
   }
   .sub-title.column .location {
     margin-top: 10px;
+  }
+  .daterangepicker {
+    padding: 30px 100px;
+    width: calc(100vw - 10px);
+    height: 100vh;
+    left: 50% !important;
+    top: 0 !important;
+    transform: translateX(-50%);
+  }
+  .daterangepicker.show-calendar .drp-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .daterangepicker .drp-calendar.left {
+    padding: 8px 0 30px 8px;
+  }
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 20px;
+  }
+  .daterangepicker .drp-calendar .calendar-table th,
+  .daterangepicker .drp-calendar .calendar-table td {
+    font-size: 15px;
+    line-height: 40px;
+  }
+  .daterangepicker .drp-calendar .calendar-table td {
+    width: 40px;
+  }
+  .daterangepicker .drp-buttons {
+    padding: 10px;
+  }
+  .daterangepicker .drp-buttons .btn {
+    font-size: 15px;
+  }
+  .daterangepicker .drp-selected {
+    margin-right: 0px;
+    font-size: 15px;
   }
   /* 3depth tab 공통 */
   .depth3-tab-wrap {

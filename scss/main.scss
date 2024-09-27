@@ -1417,6 +1417,9 @@ main {
                     padding-bottom: 50px;
                     width: 100%;
                     border-bottom: 1px solid #ddd;
+                    &::after {
+                        display: none;
+                    }
                     &:last-child {
                         margin-bottom: 0;
                         border: none;

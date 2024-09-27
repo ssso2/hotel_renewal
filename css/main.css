@@ -1148,6 +1148,9 @@ main .cont6 iframe {
     width: 100%;
     border-bottom: 1px solid #ddd;
   }
+  main .cont5 .benefit .list::after {
+    display: none;
+  }
   main .cont5 .benefit .list:last-child {
     margin-bottom: 0;
     border: none;
