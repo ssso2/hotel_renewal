@@ -166,6 +166,10 @@
 
 @media screen and (max-width:1240px){
     .sub-list-wrap {
+        .sub-title.first {
+            padding-bottom: 50px;
+            border-top: 1px solid #ddd;
+        } 
 
         .sub-list {
             padding-bottom: 0;
@@ -177,6 +181,7 @@
             &:last-child {
                 border: none;
             }
+
             &.line-2 {
                 & > li {
                     width: calc((100% - 50px) / 2);

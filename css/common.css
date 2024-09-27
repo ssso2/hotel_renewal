@@ -190,6 +190,7 @@ body::-webkit-scrollbar-track {
 .sub-title .location {
   display: flex;
   align-items: center;
+  min-width: 110px;
 }
 .sub-title .location > li {
   margin-right: 30px;
@@ -805,6 +806,12 @@ body::-webkit-scrollbar-track {
   .center {
     width: 95%;
   }
+  .sub-title.column {
+    flex-direction: column;
+  }
+  .sub-title.column .location {
+    margin-top: 10px;
+  }
   /* 3depth tab 공통 */
   .depth3-tab-wrap {
     /* tab */
@@ -820,12 +827,8 @@ body::-webkit-scrollbar-track {
   .lypop-wp {
     width: 95vw !important;
   }
-}
-@media screen and (max-width: 768px) {
-  .sub-title.column {
-    flex-direction: column;
-  }
-  .sub-title.column .location {
-    margin-top: 10px;
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 30px;
   }
 }

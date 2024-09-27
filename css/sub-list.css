@@ -132,6 +132,10 @@
 }
 
 @media screen and (max-width: 1240px) {
+  .sub-list-wrap .sub-title.first {
+    padding-bottom: 50px;
+    border-top: 1px solid #ddd;
+  }
   .sub-list-wrap .sub-list {
     padding-bottom: 0;
     padding-top: 0;
