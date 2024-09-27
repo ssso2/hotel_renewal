@@ -280,7 +280,6 @@ body::-webkit-scrollbar-track {
         }
     }
 }
-
 // 3depth 스와이퍼 슬라이드 갤러리
 .gallery {
     .swiper {
@@ -317,14 +316,16 @@ body::-webkit-scrollbar-track {
     }
 
     .mySwiper2 {
-        height: 500px;
+        height: auto;
         width: 100%;
+        aspect-ratio: 1 / 0.444444;
     }
 
     .mySwiper {
-        height: 200px;
+        height: auto;
         box-sizing: border-box;
         padding: 10px 0;
+        aspect-ratio: 1 / 0.119767;
     }
 
     .mySwiper .swiper-slide {
@@ -790,8 +791,6 @@ body::-webkit-scrollbar-track {
             vertical-align: middle;
         }
     }
-<<<<<<< HEAD
-    //여기서부터 수정 중
     /* 3depth tab 공통 */
     .depth3-tab-wrap {
         padding-top: 100px;
@@ -818,78 +817,22 @@ body::-webkit-scrollbar-track {
                     border: 1px solid #7a6c64;
                     background-color: #7a6c64;
                     color: #fff;
-=======
-
-    /* 3depth tab 공통 */
-    .depth3-tab-wrap {
-        /* tab */
-        .tab {
-            display: none;
-            &.mo-show {
-                display: flex;
-                & > li {
-                    min-width: calc(100% / 4);
-                }
-            }
-
-            &.on {
-                position: fixed;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 1420px;
-            }
-
-            & > li {
-                margin-bottom: -1px;
-                min-width: calc(100% / 7);
-                padding: 0px 10px;
-                text-align: center;
-                font-size: 16px;
-                line-height: 40px;
-                border: 1px solid #ddd;
-                border-right: 0;
-                border-bottom-color: transparent;
-                background: #fff;
-                cursor: pointer;
-
-                & > a {
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                }
-
-                &:last-child {
-                    border-right: 1px solid #ddd;
-                }
-
-                &.on {
-                    border: 1px solid #888;
-                    border-bottom: 3px solid #fff;
-                    font-weight: 700;
-                }
-
-                &:hover {
-                    font-weight: 700;
-                    text-decoration: underline;
-                    text-underline-position: under;
-                }
-            }
-        }
-
-        /* tab-contents */
-        .tab-contents {
-            & > .tab-cont {
-                display: none;
-
-                &.on {
-                    display: block;
->>>>>>> master
                 }
             }
         }
     }
-<<<<<<< HEAD
+    // 3depth 스와이퍼 슬라이드 갤러리
+    .gallery {
+        .mySwiper {
+            height: auto;
+            box-sizing: border-box;
+            padding: 10px 0;
+            aspect-ratio: 1 / 0.231296;
+        }
+        .mySwiper .swiper-slide {
+            width: 50%;
+        }
+    }
     /* 레이어 팝업 */
     .lypop-wp {
         &.mid {
@@ -903,8 +846,6 @@ body::-webkit-scrollbar-track {
         }
     }
     
-=======
->>>>>>> master
 }
 @media screen and (max-width: 768px) {
     .center {
@@ -915,6 +856,7 @@ body::-webkit-scrollbar-track {
         /* tab */
         .tab {
             & > li {
+                padding: 0px 5px;
                 font-size: 12px;
             }
         }

@@ -68,16 +68,8 @@ $(function(){
     })
     
     //결제하기 버튼 클릭시 alert
-    // if 조건 만들기
-    // data-ly btn 속성 빼기
-    if($("#in-time").length > 1){
-        alert("확인")
-    }
-    if($("#in-time :selected").val()!="" && $("#guide-chk").is(":checked") && $("#col-arg").is(":checked") && $("#sug-arg").is(":checked") ){
-        // $("#pay").removeAttr("data-lybtn")
-        console.log("확인")
-    }
-    
+    //function 만들기
+
     $("#pay").click(function(e){
         let alertText = document.getElementsByClassName('modal-txt');    
 

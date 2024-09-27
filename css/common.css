@@ -315,13 +315,15 @@ body::-webkit-scrollbar-track {
   background-position: center;
 }
 .gallery .mySwiper2 {
-  height: 500px;
+  height: auto;
   width: 100%;
+  aspect-ratio: 1/0.444444;
 }
 .gallery .mySwiper {
-  height: 200px;
+  height: auto;
   box-sizing: border-box;
   padding: 10px 0;
+  aspect-ratio: 1/0.119767;
 }
 .gallery .mySwiper .swiper-slide {
   width: 25%;
@@ -777,6 +779,15 @@ body::-webkit-scrollbar-track {
     background-color: #7a6c64;
     color: #fff;
   }
+  .gallery .mySwiper {
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px 0;
+    aspect-ratio: 1/0.231296;
+  }
+  .gallery .mySwiper .swiper-slide {
+    width: 50%;
+  }
   /* 레이어 팝업 */
   .lypop-wp.mid {
     width: 95vw !important;
@@ -797,6 +808,7 @@ body::-webkit-scrollbar-track {
     /* tab */
   }
   .depth3-tab-wrap .tab > li {
+    padding: 0px 5px;
     font-size: 12px;
   }
   /* 레이어 팝업 */
