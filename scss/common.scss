@@ -170,6 +170,7 @@ body::-webkit-scrollbar-track {
         display: flex;
         align-items: center;
 
+
         & > li {
             margin-right: 30px;
             position: relative;
@@ -859,6 +860,16 @@ body::-webkit-scrollbar-track {
                     display: block;
                 }
             }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .sub-title.column {
+        flex-direction: column;
+        .location {
+            margin-top: 10px;
         }
     }
 }
