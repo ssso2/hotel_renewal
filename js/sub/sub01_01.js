@@ -199,20 +199,65 @@ $(function () {
 
 // 아코디언
 $(function () {
-    $(".accordion-trigger").click(function (e) {
-        // 클릭된 요소에만 active 클래스 토글
-        $(this).toggleClass("active");
-        $(".des-wrap").css("display", "block");
+    function handleAccordion() {
+        var screenWidth = $(window).width();
+        // 화면 너비가 768px 이하일 때만 아코디언 작동
+        if (screenWidth <= 768) {
+            $(".accordion-trigger").click(function () {
+                // 해당 요소의 부모요소의 다음 요소인 .des-wrap 클래스 선택
+                var $currentClass = $(this)
+                    .parent(".head-wrap")
+                    .next(".des-wrap");
+                if ($(this).hasClass("active")) {
+                    $currentClass.slideUp("slow"); // 닫기
+                } else {
+                    $currentClass.slideDown("slow"); // 열기
+                }
+                // active 클래스 토글
+                $(this).toggleClass("active");
+            });
+        } else {
+            // 화면 너비가 768px 초과일 경우 클릭 이벤트 제거 (작동 안 함)
+            $(".accordion-trigger").off("click");
+        }
+    }
 
-        // 해당 요소의 다음 요소인 .des-wrap을 slideToggle
-        $(this).parent().next().slideToggle("slow");
+    // 페이지 로드 시 바로 실행
+    handleAccordion();
 
-        // 다른 .accordion-trigger 요소가 열려 있다면 닫기
-        $(".accordion-trigger")
-            .not(this)
-            .removeClass("active")
-            .parent()
-            .next()
-            .slideUp("slow");
+    // 윈도우 크기 변경 시마다 반응
+    $(window).resize(function () {
+        handleAccordion();
     });
 });
+
+////////////////
+// 아코디언 원본
+// $(function () {
+//     function handleAccordion() {
+//         var screenWidth = $(window).width();
+//         // 화면 너비가 768px 이하일 때만 아코디언 작동
+//         if (screenWidth <= 768) {
+//             $(".accordion-trigger").click(function () {
+//                 // active 클래스 추가
+//                 $(this).toggleClass("active");
+//                 // 해당 요소의 부모요소의 다음 요소인 .des-wrap이 닫혀있으면 열고 열려있으면 닫기
+//                 $(this)
+//                     .parent(".head-wrap")
+//                     .next(".des-wrap")
+//                     .slideToggle("slow");
+//                 // .slideDown("slow");
+//             });
+//         } else {
+//             // 화면 너비가 768px 초과일 경우 클릭 이벤트 제거 (작동 안 함)
+//             $(".accordion-trigger").off("click");
+//         }
+//     }
+// // 페이지 로드 시 바로 실행
+// handleAccordion();
+
+// // 윈도우 크기 변경 시마다 반응
+// $(window).resize(function () {
+//     handleAccordion();
+// });
+// });
