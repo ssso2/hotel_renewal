@@ -118,14 +118,14 @@
             padding: 0 20px 20px 20px;
         }
     }
-    .description-main.other-type {
-        width: calc(50% - 20px);
-        overflow: hidden;
-    }
-    .description-main.other-type-full {
-        width: calc(50%);
-        overflow: hidden;
-    }
+    // .description-main.other-type {
+    //     width: calc(50% - 20px);
+    //     overflow: hidden;
+    // }
+    // .description-main.other-type-full {
+    //     width: calc(50%);
+    //     overflow: hidden;
+    // }
     .description {
         width: calc(20% - 10px);
         display: block;
@@ -378,7 +378,7 @@
         }
     }
     .other-event {
-        border-top: 1px solid #7a6c64;
+        border-top: none;
         padding: 0;
         margin-top: 0px;
         .other-title {
@@ -390,7 +390,9 @@
             .other-item {
                 width: 100%;
                 a {
+                    padding-bottom: 10px;
                     margin-bottom: 40px;
+                    border-bottom: 1px solid #ccc;
                     .img-box {
                         padding-top: 0%;
                         aspect-ratio: 1/0.44761;
