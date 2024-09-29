@@ -169,6 +169,8 @@ body::-webkit-scrollbar-track {
     .location {
         display: flex;
         align-items: center;
+        min-width: 110px;
+
 
         & > li {
             margin-right: 30px;
@@ -726,15 +728,17 @@ body::-webkit-scrollbar-track {
     /* 플로팅 메뉴 */
     .floating-menu {
         .menu {
-            top: 83%;
+            top: auto;
+            transform: none;
+            bottom: 100px;
         }
     }
 
     // daterangepicker 팜업
     .daterangepicker {
         padding: 50px 120px;
-        width: 98%;
-        left: 10px !important;
+        width: 86%;
+        left: 20px !important;
     }
 }
 
@@ -743,6 +747,7 @@ body::-webkit-scrollbar-track {
         width: 95%;
     }
 
+    
     // daterangepicker 팜업
     .daterangepicker {
         padding: 30px;
@@ -850,6 +855,14 @@ body::-webkit-scrollbar-track {
     .center {
         width: 95%;
     }
+    
+    .sub-title.column {
+        flex-direction: column;
+        .location {
+            margin-top: 10px;
+        }
+    }
+
     /* 3depth tab 공통 */
     .depth3-tab-wrap {
         /* tab */
@@ -869,4 +882,13 @@ body::-webkit-scrollbar-track {
     .lypop-wp {
         width: 95vw !important;
     }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        &::after {
+            font-size: 30px;
+        }
+    }
 }
+
+

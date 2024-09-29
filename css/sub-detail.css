@@ -2,7 +2,8 @@
   margin: 70px 0;
 }
 .depth3-tab-wrap .gallery.no-slide {
-  height: 600px;
+  height: auto;
+  aspect-ratio: 1/0.422535;
 }
 .depth3-tab-wrap .gallery.no-slide img {
   width: 100%;
@@ -125,7 +126,7 @@
   line-height: 158px;
 }
 .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(3) .time {
-  line-height: 131px;
+  line-height: 170px;
 }
 .depth3-tab-wrap .context .Introduction .timetable > li .time {
   width: 150px;
@@ -228,6 +229,7 @@
   padding: 0;
   position: relative;
   border: none;
+  line-height: 1.7;
 }
 .depth3-tab-wrap .context .info-wrap .info.flex .list::after {
   content: "";
@@ -248,6 +250,9 @@
 }
 .depth3-tab-wrap .context .info-wrap .info.flex .list > h4 {
   margin-right: 15px;
+  width: auto;
+}
+.depth3-tab-wrap .context .info-wrap .info.flex .list > p.txt {
   width: auto;
 }
 .depth3-tab-wrap .context .info-wrap .flex {
@@ -279,6 +284,12 @@
 .depth3-tab-wrap .context .info .list em, .depth3-tab-wrap .context .guide .list em {
   display: inline-block;
   width: 50px;
+}
+.depth3-tab-wrap .context .info .list > p.txt, .depth3-tab-wrap .context .guide .list > p.txt {
+  width: calc(100% - 120px);
+}
+.depth3-tab-wrap .context .info .list .txt-wrap, .depth3-tab-wrap .context .guide .list .txt-wrap {
+  width: calc(100% - 120px);
 }
 .depth3-tab-wrap .context .info .list .txt-wrap .txt, .depth3-tab-wrap .context .guide .list .txt-wrap .txt {
   margin-top: 15px;
@@ -393,4 +404,58 @@
 .lypop[data-lyOpen] img {
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 1240px) {
+  .depth3-tab-wrap .context .card {
+    margin-right: 0;
+    width: 100%;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex {
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list::after {
+    display: none;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list h4 {
+    margin: 0;
+    width: 120px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .depth3-tab-wrap .context .card {
+    margin-right: 0;
+    width: 100%;
+  }
+  .depth3-tab-wrap .context .info-wrap .flex {
+    gap: 15px;
+  }
+  .depth3-tab-wrap .context .Introduction h3 strong {
+    font-size: 30px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable-wrap {
+    padding-left: 0;
+    width: 100%;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li {
+    font-size: 15px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(2) .time {
+    line-height: 147px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(3) .time {
+    line-height: 157px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li .time {
+    width: 90px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li .context {
+    padding: 20px 10px;
+    width: calc(100% - 90px);
+  }
 }
