@@ -738,8 +738,27 @@ body::-webkit-scrollbar-track {
     // daterangepicker 팜업
     .daterangepicker {
         padding: 50px 120px;
-        width: 86%;
+        width: 1080px;
         left: 20px !important;
+    
+        .drp-calendar {
+            &.left {
+                .calendar-table {
+                    padding-right: 100px;
+                }
+            }
+            .calendar-table {
+                th,
+                td {
+                    font-size: 18px;
+                    line-height: 50px;
+                }
+                td {
+                    width: 50px;
+                    height: auto;
+                }
+            }
+        }
     }
 }
 
@@ -751,13 +770,10 @@ body::-webkit-scrollbar-track {
     // daterangepicker 팜업
     .daterangepicker {
         padding: 30px;
-
-        &.drop-up {
-            margin-top: -10px;
-        }
-
+        width: 700px;
+        left: 10px !important;
+    
         .drp-calendar {
-            max-width: none;
             &.left {
                 .calendar-table {
                     padding-right: 50px;
@@ -766,37 +782,25 @@ body::-webkit-scrollbar-track {
             .calendar-table {
                 th,
                 td {
-                    font-size: 20px;
-                    line-height: 3;
+                    font-size: 17px;
+                    line-height: 40px;
                 }
                 td {
-                    width: 60px;
-                    height: auto;
-                    &.active {
-                        border-radius: 50%;
-                    }
+                    width: 40px;
                 }
             }
         }
-
+    
         .drp-buttons {
-            padding-top: 20px;
-            border: none;
-            border-top: 1px solid #eaeaea;
-            line-height: 1;
             .btn {
-                font-size: 18px;
+                font-size: 17px;
             }
         }
         .drp-selected {
-            margin-right: 30px;
-            padding: 4px 0;
-            font-size: 20px;
-            color: #000;
-            vertical-align: middle;
+            font-size: 17px;
         }
     }
-    //여기서부터 수정 중
+
     /* 3depth tab 공통 */
     .depth3-tab-wrap {
         padding-top: 100px;
@@ -840,6 +844,7 @@ body::-webkit-scrollbar-track {
             }
         }
     }
+
     // 3depth 스와이퍼 슬라이드 갤러리
     .gallery {
         .mySwiper {
@@ -852,6 +857,7 @@ body::-webkit-scrollbar-track {
             width: 50%;
         }
     }
+
     /* 레이어 팝업 */
     .lypop-wp {
         &.mid {
@@ -865,6 +871,8 @@ body::-webkit-scrollbar-track {
         }
     }
 }
+
+
 @media screen and (max-width: 768px) {
     .center {
         width: 95%;
@@ -874,6 +882,55 @@ body::-webkit-scrollbar-track {
         flex-direction: column;
         .location {
             margin-top: 10px;
+        }
+    }
+
+    // daterangepicker 팜업
+    .daterangepicker {
+        padding: 30px 100px;
+        width: calc(100vw - 10px);
+        height: calc(100vh + 18px);
+        left: 50% !important;
+        top: -8px !important;
+        transform: translateX(-50%);
+        border-radius: 0 !important;
+
+        &.show-calendar {
+            .drp-buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    
+        .drp-calendar {
+            &.left {
+                padding: 8px 0 30px 8px;
+                .calendar-table {
+                    padding-right: 20px;
+                }
+            }
+            .calendar-table {
+                th,
+                td {
+                    font-size: 15px;
+                    line-height: 40px;
+                }
+                td {
+                    width: 40px;
+                }
+            }
+        }
+    
+        .drp-buttons {
+            padding: 10px;
+            .btn {
+                font-size: 15px;
+            }
+        }
+        .drp-selected {
+            margin-right: 0px;
+            font-size: 15px;
         }
     }
 
