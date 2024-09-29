@@ -214,13 +214,16 @@
                                 <!-- 댓글 상단 작성자 이름 들어갈 박스 -->
                                 <span class="name">관리자님의 댓글</span>
                             </div>
-                            <textarea class="new-reply">
+                            <div class="textarea">
+                                <textarea class="new-reply">
 고객님, 안녕하세요. 호텔신라입니다.
 크리스마스 패키지는 현재 예약이 가능하나, 먼저 예약하신 숙박 건에 대한 취소가 별도로 필요합니다.
 시즌 패키지는 한정 기간만 운영되므로 먼저 패키지 예약을 진행하신 후에
 기예약된 숙박건에 대해 취소를 진행하시면 성심성의껏 도와드리겠습니다.
 항상 호텔신라와 함께 편안한 휴식 보내시길 바랍니다. 감사합니다.
-                            </textarea>
+                            </textarea
+                                >
+                            </div>
 
                             <div class="reply-info">
                                 <!-- 작성시간, 수정, 삭제 들어갈 박스-->
@@ -241,7 +244,6 @@
 
                             <div class="reply-info">
                                 <!-- 작성시간, 수정, 삭제 들어갈 박스-->
-                                <span class="time">9/24 16:39</span>
                                 <button id="plus">댓글등록</button>
                             </div>
                         </div>
@@ -250,8 +252,8 @@
                 <div class="button-wrap">
                     <a href="sub06_03.html"><button class="list">목록으로</button></a>
                     <div class="button-container">
-                        <a href="sub06_03_03.html"><button class="edit">수정</button></a>
                         <button class="delete" data-lybtn="pop-delete"><span>삭제</span></button>
+                        <a href="sub06_03_03.html"><button class="edit">수정</button></a>
                     </div>
                 </div>
             </div>
@@ -349,7 +351,7 @@
                         <div class="btn-wrap type3">
                             <div class="align">
                                 <button class="btn btn-04" data-lyClose="pop-delete-reply"><span>취소</span></button>
-                                <a href="sub06_03.html">
+                                <a href="#self">
                                     <button class="btn btn-05"><span>확인</span></button>
                                 </a>
                             </div>
@@ -360,55 +362,73 @@
         </div>
 
         <script>
-            //작성시간 표시 스크립트 -- 추후 db 로 !!!
-            const nowtime = new Date();
-            const month = nowtime.getMonth() + 1;
-            const date = nowtime.getDate();
-            const hours = nowtime.getHours();
-            const minutes = nowtime.getMinutes();
-
-            const registeredTime = '${month}/${date} ${hours}:${minutes}';
-
             $(function () {
-                //댓글 등록 눌렀을 때
+                // 댓글 등록 눌렀을 때
                 $('#plus').click(function (e) {
                     // 공란일 때는 등록 안 됨
                     if ($('#reply').val().trim() == '') return;
 
-                    // 작성한 댓글 누적
-                    const registeredReply = $('<div class="reply-content"></div>');
-                    const userName = $('<span class="user-name"></span>').text($('.user-name').html());
-                    const commentInput = $('<div class="reply-content"></div>').val($('#reply').val());
-                    const commentEdit = $('<textarea class="new-reply"></textarea>').val($('#reply').val());
-                    const time = $('<span class="time"></span>').text($('.time').html());
+                    // 댓글 내용, 작성 시간 생성
+                    const commentText = $('#reply').val(); // 댓글 내용
+                    const now = new Date();
 
-                    const addinfo = $('<div class="reply-info"></div>');
+                    //작성시간
+                    const time = `${now.getMonth() + 1}/${now.getDate()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
 
-                    const editButton = $('<button class="edit">수정</button>'); // 수정 버튼
-                    const deleteButton = $('<button class="delete">삭제</button>'); // 삭제 버튼
-
-                    // 등록된 댓글을 reply-box에 추가 (순서: 사용자명 - 댓글 내용 - 작성 시간 - 수정 - 삭제)
-                    registeredReply.append(userName).append(commentInput).append(commentEdit).append(addinfo);
-                    $('.reply-box').append(registeredReply); // 댓글을 reply-box에 추가
-                    $('.user-name').val('');
+                    // 새 댓글은 HTML 전체로 때려넣기
+                    const newReply = $(`
+            <div class="reply-content-sec">
+                <div class="reply-content-ing">
+                    <span class="name">박세라님의 댓글</span>
+                </div>
+                <div class="textarea">
+                    <textarea class="new-reply" readonly>${commentText}</textarea>
+                </div>
+                <div class="reply-info">
+                    <span class="time">${time} 등록</span>
+                    <button class="edit">수정</button>
+                    <button class="delete" data-lybtn="pop-delete-reply">삭제</button>
+                </div>
+            </div>
+        `);
+                    // 댓글 등록 후 마지막 댓글 아래에 추가
+                    $('.reply-box').append(newReply);
                     $('#reply').val(''); // 댓글 입력란 초기화
                 });
             });
 
-            // 수정 버튼 클릭 이벤트
-            editButton.click(function () {
-                if (commentEdit.prop('readonly')) {
-                    commentEdit.prop('readonly', false).css('background', '#eee');
-                    editButton.text('완료');
+            // 수정 버튼 클릭
+            $('.reply-box').on('click', '.edit', function () {
+                const textarea = $(this).closest('.reply-content-sec').find('.new-reply');
+                const readonly = textarea.prop('readonly');
+
+                if (readonly) {
+                    textarea.prop('readonly', false);
+                    textarea.css('background-color', '#fafafa'); // 수정 가능 시 배경색
+                    $(this).text('수정완료'); // 수정완료 상태로 변경
+                    textarea.focus();
                 } else {
-                    commentEdit.prop('readonly', true).css('background', '#FFF');
-                    editButton.text('수정');
+                    textarea.prop('readonly', true);
+                    textarea.css('background-color', '#FFF'); // 수정 완료 시 배경색 변경
+                    $(this).text('수정'); // 다시 수정으로 변경
                 }
             });
 
-            // 삭제 버튼 클릭 이벤트
-            deleteButton.click(function () {
-                registeredReply.remove();
+            // 삭제 버튼 클릭
+            $('.reply-box').on('click', '.delete', function () {
+                const delReply = $(this).closest('.reply-content-sec'); // 삭제할 댓글박스 전체
+                $('.lypop').show(); //삭제할건지 묻는 모달 표시
+
+                // 확인 버튼 클릭 시 댓글 삭제
+                $('.btn-05').on('click', function () {
+                    delReply.remove();
+                    $('.lypop').hide();
+                });
+
+                // 취소 버튼 클릭 시 모달 닫기
+                $('.btn-04').on('click', function () {
+                    $('.lypop').hide();
+                });
             });
         </script>
     </body>

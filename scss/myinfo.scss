@@ -38,11 +38,11 @@
                     box-sizing: border-box;
                 }
                 #firstname {
-                    width: 245px;
-                    margin-inline-end: 10px;
+                    width: 240px;
+                    margin-inline-end: 15px;
                 }
                 #lastname {
-                    width: 245px;
+                    width: 240px;
                 }
 
                 #id-chk {
@@ -56,17 +56,20 @@
                 }
             }
             .error-message {
+                width: 100%;
                 color: #f00;
-                font-size: 12px;
+                font-size: 14px;
                 margin-top: 5px;
+                margin-bottom: 20px;
                 height: 10px;
                 line-height: 1;
                 display: block;
+                text-align: center;
             }
 
             select {
                 width: 167px;
-                padding: 10px;
+                padding: 7px;
                 font-size: 16px;
                 border: 1px solid #ccc;
                 border-radius: 5px;
@@ -86,7 +89,8 @@
             #start,
             #middle,
             #last {
-                width: 163px;
+                width: 159px;
+                text-align: center;
             }
         }
 
@@ -150,11 +154,11 @@
                         box-sizing: border-box;
                     }
                     #firstname {
-                        width: 145px;
-                        margin-inline-end: 10px;
+                        width: 140px;
+                        margin-inline-end: 15px;
                     }
                     #lastname {
-                        width: 145px;
+                        width: 140px;
                     }
 
                     #id-chk {
@@ -169,17 +173,20 @@
                     }
                 }
                 .error-message {
+                    width: 100%;
                     color: #f00;
-                    font-size: 12px;
+                    font-size: 14px;
                     margin-top: 5px;
+                    margin-bottom: 20px;
                     height: 10px;
                     line-height: 1;
                     display: block;
+                    text-align: center;
                 }
 
                 select {
                     width: 100px;
-                    padding: 10px;
+                    padding: 7px;
                     font-size: 16px;
                     border: 1px solid #ccc;
                     border-radius: 5px;
@@ -199,7 +206,7 @@
                 #start,
                 #middle,
                 #last {
-                    width: 95px;
+                    width: 92px;
                 }
             }
 

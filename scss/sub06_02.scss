@@ -62,10 +62,12 @@
         .post-num {
             width: 10%;
             text-align: center;
+            display: none;
         }
         .post-title {
             width: 50%;
-            text-align: center;
+            text-align: left;
+            padding-left: 20px;
             a {
                 display: block;
                 white-space: nowrap;

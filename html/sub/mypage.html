@@ -201,9 +201,11 @@
                         <!-- 비밀번호 확인 (회원정보 수정 전) -->
                         <div class="change-info-chk" id="change-info-chk">
                             <h2 class="title">비밀번호 확인</h2>
-                            <label><input type="password" id="pw-chk" /></label>
-                            <p id="error-message" style="color: red; display: none"></p>
-                            <input type="button" id="btn-confirm" value="확인" onclick="pw_chk()" />
+                            <div class="pwdiv">
+                                <label><input type="password" id="pw-chk" /></label>
+                                <p id="error-message" style="color: red; display: none"></p>
+                                <input type="button" id="btn-confirm" value="확인" onclick="pw_chk()" />
+                            </div>
                         </div>
 
                         <!-- 회원정보 수정 -->

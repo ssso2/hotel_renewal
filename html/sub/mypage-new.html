@@ -199,75 +199,34 @@
                     </ul>
                     <div class="content">
                         <!-- 회원정보 수정 -->
-                        <div class="mypage-info user-info-wrap" id="mypage-info-new">
+                        <div class="mypage-info user-info-wrap" id="user-info-wrap">
                             <h2 class="title">회원정보</h2>
-                            <div class="my-info">
+                            <label class="my-info">
                                 <p>아이디</p>
-                                <span class="user-info">center20240722</span>
-                            </div>
-                            <div class="my-info">
+                                <input type="text" id="userid" value="center121212" />
+                            </label>
+                            <label class="my-info">
                                 <p>이름</p>
-                                <span class="user-info">손주혜</span>
-                            </div>
-                            <div class="my-info">
+                                <input type="text" id="username" value="박세라" />
+                            </label>
+                            <label class="my-info">
                                 <p>생년월일</p>
-                                <span class="user-info">1982년 5월 14일</span>
-                            </div>
-                            <div class="my-info">
+                                <input type="text" id="userbirth" value="1991.08.31" />
+                            </label>
+                            <label class="my-info">
                                 <p>연락처</p>
-                                <span class="user-info">010-0000-0000</span>
-                            </div>
-                            <div class="my-info">
+                                <input type="text" id="contact" value="010-0000-0000" />
+                            </label>
+                            <label class="my-info">
                                 <p>이메일</p>
-                                <span class="user-info">abcd@naver.com</span>
-                            </div>
-                            <input type="button" id="edit" value="회원정보수정" onclick="location.href ='./mypage.html'" />
+                                <input type="text" id="mail" value="endorphin@naver.com" />
+                            </label>
+                            <input type="button" id="edit" value="회원정보 수정" onclick="location.href ='./mypage.html'" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <script>
-            const correctPassword = 'q1w2e3r4t5!!'; //임의의 비밀번호 설정
-
-            function show_page(section) {
-                const sections = ['change-info-chk', 'mypage-info', 'reservate-info', 'inquiry-info', 'mypage-info-new'];
-                sections.forEach(id => {
-                    document.getElementById(id).style.display = id === section ? 'block' : 'none';
-                });
-            }
-
-            function pw_chk() {
-                const inputPassword = document.getElementById('pw-chk').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
-
-                if (inputPassword === correctPassword) {
-                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
-                    errorMessage.style.display = 'none';
-                    show_page('mypage-info'); //비밀번호가 맞으면 개인정보 변경 페이지 보여줌
-                } else {
-                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
-                    document.getElementById('pw-chk').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
-                }
-            }
-
-            function pw_chk2() {
-                const inputPassword = document.getElementById('pw-chk2').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
-
-                if (inputPassword === correctPassword) {
-                    //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
-                    errorMessage.style.display = 'none';
-                    show_page('withdrawal'); //회원탈퇴 페이지
-                } else {
-                    errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
-                    document.getElementById('pw-chk2').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
-                }
-            }
-        </script>
 
         <!-- 푸터/플로팅 -->
         <footer>

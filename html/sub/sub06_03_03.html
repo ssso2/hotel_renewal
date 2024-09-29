@@ -28,6 +28,7 @@
         <!-- 작성한 JS 연결 -->
         <script src="../../js/common/header.js" defer></script>
         <script src="../../js/common/common.js" defer></script>
+        <script src="../../js/sub/sub06_03_03.js" defer></script>
     </head>
     <body>
         <header class="active">
@@ -35,7 +36,7 @@
             <div class="center">
                 <h1 class="logo">
                     <a href="../index.html">
-                        <img src="../../img/common/logo.png" alt="">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -92,21 +93,22 @@
                         </ul>
                     </li>
                 </ul>
-                    <!-- 비로그인시 -->
-                    <div class="btn-wrap on">
-                        <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                        <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-                    </div>
-                    <!-- 로그인시 -->
-                    <div class="btn-wrap login">
-                        <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
-                            <i class="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </a>
-                        <a href="../../html/index.html" class="logout-btn">로그아웃
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap on">
+                    <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login">
+                    <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
+                        <i class="fa-regular fa-user"></i>
+                        <p>손주혜<span>님</span></p>
+                    </a>
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
                 <!-- 모바일 햄버거 버튼 -->
                 <div class="m_btn">
                     <div class="menu">
@@ -147,7 +149,8 @@
                         <li><a href="../../html/sub/sub02_03_01.html">스위트</a></li>
                         <li><a href="../../html/sub/sub02_04.html">더 이그제큐티브 라운지</a></li>
                         <li><a href="../../html/sub/sub02.html">전체 객실 보기</a></li>
-                    </ul>../
+                    </ul>
+                    ../
                 </li>
                 <li>
                     <a href="#self">다이닝</a>
@@ -190,11 +193,11 @@
             <div class="center">
                 <h2 class="ask">문의내용 수정</h2>
                 <div class="text-container">
-                    <div input type="text" id="title">크리스마스 패키지로 예약 변경 가능한가요?</div>
-                    <div textarea id="content">
-                        <p>크리스마스에 객실 숙박을 예약했습니다.</p>
-                        <p>그런데 얼마 전 크리스마스 패키지가 저렴하게 나왔던데요, 혹시 패키지로 예약 변경한가요?</p>
-                    </div>
+                    <input type="text" id="title" value="크리스마스 패키지로 예약 변경 가능한가요?" />
+                    <textarea id="content" autofocus="autofocus">
+크리스마스에 객실 숙박을 예약했습니다.
+그런데 얼마 전 크리스마스 패키지가 저렴하게 나왔던데요, 혹시 패키지로 예약 변경한가요?
+                    </textarea>
                 </div>
                 <div class="button-container">
                     <a href="sub06_03.html"><button id="cancel">목록</button></a>
@@ -202,71 +205,23 @@
                 </div>
             </div>
         </div>
-        <script>
-            /*
-                // 문의내용 등록
-                document.getElementById('submit').addEventListener('click', function () {
-                    //제목이나 내용 공란 발생 시
-                    const title = document.getElementById('title').value;
-                    const content = document.getElementById('content').value;
-                    if (title === '' || content === '') {
-                        alert('제목과 내용을 확인해주세요.');
-                        return;
-                    }
-
-                    //공란 없을 시
-                    else {
-                        var number = 0;
-                        var writer = '글쓴이';
-                        var date = now();
-
-                        if (title && content) {
-                            //새로운 ul,li 생성
-                            const newPost = document.createElement('ul');
-                            newPost.class = 'post';
-
-                            const newList = document.createElement('li');
-                            newList.classList.add('post-num').HTMLinner == number;
-
-                            newList = document.createElement('li');
-                            newList.classList.add('post-title').HTMLinner == title;
-
-                            newList = document.createElement('li');
-                            newList.classList.add('post-writer').HTMLinner == writer;
-
-                            newList = document.createElement('li');
-                            newList.classList.add('post-date').HTMLinner == date;
-
-                            const postContent = document.createElement('div');
-                            postContent.textContent = content;
-                            postContent.classList.add('content');
-
-                            newList.appendChild(postContent);
-                            postList.appendChild(newList);
-
-                            document.write(newList);
-                            
-                        }
-                    }
-                });*/
-
-            // 입력내용 리셋
-            document.getElementById('cancel').addEventListener('click', function () {
-                document.getElementById('title').value = '';
-                document.getElementById('content').value = '';
-            });
-        </script>
 
         <!-- 푸터/플로팅 -->
         <footer>
             <div class="center">
                 <div class="f_menu">
-                    <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo">
+                    <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo" />
                     <div>SNS</div>
                     <ul class="sns">
-                        <li><a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a></li>
+                        <li>
+                            <a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a>
+                        </li>
                     </ul>
                     <div>MENU</div>
                     <ul class="menu">
@@ -295,15 +250,15 @@
                     <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
                 </div>
                 <div class="info">
-                    <p>2024 Forbes Travel Guide<br>국내 최초 6년 연속 5성 호텔 수상</p>
-                    <p>한국 능률협회컨설팅 선정 <br>브랜드파워 호텔 부문 7년 연속 1위</p>
-                    <p>2024 한국생산성본부 선정<br>국가브랜드경쟁력지수 호텔 부문 1위</p>
-                    <p>한국표준협회 평가 <br>실내공기질 인증 획득</p>
-                    <p>한국환경산업기술원 평가 <br>친환경 호텔 인증 획득</p>
+                    <p>2024 Forbes Travel Guide<br />국내 최초 6년 연속 5성 호텔 수상</p>
+                    <p>한국 능률협회컨설팅 선정 <br />브랜드파워 호텔 부문 7년 연속 1위</p>
+                    <p>2024 한국생산성본부 선정<br />국가브랜드경쟁력지수 호텔 부문 1위</p>
+                    <p>한국표준협회 평가 <br />실내공기질 인증 획득</p>
+                    <p>한국환경산업기술원 평가 <br />친환경 호텔 인증 획득</p>
                 </div>
             </div>
         </footer>
-    
+
         <article class="floating-menu">
             <div class="menu">
                 <a href="../../html/sub/reservation.html" class="circle-btn" title="예약 페이지로 이동">예약</a>
