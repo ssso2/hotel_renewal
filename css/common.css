@@ -166,6 +166,13 @@ body::-webkit-scrollbar-track {
   padding: 50px 10px 20px;
   position: relative;
 }
+.sub-title.block {
+  display: block;
+}
+.sub-title.block .location {
+  margin-top: 20px;
+  justify-content: end;
+}
 .sub-title::after {
   content: "";
   display: block;
@@ -704,6 +711,12 @@ body::-webkit-scrollbar-track {
     transform: none;
     bottom: 100px;
   }
+  .floating-menu.bottom-bar .menu {
+    bottom: 150px;
+  }
+  .floating-menu.bottom-bar .top-btn {
+    bottom: 80px;
+  }
   .daterangepicker {
     padding: 50px 120px;
     width: 1080px;
@@ -813,6 +826,74 @@ body::-webkit-scrollbar-track {
   }
   .sub-title.column .location {
     margin-top: 10px;
+  }
+  .sub-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 50px 10px 20px;
+    position: relative;
+  }
+  .sub-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .sub-title h2 {
+    font-size: 27px;
+    font-weight: 700;
+    color: #7a6c64;
+  }
+  .sub-title .sub-desc {
+    margin-top: 20px;
+    font-size: 17px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .sub-title .location {
+    display: flex;
+    align-items: center;
+    min-width: 110px;
+  }
+  .sub-title .location > li {
+    margin-right: 30px;
+    position: relative;
+  }
+  .sub-title .location > li:last-child {
+    margin: 0;
+  }
+  .sub-title .location > li:last-child::after {
+    display: none;
+  }
+  .sub-title .location > li:last-child > a {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+  .sub-title .location > li::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 1px solid #777;
+    border-left: 0;
+    border-bottom: 0;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+    right: -15px;
+  }
+  .sub-title .location > li > a {
+    font-size: 13px;
+  }
+  .sub-title .location > li > a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
   }
   .daterangepicker {
     padding: 30px 100px;

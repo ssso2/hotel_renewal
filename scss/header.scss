@@ -9,7 +9,7 @@ header {
     width: 100%;
     transition: all 0.2s; 
     color: #666;
-    z-index: 99;
+    z-index: 1001;
     background: #FAF8F4 !important; 
     font-weight: 500;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
@@ -260,7 +260,7 @@ header {
     min-height: 100vh; 
     background: #fff; 
     transition: all 0.3s; 
-    z-index: 98;
+    z-index: 1000;
     padding-top: 80px; 
     overflow: auto;
 
@@ -399,7 +399,7 @@ header {
             align-items: center;
             & > .btn-wrap {
                 display: none;
-                &.on {display: none;}
+                &.on {display: none !important;}
             }
         }
         

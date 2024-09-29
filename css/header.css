@@ -7,7 +7,7 @@ header {
   width: 100%;
   transition: all 0.2s;
   color: #666;
-  z-index: 99;
+  z-index: 1001;
   background: #FAF8F4 !important;
   font-weight: 500;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
@@ -229,7 +229,7 @@ header .logo > a > img {
   min-height: 100vh;
   background: #fff;
   transition: all 0.3s;
-  z-index: 98;
+  z-index: 1000;
   padding-top: 80px;
   overflow: auto;
   /* 스크롤바의 폭 너비 */
@@ -356,7 +356,7 @@ header .logo > a > img {
     display: none;
   }
   header .center > .btn-wrap.on {
-    display: none;
+    display: none !important;
   }
   .gnb {
     display: none;
