@@ -761,18 +761,17 @@ body::-webkit-scrollbar-track {
     flex-wrap: wrap;
   }
   .depth3-tab-wrap .tab > li {
-    margin-bottom: 0;
-    margin-right: -1px;
-    min-width: 25%;
+    margin: 0;
+    min-width: 33.3333333333%;
     font-size: 14px;
     border: 1px solid #ddd;
-    border-right: 0;
+    border-left: 0;
   }
-  .depth3-tab-wrap .tab > li:last-child, .depth3-tab-wrap .tab > li:nth-child(4) {
-    border-right: 1px solid #ddd;
+  .depth3-tab-wrap .tab > li:first-child, .depth3-tab-wrap .tab > li:nth-child(4), .depth3-tab-wrap .tab > li:nth-child(7) {
+    border-left: 1px solid #ddd;
   }
-  .depth3-tab-wrap .tab > li:nth-child(5), .depth3-tab-wrap .tab > li:nth-child(6), .depth3-tab-wrap .tab > li:nth-child(7) {
-    border-top: transparent;
+  .depth3-tab-wrap .tab > li:nth-child(4), .depth3-tab-wrap .tab > li:nth-child(5), .depth3-tab-wrap .tab > li:nth-child(6), .depth3-tab-wrap .tab > li:nth-child(7) {
+    border-top: 0;
   }
   .depth3-tab-wrap .tab > li.on {
     border: 1px solid #7a6c64;
@@ -809,7 +808,7 @@ body::-webkit-scrollbar-track {
   }
   .depth3-tab-wrap .tab > li {
     padding: 0px 5px;
-    font-size: 12px;
+    font-size: 14px;
   }
   /* 레이어 팝업 */
   .lypop .btn-wrap {

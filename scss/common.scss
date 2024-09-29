@@ -799,18 +799,17 @@ body::-webkit-scrollbar-track {
             border-bottom: 0;
             flex-wrap: wrap;    
             & > li {
-                margin-bottom: 0;
-                margin-right: -1px;
-                min-width: calc(100% / 4);
+                margin: 0;
+                min-width: calc(100% / 3);
                 font-size: 14px;
                 border: 1px solid #ddd;
-                border-right: 0;
+                border-left: 0;
     
-                &:last-child, &:nth-child(4) {
-                    border-right: 1px solid #ddd;
+                &:first-child, &:nth-child(4), &:nth-child(7) {
+                    border-left: 1px solid #ddd;
                 }
-                &:nth-child(5), &:nth-child(6), &:nth-child(7){
-                    border-top: transparent;
+                &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7){
+                    border-top: 0;
                 }
     
                 &.on {
@@ -857,7 +856,7 @@ body::-webkit-scrollbar-track {
         .tab {
             & > li {
                 padding: 0px 5px;
-                font-size: 12px;
+                font-size: 14px;
             }
         }
     }
