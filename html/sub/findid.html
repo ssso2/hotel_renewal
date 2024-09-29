@@ -214,18 +214,10 @@
                         <span>endorp*****</span>
                         <p>입니다.</p>
                     </div>
-                    <input type="button" id="login" value="로그인 하기" />
+                    <a href="login.html"><input type="button" id="login" value="로그인 하기" /></a>
                 </div>
             </div>
         </div>
-        <script>
-            function show_page(section) {
-                const sections = ['lost-info', 'id-chk'];
-                sections.forEach(id => {
-                    document.getElementById(id).style.display = id === section ? 'flex' : 'none';
-                });
-            }
-        </script>
 
         <!-- 푸터/플로팅 -->
         <footer>
@@ -287,5 +279,14 @@
             </div>
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
+
+        <script>
+            function show_page(section) {
+                const sections = ['lost-info', 'id-chk'];
+                sections.forEach(id => {
+                    document.getElementById(id).style.display = id === section ? 'flex' : 'none';
+                });
+            }
+        </script>
     </body>
 </html>

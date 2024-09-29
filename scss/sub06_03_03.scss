@@ -32,6 +32,7 @@
             border: 1px solid #ccc;
             border-radius: 10px;
             resize: none;
+            line-height: 1.7;
         }
     }
 
@@ -48,10 +49,10 @@
 
         #submit {
             box-sizing: border-box;
-            background: #7a6c64;
+            background: #333;
             color: #fff;
-            border: 1px solid #7a6c64;
-            border-radius: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
         }
 
         #cancel {
@@ -59,7 +60,38 @@
             background: #fff;
             color: #333;
             border: 1px solid #333;
-            border-radius: 10px;
+            border-radius: 5px;
+        }
+    }
+}
+
+//반응형
+@media screen and (max-width: 768px) {
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+
+        button {
+            width: 75px !important;
+            margin-left: 10px;
+            padding: 10px;
+        }
+
+        #submit {
+            box-sizing: border-box;
+            background: #333;
+            color: #fff;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        #cancel {
+            box-sizing: border-box;
+            background: #fff;
+            color: #333;
+            border: 1px solid #333;
+            border-radius: 5px;
         }
     }
 }

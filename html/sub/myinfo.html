@@ -35,7 +35,7 @@
             <div class="center">
                 <h1 class="logo">
                     <a href="../index.html">
-                        <img src="../../img/common/logo.png" alt="">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -92,21 +92,22 @@
                         </ul>
                     </li>
                 </ul>
-                    <!-- 비로그인시 -->
-                    <div class="btn-wrap on">
-                        <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                        <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-                    </div>
-                    <!-- 로그인시 -->
-                    <div class="btn-wrap login">
-                        <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
-                            <i class="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </a>
-                        <a href="../../html/index.html" class="logout-btn">로그아웃
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap on">
+                    <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login">
+                    <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
+                        <i class="fa-regular fa-user"></i>
+                        <p>손주혜<span>님</span></p>
+                    </a>
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
                 <!-- 모바일 햄버거 버튼 -->
                 <div class="m_btn">
                     <div class="menu">
@@ -190,7 +191,6 @@
         <div class="form-wrap">
             <div class="center">
                 <form id="shilla-join" action="#" method="post">
-                    <!-- 개인정보 입력란 생년월일 넣기 연락처는 셀렉트박스로 -->
                     <div class="join-container">
                         <h3 class="info-title">개인정보 입력</h3>
 
@@ -205,8 +205,10 @@
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="en-name">영문 이름</label>
-                                <input type="text" id="firstname" placeholder="First name" class="name-input" />
-                                <input type="text" id="lastname" placeholder="Last name" class="name-input" />
+                                <div class="eng">
+                                    <input type="text" id="firstname" placeholder="First name" class="name-input" />
+                                    <input type="text" id="lastname" placeholder="Last name" class="name-input" />
+                                </div>
                             </div>
                             <span class="error-message" id="enname-error"></span>
                         </div>
@@ -214,9 +216,11 @@
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="birth">생년월일</label>
-                                <select name="yy" id="year"></select>
-                                <select name="mm" id="month"></select>
-                                <select name="dd" id="day"></select>
+                                <div class="birth">
+                                    <select name="yy" id="year"></select>
+                                    <select name="mm" id="month"></select>
+                                    <select name="dd" id="day"></select>
+                                </div>
                             </div>
                             <span class="error-message" id="birth-error"></span>
                         </div>
@@ -233,7 +237,7 @@
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="pw">패스워드 <font color="#F00">*</font></label>
-                                <input type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자(!,@,#,$,%,~) 포함한 12자 이상 16자 이내" />
+                                <input type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
                             </div>
                             <span class="error-message" id="pw-error"></span>
                         </div>
@@ -241,7 +245,7 @@
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="pwchk">패스워드확인 <font color="#F00">*</font></label>
-                                <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자(!,@,#,$,%,~) 포함한 12자 이상 16자 이내" />
+                                <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
                             </div>
                             <span class="error-message" id="pwchk-error"></span>
                         </div>
@@ -249,11 +253,10 @@
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="tel">연락처 <font color="#F00">*</font></label>
-                                <select name="start" id="start"></select>
-                                -
-                                <input type="text" id="middle" maxlength="4" />
-                                -
-                                <input type="text" id="last" maxlength="4" />
+                                <div class="tel-num">
+                                    <select name="start" id="start"></select>
+                                    - <input type="text" id="middle" minlength="3" maxlength="4" /> - <input type="text" id="last" maxlength="4" />
+                                </div>
                             </div>
                             <span class="error-message" id="tel-error"></span>
                         </div>
@@ -266,154 +269,12 @@
                             <span class="error-message" id="mail-error"></span>
                         </div>
 
-                        <a href="welcome.html"><button type="button" id="submit">가입하기</button></a>
-                        <!-- 추후 db 작업 시 버튼타입 submit으로 바꾸기 -->
+                        <div class="info-group">
+                            <div class="input-container">
+                                <button type="button" id="submit">가입하기</button>
+                            </div>
+                        </div>
                     </div>
-
-                    <!-- <script>
-                        // $(document).onLoad(function () {
-                        //     let today = new Date();
-                        //     let year = today.getFullYear();
-                        //     console.log(year);
-
-                        //     for (i = year; i >= 1930; i--) {
-                        //         $('#year').append('<option value="' + i + '">' + i + '년 </option>');
-                        //     }
-
-                        //     for (i = 1; i <= 12; i++) {
-                        //         $('#month').append('<option value="' + i + '">' + i + '월 </option>');
-                        //     }
-
-                        //     for (i = 1; i <= 31; i++) {
-                        //         $('#day').append('<option value="' + i + '">' + i + '일 </option>');
-                        //     }
-
-                        //     let startnum = ['010', '02', '031', '032', '033', '041', '042', '043', '044', '051', '052', '053', '054', '055', '061', '062', '063', '064'];
-                        //     for (t = 0; t < startnum.length; t++) {
-                        //         $('#start').append('<option value="' + startnum[t] + '">' + startnum[t] + '</option>');
-                        //     }
-                        // });
-
-                        // 가입하기 버튼을 클릭했을 때 코드 실행
-                        document.getElementById('submit').addEventListener('click', function () {
-                            let today = new Date();
-                            let year = today.getFullYear();
-                            console.log(year);
-
-                            for (i = year; i >= 1930; i--) {
-                                $('#year').append('<option value="' + i + '">' + i + '년 </option>');
-                            }
-
-                            for (i = 1; i <= 12; i++) {
-                                $('#month').append('<option value="' + i + '">' + i + '월 </option>');
-                            }
-
-                            for (i = 1; i <= 31; i++) {
-                                $('#day').append('<option value="' + i + '">' + i + '일 </option>');
-                            }
-
-                            let startnum = ['010', '02', '031', '032', '033', '041', '042', '043', '044', '051', '052', '053', '054', '055', '061', '062', '063', '064'];
-                            for (t = 0; t < startnum.length; t++) {
-                                $('#start').append('<option value="' + startnum[t] + '">' + startnum[t] + '</option>');
-                            }
-                            // 각 입력란이 공란일 때로 설정
-                            const koname = document.getElementById('ko-name').value.trim();
-                            const firstname = document.getElementById('firstname').value.trim();
-                            const lastname = document.getElementById('lastname').value.trim();
-                            const pid = document.getElementById('pid').value.trim();
-                            const pw = document.getElementById('pw').value.trim();
-                            const pwchk = document.getElementById('pwchk').value.trim();
-                            const middleNum = document.getElementById('middle').value.trim();
-                            const lastNum = document.getElementById('last').value.trim();
-                            const mail = document.getElementById('mail').value.trim();
-
-                            let valid = true; // 유효성 초기값은 true
-
-                            // 오류 메시지 초기화
-                            const errorMessages = document.querySelectorAll('.error-message');
-                            errorMessages.forEach(message => (message.textContent = ''));
-
-                            // 이름 유효성 검사
-                            if (!koname) {
-                                document.getElementById('koname-error').textContent = '이름을 입력하세요.';
-                                valid = false;
-                            }
-
-                            // 아이디 유효성 검사
-                            const idtype = /^[A-Za-z0-9]$/;
-                            if (!pid) {
-                                document.getElementById('id-error').textContent = '아이디를 입력하세요.';
-                                valid = false;
-                            } else if (pid.length < 6) {
-                                document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
-                                valid = false;
-                            } else if (!idtype.test(pid)) {
-                                document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용가능합니다.';
-                                valid = false;
-                            } else if (!idchk) {
-                                document.getElementById('id-error').textContent = '중복확인을 해주세요.';
-                                valid = false;
-                            }
-
-                            // 패스워드 유효성 검사 -- 특수문자의 범위를 명확하게
-                            const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%~]).{12,16}$/;
-                            if (!pw) {
-                                document.getElementById('pw-error').textContent = '패스워드를 입력하세요.';
-                                valid = false;
-                            } else if (!pwtype.test(pw)) {
-                                document.getElementById('pw-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다. (특수문자 !,@,#,$,%,~ 사용 가능)';
-                                valid = false;
-                            }
-
-                            if (!pwchk) {
-                                document.getElementById('pwchk-error').textContent = '패스워드를 입력하세요.';
-                                valid = false;
-                            } else if (!pwtype.test(pwchk)) {
-                                document.getElementById('pwchk-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다. (특수문자 !,@,#,$,%,~ 사용 가능)';
-                                valid = false;
-                            }
-
-                            // 패스워드 확인 유효성 검사
-                            if (pwchk !== pw) {
-                                document.getElementById('pwchk-error').textContent = '패스워드가 일치하지 않습니다.';
-                                valid = false;
-                            }
-
-                            // 연락처 유효성 검사
-                            const teltype = /^\d{4,}$/;
-                            if (!middleNum || !lastNum) {
-                                document.getElementById('tel-error').textContent = '연락처를 입력하세요.';
-                                valid = false;
-                            } else if (!(teltype.test(middleNum) && teltype.test(lastNum))) {
-                                document.getElementById('tel-error').textContent = '연락처의 자리수를 확인하세요.';
-                                valid = false;
-                            }
-
-                            // 이메일 유효성 검사
-                            const mailtype = /^[A-Za-z0-9][A-Za-z0-9._]*@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
-                            // ex) shilla123@shilla1.co.kr < 정규식 수정
-                            // 도메인 선택, 직접 입력 가능하게
-                            if (!mail) {
-                                document.getElementById('mail-error').textContent = '이메일을 입력하세요.';
-                                valid = false;
-                            } else if (!mailtype.test(mail)) {
-                                document.getElementById('mail-error').textContent = '정확한 이메일 주소를 입력하세요.';
-                                valid = false;
-                            }
-
-                            // 모든 유효성 검사 통과 시 -- 추후 수정할 부분 (가입 완료되면서 메인페이지로 이동하기)
-                            if (valid) {
-                                alert('신라리워즈 가입을 환영합니다.');
-                            }
-                        });
-
-                        // 중복확인 버튼을 클릭했을 때
-                        let idchk = false;
-                        document.getElementById('id-chk').addEventListener('click', function () {
-                            alert('중복확인이 완료되었습니다.');
-                            idchk = true;
-                        });
-                    </script> -->
                 </form>
             </div>
         </div>
@@ -478,5 +339,128 @@
             </div>
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
+
+        <script>
+            $(document).ready(function () {
+                // 수정된 부분
+                let today = new Date();
+                let year = today.getFullYear();
+
+                for (let i = year; i >= 1930; i--) {
+                    $('#year').append('<option value="' + i + '">' + i + '년 </option>');
+                }
+
+                for (let i = 1; i <= 12; i++) {
+                    $('#month').append('<option value="' + i + '">' + i + '월 </option>');
+                }
+
+                for (let i = 1; i <= 31; i++) {
+                    $('#day').append('<option value="' + i + '">' + i + '일 </option>');
+                }
+
+                let startnum = ['010', '02', '031', '032', '033', '041', '042', '043', '044', '051', '052', '053', '054', '055', '061', '062', '063', '064'];
+                for (let t = 0; t < startnum.length; t++) {
+                    $('#start').append('<option value="' + startnum[t] + '">' + startnum[t] + '</option>');
+                }
+            });
+
+            document.getElementById('submit').addEventListener('click', function () {
+                const koname = document.getElementById('ko-name').value.trim();
+                const firstname = document.getElementById('firstname').value.trim();
+                const lastname = document.getElementById('lastname').value.trim();
+                const pid = document.getElementById('pid').value.trim();
+                const pw = document.getElementById('pw').value.trim();
+                const pwchk = document.getElementById('pwchk').value.trim();
+                const startNum = document.getElementById('start').value.trim();
+                const middleNum = document.getElementById('middle').value.trim();
+                const lastNum = document.getElementById('last').value.trim();
+                const mail = document.getElementById('mail').value.trim();
+
+                let valid = true; // 유효성 초기값은 true
+
+                // 오류 메시지 초기화
+                const errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(message => (message.textContent = ''));
+
+                // 이름 유효성 검사
+                if (!koname) {
+                    document.getElementById('koname-error').textContent = '이름을 입력하세요.';
+                    valid = false;
+                }
+
+                // 아이디 유효성 검사
+                const idtype = /^[A-Za-z0-9]+$/; // 수정된 정규 표현식
+                if (!pid) {
+                    document.getElementById('id-error').textContent = '아이디를 입력하세요.';
+                    valid = false;
+                } else if (pid.length < 6) {
+                    document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
+                    valid = false;
+                } else if (!idtype.test(pid)) {
+                    document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용 가능합니다.';
+                    valid = false;
+                } else if (!idchk) {
+                    document.getElementById('id-error').textContent = '중복확인을 해주세요.';
+                    valid = false;
+                }
+
+                // 패스워드 유효성 검사
+                const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%~]).{12,16}$/;
+                if (!pw) {
+                    document.getElementById('pw-error').textContent = '패스워드를 입력하세요.';
+                    valid = false;
+                } else if (!pwtype.test(pw)) {
+                    document.getElementById('pw-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.';
+                    valid = false;
+                }
+
+                if (!pwchk) {
+                    document.getElementById('pwchk-error').textContent = '패스워드를 입력하세요.';
+                    valid = false;
+                } else if (pwchk !== pw) {
+                    document.getElementById('pwchk-error').textContent = '패스워드가 일치하지 않습니다.';
+                    valid = false;
+                }
+
+                // 연락처 유효성 검사
+                if (!middleNum || !lastNum) {
+                    document.getElementById('tel-error').textContent = '연락처를 입력하세요.';
+                    valid = false;
+                } else {
+                    const isStartNum010 = startNum === '010';
+                    const isMiddleValid = isStartNum010 ? /^\d{4}$/.test(middleNum) : /^\d{3,4}$/.test(middleNum);
+                    const isLastValid = /^\d{4}$/.test(lastNum);
+
+                    if (!isMiddleValid || !isLastValid) {
+                        document.getElementById('tel-error').textContent = isStartNum010 ? '연락처의 자리수를 확인하세요. (중간 번호는 4자리여야 합니다.)' : '연락처의 자리수를 확인하세요. (중간 번호는 3~4자리, 마지막 번호는 4자리여야 합니다.)';
+                        valid = false;
+                    }
+                }
+
+                // 이메일 유효성 검사
+                const mailtype = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+                if (!mail) {
+                    document.getElementById('mail-error').textContent = '이메일을 입력하세요.';
+                    valid = false;
+                } else if (!mailtype.test(mail)) {
+                    document.getElementById('mail-error').textContent = '정확한 이메일 주소를 입력하세요.';
+                    valid = false;
+                }
+
+                // 모든 유효성 검사 통과 시
+                if (valid) {
+                    alert('신라리워즈 가입을 환영합니다.');
+                    setTimeout(function () {
+                        window.location.href = 'welcome.html'; // 이동할 홈페이지 URL로 변경
+                    }, 100);
+                }
+            });
+
+            let idchk = false;
+            document.getElementById('id-chk').addEventListener('click', function () {
+                alert('중복확인이 완료되었습니다.');
+                idchk = true;
+            });
+        </script>
     </body>
 </html>

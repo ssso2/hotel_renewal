@@ -171,7 +171,6 @@ body::-webkit-scrollbar-track {
         align-items: center;
         min-width: 110px;
 
-
         & > li {
             margin-right: 30px;
             position: relative;
@@ -224,7 +223,9 @@ body::-webkit-scrollbar-track {
         align-items: center;
         margin-bottom: 30px;
         border-bottom: 1px solid #888;
-        &.mo-show {display: none;}
+        &.mo-show {
+            display: none;
+        }
 
         &.on {
             position: fixed;
@@ -747,7 +748,6 @@ body::-webkit-scrollbar-track {
         width: 95%;
     }
 
-    
     // daterangepicker 팜업
     .daterangepicker {
         padding: 30px;
@@ -796,23 +796,27 @@ body::-webkit-scrollbar-track {
             vertical-align: middle;
         }
     }
+    //여기서부터 수정 중
     /* 3depth tab 공통 */
     .depth3-tab-wrap {
         padding-top: 100px;
         /* tab */
         .tab {
             border-bottom: 0;
-            flex-wrap: wrap;    
+            flex-wrap: wrap;
             & > li {
                 margin: 0;
                 min-width: calc(100% / 4);
                 font-size: 14px;
                 border: 1px solid #ddd;
                 border-right: 0;
-                &:last-child, &:nth-child(4) {
+                &:last-child,
+                &:nth-child(4) {
                     border-right: 1px solid #ddd;
                 }
-                &:nth-child(5), &:nth-child(6), &:nth-child(7){
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7) {
                     border-top: 0;
                 }
                 &.on {
@@ -821,13 +825,15 @@ body::-webkit-scrollbar-track {
                     color: #fff;
                 }
             }
-            &.tab-long{
+            &.tab-long {
                 & > li {
                     min-width: calc(100% / 2) !important;
-                    &:last-child, &:nth-child(2) {
+                    &:last-child,
+                    &:nth-child(2) {
                         border-right: 1px solid #ddd;
                     }
-                    &:nth-child(3), &:nth-child(4){
+                    &:nth-child(3),
+                    &:nth-child(4) {
                         border-top: 0;
                     }
                 }
@@ -858,13 +864,12 @@ body::-webkit-scrollbar-track {
             width: 95vw !important;
         }
     }
-    
 }
 @media screen and (max-width: 768px) {
     .center {
         width: 95%;
     }
-    
+
     .sub-title.column {
         flex-direction: column;
         .location {
@@ -890,5 +895,3 @@ body::-webkit-scrollbar-track {
         }
     }
 }
-
-

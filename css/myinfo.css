@@ -1,33 +1,26 @@
 .form-wrap {
-  position: static;
-  margin-top: 100px;
-  top: 100%;
-  left: 50%;
+  display: relative;
   font-size: 14px;
   padding: 10px;
 }
 .form-wrap .join-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 20px;
   margin-bottom: 20px;
 }
 .form-wrap .join-container .info-title {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 150px auto 30px;
   padding: 10px;
-  margin-left: 600px;
 }
-.form-wrap .join-container .info-group {
-  display: flex;
-  flex-direction: column;
+.form-wrap .join-container .info-group #pid {
+  width: 390px;
+  margin-right: 10px;
 }
 .form-wrap .join-container .info-group .input-container {
   display: flex;
   align-items: center;
-  margin-top: 30px;
-  margin-left: 300px;
+  justify-content: center;
 }
 .form-wrap .join-container .info-group .input-container label {
   width: 150px;
@@ -40,15 +33,17 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  margin-left: 10px;
 }
-.form-wrap .join-container .info-group .input-container input #pid {
-  width: 500px;
+.form-wrap .join-container .info-group .input-container #firstname {
+  width: 240px;
+  margin-inline-end: 15px;
+}
+.form-wrap .join-container .info-group .input-container #lastname {
+  width: 240px;
 }
 .form-wrap .join-container .info-group .input-container #id-chk {
   width: 100px;
   height: 40px;
-  margin-left: 10px;
   background-color: #7a6c64;
   color: #faf8f4;
 }
@@ -56,44 +51,39 @@
   background-color: #333;
 }
 .form-wrap .join-container .info-group .error-message {
+  width: 100%;
   color: #f00;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 5px;
-  margin-left: 470px;
+  margin-bottom: 20px;
   height: 10px;
   line-height: 1;
   display: block;
+  text-align: center;
 }
 .form-wrap .join-container .info-group select {
-  width: 160px;
-  padding: 10px;
-  margin-left: 10px;
+  width: 167px;
+  padding: 7px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-.form-wrap .join-container #firstname {
-  width: 240px;
-  margin-right: 10px;
+.form-wrap .join-container .birth {
+  display: flex;
 }
-.form-wrap .join-container #lastname {
-  width: 240px;
-}
-.form-wrap .join-container #start,
-.form-wrap .join-container #middle,
-.form-wrap .join-container #last {
-  width: 150px;
-  margin-right: 10px;
+.form-wrap .join-container .birth #year,
+.form-wrap .join-container .birth #month,
+.form-wrap .join-container .birth #day {
   text-align: center;
 }
-.form-wrap .join-container #year,
-.form-wrap .join-container #month,
-.form-wrap .join-container #day {
+.form-wrap .join-container .tel-num #start,
+.form-wrap .join-container .tel-num #middle,
+.form-wrap .join-container .tel-num #last {
+  width: 159px;
   text-align: center;
 }
 .form-wrap .join-container #submit {
   width: 500px;
-  margin-left: 460px;
   padding: 10px;
   margin-top: 20px;
   font-size: 16px;
@@ -103,4 +93,106 @@
 }
 .form-wrap .join-container #submit:hover {
   background-color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .form-wrap {
+    display: relative;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .form-wrap .join-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .form-wrap .join-container .info-title {
+    margin: 150px auto 30px;
+    padding: 10px;
+  }
+  .form-wrap .join-container .info-group #pid {
+    width: 300px;
+    margin: 0;
+  }
+  .form-wrap .join-container .info-group .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .form-wrap .join-container .info-group .input-container label {
+    width: 150px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .form-wrap .join-container .info-group .input-container input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .form-wrap .join-container .info-group .input-container #firstname {
+    width: 140px;
+    margin-inline-end: 15px;
+  }
+  .form-wrap .join-container .info-group .input-container #lastname {
+    width: 140px;
+  }
+  .form-wrap .join-container .info-group .input-container #id-chk {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #7a6c64;
+    color: #faf8f4;
+  }
+  .form-wrap .join-container .info-group .input-container #id-chk:hover {
+    background-color: #333;
+  }
+  .form-wrap .join-container .info-group .error-message {
+    width: 100%;
+    color: #f00;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    height: 10px;
+    line-height: 1;
+    display: block;
+    text-align: center;
+  }
+  .form-wrap .join-container .info-group select {
+    width: 100px;
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-wrap .join-container .birth {
+    display: flex;
+  }
+  .form-wrap .join-container .birth #year,
+  .form-wrap .join-container .birth #month,
+  .form-wrap .join-container .birth #day {
+    text-align: center;
+  }
+  .form-wrap .join-container .tel-num #start,
+  .form-wrap .join-container .tel-num #middle,
+  .form-wrap .join-container .tel-num #last {
+    width: 92px;
+  }
+  .form-wrap .join-container #submit {
+    width: 300px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #7a6c64;
+    color: #fff;
+    border: none;
+  }
+  .form-wrap .join-container #submit:hover {
+    background-color: #333;
+  }
 }

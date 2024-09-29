@@ -12,8 +12,38 @@
   margin-top: 100px;
   margin-bottom: 200px;
 }
+.content .user-info-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content .user-info-wrap .mypage-info .my-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.content .user-info-wrap .mypage-info .label {
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  margin-right: 50px;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 40%;
+}
+.content .user-info-wrap .mypage-info .user-info {
+  text-align: left;
+  flex: 1;
+  min-width: 200px;
+}
 .content .change-info-chk,
-.content .mypage-info,
 .content .reservate-info,
 .content .inquiry-info {
   display: flex;
@@ -25,61 +55,50 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.content .user-info-wrap {
-  font-size: 18px;
-}
-.content .user-info-wrap .my-info {
-  justify-content: left !important;
-  width: 400px !important;
-}
-.content .user-info-wrap .my-info p {
-  padding-left: 30px;
-  width: 150px !important;
-}
-.content .user-info-wrap .my-info .user-info {
-  padding-left: 30px;
-}
-.content .change-info-chk {
+
+.change-info-chk {
   display: flex;
 }
-.content .change-info-chk label {
+.change-info-chk label {
   font-size: 24px;
-  margin-right: 10px;
 }
-.content .change-info-chk #pw-chk,
-.content .change-info-chk #btn-confirm {
-  display: inline-block;
+.change-info-chk #pw-chk,
+.change-info-chk #btn-confirm,
+.change-info-chk .pwdiv {
+  display: flex;
   vertical-align: middle;
+  flex-direction: column;
 }
-.content .change-info-chk #pw-chk {
-  width: 400px;
+.change-info-chk #pw-chk {
+  width: 100%;
+  min-width: 300px;
   padding: 10px;
   margin-top: 10px;
   border: 2px solid #ccc;
   box-sizing: border-box;
   border-radius: 5px;
+  display: block;
 }
-.content .change-info-chk #pw-chk:focus {
+.change-info-chk #pw-chk:focus {
   border-color: #333;
 }
-.content .change-info-chk #btn-confirm {
-  width: 150px;
+.change-info-chk #btn-confirm {
+  width: 100%;
   padding: 10px;
-  margin-left: 10px;
   margin-top: 10px;
   font-size: 16px;
   background-color: #7a6c64;
-  border: 2px solid #7a6c64;
   box-sizing: border-box;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  align-items: center;
 }
-.content .change-info-chk #btn-confirm:hover {
+.change-info-chk #btn-confirm:hover {
   background-color: #333;
-  border-color: #333;
 }
-.content .mypage-info {
+
+.mypage-info {
   display: block;
   position: relative;
   padding: 20px;
@@ -87,32 +106,30 @@
   top: 0;
   left: 0;
 }
-.content .mypage-info .title {
+.mypage-info .title {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
 }
-.content .mypage-info .my-info {
+.mypage-info .my-info {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 500px;
   line-height: 1.5;
   margin: 0 auto 20px;
 }
-.content .mypage-info .my-info p {
+.mypage-info .my-info p {
   width: 100px;
   margin: 0;
   text-align: left;
 }
-.content .mypage-info .my-info label {
+.mypage-info .my-info label {
   text-align: right;
-  margin-right: 50px;
   font-size: 16px;
   color: #333;
 }
-.content .mypage-info .my-info input {
+.mypage-info .my-info input {
   justify-content: center;
   width: 400px;
   padding: 10px;
@@ -121,10 +138,14 @@
   font-size: 14px;
   box-sizing: border-box;
 }
-.content .mypage-info #edit {
+.mypage-info .my-info #id,
+.mypage-info .my-info #birth {
+  background-color: #ddd;
+}
+.mypage-info #edit {
   display: block;
   margin: 50px auto;
-  width: 500px;
+  width: 40%;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -133,6 +154,148 @@
   font-size: 16px;
   cursor: pointer;
 }
-.content .mypage-info #edit:hover {
+.mypage-info #edit:hover {
   background-color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  .container .depth3-tab-wrap .tab li {
+    width: 33.3333333333%;
+  }
+  .content {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+  }
+  .content .change-info-chk,
+  .content .mypage-info,
+  .content .reservate-info,
+  .content .inquiry-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .content .user-info-wrap {
+    font-size: 18px;
+  }
+  .content .user-info-wrap .my-info {
+    justify-content: left;
+    width: 400px;
+  }
+  .content .user-info-wrap .my-info p {
+    padding-left: 30px;
+    width: 150px;
+  }
+  .content .user-info-wrap .my-info .user-info {
+    padding-left: 30px;
+  }
+  .content .change-info-chk {
+    display: flex;
+  }
+  .content .change-info-chk label {
+    font-size: 24px;
+    margin: 0;
+  }
+  .content .change-info-chk #btn-confirm,
+  .content .change-info-chk .pwdiv {
+    vertical-align: middle;
+    align-items: center;
+    flex-direction: column;
+  }
+  .content .change-info-chk #pw-chk {
+    max-width: 200px;
+    min-width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+  }
+  .content .change-info-chk #pw-chk:focus {
+    border-color: #333;
+  }
+  .content .change-info-chk #btn-confirm {
+    width: 50%;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    background-color: #7a6c64;
+    box-sizing: border-box;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .content .change-info-chk #btn-confirm:hover {
+    background-color: #333;
+  }
+  .content .mypage-info {
+    display: block;
+    position: relative;
+    padding: 20px;
+    transform: none;
+    top: 0;
+    left: 0;
+  }
+  .content .mypage-info .title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .content .mypage-info .my-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.5;
+    margin: 0 auto 20px;
+  }
+  .content .mypage-info .my-info p {
+    width: 100px;
+    margin: 0;
+    text-align: center !important;
+  }
+  .content .mypage-info .my-info label {
+    text-align: right;
+    margin-right: 50px;
+    font-size: 16px;
+    color: #333;
+  }
+  .content .mypage-info .my-info input {
+    justify-content: center;
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  .content .mypage-info #edit {
+    display: block;
+    margin: 50px auto;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7a6c64;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .content .mypage-info #edit:hover {
+    background-color: #333;
+  }
 }

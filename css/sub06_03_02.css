@@ -8,27 +8,34 @@
   font-weight: bold;
   color: #333;
 }
-.container.board .user-name {
-  display: inline-block;
-  width: 60px;
-  line-height: 35px;
-  padding: 10px;
-  font-size: 14px;
-}
-.container.board .text-container .title {
+.container.board .text-container .title-wrap .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   box-sizing: border-box;
-  display: block;
-  padding: 20px;
-  font-weight: bold;
+  padding: 20px 30px;
   border: 1px solid #e0e0e0;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.container.board .text-container .title-wrap .title .subject {
+  font-size: 16px;
+  font-weight: 800;
+  text-align: left;
+}
+.container.board .text-container .title-wrap .title .writer-wrap .writer,
+.container.board .text-container .title-wrap .title .writer-wrap .submit-time {
+  text-align: right;
+  line-height: 1.7;
+}
 .container.board .text-container .content {
   box-sizing: border-box;
-  min-height: 500px;
-  padding: 20px;
+  height: 400px;
+  overflow: auto;
+  line-height: 1.7;
+  padding: 20px 30px;
   overflow: auto;
   border: 1px solid #e0e0e0;
   border-top: none;
@@ -38,84 +45,135 @@
 }
 .container.board .text-container .reply-container {
   margin-top: 20px;
+  width: 100%;
+  z-index: 1;
 }
-.container.board .text-container .reply-container .new-reply {
-  width: calc(100% - 80px);
-  height: 30px;
-  padding: 10px;
-  margin-left: 10px;
-  margin-bottom: 5px;
-  background-color: #eee;
-  border: 1px solid #eee;
-}
-.container.board .text-container .reply-container .reply-box,
-.container.board .text-container .reply-container .reply-content {
-  font-size: 0;
-}
-.container.board .text-container .reply-container .reply,
-.container.board .text-container .reply-container .reply-box {
-  box-sizing: border-box;
-  min-height: 50px;
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.container.board .text-container .reply-container .reply .reply-content.user-name,
-.container.board .text-container .reply-container .reply-box .reply-content.user-name {
-  margin-top: 5px;
-}
-.container.board .text-container .reply-container .reply .reply-content .reply-title,
-.container.board .text-container .reply-container .reply-box .reply-content .reply-title {
-  display: block;
-  margin-left: 10px;
+.container.board .text-container .reply-container .reply-title {
+  display: flex;
+  margin: 25px 0 10px 5px;
   font-size: 22px;
   font-weight: 600;
   color: #333;
 }
-.container.board .text-container .reply-container .reply .reply-content .time,
-.container.board .text-container .reply-container .reply-box .reply-content .time {
-  display: inline-block;
-  margin-left: 80px;
+.container.board .text-container .reply-container .reply-box,
+.container.board .text-container .reply-container .reply-box-sec {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.container.board .text-container .reply-container .reply-box .reply-content,
+.container.board .text-container .reply-container .reply-box .reply-content-ing,
+.container.board .text-container .reply-container .reply-box-sec .reply-content,
+.container.board .text-container .reply-container .reply-box-sec .reply-content-ing {
+  line-height: 50px;
+  background-color: #fafafa;
+  border-radius: 10px;
+}
+.container.board .text-container .reply-container .reply-box .reply-content .user-name,
+.container.board .text-container .reply-container .reply-box .reply-content .name,
+.container.board .text-container .reply-container .reply-box .reply-content-ing .user-name,
+.container.board .text-container .reply-container .reply-box .reply-content-ing .name,
+.container.board .text-container .reply-container .reply-box-sec .reply-content .user-name,
+.container.board .text-container .reply-container .reply-box-sec .reply-content .name,
+.container.board .text-container .reply-container .reply-box-sec .reply-content-ing .user-name,
+.container.board .text-container .reply-container .reply-box-sec .reply-content-ing .name {
+  width: 60px;
+  line-height: 35px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 800;
+  margin-top: 5px;
+}
+.container.board .text-container .reply-container .reply-box .textarea,
+.container.board .text-container .reply-container .reply-box-sec .textarea {
+  padding: 10px;
+}
+.container.board .text-container .reply-container .reply-box .textarea .new-reply,
+.container.board .text-container .reply-container .reply-box-sec .textarea .new-reply {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 150px;
+  padding: 10px 20px;
+  border: none;
+  font-size: 14px;
+  line-height: 18px;
+  resize: none;
+  box-sizing: border-box;
+  line-height: 1.7;
+}
+.container.board .text-container .reply-container .reply-box #reply,
+.container.board .text-container .reply-container .reply-box-sec #reply {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 150px;
+  padding: 10px 20px;
+  border: none;
+  font-size: 14px;
+  line-height: 18px;
+  resize: none;
+  box-sizing: border-box;
+}
+.container.board .text-container .reply-container .reply-box .reply-info,
+.container.board .text-container .reply-container .reply-box-sec .reply-info {
+  margin-top: 100px;
   align-content: center;
+  text-align: end;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+.container.board .text-container .reply-container .reply-box .reply-info .time,
+.container.board .text-container .reply-container .reply-box-sec .reply-info .time {
+  text-align: right;
+  justify-content: right;
+  font-size: 14px;
+  color: #bbb;
+  padding-right: 10px;
+}
+.container.board .text-container .reply-container .reply-box .reply-info .edit,
+.container.board .text-container .reply-container .reply-box .reply-info .delete,
+.container.board .text-container .reply-container .reply-box .reply-info #plus,
+.container.board .text-container .reply-container .reply-box-sec .reply-info .edit,
+.container.board .text-container .reply-container .reply-box-sec .reply-info .delete,
+.container.board .text-container .reply-container .reply-box-sec .reply-info #plus {
+  text-align: right;
+  justify-content: right;
   font-size: 14px;
   color: #333;
+  font-weight: 600;
+  padding: 0 10px 5px 0;
 }
-.container.board .text-container .reply-container .reply .reply-content .edit,
-.container.board .text-container .reply-container .reply .reply-content .delete,
-.container.board .text-container .reply-container .reply-box .reply-content .edit,
-.container.board .text-container .reply-container .reply-box .reply-content .delete {
-  width: 50px;
-  height: 30px;
-  background-color: #ccc;
-  margin-left: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-.container.board .text-container .reply-container .reply .reply-text,
-.container.board .text-container .reply-container .reply-box .reply-text {
+.container.board .text-container .reply-text {
   display: flex;
   align-items: center;
 }
-.container.board .text-container .reply-container .reply .reply-text #reply,
-.container.board .text-container .reply-container .reply-box .reply-text #reply {
+.container.board .text-container .reply-text .user-name {
+  display: inline-block;
+  width: 60px;
+  line-height: 35px;
+  padding: 10px;
+  font-size: 14px;
+}
+.container.board .text-container .reply-text #reply {
   flex: 1;
   height: 30px;
-  padding: 10px;
+  padding: 5px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: auto 10px;
 }
-.container.board .text-container .reply-container .reply .reply-text #reply:focus,
-.container.board .text-container .reply-container .reply-box .reply-text #reply:focus {
+.container.board .text-container .reply-text #reply:focus {
   border-color: #7a6c64;
 }
-.container.board .text-container .reply-container .reply .reply-text button,
-.container.board .text-container .reply-container .reply-box .reply-text button {
+.container.board .text-container .reply-text #plus {
   height: 30px;
   padding: 0 10px;
   font-size: 14px;
@@ -126,63 +184,95 @@
   cursor: pointer;
   transition: background-color 0.5s;
 }
-.container.board .text-container .reply-container .reply .reply-text button:hover,
-.container.board .text-container .reply-container .reply-box .reply-text button:hover {
+.container.board .text-container .reply-text #plus:hover {
   background-color: #333;
   color: #fff;
 }
-.container.board .button-wrap {
+
+.button-wrap {
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.container.board .button-wrap button {
+.button-wrap .list {
+  box-sizing: border-box;
+  background: #7a6c64;
+  color: #fff;
+  border: 1px solid #7a6c64;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+.button-wrap .list:hover {
+  background-color: #6a5b54;
+}
+.button-wrap .button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.button-wrap .button-container .edit {
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+  border: 1px solid #333;
   width: 100px;
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
-.container.board .button-wrap .list {
-  box-sizing: border-box;
-  background: #7a6c64;
+.button-wrap .button-container .edit:hover {
+  background-color: #555;
   color: #fff;
-  border: 1px solid #7a6c64;
-  border-radius: 10px;
-  margin-right: 10px;
-  transition: background-color 0.3s;
 }
-.container.board .button-wrap .list:hover {
-  background-color: #6a5b54;
-}
-.container.board .button-wrap .button-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-.container.board .button-wrap .button-container .delete {
-  box-sizing: border-box;
-  background: #7a6c64;
-  color: #fff;
-  border: 1px solid #7a6c64;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-}
-.container.board .button-wrap .button-container .delete:hover {
-  background-color: #6a5b54;
-}
-.container.board .button-wrap .button-container .edit {
+.button-wrap .button-container .delete {
   box-sizing: border-box;
   background: #fff;
   color: #333;
   border: 1px solid #333;
-  border-radius: 10px;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
   margin-right: 10px;
   transition: background-color 0.3s;
 }
-.container.board .button-wrap .button-container .edit:hover {
-  background-color: #f0f0f0;
+.button-wrap .button-container .delete:hover {
+  background-color: #efefef;
 }
 
 .lypop-title {
   background-color: #7a6c64;
+}
+
+@media screen and (max-width: 768px) {
+  .container.board .button-wrap .button-container .edit {
+    box-sizing: border-box;
+    background: #333;
+    color: #fff;
+    border: 1px solid #333;
+    width: 60px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .container.board .button-wrap .button-container .edit:hover {
+    background-color: #555;
+    color: #fff;
+  }
+  .container.board .button-wrap .button-container .delete {
+    box-sizing: border-box;
+    background: #fff;
+    color: #333;
+    border: 1px solid #333;
+    width: 60px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+  .container.board .button-wrap .button-container .delete:hover {
+    background-color: #efefef;
+  }
 }

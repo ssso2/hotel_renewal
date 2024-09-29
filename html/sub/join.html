@@ -35,7 +35,7 @@
             <div class="center">
                 <h1 class="logo">
                     <a href="../index.html">
-                        <img src="../../img/common/logo.png" alt="">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -92,21 +92,22 @@
                         </ul>
                     </li>
                 </ul>
-                    <!-- 비로그인시 -->
-                    <div class="btn-wrap on">
-                        <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                        <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-                    </div>
-                    <!-- 로그인시 -->
-                    <div class="btn-wrap login">
-                        <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
-                            <i class="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </a>
-                        <a href="../../html/index.html" class="logout-btn">로그아웃
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap on">
+                    <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login">
+                    <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
+                        <i class="fa-regular fa-user"></i>
+                        <p>손주혜<span>님</span></p>
+                    </a>
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
                 <!-- 모바일 햄버거 버튼 -->
                 <div class="m_btn">
                     <div class="menu">
@@ -196,7 +197,7 @@
                         <h3 class="agree">약관동의</h3>
                         <h4 class="direction">약관 및 개인정보 수집, 이용 사항을 확인하시고 동의여부에 체크해주시기 바랍니다.</h4>
 
-                        <div class="checkbox" id="check-all">
+                        <div class="check-all" id="check-all">
                             <input type="checkbox" id="agree-all" />
                             <label for="agree-all"> 모든 필수 약관에 동의합니다.</label>
                         </div>
@@ -1148,18 +1149,18 @@
                             const chk1 = document.getElementById('chk1').checked;
                             const chk2 = document.getElementById('chk2').checked;
                             const chk3 = document.getElementById('chk3').checked;
-                            let alertText = document.querySelector(".lypop.join .modal-txt");
-                            let joinAlertChkBtn = document.querySelector(".join-alert-chk-btn");
+                            let alertText = document.querySelector('.lypop.join .modal-txt');
+                            let joinAlertChkBtn = document.querySelector('.join-alert-chk-btn');
 
                             let valid = false;
                             if (!chk1 || !chk2 || !chk3) {
-                                alertText.innerHTML = "먼저 약관에 동의하셔야 합니다.";
+                                alertText.innerHTML = '먼저 약관에 동의하셔야 합니다.';
                                 valid = false;
                                 return;
                             } else {
                                 valid = true;
-                                alertText.innerHTML = "본인인증 후 가입을 진행합니다.";
-                                joinAlertChkBtn.setAttribute("onclick","location.href='./myinfo.html'");
+                                alertText.innerHTML = '본인인증 후 가입을 진행합니다.';
+                                joinAlertChkBtn.setAttribute('onclick', "location.href='./myinfo.html'");
                             }
                         });
                     </script>
@@ -1228,18 +1229,15 @@
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
 
-
         <!-- alert -->
         <div class="lypop join" data-lyOpen="pop-alert" tabindex="0">
             <div class="lypop-wp min">
                 <div class="lypop-content">
                     <div class="lypop-title">
-                        <strong>타이틀</strong>
+                        <strong>회원가입</strong>
                     </div>
                     <div class="lypop-ct">
-                        <p class="modal-txt">
-                            먼저 약관에 동의하셔야 합니다.
-                        </p>
+                        <p class="modal-txt">먼저 약관에 동의하셔야 합니다.</p>
                         <div class="btn-wrap type5">
                             <button class="btn btn-04 join-alert-chk-btn" data-lyClose="pop-mypage1"><span>확인</span></button>
                         </div>
