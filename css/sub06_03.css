@@ -209,6 +209,7 @@
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-top: 20px;
   }
   .container .post .post-writer {
     width: auto;
