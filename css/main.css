@@ -166,7 +166,7 @@ main .cont2 .reservation-wrap .tit {
 main .cont2 .reservation-wrap .date-wrap {
   position: relative;
   padding: 2px 0;
-  width: calc((100% - 170px) * 0.45);
+  width: calc((100% - 170px) * 0.55);
   height: 77px;
   border: 1px dashed transparent;
 }
@@ -193,14 +193,17 @@ main .cont2 .reservation-wrap .room-wrap {
   display: flex;
   align-items: center;
   padding: 8.5px 0;
-  width: calc((100% - 170px) * 0.55);
+  width: calc((100% - 170px) * 0.45);
   border: 1px dashed transparent;
   cursor: pointer;
 }
 main .cont2 .reservation-wrap .room-wrap .box {
-  width: 33.3333333333%;
+  width: 50%;
   border-left: 1px solid #ddd;
   text-align: center;
+}
+main .cont2 .reservation-wrap .room-wrap .box.room {
+  display: none;
 }
 main .cont2 .reservation-wrap .room-wrap:hover {
   border-color: #7A6C64;
