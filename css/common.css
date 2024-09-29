@@ -809,7 +809,7 @@ body::-webkit-scrollbar-track {
   .daterangepicker {
     padding: 30px 100px;
     width: calc(100vw - 10px);
-    height: 100vh;
+    height: calc(100vh + 18px);
     left: 50% !important;
     top: -8px !important;
     transform: translateX(-50%);
