@@ -17,38 +17,47 @@ $(function () {
         $(".dropdown.type").removeClass("on");
     });
 
-    $('input[name="daterange3"]').daterangepicker({
-        minYear: 1000,
-        maxYear: 9999,
-        autoUpdateInput: false,
-        locale: {
-            format: "YYYY.MM.DD",
-            separator: " - ",
-            applyLabel: "확인",
-            cancelLabel: "취소",
-            fromLabel: "From",
-            toLabel: "To",
-            customRangeLabel: "Custom",
-            weekLabel: "주",
-            daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
-            monthNames: [
-                "1월",
-                "2월",
-                "3월",
-                "4월",
-                "5월",
-                "6월",
-                "7월",
-                "8월",
-                "9월",
-                "10월",
-                "11월",
-                "12월",
-            ],
-            firstDay: 1,
-        },
-        drops: "down", // up, down, auto 중 선택
-    });
+    // 데이트피커
+    $('input[name="daterange3"]')
+        .daterangepicker({
+            minYear: 1000,
+            maxYear: 9999,
+            autoUpdateInput: false, // 날짜자동입력해제
+            locale: {
+                format: "YYYY.MM.DD",
+                separator: " - ",
+                applyLabel: "확인",
+                cancelLabel: "취소",
+                fromLabel: "From",
+                toLabel: "To",
+                customRangeLabel: "Custom",
+                weekLabel: "주",
+                daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
+                monthNames: [
+                    "1월",
+                    "2월",
+                    "3월",
+                    "4월",
+                    "5월",
+                    "6월",
+                    "7월",
+                    "8월",
+                    "9월",
+                    "10월",
+                    "11월",
+                    "12월",
+                ],
+                firstDay: 1,
+            },
+            drops: "down", // up, down, auto 중 선택
+        })
+        .on("apply.daterangepicker", function (ev, picker) {
+            $(this).val(
+                picker.startDate.format("YYYY.MM.DD") +
+                    " - " +
+                    picker.endDate.format("YYYY.MM.DD")
+            );
+        });
 });
 
 // 초기화 버튼 눌렀을 때 날짜, 유형구분, 키워드 초기상태로 만들기
@@ -201,6 +210,8 @@ $(function () {
 $(function () {
     function handleAccordion() {
         var screenWidth = $(window).width();
+        //기존의 이벤트를 제거(반복실행되는 오류 해결 중요!)
+        $(".accordion-trigger").off("click");
         // 화면 너비가 768px 이하일 때만 아코디언 작동
         if (screenWidth <= 768) {
             $(".accordion-trigger").click(function () {
@@ -209,9 +220,9 @@ $(function () {
                     .parent(".head-wrap")
                     .next(".des-wrap");
                 if ($(this).hasClass("active")) {
-                    $currentClass.slideUp("slow"); // 닫기
+                    $currentClass.slideUp("fast"); // 닫기
                 } else {
-                    $currentClass.slideDown("slow"); // 열기
+                    $currentClass.slideDown("fast"); // 열기
                 }
                 // active 클래스 토글
                 $(this).toggleClass("active");

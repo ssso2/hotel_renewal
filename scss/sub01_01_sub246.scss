@@ -354,7 +354,7 @@
         }
     }
     .other-event {
-        border-top: 1px solid #7a6c64;
+        border-top: none;
         padding: 0;
         margin-top: 0px;
         .other-title {
@@ -366,7 +366,9 @@
             .other-item {
                 width: 100%;
                 a {
+                    padding-bottom: 10px;
                     margin-bottom: 40px;
+                    border-bottom: 1px solid #ccc;
                     .img-box {
                         padding-top: 0%;
                         aspect-ratio: 1/0.44761;

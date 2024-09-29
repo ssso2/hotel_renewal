@@ -340,7 +340,9 @@
     width: 100%;
   }
   .other-event .other-list .other-item a {
+    padding-bottom: 10px;
     margin-bottom: 40px;
+    border-bottom: 1px solid #ccc;
   }
   .other-event .other-list .other-item a .img-box {
     padding-top: 0%;
