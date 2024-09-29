@@ -129,6 +129,13 @@
   .center {
     width: 95%;
   }
+  .depth3-tab-wrap .context .Introduction .room-title {
+    font-size: 30px;
+  }
+  .depth3-tab-wrap .context .Introduction .room-top-txt {
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
   .depth3-tab-wrap .context .amenity .list h4 {
     width: 120px;
   }

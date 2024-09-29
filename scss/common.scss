@@ -805,22 +805,31 @@ body::-webkit-scrollbar-track {
             flex-wrap: wrap;    
             & > li {
                 margin: 0;
-                min-width: calc(100% / 3);
+                min-width: calc(100% / 4);
                 font-size: 14px;
                 border: 1px solid #ddd;
-                border-left: 0;
-    
-                &:first-child, &:nth-child(4), &:nth-child(7) {
-                    border-left: 1px solid #ddd;
+                border-right: 0;
+                &:last-child, &:nth-child(4) {
+                    border-right: 1px solid #ddd;
                 }
-                &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7){
+                &:nth-child(5), &:nth-child(6), &:nth-child(7){
                     border-top: 0;
                 }
-    
                 &.on {
-                    border: 1px solid #7a6c64;
+                    border: 1px solid #7a6c64 !important;
                     background-color: #7a6c64;
                     color: #fff;
+                }
+            }
+            &.tab-long{
+                & > li {
+                    min-width: calc(100% / 2) !important;
+                    &:last-child, &:nth-child(2) {
+                        border-right: 1px solid #ddd;
+                    }
+                    &:nth-child(3), &:nth-child(4){
+                        border-top: 0;
+                    }
                 }
             }
         }
@@ -864,15 +873,6 @@ body::-webkit-scrollbar-track {
     }
 
     /* 3depth tab 공통 */
-    .depth3-tab-wrap {
-        /* tab */
-        .tab {
-            & > li {
-                padding: 0px 5px;
-                font-size: 14px;
-            }
-        }
-    }
     /* 레이어 팝업 */
     .lypop {
         .btn-wrap {
