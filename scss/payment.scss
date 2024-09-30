@@ -287,6 +287,13 @@
             .agr{
                 font-size: 17px;
             }
+            .total-wrap{
+                .btn-wrap{
+                    font-size: 16px;
+                    width: 100%;
+                    margin: 30px auto;
+                }
+            }
         }
     }
 }
@@ -315,14 +322,12 @@
             .agr{
                 font-size: 16px;
             }
-            .total{
-                padding: 20px 0px;
-                font-weight: 500;
+            .total-wrap{
+                .total{
+                    padding: 20px 0px;
+                    font-weight: 500;
+                }
             }
-            .btn-wrap{
-                width: 100%;
-            }
-    
         }
     }
     

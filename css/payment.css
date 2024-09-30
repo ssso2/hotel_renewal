@@ -260,6 +260,11 @@
   .payment .content .agr {
     font-size: 17px;
   }
+  .payment .content .total-wrap .btn-wrap {
+    font-size: 16px;
+    width: 100%;
+    margin: 30px auto;
+  }
 }
 @media screen and (max-width: 768px) {
   .center {
@@ -278,11 +283,8 @@
   .payment .content .agr {
     font-size: 16px;
   }
-  .payment .content .total {
+  .payment .content .total-wrap .total {
     padding: 20px 0px;
     font-weight: 500;
-  }
-  .payment .content .btn-wrap {
-    width: 100%;
   }
 }

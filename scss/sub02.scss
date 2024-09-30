@@ -147,7 +147,14 @@
             margin-right: 20px;
             width: calc((100% - 20px)/2);
             a{
+                border-radius: 5px;
+                .img-wrap{
+                    img{
+                        border-radius: 5px;
+                    }
+                }
                 .txt-wrap{
+                    border-radius: 5px;
                     h4{
                         font-size: 20px;
                     }
@@ -157,6 +164,9 @@
                     p{
                         font-size: 12px;
                     }
+                }
+                &::after {
+                    border-radius: 5px;
                 }
             }
         }
@@ -173,10 +183,6 @@
         .room-box{
             width: 100%;
             margin-bottom: 30px;
-            a{
-                .txt-wrap{
-                }
-            }
         }
     }
 }
