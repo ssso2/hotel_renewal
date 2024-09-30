@@ -278,6 +278,16 @@
             .title-wrap .title {
                 padding: 10px 20px;
             }
+            .reply-container {
+                .reply-box {
+                    .reply-info {
+                        .edit,
+                        .delete {
+                            padding: 5px 20px;
+                        }
+                    }
+                }
+            }
         }
         .button-wrap {
             .button-container {

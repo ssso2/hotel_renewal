@@ -22,7 +22,7 @@ $(function () {
         .daterangepicker({
             minYear: 1000,
             maxYear: 9999,
-            autoUpdateInput: false, // 날짜자동입력해제
+            autoUpdateInput: false,
             locale: {
                 format: "YYYY.MM.DD",
                 separator: " - ",
@@ -61,10 +61,10 @@ $(function () {
 });
 
 // 초기화 버튼 눌렀을 때 날짜, 유형구분, 키워드 초기상태로 만들기
-$(".pkg-filter-resetbtn").click(function () {
-    $(".pkg-datepicker input[type='text']").val("");
+$(".pkg-filter-resetbtn").on("click", function () {
     $(".typebox").text("전체");
-    $(".pkg-filter-keyword input[type='checkbox']").prop("checked", false);
+    $("input[type='checkbox']").prop("checked", false);
+    $('input[name="daterange3"]').val("");
 });
 
 // 필터타입 + 페이지네이션

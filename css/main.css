@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(./reset.css);
 .main-header header {
   transition: all 0.2s;
@@ -1053,8 +1054,11 @@ main .cont6 iframe {
     padding: 30px 10px;
     bottom: 200px;
   }
+  main .cont2 .reservation-wrap .reservation-popup > form {
+    flex-direction: column;
+  }
   main .cont2 .reservation-wrap .reservation-popup .popup-left {
-    width: 65%;
+    width: 80%;
   }
   main .cont2 .reservation-wrap .reservation-popup .popup-left > li .tit {
     margin: 0;
@@ -1072,19 +1076,20 @@ main .cont6 iframe {
     margin: 0 10px;
   }
   main .cont2 .reservation-wrap .reservation-popup .popup-right {
-    width: 140px;
+    width: 80%;
+    text-align: center;
   }
   main .cont2 .reservation-wrap .reservation-popup .popup-right .desc {
-    margin-top: 15px;
-    font-size: 11px;
+    margin-top: 30px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.5;
     color: #666;
   }
   main .cont2 .reservation-wrap .reservation-popup .popup-right > button {
     margin-top: 0px;
     padding: 10px 0;
-    width: 115px;
+    width: 180px;
     font-size: 18px;
   }
   main .cont2 .reservation-wrap .reservation-popup .close-btn {
@@ -1166,5 +1171,24 @@ main .cont6 iframe {
   }
   main .cont6 {
     padding: 0;
+  }
+  .lypop.hotel-list .lypop-ct {
+    height: 500px;
+    overflow: auto;
+    /* 스크롤바의 폭 너비 */
+  }
+  .lypop.hotel-list .lypop-ct::-webkit-scrollbar {
+    width: 10px;
+  }
+  .lypop.hotel-list .lypop-ct::-webkit-scrollbar-thumb {
+    background: #bababa; /* 스크롤바 색상 */
+    border-radius: 10px; /* 스크롤바 둥근 테두리 */
+  }
+  .lypop.hotel-list .lypop-ct::-webkit-scrollbar-track {
+    background: #eaeaea; /*스크롤바 뒷 배경 색상*/
+  }
+  .hotel-box-wrap .area .hotel-link-wrap > a {
+    margin: 0 0 10px 0;
+    width: 100%;
   }
 }

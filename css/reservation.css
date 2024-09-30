@@ -651,8 +651,11 @@
   .reservation .reservation-wrap .reservation-popup {
     padding: 30px 10px;
   }
+  .reservation .reservation-wrap .reservation-popup > form {
+    flex-direction: column;
+  }
   .reservation .reservation-wrap .reservation-popup .popup-left {
-    width: 65%;
+    width: 80%;
   }
   .reservation .reservation-wrap .reservation-popup .popup-left > li .tit {
     margin: 0;
@@ -670,11 +673,12 @@
     margin: 0 10px;
   }
   .reservation .reservation-wrap .reservation-popup .popup-right {
-    width: 140px;
+    width: 80%;
+    text-align: center;
   }
   .reservation .reservation-wrap .reservation-popup .popup-right .desc {
-    margin-top: 15px;
-    font-size: 11px;
+    margin-top: 20px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 1.4;
     color: #666;
@@ -682,7 +686,7 @@
   .reservation .reservation-wrap .reservation-popup .popup-right > button {
     margin-top: 0px;
     padding: 10px 0;
-    width: 115px;
+    width: 180px;
     font-size: 18px;
   }
   .reservation .reservation-wrap .reservation-popup .close-btn {

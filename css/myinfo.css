@@ -128,9 +128,6 @@
   .form-wrap .join-container .info-group .input-container .input-wrap {
     width: calc(100% - 100px);
   }
-  .form-wrap .join-container .info-group .input-container .input-wrap #pid::-moz-placeholder, .form-wrap .join-container .info-group .input-container .input-wrap #pw::-moz-placeholder, .form-wrap .join-container .info-group .input-container .input-wrap #pwchk::-moz-placeholder {
-    color: transparent;
-  }
   .form-wrap .join-container .info-group .input-container .input-wrap #pid::placeholder,
   .form-wrap .join-container .info-group .input-container .input-wrap #pw::placeholder,
   .form-wrap .join-container .info-group .input-container .input-wrap #pwchk::placeholder {

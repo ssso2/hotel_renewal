@@ -280,6 +280,10 @@
   .container.board .text-container .title-wrap .title {
     padding: 10px 20px;
   }
+  .container.board .text-container .reply-container .reply-box .reply-info .edit,
+  .container.board .text-container .reply-container .reply-box .reply-info .delete {
+    padding: 5px 20px;
+  }
   .container.board .button-wrap .button-container .edit {
     box-sizing: border-box;
     background: #333;
