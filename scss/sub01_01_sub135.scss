@@ -45,10 +45,35 @@
         }
         .list-item {
             width: 100%;
-            // display: inline-block;
             margin-left: 100px;
             line-height: 2;
             position: relative;
+            .item-before {
+                position: relative;
+                // margin: 0;
+                padding-left: 15px;
+                &::before {
+                    content: "*";
+                    display: block;
+                    position: absolute;
+                    top: 3px;
+                    left: 2px;
+                }
+            }
+            .item {
+                position: relative;
+                // margin: 0;
+                padding-left: 15px;
+                // line-height: 1.5;
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 3px;
+                    left: 2px;
+                }
+            }
+
             .offer-room {
                 position: absolute;
                 width: 180px;
@@ -118,14 +143,14 @@
             padding: 0 20px 20px 20px;
         }
     }
-    // .description-main.other-type {
-    //     width: calc(50% - 20px);
-    //     overflow: hidden;
-    // }
-    // .description-main.other-type-full {
-    //     width: calc(50%);
-    //     overflow: hidden;
-    // }
+    .description-main.other-type {
+        width: calc(50% - 20px);
+        overflow: hidden;
+    }
+    .description-main.other-type-full {
+        width: calc(50%);
+        overflow: hidden;
+    }
     .description {
         width: calc(20% - 10px);
         display: block;
@@ -308,15 +333,11 @@
                 box-sizing: border-box;
                 width: 100%;
                 list-style: none;
-                padding: 10px 20px;
+                padding: 10px 20px 14px 20px;
                 .des-list {
                     width: 100%;
                     line-height: 1.5;
                 }
-            }
-            .accordion {
-                width: 100%;
-                height: 10px;
             }
         }
     }
@@ -330,6 +351,18 @@
 
 // 모바일
 @media screen and (max-width: 768px) {
+    .detail-list {
+        .list-section {
+            span {
+                width: 140px;
+            }
+            .list-item {
+                width: calc(100% - 140px);
+                padding-left: 20px;
+                margin-left: 0px;
+            }
+        }
+    }
     .pkg-header {
         aspect-ratio: 1/0.42957746;
     }
@@ -337,7 +370,8 @@
         font-size: 20px;
     }
     .d-day-wrap {
-        width: 95%;
+        width: 100%;
+        left: 0;
         border-radius: 0px;
         position: fixed;
         z-index: 500;
@@ -346,35 +380,15 @@
             line-height: 5;
             position: relative;
             .d-day-reservation {
-                width: 250px;
+                width: 200px;
                 border-radius: 6px;
                 line-height: 3;
             }
         }
     }
     .accordion-description-wrap {
-        display: block;
         .accordion-description {
             width: 100%;
-            .head-wrap {
-                img {
-                    width: 100%;
-                    aspect-ratio: 1/0.503496;
-                    object-fit: cover;
-                }
-                .accordion-trigger {
-                    cursor: pointer;
-                    background: url(../img/icon/icn_collps01.png) no-repeat
-                        right 20px center;
-                    background-size: 9px auto;
-                    &.active {
-                        background-image: url(../img/icon/icn_collps02.png);
-                    }
-                }
-            }
-            .des-wrap {
-                display: none;
-            }
         }
     }
     .other-event {
