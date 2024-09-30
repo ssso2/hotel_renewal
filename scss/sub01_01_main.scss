@@ -99,82 +99,7 @@
     font-size: 1rem;
     border-bottom: 1px solid #ddd;
 }
-// .daterangepicker {
-//     right: 100px !important;
-// }
-/////수정중
-// .daterangepicker {
-//     padding: 10px 48px;
-//     width: 60vw !important;
-//     left: 100px !important;
-//     .drp-calendar {
-//         .calendar-table {
-//             th,
-//             td {
-//                 font-size: 16px;
-//                 line-height: 2.5;
-//             }
-//             td {
-//                 width: 40px;
-//             }
-//         }
-//     }
-//     .drp-selected,
-//     .drp-buttons .btn {
-//         font-size: 16px;
-//     }
-//     .drp-buttons .btn {
-//         font-size: 16px;
-//     }
-// }
-///
-// daterangepicker 공통
-// .daterangepicker {
-//     padding: 70px 200px;
-//     width: 1420px;
-//     &.drop-up {
-//         margin-top: -10px;
-//     }
-//     .drp-calendar {
-//         max-width: none;
-//         &.left {
-//             .calendar-table {
-//                 padding-right: 150px;
-//             }
-//         }
-//         .calendar-table {
-//             th,
-//             td {
-//                 font-size: 14px;
-//                 line-height: 2.5;
-//             }
-//             td {
-//                 width: 60px;
-//                 height: auto;
-//                 &.active {
-//                     border-radius: 50%;
-//                 }
-//             }
-//         }
-//     }
 
-//     .drp-buttons {
-//         padding-top: 20px;
-//         border: none;
-//         border-top: 1px solid #eaeaea;
-//         line-height: 1;
-//         .btn {
-//             font-size: 18px;
-//         }
-//     }
-//     .drp-selected {
-//         margin-right: 30px;
-//         padding: 4px 0;
-//         font-size: 20px;
-//         color: #000;
-//         vertical-align: middle;
-//     }
-// }
 .pkg-filter-sort {
     flex-grow: 1;
 }
@@ -230,6 +155,7 @@
     height: 30px;
     border: 1px solid #ccc;
     text-align: center;
+    cursor: pointer;
 }
 
 .pkg-filter-searchbtn {
@@ -596,6 +522,7 @@
     .pkg-filter-box {
         display: flex;
         flex-direction: column;
+        border: 1px solid #ddd;
     }
     .pkg-datepicker-box,
     .pkg-filter-sort,
@@ -624,13 +551,13 @@
         }
     }
     .pkg-filter-keyword {
-        .keword-wrap {
+        border .keword-wrap {
             padding-right: 0%;
             border-right: none;
             .keywords {
                 & li {
                     width: auto;
-                    font-size: 1.4vw;
+                    font-size: 13px;
                     label {
                         width: auto;
                         padding: 0 20px;
@@ -715,7 +642,7 @@
             width: 100%;
             aspect-ratio: 1/0.339534;
             margin-bottom: 26px;
-            border-radius: 5px;
+            border-radius: 6px;
             a {
                 .txt-wrap {
                     h2 {
@@ -730,112 +657,12 @@
             }
         }
     }
-    // daterangepicker 팜업
-    // .daterangepicker {
-    //     padding: 30px 100px;
-    //     width: calc(100vw - 10px);
-    //     height: calc(100vh + 18px);
-    //     left: 0;
-    //     top: -8px !important;
-    //     transform: none;
-    //     border-radius: 0 !important;
-
-    //     &.show-calendar {
-    //         .drp-buttons {
-    //             display: flex;
-    //             align-items: center;
-    //             justify-content: center;
-    //         }
-    //     }
-
-    //     .drp-calendar {
-    //         max-width: none;
-    //         &.left {
-    //             padding: 8px 0 30px 8px;
-    //             .calendar-table {
-    //                 padding-right: 20px;
-    //             }
-    //         }
-    //         .calendar-table {
-    //             th,
-    //             td {
-    //                 font-size: 15px;
-    //                 line-height: 40px;
-    //             }
-    //             td {
-    //                 width: 40px;
-    //             }
-    //         }
-    //     }
-
-    //     .drp-buttons {
-    //         padding: 10px;
-    //         .btn {
-    //             font-size: 15px;
-    //         }
-    //     }
-    //     .drp-selected {
-    //         margin-right: 0px;
-    //         font-size: 15px;
-    //     }
-    // }
-
-    // .daterangepicker .ranges {
-    //     float: left;
-    // }
-    // .daterangepicker {
-    //     // padding: 70px 200px;
-    //     width: 448px !important;
-    //     height: auto;
-    //     top: 120% !important;
-    //     left: 38% !important;
-    //     // &.drop-up {
-    //     //     margin-top: -10px;
-    //     // }
-    //     .drp-calendar {
-    //         width: 200px;
-    //     }
-    //     .calendar-table {
-    //         width: 100px;
-    //     }
-    //     //     &.left {
-    //     //         .calendar-table {
-    //     //             padding-right: 150px;
-    //     //         }
-    //     //     }
-    //     //     .calendar-table {
-    //     //         th,
-    //     //         td {
-    //     //             font-size: 14px;
-    //     //             line-height: 2.5;
-    //     //         }
-    //     //         td {
-    //     //             width: 60px;
-    //     //             height: auto;
-    //     //             &.active {
-    //     //                 border-radius: 50%;
-    //     //             }
-    //     //         }
-    //     //     }
-    //     // }
-
-    //     // .drp-buttons {
-    //     //     padding-top: 20px;
-    //     //     border: none;
-    //     //     border-top: 1px solid #eaeaea;
-    //     //     line-height: 1;
-    //     //     .btn {
-    //     //         font-size: 18px;
-    //     //     }
-    //     // }
-    //     // .drp-selected {
-    //     //     margin-right: 30px;
-    //     //     padding: 4px 0;
-    //     //     font-size: 20px;
-    //     //     color: #000;
-    //     //     vertical-align: middle;
-    //     // }
-    // }
+    .pkg-filter-box {
+        border-radius: 6px;
+        .keywords {
+            font-size: 13px;
+        }
+    }
 
     .event-container {
         .list-item {
