@@ -167,7 +167,7 @@ body::-webkit-scrollbar-track {
   position: relative;
 }
 .sub-title.block {
-  display: block;
+  display: block !important;
 }
 .sub-title.block .location {
   margin-top: 20px;

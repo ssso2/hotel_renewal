@@ -143,7 +143,7 @@ body::-webkit-scrollbar-track {
     position: relative;
 
     &.block {
-        display: block;
+        display: block !important;
         .location {
             margin-top: 20px;
             justify-content: end;
