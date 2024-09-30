@@ -12,9 +12,7 @@
 
     .content {
         position: relative;
-        padding: 20px;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        min-height: 220px;
 
         .change-info-chk,
         .reservate-info,
@@ -32,7 +30,7 @@
 
     .change-info-chk {
         display: flex;
-        margin-top: 50px;
+        margin-top: 0px;
         label {
             font-size: 24px;
         }
@@ -72,7 +70,7 @@
             border-radius: 5px;
             cursor: pointer;
             align-items: center;
-            margin-bottom: 200px;
+            margin-bottom: 0px;
 
             &:hover {
                 background-color: #333;
@@ -106,7 +104,7 @@
             p {
                 width: 100px;
                 margin: 0;
-                text-align: center;
+                text-align: left;
             }
 
             label {
@@ -133,7 +131,7 @@
         #edit {
             display: block;
             margin: 50px auto;
-            width: 40%;
+            width: 500px;
             padding: 10px;
             border: none;
             border-radius: 5px;
@@ -151,11 +149,47 @@
 
 //반응형
 @media screen and (max-width: 768px) {
+    .container {
+        .content {
+            padding: 0;
+        }
+        .mypage-info {
+            padding: 0;
+            #edit {
+                display: block;
+                margin: 50px auto;
+                width: 100%;
+                min-width: 120px;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #7a6c64;
+                color: #fff;
+                font-size: 16px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #333;
+                }
+            }
+        }
+        .mypage-info .my-info {
+            flex-wrap: nowrap;
+            p {
+                width: 70px;
+                text-align: left;
+            }
+            input {
+                width: calc(100% - 70px);
+            }
+        }
+    }
+
     #edit {
         display: block;
         margin: 50px auto;
-        width: 40%;
         min-width: 120px;
+        width: 100%;
         padding: 10px;
         border: none;
         border-radius: 5px;
