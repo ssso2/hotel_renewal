@@ -189,4 +189,42 @@ $(function () {
     $(".reservation-wrap .close-btn").on("click", function () {
         $(".reservation-popup").removeClass("on");
     });
+
+
+    // 인원 숫자 올리고 내리기
+    const adultDownBtn = $(".count-wrap.adult .btn-down"); //성인 숫자 올리기 버튼
+    const adultUpBtn = $(".count-wrap.adult .btn-up"); // 성인 숫자 내리기 버튼
+    let adultNum = $(".count-wrap.adult .num"); // 성인 숫자 출력하는 태그
+    let adultNumVal = parseInt($(".count-wrap.adult .num").text()); // 성인 숫자 
+    const childrenDownBtn = $(".count-wrap.children .btn-down"); // 어린이 숫자 올리기 버튼
+    const childrenUpBtn = $(".count-wrap.children .btn-up"); // 어린이 숫자 내리기 버튼
+    let childrenNum = $(".count-wrap.children .num"); // 어린이 숫자 출력하는 태그
+    let childrenNumVal = parseInt($(".count-wrap.children .num").text()); // 어린이 숫자 
+
+    adultDownBtn.click(function(){
+        if(adultNumVal > 0){
+            adultNumVal--;
+        }
+        adultNum.text(adultNumVal);
+    });
+    adultUpBtn.click(function(){
+        if(adultNumVal < 4){
+            adultNumVal++;
+        }
+        adultNum.text(adultNumVal);
+    });
+
+    childrenDownBtn.click(function(){
+        if(childrenNumVal > 0){
+            childrenNumVal--;
+        }
+        childrenNum.text(childrenNumVal);
+    });
+    childrenUpBtn.click(function(){
+        if(childrenNumVal < 4){
+            childrenNumVal++;
+        }
+        childrenNum.text(childrenNumVal);
+    });
+
 });
