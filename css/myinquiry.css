@@ -148,6 +148,7 @@
   .container #board-container .inquiry-info .myinquiry .inquiry-list .inquiry-item .inquiry-details li {
     flex: 1;
     text-align: center;
+    padding: 15px 0;
   }
   .container #board-container .inquiry-info .myinquiry .inquiry-list .inquiry-item .inquiry-details li:nth-child(1) {
     flex: 0.5;
