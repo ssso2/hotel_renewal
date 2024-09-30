@@ -336,7 +336,7 @@
 }
 @media screen and (max-width: 768px) {
   .detail-list .list-section span {
-    width: 240px;
+    width: 140px;
   }
   .detail-list .list-section .list-item {
     width: calc(100% - 140px);
