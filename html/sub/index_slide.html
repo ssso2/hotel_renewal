@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>신라호텔 서울</title>
+    <title>신라호텔 : 스페셜오퍼 - 패키지</title>
     <!-- 스와이퍼 CSS 연결 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- 폰트어썸 연결 -->
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../css/header.css" />
     <link rel="stylesheet" href="../../css/common.css" />
     <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/sub01_01_sub.css">
+    <link rel="stylesheet" href="../../css/sub01_01_sub135.css">
     <!-- 제이쿼리 연결 -->
     <script src="../../js/common/jquery-3.7.1.min.js"></script>
     <script src="../../js/common/jquery-ui.min.js"></script>
@@ -26,7 +26,7 @@
     <!-- 작성한 JS 연결 -->
     <script src="../../js/common/header.js" defer></script>
     <script src="../../js/common/common.js" defer></script>
-    <!-- <script src="../../js/sub/sub01_01_01.js" defer></script> -->
+    <script src="../../js/sub/sub01_01.js" defer></script>
 </head>
 
 <body>
@@ -121,14 +121,19 @@
     <div class="m_wrap">
         <div class="m_top">
             <!-- 비로그인시 -->
-            <div class="btn-wrap">
-                <a href="../../html/sub/join.html" class="join-btn">회원가입</a>
-                <a href="../../html/sub/login.html" class="login-btn">로그인</a>
+            <div class="btn-wrap on">
+                <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
             </div>
             <!-- 로그인시 -->
             <div class="btn-wrap login">
-                <p>손주혜<span>님</span></p>
-                <a href="#" class="logout-btn">로그아웃</a>
+                <a href="../../html/sub/mypage.html" class="user-name-btn" title="마이페이지로 이동">
+                    <i class="fa-regular fa-user"></i>
+                    <p>손주혜<span>님</span></p>
+                </a>
+                <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
             </div>
         </div>
         <ul class="m_gnb">
@@ -187,9 +192,11 @@
         </ul>
 
     </div>
+
+    <!-- 본문 시작 -->
     <div class="container">
         <div class="center">
-            <div class="sub-title">
+            <div class="sub-title block">
                 <h2>EVERLASTING MOMENT</h2>
                 <ul class="location">
                     <li><a href="../../html/index.html">홈</a></li>
@@ -291,16 +298,19 @@
                     </a>
                 </div>
             </div>
+            <!-- 패키지 상세설명 -->
             <div class="section-title">패키지 상세설명</div>
             <div class="pkg-description-wrap">
-                <div class="description1">
+                <div class="description-main">
                     <img src="../../img/sub/offerRose.jpg" alt="">
-                    <div>Pink Rose Decoration & Welcome Champagne</div>
-                    <div>플라워 박스를 포함한 생화와 핑크 벌론, LED 캔들로 꾸며진 데커레이션과
-                        로맨틱한 순간을 기념하는 Montaudon La Grand Rose 샴페인<br>
-                        * 플라워 박스 외에는 별도의 플라워 패키징 서비스를 제공하지 않습니다.<br>
-                        * 데커레이션 관련 세부 문의 사항은 서울신라호텔 플라워 부티크<br>(02-2230-3759)로 연락 주시기 바랍니다.
-                    </div>
+                    <p class="des-title">Pink Rose Decoration & Welcome Champagne</p>
+                    <ul class="des-wrap">
+                        <li class="des-list">플라워 박스를 포함한 생화와 핑크 벌론, LED 캔들로 꾸며진 데커레이션과 로맨틱한 순간을 기념하는
+                            Montaudon La Grand Rose 샴페인
+                        </li>
+                        <li class="des-list">* 플라워 박스 외에는 별도의 플라워 패키징 서비스를 제공하지 않습니다.</li>
+                        <li class="des-list"> * 데커레이션 관련 세부 문의 사항은 서울신라호텔 플라워 부티크 (02-2230-3759)로 연락 주시기 바랍니다.</li>
+                    </ul>
                 </div>
                 <div class="description">
                     <div class="description-text">Superior Suite</div>
@@ -327,6 +337,67 @@
                     </div>
                 </div>
             </div>
+            <!-- 반응형 아코디언 -->
+            <div class="accordion-description-wrap">
+                <div class="accordion-description">
+                    <div class="head-wrap">
+                        <img src="../../img/sub/offerRose.jpg" alt="">
+                        <a href="javascript:void(0);" class="accordion-trigger">
+                            <p class="slide-text">Pink Rose Decoration & Welcome Champagne</p>
+                        </a>
+                    </div>
+                    <ul class="des-wrap">
+                        <li class="des-list">플라워 박스를 포함한 생화와 핑크 벌론, LED 캔들로 꾸며진 데커레이션과 로맨틱한 순간을 기념하는
+                            Montaudon La Grand
+                            Rose
+                            샴페인
+                        </li>
+                        <li class="des-list">* 플라워 박스 외에는 별도의 플라워 패키징 서비스를 제공하지 않습니다.</li>
+                        <li class="des-list"> * 데커레이션 관련 세부 문의 사항은 서울신라호텔 플라워 부티크 (02-2230-3759)로 연락 주시기 바랍니다.</li>
+                    </ul>
+                    <div class="accordion"></div>
+                </div>
+                <div class="accordion-description">
+                    <div class="head-wrap">
+                        <img src="../../img/sub/eventTeddy2.jpg" alt="">
+                        <a href="javascript:void(0);" class="accordion-trigger">
+                            <p class="slide-text">Shilla Bear</p>
+                        </a>
+                    </div>
+                    <ul class="des-wrap">
+                        <li class="des-list">신라베어의 블루 드래곤 키링이 여러분에게 희망과 행운을 안겨드립니다.
+                        </li>
+                    </ul>
+                    <div class="accordion"></div>
+                </div>
+                <div class="accordion-description">
+                    <div class="head-wrap">
+                        <img src="../../img/sub/offerGrand.jpg" alt="">
+                        <a href="javascript:void(0);" class="accordion-trigger">
+                            <p class="slide-text">Superior Suite</p>
+                        </a>
+                    </div>
+                    <ul class="des-wrap">
+                        <li class="des-list"> 영빈관이 내려다보이는 수페리어 스위트에서 보내는 아늑한 시간
+                        </li>
+                    </ul>
+                    <div class="accordion"></div>
+                </div>
+                <div class="accordion-description">
+                    <div class="head-wrap">
+                        <img src="../../img/sub/offerRoom3.jpg" alt="">
+                        <a href="javascript:void(0);" class="accordion-trigger">
+                            <p class="slide-text">Premier Suite</p>
+                        </a>
+                    </div>
+                    <ul class="des-wrap">
+                        <li class="des-list">여유로운 공간감이 돋보이는 프리미어 스위트에서 보내는 쾌적한 시간
+                        </li>
+                    </ul>
+                    <div class="accordion"></div>
+                </div>
+            </div>
+
             <!-- 안내사항 -->
             <div class="section-title">피트니스 클럽 이용안내</div>
             <ul class="pkg-fitness">
@@ -418,8 +489,8 @@
                 <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo">
                 <div>SNS</div>
                 <ul class="sns">
-                    <li><a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i
-                                class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.instagram.com/theshillaseoul/" target="_blank"
+                            title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i
                                 class="fa-brands fa-facebook-f"></i></a></li>
                     <li><a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank"
@@ -461,7 +532,7 @@
         </div>
     </footer>
 
-    <article class="floating-menu">
+    <article class="floating-menu bottom-bar">
         <div class="menu">
             <a href="../../html/sub/reservation.html" class="circle-btn" title="예약 페이지로 이동">예약</a>
             <a href="../../html/sub/sub06_03.html" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>

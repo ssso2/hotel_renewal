@@ -118,14 +118,14 @@
             padding: 0 20px 20px 20px;
         }
     }
-    .description-main.other-type {
-        width: calc(50% - 20px);
-        overflow: hidden;
-    }
-    .description-main.other-type-full {
-        width: calc(50%);
-        overflow: hidden;
-    }
+    // .description-main.other-type {
+    //     width: calc(50% - 20px);
+    //     overflow: hidden;
+    // }
+    // .description-main.other-type-full {
+    //     width: calc(50%);
+    //     overflow: hidden;
+    // }
     .description {
         width: calc(20% - 10px);
         display: block;
@@ -163,7 +163,9 @@
         }
     }
 }
-
+.accordion-description-wrap {
+    display: none;
+}
 .pkg-fitness {
     line-height: 2;
 }
@@ -258,26 +260,81 @@
                     position: relative;
                     display: block;
                     height: auto;
-                    background: #1f453a;
-                    color: #fff;
                     margin-top: 10px;
-                    text-align: center;
                     line-height: 2.5;
                 }
             }
         }
     }
 }
-//브레이크포인트
-@media screen and (max-width: 930px) {
+// 패키지상세설명 변경
+@media screen and (max-width: 1180px) {
+    .pkg-description-wrap {
+        display: none;
+    }
+    .accordion-description-wrap {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        flex-wrap: wrap;
+        width: 100%;
+        .accordion-description {
+            width: calc((100% - 40px) / 2);
+            border: 1px solid #ddd;
+            overflow: hidden;
+            margin-bottom: 40px;
+            .head-wrap {
+                width: 100%;
+                line-height: 2;
+                img {
+                    width: 100%;
+                    aspect-ratio: 1/0.603496;
+                    object-fit: cover;
+                }
+                .accordion-trigger {
+                    display: block;
+                    cursor: text;
+                    font-weight: 500;
+                    font-size: 18px;
+                    padding-left: 20px;
+                    .slide-text {
+                        display: inline-block;
+                        background: none;
+                    }
+                }
+            }
+            .des-wrap {
+                display: block;
+                box-sizing: border-box;
+                width: 100%;
+                list-style: none;
+                padding: 10px 20px;
+                .des-list {
+                    width: 100%;
+                    line-height: 1.5;
+                }
+            }
+            .accordion {
+                width: 100%;
+                height: 10px;
+            }
+        }
+    }
+    .section-title {
+        margin-top: 70px;
+        margin-bottom: 32px;
+        @include fontstyle();
+        font-size: 20px;
+    }
 }
+
 // 모바일
 @media screen and (max-width: 768px) {
     .pkg-header {
         aspect-ratio: 1/0.42957746;
     }
-    .line {
-        border-bottom: 1px solid #333;
+    .pkg-title {
+        font-size: 20px;
     }
     .d-day-wrap {
         width: 95%;
@@ -295,105 +352,37 @@
             }
         }
     }
-    .section-title {
-        margin-top: 130px;
-        margin-bottom: 32px;
-        @include fontstyle();
-    }
-    .pkg-description-wrap {
-        width: 100%;
-        // height: 100%;
+    .accordion-description-wrap {
         display: block;
-        // justify-content: space-between;
-        margin-bottom: 50px;
-        .description1 {
+        .accordion-description {
             width: 100%;
-            background-color: #faf8f4;
-            overflow: hidden;
-            img {
-                width: 100%;
-                aspect-ratio: 2.003496;
-                // display: block;
-                object-fit: cover;
-            }
-            // div {
-            //     padding: 20px;
-            // }
-            .des-title {
-                font-weight: 600;
-                font-size: 20px;
-                padding: 20px;
-            }
-            .des-wrap {
-                line-height: 1.5;
-                padding: 20px;
-                font-size: 30px;
-            }
-        }
-        .description1.other-type {
-            width: calc(50% - 20px);
-            overflow: hidden;
-        }
-        .description1.other-type-full {
-            width: calc(50%);
-            overflow: hidden;
-        }
-        .description {
-            width: calc(20% - 10px);
-            display: block;
-            border-top: 1px solid #333;
-            &:hover {
-                background-color: #faf8f4;
-                text-decoration: underline;
-            }
-            .description-text {
-                width: 270px;
-                height: 100px;
-                padding: 10px 0 10px 0;
-                text-align: center;
-                font-weight: 700;
-                line-height: 4.5;
-            }
-            .img-wrap {
-                overflow: hidden;
-                a {
-                    img {
-                        transition: transform 1s ease;
-                        &:hover {
-                            transform: scale(1.1);
-                        }
+            .head-wrap {
+                img {
+                    width: 100%;
+                    aspect-ratio: 1/0.503496;
+                    object-fit: cover;
+                }
+                .accordion-trigger {
+                    cursor: pointer;
+                    background: url(../img/icon/icn_collps01.png) no-repeat
+                        right 20px center;
+                    background-size: 9px auto;
+                    &.active {
+                        background-image: url(../img/icon/icn_collps02.png);
                     }
                 }
             }
-            img {
-                display: inline-block;
-                width: 100%;
-                min-height: 484px; // 반응형고민해보기
-                object-fit: cover;
-            }
-        }
-    }
-
-    .pkg-fitness {
-        line-height: 2;
-    }
-    .pkg-info {
-        line-height: 2;
-        margin: 40px 0;
-        padding: 20px 0 20px 20px;
-        background-color: #f6f6f6;
-        .info-txt {
-            p {
-                margin-top: 20px;
+            .des-wrap {
+                display: none;
             }
         }
     }
     .other-event {
-        border-top: 1px solid #7a6c64;
+        border-top: none;
         padding: 0;
         margin-top: 0px;
         .other-title {
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 60px;
         }
         .other-list {
@@ -401,22 +390,24 @@
             .other-item {
                 width: 100%;
                 a {
+                    padding-bottom: 10px;
                     margin-bottom: 40px;
+                    border-bottom: 1px solid #ccc;
                     .img-box {
                         padding-top: 0%;
-                        aspect-ratio: 2.204761;
+                        aspect-ratio: 1/0.44761;
                     }
                     dl {
                         dt {
                             font-weight: 500;
-                            font-size: 16px;
+                            font-size: 18px;
                             margin: 0;
                             padding: 12px 0;
                         }
                         .other-date {
                             border-bottom-style: none;
                             padding-bottom: 0;
-                            margin-bottom: 12px;
+                            margin-bottom: 14px;
                         }
                         .other-pay {
                             padding: 0;
@@ -426,16 +417,5 @@
                 }
             }
         }
-    }
-}
-.lypop-title {
-    background-color: #7a6c64;
-}
-.lypop-ct {
-    img {
-        width: 100%;
-    }
-    div {
-        padding-top: 20px;
     }
 }

@@ -190,7 +190,7 @@ main {
             .date-wrap {
                 position: relative;
                 padding: 2px 0;
-                width: calc((100% - 170px) * 0.45);
+                width: calc((100% - 170px) * 0.55);
                 height: 77px;
                 border: 1px dashed transparent;
                 .tit {
@@ -218,13 +218,16 @@ main {
                 display: flex;
                 align-items: center;
                 padding: 8.5px 0;
-                width: calc((100% - 170px) * 0.55);
+                width: calc((100% - 170px) * 0.45);
                 border: 1px dashed transparent;
                 cursor: pointer;
                 .box {
-                    width: calc(100% / 3);
+                    width: calc(100% / 2);
                     border-left: 1px solid #ddd;
                     text-align: center;
+                    &.room {
+                        display: none;
+                    }
                 }
                 &:hover {
                     border-color: #7A6C64;
@@ -1417,6 +1420,9 @@ main {
                     padding-bottom: 50px;
                     width: 100%;
                     border-bottom: 1px solid #ddd;
+                    &::after {
+                        display: none;
+                    }
                     &:last-child {
                         margin-bottom: 0;
                         border: none;

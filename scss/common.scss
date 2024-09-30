@@ -142,6 +142,14 @@ body::-webkit-scrollbar-track {
     padding: 50px 10px 20px;
     position: relative;
 
+    &.block {
+        display: block;
+        .location {
+            margin-top: 20px;
+            justify-content: end;
+        }
+    }
+
     &::after {
         content: '';
         display: block;
@@ -540,6 +548,7 @@ body::-webkit-scrollbar-track {
             right: 10px;
         }
     }
+
 }
 
 // 가이드
@@ -733,16 +742,44 @@ body::-webkit-scrollbar-track {
             transform: none;
             bottom: 100px;
         }
+
+        
+        &.bottom-bar {
+            .menu {bottom: 150px;}
+            .top-btn {
+                bottom: 80px;
+            }
+        }
     }
 
     // daterangepicker 팜업
     .daterangepicker {
         padding: 50px 120px;
-        width: 86%;
+        width: 1080px;
         left: 20px !important;
+    
+        .drp-calendar {
+            &.left {
+                .calendar-table {
+                    padding-right: 100px;
+                }
+            }
+            .calendar-table {
+                th,
+                td {
+                    font-size: 18px;
+                    line-height: 50px;
+                }
+                td {
+                    width: 50px;
+                    height: auto;
+                }
+            }
+        }
     }
 }
 
+// 태블릿
 @media screen and (max-width: 1240px) {
     .center {
         width: 95%;
@@ -751,13 +788,10 @@ body::-webkit-scrollbar-track {
     // daterangepicker 팜업
     .daterangepicker {
         padding: 30px;
-
-        &.drop-up {
-            margin-top: -10px;
-        }
-
+        width: 700px;
+        left: 10px !important;
+    
         .drp-calendar {
-            max-width: none;
             &.left {
                 .calendar-table {
                     padding-right: 50px;
@@ -766,37 +800,25 @@ body::-webkit-scrollbar-track {
             .calendar-table {
                 th,
                 td {
-                    font-size: 20px;
-                    line-height: 3;
+                    font-size: 17px;
+                    line-height: 40px;
                 }
                 td {
-                    width: 60px;
-                    height: auto;
-                    &.active {
-                        border-radius: 50%;
-                    }
+                    width: 40px;
                 }
             }
         }
-
+    
         .drp-buttons {
-            padding-top: 20px;
-            border: none;
-            border-top: 1px solid #eaeaea;
-            line-height: 1;
             .btn {
-                font-size: 18px;
+                font-size: 17px;
             }
         }
         .drp-selected {
-            margin-right: 30px;
-            padding: 4px 0;
-            font-size: 20px;
-            color: #000;
-            vertical-align: middle;
+            font-size: 17px;
         }
     }
-    //여기서부터 수정 중
+
     /* 3depth tab 공통 */
     .depth3-tab-wrap {
         padding-top: 100px;
@@ -805,13 +827,11 @@ body::-webkit-scrollbar-track {
             border-bottom: 0;
             flex-wrap: wrap;
             & > li {
-                margin-bottom: 0;
-                margin-right: -1px;
+                margin: 0;
                 min-width: calc(100% / 4);
                 font-size: 14px;
                 border: 1px solid #ddd;
                 border-right: 0;
-
                 &:last-child,
                 &:nth-child(4) {
                     border-right: 1px solid #ddd;
@@ -819,17 +839,30 @@ body::-webkit-scrollbar-track {
                 &:nth-child(5),
                 &:nth-child(6),
                 &:nth-child(7) {
-                    border-top: transparent;
+                    border-top: 0;
                 }
-
                 &.on {
-                    border: 1px solid #7a6c64;
+                    border: 1px solid #7a6c64 !important;
                     background-color: #7a6c64;
                     color: #fff;
                 }
             }
+            &.tab-long {
+                & > li {
+                    min-width: calc(100% / 2) !important;
+                    &:last-child,
+                    &:nth-child(2) {
+                        border-right: 1px solid #ddd;
+                    }
+                    &:nth-child(3),
+                    &:nth-child(4) {
+                        border-top: 0;
+                    }
+                }
+            }
         }
     }
+
     // 3depth 스와이퍼 슬라이드 갤러리
     .gallery {
         .mySwiper {
@@ -842,6 +875,7 @@ body::-webkit-scrollbar-track {
             width: 50%;
         }
     }
+
     /* 레이어 팝업 */
     .lypop-wp {
         &.mid {
@@ -855,6 +889,8 @@ body::-webkit-scrollbar-track {
         }
     }
 }
+
+// 모바일
 @media screen and (max-width: 768px) {
     .center {
         width: 95%;
@@ -867,16 +903,136 @@ body::-webkit-scrollbar-track {
         }
     }
 
-    /* 3depth tab 공통 */
-    .depth3-tab-wrap {
-        /* tab */
-        .tab {
+    .sub-title {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding: 50px 10px 20px;
+        position: relative;
+    
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: #ddd;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    
+        h2 {
+            font-size: 27px;
+            font-weight: 700;
+            color: #7a6c64;
+        }
+    
+        .sub-desc {
+            margin-top: 20px;
+            font-size: 17px;
+            color: #666;
+            line-height: 1.5;
+        }
+    
+        .location {
+            display: flex;
+            align-items: center;
+            min-width: 110px;
+    
             & > li {
-                padding: 0px 5px;
-                font-size: 12px;
+                margin-right: 30px;
+                position: relative;
+    
+                &:last-child {
+                    margin: 0;
+    
+                    &::after {
+                        display: none;
+                    }
+    
+                    & > a {
+                        text-decoration: underline;
+                        text-underline-position: under;
+                    }
+                }
+    
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 5px;
+                    height: 5px;
+                    border: 1px solid #777;
+                    border-left: 0;
+                    border-bottom: 0;
+                    position: absolute;
+                    top: 50%;
+                    transform: rotate(45deg) translateY(-50%);
+                    right: -15px;
+                }
+    
+                & > a {
+                    font-size: 13px;
+    
+                    &:hover {
+                        text-decoration: underline;
+                        text-underline-position: under;
+                    }
+                }
             }
         }
     }
+
+    // daterangepicker 팜업
+    .daterangepicker {
+        padding: 30px 100px;
+        width: calc(100vw - 10px);
+        height: calc(100vh + 18px);
+        left: 50% !important;
+        top: -8px !important;
+        transform: translateX(-50%);
+        border-radius: 0 !important;
+
+        &.show-calendar {
+            .drp-buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    
+        .drp-calendar {
+            &.left {
+                padding: 8px 0 30px 8px;
+                .calendar-table {
+                    padding-right: 20px;
+                }
+            }
+            .calendar-table {
+                th,
+                td {
+                    font-size: 15px;
+                    line-height: 40px;
+                }
+                td {
+                    width: 40px;
+                }
+            }
+        }
+    
+        .drp-buttons {
+            padding: 10px;
+            .btn {
+                font-size: 15px;
+            }
+        }
+        .drp-selected {
+            margin-right: 0px;
+            font-size: 15px;
+        }
+    }
+
+    /* 3depth tab 공통 */
     /* 레이어 팝업 */
     .lypop {
         .btn-wrap {

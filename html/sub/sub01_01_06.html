@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../css/header.css" />
     <link rel="stylesheet" href="../../css/common.css" />
     <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/sub01_01_sub.css">
+    <link rel="stylesheet" href="../../css/sub01_01_sub246.css">
     <!-- 제이쿼리 연결 -->
     <script src="../../js/common/jquery-3.7.1.min.js"></script>
     <script src="../../js/common/jquery-ui.min.js"></script>
@@ -26,7 +26,7 @@
     <!-- 작성한 JS 연결 -->
     <script src="../../js/common/header.js" defer></script>
     <script src="../../js/common/common.js" defer></script>
-    <!-- <script src="../../js/sub/sub01_01_01.js" defer></script> -->
+    <script src="../../js/sub/sub01_01.js" defer></script>
 </head>
 
 <body>
@@ -121,14 +121,19 @@
     <div class="m_wrap">
         <div class="m_top">
             <!-- 비로그인시 -->
-            <div class="btn-wrap">
-                <a href="../../html/sub/join.html" class="join-btn">회원가입</a>
-                <a href="../../html/sub/login.html" class="login-btn">로그인</a>
+            <div class="btn-wrap on">
+                <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
             </div>
             <!-- 로그인시 -->
             <div class="btn-wrap login">
-                <p>손주혜<span>님</span></p>
-                <a href="#" class="logout-btn">로그아웃</a>
+                <a href="../../html/sub/mypage.html" class="user-name-btn" title="마이페이지로 이동">
+                    <i class="fa-regular fa-user"></i>
+                    <p>손주혜<span>님</span></p>
+                </a>
+                <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
             </div>
         </div>
         <ul class="m_gnb">
@@ -190,7 +195,7 @@
     <div class="container">
         <div class="center">
             <div class="sub-title">
-                <h2>SWEET LITTLE CHEF</h2>
+                <h2>URBAN MORNING</h2>
                 <ul class="location">
                     <li><a href="../../html/index.html">홈</a></li>
                     <li><a href="../../html/sub/sub01_01.html">스페셜오퍼</a></li>
@@ -210,15 +215,8 @@
                         <div class="list-section">
                             <span>객실타입 및 가격</span>
                             <div class="list-item">
-                                <p>[디럭스 룸] 376,000원 ~</p>
-                                <p>[비즈니스 디럭스 룸] 427,700원 ~</p>
-                                <p>[이그제큐티브 비즈니스 디럭스] 582,800원 ~</p>
-                                <p>[이그제큐티브 비즈니스 디럭스] 582,800원 ~</p>
-                                <p>[이그제큐티브 그랜드 디럭스] 634,500원 ~</p>
-                                <p>[수페리어 스위트] 940,000원 ~</p>
-                                <p>[코너 스위트] 1,043,400원~</p>
-                                <p>[프리미어 스위트] 1,316,000원~</p>
-                                <p>* 상기 가격은 일자별 1박 기준 금액입니다.</p>
+                                <p>[디럭스 룸] 360,000원 ~</p>
+                                <p>[비즈니스 디럭스 룸] 409,500원 ~</p>
                                 <a href="../sub/sub02.html" class="offer-room">
                                     객실 자세히보기
                                 </a>
@@ -246,6 +244,16 @@
                             </div>
                         </div>
                     </li>
+                    <li class="detail-list">
+                        <div class="list-section">
+                            <span>리워즈혜택</span>
+                            <div class="list-item">
+                                <p>회원전용상품 예약 시 리워즈 3만 포인트(1박 당)를 추가 제공합니다.</p>
+                                <p>추가 포인트는 하단 링크를 통한 온라인 예약 시에만 제공됩니다.</p>
+                                <p>(현재페이지 또는 전화 예약 시 적립 불가)</p>
+                            </div>
+                        </div>
+                    </li>
                     <li class="detail-list line">
                         <div class="list-section">
                             <span>문의</span>
@@ -265,45 +273,52 @@
                 </div>
             </div>
             <div class="section-title">패키지 상세설명</div>
-            <div class="pkg-description-wrap">
-                <div class="description1 other-type">
-                    <img src="../../img/sub/eventDj.jpg" alt="">
-                    <div>Urban Island – Moonlight Swimming</div>
-                    <div>
-                        도심 속 휴식의 섬 어번 아일랜드에서 아름다운 달빛 아래 유유히 즐기는 문라이트 스위밍<br>
-                        * 어번 아일랜드 Moonlight 운영 시간 : 체크인 당일 18:00~22:00
+            <!-- 1번상세로 수정 -->
+            <div class="accordion-description-wrap">
+                <div class="accordion-description">
+                    <div class="head-wrap">
+                        <img src="../../img/sub/eventHaute.jpg" alt="">
+                        <a href="javascript:void(0);" class="accordion-trigger">
+                            <p class="slide-text">Urban Island – Moonlight Swimming</p>
+                        </a>
                     </div>
+                    <ul class="des-wrap">
+                        <li class="des-list">도심 속 휴식의 섬 어번 아일랜드에서 아름다운 달빛 아래 유유히 즐기는 문라이트 스위밍
+                        </li>
+                        <li class="des-list">* 어번 아일랜드 Moonlight 운영 시간 : 체크인 당일 18:00~22:00</li>
+                    </ul>
+                    <div class="accordion"></div>
                 </div>
-                <div class="description1 other-type">
-                    <img src="../../img/sub/offerVacation.jpg" alt="">
-                    <div>F&B 크레딧 3만원</div>
-                    <div>
-                        서울신라호텔의 식음 업장 (객실 내 미니바 제외) 및 룸 서비스에서 사용할 수 있는 F&B Credit 3만원<br>
-                        * 투숙 중에 한하여 사용 가능합니다.<br>
-                        * 파인 다이닝(팔선, 아리아께, 콘티넨탈, 라연) 및 더 파크뷰 이용 시, 반드시 사전 예약 바랍니다.<br>
+                <div class="accordion-description">
+                    <div class="head-wrap">
+                        <img src="../../img/sub/offerStay.jpg" alt="">
+                        <a href="javascript:void(0);" class="accordion-trigger">
+                            <p class="slide-text">F&B 크레딧 3만원</p>
+                        </a>
                     </div>
-                </div>
-            </div>
-            <div class="pkg-description-wrap">
-                <div class="description1 other-type">
-                    <img src="../../img/sub/eventHaute.jpg" alt="">
-                    <div>Urban Island – Moonlight Swimming</div>
-                    <div>
-                        도심 속 휴식의 섬 어번 아일랜드에서 아름다운 달빛 아래 유유히 즐기는 문라이트 스위밍<br>
-                        * 어번 아일랜드 Moonlight 운영 시간 : 체크인 당일 18:00~22:00
-                    </div>
-                </div>
-                <div class="description1 other-type">
-                    <img src="../../img/sub/offerIsland.jpg" alt="">
-                    <div>F&B 크레딧 3만원</div>
-                    <div>
-                        서울신라호텔의 식음 업장 (객실 내 미니바 제외) 및 룸 서비스에서 사용할 수 있는 F&B Credit 3만원<br>
-                        * 투숙 중에 한하여 사용 가능합니다.<br>
-                        * 파인 다이닝(팔선, 아리아께, 콘티넨탈, 라연) 및 더 파크뷰 이용 시, 반드시 사전 예약 바랍니다.<br>
-                    </div>
+                    <ul class="des-wrap">
+                        <li class="des-list">서울신라호텔의 식음 업장 (객실 내 미니바 제외) 및 룸 서비스에서 사용할 수 있는 F&B Credit 3만원
+                        </li>
+                        <li class="des-list">* 투숙 중에 한하여 사용 가능합니다.</li>
+                        <li class="des-list"> * 파인 다이닝(팔선, 아리아께, 콘티넨탈, 라연) 및 더 파크뷰 이용 시, 반드시 사전 예약 바랍니다.</li>
+                    </ul>
+                    <div class="accordion"></div>
                 </div>
             </div>
+
             <!-- 안내사항 -->
+            <div class="section-title">피트니스 클럽 이용안내</div>
+            <ul class="pkg-fitness">
+                <li>- 체련장(Gym), 실내 수영장, 실내 사우나(유료시설)는 매월 3번째 수요일 정기 휴무입니다. (세 번째 수요일이 공휴일일 경우, 네 번째 수요일로 변경됩니다.)
+                </li>
+                <li>- 체련장은 만 16세 이상, 실내 사우나는 만 13세 이상부터 이용 가능합니다.</li>
+                </li>
+                <li>- 실내 수영장은 성인 고객 전용 시설로서, 안전을 위해 만 13세 이상인 고객에 한해 입장 가능합니다.</li>
+                <li>(단, 주말 및 공휴일에는 성인 보호자의 보호 하에 만 13세 미만인 고객이 입장 가능하며, 신장 140cm 미만인 고객은 성인 보호자의 보호 하에 구명조끼 착용 시 입장
+                    가능합니다.)
+                <li> - 수영장에서 다이빙은 금지되어 있습니다.</li>
+                <li>- 적정 인원 초과 시 이용을 위해 대기하실 수 있습니다.</li>
+            </ul>
             <div class="section-title">어번 아일랜드(야외 수영장) 이용 안내</div>
             <ul class="pkg-fitness">
                 <li>어번 아일랜드 운영 시간 :</li>
@@ -338,7 +353,8 @@
                     <li>· 성수기(5월~10월, 12월 24일~31일) : 최초 1일 숙박 요금의 80% 위약금으로 부과</li>
                     <li>· 비수기(성수기 외 기간) : 최초 1일 숙박 요금의 10% 위약금으로 부과</li>
                     <li>- 숙박 예정일 1일 전 18시 이후 취소, 변경 및 노쇼(No-show) 발생 시</li>
-                    <li>· 성수기(5월~10월, 12월 24일~31일) 주중에는 최초 1일 숙박 요금의 80%, 주말(금, 토, 공휴일 전일)에는 최초 1일 숙박 요금의 90%가 위약금으로 부과
+                    <li>· 성수기(5월~10월, 12월 24일~31일) 주중에는 최초 1일 숙박 요금의 80%, 주말(금, 토, 공휴일 전일)에는 최초 1일 숙박 요금의 90%가 위약금으로
+                        부과
                     </li>
                     <li>· 비수기(성수기 외 기간) 주중에는 최초 1일 숙박 요금의 20%, 주말(금, 토, 공휴일 전일)에는 최초 1일 숙박 요금의 30%가 위약금으로 부과</li>
                 </ul>
@@ -350,9 +366,9 @@
                 </div>
                 <ul class="other-list">
                     <li class="other-item">
-                        <a href="../../html/sub/sub01_01_01.html">
+                        <a href=".././sub/sub01_01_03.html">
                             <div class="img-box">
-                                <img src="../../img/sub/offerMain2.jpg" alt="">
+                                <img src="../../img/sub/offerBallet.jpg" alt="">
                             </div>
                             <dl>
                                 <dt>Gathering Moment at Urban Cabana</dt>
@@ -362,7 +378,7 @@
                         </a>
                     </li>
                     <li class="other-item">
-                        <a href="../../html/sub/sub01_01_01.html">
+                        <a href=".././sub/sub01_01_03.html">
                             <div class="img-box">
                                 <img src="../../img/sub/offerFamilly.jpg" alt="">
                             </div>
@@ -374,9 +390,9 @@
                         </a>
                     </li>
                     <li class="other-item">
-                        <a href="../../html/sub/sub01_01_01.html">
+                        <a href=".././sub/sub01_01_03.html">
                             <div class="img-box">
-                                <img src="../../img/sub/offerMain3.jpg" alt="">
+                                <img src="../../img/sub/offerNeon.jpg" alt="">
                             </div>
                             <dl>
                                 <dt>Better Stay</dt>

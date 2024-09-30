@@ -126,7 +126,7 @@
   line-height: 158px;
 }
 .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(3) .time {
-  line-height: 131px;
+  line-height: 170px;
 }
 .depth3-tab-wrap .context .Introduction .timetable > li .time {
   width: 150px;
@@ -411,6 +411,21 @@
     margin-right: 0;
     width: 100%;
   }
+  .depth3-tab-wrap .context .info-wrap .info.flex {
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list::after {
+    display: none;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list h4 {
+    margin: 0;
+    width: 120px;
+  }
 }
 @media screen and (max-width: 768px) {
   .depth3-tab-wrap .context .card {
@@ -419,5 +434,28 @@
   }
   .depth3-tab-wrap .context .info-wrap .flex {
     gap: 15px;
+  }
+  .depth3-tab-wrap .context .Introduction h3 strong {
+    font-size: 30px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable-wrap {
+    padding-left: 0;
+    width: 100%;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li {
+    font-size: 15px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(2) .time {
+    line-height: 147px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li:nth-child(3) .time {
+    line-height: 157px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li .time {
+    width: 90px;
+  }
+  .depth3-tab-wrap .context .Introduction .timetable > li .context {
+    padding: 20px 10px;
+    width: calc(100% - 90px);
   }
 }

@@ -17,38 +17,47 @@ $(function () {
         $(".dropdown.type").removeClass("on");
     });
 
-    $('input[name="daterange3"]').daterangepicker({
-        minYear: 1000,
-        maxYear: 9999,
-        autoUpdateInput: false,
-        locale: {
-            format: "YYYY.MM.DD",
-            separator: " - ",
-            applyLabel: "확인",
-            cancelLabel: "취소",
-            fromLabel: "From",
-            toLabel: "To",
-            customRangeLabel: "Custom",
-            weekLabel: "주",
-            daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
-            monthNames: [
-                "1월",
-                "2월",
-                "3월",
-                "4월",
-                "5월",
-                "6월",
-                "7월",
-                "8월",
-                "9월",
-                "10월",
-                "11월",
-                "12월",
-            ],
-            firstDay: 1,
-        },
-        drops: "down", // up, down, auto 중 선택
-    });
+    // 데이트피커
+    $('input[name="daterange3"]')
+        .daterangepicker({
+            minYear: 1000,
+            maxYear: 9999,
+            autoUpdateInput: false, // 날짜자동입력해제
+            locale: {
+                format: "YYYY.MM.DD",
+                separator: " - ",
+                applyLabel: "확인",
+                cancelLabel: "취소",
+                fromLabel: "From",
+                toLabel: "To",
+                customRangeLabel: "Custom",
+                weekLabel: "주",
+                daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
+                monthNames: [
+                    "1월",
+                    "2월",
+                    "3월",
+                    "4월",
+                    "5월",
+                    "6월",
+                    "7월",
+                    "8월",
+                    "9월",
+                    "10월",
+                    "11월",
+                    "12월",
+                ],
+                firstDay: 1,
+            },
+            drops: "down", // up, down, auto 중 선택
+        })
+        .on("apply.daterangepicker", function (ev, picker) {
+            $(this).val(
+                picker.startDate.format("YYYY.MM.DD") +
+                    " - " +
+                    picker.endDate.format("YYYY.MM.DD")
+            );
+        });
 });
 
 // 초기화 버튼 눌렀을 때 날짜, 유형구분, 키워드 초기상태로 만들기
@@ -199,20 +208,67 @@ $(function () {
 
 // 아코디언
 $(function () {
-    $(".accordion-trigger").click(function (e) {
-        // 클릭된 요소에만 active 클래스 토글
-        $(this).toggleClass("active");
-        $(".des-wrap").css("display", "block");
+    function handleAccordion() {
+        var screenWidth = $(window).width();
+        //기존의 이벤트를 제거(반복실행되는 오류 해결 중요!)
+        $(".accordion-trigger").off("click");
+        // 화면 너비가 768px 이하일 때만 아코디언 작동
+        if (screenWidth <= 768) {
+            $(".accordion-trigger").click(function () {
+                // 해당 요소의 부모요소의 다음 요소인 .des-wrap 클래스 선택
+                var $currentClass = $(this)
+                    .parent(".head-wrap")
+                    .next(".des-wrap");
+                if ($(this).hasClass("active")) {
+                    $currentClass.slideUp("fast"); // 닫기
+                } else {
+                    $currentClass.slideDown("fast"); // 열기
+                }
+                // active 클래스 토글
+                $(this).toggleClass("active");
+            });
+        } else {
+            // 화면 너비가 768px 초과일 경우 클릭 이벤트 제거 (작동 안 함)
+            $(".accordion-trigger").off("click");
+        }
+    }
 
-        // 해당 요소의 다음 요소인 .des-wrap을 slideToggle
-        $(this).parent().next().slideToggle("slow");
+    // 페이지 로드 시 바로 실행
+    handleAccordion();
 
-        // 다른 .accordion-trigger 요소가 열려 있다면 닫기
-        $(".accordion-trigger")
-            .not(this)
-            .removeClass("active")
-            .parent()
-            .next()
-            .slideUp("slow");
+    // 윈도우 크기 변경 시마다 반응
+    $(window).resize(function () {
+        handleAccordion();
     });
 });
+
+////////////////
+// 아코디언 원본
+// $(function () {
+//     function handleAccordion() {
+//         var screenWidth = $(window).width();
+//         // 화면 너비가 768px 이하일 때만 아코디언 작동
+//         if (screenWidth <= 768) {
+//             $(".accordion-trigger").click(function () {
+//                 // active 클래스 추가
+//                 $(this).toggleClass("active");
+//                 // 해당 요소의 부모요소의 다음 요소인 .des-wrap이 닫혀있으면 열고 열려있으면 닫기
+//                 $(this)
+//                     .parent(".head-wrap")
+//                     .next(".des-wrap")
+//                     .slideToggle("slow");
+//                 // .slideDown("slow");
+//             });
+//         } else {
+//             // 화면 너비가 768px 초과일 경우 클릭 이벤트 제거 (작동 안 함)
+//             $(".accordion-trigger").off("click");
+//         }
+//     }
+// // 페이지 로드 시 바로 실행
+// handleAccordion();
+
+// // 윈도우 크기 변경 시마다 반응
+// $(window).resize(function () {
+//     handleAccordion();
+// });
+// });
