@@ -52,8 +52,16 @@
   font-weight: bold;
 }
 
+.main-tel p,
+.res-tel p,
+.main-restaurant p {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
 p {
-  margin-top: 15px;
+  line-height: 1.7;
   display: block;
 }
 

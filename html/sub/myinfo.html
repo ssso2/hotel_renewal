@@ -34,7 +34,7 @@
             <div class="gnbbg"></div>
             <div class="center">
                 <h1 class="logo">
-                    <a href="#self">
+                    <a href="../index-login.html">
                         <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
@@ -203,76 +203,92 @@
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="ko-name">국문 이름 <font color="#F00">*</font> </label>
-                                <input type="text" id="ko-name" placeholder="홍길동" />
+                                <div class="input-wrap">
+                                    <input type="text" id="ko-name" placeholder="홍길동" />
+                                    <span class="error-message" id="koname-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="koname-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="en-name">영문 이름</label>
-                                <div class="eng">
-                                    <input type="text" id="firstname" placeholder="First name" class="name-input" />
-                                    <input type="text" id="lastname" placeholder="Last name" class="name-input" />
+                                <div class="input-wrap">
+                                    <div class="eng">
+                                        <input type="text" id="firstname" placeholder="First name" class="name-input" />
+                                        <input type="text" id="lastname" placeholder="Last name" class="name-input" />
+                                    </div>
+                                    <span class="error-message" id="enname-error"></span>
                                 </div>
                             </div>
-                            <span class="error-message" id="enname-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="birth">생년월일</label>
-                                <div class="birth">
-                                    <select name="yy" id="year"></select>
-                                    <select name="mm" id="month"></select>
-                                    <select name="dd" id="day"></select>
+                                <div class="input-wrap">
+                                    <div class="birth">
+                                        <select name="yy" id="year"></select>
+                                        <select name="mm" id="month"></select>
+                                        <select name="dd" id="day"></select>
+                                    </div>
+                                    <span class="error-message" id="birth-error"></span>
                                 </div>
                             </div>
-                            <span class="error-message" id="birth-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="pid">아이디 <font color="#F00">*</font></label>
-                                <input type="text" id="pid" minlength="6" placeholder="영문자, 숫자로 구성 (6자 이상)" />
-                                <button type="button" id="id-chk" data-lybtn="pop-using">중복확인</button>
+                                <div class="input-wrap">
+                                    <input type="text" id="pid" minlength="6" placeholder="영문자, 숫자로 구성 (6자 이상)" />
+                                    <button type="button" id="id-chk" data-lybtn="pop-using">중복확인</button>
+                                    <span class="error-message" id="id-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="id-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="pw">패스워드 <font color="#F00">*</font></label>
-                                <input type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                <div class="input-wrap">
+                                    <input type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                    <span class="error-message" id="pw-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="pw-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="pwchk">패스워드확인 <font color="#F00">*</font></label>
-                                <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                <div class="input-wrap">
+                                    <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                    <span class="error-message" id="pwchk-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="pwchk-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="tel">연락처 <font color="#F00">*</font></label>
-                                <div class="tel-num">
-                                    <select name="start" id="start"></select>
-                                    - <input type="text" id="middle" minlength="3" maxlength="4" /> - <input type="text" id="last" maxlength="4" />
+                                <div class="input-wrap">
+                                    <div class="tel-num">
+                                        <select name="start" id="start"></select
+                                        ><input type="text" id="middle" minlength="3" maxlength="4" /><input type="text" id="last" maxlength="4" />
+                                        <span class="error-message" id="tel-error"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <span class="error-message" id="tel-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="mail">이메일 <font color="#F00">*</font></label>
-                                <input type="text" id="mail" placeholder="honggildong@naver.com" />
+                                <div class="input-wrap">
+                                    <input type="text" id="mail" placeholder="honggildong@naver.com" />
+                                    <span class="error-message" id="mail-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="mail-error"></span>
                         </div>
 
                         <div class="info-group">
@@ -383,7 +399,6 @@
                 const mail = document.getElementById('mail').value.trim();
 
                 console.log(pid);
-                
 
                 let valid = true; // 유효성 초기값은 true
 
@@ -467,11 +482,15 @@
 
             let idchk = false;
             document.getElementById('id-chk').addEventListener('click', function () {
-
                 if (document.getElementById('pid').value.trim() === 'gagaclub') {
                     document.querySelector('.pop-using .modal-txt').innerHTML = '현재 사용중인 아이디 입니다.<br> 다른 아이디를 사용해주세요.';
+                    return;
+                } else if (document.getElementById('pid').value.trim() === '') {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '아이디를 입력하세요.';
+                } else {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '사용가능한 아이디입니다.';
+                    idchk = true;
                 }
-                idchk = true;
             });
         </script>
 
@@ -482,7 +501,7 @@
                         <strong>중복확인</strong>
                     </div>
                     <div class="lypop-ct">
-                        <p class="modal-txt" style="line-height: 1.7;">현재 확인중</p>
+                        <p class="modal-txt"></p>
                         <div class="btn-wrap type5">
                             <button class="btn btn-04" data-lyClose="pop-using"><span>확인</span></button>
                         </div>

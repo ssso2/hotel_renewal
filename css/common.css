@@ -167,7 +167,7 @@ body::-webkit-scrollbar-track {
   position: relative;
 }
 .sub-title.block {
-  display: block;
+  display: block !important;
 }
 .sub-title.block .location {
   margin-top: 20px;
@@ -725,7 +725,6 @@ body::-webkit-scrollbar-track {
   .daterangepicker {
     padding: 50px 120px;
     width: 1080px;
-    left: 20px !important;
   }
   .daterangepicker .drp-calendar.left .calendar-table {
     padding-right: 100px;
