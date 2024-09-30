@@ -87,15 +87,23 @@
   line-height: 1.5;
   margin: 0 auto 20px;
 }
+.container .mypage-info .my-info .pwcheck,
+.container .mypage-info .user-info-wrap .pwcheck {
+  display: flex;
+  align-items: center;
+}
+.container .mypage-info .my-info .pwcheck p,
+.container .mypage-info .user-info-wrap .pwcheck p {
+  width: 100px;
+  text-align: left;
+}
 .container .mypage-info .my-info p,
 .container .mypage-info .user-info-wrap p {
   width: 100px;
-  margin: 0;
   text-align: left;
 }
 .container .mypage-info .my-info label,
 .container .mypage-info .user-info-wrap label {
-  text-align: right;
   font-size: 16px;
   color: #333;
 }
@@ -114,6 +122,22 @@
 .container .mypage-info .user-info-wrap #id,
 .container .mypage-info .user-info-wrap #birth {
   background-color: #ddd;
+}
+.container .mypage-info .my-pw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 1.5;
+  margin: 0 auto 20px;
+  width: 500px;
+}
+.container .mypage-info .my-pw #error-message2 {
+  color: red;
+  display: block;
+  text-align: left;
+  margin-left: 100px;
+  width: 100%;
 }
 .container .mypage-info #edit {
   display: block;
@@ -136,13 +160,47 @@
     padding: 0;
   }
   .container .mypage-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.5;
+    margin: 0 auto 20px;
     padding: 0;
+  }
+  .container .mypage-info .my-info {
+    flex-wrap: nowrap;
+  }
+  .container .mypage-info .my-info .pwcheck {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .container .mypage-info .my-info .pwcheck p {
+    width: 70px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  .container .mypage-info .my-info .pwcheck #error-message2 {
+    color: red;
+    display: block;
+    text-align: left;
+    margin-left: 80px;
+    width: 100%;
+  }
+  .container .mypage-info .my-info p {
+    width: 70px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  .container .mypage-info .my-info input {
+    width: calc(100% - 70px);
   }
   .container .mypage-info #edit {
     display: block;
     margin: 50px auto;
-    width: 100%;
-    min-width: 120px;
+    width: 0;
+    min-width: 200px;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -154,30 +212,20 @@
   .container .mypage-info #edit:hover {
     background-color: #333;
   }
-  .container .mypage-info .my-info {
-    flex-wrap: nowrap;
+  .container .mypage-info .my-pw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.5;
+    margin: 0 auto 20px;
+    width: calc(100% - 10px);
   }
-  .container .mypage-info .my-info p {
-    width: 70px;
-    text-align: left;
-  }
-  .container .mypage-info .my-info input {
-    width: calc(100% - 70px);
-  }
-  #edit {
+  .container .mypage-info .my-pw #error-message2 {
+    color: red;
     display: block;
-    margin: 50px auto;
-    min-width: 120px;
+    text-align: left;
+    margin-left: 70px;
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #7a6c64;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  #edit:hover {
-    background-color: #333;
   }
 }

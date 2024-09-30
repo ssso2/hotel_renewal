@@ -282,8 +282,8 @@
 
                 <div class="search-wrap">
                     <div class="search" role="search">
-                        <input type="text" />
-                        <a href="#"><span>검색</span></a>
+                        <input type="text" id="search" />
+                        <a href="#" id="searchButton"><span>검색</span></a>
                     </div>
                     <div class="btn-wrap type4">
                         <div class="align">
@@ -291,7 +291,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- 페이지네이션 -->
                 <div class="pagination">
                     <a href="#" class="page first"><span class="hide">맨처음 리스트</span></a>
@@ -371,5 +370,31 @@
             </div>
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article>
+
+        <script>
+            $(function () {
+                $('#searchButton').on('click', function () {
+                    //검색버튼을 클릭했을 때
+                    const inputvalue = $('#search').val().trim();
+                    const search = $('#search');
+
+                    if (inputvalue === '') {
+                        search.attr('value', '검색 키워드가 필요합니다.'); // 에러 메시지를 value로
+                        search.css('color', '#f00'); //빨간색으로 표시
+                    }
+                });
+
+                $('#search').on('focus', function () {
+                    // 다시 포커스가 이동하면
+
+                    if ($(this).val()) {
+                        //밸류값이 있을 때 <- 에러메시지가 있을 때
+                        //에러메시지가 떠있는 상태일 때
+                        $(this).removeAttr('value'); // value 삭제
+                        $(this).css('color', '#333'); // 색상을 어두운색으로 변경
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

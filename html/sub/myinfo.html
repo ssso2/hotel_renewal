@@ -204,7 +204,7 @@
                             <div class="input-container">
                                 <label for="ko-name">국문 이름 <font color="#F00">*</font> </label>
                                 <div class="input-wrap">
-                                    <input type="text" id="ko-name" placeholder="홍길동" />
+                                    <input type="text" id="ko-name" minlength="2" maxlength="5" placeholder="홍길동" />
                                     <span class="error-message" id="koname-error"></span>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@
 
                         <div class="info-group">
                             <div class="input-container">
-                                <label for="en-name">영문 이름</label>
+                                <label for="en-name">영문 이름 <font color="#F00">*</font> </label>
                                 <div class="input-wrap">
                                     <div class="eng">
                                         <input type="text" id="firstname" placeholder="First name" class="name-input" />
@@ -274,7 +274,7 @@
                                 <div class="input-wrap">
                                     <div class="tel-num">
                                         <select name="start" id="start"></select
-                                        ><input type="text" id="middle" minlength="3" maxlength="4" /><input type="text" id="last" maxlength="4" />
+                                        ><input type="text" id="middle" maxlength="4" oninput="maxLengthCheck(this)" /><input type="text" id="last" maxlength="4" />
                                         <span class="error-message" id="tel-error"></span>
                                     </div>
                                 </div>
@@ -386,6 +386,9 @@
                 }
             });
 
+            let idchk = false;
+            let valid = false;
+
             document.getElementById('submit').addEventListener('click', function () {
                 const koname = document.getElementById('ko-name').value.trim();
                 const firstname = document.getElementById('firstname').value.trim();
@@ -398,34 +401,43 @@
                 const lastNum = document.getElementById('last').value.trim();
                 const mail = document.getElementById('mail').value.trim();
 
-                console.log(pid);
-
-                let valid = true; // 유효성 초기값은 true
-
                 // 오류 메시지 초기화
                 const errorMessages = document.querySelectorAll('.error-message');
                 errorMessages.forEach(message => (message.textContent = ''));
 
-                // 이름 유효성 검사
+                // 국문 이름 유효성 검사
+                const konametype = /^[가-힣]{2,5}$/;
                 if (!koname) {
-                    document.getElementById('koname-error').textContent = '이름을 입력하세요.';
+                    document.getElementById('koname-error').textContent = '국문 이름을 입력하세요.';
                     valid = false;
+                } else if (!konametype.test(koname)) {
+                    document.getElementById('koname-error').textContent = '국문 이름은 한글(2~5자)만 사용 가능합니다.';
+                    valid = false;
+                } else if (konametype.test(koname)) {
+                    document.getElementById('koname-error').textContent = '';
+                    valid = true;
                 }
 
-                // 아이디 유효성 검사
-                const idtype = /^[A-Za-z0-9]+$/; // 수정된 정규 표현식
-                if (!pid) {
-                    document.getElementById('id-error').textContent = '아이디를 입력하세요.';
+                // 영문 이름 유효성 검사
+                const ennametype = /^[A-Za-z]+$/;
+                if (!(firstname && lastname)) {
+                    document.getElementById('enname-error').textContent = '영문 이름을 입력하세요.';
                     valid = false;
-                } else if (pid.length < 6) {
-                    document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
+                } else if (!(ennametype.test(firstname) && ennametype.test(lastname))) {
+                    document.getElementById('enname-error').textContent = '영문 이름은 영어만 사용 가능합니다.';
                     valid = false;
-                } else if (!idtype.test(pid)) {
-                    document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용 가능합니다.';
+                } else if (ennametype.test(firstname) && ennametype.test(lastname)) {
+                    document.getElementById('enname-error').textContent = '';
+                    valid = true;
+                }
+
+                // 아이디 유효성 검사는 모달(중복확인)에서 진행 -- 아이디 중복확인을 안했을때
+                if (!idchk) {
+                    document.getElementById('id-error').textContent = '아이디 중복확인을 해주세요.';
                     valid = false;
-                } else if (!idchk) {
-                    document.getElementById('id-error').textContent = '중복확인을 해주세요.';
-                    valid = false;
+                } else {
+                    document.getElementById('id-error').textContent = '';
+                    valid = true;
                 }
 
                 // 패스워드 유효성 검사
@@ -436,6 +448,9 @@
                 } else if (!pwtype.test(pw)) {
                     document.getElementById('pw-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.';
                     valid = false;
+                } else if (pwtype.test(pw)) {
+                    document.getElementById('pw-error').textContent = '';
+                    valid = true;
                 }
 
                 if (!pwchk) {
@@ -444,6 +459,9 @@
                 } else if (pwchk !== pw) {
                     document.getElementById('pwchk-error').textContent = '패스워드가 일치하지 않습니다.';
                     valid = false;
+                } else if (pwchk == pw) {
+                    document.getElementById('pwchk-error').textContent = '';
+                    valid = true;
                 }
 
                 // 연락처 유효성 검사
@@ -458,6 +476,9 @@
                     if (!isMiddleValid || !isLastValid) {
                         document.getElementById('tel-error').textContent = isStartNum010 ? '연락처의 자리수를 확인하세요. (중간 번호는 4자리여야 합니다.)' : '연락처의 자리수를 확인하세요. (중간 번호는 3~4자리, 마지막 번호는 4자리여야 합니다.)';
                         valid = false;
+                    } else if (isMiddleValid && isLastValid) {
+                        document.getElementById('tel-error').textContent = '';
+                        valid = true;
                     }
                 }
 
@@ -469,6 +490,9 @@
                 } else if (!mailtype.test(mail)) {
                     document.getElementById('mail-error').textContent = '정확한 이메일 주소를 입력하세요.';
                     valid = false;
+                } else if (mailtype.test(mail)) {
+                    document.getElementById('mail-error').textContent = '';
+                    valid = true;
                 }
 
                 // 모든 유효성 검사 통과 시
@@ -480,18 +504,44 @@
                 }
             });
 
-            let idchk = false;
+            // 아이디 유효성 검사
+            const idtype = /^[A-Za-z0-9]{6,}$/;
             document.getElementById('id-chk').addEventListener('click', function () {
                 if (document.getElementById('pid').value.trim() === 'gagaclub') {
                     document.querySelector('.pop-using .modal-txt').innerHTML = '현재 사용중인 아이디 입니다.<br> 다른 아이디를 사용해주세요.';
+                    idchk = false;
+                    valid = false;
                     return;
-                } else if (document.getElementById('pid').value.trim() === '') {
+                } else if (!document.getElementById('pid').value.trim()) {
                     document.querySelector('.pop-using .modal-txt').innerHTML = '아이디를 입력하세요.';
+                    document.getElementById('id-error').textContent = '아이디를 입력하세요.';
+                    idchk = false;
+                    valid = false;
+                    return;
+                } else if (document.getElementById('pid').value.trim().length < 6) {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '아이디는 6글자 이상이어야 합니다.';
+                    document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
+                    idchk = false;
+                    valid = false;
+                    return;
+                } else if (!idtype.test(document.getElementById('pid').value.trim())) {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '아이디는 영문자와 숫자만 사용 가능합니다.';
+                    document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용 가능합니다.';
+                    idchk = false;
+                    valid = false;
+                    return;
                 } else {
                     document.querySelector('.pop-using .modal-txt').innerHTML = '사용가능한 아이디입니다.';
+                    document.getElementById('id-error').textContent = '';
+                    document.getElementById('pid').setAttribute('readonly', true);
+                    valid = true;
                     idchk = true;
                 }
             });
+
+            function maxLengthCheck(object) {
+                object.value = object.value.replace(/[^0-9]/g, '');
+            }
         </script>
 
         <div class="lypop pop-using" data-lyOpen="pop-using" tabindex="0">
