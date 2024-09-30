@@ -1164,7 +1164,7 @@ main {
     
     
     }
-    
+
 }
 
 // 모바일
@@ -1448,6 +1448,30 @@ main {
         .cont6 {
             padding: 0;
         }
+    }
+
+    .lypop.hotel-list {
+        .lypop-ct {
+            height: 500px;
+            overflow: auto;
+
+            /* 스크롤바의 폭 너비 */
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #bababa; /* 스크롤바 색상 */
+                border-radius: 10px; /* 스크롤바 둥근 테두리 */
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #eaeaea; /*스크롤바 뒷 배경 색상*/
+            }
+        }
+    }
+    .hotel-box-wrap .area .hotel-link-wrap > a {
+        margin: 0 0 10px 0;
+        width: 100%;
     }
 
 }
