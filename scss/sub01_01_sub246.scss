@@ -9,6 +9,42 @@
     font-size: 22px;
     font-weight: 600;
 }
+@mixin item-before($padding-left: 15px, $top: 3px, $left: 2px, $content: "*") {
+    // 상세설명 정렬(*표시)
+    position: relative;
+    padding-left: $padding-left;
+    &::before {
+        content: $content;
+        display: block;
+        position: absolute;
+        top: $top;
+        left: $left;
+    }
+}
+@mixin item($padding-left: 15px, $top: 3px, $left: 2px, $content: "") {
+    // 상세설명 정렬(공백)
+    position: relative;
+    padding-left: $padding-left;
+    &::before {
+        content: $content;
+        display: block;
+        position: absolute;
+        top: $top;
+        left: $left;
+    }
+}
+@mixin item-bar($padding-left: 15px, $top: 3px, $left: 2px, $content: "-") {
+    // 상세설명 정렬(-표시)
+    position: relative;
+    padding-left: $padding-left;
+    &::before {
+        content: $content;
+        display: block;
+        position: absolute;
+        top: $top;
+        left: $left;
+    }
+}
 
 .pkg-header {
     width: 100%;
@@ -46,40 +82,24 @@
         .list-item {
             width: 100%;
             margin-left: 100px;
-            line-height: 2;
+            line-height: 1.8;
             position: relative;
             .item-before {
-                position: relative;
-                padding-left: 15px;
-                &::before {
-                    content: "*";
-                    display: block;
-                    position: absolute;
-                    top: 3px;
-                    left: 2px;
-                }
+                @include item-before;
             }
             .item {
-                position: relative;
-                padding-left: 15px;
-                &::before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: 3px;
-                    left: 2px;
-                }
+                @include item;
             }
-            .offer-room {
-                position: absolute;
-                width: 180px;
-                background: #1f453a;
-                color: #fff;
-                top: 1px;
-                right: 0px;
-                text-align: center;
-                line-height: 3;
-            }
+        }
+        .offer-room {
+            position: absolute;
+            width: 180px;
+            background: #1f453a;
+            color: #fff;
+            top: 1px;
+            right: 0px;
+            text-align: center;
+            line-height: 3;
         }
     }
 }
@@ -130,20 +150,15 @@
             width: 100%;
             line-height: 2;
             img {
+                display: block;
                 width: 100%;
                 aspect-ratio: 1/0.603496;
                 object-fit: cover;
             }
-            .accordion-trigger {
-                display: block;
-                cursor: text;
+            .slide-text {
                 font-weight: 500;
-                font-size: 18px;
-                padding-left: 20px;
-                .slide-text {
-                    display: inline-block;
-                    background: none;
-                }
+                font-size: 17px;
+                padding: 10px 0 0 20px;
             }
         }
         .des-wrap {
@@ -151,20 +166,26 @@
             box-sizing: border-box;
             width: 100%;
             list-style: none;
-            padding: 10px 20px;
-            .des-list {
-                width: 100%;
+            padding: 10px 20px 14px 20px;
+            .item {
                 line-height: 1.5;
             }
-        }
-        .accordion {
-            width: 100%;
-            height: 10px;
+            .item-before {
+                line-height: 1.5;
+                @include item-before;
+            }
         }
     }
 }
+
 .pkg-fitness {
     line-height: 2;
+    .item-bar {
+        @include item-bar;
+    }
+    .item {
+        @include item;
+    }
 }
 .pkg-info {
     line-height: 2;
@@ -172,6 +193,12 @@
     padding: 20px 0 20px 20px;
     background-color: #f6f6f6;
     .info-txt {
+        .item-bar {
+            @include item-bar;
+        }
+        .item {
+            @include item;
+        }
         p {
             margin-top: 20px;
         }
@@ -266,67 +293,17 @@
 }
 // 패키지상세설명 변경
 @media screen and (max-width: 1180px) {
-    // .pkg-description-wrap {
-    //     display: none;
-    // }
-    .accordion-description-wrap {
-        display: flex;
-        justify-content: space-between;
-        overflow: hidden;
-        flex-wrap: wrap;
-        width: 100%;
-        .accordion-description {
-            width: calc((100% - 40px) / 2);
-            border: 1px solid #ddd;
-            overflow: hidden;
-            margin-bottom: 40px;
-            .head-wrap {
-                width: 100%;
-                line-height: 2;
-                img {
-                    width: 100%;
-                    aspect-ratio: 1/0.603496;
-                    object-fit: cover;
-                }
-                .accordion-trigger {
-                    display: block;
-                    cursor: text;
-                    font-weight: 500;
-                    font-size: 18px;
-                    padding-left: 20px;
-                    .slide-text {
-                        display: inline-block;
-                        background: none;
-                    }
-                }
-            }
-            .des-wrap {
-                display: block;
-                box-sizing: border-box;
-                width: 100%;
-                list-style: none;
-                padding: 10px 20px 14px 20px;
-                .des-list {
-                    width: 100%;
-                    line-height: 1.5;
-                }
-            }
-        }
-    }
     .section-title {
-        margin-top: 70px;
-        margin-bottom: 32px;
-        @include fontstyle();
+        margin-top: 100px;
         font-size: 20px;
     }
 }
-
 // 모바일
 @media screen and (max-width: 768px) {
     .detail-list {
         .list-section {
             span {
-                width: 240px;
+                width: 140px;
             }
             .list-item {
                 width: calc(100% - 140px);
