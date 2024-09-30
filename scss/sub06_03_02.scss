@@ -69,11 +69,11 @@
                 border: 1px solid #ccc;
                 border-radius: 10px;
                 margin-bottom: 20px;
+                overflow: hidden;
                 .reply-content,
                 .reply-content-ing {
                     line-height: 50px;
-                    background-color: #fafafa;
-                    border-radius: 10px;
+                    background-color: #eaeaea;
 
                     .user-name,
                     .name {
@@ -251,6 +251,14 @@
 //////////반응형//////////////
 @media screen and (max-width: 768px) {
     .container.board {
+        .text-container {
+            .content {
+                padding: 10px 20px;
+            }
+            .title-wrap .title {
+                padding: 10px 20px;
+            }
+        }
         .button-wrap {
             .button-container {
                 .edit {

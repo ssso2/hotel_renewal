@@ -60,14 +60,14 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 .container.board .text-container .reply-container .reply-box .reply-content,
 .container.board .text-container .reply-container .reply-box .reply-content-ing,
 .container.board .text-container .reply-container .reply-box-sec .reply-content,
 .container.board .text-container .reply-container .reply-box-sec .reply-content-ing {
   line-height: 50px;
-  background-color: #fafafa;
-  border-radius: 10px;
+  background-color: #eaeaea;
 }
 .container.board .text-container .reply-container .reply-box .reply-content .user-name,
 .container.board .text-container .reply-container .reply-box .reply-content .name,
@@ -247,6 +247,12 @@
 }
 
 @media screen and (max-width: 768px) {
+  .container.board .text-container .content {
+    padding: 10px 20px;
+  }
+  .container.board .text-container .title-wrap .title {
+    padding: 10px 20px;
+  }
   .container.board .button-wrap .button-container .edit {
     box-sizing: border-box;
     background: #333;
