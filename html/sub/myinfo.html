@@ -382,6 +382,9 @@
                 const lastNum = document.getElementById('last').value.trim();
                 const mail = document.getElementById('mail').value.trim();
 
+                console.log(pid);
+                
+
                 let valid = true; // 유효성 초기값은 true
 
                 // 오류 메시지 초기화
@@ -464,8 +467,9 @@
 
             let idchk = false;
             document.getElementById('id-chk').addEventListener('click', function () {
+
                 if (document.getElementById('pid').value.trim() === 'gagaclub') {
-                    document.querySelector('.pop-using .modal-txt').innerHTML = '먼저 약관에 동의하셔야 합니다.';
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '현재 사용중인 아이디 입니다.<br> 다른 아이디를 사용해주세요.';
                 }
                 idchk = true;
             });
@@ -478,7 +482,7 @@
                         <strong>중복확인</strong>
                     </div>
                     <div class="lypop-ct">
-                        <p class="modal-txt">현재 확인중</p>
+                        <p class="modal-txt" style="line-height: 1.7;">현재 확인중</p>
                         <div class="btn-wrap type5">
                             <button class="btn btn-04" data-lyClose="pop-using"><span>확인</span></button>
                         </div>
