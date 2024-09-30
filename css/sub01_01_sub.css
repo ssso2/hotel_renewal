@@ -6,7 +6,8 @@
 .pkg-header img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .pkg-title {
@@ -103,7 +104,8 @@
 .pkg-description-wrap .description-main img {
   width: 100%;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .pkg-description-wrap .description-main .des-title {
   font-weight: 600;
@@ -152,7 +154,8 @@
   aspect-ratio: 1/3.567204;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 1s ease;
 }
 .pkg-description-wrap .description .img-wrap a img:hover {
@@ -205,7 +208,8 @@
   border-radius: 6px;
 }
 .other-event .other-list .other-item a .img-box img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -297,7 +301,8 @@
   .pkg-description-wrap .description1 img {
     width: 100%;
     aspect-ratio: 2.003496;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .pkg-description-wrap .description1 .des-title {
     font-weight: 600;
@@ -347,7 +352,8 @@
     display: inline-block;
     width: 100%;
     min-height: 484px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .pkg-fitness {
     line-height: 2;

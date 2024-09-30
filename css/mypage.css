@@ -5,17 +5,15 @@
 .container .depth3-tab-wrap .tab li {
   width: 33.3333333333%;
 }
-
-.content {
+.container .content {
   position: relative;
   padding: 20px;
   margin-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
-.content .change-info-chk,
-.content .mypage-info,
-.content .reservate-info,
-.content .inquiry-info {
+.container .content .change-info-chk,
+.container .content .reservate-info,
+.container .content .inquiry-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,61 +23,51 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.content .user-info-wrap {
-  font-size: 18px;
-}
-.content .user-info-wrap .my-info {
-  justify-content: left !important;
-  width: 400px !important;
-}
-.content .user-info-wrap .my-info p {
-  padding-left: 30px;
-  width: 150px !important;
-}
-.content .user-info-wrap .my-info .user-info {
-  padding-left: 30px;
-}
-.content .change-info-chk {
+.container .change-info-chk {
   display: flex;
+  margin-top: 50px;
 }
-.content .change-info-chk label {
+.container .change-info-chk label {
   font-size: 24px;
-  margin-right: 10px;
 }
-.content .change-info-chk #pw-chk,
-.content .change-info-chk #btn-confirm {
-  display: inline-block;
+.container .change-info-chk #pw-chk,
+.container .change-info-chk #btn-confirm,
+.container .change-info-chk .pwdiv {
+  display: flex;
   vertical-align: middle;
+  flex-direction: column;
 }
-.content .change-info-chk #pw-chk {
-  width: 400px;
+.container .change-info-chk #pw-chk {
+  width: 100%;
+  min-width: 300px;
   padding: 10px;
   margin-top: 10px;
   border: 2px solid #ccc;
   box-sizing: border-box;
   border-radius: 5px;
+  display: block;
 }
-.content .change-info-chk #pw-chk:focus {
+.container .change-info-chk #pw-chk:focus {
   border-color: #333;
 }
-.content .change-info-chk #btn-confirm {
-  width: 150px;
+.container .change-info-chk #btn-confirm {
+  position: relative;
+  width: 100%;
   padding: 10px;
-  margin-left: 10px;
   margin-top: 10px;
   font-size: 16px;
   background-color: #7a6c64;
-  border: 2px solid #7a6c64;
   box-sizing: border-box;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  align-items: center;
+  margin-bottom: 200px;
 }
-.content .change-info-chk #btn-confirm:hover {
+.container .change-info-chk #btn-confirm:hover {
   background-color: #333;
-  border-color: #333;
 }
-.content .mypage-info {
+.container .mypage-info {
   display: block;
   position: relative;
   padding: 20px;
@@ -87,32 +75,34 @@
   top: 0;
   left: 0;
 }
-.content .mypage-info .title {
+.container .mypage-info .title {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
 }
-.content .mypage-info .my-info {
+.container .mypage-info .my-info,
+.container .mypage-info .user-info-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 500px;
   line-height: 1.5;
   margin: 0 auto 20px;
 }
-.content .mypage-info .my-info p {
+.container .mypage-info .my-info p,
+.container .mypage-info .user-info-wrap p {
   width: 100px;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
-.content .mypage-info .my-info label {
+.container .mypage-info .my-info label,
+.container .mypage-info .user-info-wrap label {
   text-align: right;
-  margin-right: 50px;
   font-size: 16px;
   color: #333;
 }
-.content .mypage-info .my-info input {
+.container .mypage-info .my-info input,
+.container .mypage-info .user-info-wrap input {
   justify-content: center;
   width: 400px;
   padding: 10px;
@@ -121,10 +111,16 @@
   font-size: 14px;
   box-sizing: border-box;
 }
-.content .mypage-info #edit {
+.container .mypage-info .my-info #id,
+.container .mypage-info .my-info #birth,
+.container .mypage-info .user-info-wrap #id,
+.container .mypage-info .user-info-wrap #birth {
+  background-color: #ddd;
+}
+.container .mypage-info #edit {
   display: block;
   margin: 50px auto;
-  width: 500px;
+  width: 40%;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -133,6 +129,25 @@
   font-size: 16px;
   cursor: pointer;
 }
-.content .mypage-info #edit:hover {
+.container .mypage-info #edit:hover {
   background-color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  #edit {
+    display: block;
+    margin: 50px auto;
+    width: 40%;
+    min-width: 120px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7a6c64;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #edit:hover {
+    background-color: #333;
+  }
 }

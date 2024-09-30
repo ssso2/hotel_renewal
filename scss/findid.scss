@@ -19,17 +19,17 @@
             }
             .comment {
                 text-align: center;
+                margin: 20px auto;
                 p {
                     font-size: 14px;
                     font-weight: 400;
                     margin: 10px auto;
+                    line-height: 30px;
                 }
             }
             .indentity-confirm {
                 width: 150px;
                 padding: 10px;
-                margin-left: 10px;
-                margin-top: 30px;
                 font-size: 16px;
                 background-color: #7a6c64;
                 border: 2px solid #7a6c64;
@@ -60,6 +60,7 @@
             font-size: 14px;
             font-weight: 400;
             margin: 10px auto;
+            line-height: 30px;
         }
         span {
             font-size: 18px;

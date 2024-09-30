@@ -411,6 +411,21 @@
     margin-right: 0;
     width: 100%;
   }
+  .depth3-tab-wrap .context .info-wrap .info.flex {
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list::after {
+    display: none;
+  }
+  .depth3-tab-wrap .context .info-wrap .info.flex .list h4 {
+    margin: 0;
+    width: 120px;
+  }
 }
 @media screen and (max-width: 768px) {
   .depth3-tab-wrap .context .card {

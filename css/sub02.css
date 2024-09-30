@@ -140,6 +140,15 @@
     margin-right: 20px;
     width: calc((100% - 20px) / 2);
   }
+  .room-box-wrap .room-box a {
+    border-radius: 5px;
+  }
+  .room-box-wrap .room-box a .img-wrap img {
+    border-radius: 5px;
+  }
+  .room-box-wrap .room-box a .txt-wrap {
+    border-radius: 5px;
+  }
   .room-box-wrap .room-box a .txt-wrap h4 {
     font-size: 20px;
   }
@@ -148,6 +157,9 @@
   }
   .room-box-wrap .room-box a .txt-wrap p {
     font-size: 12px;
+  }
+  .room-box-wrap .room-box a::after {
+    border-radius: 5px;
   }
 }
 @media screen and (max-width: 768px) {

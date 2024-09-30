@@ -17,8 +17,9 @@
 }
 .content .reservate-info .info-title {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   color: #333;
+  margin-top: 20px;
 }
 .content .reservate-info .reservation {
   width: 100%;
@@ -31,11 +32,12 @@
   display: flex;
   align-items: center;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   box-sizing: border-box;
   width: 100%;
   gap: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .content .reservate-info .reservation .reser-room .room img,
 .content .reservate-info .reservation .reser-room .package img,
@@ -61,4 +63,77 @@
 .content .reservate-info .reservation .reser-package .reservation-info .info-item {
   font-size: 16px;
   color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  .container .depth3-tab-wrap .tab li {
+    width: 33.3333333333%;
+  }
+  .content {
+    position: relative;
+    padding: 20px;
+  }
+  .content .reservate-info {
+    display: block;
+    transform: none;
+    padding: 20px;
+  }
+  .content .reservate-info .info-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  .content .reservate-info .reservation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  .content .reservate-info .reservation .reser-room,
+  .content .reservate-info .reservation .reser-package {
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 20px;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .content .reservate-info .reservation .reser-room .room img,
+  .content .reservate-info .reservation .reser-room .package img,
+  .content .reservate-info .reservation .reser-package .room img,
+  .content .reservate-info .reservation .reser-package .package img {
+    position: relative;
+    min-width: 180px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .content .reservate-info .reservation .reser-room .reservation-info,
+  .content .reservate-info .reservation .reser-package .reservation-info {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .content .reservate-info .reservation .reser-room .reservation-info .info-item,
+  .content .reservate-info .reservation .reser-package .reservation-info .info-item {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+  }
 }

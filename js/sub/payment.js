@@ -68,8 +68,6 @@ $(function(){
     })
     
     //결제하기 버튼 클릭시 alert
-    //function 만들기
-
     $("#pay").click(function(e){
         let alertText = document.getElementsByClassName('modal-txt');    
 
@@ -88,6 +86,9 @@ $(function(){
         else if(!($("#sug-arg").is(":checked"))){ 
             $(alertText).text("개인정보 제3자 제공에 동의해야만 결제하실 수 있습니다.");
             return false
+        }
+        else{
+            document.querySelector(".lypop").style.display = "none";
         }
     })
 })

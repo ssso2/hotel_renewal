@@ -25,6 +25,7 @@
 .form-wrap .login-wrap .hello {
   margin: 20px 0;
   font-size: 16px;
+  line-height: 30px;
 }
 .form-wrap .login-wrap label {
   display: inline-block;
@@ -38,7 +39,8 @@
 .form-wrap .login-wrap #id,
 .form-wrap .login-wrap #pw {
   margin: 15px 0;
-  width: 400px;
+  width: 60%;
+  min-width: 250px;
   padding: 10px;
   font-size: 24px;
   border: 1px solid #ccc;
