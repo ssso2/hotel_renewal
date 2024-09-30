@@ -82,3 +82,11 @@
         }
     }
 }
+@media screen and (max-width: 768px) {
+    .container {
+        .post {
+            height: 80px;
+            line-height: 80px;
+        }
+    }
+}

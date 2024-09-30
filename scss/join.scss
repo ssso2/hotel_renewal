@@ -169,3 +169,12 @@
         }
     }
 }
+
+@media screen and (max-width: 768px){
+    .form-wrap {
+        padding: 0;
+        .clause-wrap {
+            background-color: #fff;
+        }
+    }
+}

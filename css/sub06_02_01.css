@@ -121,3 +121,8 @@
     text-align: center;
   }
 }
+@media screen and (max-width: 768px) {
+  .container .post-list .post {
+    line-height: 70px;
+  }
+}
