@@ -214,16 +214,17 @@
 
                             .inquiry-content {
                                 height: 0;
-                                padding: 0 30px;
+                                padding: 0 20px;
                                 border: none;
                                 border-radius: 5px;
                                 margin-top: 5px;
                                 overflow: auto;
                                 transition: all 0.3s;
                                 /*text-align: center;*/
+                                line-height: 1.7;
                                 &.on {
                                     height: 150px;
-                                    padding: 20px 30px;
+                                    padding: 10px 20px;
                                     border: 1px solid #ccc;
                                 }
                             }
