@@ -14,7 +14,7 @@ $(function(){
         let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
         let memberNumber = parseInt($(".rsv-info > .adult > .mem-num").text());
         let currentNumber = parseInt($(".breakfast > .adult > .button-wrap > .num").text());
-        if(currentNumber < 2){
+        if(currentNumber < memberNumber){
             currentNumber += 1;
             totalPrice += 60000;
         }
