@@ -96,7 +96,7 @@
   position: relative;
   width: calc((100% - 10px) / 3);
   text-align: center;
-  margin-right: 5px;
+  margin-right: 1px;
 }
 .form-wrap .join-container .info-group .input-container .tel-num #last {
   margin-right: 0px;
