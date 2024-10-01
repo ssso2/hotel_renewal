@@ -9,7 +9,7 @@
     font-size: 22px;
     font-weight: 600;
 }
-@mixin item-before($padding-left: 15px, $top: 3px, $left: 2px, $content: "*") {
+@mixin item-before($padding-left: 15px, $top: 3px, $left: 2px, $content: '*') {
     // 상세설명 정렬(*표시)
     position: relative;
     padding-left: $padding-left;
@@ -21,7 +21,7 @@
         left: $left;
     }
 }
-@mixin item($padding-left: 15px, $top: 3px, $left: 2px, $content: "") {
+@mixin item($padding-left: 15px, $top: 3px, $left: 2px, $content: '') {
     // 상세설명 정렬(공백)
     position: relative;
     padding-left: $padding-left;
@@ -33,7 +33,7 @@
         left: $left;
     }
 }
-@mixin item-bar($padding-left: 15px, $top: 3px, $left: 2px, $content: "-") {
+@mixin item-bar($padding-left: 15px, $top: 3px, $left: 2px, $content: '-') {
     // 상세설명 정렬(-표시)
     position: relative;
     padding-left: $padding-left;

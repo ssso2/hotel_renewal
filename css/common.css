@@ -1,0 +1,953 @@
+@charset "UTF-8";
+@import url(./reset.css);
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mt-40 {
+  margin-top: 40px !important;
+}
+
+.mt-50 {
+  margin-top: 50px !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+
+.mb-50 {
+  margin-bottom: 50px !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pt-10 {
+  padding-top: 10px !important;
+}
+
+.pt-20 {
+  padding-top: 20px !important;
+}
+
+.pt-30 {
+  padding-top: 30px !important;
+}
+
+.pt-40 {
+  padding-top: 40px !important;
+}
+
+.pt-50 {
+  padding-top: 50px !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pb-10 {
+  padding-bottom: 10px !important;
+}
+
+.pb-20 {
+  padding-bottom: 20px !important;
+}
+
+.pb-30 {
+  padding-bottom: 30px !important;
+}
+
+.pb-40 {
+  padding-bottom: 40px !important;
+}
+
+.pb-50 {
+  padding-bottom: 50px !important;
+}
+
+.bd-none {
+  border: none !important;
+}
+
+.fc-bk {
+  color: #000 !important;
+}
+
+.fc-red {
+  color: #f00 !important;
+}
+
+.fc-blue {
+  color: #00f !important;
+}
+
+.blind,
+.hide {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.center {
+  margin: 0 auto;
+  width: 1420px;
+}
+.center.guide {
+  padding: 50px 0;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex-direction: column;
+}
+
+/* 스크롤바의 폭 너비 */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #bababa; /* 스크롤바 색상 */
+  border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+body::-webkit-scrollbar-track {
+  background: #eaeaea; /*스크롤바 뒷 배경 색상*/
+}
+
+/* 3depth title 공통 */
+.container {
+  margin: 80px 0 50px;
+}
+
+.sub-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 50px 10px 20px;
+  position: relative;
+}
+.sub-title.block {
+  display: block !important;
+}
+.sub-title.block .location {
+  margin-top: 20px;
+  justify-content: end;
+}
+.sub-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.sub-title h2 {
+  font-size: 27px;
+  font-weight: 700;
+  color: #7a6c64;
+}
+.sub-title .sub-desc {
+  margin-top: 20px;
+  font-size: 17px;
+  color: #666;
+  line-height: 1.5;
+}
+.sub-title .location {
+  display: flex;
+  align-items: center;
+  min-width: 110px;
+}
+.sub-title .location > li {
+  margin-right: 30px;
+  position: relative;
+}
+.sub-title .location > li:last-child {
+  margin: 0;
+}
+.sub-title .location > li:last-child::after {
+  display: none;
+}
+.sub-title .location > li:last-child > a {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.sub-title .location > li::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #777;
+  border-left: 0;
+  border-bottom: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
+  right: -15px;
+}
+.sub-title .location > li > a {
+  font-size: 13px;
+}
+.sub-title .location > li > a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+/* 3depth tab 공통 */
+.depth3-tab-wrap {
+  padding-top: 100px;
+  /* tab */
+  /* tab-contents */
+}
+.depth3-tab-wrap .tab {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #888;
+}
+.depth3-tab-wrap .tab.mo-show {
+  display: none;
+}
+.depth3-tab-wrap .tab.on {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1420px;
+}
+.depth3-tab-wrap .tab > li {
+  margin-bottom: -1px;
+  min-width: 14.2857142857%;
+  padding: 0px 10px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 40px;
+  border: 1px solid #ddd;
+  border-right: 0;
+  border-bottom-color: transparent;
+  background: #fff;
+  cursor: pointer;
+}
+.depth3-tab-wrap .tab > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.depth3-tab-wrap .tab > li:last-child {
+  border-right: 1px solid #ddd;
+}
+.depth3-tab-wrap .tab > li.on {
+  border: 1px solid #888;
+  border-bottom: 3px solid #fff;
+  font-weight: 700;
+}
+.depth3-tab-wrap .tab > li:hover {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.depth3-tab-wrap .tab-contents > .tab-cont {
+  display: none;
+}
+.depth3-tab-wrap .tab-contents > .tab-cont.on {
+  display: block;
+}
+
+.gallery .swiper {
+  width: 100%;
+  height: 100%;
+}
+.gallery .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery .swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gallery .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.gallery .mySwiper2 {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 1/0.444444;
+}
+.gallery .mySwiper {
+  height: auto;
+  box-sizing: border-box;
+  padding: 10px 0;
+  aspect-ratio: 1/0.119767;
+}
+.gallery .mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.gallery .mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.gallery .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn-wrap {
+  margin: 20px 0;
+  display: flex;
+}
+.btn-wrap.type1 {
+  width: 100%;
+  gap: 20px;
+}
+.btn-wrap.type2 {
+  width: 200px;
+  justify-content: space-between;
+}
+.btn-wrap.type3 {
+  width: 100%;
+  justify-content: center;
+}
+.btn-wrap.type3 .align {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type4 {
+  width: 100%;
+  justify-content: end;
+}
+.btn-wrap.type4 .align {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type5 {
+  width: 100%;
+  justify-content: center;
+}
+.btn-wrap.type5 .align {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type5 .btn {
+  width: calc((100% - 20px) / 3);
+}
+.btn-wrap.type6 {
+  width: 100%;
+}
+.btn-wrap.type6 .align {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-wrap.type6 .btn {
+  width: calc((100% - 20px) / 3);
+}
+.btn-wrap.btn-200 {
+  width: 100%;
+}
+.btn-wrap.btn-200 .btn {
+  margin-right: 10px;
+  width: 200px;
+}
+.btn-wrap.btn-250 {
+  width: 100%;
+}
+.btn-wrap.btn-250 .btn {
+  margin-right: 10px;
+  width: 250px;
+}
+.btn-wrap.btn-300 {
+  width: 100%;
+}
+.btn-wrap.btn-300 .btn {
+  margin-right: 10px;
+  width: 300px;
+}
+.btn-wrap .btn {
+  width: calc((100% - 10px) / 2);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.btn-wrap .btn.btn-01 {
+  background: #7a6c64;
+  color: #fff;
+}
+.btn-wrap .btn.btn-02 {
+  background: #000;
+  color: #fff;
+}
+.btn-wrap .btn.btn-03 {
+  background: #ddd;
+  color: #333;
+}
+.btn-wrap .btn.btn-04 {
+  margin-right: 10px;
+  padding: 0 20px;
+  width: auto;
+  background: #666;
+  color: #fff;
+}
+.btn-wrap .btn.btn-05 {
+  padding: 0 20px;
+  width: auto;
+  background: #333;
+  color: #fff;
+}
+
+.pagination {
+  margin-top: 20px;
+  height: 25px;
+  text-align: center;
+}
+.pagination > a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 2px;
+  vertical-align: top;
+}
+.pagination > a.on, .pagination > a:hover {
+  color: #377fd5;
+  font-weight: 700;
+}
+.pagination span {
+  line-height: 25px;
+}
+.pagination .page {
+  background-image: url("../img/common/bg_pageination.png");
+  background-repeat: no-repeat;
+}
+.pagination .first {
+  background-position: 0 0;
+}
+.pagination .pre {
+  background-position: 0 -25px;
+}
+.pagination .next {
+  background-position: 0 -50px;
+}
+.pagination .end {
+  background-position: 0 -75px;
+}
+
+/* 플로팅 메뉴 */
+.floating-menu {
+  position: fixed;
+  z-index: 999;
+}
+.floating-menu a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+}
+.floating-menu a:hover {
+  border: 1px solid #7a6c64;
+  box-shadow: 2px 2px 5px rgb(82, 82, 82);
+}
+.floating-menu .menu {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.floating-menu .circle-btn {
+  background-color: #7a6c64;
+}
+.floating-menu .top-btn {
+  position: fixed;
+  right: -50px;
+  bottom: 30px;
+  background-color: #333;
+  transition: all 0.3s;
+}
+.floating-menu .top-btn.on {
+  right: 10px;
+}
+
+.desc {
+  margin: 30px 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #00f;
+}
+
+.rule li {
+  padding-left: 10px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.rule li::after {
+  content: "-";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+}
+
+/* 레이어 팝업 */
+.lypop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+.lypop .btn-wrap {
+  margin: 20px 0 0;
+}
+.lypop .btn-wrap .align {
+  width: auto;
+}
+
+.lypop-wp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.lypop-wp.min {
+  width: 400px;
+}
+.lypop-wp.mid {
+  width: 800px;
+}
+.lypop-wp.big {
+  width: 900px;
+}
+.lypop-wp.max {
+  width: 1200px;
+}
+
+.lypop-content {
+  background-color: #fff;
+}
+
+.lypop-title {
+  position: relative;
+  height: 52px;
+  background-color: #474291;
+}
+.lypop-title > strong {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  padding: 15px 30px;
+}
+
+.lypop-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.lypop-close::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  display: inline-block;
+  width: 2px;
+  height: 18px;
+  transform: rotate(135deg);
+  background-color: #fff;
+}
+.lypop-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  display: inline-block;
+  width: 2px;
+  height: 18px;
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+
+.lypop-ct {
+  padding: 30px;
+}
+.lypop-ct.scroll {
+  padding: 10px 0;
+  height: 500px;
+}
+.lypop-ct.scroll iframe {
+  width: 100%;
+  height: 100%;
+}
+.lypop-ct .modal-txt {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.daterangepicker {
+  padding: 70px 200px;
+  width: 1420px;
+}
+.daterangepicker.drop-up {
+  margin-top: -10px;
+}
+.daterangepicker .drp-calendar {
+  max-width: none;
+}
+.daterangepicker .drp-calendar.left .calendar-table {
+  padding-right: 150px;
+}
+.daterangepicker .drp-calendar .calendar-table th,
+.daterangepicker .drp-calendar .calendar-table td {
+  font-size: 20px;
+  line-height: 3;
+}
+.daterangepicker .drp-calendar .calendar-table td {
+  width: 60px;
+  height: auto;
+}
+.daterangepicker .drp-calendar .calendar-table td.active {
+  border-radius: 50%;
+}
+.daterangepicker .drp-buttons {
+  padding-top: 20px;
+  border: none;
+  border-top: 1px solid #eaeaea;
+  line-height: 1;
+}
+.daterangepicker .drp-buttons .btn {
+  font-size: 18px;
+}
+.daterangepicker .drp-selected {
+  margin-right: 30px;
+  padding: 4px 0;
+  font-size: 20px;
+  color: #000;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 1500px) {
+  .center {
+    width: 90%;
+  }
+  /* 플로팅 메뉴 */
+  .floating-menu .menu {
+    top: auto;
+    transform: none;
+    bottom: 100px;
+  }
+  .floating-menu.bottom-bar .menu {
+    bottom: 150px;
+  }
+  .floating-menu.bottom-bar .top-btn {
+    bottom: 80px;
+  }
+  .daterangepicker {
+    padding: 50px 120px;
+    width: 1080px;
+  }
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 100px;
+  }
+  .daterangepicker .drp-calendar .calendar-table th,
+  .daterangepicker .drp-calendar .calendar-table td {
+    font-size: 18px;
+    line-height: 50px;
+  }
+  .daterangepicker .drp-calendar .calendar-table td {
+    width: 50px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .center {
+    width: 95%;
+  }
+  .daterangepicker {
+    padding: 30px;
+    width: 700px;
+    left: 10px !important;
+  }
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 50px;
+  }
+  .daterangepicker .drp-calendar .calendar-table th,
+  .daterangepicker .drp-calendar .calendar-table td {
+    font-size: 17px;
+    line-height: 40px;
+  }
+  .daterangepicker .drp-calendar .calendar-table td {
+    width: 40px;
+  }
+  .daterangepicker .drp-buttons .btn {
+    font-size: 17px;
+  }
+  .daterangepicker .drp-selected {
+    font-size: 17px;
+  }
+  /* 3depth tab 공통 */
+  .depth3-tab-wrap {
+    padding-top: 100px;
+    /* tab */
+  }
+  .depth3-tab-wrap .tab {
+    border-bottom: 0;
+    flex-wrap: wrap;
+  }
+  .depth3-tab-wrap .tab > li {
+    margin: 0;
+    min-width: 25%;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-right: 0;
+  }
+  .depth3-tab-wrap .tab > li:last-child, .depth3-tab-wrap .tab > li:nth-child(4) {
+    border-right: 1px solid #ddd;
+  }
+  .depth3-tab-wrap .tab > li:nth-child(5), .depth3-tab-wrap .tab > li:nth-child(6), .depth3-tab-wrap .tab > li:nth-child(7) {
+    border-top: 0;
+  }
+  .depth3-tab-wrap .tab > li.on {
+    border: 1px solid #7a6c64 !important;
+    background-color: #7a6c64;
+    color: #fff;
+  }
+  .depth3-tab-wrap .tab.tab-long > li {
+    min-width: 50% !important;
+  }
+  .depth3-tab-wrap .tab.tab-long > li:last-child, .depth3-tab-wrap .tab.tab-long > li:nth-child(2) {
+    border-right: 1px solid #ddd;
+  }
+  .depth3-tab-wrap .tab.tab-long > li:nth-child(3), .depth3-tab-wrap .tab.tab-long > li:nth-child(4) {
+    border-top: 0;
+  }
+  .gallery .mySwiper {
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px 0;
+    aspect-ratio: 1/0.231296;
+  }
+  .gallery .mySwiper .swiper-slide {
+    width: 50%;
+  }
+  /* 레이어 팝업 */
+  .lypop-wp.mid {
+    width: 95vw !important;
+  }
+  .lypop-wp.big {
+    width: 95vw !important;
+  }
+  .lypop-wp.max {
+    width: 95vw !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .center {
+    width: 95%;
+  }
+  .sub-title.column {
+    flex-direction: column;
+  }
+  .sub-title.column .location {
+    margin-top: 10px;
+  }
+  .sub-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 50px 10px 20px;
+    position: relative;
+  }
+  .sub-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .sub-title h2 {
+    font-size: 27px;
+    font-weight: 700;
+    color: #7a6c64;
+  }
+  .sub-title .sub-desc {
+    margin-top: 20px;
+    font-size: 17px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .sub-title .location {
+    display: flex;
+    align-items: center;
+    min-width: 110px;
+  }
+  .sub-title .location > li {
+    margin-right: 30px;
+    position: relative;
+  }
+  .sub-title .location > li:last-child {
+    margin: 0;
+  }
+  .sub-title .location > li:last-child::after {
+    display: none;
+  }
+  .sub-title .location > li:last-child > a {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+  .sub-title .location > li::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 1px solid #777;
+    border-left: 0;
+    border-bottom: 0;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+    right: -15px;
+  }
+  .sub-title .location > li > a {
+    font-size: 13px;
+  }
+  .sub-title .location > li > a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+  .daterangepicker {
+    padding: 30px 100px;
+    width: calc(100vw - 10px);
+    height: calc(100vh + 18px);
+    left: 50% !important;
+    top: -8px !important;
+    transform: translateX(-50%);
+    border-radius: 0 !important;
+  }
+  .daterangepicker.show-calendar .drp-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .daterangepicker .drp-calendar.left {
+    padding: 8px 0 30px 8px;
+  }
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 20px;
+  }
+  .daterangepicker .drp-calendar .calendar-table th,
+  .daterangepicker .drp-calendar .calendar-table td {
+    font-size: 15px;
+    line-height: 40px;
+  }
+  .daterangepicker .drp-calendar .calendar-table td {
+    width: 40px;
+  }
+  .daterangepicker .drp-buttons {
+    padding: 10px;
+  }
+  .daterangepicker .drp-buttons .btn {
+    font-size: 15px;
+  }
+  .daterangepicker .drp-selected {
+    margin-right: 0px;
+    font-size: 15px;
+  }
+  /* 3depth tab 공통 */
+  /* 레이어 팝업 */
+  .lypop .btn-wrap {
+    margin: 70px 0 0;
+  }
+  .lypop-wp {
+    width: 95vw !important;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 30px;
+  }
+}

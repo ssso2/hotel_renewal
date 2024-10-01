@@ -548,7 +548,6 @@ body::-webkit-scrollbar-track {
             right: 10px;
         }
     }
-
 }
 
 // 가이드
@@ -748,9 +747,10 @@ body::-webkit-scrollbar-track {
             bottom: 100px;
         }
 
-        
         &.bottom-bar {
-            .menu {bottom: 150px;}
+            .menu {
+                bottom: 150px;
+            }
             .top-btn {
                 bottom: 80px;
             }
@@ -762,7 +762,7 @@ body::-webkit-scrollbar-track {
         padding: 50px 120px;
         width: 1080px;
         // left: 20px !important;
-    
+
         .drp-calendar {
             &.left {
                 .calendar-table {
@@ -795,7 +795,7 @@ body::-webkit-scrollbar-track {
         padding: 30px;
         width: 700px;
         left: 10px !important;
-    
+
         .drp-calendar {
             &.left {
                 .calendar-table {
@@ -813,7 +813,7 @@ body::-webkit-scrollbar-track {
                 }
             }
         }
-    
+
         .drp-buttons {
             .btn {
                 font-size: 17px;
@@ -915,7 +915,7 @@ body::-webkit-scrollbar-track {
         margin-bottom: 30px;
         padding: 50px 10px 20px;
         position: relative;
-    
+
         &::after {
             content: '';
             display: block;
@@ -926,42 +926,42 @@ body::-webkit-scrollbar-track {
             left: 0;
             bottom: 0;
         }
-    
+
         h2 {
             font-size: 27px;
             font-weight: 700;
             color: #7a6c64;
         }
-    
+
         .sub-desc {
             margin-top: 20px;
             font-size: 17px;
             color: #666;
             line-height: 1.5;
         }
-    
+
         .location {
             display: flex;
             align-items: center;
             min-width: 110px;
-    
+
             & > li {
                 margin-right: 30px;
                 position: relative;
-    
+
                 &:last-child {
                     margin: 0;
-    
+
                     &::after {
                         display: none;
                     }
-    
+
                     & > a {
                         text-decoration: underline;
                         text-underline-position: under;
                     }
                 }
-    
+
                 &::after {
                     content: '';
                     display: inline-block;
@@ -975,10 +975,10 @@ body::-webkit-scrollbar-track {
                     transform: rotate(45deg) translateY(-50%);
                     right: -15px;
                 }
-    
+
                 & > a {
                     font-size: 13px;
-    
+
                     &:hover {
                         text-decoration: underline;
                         text-underline-position: under;
@@ -1005,7 +1005,7 @@ body::-webkit-scrollbar-track {
                 justify-content: center;
             }
         }
-    
+
         .drp-calendar {
             &.left {
                 padding: 8px 0 30px 8px;
@@ -1024,7 +1024,7 @@ body::-webkit-scrollbar-track {
                 }
             }
         }
-    
+
         .drp-buttons {
             padding: 10px;
             .btn {
