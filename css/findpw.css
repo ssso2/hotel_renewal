@@ -158,12 +158,12 @@
     border-color: #333;
   }
   .pw-chk {
-    width: 100%;
+    width: 510px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 100px 0;
+    margin: 100px auto;
   }
   .pw-chk .my-pw {
     margin: 20px auto;
@@ -228,5 +228,16 @@
   .pw-chk #edit:hover {
     background-color: #333;
     border-color: #333;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pw-chk {
+    width: 100%;
+  }
+  .pw-chk .input-container .input-wrap {
+    width: calc(100% - 100px);
+  }
+  .pw-chk .input-container .input-wrap input {
+    width: calc(100% - 10px);
   }
 }
