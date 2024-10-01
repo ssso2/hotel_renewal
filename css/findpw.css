@@ -195,7 +195,7 @@
     margin-top: 20px;
   }
   .pw-chk .input-container .input-wrap input {
-    max-width: 400px;
+    min-width: 400px;
     padding: 10px;
     font-size: 12px;
     border: 1px solid #ccc;
