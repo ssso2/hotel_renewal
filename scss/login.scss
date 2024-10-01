@@ -34,10 +34,14 @@
                 margin: 15px 0;
                 width: calc(100% - 150px);
                 padding: 10px;
-                font-size: 24px;
+                font-size: 18px;
                 border: 1px solid #ccc;
                 border-radius: 10px;
             }
+        }
+
+        .part-error {
+            height: 10px;
         }
 
         h2 {
@@ -114,10 +118,13 @@
                     margin: 15px 0;
                     width: calc(100% - 70px);
                     padding: 10px;
-                    font-size: 24px;
+                    font-size: 18px;
                     border: 1px solid #ccc;
                     border-radius: 10px;
                 }
+            }
+            .part-error {
+                height: 10px;
             }
 
             h2 {

@@ -21,12 +21,13 @@
 }
 .form-wrap .join-container .info-group .input-container {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 .form-wrap .join-container .info-group .input-container label {
   width: 150px;
   font-size: 16px;
-  margin-top: 15px;
+  margin-bottom: 35px;
 }
 .form-wrap .join-container .info-group .input-container .input-wrap {
   width: calc(100% - 150px);

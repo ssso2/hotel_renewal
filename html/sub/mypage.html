@@ -35,7 +35,7 @@
             <div class="center">
                 <h1 class="logo">
                     <a href="../index-login.html">
-                        <img src="../../img/common/logo.png" alt="">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -103,7 +103,8 @@
                         <i class="fa-regular fa-user"></i>
                         <p>손주혜<span>님</span></p>
                     </a>
-                    <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </a>
                 </div>
@@ -131,7 +132,8 @@
                         <i class="fa-regular fa-user"></i>
                         <p>손주혜<span>님</span></p>
                     </a>
-                    <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </a>
                 </div>
@@ -190,7 +192,6 @@
                     </ul>
                 </li>
             </ul>
-
         </div>
 
         <div class="container">
@@ -208,7 +209,7 @@
                             <h2 class="title">비밀번호 확인</h2>
                             <div class="pwdiv">
                                 <label><input type="password" id="pw-chk" /></label>
-                                <p id="error-message" style="color: red; display: none"></p>
+                                <p id="error-message1" style="color: red; display: none"></p>
                                 <input type="button" id="btn-confirm" value="확인" onclick="pw_chk()" />
                             </div>
                         </div>
@@ -218,21 +219,30 @@
                             <h2 class="title">회원정보 수정</h2>
                             <label class="my-info">
                                 <p>이름</p>
-                                <input type="text" id="id" />
+                                <input type="text" id="id" value="center121212" readonly />
                             </label>
                             <label class="my-info">
                                 <p>생년월일</p>
-                                <input type="text" id="birth" />
+                                <input type="text" id="birth" value="1991.08.31" readonly />
                             </label>
                             <label class="my-info">
                                 <p>연락처</p>
-                                <input type="text" id="contact" />
+                                <input type="text" id="contact" value="010-0000-0000" />
                             </label>
                             <label class="my-info">
                                 <p>이메일</p>
-                                <input type="text" id="mail" />
+                                <input type="text" id="mail" value="endorphin@naver.com" />
                             </label>
-                            <input type="button" id="edit" value="수정완료" data-lybtn="pop-alert" />
+                            <label class="my-info">
+                                <div class="pwcheck">
+                                    <p>비밀번호 확인</p>
+                                    <input type="password" id="pw-chk2" />
+                                </div>
+                            </label>
+                            <label class="my-pw">
+                                <p id="error-message2" style="color: red; display: none"></p>
+                            </label>
+                            <input type="button" id="edit" value="수정완료" onclick="pw_chk2()" />
                         </div>
                     </div>
                 </div>
@@ -251,7 +261,7 @@
 
             function pw_chk() {
                 const inputPassword = document.getElementById('pw-chk').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
+                const errorMessage = document.getElementById('error-message1'); //에러메시지 설정
 
                 if (inputPassword === correctPassword) {
                     //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
@@ -266,16 +276,22 @@
 
             function pw_chk2() {
                 const inputPassword = document.getElementById('pw-chk2').value; //입력한 비밀번호
-                const errorMessage = document.getElementById('error-message'); //에러메시지 설정
+                const errorMessage = document.getElementById('error-message2'); //에러메시지 설정
 
                 if (inputPassword === correctPassword) {
                     //입력한 비밀번호와 설정한 비밀번호가 일치할 경우
                     errorMessage.style.display = 'none';
-                    show_page('withdrawal'); //회원탈퇴 페이지
+                    openpopup(); // 모달 열기
                 } else {
+                    //입력한 비밀번호와 설정한 비밀번호가 다를 경우
+                    errorMessage.style.display = 'block';
                     errorMessage.textContent = '비밀번호가 올바르지 않습니다.';
                     document.getElementById('pw-chk2').value = ''; //비밀번호 입력란 초기화
-                    errorMessage.style.display = 'block';
+                }
+
+                //모달 열기
+                function openpopup() {
+                    document.getElementById('pop-alert').style.display = 'block';
                 }
             }
         </script>
@@ -342,7 +358,7 @@
         </article>
 
         <!-- alert -->
-        <div class="lypop" data-lyOpen="pop-alert" tabindex="0">
+        <div class="lypop" id="pop-alert" data-lyOpen="pop-alert" tabindex="0">
             <div class="lypop-wp min">
                 <div class="lypop-content">
                     <div class="lypop-title">
