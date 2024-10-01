@@ -30,7 +30,9 @@
 }
 .form-wrap .clause-wrap #check-all #agree-all {
   position: relative;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 15px;
   height: 15px;
   border-radius: 7px;
@@ -87,7 +89,9 @@
 .form-wrap .checkbox #chk1,
 .form-wrap .checkbox #chk2,
 .form-wrap .checkbox #chk3 {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 15px;
   height: 15px;
   border-radius: 7px;

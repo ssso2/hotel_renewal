@@ -475,7 +475,7 @@
                     const isLastValid = /^\d{4}$/.test(lastNum);
 
                     if (!isMiddleValid || !isLastValid) {
-                        document.getElementById('tel-error').textContent = isStartNum010 ? '연락처의 자리수를 확인하세요. (중간 번호는 4자리여야 합니다.)' : '연락처의 자리수를 확인하세요. (중간 번호는 3~4자리, 마지막 번호는 4자리여야 합니다.)';
+                        document.getElementById('tel-error').textContent = isStartNum010 ? '연락처의 자리수를 확인하세요.' : '연락처의 자리수를 확인하세요.';
                         valid = false;
                     } else if (isMiddleValid && isLastValid) {
                         document.getElementById('tel-error').textContent = '';
@@ -484,7 +484,7 @@
                 }
 
                 // 이메일 유효성 검사
-                const mailtype = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+                const mailtype = /^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
                 if (!mail) {
                     document.getElementById('mail-error').textContent = '이메일을 입력하세요.';
                     valid = false;
@@ -498,7 +498,6 @@
 
                 // 모든 유효성 검사 통과 시
                 if (valid) {
-                    alert('신라리워즈 가입을 환영합니다.');
                     setTimeout(function () {
                         window.location.href = 'welcome.html'; // 이동할 홈페이지 URL로 변경
                     }, 100);
