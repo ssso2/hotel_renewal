@@ -517,15 +517,15 @@
   .pkg-filter-sort .dropdown .dropdown-item-type {
     width: 42%;
   }
-  .pkg-filter-keyword border .keword-wrap {
+  .pkg-filter-keyword .keword-wrap {
     padding-right: 0%;
     border-right: none;
   }
-  .pkg-filter-keyword border .keword-wrap .keywords li {
+  .pkg-filter-keyword .keword-wrap .keywords li {
     width: auto;
     font-size: 13px;
   }
-  .pkg-filter-keyword border .keword-wrap .keywords li label {
+  .pkg-filter-keyword .keword-wrap .keywords li label {
     width: auto;
     padding: 0 20px;
   }
