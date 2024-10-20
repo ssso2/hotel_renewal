@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신라호텔 서울</title>
+    <title>신라호텔 : 관리자</title>
     <!-- 구글 웹폰트 연결 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <!-- 스와이퍼 CSS 연결 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
     <!-- 폰트어썸 연결 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- AOS 스크롤 애니메이션 연결 -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
     <!-- daterangepicker 연결 -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
     <!-- 제이쿼리 연결 -->
-    <!-- <script src="../js/common/jquery-3.7.1.min.js"></script> -->
+    <script src="../js/common/jquery-3.7.1.min.js"></script>
     <script src="../js/common/jquery-ui.min.js"></script>
     <!-- 스와이퍼 JS 연결 -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script> -->
     <!-- 작성한 css 연결-->
+    <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/admin.css">
     <!-- 작성한 JS 연결 -->
     <script src="../../js/common/header.js" defer></script>
     <script src="../../js/common/common.js" defer></script>
+    <script src="../../js/common/admin.js" defer></script>
 </head>
 <body>
     <header class="active">
@@ -95,7 +99,7 @@
                 </li>
             </ul>
                 <!-- 비로그인시 -->
-                <div class="btn-wrap on">
+                <div class="btn-wrap">
                     <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
                     <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
                 </div>
@@ -110,9 +114,9 @@
                     </a>
                 </div>
                 <!-- 관리자 로그인시 -->
-                <div class="btn-wrap admin">
+                <div class="btn-wrap admin on">
                     <a href="../../html/common/admin.html" class="user-name-btn" title="관리자페이지로 이동">
-                        <i class="fa-regular fa-user"></i>
+                        <i class="fa-solid fa-gear"></i>
                         <p>관리자<span>님</span></p>
                     </a>
                     <a href="../../html/index.html" class="logout-btn">로그아웃
@@ -133,7 +137,7 @@
     <div class="m_wrap">
         <div class="m_top">
             <!-- 비로그인시 -->
-            <div class="btn-wrap on">
+            <div class="btn-wrap">
                 <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
                 <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
             </div>
@@ -148,7 +152,7 @@
                 </a>
             </div>
             <!-- 관리자 로그인시 -->
-            <div class="btn-wrap admin">
+            <div class="btn-wrap admin on">
                 <a href="../../html/common/admin.html" class="user-name-btn" title="관리자페이지로 이동">
                     <i class="fa-regular fa-user"></i>
                     <p>관리자<span>님</span></p>
@@ -214,5 +218,92 @@
         </ul>
 
     </div>
+
+    <!-- s::관리자메뉴 -->
+    <div class="admin-wrap">
+        <div class="center">
+            <div class="admin-tab">
+                <div class="tab-title">
+                    관리자 메뉴
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <ul class="tab-menu">
+                    <li class="on">대시보드</li>
+                    <li>스페셜오퍼</li>
+                    <li>회원관리</li>
+                    <li>예약관리</li>
+                    <li>고객센터</li>
+                    <li>환경설정</li>
+                </ul>
+            </div>
+            <div class="tab-contents">
+                <div class="cont cont1 on">
+                    <h2>대시보드</h2>
+                </div>
+                <div class="cont cont2">
+                    <h2>스페셜오퍼</h2>
+                </div>
+                <div class="cont cont3">
+                    <h2>회원관리</h2>
+                </div>
+                <div class="cont cont4">
+                    <h2>예약관리</h2>
+                </div>
+                <div class="cont cont5">
+                    <h2>고객센터</h2>
+                </div>
+                <div class="cont cont6">
+                    <h2>환경설정</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- e::관리자메뉴 -->
+
+    <footer>
+        <div class="center">
+            <div class="f_menu">
+                <img src="../../img/common/logo.png" alt="신라호텔 로고" class="footer-logo">
+                <div>SNS</div>
+                <ul class="sns">
+                    <li><a href="https://www.instagram.com/theshillaseoul/" target="_blank" title="instagram 새창 열기"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/theshillahotels" target="_blank" title="facebook 새창 열기"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://post.naver.com/my.nhn?memberNo=46212769" target="_blank" title="네이버 포스트 새창 열기"><i class="fa-solid fa-blog"></i></a></li>
+                </ul>
+                <div>MENU</div>
+                <ul class="menu">
+                    <li><a href="#self">호텔소개</a></li>
+                    <li><a href="#self">호텔정보</a></li>
+                    <li><a href="#self">층별안내도</a></li>
+                    <li><a href="../../html/sub/sitemap.html">사이트맵</a></li>
+                </ul>
+            </div>
+            <div class="f_bot">
+                <div class="f_list">
+                    <span><a href="#self">이용약관</a></span>
+                    <span><a href="#self">개인정보 처리방침</a></span>
+                    <span><a href="#self">사업자정보확인</a></span>
+                </div>
+                <ul class="f_info">
+                    <li>법인명: (주) 호텔신라</li>
+                    <li>대표자: 이부진 사업자 등록번호: 203.81.43363</li>
+                    <li>통신판매신고번호: 중구00272호</li>
+                    <li>호스팅서비스제공자: 삼성SDS(주)</li>
+                    <li>객실예약 shilla.reserve@samsung.com</li>
+                    <li>주소: 서울특별시 중구 동호로 249</li>
+                    <li>TEL: 02-2233-3131</li>
+                    <li>FAX. 02-2230-3769</li>
+                </ul>
+                <p class="copy">Copyright <span>&copy;</span> HOTEL SHILLA CO.,LTD All Rights Reserved.</p>
+            </div>
+            <div class="info">
+                <p>2024 Forbes Travel Guide<br>국내 최초 6년 연속 5성 호텔 수상</p>
+                <p>한국 능률협회컨설팅 선정 <br>브랜드파워 호텔 부문 7년 연속 1위</p>
+                <p>2024 한국생산성본부 선정<br>국가브랜드경쟁력지수 호텔 부문 1위</p>
+                <p>한국표준협회 평가 <br>실내공기질 인증 획득</p>
+                <p>한국환경산업기술원 평가 <br>친환경 호텔 인증 획득</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
