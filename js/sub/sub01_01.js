@@ -204,7 +204,11 @@ $(function () {
 // 디데이계산
 $(document).ready(function () {
     // 마감일 설정
+<<<<<<< HEAD
     var deadline = new Date("2024-10-11T13:30:00").getTime();
+=======
+    var deadline = new Date("2024-10-30T00:00:00").getTime();
+>>>>>>> master
 
     // 타이머 업데이트 함수
     function updateTimer() {
