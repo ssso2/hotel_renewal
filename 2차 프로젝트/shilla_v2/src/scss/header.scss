@@ -112,7 +112,7 @@ header {
     box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
     transition: all 0.4s;
 
-    &.on {height: 240px;}
+    &.on {height: 280px;}
 }
 
 .gnb {
@@ -189,7 +189,7 @@ header {
 
     &:hover .depth2 {
         padding: 20px 0; 
-        height: 240px;
+        height: 280px;
     }
 }
 

@@ -213,6 +213,7 @@
     display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
 
     .list {
         box-sizing: border-box;
@@ -321,5 +322,14 @@
                 }
             }
         }
+    }
+}
+.secret-wrap {
+    margin: 5px 0 30px;
+    font-size: 15px;
+    input {
+        margin-right: 10px;
+        width: 15px;
+        height: 15px;
     }
 }
