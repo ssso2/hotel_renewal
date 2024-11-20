@@ -7,9 +7,7 @@
 }
 .container .content {
   position: relative;
-  padding: 20px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  min-height: 220px;
 }
 .container .content .change-info-chk,
 .container .content .reservate-info,
@@ -25,7 +23,7 @@
 }
 .container .change-info-chk {
   display: flex;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .container .change-info-chk label {
   font-size: 24px;
@@ -42,7 +40,7 @@
   min-width: 300px;
   padding: 10px;
   margin-top: 10px;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   box-sizing: border-box;
   border-radius: 5px;
   display: block;
@@ -62,7 +60,7 @@
   border-radius: 5px;
   cursor: pointer;
   align-items: center;
-  margin-bottom: 200px;
+  margin-bottom: 0px;
 }
 .container .change-info-chk #btn-confirm:hover {
   background-color: #333;
@@ -89,15 +87,23 @@
   line-height: 1.5;
   margin: 0 auto 20px;
 }
+.container .mypage-info .my-info .pwcheck,
+.container .mypage-info .user-info-wrap .pwcheck {
+  display: flex;
+  align-items: center;
+}
+.container .mypage-info .my-info .pwcheck p,
+.container .mypage-info .user-info-wrap .pwcheck p {
+  width: 100px;
+  text-align: left;
+}
 .container .mypage-info .my-info p,
 .container .mypage-info .user-info-wrap p {
   width: 100px;
-  margin: 0;
-  text-align: center;
+  text-align: left;
 }
 .container .mypage-info .my-info label,
 .container .mypage-info .user-info-wrap label {
-  text-align: right;
   font-size: 16px;
   color: #333;
 }
@@ -117,10 +123,26 @@
 .container .mypage-info .user-info-wrap #birth {
   background-color: #ddd;
 }
+.container .mypage-info .my-pw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 1.5;
+  margin: 0 auto 20px;
+  width: 500px;
+}
+.container .mypage-info .my-pw #error-message2 {
+  color: red;
+  display: block;
+  text-align: left;
+  margin-left: 100px;
+  width: 100%;
+}
 .container .mypage-info #edit {
   display: block;
   margin: 50px auto;
-  width: 40%;
+  width: 500px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -134,11 +156,51 @@
 }
 
 @media screen and (max-width: 768px) {
-  #edit {
+  .container .content {
+    padding: 0;
+  }
+  .container .mypage-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.5;
+    margin: 0 auto 20px;
+    padding: 0;
+  }
+  .container .mypage-info .my-info {
+    flex-wrap: nowrap;
+  }
+  .container .mypage-info .my-info .pwcheck {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .container .mypage-info .my-info .pwcheck p {
+    width: 70px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  .container .mypage-info .my-info .pwcheck #error-message2 {
+    color: red;
+    display: block;
+    text-align: left;
+    margin-left: 80px;
+    width: 100%;
+  }
+  .container .mypage-info .my-info p {
+    width: 70px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  .container .mypage-info .my-info input {
+    width: calc(100% - 70px);
+  }
+  .container .mypage-info #edit {
     display: block;
     margin: 50px auto;
-    width: 40%;
-    min-width: 120px;
+    width: 0;
+    min-width: 200px;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -147,7 +209,23 @@
     font-size: 16px;
     cursor: pointer;
   }
-  #edit:hover {
+  .container .mypage-info #edit:hover {
     background-color: #333;
+  }
+  .container .mypage-info .my-pw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.5;
+    margin: 0 auto 20px;
+    width: calc(100% - 10px);
+  }
+  .container .mypage-info .my-pw #error-message2 {
+    color: red;
+    display: block;
+    text-align: left;
+    margin-left: 70px;
+    width: 100%;
   }
 }

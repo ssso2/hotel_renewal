@@ -7,16 +7,18 @@
         display: flex;
         flex-direction: column;
         padding: 20px;
-        margin-bottom: 20px;
+        margin: 0 auto 20px;
+        width: 650px;
 
         .info-title {
+            font-size: 20px;
             margin: 150px auto 30px;
             padding: 10px;
         }
 
         .info-group {
             #pid {
-                width: 390px;
+                width: calc(100% - 120px);
                 margin-right: 10px;
             }
             .input-container {
@@ -27,199 +29,129 @@
                 label {
                     width: 150px;
                     font-size: 16px;
+                    margin-bottom: 35px;
                 }
-
-                input {
-                    width: 500px;
-                    padding: 10px;
-                    font-size: 16px;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    box-sizing: border-box;
-                }
-                #firstname {
-                    width: 240px;
-                    margin-inline-end: 15px;
-                }
-                #lastname {
-                    width: 240px;
-                }
-
-                #id-chk {
-                    width: 100px;
-                    height: 40px;
-                    background-color: #7a6c64;
-                    color: #faf8f4;
-                    &:hover {
-                        background-color: #333;
-                    }
-                }
-            }
-            .error-message {
-                width: 100%;
-                color: #f00;
-                font-size: 14px;
-                margin-top: 5px;
-                margin-bottom: 20px;
-                height: 10px;
-                line-height: 1;
-                display: block;
-                text-align: center;
-            }
-
-            select {
-                width: 167px;
-                padding: 7px;
-                font-size: 16px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-            }
-        }
-
-        .birth {
-            display: flex;
-            #year,
-            #month,
-            #day {
-                text-align: center;
-            }
-        }
-
-        .tel-num {
-            #start,
-            #middle,
-            #last {
-                width: 159px;
-                text-align: center;
-            }
-        }
-
-        #submit {
-            width: 500px;
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 16px;
-            background-color: #7a6c64;
-            color: #fff;
-            border: none;
-            &:hover {
-                background-color: #333;
-            }
-        }
-    }
-}
-
-//반응형
-@media screen and (max-width: 768px) {
-    .form-wrap {
-        display: relative;
-        font-size: 14px;
-        padding: 10px;
-
-        .join-container {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            margin-bottom: 20px;
-
-            .info-title {
-                margin: 150px auto 30px;
-                padding: 10px;
-            }
-
-            .info-group {
-                #pid {
-                    width: 300px;
-                    margin: 0;
-                }
-                .input-container {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-
-                    label {
-                        width: 150px;
-                        font-size: 16px;
-                        text-align: center;
-                        margin-bottom: 10px;
-                    }
-
+                .input-wrap {
+                    width: calc(100% - 150px);
                     input {
-                        width: 300px;
+                        width: 100%;
                         padding: 10px;
                         font-size: 16px;
                         border: 1px solid #ccc;
                         border-radius: 5px;
                         box-sizing: border-box;
                     }
-                    #firstname {
-                        width: 140px;
-                        margin-inline-end: 15px;
-                    }
-                    #lastname {
-                        width: 140px;
+                    .eng {
+                        display: flex;
+                        justify-content: space-between;
+                        #firstname,
+                        #lastname {
+                            width: calc((100% - 10px) / 2);
+                        }
+                        #firstname {
+                            margin-right: 10px;
+                        }
                     }
 
                     #id-chk {
                         width: 100px;
-                        height: 40px;
-                        margin-top: 10px;
+                        height: 45px;
                         background-color: #7a6c64;
                         color: #faf8f4;
+                        border-radius: 5px;
                         &:hover {
                             background-color: #333;
                         }
                     }
                 }
                 .error-message {
-                    width: 100%;
+                    display: block;
                     color: #f00;
                     font-size: 14px;
                     margin-top: 5px;
                     margin-bottom: 20px;
                     height: 10px;
                     line-height: 1;
-                    display: block;
-                    text-align: center;
                 }
 
                 select {
-                    width: 100px;
-                    padding: 7px;
+                    width: calc(100% / 3);
+                    padding: 10px;
                     font-size: 16px;
                     border: 1px solid #ccc;
                     border-radius: 5px;
                 }
-            }
 
-            .birth {
-                display: flex;
-                #year,
-                #month,
-                #day {
-                    text-align: center;
+                .birth {
+                    display: flex;
+                    #year,
+                    #month,
+                    #day {
+                        width: calc((100% - 10px) / 3);
+                        text-align: center;
+                        margin-right: 5px;
+                    }
+                    #day {
+                        margin-right: 0;
+                    }
+                }
+
+                .tel-num {
+                    #start,
+                    #middle,
+                    #last {
+                        position: relative;
+                        width: calc((100% - 10px) / 3);
+                        text-align: center;
+                    }
+                    #last {
+                        margin-right: 0px;
+                    }
+                }
+                #submit {
+                    width: 500px;
+                    padding: 10px;
+                    margin-top: 20px;
+                    font-size: 16px;
+                    background-color: #7a6c64;
+                    color: #fff;
+                    border: none;
+                    &:hover {
+                        background-color: #333;
+                    }
                 }
             }
+        }
+    }
+}
 
-            .tel-num {
-                #start,
-                #middle,
-                #last {
-                    width: 92px;
-                }
-            }
-
-            #submit {
-                width: 300px;
-                padding: 10px;
-                margin-top: 20px;
-                font-size: 16px;
-                background-color: #7a6c64;
-                color: #fff;
-                border: none;
-                &:hover {
-                    background-color: #333;
+// 모바일
+@media screen and (max-width: 768px) {
+    .form-wrap {
+        padding: 0;
+        .join-container {
+            width: 100%;
+            padding: 0;
+            .info-group {
+                .input-container {
+                    label {
+                        width: 100px;
+                    }
+                    .input-wrap {
+                        width: calc(100% - 100px);
+                        #pid,
+                        #pw,
+                        #pwchk {
+                            &::placeholder {
+                                color: transparent;
+                            }
+                        }
+                    }
+                    .birth {
+                        select {
+                            padding: 10px 0;
+                        }
+                    }
                 }
             }
         }

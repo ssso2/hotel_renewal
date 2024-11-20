@@ -186,9 +186,8 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .container .board-nav .post-writer,
-  .container .board-nav .post-date {
-    display: none !important;
+  .container .board-nav {
+    display: none;
   }
   .container .post {
     height: auto;

@@ -22,7 +22,7 @@ $(function () {
         .daterangepicker({
             minYear: 1000,
             maxYear: 9999,
-            autoUpdateInput: false, // 날짜자동입력해제
+            autoUpdateInput: false,
             locale: {
                 format: "YYYY.MM.DD",
                 separator: " - ",
@@ -61,10 +61,10 @@ $(function () {
 });
 
 // 초기화 버튼 눌렀을 때 날짜, 유형구분, 키워드 초기상태로 만들기
-$(".pkg-filter-resetbtn").click(function () {
-    $(".pkg-datepicker input[type='text']").val("");
+$(".pkg-filter-resetbtn").on("click", function () {
     $(".typebox").text("전체");
-    $(".pkg-filter-keyword input[type='checkbox']").prop("checked", false);
+    $("input[type='checkbox']").prop("checked", false);
+    $('input[name="daterange3"]').val("");
 });
 
 // 필터타입 + 페이지네이션
@@ -206,69 +206,40 @@ $(function () {
     });
 });
 
-// 아코디언
-$(function () {
-    function handleAccordion() {
-        var screenWidth = $(window).width();
-        //기존의 이벤트를 제거(반복실행되는 오류 해결 중요!)
-        $(".accordion-trigger").off("click");
-        // 화면 너비가 768px 이하일 때만 아코디언 작동
-        if (screenWidth <= 768) {
-            $(".accordion-trigger").click(function () {
-                // 해당 요소의 부모요소의 다음 요소인 .des-wrap 클래스 선택
-                var $currentClass = $(this)
-                    .parent(".head-wrap")
-                    .next(".des-wrap");
-                if ($(this).hasClass("active")) {
-                    $currentClass.slideUp("fast"); // 닫기
-                } else {
-                    $currentClass.slideDown("fast"); // 열기
-                }
-                // active 클래스 토글
-                $(this).toggleClass("active");
-            });
-        } else {
-            // 화면 너비가 768px 초과일 경우 클릭 이벤트 제거 (작동 안 함)
-            $(".accordion-trigger").off("click");
+// 디데이계산
+$(document).ready(function () {
+    // 마감일 설정
+    var deadline = new Date("2024-10-30T00:00:00").getTime();
+
+    // 타이머 업데이트 함수
+    function updateTimer() {
+        var now = new Date().getTime(); // 현재 시간
+        var timeRemaining = deadline - now; // 남은 시간
+
+        // 남은 시간을 일, 시간, 분, 초로 변환
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor(
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        // 남은 시간 업데이트
+        $("#d-day-timer").text(
+            days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초"
+        );
+
+        //시간이 다 되면 타이머를 멈추고 메시지를 변경
+        if (timeRemaining < 0) {
+            clearInterval(timerInterval);
+            $(".d-day").text("예약이 마감되었습니다.");
+            $(".d-day").css({ "text-align": "center", "padding-left": "0" });
         }
     }
-
-    // 페이지 로드 시 바로 실행
-    handleAccordion();
-
-    // 윈도우 크기 변경 시마다 반응
-    $(window).resize(function () {
-        handleAccordion();
-    });
+    // 페이지로드시 바로 실행
+    updateTimer();
+    // 1초마다 타이머 업데이트
+    var timerInterval = setInterval(updateTimer, 1000);
 });
-
-////////////////
-// 아코디언 원본
-// $(function () {
-//     function handleAccordion() {
-//         var screenWidth = $(window).width();
-//         // 화면 너비가 768px 이하일 때만 아코디언 작동
-//         if (screenWidth <= 768) {
-//             $(".accordion-trigger").click(function () {
-//                 // active 클래스 추가
-//                 $(this).toggleClass("active");
-//                 // 해당 요소의 부모요소의 다음 요소인 .des-wrap이 닫혀있으면 열고 열려있으면 닫기
-//                 $(this)
-//                     .parent(".head-wrap")
-//                     .next(".des-wrap")
-//                     .slideToggle("slow");
-//                 // .slideDown("slow");
-//             });
-//         } else {
-//             // 화면 너비가 768px 초과일 경우 클릭 이벤트 제거 (작동 안 함)
-//             $(".accordion-trigger").off("click");
-//         }
-//     }
-// // 페이지 로드 시 바로 실행
-// handleAccordion();
-
-// // 윈도우 크기 변경 시마다 반응
-// $(window).resize(function () {
-//     handleAccordion();
-// });
-// });

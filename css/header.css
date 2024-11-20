@@ -27,25 +27,25 @@ header .center > .btn-wrap {
 header .center > .btn-wrap.on {
   display: block;
 }
-header .center > .btn-wrap.login {
+header .center > .btn-wrap.login, header .center > .btn-wrap.admin {
   line-height: 1;
 }
-header .center > .btn-wrap.login.on {
+header .center > .btn-wrap.login.on, header .center > .btn-wrap.admin.on {
   display: flex;
   align-items: center;
 }
-header .center > .btn-wrap.login p {
+header .center > .btn-wrap.login p, header .center > .btn-wrap.admin p {
   margin: 0 30px 0 5px;
   font-size: 17px;
 }
-header .center > .btn-wrap.login p span {
+header .center > .btn-wrap.login p span, header .center > .btn-wrap.admin p span {
   margin-left: 5px;
   font-size: 15px;
 }
-header .center > .btn-wrap.login .logout-btn {
+header .center > .btn-wrap.login .logout-btn, header .center > .btn-wrap.admin .logout-btn {
   line-height: 1;
 }
-header .center > .btn-wrap.login .logout-btn + i {
+header .center > .btn-wrap.login .logout-btn + i, header .center > .btn-wrap.admin .logout-btn + i {
   position: relative;
   top: 2px;
   right: -3px;
@@ -277,13 +277,13 @@ header .logo > a > img {
   font-weight: 700;
   color: #000;
 }
-.m_wrap .m_top .btn-wrap.login p {
+.m_wrap .m_top .btn-wrap.login p, .m_wrap .m_top .btn-wrap.admin p {
   margin-right: 20px;
   font-size: 16px;
   display: inline-block;
   color: #000;
 }
-.m_wrap .m_top .btn-wrap.login p span {
+.m_wrap .m_top .btn-wrap.login p span, .m_wrap .m_top .btn-wrap.admin p span {
   margin-left: 5px;
   font-size: 14px;
   color: #333;

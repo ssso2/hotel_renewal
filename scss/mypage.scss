@@ -12,9 +12,7 @@
 
     .content {
         position: relative;
-        padding: 20px;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        min-height: 220px;
 
         .change-info-chk,
         .reservate-info,
@@ -32,7 +30,7 @@
 
     .change-info-chk {
         display: flex;
-        margin-top: 50px;
+        margin-top: 0px;
         label {
             font-size: 24px;
         }
@@ -50,7 +48,7 @@
             min-width: 300px;
             padding: 10px;
             margin-top: 10px;
-            border: 2px solid #ccc;
+            border: 1px solid #ccc;
             box-sizing: border-box;
             border-radius: 5px;
             display: block;
@@ -72,7 +70,7 @@
             border-radius: 5px;
             cursor: pointer;
             align-items: center;
-            margin-bottom: 200px;
+            margin-bottom: 0px;
 
             &:hover {
                 background-color: #333;
@@ -102,15 +100,21 @@
             flex-wrap: wrap;
             line-height: 1.5;
             margin: 0 auto 20px;
+            .pwcheck {
+                display: flex;
+                align-items: center;
+                p {
+                    width: 100px;
+                    text-align: left;
+                }
+            }
 
             p {
                 width: 100px;
-                margin: 0;
-                text-align: center;
+                text-align: left;
             }
 
             label {
-                text-align: right;
                 font-size: 16px;
                 color: #333;
             }
@@ -129,11 +133,27 @@
                 background-color: #ddd;
             }
         }
+        .my-pw {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            line-height: 1.5;
+            margin: 0 auto 20px;
+            width: 500px;
+            #error-message2 {
+                color: red;
+                display: block;
+                text-align: left;
+                margin-left: 100px;
+                width: 100%;
+            }
+        }
 
         #edit {
             display: block;
             margin: 50px auto;
-            width: 40%;
+            width: 500px;
             padding: 10px;
             border: none;
             border-radius: 5px;
@@ -151,21 +171,78 @@
 
 //반응형
 @media screen and (max-width: 768px) {
-    #edit {
-        display: block;
-        margin: 50px auto;
-        width: 40%;
-        min-width: 120px;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #7a6c64;
-        color: #fff;
-        font-size: 16px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: #333;
+    .container {
+        .content {
+            padding: 0;
+        }
+        .mypage-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            line-height: 1.5;
+            margin: 0 auto 20px;
+            padding: 0;
+            .my-info {
+                flex-wrap: nowrap;
+                .pwcheck {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    p {
+                        width: 70px;
+                        text-align: right;
+                        margin-right: 10px;
+                    }
+                    #error-message2 {
+                        color: red;
+                        display: block;
+                        text-align: left;
+                        margin-left: 80px;
+                        width: 100%;
+                    }
+                }
+                p {
+                    width: 70px;
+                    text-align: right;
+                    margin-right: 10px;
+                }
+                input {
+                    width: calc(100% - 70px);
+                }
+            }
+            #edit {
+                display: block;
+                margin: 50px auto;
+                width: 0;
+                min-width: 200px;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #7a6c64;
+                color: #fff;
+                font-size: 16px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #333;
+                }
+            }
+            .my-pw {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                line-height: 1.5;
+                margin: 0 auto 20px;
+                width: calc(100% - 10px);
+                #error-message2 {
+                    color: red;
+                    display: block;
+                    text-align: left;
+                    margin-left: 70px;
+                    width: 100%;
+                }
+            }
         }
     }
 }

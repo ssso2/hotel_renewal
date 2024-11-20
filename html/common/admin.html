@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신라호텔 : 더 파크뷰</title>
+    <title>신라호텔 : 관리자</title>
     <!-- 구글 웹폰트 연결 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <!-- 스와이퍼 CSS 연결 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
     <!-- 폰트어썸 연결 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- AOS 스크롤 애니메이션 연결 -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <!-- daterangepicker 연결 -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
     <!-- 제이쿼리 연결 -->
-    <!-- <script src="../js/common/jquery-3.7.1.min.js"></script> -->
+    <script src="../js/common/jquery-3.7.1.min.js"></script>
     <script src="../js/common/jquery-ui.min.js"></script>
     <!-- 스와이퍼 JS 연결 -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script> -->
     <!-- 작성한 css 연결-->
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/sub-list.css">
-    <link rel="stylesheet" href="../../css/sub-detail.css">
+    <link rel="stylesheet" href="../../css/admin.css">
     <!-- 작성한 JS 연결 -->
-    <script src="../../js/common/common.js" defer></script>
     <script src="../../js/common/header.js" defer></script>
+    <script src="../../js/common/common.js" defer></script>
+    <script src="../../js/common/admin.js" defer></script>
 </head>
 <body>
     <header class="active">
@@ -94,7 +99,7 @@
                 </li>
             </ul>
                 <!-- 비로그인시 -->
-                <div class="btn-wrap on">
+                <div class="btn-wrap">
                     <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
                     <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
                 </div>
@@ -103,6 +108,16 @@
                     <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
                         <i class="fa-regular fa-user"></i>
                         <p>손주혜<span>님</span></p>
+                    </a>
+                    <a href="../../html/index.html" class="logout-btn">로그아웃
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
+                <!-- 관리자 로그인시 -->
+                <div class="btn-wrap admin on">
+                    <a href="../../html/common/admin.html" class="user-name-btn" title="관리자페이지로 이동">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>관리자<span>님</span></p>
                     </a>
                     <a href="../../html/index.html" class="logout-btn">로그아웃
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -122,7 +137,7 @@
     <div class="m_wrap">
         <div class="m_top">
             <!-- 비로그인시 -->
-            <div class="btn-wrap on">
+            <div class="btn-wrap">
                 <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
                 <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
             </div>
@@ -131,6 +146,16 @@
                 <a href="../../html/sub/mypage.html" class="user-name-btn" title="마이페이지로 이동">
                     <i class="fa-regular fa-user"></i>
                     <p>손주혜<span>님</span></p>
+                </a>
+                <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+            </div>
+            <!-- 관리자 로그인시 -->
+            <div class="btn-wrap admin on">
+                <a href="../../html/common/admin.html" class="user-name-btn" title="관리자페이지로 이동">
+                    <i class="fa-regular fa-user"></i>
+                    <p>관리자<span>님</span></p>
                 </a>
                 <a href="../../html/index.html" class="logout-btn">로그아웃
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -194,169 +219,67 @@
 
     </div>
 
-    <!-- 페이지 영역 -->
-    <div class="container">
+    <!-- s::관리자메뉴 -->
+    <div class="admin-wrap">
         <div class="center">
-            <div class="depth3-tab-wrap">
-                <ul class="tab">
-                    <li class="tab1"><a href="../sub/sub03_01_01.html">라연</a></li>
-                    <li class="tab2"><a href="../sub/sub03_01_02.html">콘티넨탈</a></li>
-                    <li class="tab3"><a href="../sub/sub03_01_03.html">아리아께</a></li>
-                    <li class="tab4"><a href="../sub/sub03_01_04.html">팔선</a></li>
-                    <li class="tab5 on"><a href="../sub/sub03_01_05.html">더 파크뷰</a></li>
+            <div class="admin-tab">
+                <div class="tab-title">
+                    관리자 메뉴
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <ul class="tab-menu">
+                    <li class="on">대시보드</li>
+                    <li>객실관리</li>
+                    <li>회원관리</li>
+                    <li>예약관리</li>
+                    <!-- <li>고객센터</li> -->
+                    <!-- <li>환경설정</li> -->
                 </ul>
-                <div class="tab-contents">
-                    <div class="tab-cont cont5 on">
-                        <div class="sub-title">
-                            <h2>더 파크뷰</h2>
-                            <ul class="location">
-                                <li><a href="../index.html">홈</a></li>
-                                <li><a href="../sub/sub03.html">다이닝</a></li>
-                                <li><a href="#self">더 파크뷰</a></li>
-                            </ul>
+            </div>
+            <div class="tab-contents">
+                <div class="cont cont1 on">
+                    <h2>대시보드</h2>
+                    <div class="chart-group">
+                        <div class="chart-wrap">
+                            <h3>방문자 현황(월별 비교)</h3>
+                            <div class="chart">(차트, 그래프 들어갈 자리)</div>
                         </div>
-                        <div class="gallery">
-                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/dining-5-01.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/dining-5-02.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/dining-5-03.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/dining-5-04.jpg">
-                                    </div>
-                                </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div>
-                            <div thumbsSlider="" class="swiper mySwiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/dining-5-01.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/dining-5-02.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/dining-5-03.jpg">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="../../img/sub/dining-5-04.jpg">
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="chart-wrap">
+                            <h3>매출 현황(월별 비교)</h3>
+                            <div class="chart">(차트, 그래프 들어갈 자리)</div>
                         </div>
-                        <div class="context">
-                            <div class="Introduction">
-                                <h3>자연을 닮은 레스토랑 <strong>더 파크뷰</strong></h3>
-                                <p class="txt">
-                                    원목과 대리석의 자연 친화적 인테리어와 남산의 녹음이 어우러진 올 데이 다이닝 공간입니다. 라이브 키친에서 신선한 식재료로 즉석에서 조리한 음식을 맛볼 수 있습니다.
-                                </p>
-                                <div class="timetable-wrap">
-                                    <strong class="flex">
-                                        <span>운영시간 안내</span>
-                                        <span>All Day dining 06:00 ~ 22:00</span>
-                                    </strong>
-                                    <ul class="timetable"> 
-                                        <li>
-                                            <div class="time">아침 뷔페</div>
-                                            <div class="context">
-                                                <p>주중/주말/공휴일 06:00 ~ 10:00</p>
-                                                <span>성인 86,000원 / 어린이 43,000원</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="time">브런치 뷔페</div>
-                                            <div class="context">
-                                                <p>주중 12:00 ~ 14:30</p>
-                                                <span>성인 173,000원 / 어린이 90,000원</span>
-                                                <p>주말/공휴일 1부(11:00 ~13:00), 2부(14:00 ~ 16:00)</p>
-                                                <span>성인 185,000원 / 어린이 93,000원</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="time">저녁 뷔페</div>
-                                            <div class="context">
-                                                <p>월 ~ 목요일 8:00 ~ 21:30</p>
-                                                <p>금 ~ 일요일 1부(17:00 ~19:00), 2부(19:30 ~ 21:30)</p>
-                                                <p>공휴일 1부(17:00 ~19:00), 2부(19:30 ~ 21:30)</p>
-                                                <span>성인 192,000원 / 어린이 96,000원</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <em>* 어린이 : 37개월 이상 ~ 만 12세 이하</em>
-                                    <em>* 10월 1일 (화), 2일 (수) 저녁 뷔페를 2부제로 운영합니다.</em>
-                                </div>
-
-                                <strong>룸 이용안내</strong>
-                                <p class="txt small">
-                                    룸 이용시 별도의 요금이 부과됩니다.<br>
-                                    <span>[Room 1 (5~6인) : 50,000원 &nbsp;/&nbsp; Room 2 (5~6인) : 50,000원 &nbsp;/&nbsp; Room 3 (7~9인) : 50,000원 &nbsp;/&nbsp; Room 4 (10~14인) : 100,000원 &nbsp;/&nbsp; Room 5 (15~20인) : 100,000원]</span> 
-                                </p>
-                                <strong>뷔페 상품권 안내</strong>
-                                <p class="txt small">
-                                    서울신라호텔에서 준비한 더 파크뷰 뷔페 상품권으로 고마운 분들께 감사의 마음을 전하시기 바랍니다.<br>레스토랑 초대권은 두 종류로 준비되어 있습니다.<br>
-                                    - 초대권 1 : 더 파크뷰 뷔페 1인 식사권<br>
-                                    - 초대권 2 : 더 파크뷰 뷔페 1인 식사권 + 페어링 와인 2잔<br>
-                                    <em>* 12월 에는 초대권 사용 시 추가 요금이 발생될 수 있으니 예약 시 문의 주시기 바랍니다.</em> 
-                                </p>
-                            </div>
-                            <ul class="info">
-                                <li class="list">
-                                    <h4>위치</h4>
-                                    <p class="txt">서울신라호텔 1층</p>
-                                </li>
-                                <li class="list">
-                                    <h4>예약 및 문의</h4>
-                                    <p class="txt">Tel&#41; 02-2230-3374</p>
-                                </li>
-                                <li class="list">
-                                    <h4>좌석수</h4>
-                                    <p class="txt">
-                                        총 36석<br>
-                                        룸 1실 (최대 8명 수용 가능하며, 이용 시 별도 요금이 부과됩니다.)
-                                    </p>
-                                </li>
-                            </ul>
-                            <div class="guide">
-                                <div class="list">
-                                    <h4>예약 안내</h4>
-                                    <p class="txt">
-                                        예약 접수 시작일은 '1개월 전 1일' 입니다.<br>
-                                        예&#41; 6월 예약 : 5월 1일 9시부터 가능
-                                    </p>
-                                </div>
-                                <div class="list">
-                                    <h4>공지사항</h4>
-                                    <div class="txt-wrap">
-                                        <p class="txt">
-                                             2024년 7월 12일부로 예약 보증금이 변경되었습니다. <br>
-                                            노쇼에 따른 고객 불편을 방지하고자 보증금 사전결제를 진행하고 있으며 신라리워즈 회원 가입 및 로그인 후 편리하게 온라인 예약 서비스를 이용하시기 바랍니다.
-                                        </p>
-                                        <ul class="txt">
-                                            [예약 보증금 안내]
-                                            <li>예약 시 인원 별 1만원의 예약금이 발생합니다. </li>
-                                        </ul>
-                                        <ul class="txt">
-                                            [예약 취소 / 변경 및 노쇼 안내]
-                                            <li>예약일 2일 전까지는 예약 보증금의 100%가 환불됩니다.</li>
-                                            <li>예약일 1일 전까지 취소 시 예약 보증금의 50%가 환불되며 예약일 당일 취소 또는 노쇼 시 예약 보증금은 환불되지 않습니다.</li>
-                                            <li>예약 변경을 원하실 경우, 기존 예약 취소 후 신규 예약을 진행해 주시기 바랍니다.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="chart-wrap">
+                            <h3>객실별 판매 현황(월별 비교)</h3>
+                            <div class="chart">(차트, 그래프 들어갈 자리)</div>
+                        </div>
+                        <div class="chart-wrap">
+                            <h3>객실별 취소 현황(월별 비교)</h3>
+                            <div class="chart"></div>
                         </div>
                     </div>
+                </div>
+                <div class="cont cont2">
+                    <h2>객실관리</h2>
+                    <div>객실 준비상황 체크</div>
+                    <div>객실 날짜별 금액 세팅(달력식..??)</div>
+                    
+                </div>
+                <div class="cont cont3">
+                    <h2>회원관리</h2>
+                    <div>회원 목록 출력</div>
+                    <div>탈퇴 회원 관리</div>
+                    <div>블랙리스트 관리</div>
+                </div>
+                <div class="cont cont4">
+                    <h2>예약관리</h2>
+                    <div>당일 예약 현황</div>
+                    <div>당일 취소 현황</div>
+                    <div>룸 예약관리 현황</div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- e::관리자메뉴 -->
 
     <footer>
         <div class="center">
@@ -403,13 +326,5 @@
             </div>
         </div>
     </footer>
-
-    <article class="floating-menu">
-        <div class="menu">
-            <a href="../../html/sub/reservation.html" class="circle-btn" title="예약 페이지로 이동">예약</a>
-            <a href="../../html/sub/sub06_03.html" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
-        </div>
-        <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
-    </article>
 </body>
 </html>

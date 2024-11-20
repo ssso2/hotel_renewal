@@ -43,6 +43,28 @@
   line-height: 2;
   position: relative;
 }
+.detail-list .list-section .list-item .item-before {
+  position: relative;
+  padding-left: 15px;
+}
+.detail-list .list-section .list-item .item-before::before {
+  content: "*";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+.detail-list .list-section .list-item .item {
+  position: relative;
+  padding-left: 15px;
+}
+.detail-list .list-section .list-item .item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
 .detail-list .list-section .list-item .offer-room {
   position: absolute;
   width: 180px;
@@ -67,7 +89,7 @@
 }
 .d-day-wrap .d-day {
   width: 100%;
-  padding-left: 50px;
+  padding-left: 20px;
   line-height: 6;
   position: relative;
 }
@@ -114,6 +136,25 @@
   line-height: 1.5;
   padding: 0 20px 20px 20px;
 }
+.pkg-description-wrap .description-main .des-wrap .item-before {
+  position: relative;
+  padding-left: 15px;
+}
+.pkg-description-wrap .description-main .des-wrap .item-before::before {
+  content: "*";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+.pkg-description-wrap .description-main.other-type {
+  width: calc(50% - 20px);
+  overflow: hidden;
+}
+.pkg-description-wrap .description-main.other-type-full {
+  width: 50%;
+  overflow: hidden;
+}
 .pkg-description-wrap .description {
   width: calc(20% - 10px);
   display: block;
@@ -158,12 +199,56 @@
 .pkg-fitness {
   line-height: 2;
 }
+.pkg-fitness .item-bar {
+  position: relative;
+  padding-left: 15px;
+}
+.pkg-fitness .item-bar::before {
+  content: "-";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+.pkg-fitness .item {
+  position: relative;
+  padding-left: 15px;
+}
+.pkg-fitness .item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
 
 .pkg-info {
   line-height: 2;
   margin-top: 50px;
   padding: 20px 0 20px 20px;
   background-color: #f6f6f6;
+}
+.pkg-info .info-txt .item-bar {
+  position: relative;
+  padding-left: 15px;
+}
+.pkg-info .info-txt .item-bar::before {
+  content: "-";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+.pkg-info .info-txt .item {
+  position: relative;
+  padding-left: 15px;
+}
+.pkg-info .info-txt .item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
 }
 .pkg-info .info-txt p {
   margin-top: 20px;
@@ -234,6 +319,8 @@
 
 .lypop-ct img {
   width: 100%;
+  height: 360px;
+  object-fit: cover;
 }
 .lypop-ct div {
   padding-top: 20px;
@@ -270,38 +357,40 @@
     line-height: 2;
   }
   .accordion-description-wrap .accordion-description .head-wrap img {
+    display: block;
     width: 100%;
     aspect-ratio: 1/0.603496;
     object-fit: cover;
   }
-  .accordion-description-wrap .accordion-description .head-wrap .accordion-trigger {
-    display: block;
-    cursor: text;
+  .accordion-description-wrap .accordion-description .head-wrap .slide-text {
     font-weight: 500;
-    font-size: 18px;
-    padding-left: 20px;
+    font-size: 17px;
+    padding: 10px 0 0 20px;
   }
-  .accordion-description-wrap .accordion-description .head-wrap .accordion-trigger .slide-text {
-    display: inline-block;
-    background: none;
-  }
-  .accordion-description-wrap .accordion-description .des-wrap {
+  .accordion-description-wrap .des-wrap {
     display: block;
     box-sizing: border-box;
     width: 100%;
     list-style: none;
-    padding: 10px 20px;
+    padding: 10px 20px 14px 20px;
   }
-  .accordion-description-wrap .accordion-description .des-wrap .des-list {
-    width: 100%;
+  .accordion-description-wrap .des-wrap .item {
     line-height: 1.5;
   }
-  .accordion-description-wrap .accordion-description .accordion {
-    width: 100%;
-    height: 10px;
+  .accordion-description-wrap .des-wrap .item-before {
+    line-height: 1.5;
+    position: relative;
+    padding-left: 15px;
+  }
+  .accordion-description-wrap .des-wrap .item-before::before {
+    content: "*";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 2px;
   }
   .section-title {
-    margin-top: 70px;
+    margin-top: 100px;
     margin-bottom: 32px;
     font-size: 22px;
     font-weight: 600;
@@ -309,6 +398,14 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .detail-list .list-section span {
+    width: 140px;
+  }
+  .detail-list .list-section .list-item {
+    width: calc(100% - 140px);
+    padding-left: 20px;
+    margin-left: 0px;
+  }
   .pkg-header {
     aspect-ratio: 1/0.42957746;
   }
@@ -316,7 +413,8 @@
     font-size: 20px;
   }
   .d-day-wrap {
-    width: 95%;
+    width: 100%;
+    left: 0;
     border-radius: 0px;
     position: fixed;
     z-index: 500;
@@ -327,31 +425,12 @@
     position: relative;
   }
   .d-day-wrap .d-day .d-day-reservation {
-    width: 250px;
+    width: 200px;
     border-radius: 6px;
     line-height: 3;
   }
-  .accordion-description-wrap {
-    display: block;
-  }
   .accordion-description-wrap .accordion-description {
     width: 100%;
-  }
-  .accordion-description-wrap .accordion-description .head-wrap img {
-    width: 100%;
-    aspect-ratio: 1/0.503496;
-    object-fit: cover;
-  }
-  .accordion-description-wrap .accordion-description .head-wrap .accordion-trigger {
-    cursor: pointer;
-    background: url(../img/icon/icn_collps01.png) no-repeat right 20px center;
-    background-size: 9px auto;
-  }
-  .accordion-description-wrap .accordion-description .head-wrap .accordion-trigger.active {
-    background-image: url(../img/icon/icn_collps02.png);
-  }
-  .accordion-description-wrap .accordion-description .des-wrap {
-    display: none;
   }
   .other-event {
     border-top: none;

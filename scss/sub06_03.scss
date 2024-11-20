@@ -218,10 +218,7 @@
 @media screen and (max-width: 768px) {
     .container {
         .board-nav {
-            .post-writer,
-            .post-date {
-                display: none !important;
-            }
+            display: none;
         }
 
         .post {

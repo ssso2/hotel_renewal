@@ -64,6 +64,7 @@
   display: flex;
   border: 2px solid #ddd;
   border-radius: 12px;
+  position: relative;
 }
 
 .pkg-datepicker-box,
@@ -92,48 +93,6 @@
   color: #333333;
   font-size: 1rem;
   border-bottom: 1px solid #ddd;
-}
-
-.daterangepicker {
-  padding: 70px 200px;
-  width: 1420px;
-}
-.daterangepicker.drop-up {
-  margin-top: -10px;
-}
-.daterangepicker .drp-calendar {
-  max-width: none;
-}
-.daterangepicker .drp-calendar.left .calendar-table {
-  padding-right: 150px;
-}
-.daterangepicker .drp-calendar .calendar-table th,
-.daterangepicker .drp-calendar .calendar-table td {
-  font-size: 14px;
-  line-height: 2.5;
-}
-.daterangepicker .drp-calendar .calendar-table td {
-  width: 60px;
-  height: auto;
-}
-.daterangepicker .drp-calendar .calendar-table td.active {
-  border-radius: 50%;
-}
-.daterangepicker .drp-buttons {
-  padding-top: 20px;
-  border: none;
-  border-top: 1px solid #eaeaea;
-  line-height: 1;
-}
-.daterangepicker .drp-buttons .btn {
-  font-size: 18px;
-}
-.daterangepicker .drp-selected {
-  margin-right: 30px;
-  padding: 4px 0;
-  font-size: 20px;
-  color: #000;
-  vertical-align: middle;
 }
 
 .pkg-filter-sort {
@@ -194,6 +153,7 @@
   height: 30px;
   border: 1px solid #ccc;
   text-align: center;
+  cursor: pointer;
 }
 
 .pkg-filter-searchbtn {
@@ -467,11 +427,6 @@
   background-position: 0 -75px;
 }
 
-@media screen and (max-width: 1500px) {
-  .daterangepicker {
-    left: 10% !important;
-  }
-}
 @media screen and (max-width: 1240px) {
   .rec-wrapper .rec-section.none {
     display: none;
@@ -496,17 +451,10 @@
   .pkg-btnbox {
     padding-right: 30px;
   }
-  .daterangepicker {
-    left: 6% !important;
-  }
   .date {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  .event-container .list-item .list-container a .img-wrapper .pkg-rewards {
-    width: 14%;
-    height: 24%;
   }
   .event-container .list-item .list-container a .img-wrapper .pkg-rewards img {
     width: 45%;
@@ -544,6 +492,7 @@
   .pkg-filter-box {
     display: flex;
     flex-direction: column;
+    border: 1px solid #ddd;
   }
   .pkg-datepicker-box,
   .pkg-filter-sort,
@@ -553,23 +502,20 @@
     margin: 10px;
   }
   .date {
-    width: 30%;
+    width: 42%;
     padding-left: 5px;
     color: #333333;
     font-size: 16px;
     border-bottom: 1px solid #ddd;
   }
-  .daterangepicker {
-    left: 8% !important;
-  }
   .pkg-filter-sort .dropdown {
     width: 100%;
   }
   .pkg-filter-sort .dropdown .typebox {
-    width: 30%;
+    width: 42%;
   }
   .pkg-filter-sort .dropdown .dropdown-item-type {
-    width: 30%;
+    width: 42%;
   }
   .pkg-filter-keyword .keword-wrap {
     padding-right: 0%;
@@ -577,7 +523,7 @@
   }
   .pkg-filter-keyword .keword-wrap .keywords li {
     width: auto;
-    font-size: 1.4vw;
+    font-size: 13px;
   }
   .pkg-filter-keyword .keword-wrap .keywords li label {
     width: auto;
@@ -590,8 +536,9 @@
     padding: 20px;
   }
   .event-container .list-item .list-container a .img-wrapper .pkg-rewards {
-    width: 14%;
-    height: 24%;
+    min-width: 56px;
+    min-height: 61px;
+    padding-top: 3%;
   }
   .event-container .list-item .list-container a .img-wrapper .pkg-rewards img {
     width: 45%;
@@ -625,12 +572,18 @@
 }
 
 @media screen and (max-width: 768px) {
+  .rec-wrapper {
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+  }
   .rec-wrapper .rec-section.del {
     display: none;
   }
   .rec-wrapper .rec-section {
-    width: calc((100% - 20px) / 2);
-    aspect-ratio: 1/0.639534;
+    width: 100%;
+    aspect-ratio: 1/0.339534;
+    margin-bottom: 26px;
+    border-radius: 6px;
   }
   .rec-wrapper .rec-section a .txt-wrap h2 {
     font-size: 2.4vw;
@@ -639,6 +592,12 @@
   .rec-wrapper .rec-section a .txt-wrap p {
     position: absolute;
     font-size: 2.1vw;
+  }
+  .pkg-filter-box {
+    border-radius: 6px;
+  }
+  .pkg-filter-box .keywords {
+    font-size: 13px;
   }
   .event-container .list-item .list-container {
     width: 100%;
@@ -651,7 +610,8 @@
   }
   .event-container .list-item .list-container a .img-wrapper .pkg-rewards {
     width: 12%;
-    height: 22%;
+    height: 23%;
+    padding-top: 2%;
   }
   .event-container .list-item .list-container a .img-wrapper .pkg-rewards .reward {
     font-size: 12px;

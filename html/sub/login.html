@@ -35,7 +35,7 @@
             <div class="center">
                 <h1 class="logo">
                     <a href="../index.html">
-                        <img src="../../img/common/logo.png" alt="">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -92,21 +92,22 @@
                         </ul>
                     </li>
                 </ul>
-                    <!-- 비로그인시 -->
-                    <div class="btn-wrap on">
-                        <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                        <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-                    </div>
-                    <!-- 로그인시 -->
-                    <div class="btn-wrap login">
-                        <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
-                            <i class="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </a>
-                        <a href="../../html/index.html" class="logout-btn">로그아웃
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </a>
-                    </div>
+                <!-- 비로그인시 -->
+                <div class="btn-wrap on">
+                    <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                    <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+                </div>
+                <!-- 로그인시 -->
+                <div class="btn-wrap login">
+                    <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
+                        <i class="fa-regular fa-user"></i>
+                        <p>손주혜<span>님</span></p>
+                    </a>
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
                 <!-- 모바일 햄버거 버튼 -->
                 <div class="m_btn">
                     <div class="menu">
@@ -131,7 +132,8 @@
                         <i class="fa-regular fa-user"></i>
                         <p>손주혜<span>님</span></p>
                     </a>
-                    <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </a>
                 </div>
@@ -190,13 +192,12 @@
                     </ul>
                 </li>
             </ul>
-    
         </div>
 
         <!-- 로그인 -->
         <div class="form-wrap">
             <div class="center">
-                <form id="shilla-login" action="#" method="post">
+                <form id="shilla-login" method="post">
                     <div class="login-wrap" id="login-wrap">
                         <h2>로 그 인</h2>
                         <div class="hello">서울 신라호텔에 오신 것을 환영합니다.</div>
@@ -208,8 +209,12 @@
                             <label for="pw">비밀번호 </label>
                             <input type="password" id="pw" maxlength="16" />
                         </div>
-
-                        <button type="button" class="btn-login" onclick="location.href='../index-login.html'">로그인</button>
+                        <div class="part-error">
+                            <p id="error-message" style="color: red; display: none; text-align: center">아이디와 비밀번호를 확인해 주세요.</p>
+                            <p id="error-message2" style="color: red; display: none; text-align: center">패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.</p>
+                            <p id="error-message3" style="color: red; display: none; text-align: center">아이디는 영문자와 숫자만(6글자 이상) 사용 가능합니다.</p>
+                        </div>
+                        <button type="button" class="btn-login" onclick="valuechk()">로그인</button>
 
                         <div class="link-wrap">
                             <a href="../sub/join.html">회원가입</a>
@@ -280,5 +285,43 @@
             </div>
             <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
         </article> -->
+
+        <script>
+            function valuechk() {
+                const userid = document.getElementById('id').value;
+                const userpw = document.getElementById('pw').value;
+                const errorMessage = document.getElementById('error-message');
+                const errorMessage2 = document.getElementById('error-message2');
+                const errorMessage3 = document.getElementById('error-message3');
+                const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%~]).{12,16}$/; // 비밀번호 유효성 검사 정규식
+                const idtype = /^[A-Za-z0-9]{6,}$/; // 아이디 유효성 검사 정규식
+
+                // 모든 에러 메시지 숨기고 시작
+                errorMessage.style.display = 'none';
+                errorMessage2.style.display = 'none';
+                errorMessage3.style.display = 'none';
+
+                // 아이디 또는 비밀번호가 비어 있는지 확인
+                if (userid === '' || userpw === '') {
+                    errorMessage.style.display = 'block'; // 공란일 때 에러 메시지 표시
+                    return; // 함수 종료
+                }
+
+                // 비밀번호 유효성 검사 실패 시
+                if (!pwtype.test(userpw)) {
+                    errorMessage2.style.display = 'block'; // 비밀번호 에러 메시지 표시
+                    return; // 함수 종료
+                }
+
+                // 아이디 유효성 검사 실패 시
+                if (!idtype.test(userid)) {
+                    errorMessage3.style.display = 'block'; // 아이디 에러 메시지 표시
+                    return; // 함수 종료
+                }
+
+                // 위 조건 충족 시
+                location.href = '../index-login.html'; // 페이지 이동
+            }
+        </script>
     </body>
 </html>

@@ -96,7 +96,7 @@
   }
   .content .reservate-info .reservation .reser-room,
   .content .reservate-info .reservation .reser-package {
-    min-width: 180px;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 20px;
@@ -113,13 +113,15 @@
   .content .reservate-info .reservation .reser-package .room img,
   .content .reservate-info .reservation .reser-package .package img {
     position: relative;
-    min-width: 180px;
+    width: 100%;
     background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
     box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   .content .reservate-info .reservation .reser-room .reservation-info,
   .content .reservate-info .reservation .reser-package .reservation-info {

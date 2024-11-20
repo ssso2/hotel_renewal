@@ -92,21 +92,22 @@
                     </ul>
                 </li>
             </ul>
-                <!-- 비로그인시 -->
-                <div class="btn-wrap on">
-                    <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                    <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
-                </div>
-                <!-- 로그인시 -->
-                <div class="btn-wrap login">
-                    <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
-                        <i class="fa-regular fa-user"></i>
-                        <p>손주혜<span>님</span></p>
-                    </a>
-                    <a href="../../html/index.html" class="logout-btn">로그아웃
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    </a>
-                </div>
+            <!-- 비로그인시 -->
+            <div class="btn-wrap on">
+                <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
+                <a href="../../html/sub/login.html" class="login-btn">로그인<i
+                        class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+            </div>
+            <!-- 로그인시 -->
+            <div class="btn-wrap login">
+                <a href="../../html/sub/mypage-new.html" class="user-name-btn" title="마이페이지로 이동">
+                    <i class="fa-regular fa-user"></i>
+                    <p>손주혜<span>님</span></p>
+                </a>
+                <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+            </div>
             <!-- 모바일 햄버거 버튼 -->
             <div class="m_btn">
                 <div class="menu">
@@ -123,7 +124,8 @@
             <!-- 비로그인시 -->
             <div class="btn-wrap on">
                 <a href="../../html/sub/join.html" class="join-btn"><i class="fa-solid fa-user-plus"></i>회원가입</a>
-                <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+                <a href="../../html/sub/login.html" class="login-btn">로그인<i
+                        class="fa-solid fa-arrow-right-to-bracket"></i> </a>
             </div>
             <!-- 로그인시 -->
             <div class="btn-wrap login">
@@ -192,11 +194,9 @@
         </ul>
 
     </div>
-
-    <!-- 본문시작 -->
     <div class="container">
         <div class="center">
-            <div class="sub-title block">
+            <div class="sub-title">
                 <h2>URBAN MORNING</h2>
                 <ul class="location">
                     <li><a href="../../html/index.html">홈</a></li>
@@ -239,10 +239,11 @@
                         <div class="list-section">
                             <span>공통혜택</span>
                             <div class="list-item">
-                                <p>* 어번 아일랜드 Morning 입장 혜택 (이용가능 시간 : 체크인 당일 Moonlight 시간 18:00~22:00)</p>
-                                <p>* F&B크레딧 3만원</p>
-                                <p>17시 체크인</p>
-                                <p>* 체련장(Gym), 실내 수영장 혜택</p>
+                                <p class="item-before">어번 아일랜드 Morning 입장 혜택 (이용가능 시간 : 체크인 당일 Moonlight 시간 18:00~22:00)
+                                </p>
+                                <p class="item-before">F&B크레딧 3만원</p>
+                                <p class="item">17시 체크인</p>
+                                <p class="item-before">체련장(Gym), 실내 수영장 혜택</p>
                             </div>
                         </div>
                     </li>
@@ -250,9 +251,9 @@
                         <div class="list-section">
                             <span>리워즈혜택</span>
                             <div class="list-item">
-                                <p>회원전용상품 예약 시 리워즈 3만 포인트(1박 당)를 추가 제공합니다.</p>
-                                <p>추가 포인트는 하단 링크를 통한 온라인 예약 시에만 제공됩니다.</p>
-                                <p>(현재페이지 또는 전화 예약 시 적립 불가)</p>
+                                <p class="item-before">회원전용상품 예약 시 리워즈 3만 포인트(1박 당)를 추가 제공합니다.</p>
+                                <p class="item-before">추가 포인트는 하단 링크를 통한 온라인 예약 시에만 제공됩니다.</p>
+                                <p class="item-before">(현재페이지 또는 전화 예약 시 적립 불가)</p>
                             </div>
                         </div>
                     </li>
@@ -268,7 +269,7 @@
             </div>
             <div class="d-day-wrap">
                 <div class="d-day">
-                    마감까지 5일 8시간 0분 남음
+                    마감까지 <span id="d-day-timer"></span>남음
                     <a href="../../html/sub/reservation.html">
                         <div class="d-day-reservation">지금 바로 예약하기</div>
                     </a>
@@ -280,84 +281,84 @@
                 <div class="accordion-description">
                     <div class="head-wrap">
                         <img src="../../img/sub/offerMain3.jpg" alt="">
-                        <a href="javascript:void(0);" class="accordion-trigger">
-                            <p class="slide-text">Urban Island – Moonlight Swimming</p>
-                        </a>
+                        <p class="slide-text">Urban Island – Moonlight Swimming</p>
                     </div>
                     <ul class="des-wrap">
-                        <li class="des-list">도심 속 휴식의 섬 어번 아일랜드에서 아름다운 달빛 아래 유유히 즐기는 문라이트 스위밍
+                        <li class="item-before">도심 속 휴식의 섬 어번 아일랜드에서 아름다운 달빛 아래 유유히 즐기는 문라이트 스위밍
                         </li>
-                        <li class="des-list">* 어번 아일랜드 Moonlight 운영 시간 : 체크인 당일 18:00~22:00</li>
+                        <li class="item-before">어번 아일랜드 Moonlight 운영 시간 : 체크인 당일 18:00~22:00</li>
                     </ul>
-                    <div class="accordion"></div>
                 </div>
                 <div class="accordion-description">
                     <div class="head-wrap">
                         <img src="../../img/sub/offerJoyful.jpg" alt="">
-                        <a href="javascript:void(0);" class="accordion-trigger">
-                            <p class="slide-text">F&B 크레딧 3만원</p>
-                        </a>
+                        <p class="slide-text">F&B 크레딧 3만원</p>
                     </div>
                     <ul class="des-wrap">
-                        <li class="des-list">서울신라호텔의 식음 업장 (객실 내 미니바 제외) 및 룸 서비스에서 사용할 수 있는 F&B Credit 3만원
+                        <li class="item">서울신라호텔의 식음 업장 (객실 내 미니바 제외) 및 룸 서비스에서 사용할 수 있는 F&B Credit 3만원
                         </li>
-                        <li class="des-list">* 투숙 중에 한하여 사용 가능합니다.</li>
-                        <li class="des-list"> * 파인 다이닝(팔선, 아리아께, 콘티넨탈, 라연) 및 더 파크뷰 이용 시, 반드시 사전 예약 바랍니다.</li>
+                        <li class="item-before">투숙 중에 한하여 사용 가능합니다.</li>
+                        <li class="item-before">파인 다이닝(팔선, 아리아께, 콘티넨탈, 라연) 및 더 파크뷰 이용 시, 반드시 사전 예약 바랍니다.</li>
                     </ul>
-                    <div class="accordion"></div>
                 </div>
             </div>
             <!-- 안내사항 -->
             <div class="section-title">피트니스 클럽 이용안내</div>
             <ul class="pkg-fitness">
-                <li>- 체련장(Gym), 실내 수영장, 실내 사우나(유료시설)는 매월 3번째 수요일 정기 휴무입니다. (세 번째 수요일이 공휴일일 경우, 네 번째 수요일로 변경됩니다.)
+                <li class="item-bar">체련장(Gym), 실내 수영장, 실내 사우나(유료시설)는 매월 3번째 수요일 정기 휴무입니다. (세 번째 수요일이 공휴일일 경우, 네 번째 수요일로
+                    변경됩니다.)
                 </li>
-                <li>- 체련장은 만 16세 이상, 실내 사우나는 만 13세 이상부터 이용 가능합니다.</li>
+                <li class="item-bar"> 체련장은 만 16세 이상, 실내 사우나는 만 13세 이상부터 이용 가능합니다.</li>
                 </li>
-                <li>- 실내 수영장은 성인 고객 전용 시설로서, 안전을 위해 만 13세 이상인 고객에 한해 입장 가능합니다.</li>
-                <li>(단, 주말 및 공휴일에는 성인 보호자의 보호 하에 만 13세 미만인 고객이 입장 가능하며, 신장 140cm 미만인 고객은 성인 보호자의 보호 하에 구명조끼 착용 시 입장
+                <li class="item-bar">실내 수영장은 성인 고객 전용 시설로서, 안전을 위해 만 13세 이상인 고객에 한해 입장 가능합니다.</li>
+                <li class="item">(단, 주말 및 공휴일에는 성인 보호자의 보호 하에 만 13세 미만인 고객이 입장 가능하며, 신장 140cm 미만인 고객은 성인 보호자의 보호 하에 구명조끼
+                    착용 시 입장
                     가능합니다.)
-                <li> - 수영장에서 다이빙은 금지되어 있습니다.</li>
-                <li>- 적정 인원 초과 시 이용을 위해 대기하실 수 있습니다.</li>
+                <li class="item-bar">수영장에서 다이빙은 금지되어 있습니다.</li>
+                <li class="item-bar">적정 인원 초과 시 이용을 위해 대기하실 수 있습니다.</li>
             </ul>
             <div class="section-title">어번 아일랜드(야외 수영장) 이용 안내</div>
             <ul class="pkg-fitness">
                 <li>어번 아일랜드 운영 시간 :</li>
                 <li>[8월] 09:00 ~ 22:00 (8월 1~3일, 8월 15~17일 09:00~19:00)</li>
                 <li>[9월] 09:30~22:00 (9월 6~7일 09:30~19:00)</li>
-                <li>- 성인풀, 키즈풀 및 자쿠지 등의 시설 이용 시 현장 라이프 가드 직원의 안내를 받으시기 바랍니다.</li>
-                <li>- 신장 140cm 미만의 고객은 성인 보호자의 보호가 필요하며, 성인풀 이용 시에는 반드시 구명조끼를 착용하셔야 합니다.</li>
-                <li>- 선베드는 객실당 2개씩 제공되며, 일부 선베드는 전용 패키지로 예약한 고객에게 우선 배정됩니다.</li>
-                <li>- 36개월 미만 유아는 방수 기저귀 착용 후 이용 가능합니다.</li>
-                <li>- 지름 1m 이내 사이즈의 튜브만 반입이 허용되며, 키즈풀에서만 사용 가능합니다.</li>
+                <li class="item-bar">성인풀, 키즈풀 및 자쿠지 등의 시설 이용 시 현장 라이프 가드 직원의 안내를 받으시기 바랍니다.</li>
+                <li class="item-bar">신장 140cm 미만의 고객은 성인 보호자의 보호가 필요하며, 성인풀 이용 시에는 반드시 구명조끼를 착용하셔야 합니다.</li>
+                <li class="item-bar">선베드는 객실당 2개씩 제공되며, 일부 선베드는 전용 패키지로 예약한 고객에게 우선 배정됩니다.</li>
+                <li class="item-bar">36개월 미만 유아는 방수 기저귀 착용 후 이용 가능합니다.</li>
+                <li class="item-bar">지름 1m 이내 사이즈의 튜브만 반입이 허용되며, 키즈풀에서만 사용 가능합니다.</li>
                 <li>- 적정 인원 초과 시 이용을 위해 대기하실 수 있습니다.</li>
-                <li>- 강우 및 태풍, 한파 등과 같은 기상 상황에 따라 어번 아일랜드 이용이 제한될 수 있습니다.</li>
-                <li>- 이용 관련 보다 자세한 내용은 아래의 어번 아일랜드 링크를 클릭하시면 확인 가능합니다.</li>
+                <li class="item-bar">강우 및 태풍, 한파 등과 같은 기상 상황에 따라 어번 아일랜드 이용이 제한될 수 있습니다.</li>
+                <li class="item-bar">이용 관련 보다 자세한 내용은 아래의 어번 아일랜드 링크를 클릭하시면 확인 가능합니다.</li>
             </ul>
             <div class="pkg-info">
                 <p>안내사항</p>
                 <ul class="info-txt">
-                    <li>- 상기 이미지들은 연출된 예로 실제와 다를 수 있습니다.
+                    <li class="item-bar">상기 이미지들은 연출된 예로 실제와 다를 수 있습니다.
                     <li>
-                    <li>- 본 상품은 카드사 할인 등의 중복 할인 혜택이 적용되지 않습니다.</li>
-                    <li>- 본 상품은 성인 2인 1실 기준이며, 요금에는 10% 부가가치세가 부과됩니다.</li>
-                    <li>- 본 상품 투숙 시 투숙 인원을 추가할 수 없습니다.</li>
-                    <li>- Check-in은 오후 4시, Check-out은 오후 1시까지입니다.</li>
-                    <li>- 패키지에 포함된 혜택 및 선물은 1박당 1회(또는 1개) 제공됩니다.</li>
-                    <li>- 주류는 성인 고객에 한해 이용 가능합니다.</li>
-                    <li>- 호텔 부대시설은 감염병 예방법, 재난 안전법 등 관련 법령 및 방역당국 등의 규제, 조치 사항 등에 따라 사전 고지 없이 이용이 제한되거나 변경될 수
+                    <li class="item-bar">본 상품은 카드사 할인 등의 중복 할인 혜택이 적용되지 않습니다.</li>
+                    <li class="item-bar">본 상품은 성인 2인 1실 기준이며, 요금에는 10% 부가가치세가 부과됩니다.</li>
+                    <li class="item-bar">본 상품 투숙 시 투숙 인원을 추가할 수 없습니다.</li>
+                    <li class="item-bar">Check-in은 오후 4시, Check-out은 오후 1시까지입니다.</li>
+                    <li class="item-bar">패키지에 포함된 혜택 및 선물은 1박당 1회(또는 1개) 제공됩니다.</li>
+                    <li class="item-bar">주류는 성인 고객에 한해 이용 가능합니다.</li>
+                    <li class="item-bar">호텔 부대시설은 감염병 예방법, 재난 안전법 등 관련 법령 및 방역당국 등의 규제, 조치 사항 등에 따라 사전 고지 없이 이용이 제한되거나
+                        변경될 수
                         있습니다.</li>
 
                     <p><b>□ 취소/변경 및 노쇼(No-show) 안내</b></p>
-                    <li>- 숙박 예정일 2일 전 18시까지는 위약금 없이 취소 및 변경 가능합니다.</li>
-                    <li>- 숙박 예정일 1일 전 18시까지 취소 및 변경 시,
-                    <li>· 성수기(5월~10월, 12월 24일~31일) : 최초 1일 숙박 요금의 80% 위약금으로 부과</li>
-                    <li>· 비수기(성수기 외 기간) : 최초 1일 숙박 요금의 10% 위약금으로 부과</li>
-                    <li>- 숙박 예정일 1일 전 18시 이후 취소, 변경 및 노쇼(No-show) 발생 시</li>
-                    <li>· 성수기(5월~10월, 12월 24일~31일) 주중에는 최초 1일 숙박 요금의 80%, 주말(금, 토, 공휴일 전일)에는 최초 1일 숙박 요금의 90%가 위약금으로
+                    <li class="item-bar">숙박 예정일 2일 전 18시까지는 위약금 없이 취소 및 변경 가능합니다.</li>
+                    <li class="item-bar">숙박 예정일 1일 전 18시까지 취소 및 변경 시,
+                    <li class="item">· 성수기(5월~10월, 12월 24일~31일) : 최초 1일 숙박 요금의 80% 위약금으로 부과</li>
+                    <li class="item">· 비수기(성수기 외 기간) : 최초 1일 숙박 요금의 10% 위약금으로 부과</li>
+                    <li class="item-bar">숙박 예정일 1일 전 18시 이후 취소, 변경 및 노쇼(No-show) 발생 시</li>
+                    <li class="item">· 성수기(5월~10월, 12월 24일~31일) 주중에는 최초 1일 숙박 요금의 80%, 주말(금, 토, 공휴일 전일)에는 최초 1일 숙박 요금의
+                        90%가 위약금으로
                         부과
                     </li>
-                    <li>· 비수기(성수기 외 기간) 주중에는 최초 1일 숙박 요금의 20%, 주말(금, 토, 공휴일 전일)에는 최초 1일 숙박 요금의 30%가 위약금으로 부과</li>
+                    <li class="item">· 비수기(성수기 외 기간) 주중에는 최초 1일 숙박 요금의 20%, 주말(금, 토, 공휴일 전일)에는 최초 1일 숙박 요금의 30%가 위약금으로
+                        부과
+                    </li>
                 </ul>
             </div>
             <!-- 하단 다른패키지 -->
@@ -406,9 +407,6 @@
             </div>
         </div>
     </div>
-    <!-- 본문 종료 -->
-
-    <!-- 푸터시작 -->
     <footer>
         <div class="center">
             <div class="f_menu">
@@ -457,17 +455,14 @@
             </div>
         </div>
     </footer>
-    <!-- 푸터종료 -->
 
-    <!-- 플로팅메뉴 -->
-    <article class="floating-menu bottom-bar">
+    <article class="floating-menu">
         <div class="menu">
             <a href="../../html/sub/reservation.html" class="circle-btn" title="예약 페이지로 이동">예약</a>
             <a href="../../html/sub/sub06_03.html" class="circle-btn" title="고객문의 게시판으로 이동">문의</a>
         </div>
         <a href="#" class="top-btn" title="최상단으로 이동">TOP</a>
     </article>
-    <!-- 플로팅 메뉴 종료 -->
 </body>
 
 </html>

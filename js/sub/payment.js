@@ -1,27 +1,26 @@
 $(function(){
     // 어른 조식 +,- 클릭
-    $(".adult > .button-wrap > .btn-down").click(function(){
+    $(".breakfast > .adult > .button-wrap > .btn-down").click(function(){
         let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
-        let currentNumber = parseInt($(".adult > .button-wrap > .num").text());
+        let currentNumber = parseInt($(".breakfast > .adult > .button-wrap > .num").text());
         if(currentNumber > 0){
             currentNumber -= 1;
             totalPrice -= 60000;
         }
-        $(".adult > .button-wrap > .num").text(currentNumber);
+        $(".breakfast > .adult > .button-wrap > .num").text(currentNumber);
         $(".total-wrap > .total > .total-price").text(totalPrice);
     })
-    $(".adult > .button-wrap > .btn-up").click(function(){
+    $(".breakfast > .adult > .button-wrap > .btn-up").click(function(){
         let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());
-        let memberNumber = parseInt($(".adult > .mem-num").text());
-        let currentNumber = parseInt($(".adult > .button-wrap > .num").text());
+        let memberNumber = parseInt($(".rsv-info > .adult > .mem-num").text());
+        let currentNumber = parseInt($(".breakfast > .adult > .button-wrap > .num").text());
         if(currentNumber < memberNumber){
             currentNumber += 1;
             totalPrice += 60000;
         }
-        $(".adult >  .button-wrap > .num").text(currentNumber);
+        $(".breakfast > .adult > .button-wrap > .num").text(currentNumber);
         $(".total-wrap > .total > .total-price").text(totalPrice);
     })
-
     // 어린이 조식 +,- 클릭
     $(".child > .button-wrap > .btn-down").click(function(){
         let totalPrice = parseInt($(".total-wrap > .total > .total-price").text());

@@ -34,8 +34,8 @@
             <div class="gnbbg"></div>
             <div class="center">
                 <h1 class="logo">
-                    <a href="#self">
-                        <img src="../../img/common/logo.png" alt="">
+                    <a href="../index-login.html">
+                        <img src="../../img/common/logo.png" alt="" />
                     </a>
                 </h1>
                 <ul class="gnb">
@@ -98,12 +98,13 @@
                     <a href="../../html/sub/login.html" class="login-btn">로그인<i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
                 </div>
                 <!-- 로그인시 -->
-                <div class="btn-wrap login ">
+                <div class="btn-wrap login">
                     <a href="../../html/sub/mypage.html" class="user-name-btn" title="마이페이지로 이동">
                         <i class="fa-regular fa-user"></i>
                         <p>손주혜<span>님</span></p>
                     </a>
-                    <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </a>
                 </div>
@@ -131,7 +132,8 @@
                         <i class="fa-regular fa-user"></i>
                         <p>손주혜<span>님</span></p>
                     </a>
-                    <a href="../../html/index.html" class="logout-btn">로그아웃
+                    <a href="../../html/index.html" class="logout-btn"
+                        >로그아웃
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </a>
                 </div>
@@ -190,88 +192,104 @@
                     </ul>
                 </li>
             </ul>
-
         </div>
 
         <div class="form-wrap">
             <div class="center">
-                <form id="shilla-join" action="#" method="post">
+                <form id="shilla-join" method="post">
                     <div class="join-container">
                         <h3 class="info-title">개인정보 입력</h3>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="ko-name">국문 이름 <font color="#F00">*</font> </label>
-                                <input type="text" id="ko-name" placeholder="홍길동" />
+                                <div class="input-wrap">
+                                    <input type="text" id="ko-name" minlength="2" maxlength="5" placeholder="홍길동" />
+                                    <span class="error-message" id="koname-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="koname-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
-                                <label for="en-name">영문 이름</label>
-                                <div class="eng">
-                                    <input type="text" id="firstname" placeholder="First name" class="name-input" />
-                                    <input type="text" id="lastname" placeholder="Last name" class="name-input" />
+                                <label for="en-name">영문 이름 <font color="#F00">*</font> </label>
+                                <div class="input-wrap">
+                                    <div class="eng">
+                                        <input type="text" id="firstname" placeholder="First name" class="name-input" />
+                                        <input type="text" id="lastname" placeholder="Last name" class="name-input" />
+                                    </div>
+                                    <span class="error-message" id="enname-error"></span>
                                 </div>
                             </div>
-                            <span class="error-message" id="enname-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="birth">생년월일</label>
-                                <div class="birth">
-                                    <select name="yy" id="year"></select>
-                                    <select name="mm" id="month"></select>
-                                    <select name="dd" id="day"></select>
+                                <div class="input-wrap">
+                                    <div class="birth">
+                                        <select name="yy" id="year"></select>
+                                        <select name="mm" id="month"></select>
+                                        <select name="dd" id="day"></select>
+                                    </div>
+                                    <span class="error-message" id="birth-error"></span>
                                 </div>
                             </div>
-                            <span class="error-message" id="birth-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="pid">아이디 <font color="#F00">*</font></label>
-                                <input type="text" id="pid" minlength="6" placeholder="영문자, 숫자로 구성 (6자 이상)" />
-                                <button type="button" id="id-chk">중복확인</button>
+                                <div class="input-wrap">
+                                    <input type="text" id="pid" minlength="6" placeholder="영문자, 숫자로 구성 (6자 이상)" />
+                                    <button type="button" id="id-chk" data-lybtn="pop-using">중복확인</button>
+                                    <span class="error-message" id="id-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="id-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="pw">패스워드 <font color="#F00">*</font></label>
-                                <input type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                <div class="input-wrap">
+                                    <input type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                    <span class="error-message" id="pw-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="pw-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="pwchk">패스워드확인 <font color="#F00">*</font></label>
-                                <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                <div class="input-wrap">
+                                    <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                    <span class="error-message" id="pwchk-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="pwchk-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="tel">연락처 <font color="#F00">*</font></label>
-                                <div class="tel-num">
-                                    <select name="start" id="start"></select>
-                                    - <input type="text" id="middle" minlength="3" maxlength="4" /> - <input type="text" id="last" maxlength="4" />
+                                <div class="input-wrap">
+                                    <div class="tel-num">
+                                        <select name="start" id="start"></select>
+                                        <input type="text" id="middle" maxlength="4" oninput="maxLengthCheck(this)" />
+                                        <input type="text" id="last" maxlength="4" oninput="maxLengthCheck(this)" />
+                                        <span class="error-message" id="tel-error"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <span class="error-message" id="tel-error"></span>
                         </div>
 
                         <div class="info-group">
                             <div class="input-container">
                                 <label for="mail">이메일 <font color="#F00">*</font></label>
-                                <input type="text" id="mail" placeholder="honggildong@naver.com" />
+                                <div class="input-wrap">
+                                    <input type="text" id="mail" placeholder="honggildong@naver.com" />
+                                    <span class="error-message" id="mail-error"></span>
+                                </div>
                             </div>
-                            <span class="error-message" id="mail-error"></span>
                         </div>
 
                         <div class="info-group">
@@ -369,6 +387,9 @@
                 }
             });
 
+            let idchk = false;
+            let valid = false;
+
             document.getElementById('submit').addEventListener('click', function () {
                 const koname = document.getElementById('ko-name').value.trim();
                 const firstname = document.getElementById('firstname').value.trim();
@@ -381,32 +402,43 @@
                 const lastNum = document.getElementById('last').value.trim();
                 const mail = document.getElementById('mail').value.trim();
 
-                let valid = true; // 유효성 초기값은 true
-
                 // 오류 메시지 초기화
                 const errorMessages = document.querySelectorAll('.error-message');
                 errorMessages.forEach(message => (message.textContent = ''));
 
-                // 이름 유효성 검사
+                // 국문 이름 유효성 검사
+                const konametype = /^[가-힣]{2,5}$/;
                 if (!koname) {
-                    document.getElementById('koname-error').textContent = '이름을 입력하세요.';
+                    document.getElementById('koname-error').textContent = '국문 이름을 입력하세요.';
                     valid = false;
+                } else if (!konametype.test(koname)) {
+                    document.getElementById('koname-error').textContent = '국문 이름은 한글(2~5자)만 사용 가능합니다.';
+                    valid = false;
+                } else if (konametype.test(koname)) {
+                    document.getElementById('koname-error').textContent = '';
+                    valid = true;
                 }
 
-                // 아이디 유효성 검사
-                const idtype = /^[A-Za-z0-9]+$/; // 수정된 정규 표현식
-                if (!pid) {
-                    document.getElementById('id-error').textContent = '아이디를 입력하세요.';
+                // 영문 이름 유효성 검사
+                const ennametype = /^[A-Za-z]+$/;
+                if (!(firstname && lastname)) {
+                    document.getElementById('enname-error').textContent = '영문 이름을 입력하세요.';
                     valid = false;
-                } else if (pid.length < 6) {
-                    document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
+                } else if (!(ennametype.test(firstname) && ennametype.test(lastname))) {
+                    document.getElementById('enname-error').textContent = '영문 이름은 영어만 사용 가능합니다.';
                     valid = false;
-                } else if (!idtype.test(pid)) {
-                    document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용 가능합니다.';
+                } else if (ennametype.test(firstname) && ennametype.test(lastname)) {
+                    document.getElementById('enname-error').textContent = '';
+                    valid = true;
+                }
+
+                // 아이디 유효성 검사는 모달(중복확인)에서 진행 -- 아이디 중복확인을 안했을때
+                if (!idchk) {
+                    document.getElementById('id-error').textContent = '아이디 중복확인을 해주세요.';
                     valid = false;
-                } else if (!idchk) {
-                    document.getElementById('id-error').textContent = '중복확인을 해주세요.';
-                    valid = false;
+                } else {
+                    document.getElementById('id-error').textContent = '';
+                    valid = true;
                 }
 
                 // 패스워드 유효성 검사
@@ -417,6 +449,9 @@
                 } else if (!pwtype.test(pw)) {
                     document.getElementById('pw-error').textContent = '패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.';
                     valid = false;
+                } else if (pwtype.test(pw)) {
+                    document.getElementById('pw-error').textContent = '';
+                    valid = true;
                 }
 
                 if (!pwchk) {
@@ -425,6 +460,9 @@
                 } else if (pwchk !== pw) {
                     document.getElementById('pwchk-error').textContent = '패스워드가 일치하지 않습니다.';
                     valid = false;
+                } else if (pwchk == pw) {
+                    document.getElementById('pwchk-error').textContent = '';
+                    valid = true;
                 }
 
                 // 연락처 유효성 검사
@@ -437,35 +475,89 @@
                     const isLastValid = /^\d{4}$/.test(lastNum);
 
                     if (!isMiddleValid || !isLastValid) {
-                        document.getElementById('tel-error').textContent = isStartNum010 ? '연락처의 자리수를 확인하세요. (중간 번호는 4자리여야 합니다.)' : '연락처의 자리수를 확인하세요. (중간 번호는 3~4자리, 마지막 번호는 4자리여야 합니다.)';
+                        document.getElementById('tel-error').textContent = isStartNum010 ? '연락처의 자리수를 확인하세요.' : '연락처의 자리수를 확인하세요.';
                         valid = false;
+                    } else if (isMiddleValid && isLastValid) {
+                        document.getElementById('tel-error').textContent = '';
+                        valid = true;
                     }
                 }
 
                 // 이메일 유효성 검사
-                const mailtype = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+                const mailtype = /^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
                 if (!mail) {
                     document.getElementById('mail-error').textContent = '이메일을 입력하세요.';
                     valid = false;
                 } else if (!mailtype.test(mail)) {
                     document.getElementById('mail-error').textContent = '정확한 이메일 주소를 입력하세요.';
                     valid = false;
+                } else if (mailtype.test(mail)) {
+                    document.getElementById('mail-error').textContent = '';
+                    valid = true;
                 }
 
                 // 모든 유효성 검사 통과 시
                 if (valid) {
-                    alert('신라리워즈 가입을 환영합니다.');
                     setTimeout(function () {
                         window.location.href = 'welcome.html'; // 이동할 홈페이지 URL로 변경
                     }, 100);
                 }
             });
 
-            let idchk = false;
+            // 아이디 유효성 검사
+            const idtype = /^[A-Za-z0-9]{6,}$/;
             document.getElementById('id-chk').addEventListener('click', function () {
-                alert('중복확인이 완료되었습니다.');
-                idchk = true;
+                if (document.getElementById('pid').value.trim() === 'gagaclub') {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '현재 사용중인 아이디 입니다.<br> 다른 아이디를 사용해주세요.';
+                    idchk = false;
+                    valid = false;
+                    return;
+                } else if (!document.getElementById('pid').value.trim()) {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '아이디를 입력하세요.';
+                    document.getElementById('id-error').textContent = '아이디를 입력하세요.';
+                    idchk = false;
+                    valid = false;
+                    return;
+                } else if (document.getElementById('pid').value.trim().length < 6) {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '아이디는 6글자 이상이어야 합니다.';
+                    document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
+                    idchk = false;
+                    valid = false;
+                    return;
+                } else if (!idtype.test(document.getElementById('pid').value.trim())) {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '아이디는 영문자와 숫자만 사용 가능합니다.';
+                    document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용 가능합니다.';
+                    idchk = false;
+                    valid = false;
+                    return;
+                } else {
+                    document.querySelector('.pop-using .modal-txt').innerHTML = '사용가능한 아이디입니다.';
+                    document.getElementById('id-error').textContent = '';
+                    document.getElementById('pid').setAttribute('readonly', true);
+                    valid = true;
+                    idchk = true;
+                }
             });
+
+            function maxLengthCheck(object) {
+                object.value = object.value.replace(/[^0-9]/g, '');
+            }
         </script>
+
+        <div class="lypop pop-using" data-lyOpen="pop-using" tabindex="0">
+            <div class="lypop-wp min">
+                <div class="lypop-content">
+                    <div class="lypop-title">
+                        <strong>중복확인</strong>
+                    </div>
+                    <div class="lypop-ct">
+                        <p class="modal-txt"></p>
+                        <div class="btn-wrap type5">
+                            <button class="btn btn-04" data-lyClose="pop-using"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

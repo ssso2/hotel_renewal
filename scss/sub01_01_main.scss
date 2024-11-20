@@ -75,6 +75,7 @@
     display: flex;
     border: 2px solid #ddd;
     border-radius: 12px;
+    position: relative;
 }
 .pkg-datepicker-box,
 .pkg-filter-sort,
@@ -99,53 +100,7 @@
     font-size: 1rem;
     border-bottom: 1px solid #ddd;
 }
-// daterangepicker 공통
-.daterangepicker {
-    padding: 70px 200px;
-    width: 1420px;
-    &.drop-up {
-        margin-top: -10px;
-    }
-    .drp-calendar {
-        max-width: none;
-        &.left {
-            .calendar-table {
-                padding-right: 150px;
-            }
-        }
-        .calendar-table {
-            th,
-            td {
-                font-size: 14px;
-                line-height: 2.5;
-            }
-            td {
-                width: 60px;
-                height: auto;
-                &.active {
-                    border-radius: 50%;
-                }
-            }
-        }
-    }
 
-    .drp-buttons {
-        padding-top: 20px;
-        border: none;
-        border-top: 1px solid #eaeaea;
-        line-height: 1;
-        .btn {
-            font-size: 18px;
-        }
-    }
-    .drp-selected {
-        margin-right: 30px;
-        padding: 4px 0;
-        font-size: 20px;
-        color: #000;
-        vertical-align: middle;
-    }
-}
 .pkg-filter-sort {
     flex-grow: 1;
 }
@@ -201,6 +156,7 @@
     height: 30px;
     border: 1px solid #ccc;
     text-align: center;
+    cursor: pointer;
 }
 
 .pkg-filter-searchbtn {
@@ -468,9 +424,9 @@
 
 // 반응형
 @media screen and (max-width: 1500px) {
-    .daterangepicker {
-        left: 10% !important;
-    }
+    // .daterangepicker {
+    //     left: 10% !important;
+    // }
 }
 // 태블릿
 @media screen and (max-width: 1240px) {
@@ -504,9 +460,9 @@
     .pkg-btnbox {
         padding-right: 30px;
     }
-    .daterangepicker {
-        left: 6% !important;
-    }
+    // .daterangepicker {
+    //     left: 6% !important;
+    // }
     .date {
         @include ellipsis();
     }
@@ -516,9 +472,6 @@
                 a {
                     .img-wrapper {
                         .pkg-rewards {
-                            width: 14%;
-                            height: 24%;
-                            // font-size: 0.7rem;
                             img {
                                 width: 45%;
                                 height: 50%;
@@ -570,6 +523,7 @@
     .pkg-filter-box {
         display: flex;
         flex-direction: column;
+        border: 1px solid #ddd;
     }
     .pkg-datepicker-box,
     .pkg-filter-sort,
@@ -579,23 +533,21 @@
         margin: 10px;
     }
     .date {
-        width: 30%;
+        width: 42%;
         padding-left: 5px;
         color: #333333;
         font-size: 16px;
         border-bottom: 1px solid #ddd;
     }
-    .daterangepicker {
-        left: 8% !important;
-    }
+
     .pkg-filter-sort {
         .dropdown {
             width: 100%;
             .typebox {
-                width: 30%;
+                width: 42%;
             }
             .dropdown-item-type {
-                width: 30%;
+                width: 42%;
             }
         }
     }
@@ -606,7 +558,7 @@
             .keywords {
                 & li {
                     width: auto;
-                    font-size: 1.4vw;
+                    font-size: 13px;
                     label {
                         width: auto;
                         padding: 0 20px;
@@ -627,9 +579,9 @@
                 a {
                     .img-wrapper {
                         .pkg-rewards {
-                            width: 14%;
-                            height: 24%;
-                            // font-size: 0.7rem;
+                            min-width: 56px;
+                            min-height: 61px;
+                            padding-top: 3%;
                             img {
                                 width: 45%;
                                 height: 50%;
@@ -682,12 +634,16 @@
 // 모바일
 @media screen and (max-width: 768px) {
     .rec-wrapper {
+        flex-wrap: wrap;
+        margin-bottom: 0px;
         .rec-section.del {
             display: none;
         }
         .rec-section {
-            width: calc((100% - 20px) / 2);
-            aspect-ratio: 1/0.639534;
+            width: 100%;
+            aspect-ratio: 1/0.339534;
+            margin-bottom: 26px;
+            border-radius: 6px;
             a {
                 .txt-wrap {
                     h2 {
@@ -702,6 +658,13 @@
             }
         }
     }
+    .pkg-filter-box {
+        border-radius: 6px;
+        .keywords {
+            font-size: 13px;
+        }
+    }
+
     .event-container {
         .list-item {
             .list-container {
@@ -714,7 +677,8 @@
                         overflow: hidden;
                         .pkg-rewards {
                             width: 12%;
-                            height: 22%;
+                            height: 23%;
+                            padding-top: 2%;
                             .reward {
                                 font-size: 12px;
                             }
