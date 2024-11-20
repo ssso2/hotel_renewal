@@ -71,7 +71,7 @@
   display: flex;
   overflow: hidden;
 }
-.container .search a {
+.container .search .search-btn {
   height: 100%;
 }
 .container .search input {
@@ -170,7 +170,7 @@
     display: flex;
     overflow: hidden;
   }
-  .container .search a {
+  .container .search .search-btn {
     height: 100%;
   }
   .container .search input {
