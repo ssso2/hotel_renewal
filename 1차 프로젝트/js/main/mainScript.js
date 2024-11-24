@@ -5,6 +5,7 @@ const mainHeader = document.querySelector(".main-header header");
 const gnb = document.querySelector(".gnb");
 const gnbBg = document.querySelector(".gnbbg");
 const gnb1Depth = document.querySelectorAll(".gnb > li");
+
 const mainCont1 = document.querySelector("main > .cont1");
 const mainLogo = document.querySelector(".main-header .logo img");
 // 모바일메뉴
