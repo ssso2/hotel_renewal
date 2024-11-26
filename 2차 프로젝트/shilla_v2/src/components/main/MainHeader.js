@@ -82,7 +82,7 @@ const MainHeader = () => {
                 <div className="center">
                     <h1 className="logo">
                         <Link to='/'>
-                            <img src="img/common/logo.png" alt=""/>
+                            <img src="img/common/logo-w.png" alt=""/>
                         </Link>
                     </h1>
                     <ul className="gnb"  >
