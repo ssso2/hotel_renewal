@@ -64,10 +64,10 @@ const MainHeader = () => {
             title : '고객센터',
             gnbMenu : [
                 {link : '/info', text : '연락처'},
+                {link : '/notice', text : '공지사항'},
                 {link : '/faq', text : 'FAQ'},
                 {link : '/board', text : '문의하기'},
-                {link : '/notice', text : '공지사항'},
-                {link : '/review', text : '리뷰'},
+                // {link : '/review', text : '리뷰'},
                 {link : '/ocation', text : '오시는길'},
             ]
         },
