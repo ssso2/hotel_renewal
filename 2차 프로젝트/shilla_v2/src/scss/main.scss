@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-@import url(./reset.css); 
-@import "_response.scss";
-@import "_color.scss";
-@import "_mixin.scss";
 
 .main-header {
     header {
@@ -78,10 +74,10 @@ main {
             position: relative;
             color: #fff;
             &.slide1 {
-                background: url(../img/main/main-slide-1.jpg)no-repeat center / cover;
+                background: url(../../public/img/main/main-slide-1.jpg)no-repeat center / cover;
             }
             &.slide2 {
-                background: url(../img/main/main-slide-2.jpg)no-repeat center / cover;
+                background: url(../../public/img/main/main-slide-2.jpg)no-repeat center / cover;
             }
 
             &::after {
@@ -560,16 +556,16 @@ main {
                     color: #f5ead5;
                 }
                 &:nth-child(2) {
-                    background: url(../img/main/bg-standard.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    background: url(../../public/img/main/bg-standard.jpg)no-repeat bottom 0 left 0 / auto 100%;
                 }
                 &:nth-child(3) {
-                    background: url(../img/main/bg-executive.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    background: url(../../public/img/main/bg-executive.jpg)no-repeat bottom 0 left 0 / auto 100%;
                 }
                 &:nth-child(4) {
-                    background: url(../img/main/bg-suite.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    background: url(../../public/img/main/bg-suite.jpg)no-repeat bottom 0 left 0 / auto 100%;
                 }
                 &:nth-child(5) {
-                    background: url(../img/main/bg-lounge.jpg)no-repeat bottom 0 left 0 / auto 100%;
+                    background: url(../../public/img/main/bg-lounge.jpg)no-repeat bottom 0 left 0 / auto 100%;
                 }
                 &::after {
                     content: "";

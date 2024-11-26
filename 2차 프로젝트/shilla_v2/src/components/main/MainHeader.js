@@ -1,24 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {Link} from 'react-router-dom';
 import '../../scss/reset.css'
 import '../../scss/common.scss'
 import '../../scss/header.scss'
+import '../../scss/main.scss'
 
 
 
 
-const Header = () => {
-
-   // 태그 선택 시 참조할 대상을 담을 공간
-    const header = useRef(null);
-    const gnb = useRef(null);
-    const gnbBg = useRef(null);
-    const gnb1Depth = useRef([]);
-    // 모바일메뉴
-    const mBtn = useRef(null);  
-    const mWrap = useRef(null); 
-    const depth1 = useRef([]);
-
+const MainHeader = () => {
     const gnbTitle = [
         {
             link : '/specialOffer', 
@@ -85,132 +75,20 @@ const Header = () => {
 
     const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
 
-    // 함수 부분 시작 -----------------------------------------------------------------------------------------------------------------------
-
-    // 스크롤 이벤트 관련 함수
-    // 과거의 스크롤바 위치값
-    let lastScrollTop = 0;
-    function scrollHeader() {
-        // 스크롤바의 위치값
-        let scTop = window.scrollY;
-
-        //스크롤바 내리면 헤더는 사라지고 스크롤바 올리면 헤더 나타남
-        if(scTop == 0){
-            header.current.classList.add("active");
-            mWrap.current.style.paddingTop = 80 + "px"
-        }
-        if(scTop > lastScrollTop) {
-            header.current.classList.remove("active");
-            mWrap.current.style.paddingTop = 0 + "px"
-        }
-        else{
-            header.current.classList.add("active");
-            mWrap.current.style.paddingTop = 80 + "px"
-        }
-        lastScrollTop = scTop;
-    }
-
-
-    function resizeGo() {
-        if(window.innerWidth > 1500){
-            mWrap.current.classList.remove("move");
-        }
-    }
-
-    // 함수 부분 끝 -----------------------------------------------------------------------------------------------------------------------
-
-    useEffect(()=>{
-
-
-        gnb.current.addEventListener("mouseover",()=>{
-            // console.log("gnb mouseover 진입");
-            
-            gnbBg.current.classList.add("on");
-        });
-        
-        gnb.current.addEventListener("mouseleave",()=>{
-            gnbBg.current.classList.remove("on");
-        });
-        for(let i = 0; i < gnb1Depth.current.length; i++){
-            gnb1Depth.current[i].addEventListener("mouseleave",function(){
-                gnb1Depth.current[i].classList.remove("on");
-            });
-            gnb1Depth.current[i].addEventListener("mouseover",function(){
-                gnb1Depth.current[i].classList.add("on");
-            });
-        }
-        
-
-        // 스크롤 했을 때 header 변경 함수 호출
-        window.addEventListener("scroll",scrollHeader);
-        // 창 크기 1500 이하일 때 모바일 메뉴 닫기 함수 호출
-        window.addEventListener("resize",resizeGo);
-        
-
-        // 모바일 햄버거 버튼
-        mBtn.current.addEventListener("click",()=>{
-            // console.log('모바일버튼 클릭 진입');
-            
-            if(!mBtn.current.classList.contains("move")){
-                // console.log('move 없을때');
-                mWrap.current.classList.add("move");
-                mBtn.current.classList.add("move");
-                // console.log(mBtn.current.classList)
-            }
-            else{
-                // console.log('move 있을때');
-                mWrap.current.classList.remove("move");
-                mBtn.current.classList.remove("move");
-                // console.log(mBtn.current.classList)
-
-            }
-        });
-        
-        
-        console.log(depth1.current.length);
-        
-        // 모바일 GNB
-        for(let i = 0; i < depth1.current.length; i++){
-            depth1.current[i].addEventListener("click",()=>{
-                console.log('모바일 GNB 클릭 이벤트 진입');
-                
-                if(depth1.current[i].classList.contains("on")){
-                    depth1.current[i].classList.remove("on");
-                }
-                else{
-                    const depth1On = document.querySelectorAll(".m_gnb > li.on");
-                    for(let j = 0; j < depth1On.length; j++){
-                        depth1On[j].classList.remove("on");
-                    }
-                    depth1.current[i].classList.add("on");
-                }
-            });
-        }
-
-        return()=>{
-            // 스크롤 했을 때 header 변경 함수 호출
-            window.removeEventListener("scroll",scrollHeader);
-            // 창 크기 1500 이하일 때 모바일 메뉴 닫기 함수 호출
-            window.removeEventListener("resize",resizeGo);
-        }
-    })
-
-
-
     return (
-        <>
-            <header className="active" ref={header}>
-                <div className="gnbbg" ref={gnbBg}></div>
+        <div class="main-header" id="MainHeader">
+            <header className="active" >
+                <div className="gnbbg" ></div>
                 <div className="center">
                     <h1 className="logo">
                         <Link to='/'>
                             <img src="img/common/logo.png" alt=""/>
                         </Link>
                     </h1>
-                    <ul className="gnb" ref={gnb} >
+                    <ul className="gnb"  >
                         {
                             gnbMenu.map((item,index)=>{
-                                return  <li key={index} ref={el => gnb1Depth.current[index] = el}>
+                                return  <li key={index} >
                                             <Link to={item.link}>{item.title}</Link>
                                             <ul className="depth2">
                                                 {
@@ -249,7 +127,7 @@ const Header = () => {
                         </Link>
                     </div>
                     {/* <!-- 모바일 햄버거 버튼 --> */}
-                    <div className="m_btn" ref={mBtn} >
+                    <div className="m_btn" >
                         <div className="menu">
                             <span className="line one"></span>
                             <span className="line two"></span>
@@ -259,7 +137,7 @@ const Header = () => {
                 </div>
             </header>
             {/* <!-- 모바일 메뉴 --> */}
-            <div className="m_wrap" ref={mWrap}>
+            <div className="m_wrap">
                 <div className="m_top">
                     {/* <!-- 비로그인시 --> */}
                     <div className="btn-wrap on">
@@ -290,7 +168,7 @@ const Header = () => {
                 <ul className="m_gnb">
                     {
                         gnbMenu.map((item,index)=>{
-                            return  <li key={index} ref={el => depth1.current[index] = el}>
+                            return  <li key={index} >
                                         <Link to='#self'>{item.title}</Link>
                                         <ul className="m_sub">
                                             {
@@ -304,10 +182,11 @@ const Header = () => {
                     }
                 </ul>
             </div>
-        </>
+        </div>
     )
+
 }
 
-export default Header
+export default MainHeader
 
 
