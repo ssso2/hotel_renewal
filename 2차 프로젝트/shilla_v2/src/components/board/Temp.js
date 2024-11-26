@@ -11,7 +11,9 @@ const BoardTemp = () => {
 
     return (
             <>
+                <Header></Header>
                 <Outlet/>
+                <Footer></Footer>
             </>
         );
 };
