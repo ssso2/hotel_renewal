@@ -167,7 +167,7 @@ const Header = () => {
         });
         
         
-        console.log(depth1.current.length);
+        // console.log(depth1.current.length);
         
         // 모바일 GNB
         for(let i = 0; i < depth1.current.length; i++){
