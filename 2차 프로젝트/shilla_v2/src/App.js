@@ -17,7 +17,9 @@ import Login from './components/sub/Login';
 import './App.css'
 
 // room
-import Room from './components/lkm/Room';
+// import Room from './components/lkm/Room';
+import StandardDelux from './components/lkm/StandardDelux';
+import RoomContainer from './components/lkm/RoomContainer';
 
 function App() {
 
@@ -41,7 +43,8 @@ function App() {
       </Routes>
 
       <Routes>
-          <Route path="/room" element={<Room />} />
+          <Route path="/room" element={<RoomContainer />} />
+          <Route path="/room/delux" element={<StandardDelux />} />
       </Routes>
 
     </div>

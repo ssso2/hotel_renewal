@@ -3,7 +3,6 @@ import Footer from '../common/Footer';
 import RoomContainer from './RoomContainer';
 
 function Room() {
-
     return (
         <>
             <Header />

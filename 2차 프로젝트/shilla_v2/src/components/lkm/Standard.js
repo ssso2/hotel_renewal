@@ -1,12 +1,12 @@
-import Header from "../common/Header";
-import Footer from "../common/Footer";
-import StandardContainer from './StandardContainer';
+import Header from '../common/Header';
+import Footer from '../common/Footer';
+import StandardDelux from './StandardDelux';
 
 function Standard() {
     return (
         <>
             <Header />
-            <StandardContainer />
+            <StandardDelux />
             <Footer />
         </>
     );
