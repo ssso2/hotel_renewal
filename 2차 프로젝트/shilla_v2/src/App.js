@@ -9,6 +9,10 @@ import BoardDetail from "./components/board/BoardDetail";
 import BoardJoin from "./components/board/BoardJoin";
 import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
+
+// lifestyle
+import UrbanIsland from './components/jaehun/js/UrbanIsland';
+
 // scss
 import './App.css'
 
@@ -31,6 +35,10 @@ function App() {
           <Route path="join" element={<BoardJoin/>} />
           <Route path="modify/:num" element={<BoardModify/>} />
         </Route>
+      </Routes>
+
+      <Routes>
+        <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
       </Routes>
 
     </div>
