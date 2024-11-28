@@ -13,6 +13,9 @@ import BoardTemp from "./components/board/Temp";
 // lifestyle
 import UrbanIsland from './components/jaehun/js/UrbanIsland';
 
+// login
+import Login from './components/sub/Login';
+
 // scss
 import './App.css'
 
@@ -22,13 +25,15 @@ function App() {
 
   return (
     <div>
-      {/* 메인 */}
       <Routes>
+        {/* 메인 */}
         <Route path='/' element={<Main></Main>}></Route>
-      </Routes>
+        {/* 로그인 */}
+        <Route path='/login' element={<Login></Login>}></Route>
+
       
-      {/* 고객센터 */}
-      <Routes>
+      
+        {/* 고객센터 */}
         <Route path="/board" element={<BoardTemp/>} >
           <Route path="" element={<BoardList/>} />
           <Route path="detail/:num" element={<BoardDetail/>} />

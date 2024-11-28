@@ -42,6 +42,11 @@
 
         .part-error {
             height: 10px;
+            .error-message {
+                color: red; 
+                display: none; 
+                text-align: center;
+            }
         }
 
         h2 {

@@ -167,7 +167,7 @@ const Header = () => {
         });
         
         
-        console.log(depth1.current.length);
+        // console.log(depth1.current.length);
         
         // 모바일 GNB
         for(let i = 0; i < depth1.current.length; i++){
@@ -204,7 +204,7 @@ const Header = () => {
                 <div className="center">
                     <h1 className="logo">
                         <Link to='/'>
-                            <img src="img/common/logo.png" alt=""/>
+                            <img src="/img/common/logo.png" alt=""/>
                         </Link>
                     </h1>
                     <ul className="gnb" ref={gnb} >
