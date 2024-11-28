@@ -10,6 +10,10 @@ import BoardDetail from "./components/board/BoardDetail";
 import BoardJoin from "./components/board/BoardJoin";
 import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
+
+// lifestyle
+import UrbanIsland from './components/jaehun/js/UrbanIsland';
+
 // login
 import Login from './components/sub/Login';
 
@@ -42,8 +46,16 @@ function App() {
       </Routes>
 
       <Routes>
+<<<<<<< HEAD
           <Route path="/room" element={<Room />} />
           <Route path="/room/delux" element={<Standard />} />
+=======
+
+        <Route path="/room" element={<Room />} />
+
+        <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
+
+>>>>>>> master
       </Routes>
 
     </div>
