@@ -12,6 +12,11 @@ import BoardTemp from "./components/board/Temp";
 // scss
 import './App.css'
 
+// reservation
+import Res_search from './components/reservation/Res_search';
+import Res_temp from './components/reservation/Res_temp';
+import Res_detail from './components/reservation/Res_detail';
+
 
 
 function App() {
@@ -33,6 +38,16 @@ function App() {
         </Route>
       </Routes>
 
+
+      {/* 예약페이지 */}
+      <Routes>
+        <Route path="/reserve" element={<Res_temp/>} >
+          <Route path="" element={<Res_search/>} />
+          <Route path="detail" element={<Res_detail/>} />
+          {/* <Route path="join" element={<BoardJoin/>} /> */}
+          {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
+        </Route>
+      </Routes>
     </div>
   );
 }
