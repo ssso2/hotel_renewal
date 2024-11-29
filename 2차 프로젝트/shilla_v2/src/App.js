@@ -13,6 +13,7 @@ import BoardTemp from "./components/board/Temp";
 
 // lifestyle
 import UrbanIsland from './components/jaehun/js/UrbanIsland';
+import Cabana from './components/jaehun/js/Cabana';
 
 // login
 import Login from './components/sub/Login';
@@ -49,6 +50,8 @@ function App() {
         <Route path="/room" element={<Room />} />
 
         <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
+
+        <Route path='/cabana' element={<Cabana/>}></Route>
 
       </Routes>
 
