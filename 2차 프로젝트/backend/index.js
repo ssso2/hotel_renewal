@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require("express-session");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors"); // 다른 포트에서 들어와도 열어주는 것이다.
@@ -9,8 +10,21 @@ app.use(cors()); //다른 포트에서 들어와도 열어주도록 cors 세팅
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// 세션 설정
+app.use(
+    session({
+        secret: "1234",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            secure: false,
+            httpOnly: false,
+        },
+    })
+);
+
 // static 폴더 설정 --> 이미지 파일 프론트 엔드에 서빙
-app.use("/bk/fff", express.static(path.join(__dirname, "fff")));
+app.use("/bk/files", express.static(path.join(__dirname, "files")));
 
 // frontend static 처리
 app.use(express.static(path.join(__dirname, "build")));
@@ -20,7 +34,7 @@ app.use(express.static(path.join(__dirname, "build")));
 const upload = multer({
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, "fff/"); //fff 폴더 안에 파일 저장 하겠다.
+            cb(null, "files/"); //files 폴더 안에 파일 저장 하겠다.
         },
         filename: (req, file, cb) => {
             const ext = path.extname(file.originalname);
@@ -51,6 +65,9 @@ const upload = multer({
 // board 라우터 추가
 const boardRouter = require("./controller/board.js");
 app.use("/bk/board", boardRouter(upload));
+// login 라우터 추가
+const loginRouter = require("./controller/login.js");
+app.use("/bk/login", loginRouter(upload));
 // specialoffer 라우터 추가
 const offerRouter = require("./controller/specialOffer.js");
 app.use("/bk/specialOffer", offerRouter(upload));

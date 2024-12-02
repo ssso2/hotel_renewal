@@ -69,10 +69,10 @@ const Header = () => {
             title: "고객센터",
             gnbMenu: [
                 { link: "/info", text: "연락처" },
+                { link: "/notice", text: "공지사항" },
                 { link: "/faq", text: "FAQ" },
                 { link: "/board", text: "문의하기" },
-                { link: "/notice", text: "공지사항" },
-                { link: "/review", text: "리뷰" },
+                // {link : '/review', text : '리뷰'},
                 { link: "/ocation", text: "오시는길" },
             ],
         },
@@ -153,7 +153,7 @@ const Header = () => {
             }
         });
 
-        console.log(depth1.current.length);
+        // console.log(depth1.current.length);
 
         // 모바일 GNB
         for (let i = 0; i < depth1.current.length; i++) {

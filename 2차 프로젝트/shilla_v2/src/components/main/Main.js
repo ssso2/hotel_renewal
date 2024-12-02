@@ -124,7 +124,7 @@ const Main = () => {
         
         // 창 사이즈가 1500 보다 커지면 모바일GNB는 안보이게 된다
         window.addEventListener("resize",function(){
-            console.log(window.innerWidth);
+            // console.log(window.innerWidth);
             if(window.innerWidth > 1500){
                 mWrap.classList.remove("move");
             }
