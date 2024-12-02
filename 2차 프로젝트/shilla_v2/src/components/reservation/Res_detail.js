@@ -1,8 +1,90 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import PaymentModal from "./PaymentModal";
 import "./res_detail.scss";
 
 function Res_detail(props) {
+
+  const navigate = useNavigate()
+
+  const [options, setOptions] = useState({
+    adultBf: 0, // 성인 조식 수
+    childBf: 0, // 어린이 조식 수
+    extraBed: 0, // 엑스트라 베드 수
+  })
+  const [paySum, setPaySum] = useState(468000) // 요금 합계
+  const [modalMessage, setModalMessage] = useState("") // 모달 메시지
+  const [showModal, setShowModal] = useState(false) // 모달 표시 여부
+  const [guideChecked, setGuideChecked] = useState(false) // 유의사항 체크 여부
+  const [personalInfoAgree, setPersonalInfoAgree] = useState("") // 개인정부 동의 상태
+  const [thirdPartyAgree, setThirdPartyAgree] = useState(""); // 제ㄱ자 제공 동의 상태
+
+  
+
+  const updateOption = (type, value) => {
+    setOptions((prev) => ({
+      ...prev,
+      [type]: Math.max(prev[type] + value, 0) // 0 미만 방지
+    }))
+  }
+
+  // options 샅애가 벼경될 때 요금을 다시 계산
+  useEffect(() => {
+    const total =
+      468000 +
+      options.adultBf * 60000 +
+      options.childBf * 38000 +
+      options.extraBed * 66000;
+    setPaySum(total)
+  }, [options])
+
+
+  // 합계 구하는 함수
+  const priceSum = () => {
+    const total =
+      468000 +
+      options.adultBf * 60000 + options.childBf * 38000 + options.extraBed * 66000
+    setPaySum(total)
+  }
+
+  const handlePayment = () => {
+    // 유의사항 체크 여부 확인
+    if (!guideChecked) {
+      // setModalMessage("유의사항, 취소 및 환불 규정을 모두 체크를 해주셔야 결제 가능합니다");
+      // setShowModal(true);
+      alert("유의사항, 취소 및 환불 규정을 모두 체크를 해주셔야 결제 가능합니다")
+      return;
+    }
+
+    // 개인정보 수집 동의 여부 확인
+    if (personalInfoAgree !== "agree") {
+      // setModalMessage("개인정보 수집ㆍ이용 동의해야지만 결제 가능합니다.");
+      // setShowModal(true);
+      alert("개인정보 수집ㆍ이용 동의해야지만 결제 가능합니다")
+      return;
+    }
+
+    // 제3자 제공 동의 여부 확인
+    if (thirdPartyAgree !== "agree") {
+      // setModalMessage("개인정보 제3자 제공에 대한 동의해야 결제가 가능합니다.");
+      // setShowModal(true);
+      alert("개인정보 제3자 제공에 대한 동의해야 결제가 가능합니다")
+      return;
+    }
+
+  //      // 결제하기 페이지
+  //      setModalMessage("결제가 완료되었습니다. 이용해 주셔서 감사합니다!");
+  //   setShowModal(true);
+  // }
+
+  // PaymentPage로 이동
+  navigate("/reserve/detail/payment");
+};
+  // 모달 창 닫기
+  const closeModal = () => {
+    setShowModal(false)
+  }
+
   return (
     <div className="container">
       <section className="payment">
@@ -63,13 +145,26 @@ function Res_detail(props) {
                   <div className="count-wrap adult">
                     <p>성인 조식 / 60,000원</p>
                     <div className="button-wrap">
-                      <button type="button" className="btn-down">
+                      <button
+                        type="button"
+                        className="btn-down"
+                        onClick={() => {
+                          updateOption("adultBf", -1);
+                          priceSum();
+                        }}
+                        disabled={options.adultBf === 0}>
                         <span className="blind">숫자 내리기</span>
                       </button>
                       <span className="num" id="num">
-                        0
+                        {options.adultBf}
                       </span>
-                      <button type="button" className="btn-up">
+                      <button
+                        type="button"
+                        className="btn-up"
+                        onClick={() => {
+                          updateOption("adultBf", 1);
+                          priceSum();
+                        }}>
                         <span className="blind">숫자 올리기</span>
                       </button>
                     </div>
@@ -77,11 +172,24 @@ function Res_detail(props) {
                   <div className="count-wrap child">
                     <p>어린이 조식 / 38,000원</p>
                     <div className="button-wrap">
-                      <button type="button" className="btn-down">
+                      <button
+                        type="button"
+                        className="btn-down"
+                        onClick={() => {
+                          updateOption("childBf", -1);
+                          priceSum();
+                        }}
+                        disabled={options.childBf === 0}>
                         <span className="blind">숫자 내리기</span>
                       </button>
-                      <span className="num">0</span>
-                      <button type="button" className="btn-up">
+                      <span className="num">{options.childBf}</span>
+                      <button
+                        type="button"
+                        className="btn-up"
+                        onClick={() => {
+                          updateOption("childBf", 1);
+                          priceSum();
+                        }}>
                         <span className="blind">숫자 올리기</span>
                       </button>
                     </div>
@@ -93,11 +201,24 @@ function Res_detail(props) {
                 <div className="count-wrap bed">
                   <p>베드 추가 / 66,000원</p>
                   <div className="button-wrap">
-                    <button type="button" className="btn-down">
+                    <button
+                      type="button"
+                      className="btn-down"
+                      onClick={() => {
+                        updateOption("extraBed", -1);
+                        priceSum();
+                      }}
+                      disabled={options.extraBed === 0}>
                       <span className="blind">숫자 내리기</span>
                     </button>
-                    <span className="num">0</span>
-                    <button type="button" className="btn-up">
+                    <span className="num">{options.extraBed}</span>
+                    <button
+                      type="button"
+                      className="btn-up"
+                      onClick={() => {
+                        updateOption("extraBed", 1);
+                        priceSum();
+                      }}>
                       <span className="blind">숫자 올리기</span>
                     </button>
                   </div>
@@ -275,6 +396,8 @@ function Res_detail(props) {
                   className="guide-chk"
                   name="guide-chk"
                   value="chk"
+                  // checked="guidedChecked"
+                  onChange={() => setGuideChecked(!guideChecked)}
                 />
                 <label for="guide-chk">
                   유의사항, 취소 및 환불 규정을 모두 확인해주세요.
@@ -306,15 +429,16 @@ function Res_detail(props) {
                   </p>
                 </div>
                 <div className="chk-wrap">
-                  <input type="radio" name="col-arg" id="col-arg" value="arg" />
-                  <label for="col-arg">동의함</label>
+                  <input type="radio" name="personalInfoAgree" id="personalInfoAgree-agree" value="agree" onChange={(e) => setPersonalInfoAgree(e.target.value)} />
+                  <label for="personalInfoAgree-agree">동의함</label>
                   <input
                     type="radio"
-                    name="col-arg"
-                    id="col-disarg"
-                    value="disarg"
+                    name="personalInfoAgree"
+                    id="personalInfoAgree-disagree"
+                    value="disagree"
+                    onChange={(e) => setPersonalInfoAgree(e.target.value)}
                   />
-                  <label for="col-disarg">동의하지 않음</label>
+                  <label for="personalInfoAgree-disagree">동의하지 않음</label>
                 </div>
               </div>
               <div className="suggest-agr">
@@ -339,43 +463,43 @@ function Res_detail(props) {
                   </p>
                 </div>
                 <div className="chk-wrap">
-                  <input type="radio" name="sug-arg" id="sug-arg" value="arg" />
-                  <label for="sug-arg">동의함</label>
+                  <input type="radio" name="thirdPartyAgree" id="thirdPartyAgree-agree" value="agree" onChange={(e) => setThirdPartyAgree(e.target.value)} />
+                  <label for="thirdPartyAgree-agree">동의함</label>
                   <input
                     type="radio"
-                    name="sug-arg"
-                    id="sug-disarg"
-                    value="disarg"
+                    name="thirdPartyAgree"
+                    id="thirdPartyAgree-disagree"
+                    value="disagree"
+                    onChange={(e) => setThirdPartyAgree(e.target.value)}
                   />
-                  <label for="sug-disarg">동의하지 않음</label>
+                  <label for="thirdPartyAgree-disagree">동의하지 않음</label>
                 </div>
               </div>
             </div>
             <div className="total-wrap">
               <div className="total">
                 <span>요금 합계 : </span>
-                <span className="total-price">468000</span>
+                <span className="total-price">{paySum.toLocaleString()}</span>
                 <span>원</span>
               </div>
               <div className="btn-wrap type1">
                 <Link
                   to="../../html/sub/reservation.html"
-                  className="btn btn-03"
-                >
+                  className="btn btn-03">
                   이전으로 돌아가기
                 </Link>
-                <Link
-                  to="../../html/sub/myreservation.html"
+                <button
                   className="btn btn-01"
                   id="pay"
                   data-lybtn="pop-alert"
-                >
+                  onClick={handlePayment}>
                   결제하기
-                </Link>
+                </button>
               </div>
             </div>
           </div>
         </div>
+        {showModal && <PaymentModal message={modalMessage} onClose={closeModal} />}
       </section>
     </div>
   );

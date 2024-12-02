@@ -25,13 +25,17 @@ import Event from "./components/sh/Event";
 
 // admin
 import Admin from "./components/admin/Admin";
-import EventDetail1 from "./components/sh/EventDetail1"; // reservation
-import Res_search from "./components/reservation/Res_search";
-import Res_temp from "./components/reservation/Res_temp";
-import Res_detail from "./components/reservation/Res_detail";
+import EventDetail1 from "./components/sh/EventDetail1";
+
 // room
 import Room from './components/room/Room';
 import Standard from './components/room/Standard';
+
+// reservation
+import PaymentPage from './components/reservation/PaymentPage';
+import Res_detail from './components/reservation/Res_detail';
+import Res_search from './components/reservation/Res_search';
+import Res_temp from './components/reservation/Res_temp';
 
 function App() {
     return (
@@ -66,6 +70,7 @@ function App() {
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
+                    <Route path="detail/payment" element={<PaymentPage />} />
                     {/* <Route path="join" element={<BoardJoin/>} /> */}
                     {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
                 </Route>
