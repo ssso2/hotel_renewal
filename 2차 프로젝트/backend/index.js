@@ -55,7 +55,7 @@ const upload = multer({
 // app.use(bodyParser.urlencoded({extended:true}));
 
 //각 라우터 연결(라우팅 추가)=> 라우터 하나 넣을 때마다 아래 2줄이 계속 추가로 붙는 것이다.
-// const examRouter = require("./controller/exam.js");
+// const mainRouter = require("./controller/main.js");
 // app.use("/bk/", examRouter(upload));
 
 // // notice 라우터 추가
@@ -77,6 +77,6 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.listen(5001, () => {
+app.listen(5000, () => {
     console.log("2차 프로젝트 DB 연결 서버 실행");
 });

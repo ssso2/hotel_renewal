@@ -4,6 +4,8 @@ import HeaderComp1 from "../common/HeaderComp1";
 import HeaderComp2 from "../common/HeaderComp2";
 import HeaderComp3 from "../common/HeaderComp3";
 import HeaderComp4 from "../common/HeaderComp4";
+import HeaderComp4Login from "../common/HeaderComp4Login";
+import HeaderComp4Admin from "../common/HeaderComp4Admin";
 import HeaderComp5 from "../common/HeaderComp5";
 import '../../scss/reset.css'
 import '../../scss/common.scss'
@@ -103,10 +105,33 @@ const MainHeader = () => {
     
     if(!user){
         return (
-            <div className="btn-wrap on">
-                    <Link to="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
-                    <Link to="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
+
+            // <div className="btn-wrap on">
+            //     <Link to="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
+            //     <Link to="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
+            // </div>
+            <div class="main-header" id="MainHeader">
+                <header className="active" >
+                    <div className="gnbbg" ></div>
+                    <div className="center">
+                        <h1 className="logo">
+                            <Link to='/'>
+                                <img src="img/common/logo-w.png" alt=""/>
+                            </Link>
+                        </h1>
+                        <HeaderComp1 gnbMenu={gnbMenu}/>
+                        <HeaderComp2 user={user}/>
+                        
+                        {/* <!-- 모바일 햄버거 버튼 --> */}
+                        <HeaderComp3/>
+                    </div>
+                </header>
+                {/* <!-- 모바일 메뉴 --> */}
+                <div className="m_wrap">
+                    <HeaderComp4Login user={user}/>
+                    <HeaderComp5 gnbMenu={gnbMenu}/>
                 </div>
+            </div>
         )
     }
 
