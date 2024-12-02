@@ -12,7 +12,10 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
 // lifestyle
-import UrbanIsland from "./components/jaehun/js/UrbanIsland";
+import LifeStyle from './components/lifeStyle/LifeStyle';
+import UrbanIsland from './components/lifeStyle/UrbanIsland';
+import Cabana from './components/lifeStyle/Cabana';
+import IndoorPool from './components/lifeStyle/IndoorPool';
 
 // login
 import Login from "./components/sub/Login";
@@ -34,9 +37,31 @@ import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
 
 // room
-import Room from "./components/room/Room";
-import Standard from "./components/room/Standard";
+import Room from './components/room/Room';
 
+// 스탠다드, 스탠다드에 디럭스도 포함
+import Standard from './components/room/Standard';
+import Stand_BusinessDeluxe from './components/room/Stand_BusinessDeluxe';
+import Stand_BarrierFreeDeluxe from './components/room/Stand_BarrierFreeDeluxe';
+import Stand_GrandCornerDeluxe from './components/room/Stand_GrandCornerDeluxe';
+
+// 이그제큐티브
+import Exec_Executive from './components/room/Exec_Executive';
+import Exec_ExecBusinessDeluxe from './components/room/Exec_ExecBusinessDeluxe';
+import Exec_GrandDeluxe from './components/room/Exec_GrandDeluxe';
+
+// 스위트
+import Suite from './components/room/Suite';
+import Suite_Superior from './components/room/Suite_Superior';
+import Suite_Korean from './components/room/Suite_Korean';
+import Suite_Corner from './components/room/Suite_Corner';
+import Suite_Premier from './components/room/Suite_Premier';
+import Suite_Royal from './components/room/Suite_Royal';
+import Suite_Shilla from './components/room/Suite_Shilla';
+import Suite_Presidential from './components/room/Suite_Presidential';
+
+// 라운지
+import Lounge_ExecutiveLounge from './components/room/Lounge_ExecutiveLounge';
 
 function App() {
     return (
@@ -80,14 +105,39 @@ function App() {
 
             <Routes>
                 <Route path="/room" element={<Room />} />
-                <Route path="/room/delux" element={<Standard />} />
+                <Route path="/room/standard" element={<Standard />} />
+
+                <Route path="/room/businessDeluxe" element={<Stand_BusinessDeluxe />} />
+                <Route path="/room/barrierFreeDeluxe" element={<Stand_BarrierFreeDeluxe />} />
+                <Route path="/room/grandCornerDeluxe" element={<Stand_GrandCornerDeluxe />} />
+
+                <Route path="/room/executive" element={<Exec_Executive />} />
+                <Route path="/room/execBusinessDeluxe" element={<Exec_ExecBusinessDeluxe />} />
+                <Route path="/room/execGrandDeluxe" element={<Exec_GrandDeluxe />} />
+                
+                <Route path="/room/suite" element={<Suite />} />
+                <Route path="/room/superior" element={<Suite_Superior />} />
+                <Route path="/room/korean" element={<Suite_Korean />} />
+                <Route path="/room/corner" element={<Suite_Corner />} />
+                <Route path="/room/premier" element={<Suite_Premier />} />
+                <Route path="/room/royal" element={<Suite_Royal />} />
+                <Route path="/room/shilla" element={<Suite_Shilla />} />
+                <Route path="/room/presidential" element={<Suite_Presidential />} />
+
+                <Route path="/room/executiveLounge" element={<Lounge_ExecutiveLounge />} />
             </Routes>
+                    
 
             <Routes>
-                <Route path="/urbanIsland" element={<UrbanIsland />}></Route>
+              <Route path='/lifeStyle' element={<LifeStyle/>}></Route>
+              <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
+              <Route path='/cabana' element={<Cabana/>}></Route>
+              <Route path='/fitness' element={<IndoorPool/>}></Route>
             </Routes>
-        </div>
-    );
+
+    </div>
+  );
+
 }
 
 export default App;

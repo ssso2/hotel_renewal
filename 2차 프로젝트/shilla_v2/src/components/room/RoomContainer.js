@@ -11,7 +11,7 @@ const RoomContainer = () => {
             type: '스탠다드',
             RoomBox: [
                 {
-                    link: "/room/delux",
+                    link: "/room/standard",
                     img: "/img/sub/roomStandardDelux01.jpg",
                     title: '디럭스',
                     subTitle: '아늑하면서 효율적인 공간',
@@ -19,7 +19,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 36㎡',
                 },
                 {
-                    link: "/room/businessDelux",
+                    link: "/room/businessDeluxe",
                     img: "/img/sub/roomStandardBusiness01.jpg",
                     title: '비즈니스 디럭스',
                     subTitle: '휴식이 필요한 비즈니스 고객을 위한 공간',
@@ -27,7 +27,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 43㎡',
                 },
                 {
-                    link: "/room/barrierFreeDelux",
+                    link: "/room/barrierFreeDeluxe",
                     img: "/img/sub/roomStandardBarrierFree01.jpg",
                     title: '배리어프리 비즈니스 디럭스',
                     subTitle: '모두가 편리하게 이용하도록 설계된 공간',
@@ -35,7 +35,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 43㎡',
                 },
                 {
-                    link: "/room/grandCornerDelux",
+                    link: "/room/grandCornerDeluxe",
                     img: "/img/sub/roomStandardGrand01.jpg",
                     title: '그랜드 코너 디럭스',
                     subTitle: '여유로운 휴식을 위한 공간',
@@ -48,7 +48,7 @@ const RoomContainer = () => {
             type: '이그제큐티브',
             RoomBox: [
                 {
-                    link: "/room/businessDelux",
+                    link: "/room/execBusinessDeluxe",
                     img: "/img/sub/roomExecutiveBusiness01.jpg",
                     title: '이그제큐티브 비즈니스 디럭스',
                     subTitle: '휴식이 필요한 비즈니스 고객을 위한 공간',
@@ -56,7 +56,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 43㎡',
                 },
                 {
-                    link: "/room/grandDelux",
+                    link: "/room/execGrandDeluxe",
                     img: "/img/sub/roomExecutiveGrand01.jpg",
                     title: '이그제큐티브 그랜드 디럭스',
                     subTitle: '여유로운 만족을 위한 공간',
