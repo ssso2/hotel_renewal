@@ -36,7 +36,7 @@ const OfferDetail = () => {
         fetchData();
     }, []);
     return (
-        <div className="container">
+        <div className="container offerdetail">
             <div className="center">
                 <OfferDetail1_header title="URBAN MORNING" />
                 <OfferDetail1_pkgcon />

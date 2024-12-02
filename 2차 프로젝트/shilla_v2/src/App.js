@@ -18,14 +18,16 @@ import UrbanIsland from "./components/jaehun/js/UrbanIsland";
 import Login from "./components/sub/Login";
 
 // offer
-import SpecialOffer from "./components/sh/SpecialOffer";
-import OfferMain from "./components/sh/OfferMain";
-import OfferDetail from "./components/sh/OfferDetail";
-import Event from "./components/sh/Event";
+import SpecialOffer from "./components/specialoffer/SpecialOffer";
+import OfferMain from "./components/specialoffer/OfferMain";
+import OfferDetail from "./components/specialoffer/OfferDetail";
+import Event from "./components/specialoffer/Event";
+import EventDetail1 from "./components/specialoffer/EventDetail1";
 
 // scss
 import "./App.css";
-import EventDetail1 from "./components/sh/EventDetail1"; // reservation
+
+// reservation
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
@@ -42,7 +44,7 @@ function App() {
             {/* 스페셜오퍼 */}
             <Routes>
                 <Route path="/specialOffer" element={<SpecialOffer />}>
-                    <Route index element={<OfferMain />} />
+                    <Route path="" element={<OfferMain />} />
                     <Route path="detail/:id" element={<OfferDetail />} />
                     <Route path="event" element={<Event />} />
                     <Route path="event/detail/1" element={<EventDetail1 />} />
