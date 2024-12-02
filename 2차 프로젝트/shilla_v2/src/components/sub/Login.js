@@ -5,8 +5,6 @@ import LoginComp from "../sub/LoginComp"
 import '../../scss/header.scss'
 import '../../scss/footer.scss'
 
-const bkURL = process.env.REACT_APP_BACK_URL;
-
 const Login = () => {
 
     useEffect(()=>{
@@ -15,7 +13,7 @@ const Login = () => {
 
     return (
         <>
-            {/* <Header></Header> */}
+            <Header></Header>
             <LoginComp></LoginComp>
             <Footer></Footer>
         </>

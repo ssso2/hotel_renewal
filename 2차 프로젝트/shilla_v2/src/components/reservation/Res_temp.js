@@ -11,6 +11,7 @@ const Res_temp = () => {
 
     return (
         <>
+            {/* <Header></Header> */}
             <Outlet />
             <Footer></Footer>
         </>

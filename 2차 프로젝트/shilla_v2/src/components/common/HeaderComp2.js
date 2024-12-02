@@ -1,7 +1,7 @@
 import React from "react";
 import { Link,useNavigate } from 'react-router-dom';
 
-const MainheaderComp2 = ({user}) => {
+const HeaderComp2 = ({user}) => {
 
     const navigate = useNavigate()
 
@@ -44,4 +44,4 @@ const MainheaderComp2 = ({user}) => {
     );
 };
 
-export default MainheaderComp2;
+export default HeaderComp2;

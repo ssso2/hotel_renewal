@@ -4,7 +4,7 @@ import '../../scss/common.scss'
 import '../../scss/header.scss'
 import '../../scss/main.scss'
 
-const MainheaderComp3 = () => {
+const HeaderComp3 = () => {
     return (
         <div className="m_btn" >
             <div className="menu">
@@ -16,4 +16,4 @@ const MainheaderComp3 = () => {
     );
 };
 
-export default MainheaderComp3;
+export default HeaderComp3;

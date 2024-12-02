@@ -4,7 +4,6 @@ import '../../scss/sub-detail.scss';
 import StandardDelux from './StandardDelux';
 
 const StandardContainer = () => {
-
     return (
         <div className="container">
             <div className="center">

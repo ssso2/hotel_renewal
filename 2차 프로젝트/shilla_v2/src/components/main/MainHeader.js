@@ -4,6 +4,8 @@ import HeaderComp1 from "../common/HeaderComp1";
 import HeaderComp2 from "../common/HeaderComp2";
 import HeaderComp3 from "../common/HeaderComp3";
 import HeaderComp4 from "../common/HeaderComp4";
+import HeaderComp4Login from "../common/HeaderComp4Login";
+import HeaderComp4Admin from "../common/HeaderComp4Admin";
 import HeaderComp5 from "../common/HeaderComp5";
 import '../../scss/reset.css'
 import '../../scss/common.scss'
@@ -48,7 +50,7 @@ const MainHeader = () => {
             link : '/lifeStyle', 
             title : '라이프스타일',
             gnbMenu : [
-                {link : '/urbanIsland', text : '야외수영장'},
+                {link : '/outdoorPool', text : '야외수영장'},
                 {link : '/fitness', text : '피트니스'},
                 {link : '/walkingTrails', text : '산책로'},
                 {link : '/jogging', text : '조깅코스'},
@@ -72,8 +74,7 @@ const MainHeader = () => {
                 {link : '/notice', text : '공지사항'},
                 {link : '/faq', text : 'FAQ'},
                 {link : '/board', text : '문의하기'},
-                // {link : '/review', text : '리뷰'},
-                {link : '/ocation', text : '오시는길'},
+                {link : '/location', text : '오시는길'},
             ]
         },
     ]
@@ -98,15 +99,33 @@ const MainHeader = () => {
         console.log('user : ');
         console.log(user);
         
-    })
+    },[])
 
     
     if(!user){
         return (
-            <div className="btn-wrap on">
-                    <Link to="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
-                    <Link to="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
+            <div class="main-header" id="MainHeader">
+                <header className="active" >
+                    <div className="gnbbg" ></div>
+                    <div className="center">
+                        <h1 className="logo">
+                            <Link to='/'>
+                                <img src="img/common/logo-w.png" alt=""/>
+                            </Link>
+                        </h1>
+                        <HeaderComp1 gnbMenu={gnbMenu}/>
+                        <HeaderComp2 user={user}/>
+                        
+                        {/* <!-- 모바일 햄버거 버튼 --> */}
+                        <HeaderComp3/>
+                    </div>
+                </header>
+                {/* <!-- 모바일 메뉴 --> */}
+                <div className="m_wrap">
+                    <HeaderComp4Login user={user}/>
+                    <HeaderComp5 gnbMenu={gnbMenu}/>
                 </div>
+            </div>
         )
     }
 
