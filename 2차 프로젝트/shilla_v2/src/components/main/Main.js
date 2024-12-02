@@ -25,7 +25,7 @@ const Main = () => {
         const mWrap = document.querySelector(".m_wrap");
         const depth1 = document.querySelectorAll(".m_gnb > li");
 
-        if(mainHeader && gnb && gnbBg && gnbBg && gnb1Depth && mainCont1 && mainLogo && mBtn && mWrap && depth1){
+        if(mainHeader && gnb && gnbBg && gnb1Depth && mainCont1 && mainLogo && mBtn && mWrap && depth1){
             gnb.addEventListener("mouseover",function(){
                 gnbBg.classList.add("on");
             });
@@ -109,43 +109,43 @@ const Main = () => {
             
             
             // 모바일 햄버거 버튼을 클릭했을 때
-            mBtn.addEventListener("click",function(){
-                // 모바일 버튼에 move 클래스가 없을 때
-                if(!mBtn.classList.contains("move")){
-                    mWrap.classList.add("move");    // 모바일GNB 가 열림
-                    mBtn.classList.add("move");     // 모바일 햄버거 버튼이 X자로 바뀜
-                }
-                else{ // 모바일 버튼에 move 클래스가 있을 때
-                    mWrap.classList.remove("move"); // 모바일GNB 가 사라짐
-                    mBtn.classList.remove("move");  // 모바일 햄버거 버튼이 원상복구됨
-                }
-            });
+            // mBtn.addEventListener("click",function(){
+            //     // 모바일 버튼에 move 클래스가 없을 때
+            //     if(!mBtn.classList.contains("move")){
+            //         mWrap.classList.add("move");    // 모바일GNB 가 열림
+            //         mBtn.classList.add("move");     // 모바일 햄버거 버튼이 X자로 바뀜
+            //     }
+            //     else{ // 모바일 버튼에 move 클래스가 있을 때
+            //         mWrap.classList.remove("move"); // 모바일GNB 가 사라짐
+            //         mBtn.classList.remove("move");  // 모바일 햄버거 버튼이 원상복구됨
+            //     }
+            // });
             
             
             // 창 사이즈가 1500 보다 커지면 모바일GNB는 안보이게 된다
-            window.addEventListener("resize",function(){
-                // console.log(window.innerWidth);
-                if(window.innerWidth > 1500){
-                    mWrap.classList.remove("move");
-                }
-            });
+            // window.addEventListener("resize",function(){
+            //     // console.log(window.innerWidth);
+            //     if(window.innerWidth > 1500){
+            //         mWrap.classList.remove("move");
+            //     }
+            // });
             
             
             // 모바일 GNB
-            for(let i = 0; i < depth1.length; i++){
-                depth1[i].addEventListener("click",function(){
-                    if(depth1[i].classList.contains("on")){
-                        depth1[i].classList.remove("on");
-                    }
-                    else{
-                        const depth1On = document.querySelectorAll(".m_gnb > li.on");
-                        for(let j = 0; j < depth1On.length; j++){
-                            depth1On[j].classList.remove("on");
-                        }
-                        depth1[i].classList.add("on");
-                    }
-                });
-            }
+            // for(let i = 0; i < depth1.length; i++){
+            //     depth1[i].addEventListener("click",function(){
+            //         if(depth1[i].classList.contains("on")){
+            //             depth1[i].classList.remove("on");
+            //         }
+            //         else{
+            //             const depth1On = document.querySelectorAll(".m_gnb > li.on");
+            //             for(let j = 0; j < depth1On.length; j++){
+            //                 depth1On[j].classList.remove("on");
+            //             }
+            //             depth1[i].classList.add("on");
+            //         }
+            //     });
+            // }
         }
         
         

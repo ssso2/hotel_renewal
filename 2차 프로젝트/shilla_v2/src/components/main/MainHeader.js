@@ -74,8 +74,7 @@ const MainHeader = () => {
                 {link : '/notice', text : '공지사항'},
                 {link : '/faq', text : 'FAQ'},
                 {link : '/board', text : '문의하기'},
-                // {link : '/review', text : '리뷰'},
-                {link : '/ocation', text : '오시는길'},
+                {link : '/location', text : '오시는길'},
             ]
         },
     ]
@@ -100,16 +99,11 @@ const MainHeader = () => {
         console.log('user : ');
         console.log(user);
         
-    })
+    },[])
 
     
     if(!user){
         return (
-
-            // <div className="btn-wrap on">
-            //     <Link to="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
-            //     <Link to="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
-            // </div>
             <div class="main-header" id="MainHeader">
                 <header className="active" >
                     <div className="gnbbg" ></div>

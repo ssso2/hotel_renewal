@@ -11,6 +11,12 @@ import BoardJoin from "./components/board/BoardJoin";
 import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
+// info
+import Info from "./components/sub/Info";
+
+// /location
+import Location from "./components/sub/Location";
+
 // lifestyle
 import LifeStyle from './components/lifeStyle/LifeStyle';
 import OutdoorPool from './components/lifeStyle/OutdoorPool';
@@ -37,31 +43,9 @@ import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
 
 // room
-import Room from './components/room/Room';
+import Room from "./components/room/Room";
+import Standard from "./components/room/Standard";
 
-// 스탠다드, 스탠다드에 디럭스도 포함
-import Standard from './components/room/Standard';
-import Stand_BusinessDeluxe from './components/room/Stand_BusinessDeluxe';
-import Stand_BarrierFreeDeluxe from './components/room/Stand_BarrierFreeDeluxe';
-import Stand_GrandCornerDeluxe from './components/room/Stand_GrandCornerDeluxe';
-
-// 이그제큐티브
-import Exec_Executive from './components/room/Exec_Executive';
-import Exec_ExecBusinessDeluxe from './components/room/Exec_ExecBusinessDeluxe';
-import Exec_GrandDeluxe from './components/room/Exec_GrandDeluxe';
-
-// 스위트
-import Suite from './components/room/Suite';
-import Suite_Superior from './components/room/Suite_Superior';
-import Suite_Korean from './components/room/Suite_Korean';
-import Suite_Corner from './components/room/Suite_Corner';
-import Suite_Premier from './components/room/Suite_Premier';
-import Suite_Royal from './components/room/Suite_Royal';
-import Suite_Shilla from './components/room/Suite_Shilla';
-import Suite_Presidential from './components/room/Suite_Presidential';
-
-// 라운지
-import Lounge_ExecutiveLounge from './components/room/Lounge_ExecutiveLounge';
 
 function App() {
     return (
@@ -73,7 +57,11 @@ function App() {
                 <Route path="/admin" element={<Admin></Admin>}></Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
-                {/* 고객센터 */}
+                {/* 연락처 */}
+                <Route path="/info" element={<Info></Info>}></Route>
+                {/* 오시는길 */}
+                <Route path="/location" element={<Location></Location>}></Route>
+                {/* 문의하기 */}
                 <Route path="/board" element={<BoardTemp />}>
                     <Route path="" element={<BoardList />} />
                     <Route path="detail/:num" element={<BoardDetail />} />
