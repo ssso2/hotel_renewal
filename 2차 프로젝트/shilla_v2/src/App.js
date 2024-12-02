@@ -26,7 +26,8 @@ import EventDetail1 from "./components/specialoffer/EventDetail1";
 
 // admin
 import Admin from "./components/admin/Admin";
-import EventDetail1 from "./components/sh/EventDetail1"; // reservation
+
+// reservation
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
