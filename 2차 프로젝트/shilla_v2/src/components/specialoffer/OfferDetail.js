@@ -15,18 +15,17 @@ import { useParams } from "react-router-dom";
 
 const OfferDetail = () => {
     // 스페셜오퍼 리스트
-    const [Offerdetails, setOfferdetails] = useState([]);
+    const [Offerdetails, setOfferdetails] = useState({});
     const { id } = useParams();
     const fetchData = async () => {
         try {
             const res = await axios.get(
                 //     "http://192.168.123.101:5001/bk/specialOffer/detail/:id"
                 // );
-                `http://192.168.123.101:5001/bk/specialOffer/detail/${id}`
+                `http://192.168.0.16:5002/bk/specialOffer/detail/${id}`
             );
             console.log("갔다옴 : ", res.data);
             setOfferdetails(res.data);
-            console.log(Offerdetails);
         } catch (err) {
             console.error("에러발생 : ", err);
         }
@@ -35,12 +34,20 @@ const OfferDetail = () => {
         document.title = "신라호텔 - 스페셜오퍼";
         fetchData();
     }, []);
+
+    useEffect(() => {
+        console.log("디테일", Offerdetails.end_date);
+    }, [Offerdetails]);
+
     return (
         <div className="container offerdetail">
             <div className="center">
-                <OfferDetail1_header title="URBAN MORNING" />
-                <OfferDetail1_pkgcon />
-                <OfferDetail1_dday />
+                <OfferDetail1_header title={Offerdetails.offer_name} />
+                <OfferDetail1_pkgcon img={Offerdetails.upSystem} />
+                <OfferDetail1_dday
+                    endDate={Offerdetails.end_date}
+                    pID={Offerdetails.product_id}
+                />
                 <OfferDetail1_pkgdes />
                 <OfferDetail1_pkgdesA />
                 {/* <OfferDetail1_pop /> */}

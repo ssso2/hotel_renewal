@@ -39,14 +39,16 @@ const OfferMain4 = ({ offer }) => {
                                 ) // 키워드 중 하나라도 1인지 확인
                         )
                         .map(data => {
-                            const imgurl = `http://192.168.0.16:5001/bk/files/${data.upSystem}`;
+                            const imgurl = `http://192.168.0.16:5002/bk/files/${data.upSystem}`;
                             return (
                                 <li
                                     className="list-container product-item"
                                     data-type="couple"
                                     key={data.offer_id}
                                 >
-                                    <Link to="../../html/sub/sub01_01_01.html">
+                                    <Link
+                                        to={`/specialOffer/detail/${data.offer_id}`}
+                                    >
                                         <div className="img-wrapper">
                                             <img src={imgurl} />
                                             <div className="pkg-rewards">

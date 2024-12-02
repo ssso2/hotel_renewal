@@ -16,13 +16,6 @@ const OfferDetail1_pkgdes3 = ({ con, onclick }) => {
                     }}
                     style={{ cursor: "pointer" }}
                 />
-                {/* <Link
-                    to={<OfferDetail1_pop />}
-                    title={con.linktag}
-                    data-lybtn={con.popCname}
-                >
-                    <img src={con.img} />
-                </Link> */}
             </div>
         </div>
     );

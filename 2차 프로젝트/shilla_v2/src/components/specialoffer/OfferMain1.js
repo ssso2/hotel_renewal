@@ -24,17 +24,19 @@ const OfferMain1 = ({ offer }) => {
             classname: "rec-section none",
         },
     ];
-    const recId = [55, 75, 72, 76];
+    const recId = [77, 73, 69, 78];
 
     return (
         <>
             {/* <!--추천상품 --> */}
-            <div class="rec-wrapper">
+            <div className="rec-wrapper">
                 {recId.map(id => {
                     const item = offer.find(
                         offerData => offerData.offer_id === id
                     );
-                    return item ? <OfferProd rec={item} /> : null;
+                    return item ? (
+                        <OfferProd rec={item} key={item.offer_id} />
+                    ) : null;
                 })}
             </div>
         </>

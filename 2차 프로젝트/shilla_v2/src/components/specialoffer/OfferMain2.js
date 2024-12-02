@@ -9,6 +9,7 @@ import OfferMain2_kewords from "./OfferMain2_keword";
 import OfferMain2_btn from "./OfferMain2_btn";
 
 const OfferMain2 = () => {
+    const [filter, setfilter] = useState(false);
     return (
         <>
             {/* <!-- 필터박스 --> */}
