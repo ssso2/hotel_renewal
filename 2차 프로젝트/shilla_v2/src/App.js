@@ -11,6 +11,12 @@ import BoardJoin from "./components/board/BoardJoin";
 import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
+// info
+import Info from "./components/sub/Info";
+
+// /location
+import Location from "./components/sub/Location";
+
 // lifestyle
 import UrbanIsland from "./components/jaehun/js/UrbanIsland";
 
@@ -34,8 +40,8 @@ import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
 
 // room
-// import Room from "./components/room/Room";
-// import Standard from "./components/room/Standard";
+import Room from "./components/room/Room";
+import Standard from "./components/room/Standard";
 
 
 function App() {
@@ -48,7 +54,11 @@ function App() {
                 <Route path="/admin" element={<Admin></Admin>}></Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
-                {/* 고객센터 */}
+                {/* 연락처 */}
+                <Route path="/info" element={<Info></Info>}></Route>
+                {/* 오시는길 */}
+                <Route path="/location" element={<Location></Location>}></Route>
+                {/* 문의하기 */}
                 <Route path="/board" element={<BoardTemp />}>
                     <Route path="" element={<BoardList />} />
                     <Route path="detail/:num" element={<BoardDetail />} />
@@ -84,7 +94,7 @@ function App() {
             </Routes>
 
             <Routes>
-                <Route path="/urbanIsland" element={<UrbanIsland />}></Route>
+                <Route path="/abc" element={<UrbanIsland />}></Route>
             </Routes>
         </div>
     );

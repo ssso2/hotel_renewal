@@ -24,7 +24,7 @@ const MainCont4 = () => {
             text_kor : '이그제큐티브',
             text_eng : 'Executive',
             type : [
-                { delay : "0", link : '/executive/businessDeluxe', title : "이그제큐티브 비지니스 디럭스룸 페이지로 이동" , text : '이그제큐티브 비지니스 디럭스'},
+                { delay : "0", link : '/executive/execBusinessDeluxe', title : "이그제큐티브 비지니스 디럭스룸 페이지로 이동" , text : '이그제큐티브 비지니스 디럭스'},
                 { delay : "100", link : '/executive/grandDeluxe', title : "이그제큐티브 그랜드 디럭스룸 페이지로 이동" , text : '이그제큐티브 그랜드 디럭스'}
             ]
         },
