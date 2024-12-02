@@ -12,10 +12,12 @@ import BoardTemp from "./components/board/Temp";
 // offer
 import SpecialOffer from "./components/sh/SpecialOffer";
 import OfferMain from "./components/sh/OfferMain";
-import OfferDetail1 from "./components/sh/OfferDetail1";
+import OfferDetail from "./components/sh/OfferDetail";
+import Event from "./components/sh/Event";
 
 // scss
 import "./App.css";
+import EventDetail1 from "./components/sh/EventDetail1";
 
 function App() {
     return (
@@ -27,8 +29,10 @@ function App() {
             {/* 스페셜오퍼 */}
             <Routes>
                 <Route path="/specialOffer" element={<SpecialOffer />}>
-                    <Route path="" element={<OfferMain />} />
-                    <Route path="detail/1" element={<OfferDetail1 />} />
+                    <Route index element={<OfferMain />} />
+                    <Route path="detail/:id" element={<OfferDetail />} />
+                    <Route path="event" element={<Event />} />
+                    <Route path="event/detail/1" element={<EventDetail1 />} />
                 </Route>
             </Routes>
 

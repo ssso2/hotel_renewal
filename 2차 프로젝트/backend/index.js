@@ -51,6 +51,9 @@ const upload = multer({
 // board 라우터 추가
 const boardRouter = require("./controller/board.js");
 app.use("/bk/board", boardRouter(upload));
+// specialoffer 라우터 추가
+const offerRouter = require("./controller/specialOffer.js");
+app.use("/bk/specialOffer", offerRouter(upload));
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
 app.get("*", (req, res) => {

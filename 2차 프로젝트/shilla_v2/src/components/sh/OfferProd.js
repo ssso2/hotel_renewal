@@ -1,18 +1,26 @@
 import React from "react";
 import "../../scss/sub01_01_main.scss";
+import { Link } from "react-router-dom";
 
-function OfferProd({ aaa, i }) {
+function OfferProd({ rec }) {
+    // const recId = [75, 72, 55, 76];
     return (
-        <div class={aaa.classname} key={i}>
-            <a href={aaa.link}>
-                <div class="img-wrap">
-                    <img src={aaa.img} alt="" />
+        // <div className={aaa.classname} key={i}>
+        <div key={rec.offer_id} classname="rec-section">
+            {/* <a href={aaa.link}> */}
+            <Link to={`/specialOffer/detail/${rec.offer_id}`}>
+                <div className="img-wrap">
+                    {/* <img src={aaa.img} alt="" /> */}
+                    <img src="#" />
                 </div>
-                <div class="txt-wrap">
-                    <h2 class="rec-inner">{aaa.title}</h2>
-                    <p class="rec-inner">{aaa.date}</p>
+                <div className="txt-wrap">
+                    <h2 className="rec-inner">{rec.offer_name}</h2>
+                    <p className="rec-inner">
+                        {rec.start_date.split("T")[0]} ~{" "}
+                        {rec.end_date.split("T")[0]}
+                    </p>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 }
