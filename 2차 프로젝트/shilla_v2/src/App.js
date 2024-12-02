@@ -45,7 +45,24 @@ import Res_detail from "./components/reservation/Res_detail";
 // room
 import Room from "./components/room/Room";
 import Standard from "./components/room/Standard";
+import Stand_BusinessDeluxe from "./components/room/Stand_BusinessDeluxe";
+import Stand_BarrierFreeDeluxe from "./components/room/Stand_BarrierFreeDeluxe";
+import Stand_GrandCornerDeluxe from "./components/room/Stand_GrandCornerDeluxe";
 
+import Exec_Executive from "./components/room/Exec_Executive";
+import Exec_ExecBusinessDeluxe from "./components/room/Exec_ExecBusinessDeluxe";
+import Exec_GrandDeluxe from "./components/room/Exec_GrandDeluxe";
+
+import Suite from "./components/room/Suite";
+import Suite_Superior from "./components/room/Suite_Superior";
+import Suite_Korean from "./components/room/Suite_Korean";
+import Suite_Corner from "./components/room/Suite_Corner";
+import Suite_Premier from "./components/room/Suite_Premier";
+import Suite_Royal from "./components/room/Suite_Royal";
+import Suite_Shilla from "./components/room/Suite_Shilla";
+import Suite_Presidential from "./components/room/Suite_Presidential";
+
+import Lounge_ExecutiveLounge from "./components/room/Lounge_ExecutiveLounge";
 
 function App() {
     return (
