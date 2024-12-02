@@ -5,7 +5,7 @@ import '../../scss/common.scss'
 import '../../scss/header.scss'
 import '../../scss/main.scss'
 
-const MainheaderComp1 = ({gnbMenu}) => {
+const HeaderComp1 = ({gnbMenu}) => {
     return (
         <ul className="gnb"  >
             {
@@ -26,4 +26,4 @@ const MainheaderComp1 = ({gnbMenu}) => {
     );
 };
 
-export default MainheaderComp1;
+export default HeaderComp1;

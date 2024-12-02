@@ -6,12 +6,12 @@ import OfferMain3 from "./OfferMain3";
 import OfferMain4 from "./OfferMain4";
 
 const OfferMain = () => {
-    // 스페셜오퍼 리스트
+    // 스페셜오퍼 리스트 데이터
     const [Offerlists, setOfferlists] = useState([]);
     const fetchData = async () => {
         try {
             const res = await axios.get(
-                "http://192.168.123.101:5001/bk/specialOffer"
+                "http://192.168.0.16:5001/bk/specialOffer"
             );
             console.log("갔다옴 : ", res.data);
             setOfferlists(res.data);
@@ -24,6 +24,7 @@ const OfferMain = () => {
         document.title = "신라호텔 - 스페셜오퍼";
         fetchData();
     }, []);
+
     return (
         <div>
             <div className="container">

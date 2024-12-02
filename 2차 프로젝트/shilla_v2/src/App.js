@@ -12,23 +12,30 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
 // lifestyle
-import UrbanIsland from "./components/jaehun/js/UrbanIsland";
+import LifeStyle from './components/lifeStyle/LifeStyle';
+import UrbanIsland from './components/lifeStyle/UrbanIsland';
+import Cabana from './components/lifeStyle/Cabana';
+import IndoorPool from './components/lifeStyle/IndoorPool';
 
 // login
 import Login from "./components/sub/Login";
 
 // offer
-import SpecialOffer from "./components/sh/SpecialOffer";
-import OfferMain from "./components/sh/OfferMain";
-import OfferDetail from "./components/sh/OfferDetail";
-import Event from "./components/sh/Event";
+import SpecialOffer from "./components/specialoffer/SpecialOffer";
+import OfferMain from "./components/specialoffer/OfferMain";
+import OfferDetail from "./components/specialoffer/OfferDetail";
+import Event from "./components/specialoffer/Event";
+import EventDetail1 from "./components/specialoffer/EventDetail1";
 
 // admin
 import Admin from "./components/admin/Admin";
-import EventDetail1 from "./components/sh/EventDetail1"; // reservation
+
+// reservation
+import PaymentPage from './components/reservation/PaymentPage';
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
+
 // room
 import Room from './components/room/Room';
 
@@ -61,20 +68,11 @@ function App() {
         <div>
             <Routes>
                 {/* 메인 */}
-                <Route path="/" element={<Main></Main>}></Route>
+                <Route index element={<Main></Main>}></Route>
+                {/* 관리자페이지 */}
                 <Route path="/admin" element={<Admin></Admin>}></Route>
-            </Routes>
-            {/* 스페셜오퍼 */}
-            <Routes>
-                <Route path="/specialOffer" element={<SpecialOffer />}>
-                    <Route index element={<OfferMain />} />
-                    <Route path="detail/:id" element={<OfferDetail />} />
-                    <Route path="event" element={<Event />} />
-                    <Route path="event/detail/1" element={<EventDetail1 />} />
-                </Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
-
                 {/* 고객센터 */}
                 <Route path="/board" element={<BoardTemp />}>
                     <Route path="" element={<BoardList />} />
@@ -84,11 +82,22 @@ function App() {
                 </Route>
             </Routes>
 
+            {/* 스페셜오퍼 */}
+            <Routes>
+                <Route path="/specialOffer" element={<SpecialOffer />}>
+                    <Route path="" element={<OfferMain />} />
+                    <Route path="detail/:id" element={<OfferDetail />} />
+                    <Route path="event" element={<Event />} />
+                    <Route path="event/detail/1" element={<EventDetail1 />} />
+                </Route>
+            </Routes>
+
             {/* 예약페이지 */}
             <Routes>
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
+                    <Route path="detail/payment" element={<PaymentPage />} />
                     {/* <Route path="join" element={<BoardJoin/>} /> */}
                     {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
                 </Route>
@@ -119,12 +128,16 @@ function App() {
             </Routes>
                     
 
-      <Routes>
-          <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
-      </Routes>
+            <Routes>
+              <Route path='/lifeStyle' element={<LifeStyle/>}></Route>
+              <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
+              <Route path='/cabana' element={<Cabana/>}></Route>
+              <Route path='/fitness' element={<IndoorPool/>}></Route>
+            </Routes>
 
     </div>
   );
+
 }
 
 export default App;
