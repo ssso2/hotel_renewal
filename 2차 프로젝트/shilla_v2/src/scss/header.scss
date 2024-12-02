@@ -41,7 +41,7 @@ header {
                         font-size: 15px;
                     }
                 }
-                .logout-btn {
+                &.logout-btn {
                     line-height: 1;
                     & + i {
                         position: relative;
@@ -81,6 +81,7 @@ header {
                     }
                 }
                 &.login-btn {
+                    
                     i {margin-left: 5px;}
                 }
             }

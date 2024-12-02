@@ -37,9 +37,20 @@ function App() {
         <div>
             <Routes>
                 {/* 메인 */}
-                <Route path="/" element={<Main></Main>}></Route>
+                <Route index element={<Main></Main>}></Route>
+                {/* 관리자페이지 */}
                 <Route path="/admin" element={<Admin></Admin>}></Route>
+                {/* 로그인 */}
+                <Route path="/login" element={<Login></Login>}></Route>
+                {/* 고객센터 */}
+                <Route path="/board" element={<BoardTemp />}>
+                    <Route path="" element={<BoardList />} />
+                    <Route path="detail/:num" element={<BoardDetail />} />
+                    <Route path="join" element={<BoardJoin />} />
+                    <Route path="modify/:num" element={<BoardModify />} />
+                </Route>
             </Routes>
+
             {/* 스페셜오퍼 */}
             <Routes>
                 <Route path="/specialOffer" element={<SpecialOffer />}>
@@ -47,16 +58,6 @@ function App() {
                     <Route path="detail/:id" element={<OfferDetail />} />
                     <Route path="event" element={<Event />} />
                     <Route path="event/detail/1" element={<EventDetail1 />} />
-                </Route>
-                {/* 로그인 */}
-                <Route path="/login" element={<Login></Login>}></Route>
-
-                {/* 고객센터 */}
-                <Route path="/board" element={<BoardTemp />}>
-                    <Route path="" element={<BoardList />} />
-                    <Route path="detail/:num" element={<BoardDetail />} />
-                    <Route path="join" element={<BoardJoin />} />
-                    <Route path="modify/:num" element={<BoardModify />} />
                 </Route>
             </Routes>
 
