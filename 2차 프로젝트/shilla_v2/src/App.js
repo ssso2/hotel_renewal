@@ -19,8 +19,8 @@ import Login from './components/sub/Login';
 // join
 import Join from './components/sub/Join';
 
-// scss
-import './App.css'
+// admin
+import Admin from './components/admin/Admin'
 
 // reservation
 import Res_search from './components/reservation/Res_search';
@@ -49,6 +49,9 @@ function App() {
           <Route path="join" element={<BoardJoin/>} />
           <Route path="modify/:num" element={<BoardModify/>} />
         </Route>
+
+        {/* 관리자페이지 */}
+        <Route path='/admin' element={<Admin/>} />
       </Routes>
 
       {/* 예약페이지 */}
