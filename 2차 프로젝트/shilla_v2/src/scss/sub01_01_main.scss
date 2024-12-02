@@ -185,7 +185,8 @@
 .sortbox,
 .typebox {
     height: 30px;
-    background: url(../img/icon/icn_collps01.png) no-repeat right 10px center;
+    background: url(../../public/img/icon/icn_collps01.png) no-repeat right 10px
+        center;
     background-size: 10px auto;
     padding-left: 8px;
     line-height: 2;
@@ -215,7 +216,7 @@
 }
 .dropdown.on > .sortbox,
 .dropdown.on > .typebox {
-    background-image: url(../img/icon/icn_collps02.png);
+    background-image: url(../../public/img/icon/icn_collps02.png);
 }
 
 .dropdown-item-sort > li,
@@ -378,49 +379,49 @@
     }
 }
 
-//페이지네이션
-.page-container {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 0 20px 0;
-    .pkg-paging {
-        display: flex;
-        & button {
-            display: inline-block;
-            margin-right: 20px;
-            font-size: 20px;
-        }
-    }
-    .active {
-        font-weight: bold;
-        text-decoration: underline;
-    }
-    .pagepng {
-        background-image: url("../img/common/bg_pageination.png");
-        width: 25px;
-        height: 25px;
-        border: none;
-        background-color: #fff;
-    }
-}
-#first-page {
-    background-position: 0 0;
-}
+// //페이지네이션
+// .page-container {
+//     width: 100%;
+//     height: 50px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin: 50px 0 20px 0;
+//     .pkg-paging {
+//         display: flex;
+//         & button {
+//             display: inline-block;
+//             margin-right: 20px;
+//             font-size: 20px;
+//         }
+//     }
+//     .active {
+//         font-weight: bold;
+//         text-decoration: underline;
+//     }
+//     .pagepng {
+//         background-image: url("../img/common/bg_pageination.png");
+//         width: 25px;
+//         height: 25px;
+//         border: none;
+//         background-color: #fff;
+//     }
+// }
+// #first-page {
+//     background-position: 0 0;
+// }
 
-#prev-page {
-    background-position: 0 -25px;
-}
+// #prev-page {
+//     background-position: 0 -25px;
+// }
 
-#next-page {
-    background-position: 0 -50px;
-}
+// #next-page {
+//     background-position: 0 -50px;
+// }
 
-#last-page {
-    background-position: 0 -75px;
-}
+// #last-page {
+//     background-position: 0 -75px;
+// }
 
 // 반응형
 @media screen and (max-width: 1500px) {
@@ -463,7 +464,7 @@
     // .daterangepicker {
     //     left: 6% !important;
     // }
-    .date {
+    .pkg-datepicker-box .date {
         @include ellipsis();
     }
     .event-container {
@@ -532,7 +533,7 @@
         padding: 20px 0px 0px 20px;
         margin: 10px;
     }
-    .date {
+    .pkg-datepicker-box .date {
         width: 42%;
         padding-left: 5px;
         color: #333333;

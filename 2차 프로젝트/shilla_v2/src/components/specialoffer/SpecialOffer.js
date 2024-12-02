@@ -1,15 +1,16 @@
+import React from "react";
+import { Outlet } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
-import StandardContainer from './StandardContainer';
 
-function Standard() {
+const SpecialOffer = () => {
     return (
         <>
             <Header />
-            <StandardContainer />
+            <Outlet />
             <Footer />
         </>
     );
-}
+};
 
-export default Standard;
+export default SpecialOffer;

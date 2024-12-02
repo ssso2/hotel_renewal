@@ -1,14 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const conn = require("../db");
-//const session = require('express-session');
-// const fs = require("fs");
-//const app = express();
 
 
 // 인덱스에서 넘기는 자료를 받아서 처리
 module.exports = () => {
-
 
 
     // 로그인 정보 받아오기
@@ -16,31 +12,15 @@ module.exports = () => {
         console.log("login 목록 접근");
 
         try {
-            const [ret] = await conn.execute('select member_id, name, grade from member where member_id = ? and pw = ?',[req.body.id, req.body.pw])
-
-            //console.log(ret);
-            
-
-            if(ret.length){
-                req.session.user = ret[0]
-                console.log(req.session)
-                res.send(ret[0].name+"님, 로그인 성공");
-                
-               
-            }else{
-                res.send("로그인 실패")
-            }
-
-            
-            //res.json(ret);
-
-
+            const {id, pw} = req.body
+            const sql = "select member_id, name from member where member_id = ? and pw =?"
+            const param = [id,pw]
+            const [rows] = await conn.execute(sql,param);
+            console.log(rows);
+            res.json(rows[0]);
             
         } catch (err) {
-
-            console.log("sql 실패 : ", err.message);
-            ret.status(500).send('db오류')
-
+            res.status(500).send('로그인 서버 오류');
         }
         
     });

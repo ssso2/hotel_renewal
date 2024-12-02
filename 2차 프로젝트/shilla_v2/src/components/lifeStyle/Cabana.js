@@ -47,7 +47,7 @@ function Cabana() {
 
     return (
         <>
-        <Header/>
+        {/* <Header/> */}
         <div className="container">
             <div className="center">
                 <div className="depth3-tab-wrap">

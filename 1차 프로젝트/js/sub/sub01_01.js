@@ -1,4 +1,5 @@
 // 드롭다운리스트
+
 $(function () {
     $(".sortbox").click(function () {
         $(".dropdown.sort").toggleClass("on");
@@ -60,21 +61,11 @@ $(function () {
         });
 });
 
-// 초기화 버튼 눌렀을 때 날짜, 유형구분, 키워드 초기상태로 만들기
-$(".pkg-filter-resetbtn").on("click", function () {
-    $(".typebox").text("전체");
-    $("input[type='checkbox']").prop("checked", false);
-    $('input[name="daterange3"]').val("");
-});
+// 필터타입
 
-// 필터타입 + 페이지네이션
 $(document).ready(function () {
     const productItems = $(".product-item"); // 모든 상품 리스트 항목들
     const searchButton = $(".pkg-filter-searchbtn"); // 검색 버튼
-    let selectedType = "전체"; // 기본값은 '전체'
-    let currentPage = 1; // 현재 페이지 번호
-    const itemsPerPage = 10; // 한 페이지에 표시할 상품 수
-    const pagesPerGroup = 5; // 한 그룹에 표시할 페이지 수
     let filteredItems = productItems; // 필터링된 아이템을 저장할 변수
 
     // 필터 선택 시 선택된 값을 저장하고 필터링 적용
@@ -101,13 +92,17 @@ $(document).ready(function () {
             });
         }
 
-        // 필터링된 항목 개수 출력
-        $(".totalnum").text(filteredItems.length);
-
-        // 필터링된 항목 표시 및 페이지네이션 생성
-        currentPage = 1; // 필터 선택 또는 검색 시 첫 페이지로 돌아감
-        paginateItems(filteredItems); // 필터링된 상품들을 페이지에 맞게 표시
+        // 필터링된 상품들을 페이지에 맞게 표시
+        paginateItems(filteredItems);
     }
+
+    // 초기화 버튼 눌렀을 때 날짜, 유형구분, 키워드 초기상태로 만들기
+    $(".pkg-filter-resetbtn").on("click", function () {
+        $(".typebox").text("전체");
+        $("input[type='checkbox']").prop("checked", false);
+        $('input[name="daterange3"]').val("");
+    });
+
     // 필터링된 항목을 페이지에 맞게 나누어 출력하는 함수
     function paginateItems(items) {
         const totalPages = Math.ceil(items.length / itemsPerPage); // 총 페이지 수 계산
@@ -209,7 +204,11 @@ $(function () {
 // 디데이계산
 $(document).ready(function () {
     // 마감일 설정
+<<<<<<< HEAD
+    var deadline = new Date("2024-10-11T13:30:00").getTime();
+=======
     var deadline = new Date("2024-10-30T00:00:00").getTime();
+>>>>>>> master
 
     // 타이머 업데이트 함수
     function updateTimer() {
