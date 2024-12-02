@@ -72,16 +72,12 @@ function App() {
             </Routes>
 
       <Routes>
-<<<<<<< HEAD
           <Route path="/room" element={<Room />} />
           <Route path="/room/delux" element={<Standard />} />
-=======
+      </Routes>
 
-        <Route path="/room" element={<Room />} />
-
-        <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
-
->>>>>>> master
+      <Routes>
+          <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
       </Routes>
 
     </div>
