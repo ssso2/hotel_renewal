@@ -13,9 +13,9 @@ import BoardTemp from "./components/board/Temp";
 
 // lifestyle
 import LifeStyle from './components/lifeStyle/LifeStyle';
-import UrbanIsland from './components/lifeStyle/UrbanIsland';
-import Cabana from './components/lifeStyle/Cabana';
-import IndoorPool from './components/lifeStyle/IndoorPool';
+import OutdoorPool from './components/lifeStyle/OutdoorPool';
+import OutdoorPool2 from './components/lifeStyle/OutdoorPool2';
+import Fitness from './components/lifeStyle/Fitness';
 
 // login
 import Login from "./components/sub/Login";
@@ -82,15 +82,16 @@ function App() {
             </Routes>
 
             <Routes>
-                <Route path="/room" element={<Room />} />
-                <Route path="/room/delux" element={<Standard />} />
+                {/* <Route path="/room" element={<Room />} /> */}
+                {/* <Route path="/room/delux" element={<Standard />} /> */}
             </Routes>
 
+            {/* 라이프스타일 */}
             <Routes>
               <Route path='/lifeStyle' element={<LifeStyle/>}></Route>
-              <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
-              <Route path='/cabana' element={<Cabana/>}></Route>
-              <Route path='/fitness' element={<IndoorPool/>}></Route>
+              <Route path='/outdoorPool' element={<OutdoorPool/>}></Route>
+              <Route path='/outdoorPool2' element={<OutdoorPool2/>}></Route>
+              <Route path='/fitness' element={<Fitness/>}></Route>
             </Routes>
 
     </div>

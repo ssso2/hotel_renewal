@@ -4,13 +4,15 @@ const SubTitle = () => {
     const location = useLocation();
 
     const getTitleAndBreadcrumb = () => {
-        if (location.pathname === '/urbanIsland') {
+        if (location.pathname === '/outdoorPool') {
             return { title: "어번 아일랜드", breadcrumb: "어번 아일랜드" };
-        } else if (location.pathname === '/cabana') {
+        } else if (location.pathname === '/outdoorPool2') {
             return { title: "카바나", breadcrumb: "카바나" };
+        } else if (location.pathname === '/fitness') {
+            return { title: "실내 수영장", breadcrumb: "실내 수영장" };
         } else {
             return { title: "페이지 제목", breadcrumb: "현재 위치" }; 
-        }
+        } 
     };
 
     const { title, breadcrumb } = getTitleAndBreadcrumb();

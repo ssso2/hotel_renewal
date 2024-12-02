@@ -4,7 +4,8 @@ import Tab from "./Tab";
 import SubTitle from './SubTitle';
 import Gallery from './Gallery';
 import Introduction from './Introduction';
-import Desc from './Desc';
+import Location from './Location'
+import TitDesc from './TitDesc';
 import Card from './Card';
 import Footer from '../common/Footer';
 
@@ -14,7 +15,7 @@ import "../../scss/footer.scss"
 import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
-function UrbanIsland() {
+function OutdoorPool() {
 
     const galleryImages = [
         "../../img/sub/urban-01.jpg",
@@ -29,25 +30,22 @@ function UrbanIsland() {
                       서울 특급호텔 최초 온수풀, 자쿠지, 루프탑(Rooftop), 카바나 등 차원이 다른 아웃도어 라이프 스타일을 즐기실 수 있습니다.<br/>
                       어번 아일랜드는 계절마다 색다른 테마로 방문하실 때마다 새로운 경험을 제공합니다.`,
         tel: "02-2230-3528~9",
-        location: "서울신라호텔 3층",
-        extraContent: null 
     };
+
+    const locationData = [
+        { title: '위치', content: '서울신라호텔 3층' }
+    ];
 
     const rules = [
         {
             title: "[운영방침]",
             rule: [
                 '어번 아일랜드는 신라 피트니스 클럽 회원과 어번 아일랜드 이용 혜택이 포함된 투숙객 전용 시설입니다.',
-                
-                    "어번 아일랜드 입장 혜택이 포함된 상품 외에는 이용 시 입장료가 추가로 부과됩니다.",
-                    "단, 주말, 공휴일 및 성수기에는 수용 인원 마감에 따라 현장 유료 이용이 제한될 수 있습니다.",
-                
-                "어번 아일랜드는 사전 예약이 불가합니다.","(단, 카바나는 사전 예약 가능하며 02-2230-3528~9로 문의주시기 바랍니다.)",
+                "어번 아일랜드 입장 혜택이 포함된 상품 외에는 이용 시 입장료가 추가로 부과됩니다. (단, 주말, 공휴일 및 성수기에는 수용 인원 마감에 따라 현장 유료 이용이 제한될 수 있습니다.)",
+                "어번 아일랜드는 사전 예약이 불가합니다. (단, 카바나는 사전 예약 가능하며 02-2230-3528~9로 문의주시기 바랍니다.)",
                 "어번 아일랜드와 실내 수영장은 별도로 운영되고 있습니다.",
                 "쾌적하고 안전한 운영을 위해, 적정 인원 초과 시 입장이 제한될 수 있습니다.",
-                    "어번 아일랜드는 우천 시에도 정상 운영되나, 일부 선베드에 한해 우천 대비 설비가 갖추어져 있사오니 이용에 참고하시기 바랍니다.",
-                "(단, 폭우나 강풍이 지속되어 고객의 안전이 우려되는 경우 어번 아일랜드 운영이 중단될 수 있습니다.)",
-                
+                "어번 아일랜드는 우천 시에도 정상 운영되나, 일부 선베드에 한해 우천 대비 설비가 갖추어져 있사오니 이용에 참고하시기 바랍니다. (단, 폭우나 강풍이 지속되어 고객의 안전이 우려되는 경우 어번 아일랜드 운영이 중단될 수 있습니다.)",
                 "선베드는 객실당 2개씩 제공되며, 일부 선베드는 전용 패키지로 예약한 고객에게 우선 배정됩니다.",
                 "어번 아일랜드의 모든 지역은 금연 구역입니다.",
                 "어번 아일랜드 내 유모차 반입은 불가합니다.",
@@ -89,8 +87,7 @@ function UrbanIsland() {
         {
             title:"[장비]",
             rule: [
-                "지름 1m 이내 사이즈의 튜브만 반입이 허용되며, 키즈풀에서만 사용 가능합니다.",
-                "(단, 목튜브는 안전을 위해 모든 풀장 내 사용을 제한합니다.)",
+                "지름 1m 이내 사이즈의 튜브만 반입이 허용되며, 키즈풀에서만 사용 가능합니다. (단, 목튜브는 안전을 위해 모든 풀장 내 사용을 제한합니다.)",
                 "신장 140cm 미만인 고객을 위한 구명조끼를 무료로 대여해 드립니다.",
                 "비치볼을 제외한 스노클 장비, 오리발, 수중 프로펠러, 물총 등 다른 고객에게 불편을 주는 장비 및 장난감류는 사용하실 수 없습니다.",
             ]
@@ -99,7 +96,7 @@ function UrbanIsland() {
             title:"[식음료]",
             rule: [
                 "외부 식음료의 반입은 삼가 주시기 바랍니다.",
-                "식음료 주문은 운영 마감시간 및 중간 정비시간의 1시간 전까지 가능합니다. (단단단, 전복 한우 차돌박이 짬뽕 주문은 오후 12시부터 18시까지만 가능합니다.)",
+                "식음료 주문은 운영 마감시간 및 중간 정비시간의 1시간 전까지 가능합니다. (단, 전복 한우 차돌박이 짬뽕 주문은 오후 12시부터 18시까지만 가능합니다.)",
                 "특정 식음료에 알러지가 있는 경우, 주문 전 직원에게 반드시 알려주시기 바랍니다",
             ]
         },
@@ -122,7 +119,7 @@ function UrbanIsland() {
 
     return (
         <>
-        <Header/>
+        {/* <Header/> */}
         <div className="container">
             <div className="center">
                 <div className="depth3-tab-wrap">
@@ -133,7 +130,10 @@ function UrbanIsland() {
                             <Gallery propImages={galleryImages} />
                             <div className="context">
                                 <Introduction {...introData} />
-                                <Desc propRules={rules} />
+                                <div class="info-wrap mt-0">
+                                    <Location propLocation = {locationData}/>
+                                    <TitDesc propRules={rules} />
+                                </div>
                                 <Card propCards={cards} />
                             </div>
                         </div>
@@ -147,4 +147,4 @@ function UrbanIsland() {
     );
 }
 
-export default UrbanIsland;
+export default OutdoorPool;

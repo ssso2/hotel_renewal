@@ -4,6 +4,8 @@ import Tab from "./Tab";
 import SubTitle from './SubTitle';
 import Gallery from './Gallery';
 import Introduction from './Introduction';
+import Location from './Location';
+import Button from './Button';
 import InfoTable from './InfoTable';
 import InfoRule from './InfoRule';
 import Footer from '../common/Footer';
@@ -16,7 +18,7 @@ import "../../scss/sub-detail.scss"
 
 
 
-function Cabana() {
+function OutdoorPool2() {
 
     const galleryImages = [
         "../../img/sub/cabana-01.jpg",
@@ -32,9 +34,11 @@ function Cabana() {
         description: `어번 아일랜드(Urban Island)에서 더욱 여유로운 시간을 즐길 수 있는 다양한 스타일의 카바나를 제안합니다.<br/>
                     소중한 사람들과 함께하는 여유로운 휴식, 그리고 낭만적인 순간을 경험해 보십시오.`,
         tel: "02-2230-3528~9",
-        location: "서울신라호텔 3층",
-        extraContent: <button type="button" className="btn btn-01" data-lybtn="pop-map">Cabana Map</button>
     };
+
+    const locationData = [
+        { title: '위치', content: '서울신라호텔 3층' }
+    ];
 
     const tableData = {
         headers: ["구분", "F1 ~ F2", "F3 ~ F6", "Gathering", "K1 ~ K4"],
@@ -47,7 +51,7 @@ function Cabana() {
 
     return (
         <>
-        <Header/>
+        {/* <Header/> */}
         <div className="container">
             <div className="center">
                 <div className="depth3-tab-wrap">
@@ -59,6 +63,10 @@ function Cabana() {
 
                             <div className="context">
                                 <Introduction {...introData} />
+                                <div class="info-wrap mt-0">
+                                    <Location propLocation = {locationData}/>
+                                    <Button />
+                                </div>
                                 <InfoTable propData={tableData} />
                                 <InfoRule />
                             </div>
@@ -72,4 +80,4 @@ function Cabana() {
     )   
 }
 
-export default Cabana;
+export default OutdoorPool2;
