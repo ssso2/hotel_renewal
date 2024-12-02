@@ -18,7 +18,10 @@ import Info from "./components/sub/Info";
 import Location from "./components/sub/Location";
 
 // lifestyle
-import UrbanIsland from "./components/jaehun/js/UrbanIsland";
+import LifeStyle from './components/lifeStyle/LifeStyle';
+import UrbanIsland from './components/lifeStyle/UrbanIsland';
+import Cabana from './components/lifeStyle/Cabana';
+import IndoorPool from './components/lifeStyle/IndoorPool';
 
 // login
 import Login from "./components/sub/Login";
@@ -90,14 +93,39 @@ function App() {
 
             <Routes>
                 <Route path="/room" element={<Room />} />
-                <Route path="/room/delux" element={<Standard />} />
+                <Route path="/room/standard" element={<Standard />} />
+
+                <Route path="/room/businessDeluxe" element={<Stand_BusinessDeluxe />} />
+                <Route path="/room/barrierFreeDeluxe" element={<Stand_BarrierFreeDeluxe />} />
+                <Route path="/room/grandCornerDeluxe" element={<Stand_GrandCornerDeluxe />} />
+
+                <Route path="/room/executive" element={<Exec_Executive />} />
+                <Route path="/room/execBusinessDeluxe" element={<Exec_ExecBusinessDeluxe />} />
+                <Route path="/room/execGrandDeluxe" element={<Exec_GrandDeluxe />} />
+                
+                <Route path="/room/suite" element={<Suite />} />
+                <Route path="/room/superior" element={<Suite_Superior />} />
+                <Route path="/room/korean" element={<Suite_Korean />} />
+                <Route path="/room/corner" element={<Suite_Corner />} />
+                <Route path="/room/premier" element={<Suite_Premier />} />
+                <Route path="/room/royal" element={<Suite_Royal />} />
+                <Route path="/room/shilla" element={<Suite_Shilla />} />
+                <Route path="/room/presidential" element={<Suite_Presidential />} />
+
+                <Route path="/room/executiveLounge" element={<Lounge_ExecutiveLounge />} />
             </Routes>
+                    
 
             <Routes>
-                <Route path="/abc" element={<UrbanIsland />}></Route>
+              <Route path='/lifeStyle' element={<LifeStyle/>}></Route>
+              <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
+              <Route path='/cabana' element={<Cabana/>}></Route>
+              <Route path='/fitness' element={<IndoorPool/>}></Route>
             </Routes>
-        </div>
-    );
+
+    </div>
+  );
+
 }
 
 export default App;
