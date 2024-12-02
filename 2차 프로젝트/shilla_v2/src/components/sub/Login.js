@@ -13,7 +13,7 @@ const Login = () => {
 
     return (
         <>
-            {/* <Header></Header> */}
+            <Header></Header>
             <LoginComp></LoginComp>
             <Footer></Footer>
         </>
