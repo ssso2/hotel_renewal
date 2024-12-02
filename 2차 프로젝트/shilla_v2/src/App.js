@@ -39,6 +39,7 @@ function App() {
             <Routes>
                 {/* 메인 */}
                 <Route path="/" element={<Main></Main>}></Route>
+                <Route path="/admin" element={<Admin></Admin>}></Route>
             </Routes>
             {/* 스페셜오퍼 */}
             <Routes>
