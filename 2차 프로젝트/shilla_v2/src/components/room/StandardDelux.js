@@ -23,19 +23,19 @@ function StandardDelux() {
     return (
         <>
             <ul className="tab tab-long">
-                <li className="tab1 on"><Link to="/room/delux">디럭스</Link></li>
-                <li className="tab2"><Link to="../../html/sub/sub02_01_02.html">비즈니스 디럭스</Link></li>
-                <li className="tab3"><Link to="../../html/sub/sub02_01_03.html">베리어프리 비즈니스 디럭스</Link></li>
-                <li className="tab4"><Link to="../../html/sub/sub02_01_04.html">그랜드 코너 디럭스</Link></li>
+                <li className="tab1 on"><Link to="/room/standard">디럭스</Link></li>
+                <li className="tab2"><Link to="/room/businessDeluxe">비즈니스 디럭스</Link></li>
+                <li className="tab3"><Link to="/room/barrierFreeDeluxe">베리어프리 비즈니스 디럭스</Link></li>
+                <li className="tab4"><Link to="/room/grandCornerDeluxe">그랜드 코너 디럭스</Link></li>
             </ul>
             <div className="tab-contents">
                 <div className="tab-cont cont1 on">
                     <div className="sub-title">
                         <h2>디럭스</h2>
                         <ul className="location">
-                            <li><Link to="../../html/index.html">홈</Link></li>
-                            <li><Link to="../../html/sub/sub02.html">객실</Link></li>
-                            <li><Link to="#self">디럭스</Link></li>
+                            <li><Link to="/">홈</Link></li>
+                            <li><Link to="/room">객실</Link></li>
+                            <li><Link to="/room/standard">디럭스</Link></li>
                         </ul>
                     </div>
 
