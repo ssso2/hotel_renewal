@@ -1,8 +1,8 @@
 // setting
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 
 // main
-import Main from './components/main/Main';
+import Main from "./components/main/Main";
 
 // board
 import BoardList from "./components/board/BoardList";
@@ -12,69 +12,70 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
 // lifestyle
-import UrbanIsland from './components/jaehun/js/UrbanIsland';
+import UrbanIsland from "./components/jaehun/js/UrbanIsland";
 
 // login
-import Login from './components/sub/Login';
-// join
-import Join from './components/sub/Join';
+import Login from "./components/sub/Login";
+
+// offer
+import SpecialOffer from "./components/sh/SpecialOffer";
+import OfferMain from "./components/sh/OfferMain";
+import OfferDetail from "./components/sh/OfferDetail";
+import Event from "./components/sh/Event";
 
 // admin
-import Admin from './components/admin/Admin'
-
-// reservation
-import Res_search from './components/reservation/Res_search';
-import Res_temp from './components/reservation/Res_temp';
-import Res_detail from './components/reservation/Res_detail';
+import Admin from "./components/admin/Admin";
+import EventDetail1 from "./components/sh/EventDetail1"; // reservation
+import Res_search from "./components/reservation/Res_search";
+import Res_temp from "./components/reservation/Res_temp";
+import Res_detail from "./components/reservation/Res_detail";
 // room
-import Room from './components/lkm/Room';
+import Room from "./components/lkm/Room";
 
 function App() {
+    return (
+        <div>
+            <Routes>
+                {/* 메인 */}
+                <Route path="/" element={<Main></Main>}></Route>
+            </Routes>
+            {/* 스페셜오퍼 */}
+            <Routes>
+                <Route path="/specialOffer" element={<SpecialOffer />}>
+                    <Route index element={<OfferMain />} />
+                    <Route path="detail/:id" element={<OfferDetail />} />
+                    <Route path="event" element={<Event />} />
+                    <Route path="event/detail/1" element={<EventDetail1 />} />
+                </Route>
+                {/* 로그인 */}
+                <Route path="/login" element={<Login></Login>}></Route>
 
-  return (
-    <div>
-      <Routes>
-        {/* 메인 */}
-        <Route index element={<Main></Main>}></Route>
-        {/* 로그인 */}
-        <Route path='/login' element={<Login></Login>}></Route>
-        {/* 회원가입 */}
-        <Route path='/join' element={<Join></Join>}></Route>
-      
-      
-        {/* 고객센터 */}
-        <Route path="/board" element={<BoardTemp/>} >
-          <Route path="" element={<BoardList/>} />
-          <Route path="detail/:num" element={<BoardDetail/>} />
-          <Route path="join" element={<BoardJoin/>} />
-          <Route path="modify/:num" element={<BoardModify/>} />
-        </Route>
+                {/* 고객센터 */}
+                <Route path="/board" element={<BoardTemp />}>
+                    <Route path="" element={<BoardList />} />
+                    <Route path="detail/:num" element={<BoardDetail />} />
+                    <Route path="join" element={<BoardJoin />} />
+                    <Route path="modify/:num" element={<BoardModify />} />
+                </Route>
+            </Routes>
 
-        {/* 관리자페이지 */}
-        <Route path='/admin' element={<Admin/>} />
-      </Routes>
+            {/* 예약페이지 */}
+            <Routes>
+                <Route path="/reserve" element={<Res_temp />}>
+                    <Route path="" element={<Res_search />} />
+                    <Route path="detail" element={<Res_detail />} />
+                    {/* <Route path="join" element={<BoardJoin/>} /> */}
+                    {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
+                </Route>
+            </Routes>
 
-      {/* 예약페이지 */}
-      <Routes>
-        <Route path="/reserve" element={<Res_temp/>} >
-          <Route path="" element={<Res_search/>} />
-          <Route path="detail" element={<Res_detail/>} />
-          {/* <Route path="join" element={<BoardJoin/>} /> */}
-          {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
-        </Route>
-      </Routes>
+            <Routes>
+                <Route path="/room" element={<Room />} />
 
-      <Routes>
-
-        <Route path="/room" element={<Room />} />
-
-        <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
-
-      </Routes>
-
-
-    </div>
-  );
+                <Route path="/urbanIsland" element={<UrbanIsland />}></Route>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

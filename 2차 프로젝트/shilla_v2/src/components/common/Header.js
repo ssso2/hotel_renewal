@@ -26,67 +26,66 @@ const Header = () => {
 
     const gnbTitle = [
         {
-            link : '/specialOffer', 
-            title : '스페셜 오퍼',
-            gnbMenu : [
-                {link : '/specialOffer', text : '객실패키지'},
-                {link : '/event', text : '이벤트'},
-            ]
+            link: "/specialOffer",
+            title: "스페셜 오퍼",
+            gnbMenu: [
+                { link: "/specialOffer", text: "객실패키지" },
+                { link: "/event", text: "이벤트" },
+            ],
         },
         {
-            link : '/room', 
-            title : '객실',
-            gnbMenu : [
-                {link : '/standard', text : '스탠다드'},
-                {link : '/executive', text : '이그제큐티브'},
-                {link : '/sweet', text : '스위트'},
-                {link : '/executiveLounge', text : '더 이그제큐티브 라운지'},
-                {link : '/room', text : '전체 객실 보기'},
-            ]
+            link: "/room",
+            title: "객실",
+            gnbMenu: [
+                { link: "/standard", text: "스탠다드" },
+                { link: "/executive", text: "이그제큐티브" },
+                { link: "/sweet", text: "스위트" },
+                { link: "/executiveLounge", text: "더 이그제큐티브 라운지" },
+                { link: "/room", text: "전체 객실 보기" },
+            ],
         },
         {
-            link : '/dining', 
-            title : '다이닝',
-            gnbMenu : [
-                {link : '/restaurant', text : '레스토랑'},
-                {link : '/lounge', text : '라운지 & 바'},
-                {link : '/bakery', text : '베이커리'},
-        
-            ]
+            link: "/dining",
+            title: "다이닝",
+            gnbMenu: [
+                { link: "/restaurant", text: "레스토랑" },
+                { link: "/lounge", text: "라운지 & 바" },
+                { link: "/bakery", text: "베이커리" },
+            ],
         },
         {
-            link : '/lifeStyle', 
-            title : '라이프스타일',
-            gnbMenu : [
-                {link : '/urbanIsland', text : '야외수영장'},
-                {link : '/fitness', text : '피트니스'},
-                {link : '/walkingTrails', text : '산책로'},
-                {link : '/jogging', text : '조깅코스'},
-                {link : '/shopping', text : '쇼핑'},
-            ]
+            link: "/lifeStyle",
+            title: "라이프스타일",
+            gnbMenu: [
+                { link: "/urbanIsland", text: "야외수영장" },
+                { link: "/fitness", text: "피트니스" },
+                { link: "/walkingTrails", text: "산책로" },
+                { link: "/jogging", text: "조깅코스" },
+                { link: "/shopping", text: "쇼핑" },
+            ],
         },
         {
-            link : '/party', 
-            title : '웨딩 & 연회',
-            gnbMenu : [
-                {link : '/wedding', text : '웨딩'},
-                {link : '/corporateParty', text : '기업연회'},
-                {link : '/familyParty', text : '가족연회'},
-            ]
+            link: "/party",
+            title: "웨딩 & 연회",
+            gnbMenu: [
+                { link: "/wedding", text: "웨딩" },
+                { link: "/corporateParty", text: "기업연회" },
+                { link: "/familyParty", text: "가족연회" },
+            ],
         },
         {
-            link : '/info', 
-            title : '고객센터',
-            gnbMenu : [
-                {link : '/info', text : '연락처'},
-                {link : '/notice', text : '공지사항'},
-                {link : '/faq', text : 'FAQ'},
-                {link : '/board', text : '문의하기'},
+            link: "/info",
+            title: "고객센터",
+            gnbMenu: [
+                { link: "/info", text: "연락처" },
+                { link: "/notice", text: "공지사항" },
+                { link: "/faq", text: "FAQ" },
+                { link: "/board", text: "문의하기" },
                 // {link : '/review', text : '리뷰'},
-                {link : '/ocation', text : '오시는길'},
-            ]
+                { link: "/ocation", text: "오시는길" },
+            ],
         },
-    ]
+    ];
 
     const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
 
@@ -171,13 +170,11 @@ const Header = () => {
                 gnb1Depth.current[i].classList.add("on");
             });
         }
-        
 
         // 스크롤 했을 때 header 변경 함수 호출
-        window.addEventListener("scroll",scrollHeader);
+        window.addEventListener("scroll", scrollHeader);
         // 창 크기 1500 이하일 때 모바일 메뉴 닫기 함수 호출
-        window.addEventListener("resize",resizeGo);
-        
+        window.addEventListener("resize", resizeGo);
 
         // 모바일 햄버거 버튼
         mBtn.addEventListener("click",()=>{
@@ -222,7 +219,7 @@ const Header = () => {
         // 다른 페이지로 이동할 때 이벤트를 없애준다.
         return()=>{
             // 스크롤 했을 때 header 변경 함수 호출
-            window.removeEventListener("scroll",scrollHeader);
+            window.removeEventListener("scroll", scrollHeader);
             // 창 크기 1500 이하일 때 모바일 메뉴 닫기 함수 호출
             window.removeEventListener("resize",resizeGo);
         }
@@ -238,8 +235,8 @@ const Header = () => {
                 <div className="gnbbg" ></div>
                 <div className="center">
                     <h1 className="logo">
-                        <Link to='/'>
-                            <img src="/img/common/logo.png" alt=""/>
+                        <Link to="/">
+                            <img src="/img/common/logo.png" alt="" />
                         </Link>
                     </h1>
                     <HeaderComp1 gnbMenu={gnbMenu}/>
@@ -255,9 +252,7 @@ const Header = () => {
                 <HeaderComp5 gnbMenu={gnbMenu}/>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Header
-
-
+export default Header;
