@@ -23,10 +23,10 @@ function StandardDelux() {
     return (
         <>
             <ul className="tab tab-long">
-                <li className="tab1 on"><Link to="/room/standard">디럭스</Link></li>
-                <li className="tab2"><Link to="/room/businessDeluxe">비즈니스 디럭스</Link></li>
-                <li className="tab3"><Link to="/room/barrierFreeDeluxe">베리어프리 비즈니스 디럭스</Link></li>
-                <li className="tab4"><Link to="/room/grandCornerDeluxe">그랜드 코너 디럭스</Link></li>
+                <li className="tab1 on"><Link to="/standard">디럭스</Link></li>
+                <li className="tab2"><Link to="/businessDeluxe">비즈니스 디럭스</Link></li>
+                <li className="tab3"><Link to="/barrierFreeDeluxe">베리어프리 비즈니스 디럭스</Link></li>
+                <li className="tab4"><Link to="/grandCornerDeluxe">그랜드 코너 디럭스</Link></li>
             </ul>
             <div className="tab-contents">
                 <div className="tab-cont cont1 on">
@@ -35,7 +35,7 @@ function StandardDelux() {
                         <ul className="location">
                             <li><Link to="/">홈</Link></li>
                             <li><Link to="/room">객실</Link></li>
-                            <li><Link to="/room/standard">디럭스</Link></li>
+                            <li><Link to="/standard">디럭스</Link></li>
                         </ul>
                     </div>
 
