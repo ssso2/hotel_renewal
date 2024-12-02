@@ -78,10 +78,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(5002, () => {
-<<<<<<< HEAD
-    console.log("2차 프로젝트 DB 연결 서버 실행");
-=======
     console.log("5002 2차 프로젝트 DB 연결 서버 실행");
->>>>>>> master
 });
-
