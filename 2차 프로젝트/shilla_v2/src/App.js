@@ -30,8 +30,8 @@ import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
 // room
-import Room from './components/lkm/Room';
-import Standard from './components/lkm/Standard';
+import Room from './components/room/Room';
+import Standard from './components/room/Standard';
 
 function App() {
     return (
