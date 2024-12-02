@@ -10,7 +10,7 @@ const MainCont5Popup = () => {
                     h5Text : '서울 강북', 
                     list : [
                         {
-                            hotelLink : "#",
+                            hotelLink : "/",
                             target : '',
                             title : '',
                             text : '서울 신라호텔'
