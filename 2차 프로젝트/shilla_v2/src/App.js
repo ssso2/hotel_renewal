@@ -45,7 +45,24 @@ import Res_detail from "./components/reservation/Res_detail";
 // room
 import Room from "./components/room/Room";
 import Standard from "./components/room/Standard";
+import Stand_BusinessDeluxe from "./components/room/Stand_BusinessDeluxe";
+import Stand_BarrierFreeDeluxe from "./components/room/Stand_BarrierFreeDeluxe";
+import Stand_GrandCornerDeluxe from "./components/room/Stand_GrandCornerDeluxe";
 
+import Exec_Executive from "./components/room/Exec_Executive";
+import Exec_ExecBusinessDeluxe from "./components/room/Exec_ExecBusinessDeluxe";
+import Exec_GrandDeluxe from "./components/room/Exec_GrandDeluxe";
+
+import Suite from "./components/room/Suite";
+import Suite_Superior from "./components/room/Suite_Superior";
+import Suite_Korean from "./components/room/Suite_Korean";
+import Suite_Corner from "./components/room/Suite_Corner";
+import Suite_Premier from "./components/room/Suite_Premier";
+import Suite_Royal from "./components/room/Suite_Royal";
+import Suite_Shilla from "./components/room/Suite_Shilla";
+import Suite_Presidential from "./components/room/Suite_Presidential";
+
+import Lounge_ExecutiveLounge from "./components/room/Lounge_ExecutiveLounge";
 
 function App() {
     return (
@@ -94,26 +111,26 @@ function App() {
             <Routes>
 
                 <Route path="/room" element={<Room />} />
-                <Route path="/room/standard" element={<Standard />} />
+                <Route path="/standard" element={<Standard />} />
 
-                <Route path="/room/businessDeluxe" element={<Stand_BusinessDeluxe />} />
-                <Route path="/room/barrierFreeDeluxe" element={<Stand_BarrierFreeDeluxe />} />
-                <Route path="/room/grandCornerDeluxe" element={<Stand_GrandCornerDeluxe />} />
+                <Route path="/businessDeluxe" element={<Stand_BusinessDeluxe />} />
+                <Route path="/barrierFreeDeluxe" element={<Stand_BarrierFreeDeluxe />} />
+                <Route path="/grandCornerDeluxe" element={<Stand_GrandCornerDeluxe />} />
 
-                <Route path="/room/executive" element={<Exec_Executive />} />
-                <Route path="/room/execBusinessDeluxe" element={<Exec_ExecBusinessDeluxe />} />
-                <Route path="/room/execGrandDeluxe" element={<Exec_GrandDeluxe />} />
+                <Route path="/executive" element={<Exec_Executive />} />
+                <Route path="/execBusinessDeluxe" element={<Exec_ExecBusinessDeluxe />} />
+                <Route path="/execGrandDeluxe" element={<Exec_GrandDeluxe />} />
                 
-                <Route path="/room/suite" element={<Suite />} />
-                <Route path="/room/superior" element={<Suite_Superior />} />
-                <Route path="/room/korean" element={<Suite_Korean />} />
-                <Route path="/room/corner" element={<Suite_Corner />} />
-                <Route path="/room/premier" element={<Suite_Premier />} />
-                <Route path="/room/royal" element={<Suite_Royal />} />
-                <Route path="/room/shilla" element={<Suite_Shilla />} />
-                <Route path="/room/presidential" element={<Suite_Presidential />} />
+                <Route path="/suite" element={<Suite />} />
+                <Route path="/superior" element={<Suite_Superior />} />
+                <Route path="/korean" element={<Suite_Korean />} />
+                <Route path="/corner" element={<Suite_Corner />} />
+                <Route path="/premier" element={<Suite_Premier />} />
+                <Route path="/royal" element={<Suite_Royal />} />
+                <Route path="/shilla" element={<Suite_Shilla />} />
+                <Route path="/presidential" element={<Suite_Presidential />} />
 
-                <Route path="/room/executiveLounge" element={<Lounge_ExecutiveLounge />} />
+                <Route path="/executiveLounge" element={<Lounge_ExecutiveLounge />} />
             </Routes>
                     
 
