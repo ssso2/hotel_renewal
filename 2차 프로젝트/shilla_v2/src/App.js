@@ -18,10 +18,11 @@ import UrbanIsland from "./components/jaehun/js/UrbanIsland";
 import Login from "./components/sub/Login";
 
 // offer
-import SpecialOffer from "./components/sh/SpecialOffer";
-import OfferMain from "./components/sh/OfferMain";
-import OfferDetail from "./components/sh/OfferDetail";
-import Event from "./components/sh/Event";
+import SpecialOffer from "./components/specialoffer/SpecialOffer";
+import OfferMain from "./components/specialoffer/OfferMain";
+import OfferDetail from "./components/specialoffer/OfferDetail";
+import Event from "./components/specialoffer/Event";
+import EventDetail1 from "./components/specialoffer/EventDetail1";
 
 // admin
 import Admin from "./components/admin/Admin";
@@ -30,8 +31,8 @@ import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
 // room
-import Room from './components/room/Room';
-import Standard from './components/room/Standard';
+import Room from "./components/room/Room";
+import Standard from "./components/room/Standard";
 
 function App() {
     return (
@@ -44,7 +45,7 @@ function App() {
             {/* 스페셜오퍼 */}
             <Routes>
                 <Route path="/specialOffer" element={<SpecialOffer />}>
-                    <Route index element={<OfferMain />} />
+                    <Route path="" element={<OfferMain />} />
                     <Route path="detail/:id" element={<OfferDetail />} />
                     <Route path="event" element={<Event />} />
                     <Route path="event/detail/1" element={<EventDetail1 />} />
@@ -71,17 +72,16 @@ function App() {
                 </Route>
             </Routes>
 
-      <Routes>
-          <Route path="/room" element={<Room />} />
-          <Route path="/room/delux" element={<Standard />} />
-      </Routes>
+            <Routes>
+                <Route path="/room" element={<Room />} />
+                <Route path="/room/delux" element={<Standard />} />
+            </Routes>
 
-      <Routes>
-          <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
-      </Routes>
-
-    </div>
-  );
+            <Routes>
+                <Route path="/urbanIsland" element={<UrbanIsland />}></Route>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

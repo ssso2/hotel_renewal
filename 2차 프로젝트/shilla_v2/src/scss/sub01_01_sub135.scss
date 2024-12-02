@@ -315,7 +315,8 @@
         }
     }
 }
-.lypop {
+
+.offerdetail .lypop {
     display: none;
     position: fixed;
     top: 0;
@@ -338,7 +339,7 @@
     }
 }
 
-.lypop-wp {
+.offerdetail .lypop-wp {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -360,10 +361,10 @@
     }
 }
 
-.lypop-content {
+.offerdetail .lypop-content {
     background-color: #fff;
 }
-.lypop-title {
+.offerdetail .lypop-title {
     position: relative;
     height: 52px;
     background-color: #7a6c64;
@@ -376,7 +377,7 @@
     }
 }
 
-.lypop-close {
+.offerdetail .lypop-close {
     position: absolute;
     top: 5px;
     right: 10px;
@@ -407,7 +408,7 @@
     }
 }
 
-.lypop-ct {
+.offerdetail .lypop-ct {
     padding: 30px;
     img {
         width: 100%;
