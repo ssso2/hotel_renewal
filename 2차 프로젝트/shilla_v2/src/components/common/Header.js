@@ -1,5 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import {Link} from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
+import HeaderComp1 from "./HeaderComp1";
+import HeaderComp2 from "./HeaderComp2";
+import HeaderComp3 from "./HeaderComp3";
+import HeaderComp4 from "./HeaderComp4";
+import HeaderComp5 from "./HeaderComp5";
 import '../../scss/reset.css'
 import '../../scss/common.scss'
 import '../../scss/header.scss'
@@ -8,16 +13,16 @@ import '../../scss/header.scss'
 
 
 const Header = () => {
+    const navigate = useNavigate()
 
-   // 태그 선택 시 참조할 대상을 담을 공간
-    const header = useRef(null);
-    const gnb = useRef(null);
-    const gnbBg = useRef(null);
-    const gnb1Depth = useRef([]);
+    const header = document.querySelector("header");
+    const gnb = document.querySelector(".gnb");
+    const gnbBg = document.querySelector(".gnbbg");
+    const gnb1Depth = document.querySelectorAll(".gnb > li");
     // 모바일메뉴
-    const mBtn = useRef(null);  
-    const mWrap = useRef(null); 
-    const depth1 = useRef([]);
+    const mBtn = document.querySelector(".m_btn");
+    const mWrap = document.querySelector(".m_wrap");
+    const depth1 = document.querySelectorAll(".m_gnb > li");
 
     const gnbTitle = [
         {
@@ -85,7 +90,15 @@ const Header = () => {
 
     const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
 
+    const [user,setUser] = useState(null)
+
     // 함수 부분 시작 -----------------------------------------------------------------------------------------------------------------------
+
+    function logout() {
+        sessionStorage.clear() //한번에 다 지우는 방법. removeItem으로 하면 하나씩 지울 수도 있다.
+        alert(`${user.name}님, 로그아웃되었습니다`);
+        navigate('/login');
+    }
 
     // 스크롤 이벤트 관련 함수
     // 과거의 스크롤바 위치값
@@ -96,24 +109,24 @@ const Header = () => {
 
         //스크롤바 내리면 헤더는 사라지고 스크롤바 올리면 헤더 나타남
         if(scTop == 0){
-            header.current.classList.add("active");
-            mWrap.current.style.paddingTop = 80 + "px"
+            header.classList.add("active");
+            mWrap.style.paddingTop = 80 + "px"
         }
         if(scTop > lastScrollTop) {
-            header.current.classList.remove("active");
-            mWrap.current.style.paddingTop = 0 + "px"
+            header.classList.remove("active");
+            mWrap.style.paddingTop = 0 + "px"
         }
         else{
-            header.current.classList.add("active");
-            mWrap.current.style.paddingTop = 80 + "px"
+            header.classList.add("active");
+            mWrap.style.paddingTop = 80 + "px"
         }
         lastScrollTop = scTop;
     }
 
-
+    // 화면 사이즈가 1500px보다 작아지면 모바일gnb가 닫힌다.
     function resizeGo() {
         if(window.innerWidth > 1500){
-            mWrap.current.classList.remove("move");
+            mWrap.classList.remove("move");
         }
     }
 
@@ -121,21 +134,40 @@ const Header = () => {
 
     useEffect(()=>{
 
+        // 로그인 여부 확인
+        const id = sessionStorage.getItem("id");
+        // if(!id){ //로그인 정보가 없다면 로그인 페이지로 이동
+        //     navigate("/login") 
+        // }
+        const name = sessionStorage.getItem("name");
 
-        gnb.current.addEventListener("mouseover",()=>{
+        if(id){
+            setUser({'id':id,"name": name})
+        }else{
+            setUser(null)
+        }
+        console.log('user : ');
+        console.log(user);
+
+
+
+        // gnb에 마우스를 올렸을 때 동작
+        gnb.addEventListener("mouseover",()=>{
             // console.log("gnb mouseover 진입");
             
-            gnbBg.current.classList.add("on");
+            gnbBg.classList.add("on");
         });
         
-        gnb.current.addEventListener("mouseleave",()=>{
-            gnbBg.current.classList.remove("on");
+        // gnb에서 마우스를 내렸을 때 동작
+        gnb.addEventListener("mouseleave",()=>{
+            gnbBg.classList.remove("on");
         });
-        for(let i = 0; i < gnb1Depth.current.length; i++){
-            gnb1Depth.current[i].addEventListener("mouseleave",function(){
+        // gnb menu의 각 부분에 마우스 올리고 내렸을 때
+        for(let i = 0; i < gnb1Depth.length; i++){
+            gnb1Depth[i].addEventListener("mouseleave",function(){
                 gnb1Depth.current[i].classList.remove("on");
             });
-            gnb1Depth.current[i].addEventListener("mouseover",function(){
+            gnb1Depth[i].addEventListener("mouseover",function(){
                 gnb1Depth.current[i].classList.add("on");
             });
         }
@@ -148,45 +180,46 @@ const Header = () => {
         
 
         // 모바일 햄버거 버튼
-        mBtn.current.addEventListener("click",()=>{
+        mBtn.addEventListener("click",()=>{
             // console.log('모바일버튼 클릭 진입');
             
-            if(!mBtn.current.classList.contains("move")){
+            if(!mBtn.classList.contains("move")){
                 // console.log('move 없을때');
-                mWrap.current.classList.add("move");
-                mBtn.current.classList.add("move");
-                // console.log(mBtn.current.classList)
+                mWrap.classList.add("move");
+                mBtn.classList.add("move");
+                // console.log(mBtn.classList)
             }
             else{
                 // console.log('move 있을때');
-                mWrap.current.classList.remove("move");
-                mBtn.current.classList.remove("move");
-                // console.log(mBtn.current.classList)
+                mWrap.classList.remove("move");
+                mBtn.classList.remove("move");
+                // console.log(mBtn.classList)
 
             }
         });
         
         
-        // console.log(depth1.current.length);
+        // console.log(depth1.length);
         
         // 모바일 GNB
-        for(let i = 0; i < depth1.current.length; i++){
-            depth1.current[i].addEventListener("click",()=>{
+        for(let i = 0; i < depth1.length; i++){
+            depth1[i].addEventListener("click",()=>{
                 console.log('모바일 GNB 클릭 이벤트 진입');
                 
-                if(depth1.current[i].classList.contains("on")){
-                    depth1.current[i].classList.remove("on");
+                if(depth1[i].classList.contains("on")){
+                    depth1[i].classList.remove("on");
                 }
                 else{
                     const depth1On = document.querySelectorAll(".m_gnb > li.on");
                     for(let j = 0; j < depth1On.length; j++){
                         depth1On[j].classList.remove("on");
                     }
-                    depth1.current[i].classList.add("on");
+                    depth1[i].classList.add("on");
                 }
             });
         }
 
+        // 다른 페이지로 이동할 때 이벤트를 없애준다.
         return()=>{
             // 스크롤 했을 때 header 변경 함수 호출
             window.removeEventListener("scroll",scrollHeader);
@@ -195,114 +228,31 @@ const Header = () => {
         }
     })
 
-
+    if(!user){
+        return <div>로그인 정보 없음</div>
+    }
 
     return (
         <>
-            <header className="active" ref={header}>
-                <div className="gnbbg" ref={gnbBg}></div>
+            <header className="active" >
+                <div className="gnbbg" ></div>
                 <div className="center">
                     <h1 className="logo">
                         <Link to='/'>
                             <img src="/img/common/logo.png" alt=""/>
                         </Link>
                     </h1>
-                    <ul className="gnb" ref={gnb} >
-                        {
-                            gnbMenu.map((item,index)=>{
-                                return  <li key={index} ref={el => gnb1Depth.current[index] = el}>
-                                            <Link to={item.link}>{item.title}</Link>
-                                            <ul className="depth2">
-                                                {
-                                                    item.gnbMenu.map((depth2,idx)=>{
-                                                        return <li key={idx}><Link to={depth2.link}>{depth2.text}</Link></li>
-                                                    })
-                                                }
-                                            </ul>
-                                        </li>
-                            })
-                        }
-                    </ul>
-                    {/* <!-- 비로그인시 --> */}
-                    <div className="btn-wrap on">
-                        <Link to="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
-                        <Link to="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
-                    </div>
-                    {/* <!-- 로그인시 --> */}
-                    <div className="btn-wrap login">
-                        <Link to="/mypage-new" className="user-name-btn" title="마이페이지로 이동">
-                            <i className="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </Link>
-                        <Link to="/" className="logout-btn">로그아웃
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Link>
-                    </div>
-                    {/* <!-- 관리자 로그인시 --> */}
-                    <div className="btn-wrap admin">
-                        <Link to="/admin" className="user-name-btn" title="관리자페이지로 이동">
-                            <i className="fa-regular fa-user"></i>
-                            <p>관리자<span>님</span></p>
-                        </Link>
-                        <Link to="/" className="logout-btn">로그아웃
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Link>
-                    </div>
+                    <HeaderComp1 gnbMenu={gnbMenu}/>
+                    <HeaderComp2 user={user}/>
+                    
                     {/* <!-- 모바일 햄버거 버튼 --> */}
-                    <div className="m_btn" ref={mBtn} >
-                        <div className="menu">
-                            <span className="line one"></span>
-                            <span className="line two"></span>
-                            <span className="line three"></span>
-                        </div>
-                    </div>
+                    <HeaderComp3/>
                 </div>
             </header>
             {/* <!-- 모바일 메뉴 --> */}
-            <div className="m_wrap" ref={mWrap}>
-                <div className="m_top">
-                    {/* <!-- 비로그인시 --> */}
-                    <div className="btn-wrap on">
-                        <Link href="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
-                        <Link href="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
-                    </div>
-                    {/* <!-- 로그인시 --> */}
-                    <div className="btn-wrap login">
-                        <Link href="/mypage" className="user-name-btn" title="마이페이지로 이동">
-                            <i className="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </Link>
-                        <Link href="/" className="logout-btn">로그아웃
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Link>
-                    </div>
-                    {/* <!-- 관리자 로그인시 --> */}
-                    <div className="btn-wrap admin">
-                        <Link href="/admin" className="user-name-btn" title="관리자페이지로 이동">
-                            <i className="fa-regular fa-user"></i>
-                            <p>관리자<span>님</span></p>
-                        </Link>
-                        <Link href="/" className="logout-btn">로그아웃
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Link>
-                    </div>
-                </div>
-                <ul className="m_gnb">
-                    {
-                        gnbMenu.map((item,index)=>{
-                            return  <li key={index} ref={el => depth1.current[index] = el}>
-                                        <Link to='#self'>{item.title}</Link>
-                                        <ul className="m_sub">
-                                            {
-                                                item.gnbMenu.map((depth2,idx)=>{
-                                                    return <li key={idx}><Link to={depth2.link}>{depth2.text}</Link></li>
-                                                })
-                                            }
-                                        </ul>
-                                    </li>
-                        })
-                    }
-                </ul>
+            <div className="m_wrap" >
+                <HeaderComp4 user={user}/>
+                <HeaderComp5 gnbMenu={gnbMenu}/>
             </div>
         </>
     )

@@ -7,11 +7,6 @@ const multer = require('multer'); // 자동으로 파일 업로드 처리를 해
 const path = require('path');
 
 
-
-app.use(cors()); //다른 포트에서 들어와도 열어주도록 cors 세팅
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
-
 // 세션 설정
 app.use(session({
     secret:'1234',
@@ -23,14 +18,18 @@ app.use(session({
     }
 }));
 
+
+app.use(cors()); //다른 포트에서 들어와도 열어주도록 cors 세팅
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
+
 // static 폴더 설정 --> 이미지 파일 프론트 엔드에 서빙
 app.use('/bk/files',express.static(path.join(__dirname,'files')))
 
 
 // frontend static 처리
 app.use(express.static(path.join(__dirname,'build')))
-
-
 
 
 // 업로드는 멀터로 작업을 하겠다.

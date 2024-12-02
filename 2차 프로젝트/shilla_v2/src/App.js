@@ -11,6 +11,8 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 // login
 import Login from './components/sub/Login';
+// join
+import Join from './components/sub/Join';
 
 // scss
 import './App.css'
@@ -23,10 +25,11 @@ function App() {
     <div>
       <Routes>
         {/* 메인 */}
-        <Route path='/' element={<Main></Main>}></Route>
+        <Route index element={<Main></Main>}></Route>
         {/* 로그인 */}
         <Route path='/login' element={<Login></Login>}></Route>
-
+        {/* 회원가입 */}
+        <Route path='/join' element={<Join></Join>}></Route>
       
       
         {/* 고객센터 */}
