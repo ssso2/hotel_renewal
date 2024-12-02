@@ -1,105 +1,18 @@
 import React from 'react';
-import Header from '../../common/Header';
-import Footer from '../../common/Footer';
-import { Link } from 'react-router-dom';
+import Header from '../common/Header';
+import Tab from "./Tab";
+import SubTitle from './SubTitle';
+import Gallery from './Gallery';
+import Introduction from './Introduction';
+import Desc from './Desc';
+import Card from './Card';
+import Footer from '../common/Footer';
 
-import "../../../scss/common.scss"
-import "../../../scss/header.scss"
-import "../../../scss/footer.scss"
-import "../../../scss/sub-list.scss"
-import "../../../scss/sub-detail.scss"
-
-const Gallery = ({ propImages }) => {
-    return (
-        <div className="gallery">
-            <div style={{'--swiper-navigation-color': '#fff', '--swiper-pagination-color': '#fff'}} className="swiper mySwiper2">
-                <div className="swiper-wrapper">
-                    {propImages.map((img, index)=> (
-                        <div className="swiper-slide" key={index}>
-                            <img src={img} alt={`gallery-img-${index}`} />
-                        </div>
-                    ))}
-                </div>
-                <div className="swiper-button-next"></div>
-                <div className="swiper-button-prev"></div>
-            </div>
-            <div thumbsSlider="" className="swiper mySwiper">
-                <div className="swiper-wrapper">
-                    {propImages.map((img, index)=>(
-                        <div className="swiper-slide" key={index}>
-                            <img src={img} alt={`gallery-img-${index}`} />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
-    )
-}
-
-const Introduction = () => {
-    return (
-        <>
-        <div className="Introduction">
-            <h3>격이 다른 아웃도어 라이프스타일 경험을 제공하는 어번 아일랜드</h3>
-            <p className="txt">
-                어번 아일랜드(Urban Island)는 '도심 속 휴식의 섬' 컨셉의 야외 수영장입니다.<br/>
-                서울 특급호텔 최초 온수풀, 자쿠지, 루프탑(Rooftop), 카바나 등 차원이 다른 아웃도어 라이프 스타일을 즐기실 수 있습니다.<br/>
-                어번 아일랜드는 계절마다 색다른 테마로 방문하실 때마다 새로운 경험을 제공합니다.
-            </p>
-            <div className="tel">
-                <span>문의전화</span>
-                <p>02-2230-3528~9</p>
-            </div>
-        </div>
-        <div className="info-wrap mt-0">
-            <ul className="info flex">
-                <li className="list">
-                    <h4>위치</h4>
-                    <p className="txt">서울신라호텔 3층</p>
-                </li>
-            </ul>
-        </div>
-        </>
-    )
-}
-
-const Desc = ({ propRules }) => {
-    return (
-        <div className="desc-wrap">
-            <p className="desc">
-                고객 여러분의 안전을 위하여 다음과 같이 어번 아일랜드(야외 수영장) 이용 규정을 준수해 주시기 바랍니다.
-            </p>
-            {propRules.map((value_rule, index) => (
-                <div key={index}>
-                    <p className="sub-tit">{value_rule.title}</p>
-                    <ul className="rule">
-                        {value_rule.rule.map((desc, subIndex) => (
-                            <li key={subIndex}>{desc}</li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
-        </div>
-    )
-}
-
-const Card = ({ propCards }) => {
-    return (
-        <div className="info-wrap flex min-h-none">
-            {propCards.map((card, index) => (
-                <div className="card" key={index}>
-                    <strong>{card.title}</strong>
-                    <div className="img-wrap">
-                        <img src={card.imgSrc} alt={card.title} />
-                    </div>
-                    <div className="txt-wrap">
-                        <p className="sub">{card.description}</p>
-                    </div>
-                </div>
-            ))}
-        </div>
-    )
-}
+import "../../scss/common.scss"
+import "../../scss/header.scss"
+import "../../scss/footer.scss"
+import "../../scss/sub-list.scss"
+import "../../scss/sub-detail.scss"
 
 function UrbanIsland() {
 
@@ -109,6 +22,16 @@ function UrbanIsland() {
         "../../img/sub/urban-03.jpg",
         "../../img/sub/urban-04.jpg"
     ];
+
+    const introData = {
+        title: "격이 다른 아웃도어 라이프스타일 경험을 제공하는 어번 아일랜드",
+        description: `어번 아일랜드(Urban Island)는 '도심 속 휴식의 섬' 컨셉의 야외 수영장입니다.<br/>
+                      서울 특급호텔 최초 온수풀, 자쿠지, 루프탑(Rooftop), 카바나 등 차원이 다른 아웃도어 라이프 스타일을 즐기실 수 있습니다.<br/>
+                      어번 아일랜드는 계절마다 색다른 테마로 방문하실 때마다 새로운 경험을 제공합니다.`,
+        tel: "02-2230-3528~9",
+        location: "서울신라호텔 3층",
+        extraContent: null 
+    };
 
     const rules = [
         {
@@ -176,8 +99,7 @@ function UrbanIsland() {
             title:"[식음료]",
             rule: [
                 "외부 식음료의 반입은 삼가 주시기 바랍니다.",
-                "식음료 주문은 운영 마감시간 및 중간 정비시간의 1시간 전까지 가능합니다.",
-                "(단, 전복 한우 차돌박이 짬뽕 주문은 오후 12시부터 18시까지만 가능합니다.)",
+                "식음료 주문은 운영 마감시간 및 중간 정비시간의 1시간 전까지 가능합니다. (단단단, 전복 한우 차돌박이 짬뽕 주문은 오후 12시부터 18시까지만 가능합니다.)",
                 "특정 식음료에 알러지가 있는 경우, 주문 전 직원에게 반드시 알려주시기 바랍니다",
             ]
         },
@@ -204,23 +126,13 @@ function UrbanIsland() {
         <div className="container">
             <div className="center">
                 <div className="depth3-tab-wrap">
-                    <ul className="tab">
-                        <li className="tab1 on"><Link to="/urbanIsland">어번 아일랜드</Link></li>
-                        <li className="tab2"><Link to="/cabana">카바나</Link></li>
-                    </ul>
+                    <Tab />
                     <div className="tab-contents">
                         <div className="tab-cont cont1 on">
-                            <div className="sub-title">
-                                <h2>어번 아일랜드</h2>
-                                <ul className="location">
-                                    <li><Link to="/">홈</Link></li>
-                                    <li><Link to="../sub/sub04.html">라이프스타일</Link></li>
-                                    <li><Link to="#self">어번 아일랜드</Link></li>
-                                </ul>
-                            </div>
+                            <SubTitle />
                             <Gallery propImages={galleryImages} />
                             <div className="context">
-                                <Introduction/>
+                                <Introduction {...introData} />
                                 <Desc propRules={rules} />
                                 <Card propCards={cards} />
                             </div>
@@ -230,7 +142,7 @@ function UrbanIsland() {
             </div>
         
         </div>
-       <Footer/>
+        <Footer/>
         </>
     );
 }

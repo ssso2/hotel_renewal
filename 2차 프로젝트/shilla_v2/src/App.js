@@ -12,8 +12,10 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
 // lifestyle
-import UrbanIsland from './components/jaehun/js/UrbanIsland';
-import Cabana from './components/jaehun/js/Cabana';
+import LifeStyle from './components/lifeStyle/LifeStyle';
+import UrbanIsland from './components/lifeStyle/UrbanIsland';
+import Cabana from './components/lifeStyle/Cabana';
+import IndoorPool from './components/lifeStyle/IndoorPool';
 
 // login
 import Login from './components/sub/Login';
@@ -49,10 +51,13 @@ function App() {
 
         <Route path="/room" element={<Room />} />
 
+      </Routes>
+
+      <Routes>
+        <Route path='/lifeStyle' element={<LifeStyle/>}></Route>
         <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
-
         <Route path='/cabana' element={<Cabana/>}></Route>
-
+        <Route path='/fitness' element={<IndoorPool/>}></Route>
       </Routes>
 
     </div>

@@ -76,6 +76,6 @@ app.get('*',(req,res)=>{
 });
 
 
-app.listen(5000,()=>{
+app.listen(5002,()=>{
     console.log('2차 프로젝트 DB 연결 서버 실행');
 });
