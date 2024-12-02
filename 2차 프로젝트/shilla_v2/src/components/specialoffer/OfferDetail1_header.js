@@ -9,15 +9,15 @@ const OfferDetail1_header = ({ title }) => {
                 <h2>{title}</h2>
                 <ul className="location">
                     <li>
-                        <Link href="../../html/index.html">홈</Link>
+                        <Link to="../../html/index.html">홈</Link>
                     </li>
                     <li>
-                        <Link href="../../html/sub/sub01_01.html">
+                        <Link to="../../html/sub/sub01_01.html">
                             스페셜오퍼
                         </Link>
                     </li>
                     <li>
-                        <Link href="">객실패키지</Link>
+                        <Link to="">객실패키지</Link>
                     </li>
                 </ul>
             </div>

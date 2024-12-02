@@ -58,7 +58,7 @@ const Header = () => {
             link: "/lifeStyle",
             title: "라이프스타일",
             gnbMenu: [
-                { link: "/abc", text: "야외수영장" },
+                { link: "/outdoorPool", text: "야외수영장" },
                 { link: "/fitness", text: "피트니스" },
                 { link: "/walkingTrails", text: "산책로" },
                 { link: "/jogging", text: "조깅코스" },

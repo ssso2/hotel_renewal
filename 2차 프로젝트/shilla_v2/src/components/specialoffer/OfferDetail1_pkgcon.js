@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../scss/sub01_01_sub135.scss";
 
-const OfferDetail1_pkgcon = () => {
+const OfferDetail1_pkgcon = ({ img }) => {
     const pkgdata = [
         {
             title: "객실타입 및 가격",
@@ -125,11 +125,12 @@ const OfferDetail1_pkgcon = () => {
             item: ["02-2230-3310"],
         },
     ];
+    const imgurl = `http://192.168.0.16:5002/bk/files/${img}`;
     return (
         <div>
             {/* <!-- 패키지내용 --> */}
             <div className="pkg-header">
-                <img src="../../img/sub/offerMain2.jpg" alt="" />
+                <img src={imgurl} />
             </div>
             <div className="pkg-title">패키지 구성</div>
             <div className="pkg-detail">

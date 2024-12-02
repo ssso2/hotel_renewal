@@ -3,11 +3,11 @@ import "../../scss/sub01_01_main.scss";
 import { Link } from "react-router-dom";
 
 function OfferProd({ rec }) {
-    const imgurl = `http://192.168.0.16:5001/bk/files/${rec.upSystem}`;
+    const imgurl = `http://192.168.0.16:5002/bk/files/${rec.upSystem}`;
 
     return (
         // <div className={aaa.classname} key={i}>
-        <div key={rec.offer_id} className="rec-section">
+        <div className="rec-section">
             {/* <a href={aaa.link}> */}
             <Link to={`/specialOffer/detail/${rec.offer_id}`}>
                 <div className="img-wrap">

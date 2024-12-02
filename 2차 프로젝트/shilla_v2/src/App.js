@@ -18,10 +18,10 @@ import Info from "./components/sub/Info";
 import Location from "./components/sub/Location";
 
 // lifestyle
-import LifeStyle from './components/lifeStyle/LifeStyle';
-import UrbanIsland from './components/lifeStyle/UrbanIsland';
-import Cabana from './components/lifeStyle/Cabana';
-import IndoorPool from './components/lifeStyle/IndoorPool';
+import LifeStyle from "./components/lifeStyle/LifeStyle";
+import OutdoorPool from "./components/lifeStyle/OutdoorPool";
+import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
+import Fitness from "./components/lifeStyle/Fitness";
 
 // login
 import Login from "./components/sub/Login";
@@ -37,7 +37,7 @@ import EventDetail1 from "./components/specialoffer/EventDetail1";
 import Admin from "./components/admin/Admin";
 
 // reservation
-import PaymentPage from './components/reservation/PaymentPage';
+import PaymentPage from "./components/reservation/PaymentPage";
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
 import Res_detail from "./components/reservation/Res_detail";
@@ -112,14 +112,26 @@ function App() {
                 <Route path="/room" element={<Room />} />
                 <Route path="/standard" element={<Standard />} />
 
-                <Route path="/businessDeluxe" element={<Stand_BusinessDeluxe />} />
-                <Route path="/barrierFreeDeluxe" element={<Stand_BarrierFreeDeluxe />} />
-                <Route path="/grandCornerDeluxe" element={<Stand_GrandCornerDeluxe />} />
+                <Route
+                    path="/businessDeluxe"
+                    element={<Stand_BusinessDeluxe />}
+                />
+                <Route
+                    path="/barrierFreeDeluxe"
+                    element={<Stand_BarrierFreeDeluxe />}
+                />
+                <Route
+                    path="/grandCornerDeluxe"
+                    element={<Stand_GrandCornerDeluxe />}
+                />
 
                 <Route path="/executive" element={<Exec_Executive />} />
-                <Route path="/execBusinessDeluxe" element={<Exec_ExecBusinessDeluxe />} />
+                <Route
+                    path="/execBusinessDeluxe"
+                    element={<Exec_ExecBusinessDeluxe />}
+                />
                 <Route path="/execGrandDeluxe" element={<Exec_GrandDeluxe />} />
-                
+
                 <Route path="/suite" element={<Suite />} />
                 <Route path="/superior" element={<Suite_Superior />} />
                 <Route path="/korean" element={<Suite_Korean />} />
@@ -129,20 +141,21 @@ function App() {
                 <Route path="/shilla" element={<Suite_Shilla />} />
                 <Route path="/presidential" element={<Suite_Presidential />} />
 
-                <Route path="/executiveLounge" element={<Lounge_ExecutiveLounge />} />
+                <Route
+                    path="/executiveLounge"
+                    element={<Lounge_ExecutiveLounge />}
+                />
             </Routes>
-                    
 
+            {/* 라이프스타일 */}
             <Routes>
-              <Route path='/lifeStyle' element={<LifeStyle/>}></Route>
-              <Route path='/urbanIsland' element={<UrbanIsland/>}></Route>
-              <Route path='/cabana' element={<Cabana/>}></Route>
-              <Route path='/fitness' element={<IndoorPool/>}></Route>
+                <Route path="/lifeStyle" element={<LifeStyle />}></Route>
+                <Route path="/outdoorPool" element={<OutdoorPool />}></Route>
+                <Route path="/outdoorPool2" element={<OutdoorPool2 />}></Route>
+                <Route path="/fitness" element={<Fitness />}></Route>
             </Routes>
-
-    </div>
-  );
-
+        </div>
+    );
 }
 
 export default App;

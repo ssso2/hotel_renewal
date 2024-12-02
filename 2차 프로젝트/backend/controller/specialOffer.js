@@ -21,7 +21,9 @@ module.exports = upload => {
         console.log("specialOffer detail 접근");
         try {
             const [ret] = await conn.execute(
-                "select * from specialoffer_pkg where offer_id = ?",
+                // "select * from specialoffer_pkg where offer_id = ?",
+                // [req.params.id]
+                "select specialoffer_pkg.*, product_id from specialoffer_pkg join product on specialoffer_pkg.offer_id = product.offer_id where specialoffer_pkg.offer_id = ? ",
                 [req.params.id]
             );
             if (ret.length === 0) {

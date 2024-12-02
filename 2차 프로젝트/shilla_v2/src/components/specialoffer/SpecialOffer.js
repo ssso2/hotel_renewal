@@ -6,7 +6,7 @@ import Footer from "../common/Footer";
 const SpecialOffer = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <Outlet />
             <Footer />
         </>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const OfferMain3 = () => {
+const OfferMain3 = ({ offer }) => {
     const [sortOpen, setsortOpen] = useState(false);
     const [sort, setsort] = useState("전체");
     const options = ["전체", "최신순", "높은가격순", "낮은가격순"];
@@ -8,8 +8,8 @@ const OfferMain3 = () => {
     return (
         <div className="pkg-section">
             <div className="pkg-total">
-                <span>총</span>
-                <span className="totalnum"></span>
+                <span>총 </span>
+                <span className="totalnum">{offer.length}</span>
                 <span>개 상품</span>
             </div>
             <div
@@ -20,7 +20,11 @@ const OfferMain3 = () => {
                 <ul className="dropdown-item-sort">
                     {options.map((option, i) => {
                         return (
-                            <li className="new" onClick={() => setsort(option)}>
+                            <li
+                                className="new"
+                                onClick={() => setsort(option)}
+                                key={`${option}-${i}`}
+                            >
                                 {option}
                             </li>
                         );
