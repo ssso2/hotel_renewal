@@ -1,14 +1,19 @@
-import { useState } from "react";
-import {Link} from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link,useNavigate } from 'react-router-dom';
+import HeaderComp1 from "../common/HeaderComp1";
+import HeaderComp2 from "../common/HeaderComp2";
+import HeaderComp3 from "../common/HeaderComp3";
+import HeaderComp4 from "../common/HeaderComp4";
+import HeaderComp5 from "../common/HeaderComp5";
 import '../../scss/reset.css'
 import '../../scss/common.scss'
 import '../../scss/header.scss'
+import '../../scss/footer.scss'
 import '../../scss/main.scss'
 
 
-
-
 const MainHeader = () => {
+    const navigate = useNavigate()
     const gnbTitle = [
         {
             link : '/specialOffer', 
@@ -75,6 +80,36 @@ const MainHeader = () => {
 
     const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
 
+    const [user,setUser] = useState(null)
+
+
+    useEffect(()=>{
+        const id = sessionStorage.getItem("id");
+        // if(!id){ //로그인 정보가 없다면 로그인 페이지로 이동
+        //     navigate("/login") 
+        // }
+        const name = sessionStorage.getItem("name");
+
+        if(id){
+            setUser({'id':id,"name": name})
+        }else{
+            setUser(null)
+        }
+        console.log('user : ');
+        console.log(user);
+        
+    })
+
+    
+    if(!user){
+        return (
+            <div className="btn-wrap on">
+                    <Link to="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
+                    <Link to="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
+                </div>
+        )
+    }
+
     return (
         <div class="main-header" id="MainHeader">
             <header className="active" >
@@ -85,102 +120,17 @@ const MainHeader = () => {
                             <img src="img/common/logo-w.png" alt=""/>
                         </Link>
                     </h1>
-                    <ul className="gnb"  >
-                        {
-                            gnbMenu.map((item,index)=>{
-                                return  <li key={index} >
-                                            <Link to={item.link}>{item.title}</Link>
-                                            <ul className="depth2">
-                                                {
-                                                    item.gnbMenu.map((depth2,idx)=>{
-                                                        return <li key={idx}><Link to={depth2.link}>{depth2.text}</Link></li>
-                                                    })
-                                                }
-                                            </ul>
-                                        </li>
-                            })
-                        }
-                    </ul>
-                    {/* <!-- 비로그인시 --> */}
-                    <div className="btn-wrap on">
-                        <Link to="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
-                        <Link to="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
-                    </div>
-                    {/* <!-- 로그인시 --> */}
-                    <div className="btn-wrap login">
-                        <Link to="/mypage-new" className="user-name-btn" title="마이페이지로 이동">
-                            <i className="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </Link>
-                        <Link to="/" className="logout-btn">로그아웃
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Link>
-                    </div>
-                    {/* <!-- 관리자 로그인시 --> */}
-                    <div className="btn-wrap admin">
-                        <Link to="/admin" className="user-name-btn" title="관리자페이지로 이동">
-                            <i className="fa-regular fa-user"></i>
-                            <p>관리자<span>님</span></p>
-                        </Link>
-                        <Link to="/" className="logout-btn">로그아웃
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Link>
-                    </div>
+                    <HeaderComp1 gnbMenu={gnbMenu}/>
+                    <HeaderComp2 user={user}/>
+                    
                     {/* <!-- 모바일 햄버거 버튼 --> */}
-                    <div className="m_btn" >
-                        <div className="menu">
-                            <span className="line one"></span>
-                            <span className="line two"></span>
-                            <span className="line three"></span>
-                        </div>
-                    </div>
+                    <HeaderComp3/>
                 </div>
             </header>
             {/* <!-- 모바일 메뉴 --> */}
             <div className="m_wrap">
-                <div className="m_top">
-                    {/* <!-- 비로그인시 --> */}
-                    <div className="btn-wrap on">
-                        <Link href="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
-                        <Link href="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
-                    </div>
-                    {/* <!-- 로그인시 --> */}
-                    <div className="btn-wrap login">
-                        <Link href="/mypage" className="user-name-btn" title="마이페이지로 이동">
-                            <i className="fa-regular fa-user"></i>
-                            <p>손주혜<span>님</span></p>
-                        </Link>
-                        <Link href="/" className="logout-btn">로그아웃
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Link>
-                    </div>
-                    {/* <!-- 관리자 로그인시 --> */}
-                    <div className="btn-wrap admin">
-                        <Link href="/admin" className="user-name-btn" title="관리자페이지로 이동">
-                            <i className="fa-regular fa-user"></i>
-                            <p>관리자<span>님</span></p>
-                        </Link>
-                        <Link href="/" className="logout-btn">로그아웃
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        </Link>
-                    </div>
-                </div>
-                <ul className="m_gnb">
-                    {
-                        gnbMenu.map((item,index)=>{
-                            return  <li key={index} >
-                                        <Link to='#self'>{item.title}</Link>
-                                        <ul className="m_sub">
-                                            {
-                                                item.gnbMenu.map((depth2,idx)=>{
-                                                    return <li key={idx}><Link to={depth2.link}>{depth2.text}</Link></li>
-                                                })
-                                            }
-                                        </ul>
-                                    </li>
-                        })
-                    }
-                </ul>
+                <HeaderComp4 user={user}/>
+                <HeaderComp5 gnbMenu={gnbMenu}/>
             </div>
         </div>
     )
