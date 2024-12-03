@@ -1,6 +1,7 @@
+.container{
 .reservation {
     padding: 120px 0;
-  
+    width: 100%;
     .reservation-wrap {
       display: flex;
       align-items: center;
@@ -242,5 +243,191 @@
         display: block;
       }
     }
+    .search-results-wrap {
+      display: none;
+      padding: 50px 10px;
+      &.on {
+        display: block;
+      }
+    
+      .tab-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #eaeaea;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    
+        ul.tab {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+    
+          li {
+            margin-right: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #666;
+            border: 1px solid transparent;
+            border-radius: 5px;
+    
+            &.on {
+              color: #fff;
+              background-color: #7a6c64;
+              border-color: #7a6c64;
+            }
+    
+            &:hover {
+              border-color: #7a6c64;
+            }
+          }
+        }
+    
+        .keyword-sorting {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+    
+          .keyword-wrap {
+            .keyword-btn {
+              padding: 10px 20px;
+              font-size: 14px;
+              color: #fff;
+              background-color: #7a6c64;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+    
+              &:hover {
+                background-color: #5a4f43;
+              }
+            }
+          }
+    
+          .sorting-wrap {
+            position: relative;
+    
+            .selected {
+              font-size: 14px;
+              font-weight: bold;
+              color: #7a6c64;
+              cursor: pointer;
+            }
+    
+            .select-sort {
+              display: none;
+              position: absolute;
+              top: 30px;
+              right: 0;
+              list-style: none;
+              background-color: #fff;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              padding: 10px 0;
+              z-index: 10;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+              li {
+                padding: 10px 20px;
+                font-size: 14px;
+                color: #666;
+                cursor: pointer;
+    
+                &.on {
+                  color: #7a6c64;
+                  font-weight: bold;
+                }
+    
+                &:hover {
+                  background-color: #f5f5f5;
+                }
+              }
+            }
+    
+            &:hover .select-sort {
+              display: block;
+            }
+          }
+        }
+      }
+    
+      .keyword-box {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #eaeaea;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    
+        .top-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+    
+          span {
+            font-size: 16px;
+            font-weight: bold;
+          }
+    
+          button {
+            font-size: 14px;
+            color: #666;
+            background: none;
+            border: none;
+            cursor: pointer;
+    
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+    
+        .bottom-wrap {
+          .chk-boxs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+    
+            li {
+              flex: 1 1 calc(50% - 10px); // 2줄로 나눔
+              display: flex;
+              align-items: center;
+              gap: 10px;
+    
+              input {
+                margin: 0;
+              }
+    
+              label {
+                font-size: 14px;
+                color: #333;
+                cursor: pointer;
+              }
+            }
+          }
+    
+          button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #7a6c64;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+    
+            &:hover {
+              background-color: #5a4f43;
+            }
+          }
+        }
+      }
+    }
+    
   }
-  
+}
