@@ -33,7 +33,6 @@ const BoardList = () => {
         .then(res =>{
             setText(res.data);
             console.log('text:',res.data);
-            console.log('text2:',text);
             
         })
         .catch(err=>{
@@ -43,14 +42,14 @@ const BoardList = () => {
     },[])
 
 
-    const SecretPage = ()=>{
-        for(let i = 0; i < text.length; i++){
-            if(text[i].secret == 1 && user.id != text[i].member_id){
+    const SecretPage = ({data})=>{
+        
+            if(data.secret == 1){
                 // alert('비밀글입니다. 작성하신 회원님만 열람 가능합니다.');
-                <Link to={`/board`}><Secret detailText={list}/>{list.title}</Link>
+                return <li className="post-title"><Link to={`/board`}><Secret detailText={data}/>{data.title}</Link></li>
             }
-        }
-        return <Link to={`/board/detail/${list.board_id}`}><Secret detailText={list}/>{list.title}</Link>
+        
+        return <li className="post-title"><Link to={`/board/detail/${data.board_id}`}><Secret detailText={data}/>{data.title}</Link></li>
     }
 
 
@@ -69,9 +68,9 @@ const BoardList = () => {
                     text.map((list,idx)=>{
                         return <ul className="post" key={idx}>
                                     <li className="post-num">{list.board_id}</li>
-                                    <li className="post-title">
-                                        <SecretPage/>
-                                    </li>
+                                    {/* <li className="post-title"> */}
+                                    <SecretPage  data={list}/>
+                                    {/* </li> */}
                                     <li className="post-writer">{list.author}</li>
                                     <li className="post-date">{list.reg_str}</li>
                                 </ul>
