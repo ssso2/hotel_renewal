@@ -140,9 +140,10 @@ const Header = () => {
         //     navigate("/login") 
         // }
         const name = sessionStorage.getItem("name");
+        const grade = sessionStorage.getItem("grade");
 
         if(id){
-            setUser({'id':id,"name": name})
+            setUser({'id':id,"name": name,"grade":grade})
         }else{
             setUser(null)
         }

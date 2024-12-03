@@ -65,6 +65,9 @@ const upload = multer({
 // board 라우터 추가
 const boardRouter = require("./controller/board.js");
 app.use("/bk/board", boardRouter(upload));
+// board_comment 라우터 추가
+const boardCommentRouter = require("./controller/board_comment.js");
+app.use("/bk/comment", boardCommentRouter(upload));
 // login 라우터 추가
 const loginRouter = require("./controller/login.js");
 app.use("/bk/login", loginRouter(upload));
