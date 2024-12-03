@@ -74,6 +74,10 @@ app.use("/bk/specialOffer", offerRouter(upload));
 // reservation 라우터 추가
 const reservationRouter = require("./controller/reservations.js");
 app.use("/bk/reserve", reservationRouter);
+// admin dashboard 라우터 추가
+const adminDashboardRouter = require("./controller/adminDashboard.js");
+app.use("/bk/admin", adminDashboardRouter);
+
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
 app.get("*", (req, res) => {
