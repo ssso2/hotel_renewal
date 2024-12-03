@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import axios from 'axios';
 import '../../scss/reset.css'
 import '../../scss/common.scss'
@@ -10,14 +10,30 @@ const bkURL = process.env.REACT_APP_BACK_URL;
 
 const BoardList = () => {
 
+    const navigate = useNavigate()
+
     const [text,setText] = useState([])
+    const [user,setUser] = useState(null)
 
     useEffect(()=>{
+
+        // 로그인 여부 확인
+        const id = sessionStorage.getItem("id");
+        const name = sessionStorage.getItem("name");
+        const grade = sessionStorage.getItem("grade");
+        
+        if(id){
+            setUser({'id':id,"name": name,"grade":grade})
+            
+        }else{
+            setUser(null)
+        }
 
         axios.get(`${bkURL}/board`)
         .then(res =>{
             setText(res.data);
             console.log('text:',res.data);
+            console.log('text2:',text);
             
         })
         .catch(err=>{
@@ -25,6 +41,17 @@ const BoardList = () => {
         })
 
     },[])
+
+
+    const SecretPage = ()=>{
+        for(let i = 0; i < text.length; i++){
+            if(text[i].secret == 1 && user.id != text[i].member_id){
+                // alert('비밀글입니다. 작성하신 회원님만 열람 가능합니다.');
+                <Link to={`/board`}><Secret detailText={list}/>{list.title}</Link>
+            }
+        }
+        return <Link to={`/board/detail/${list.board_id}`}><Secret detailText={list}/>{list.title}</Link>
+    }
 
 
     return (
@@ -42,9 +69,9 @@ const BoardList = () => {
                     text.map((list,idx)=>{
                         return <ul className="post" key={idx}>
                                     <li className="post-num">{list.board_id}</li>
-                                    <li className="post-title"><Link to={`/board/detail/${list.board_id}`}>
-                                    {/* <Secret detailText={list}/> */}
-                                    {list.title}</Link></li>
+                                    <li className="post-title">
+                                        <SecretPage/>
+                                    </li>
                                     <li className="post-writer">{list.author}</li>
                                     <li className="post-date">{list.reg_str}</li>
                                 </ul>
