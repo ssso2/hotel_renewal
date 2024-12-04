@@ -13,7 +13,7 @@ module.exports = () => {
 
         try {
             const {id, pw} = req.body
-            const sql = "select member_id, name from member where member_id = ? and pw =?"
+            const sql = "select member_id, name, grade from member where member_id = ? and pw =?"
             const param = [id,pw]
             const [rows] = await conn.execute(sql,param);
             console.log(rows);

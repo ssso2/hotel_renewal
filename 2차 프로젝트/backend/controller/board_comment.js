@@ -7,17 +7,21 @@ const fs = require("fs");
 // 인덱스에서 넘기는 자료를 받아서 처리
 module.exports = upload => {
     router.get("/", async (req, res) => {
-        console.log("board 목록 접근");
+        console.log("board_comment 목록 접근");
+
+//         select board_comment.*, member.name, DATE_FORMAT(date,'%Y-%m-%d %H:%i:%s') as reg_str 
+// from board_comment 
+// join member on member.member_id = board_comment.member_id where board_comment.member_id = 
 
         try {
-            // const [ret] = await conn.execute('select board.*, member.name, DATE_FORMAT(date,\'%Y-%m-%d\') as reg_str from board join member on member.member_id = board.member_id where board.member_id = ?')
-
-            const [ret] = await conn.execute('select *, DATE_FORMAT(date,\'%Y-%m-%d\') as reg_str from board')
+            const [ret] = await conn.execute('select board_comment.*, member.name, DATE_FORMAT(date,\'%Y-%m-%d %H:%i:%s\') as reg_str from board_comment join member on member.member_id = board_comment.member_id ')
+            
             res.json(ret);
+
         } catch (err) {
 
             console.log("sql 실패 : ", err.message);
-            ret.status(500).send('db오류')
+            ret.status(500).send('/ db오류')
 
         }
         
@@ -25,28 +29,25 @@ module.exports = upload => {
 
     //detail
     router.get("/detail/:board_id", async (req, res) => {
-        console.log("board detail 접근");
+        console.log("board_comment detail 접근");
 
         try {
-            const [ret] = await conn.execute("select *,DATE_FORMAT(date,\'%Y-%m-%d %H:%i:%s\') as reg_str from board where board_id = ?",[req.params.board_id])
-            console.log(req.params);
-            
+            const [ret] = await conn.execute("select *, DATE_FORMAT(date,\'%Y-%m-%d %H:%i:%s\') as reg_str from board_comment where comment_id = ?",[req.params.comment_id])
             res.json(ret[0]);
         } catch (err) {
 
             console.log("sql 실패 : ", err.message);
-            ret.status(500).send('db오류')
+            ret.status(500).send('디테일 db오류')
 
         }
-        
     });
 
 
     // 쓰기
-    router.post("/join", async(req, res) => {
+    router.post("/detail/:board_id", async(req, res) => {
         console.log("백엔드 join",req);
 
-        let sql = 'insert into board (title,context,secret,reg_date) values (?,?,?,sysdate())';
+        let sql = 'insert into board_comment (title,context,secret,reg_date) values (?,?,?,sysdate())';
 
 
         let data = [
@@ -71,14 +72,14 @@ module.exports = upload => {
 
     });
 
-    router.delete("/delete/:board_id", async(req, res) => {
-        console.log("삭제 진입:" + req.params.board_id);
+    router.delete("/detail/:board_id", async(req, res) => {
+        console.log("삭제 진입:" + req.params.comment_id);
         console.log(req.body);
 
 
         try {
-            const [ret] = await conn.execute('delete from board where board_id = ?',[req.params.board_id])
-            res.send("삭제 성공:" + req.params.board_id);
+            const [ret] = await conn.execute('delete from board_comment where comment_id = ?',[req.params.comment_id])
+            res.send("삭제 성공:" + req.params.comment_id);
         } catch (err) {
 
             console.log("sql 실패 : ", err.message);
@@ -88,17 +89,17 @@ module.exports = upload => {
 
     });
 
-    router.put("/modify/:board_id", async(req, res) => {
+    router.put("/detail/:board_id", async(req, res) => {
         //console.log(req.body)
         let data = [
             req.body.title,
             req.body.context,
-            req.params.board_id
+            req.params.comment_id
         ]
         console.log(data);
 
         try {
-            const [ret] = await conn.execute('update board set title=?, context=? where board_id = ?', data)
+            const [ret] = await conn.execute('update board_comment set title=?, context=? where comment_id = ?', data)
             res.send("수정성공");
         } catch (err) {
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminCont2.scss";
 
+// 집컴에서 되는지 확인중..()
 const AdminCont2 = () => {
     const [rooms, setRooms] = useState([]);
     const [isUpdating, setIsUpdating] = useState(false); // 업데이트 중 여부
