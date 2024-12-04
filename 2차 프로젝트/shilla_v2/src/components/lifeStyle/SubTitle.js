@@ -16,6 +16,8 @@ const SubTitle = () => {
             return { title: "실내 체육관", breadcrumb: "실내 골프장" };
         } else if (location.pathname === '/fitness4') {
             return { title: "실내 체육관", breadcrumb: "실내 사우나" };
+        } else if (location.pathname === '/walkingTrails') {
+            return { title: "산책로", breadcrumb: "산책로" };
         } else {
             return { title: "페이지 제목", breadcrumb: "현재 위치" }; 
         } 
