@@ -1,0 +1,55 @@
+.cont2 {
+    padding: 20px;
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 0 auto;
+
+        .table-header {
+            background-color: #f4f4f4;
+            font-weight: bold;
+
+            .table-row {
+                display: flex;
+
+                .cell {
+                    flex: 1;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    text-align: center;
+                    word-break: break-word; /* 긴 텍스트가 줄바꿈 되도록 설정 */
+                }
+            }
+        }
+
+        .table-body {
+            .table-row {
+                display: flex;
+                background-color: #f0f0f0;
+
+                .cell {
+                    flex: 1;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    text-align: center;
+                    line-height: 29px;
+
+                    /* 특이사항 input의 스타일 */
+                    input {
+                        width: 100%; /* 셀 크기에 맞게 너비를 조정 */
+                        padding: 5px; /* padding 추가 */
+                        border: 1px solid #ccc;
+                        box-sizing: border-box; /* padding을 포함한 너비로 설정 */
+                    }
+                }
+            }
+        }
+    }
+}
