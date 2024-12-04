@@ -4,9 +4,9 @@ import "./AdminCont2.scss";
 
 const AdminCont2 = () => {
     const [rooms, setRooms] = useState([]);
-    const [isUpdating, setIsUpdating] = useState(false); // 업데이트 중 여부
+    const [isUpdating, setIsUpdating] = useState(false); // 업데이트 중 여부(무한루프방지)
     const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열기/닫기
-    const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 방에 대한 예약 정보 (null로 초기화)
+    const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 방 예약 정보
 
     // 객실 목록을 가져오는 함수
     const fetchRooms = () => {
@@ -22,19 +22,19 @@ const AdminCont2 = () => {
     const fetchReservation = (roomId) => {
         axios.get(`http://localhost:5002/bk/roomManagement/reservations/${roomId}`)
             .then(response => {
-                console.log('Fetched reservation:', response.data);  // 예약 데이터 확인
-                setSelectedRoom(response.data.length ? response.data : null);  // 예약 정보 없으면 null 설정
-                setIsModalOpen(true);  // 모달 열기
+                console.log('Fetched reservation:', response.data);  
+                setSelectedRoom(response.data.length ? response.data : null); 
+                setIsModalOpen(true);  
             })
             .catch(error => {
                 console.error("예약 정보를 가져오는 중 오류 발생:", error);
-                setSelectedRoom(null);  // 오류가 나면 예약 정보를 null로 설정
-                setIsModalOpen(true);  // 모달 열기
+                setSelectedRoom(null);  
+                setIsModalOpen(true); 
             });
     };
 
     useEffect(() => {
-        fetchRooms();  // 컴포넌트가 마운트될 때 객실 목록을 가져옵니다.
+        fetchRooms(); 
     }, []);
 
     const handleUpdate = (roomId, updatedField) => {
@@ -56,22 +56,21 @@ const AdminCont2 = () => {
             });
     };
 
-    // 선택한 방을 모달에 표시하기 위한 함수
     const openModal = (room) => {
-        console.log('Selected room:', room);  // 선택된 방 확인
-        setSelectedRoom(null);  // 이전 방 정보 초기화
-        fetchReservation(room.room_id);  // room_id를 사용하여 예약 정보 가져오기
-        setIsModalOpen(true);  // 모달 열기
+        console.log('Selected room:', room);  
+        setSelectedRoom(null);  
+        fetchReservation(room.room_id);  
+        setIsModalOpen(true);  
     };
 
     const closeModal = () => {
-        setIsModalOpen(false); // 모달 닫기
-        setSelectedRoom(null);  // 선택된 방 초기화
+        setIsModalOpen(false);
+        setSelectedRoom(null); 
     };
 
-    const handleModalBackgroundClick = (e) => {
+    const handleModalBackgroundClick = (e) => { // 바깥 영역 클릭하면 모달 닫기
         if (e.target === e.currentTarget) {
-            closeModal(); // 바깥 영역을 클릭하면 모달을 닫음
+            closeModal(); 
         }
     };
 
@@ -130,7 +129,7 @@ const AdminCont2 = () => {
                 <div className="modal" onClick={handleModalBackgroundClick}>
                     <div className="modal-content">
                         {selectedRoom === null ? (
-                            <p>예약 내역이 없습니다.</p> // 예약 정보가 없을 경우
+                            <p>예약 내역이 없습니다.</p> 
                         ) : (
                             <>
                                 <h2>{selectedRoom[0].room_id}호 예약 내역</h2>
@@ -152,16 +151,16 @@ const AdminCont2 = () => {
     );
 };
 
-// 날짜 포맷을 YYYY-MM-DD 형식으로 반환하는 함수
+// 날짜 포맷
 const formatDate = (dateString) => {
     const date = new Date(dateString);
-    date.setHours(date.getHours() + 9); // 한국 시간으로 변환 (UTC+9)
+    date.setHours(date.getHours() + 9); // 한국 시간 (UTC+9)
     
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1 해줍니다.
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1 
     const day = String(date.getDate()).padStart(2, '0');
     
-    return `${year}-${month}-${day}`; // YYYY-MM-DD 형식으로 반환
+    return `${year}-${month}-${day}`; 
 };
 
 export default AdminCont2;
