@@ -23,6 +23,8 @@ import OutdoorPool from "./components/lifeStyle/OutdoorPool";
 import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
 import Fitness2 from "./components/lifeStyle/Fitness2";
+import Fitness3 from "./components/lifeStyle/Fitness3";
+import Fitness4 from "./components/lifeStyle/Fitness4";
 
 // login
 import Login from "./components/sub/Login";
@@ -155,6 +157,8 @@ function App() {
                 <Route path="/outdoorPool2" element={<OutdoorPool2 />}></Route>
                 <Route path="/fitness" element={<Fitness />}></Route>
                 <Route path="/fitness2" element={<Fitness2 />}></Route>
+                <Route path="/fitness3" element={<Fitness3 />}></Route>
+                <Route path="/fitness4" element={<Fitness4 />}></Route>
             </Routes>
         </div>
     );

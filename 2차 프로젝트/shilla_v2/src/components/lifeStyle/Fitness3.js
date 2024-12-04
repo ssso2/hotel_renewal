@@ -6,7 +6,6 @@ import SubTitle from './SubTitle';
 import Gallery2 from './Gallery2';
 import Location from './Location';
 import Desc from './Desc';
-import GroupExercise from './GroupExercise';
 import Footer from '../common/Footer';
 
 import "../../scss/common.scss"
@@ -17,22 +16,22 @@ import "../../scss/sub-detail.scss"
 import Introduction from './Introduction';
 
 
-function Fitness2() {
+function Fitness3() {
 
-    const galleryImages = "../../img/sub/R00000009MES_KR.jpg";
+    const galleryImages = "../../img/sub/R00000009MHT_KR.jpg";
 
     const introData = {
-        title: "체계적인 체력 관리를 위한 기능별 공간과 최상의 휴식을 위한 공간으로 조성되어<br/>운동과 휴식을 조화롭게 즐길 수 있는 실내 체육관입니다.",
-        description: `개인 샤워 부스 및 세신실 등 프라이버시가 보장된 시설을 갖추고 있으며,<br/>
-                    취향에 따라 선택할 수 있는 다양한 온도와 크기의 사우나 및 탕을 구비하고 있습니다.`,
-        tel: "02-2230-3524~5",
+        title: "최고의 가치를 제공하기 위해 서울신라호텔에서만 누릴 수 있는 다양한 전문 프로그램을 마련했습니다.",
+        description: `골프 경기력 향상을 위한 다양한 디지털 장비를 마련해 드라이빙, 퍼팅, 자세교정, 클럽 피팅 등 One-stop Solution을 제공합니다.<br>
+            국내 최초로 드라이빙 레인지 전 타석에 골프샷 분석 시스템인 트랙맨(Track Man)을 설치해 더욱 과학적인 골프 연습을 경험하실 수 있습니다.`,
+        tel: "02-2230-3521",
     };
 
     const locationData = [
         { title: '위치', content: '서울신라호텔 3층 피트니스' },
-        { title: '운영시간', content: '05:30 ~ 22:30' },
+        { title: '운영시간', content: '06:00 ~ 22:00' },
         { title: '정기휴일', content: '매월 세 번째 수요일' },
-        { title: '대여품목', content: '트레이닝 복(무료), 양말(무료)' },
+        { title: '대여품목', content: '골프클럽(무료)' },
     ]
 
     const descData = [
@@ -41,7 +40,7 @@ function Fitness2() {
             rules: [],
         },
         {
-            intro: '체육관은 만 16세 이상 고객에 한해 입장 가능합니다.',
+            intro: '실내 골프장은 만 13세 이상 고객에 한해 입장 가능합니다.',
             rules: [],
         },
         {
@@ -73,9 +72,6 @@ function Fitness2() {
                                         <Desc propDesc={descData} />
                                     </div>
                                 </div>
-                                <div className="info-wrap">
-                                    <GroupExercise />
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -87,4 +83,4 @@ function Fitness2() {
     )
 }
 
-export default Fitness2
+export default Fitness3

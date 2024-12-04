@@ -17,7 +17,6 @@ import Introduction from './Introduction';
 function Fitness() {
 
     const galleryImages = "../../img/sub/R00000009M89_KR.jpg";
-    
 
     const introData = {
         title: "서울신라호텔의 실내 수영장은 신라 피트니스 회원과 투숙객만을 위한 공간으로<br/> 사계절 내내 쾌적하고 여유로운 수영을 즐길 수 있습니다.",
