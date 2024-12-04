@@ -10,6 +10,12 @@ const SubTitle = () => {
             return { title: "카바나", breadcrumb: "카바나" };
         } else if (location.pathname === '/fitness') {
             return { title: "실내 수영장", breadcrumb: "실내 수영장" };
+        } else if (location.pathname === '/fitness2') {
+            return { title: "실내 체육관", breadcrumb: "실내 체육관" };
+        } else if (location.pathname === '/fitness3') {
+            return { title: "실내 체육관", breadcrumb: "실내 골프장" };
+        } else if (location.pathname === '/fitness4') {
+            return { title: "실내 체육관", breadcrumb: "실내 사우나" };
         } else {
             return { title: "페이지 제목", breadcrumb: "현재 위치" }; 
         } 

@@ -68,7 +68,6 @@ function Fitness() {
                             <div className="context">
                                 <Introduction {...introData} />
                                 <div className="info-wrap mt-0">
-                                    
                                     <Location propLocation = {locationData} />
                                     <div className="desc-wrap">
                                         <Desc propDesc = {descData} />
