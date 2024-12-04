@@ -85,7 +85,7 @@ const adminMemberboardRouter = require("./controller/adminMemberboard.js");
 app.use("/bk/admin/member", adminMemberboardRouter);
 // 객실관리 라우터 추가
 const roomManRouter = require("./controller/roomManagement.js");
-app.use("/bk/roomManagement", roomManRouter())
+app.use("/bk/roomManagement", roomManRouter());
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
 app.get("*", (req, res) => {
