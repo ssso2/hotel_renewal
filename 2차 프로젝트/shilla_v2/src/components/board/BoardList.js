@@ -1,16 +1,15 @@
 import { useState,useEffect } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import '../../scss/reset.css'
 import '../../scss/common.scss'
 import '../../scss/sub06_03.scss'
-import Secret from "./Secret";
+import SecretPage from "./SecretPage";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
 const BoardList = () => {
 
-    const navigate = useNavigate()
 
     const [text,setText] = useState([])
     const [user,setUser] = useState(null)
@@ -42,17 +41,6 @@ const BoardList = () => {
     },[])
 
 
-    const SecretPage = ({data})=>{
-        
-            if(data.secret == 1){
-                // alert('비밀글입니다. 작성하신 회원님만 열람 가능합니다.');
-                return <li className="post-title"><Link to={`/board`}><Secret detailText={data}/>{data.title}</Link></li>
-            }
-        
-        return <li className="post-title"><Link to={`/board/detail/${data.board_id}`}><Secret detailText={data}/>{data.title}</Link></li>
-    }
-
-
     return (
         <div className="container">
             <div className="center">
@@ -68,9 +56,7 @@ const BoardList = () => {
                     text.map((list,idx)=>{
                         return <ul className="post" key={idx}>
                                     <li className="post-num">{list.board_id}</li>
-                                    {/* <li className="post-title"> */}
-                                    <SecretPage  data={list}/>
-                                    {/* </li> */}
+                                    <SecretPage  data={list} user={user}/>
                                     <li className="post-writer">{list.author}</li>
                                     <li className="post-date">{list.reg_str}</li>
                                 </ul>
