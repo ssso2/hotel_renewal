@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 function Room() {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <RoomContainer />
             <Footer />
             <Outlet />

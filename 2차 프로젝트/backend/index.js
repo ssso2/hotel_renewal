@@ -77,6 +77,9 @@ app.use("/bk/specialOffer", offerRouter(upload));
 // reservation 라우터 추가
 const reservationRouter = require("./controller/reservations.js");
 app.use("/bk/reserve", reservationRouter);
+// admin dashboard 라우터 추가
+const adminDashboardRouter = require("./controller/adminDashboard.js");
+app.use("/bk/admin", adminDashboardRouter);
 // 객실관리 라우터 추가
 const roomManRouter = require("./controller/roomManagement.js");
 app.use("/bk/roomManagement", roomManRouter());

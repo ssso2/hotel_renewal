@@ -4,7 +4,6 @@ import axios from 'axios';
 import '../../scss/reset.css'
 import '../../scss/common.scss'
 import '../../scss/sub06_03.scss'
-import Secret from "./Secret";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -17,8 +16,6 @@ const BoardList = () => {
         axios.get(`${bkURL}/board`)
         .then(res =>{
             setText(res.data);
-            console.log('text:',res.data);
-            
         })
         .catch(err=>{
             console.error('에러발생 : ', err);
@@ -41,10 +38,8 @@ const BoardList = () => {
                 {
                     text.map((list,idx)=>{
                         return <ul className="post" key={idx}>
-                                    <li className="post-num">{list.board_id}</li>
-                                    <li className="post-title"><Link to={`/board/detail/${list.board_id}`}>
-                                    {/* <Secret detailText={list}/> */}
-                                    {list.title}</Link></li>
+                                    <li className="post-num">{list.num}</li>
+                                    <li className="post-title"><Link to={`/board/detail/${list.num}`}><i className="fa-solid fa-lock"></i>{list.title}</Link></li>
                                     <li className="post-writer">{list.author}</li>
                                     <li className="post-date">{list.reg_str}</li>
                                 </ul>

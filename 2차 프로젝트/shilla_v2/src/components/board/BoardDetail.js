@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import '../../scss/sub06_03_02.scss'
-// import CommentView from "./CommentView";
-import Secret from "./Secret";
-import CommentWrite from "./CommentWrite";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -14,9 +11,7 @@ const BoardDetail = () => {
 
     const {num} = useParams();
 
-    const [detailText,setDetailText] = useState()
-    const [commentText,setCommentText] = useState([])
-    const [user,setUser] = useState(null)
+    const [detailText,setDetailText] = useState(null)
 
     async function fetchData() {
 
@@ -35,56 +30,12 @@ const BoardDetail = () => {
             console.error('에러발생 : ', error);
         }
     }
-
-    async function commentFetchData() {
-
-        if(!num){
-            console.log('Num 없음');
-            return 
-        }
-        try {
-            const res = await axios.get(`${bkURL}/comment`);
-            console.log('res.data : ',res.data);
-            setCommentText(res.data);
-            console.log('commentText : ',commentText);
-            
-        } catch (error) {
-            console.error('에러발생 : ', error);
-        }
-    }
     // console.log(detailText.title);
     
 
     useEffect(()=>{
         document.title ="게시글 상세보기"
-
-        // 로그인 여부 확인
-        const id = sessionStorage.getItem("id");
-        const name = sessionStorage.getItem("name");
-        const grade = sessionStorage.getItem("grade");
-        
-        if(id){
-            setUser({'id':id,"name": name,"grade":grade})
-            
-        }else{
-            setUser(null)
-        }
-
-
-
-        axios.get(`${bkURL}/comment`)
-        .then(res =>{
-            setCommentText(res.data);
-            console.log('댓글데이터:',res.data);
-            
-        })
-        .catch(err=>{
-            console.error('에러발생 : ', err);
-        })
-
         fetchData();
-        commentFetchData();
-
     },[num])
 
 
@@ -110,50 +61,10 @@ const BoardDetail = () => {
         .catch(err =>{
             console.log('삭제오류',err);
         })
+
+        
+        
     }
-
-    // 글 번호에 맞는 댓글이 있으면 댓글이 나오고 없으면 댓글쓰기가 나온다
-    const CommentView = () => {
-        for(let i = 0; i < commentText.length; i++){
-            if(detailText.board_id == commentText[i].board_id){
-                return  <div>
-                            <span className="reply-title">댓글</span>
-                            <div className="reply-box">
-                                <div className="reply-content">
-                                    <span className="name">{commentText[i].author}님의 댓글</span>
-                                </div>
-                                <div className="textarea">
-                                    <div className="new-reply">{commentText[i].context}</div>
-                                </div>
-
-                                <div className="reply-info">
-                                    <span className="time">{commentText[i].reg_str} 등록</span>
-                                    <button className="edit">수정</button>
-                                    <button className="delete">삭제</button>
-                                </div>
-                            </div>
-                        </div>
-            }
-
-        }
-        return (<CommentWrite />)
-    }
-
-
-
-    const Btn = ()=>{
-
-        if(!user || detailText.name != user.member_id){
-            return ;
-        }else{
-            return  <div className="button-container">
-                        <button className="delete" onClick={delGo}><span>삭제</span></button>
-                        <Link to={`/board/modify/${detailText.board_id}`} className="edit">수정</Link>
-                    </div>
-        }
-    }
-
-
 
     return (
         <div className="container board">
@@ -162,10 +73,10 @@ const BoardDetail = () => {
                 <div className="text-container">
                     <div className="title-wrap">
                         <div className="title">
-                            <p className="subject"><Secret detailText={detailText}/>{detailText.title}</p>
+                            <p className="subject"><i className="fa-solid fa-lock"></i>{detailText.title}</p>
                             <div className="writer-wrap">
                                 <p className="writer">{detailText.author}</p>
-                                <p className="submit-time">{detailText.reg_str}</p>
+                                <p className="submit-time">{detailText.reg_strDate}</p>
                             </div>
                         </div>
                     </div>
@@ -174,21 +85,55 @@ const BoardDetail = () => {
                     </div>
 
                     <div className="reply-container">
+                        {/* <!-- 댓글 창 --> */}
+                        <span className="reply-title">댓글</span>
+                        <div className="reply-box">
+                            {/* <!-- 댓글 창 전체 박스 --> */}
+                            <div className="reply-content">
+                                {/* <!-- 댓글 상단 작성자 이름 들어갈 박스 --> */}
+                                <span className="name">관리자님의 댓글</span>
+                            </div>
+                            <div className="textarea">
+                                <textarea className="new-reply">
+고객님, 안녕하세요. 호텔신라입니다.
+크리스마스 패키지는 현재 예약이 가능하나, 먼저 예약하신 숙박 건에 대한 취소가 별도로 필요합니다.
+시즌 패키지는 한정 기간만 운영되므로 먼저 패키지 예약을 진행하신 후에
+기예약된 숙박건에 대해 취소를 진행하시면 성심성의껏 도와드리겠습니다.
+항상 호텔신라와 함께 편안한 휴식 보내시길 바랍니다. 감사합니다.
+                            </textarea>
+                            </div>
 
-                        {/* 댓글 보이는 구간 */}
-                        <CommentView/>
-                        
+                            <div className="reply-info">
+                                {/* <!-- 작성시간, 수정, 삭제 들어갈 박스--> */}
+                                <span className="time">9/24 16:39 등록</span>
+                                <button className="edit">수정</button>
+                                <button className="delete">삭제</button>
+                            </div>
+                        </div>
 
-                        {/* 댓글 작성 구간 */}
-                        
+                        <span className="reply-title">댓글쓰기</span>
+                        <div className="reply-box-sec">
+                            {/* <!-- 댓글 창 전체 박스 --> */}
+                            <div className="reply-content-ing">
+                                {/* <!-- 댓글 상단 작성자 이름 들어갈 박스 --> */}
+                                <span className="user-name">박세라</span>
+                            </div>
+                            <textarea id="reply" placeholder="댓글을 작성하세요."></textarea>
+
+                            <div className="reply-info">
+                                {/* <!-- 작성시간, 수정, 삭제 들어갈 박스--> */}
+                                <button id="plus">댓글등록</button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
                 <div className="button-wrap">
                     <Link to={'/board'} className="list">목록으로</Link>
-
-                    <Btn/>
-
+                    <div className="button-container">
+                        <button className="delete" onClick={delGo}><span>삭제</span></button>
+                        <Link to={`/board/modify/${detailText.num}`} className="edit">수정</Link>
+                    </div>
                 </div>
             </div>
         </div>
