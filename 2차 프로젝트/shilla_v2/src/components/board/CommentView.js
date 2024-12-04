@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CommentBtn from './CommentBtn'
 import CommentWrite from './CommentWrite'
 import { useParams, useNavigate } from "react-router-dom";
@@ -13,6 +13,12 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
 
     const {id} = useParams();
 
+    const textareaRef = useRef(null);
+
+    const handleChange = (e) => {
+        textareaRef.current.value = e.target.value;
+    };
+
     console.log("CommentView 댓글 목록",commentText);
     
 
@@ -26,13 +32,13 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
 
         axios.get(`${bkURL}/board/detail/${id}`)
         .then(res=>{
-            console.log('정보받기 성공',res.data);
+            console.log('댓글 받기 성공',res.data);
             setDetailText(res.data)
             console.log('detailText :',detailText);
             
         })
         .catch(err=>{
-            console.error('정보받기 실패',err);
+            console.error('댓글 받기 실패',err);
         })
     },[id])
 
@@ -53,16 +59,16 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
         const frmData = new FormData(document.commentModifyFrm);
         const myData = Object.fromEntries(frmData)
         console.log(myData);
+        console.log(id);
 
 
         axios.put(`${bkURL}/comment/detail/${id}`,myData)
         .then(res=>{
-            console.log('정보 수정 성공',res.data);
-            alert('수정되었습니다.')
+            console.log('댓글 수정 성공',res.data);
             commentFetchData()
         })
         .catch(err=>{
-            console.error('정보 수정 실패',err);
+            console.error('댓글 수정 실패',err);
         })
 
     }
@@ -87,7 +93,7 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
             return  <form name="commentModifyFrm">
                         <input name="comment_id" value={modifyData.comment_id} type="hidden"/>
                         <div className="textarea">
-                            <textarea className="new-reply" name="context" autofocus="autofocus" onChange={(e)=>textChg(kk,e.target)} value={modifyData.context}></textarea>
+                            <textarea className="new-reply" name="context" autofocus="autofocus" ref={textareaRef} onChange={handleChange} >{modifyData.context}</textarea>
                         </div>
 
                         <div className="reply-info">
