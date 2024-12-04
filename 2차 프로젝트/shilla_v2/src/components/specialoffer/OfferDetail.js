@@ -20,9 +20,9 @@ const OfferDetail = () => {
     const fetchData = async () => {
         try {
             const res = await axios.get(
-                //     "http://192.168.123.101:5001/bk/specialOffer/detail/:id"
+                //     `http://192.168.123.100:5002/bk/specialOffer/detail/${id}`
                 // );
-                `http://192.168.0.16:5002/bk/specialOffer/detail/${id}`
+                `http://192.168.0.12:5002/bk/specialOffer/detail/${id}`
             );
             console.log("갔다옴 : ", res.data);
             setOfferdetails(res.data);
