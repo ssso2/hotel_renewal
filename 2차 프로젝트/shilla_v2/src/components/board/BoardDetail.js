@@ -142,7 +142,7 @@ const BoardDetail = () => {
                     <div className="reply-container">
 
                         {/* 댓글 보이는 구간 */}
-                        <CommentView commentText={commentText} detailText={detailText} setDetailText={setDetailText} user={user} commentFetchData={commentFetchData} commentDelGo={commentDelGo}/>
+                        <CommentView commentText={commentText} setCommentText={setCommentText} detailText={detailText} setDetailText={setDetailText} user={user} commentFetchData={commentFetchData} commentDelGo={commentDelGo}/>
         
                     </div>
 

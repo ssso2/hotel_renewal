@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import CommentBtn from './CommentBtn'
 import CommentWrite from './CommentWrite'
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
-const CommentView = ({commentText,detailText,setDetailText,user,commentFetchData,commentDelGo}) => {
+const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,commentFetchData,commentDelGo}) => {
+
+    const navigate = useNavigate()
 
     const [commentModify,commentModifySet] = useState(1)
 
     const {id} = useParams();
+
+    console.log("CommentView 댓글 목록",commentText);
+    
 
     useEffect(()=>{
 
@@ -31,12 +36,20 @@ const CommentView = ({commentText,detailText,setDetailText,user,commentFetchData
         })
     },[id])
 
-    function textChg(key,me) {
-        setDetailText({...detailText,[key]:me.value})
+    function textChg(kk,me) {
+        var newArr = [...commentText]
+        newArr[kk].context = me.value
+        //console.log("textChg : ",kk );
+        //console.log("textChg : ", newArr[parseInt(kk) ]);
+        
+        setCommentText(newArr)
+        //setCommentText({...commentText,[key]:me.value})
     }
 
     function submitGo(e) {
         e.preventDefault();
+
+        console.log("submitGo  수정 진입")
         const frmData = new FormData(document.commentModifyFrm);
         const myData = Object.fromEntries(frmData)
         console.log(myData);
@@ -54,7 +67,8 @@ const CommentView = ({commentText,detailText,setDetailText,user,commentFetchData
 
     }
 
-    const ModifyGo = ({modifyData}) => {
+    const ModifyGo = ({kk,modifyData}) => {
+        console.log("ModifyGo ", kk)
         if(commentModify === 1){
             return  <>
                         <div className="textarea">
@@ -68,9 +82,12 @@ const CommentView = ({commentText,detailText,setDetailText,user,commentFetchData
                     </>
         }
         else if(commentModify === 0){
+            console.log("modifyData.context",modifyData.context);
+            
             return  <form name="commentModifyFrm">
+                        <input name="comment_id" value={modifyData.comment_id} type="hidden"/>
                         <div className="textarea">
-                            <textarea className="new-reply" name="context" onChange={(e)=>textChg('context',e.target)}>{modifyData.context}</textarea>
+                            <textarea className="new-reply" name="context" autofocus="autofocus" onChange={(e)=>textChg(kk,e.target)} value={modifyData.context}></textarea>
                         </div>
 
                         <div className="reply-info">
@@ -98,17 +115,7 @@ const CommentView = ({commentText,detailText,setDetailText,user,commentFetchData
                             <div className="reply-content">
                                 <span className="name">관리자</span>
                             </div>
-                            <ModifyGo modifyData={commentText[i]} />
-                            {/* <>
-                                <div className="textarea">
-                                    <textarea readOnly className="new-reply">{commentText[i].context}</textarea>
-                                </div>
-
-                                <div className="reply-info">
-                                    <span className="time">{commentText[i].reg_str} 등록</span>
-                                    <CommentBtn data={commentText[i]} user={user} commentDelGo={()=>commentDelGo(commentText[i].comment_id)} commentModify={commentModify} commentModifySet={commentModifySet}/>
-                                </div>
-                            </> */}
+                            <ModifyGo kk={i} modifyData={commentText[i]} />
                         </div>
                     </div>
         }

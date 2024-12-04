@@ -91,10 +91,10 @@ module.exports = upload => {
     });
 
     router.put("/detail/:comment_id", async(req, res) => {
-        //console.log(req.body)
+        console.log("댓글수정 진입 ",req.body)
         let data = [
             req.body.context,
-            req.params.comment_id
+            req.body.comment_id
         ]
         console.log(data);
 
