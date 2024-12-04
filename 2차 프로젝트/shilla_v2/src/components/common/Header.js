@@ -40,7 +40,7 @@ const Header = () => {
             gnbMenu: [
                 { link: "/standard", text: "스탠다드" },
                 { link: "/executive", text: "이그제큐티브" },
-                { link: "/sweet", text: "스위트" },
+                { link: "/suite", text: "스위트" },
                 { link: "/executiveLounge", text: "더 이그제큐티브 라운지" },
                 { link: "/room", text: "전체 객실 보기" },
             ],
