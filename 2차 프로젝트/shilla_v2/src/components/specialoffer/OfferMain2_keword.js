@@ -4,54 +4,67 @@ import Footer from "../common/Footer";
 import "../../scss/sub01_01_main.scss";
 import { Link } from "react-router-dom";
 
-const OfferMain2_kewords = () => {
-    const keword = [
+const OfferMain2_kewords = ({
+    offerkeword,
+    setofferkeword,
+    filterKewords,
+    setfilterKewords,
+}) => {
+    const kewordlists = [
         {
-            id: "check1",
-            name: "조식",
+            id: "breakfast",
+            kname: "조식",
         },
         {
-            id: "check2",
-            name: "라운지혜택",
+            id: "lounge",
+            kname: "라운지혜택",
         },
         {
-            id: "check3",
-            name: "기념일",
+            id: "anniversry",
+            kname: "기념일",
         },
         {
-            id: "check4",
-            name: "야외수영장",
+            id: "pool",
+            kname: "야외수영장",
         },
         {
-            id: "check5",
-            name: "성인3인",
+            id: "three_people",
+            kname: "성인3인",
         },
         {
-            id: "check6",
-            name: "2박이상",
+            id: "consecutive_night",
+            kname: "2박이상",
         },
         {
-            id: "check7",
-            name: "키즈",
+            id: "kids",
+            kname: "키즈",
         },
     ];
+
+    const kewordhandle = e => {
+        const { name, checked } = e.target;
+        setfilterKewords(prev => ({ ...prev, [name]: checked ? 1 : 0 }));
+        console.log("선택키워드", filterKewords);
+    };
     return (
         <>
             <div className="pkg-filter-keyword">
                 <div className="keword-wrap">
                     <p className="kw-title">키워드</p>
                     <ul className="keywords">
-                        {keword.map((keworddata, i) => {
+                        {kewordlists.map((keword, id) => {
                             return (
-                                <li className="check" key={i}>
+                                <li className="check" key={keword.id}>
                                     <input
                                         type="checkbox"
-                                        id={keworddata.id}
-                                        name="keyword"
-                                        value={keworddata.name}
+                                        id={keword.id}
+                                        name={keword.id} // 폼데이터키역할
+                                        value="1" // 폼데이터값
+                                        checked={filterKewords[keword.id] === 1} // 기본 false
+                                        onChange={kewordhandle}
                                     />
-                                    <label for={keworddata.id}>
-                                        {keworddata.name}
+                                    <label for={keword.id}>
+                                        {keword.kname}
                                     </label>
                                 </li>
                             );
