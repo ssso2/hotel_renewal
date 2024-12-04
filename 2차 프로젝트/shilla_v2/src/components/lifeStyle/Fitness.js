@@ -6,7 +6,6 @@ import Gallery2 from './Gallery2';
 import Location from './Location';
 import Desc from './Desc';
 import Footer from '../common/Footer';
-import { Link } from 'react-router-dom';
 
 import "../../scss/common.scss"
 import "../../scss/header.scss"

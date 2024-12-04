@@ -20,7 +20,7 @@ module.exports = () => {
         const { roomId, description, check_in } = req.body;
 
         if (!roomId) {
-            return res.status(400).send("roomId는 필수입니다.");
+            return res.status(400).send("roomId 필수");
         }
 
         try {
@@ -56,15 +56,15 @@ module.exports = () => {
         );
 
         if (productData.length === 0) {
-            return res.status(404).send("해당 방에 대한 예약 정보가 없습니다.");
+            return res.status(404).send("해당 방에 대한 예약 정보가 없음");
         }
 
         const productId = productData[0].product_id;
 
         // product_id를 기반으로 예약 정보 조회
         const [reservations] = await conn.execute(
-            `SELECT r.room_id, r.description, p.prod_price, res.start_date, 
-                    res.end_date, res.Cancel, res.reservation_id
+            `SELECT r.room_id, r.description, p.prod_price, res.reservation_id,
+                res.start_date, res.end_date, res.Cancel
              FROM reservation res
              JOIN product p ON res.product_id = p.product_id
              JOIN room r ON p.room_id = r.room_id
@@ -73,7 +73,7 @@ module.exports = () => {
         );
 
         if (reservations.length === 0) {
-            return res.json({ message: "예약 정보가 없습니다." });
+            return res.json({ message: "예약 정보가 없음" });
         }
 
         res.json(reservations);

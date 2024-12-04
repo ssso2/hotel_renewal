@@ -24,7 +24,7 @@
                     padding: 10px;
                     border: 1px solid #ccc;
                     text-align: center;
-                    word-break: break-word; /* 긴 텍스트가 줄바꿈 되도록 설정 */
+                    word-break: break-word; /* 긴 텍스트 줄바꿈 */
                 }
             }
         }
@@ -41,20 +41,18 @@
                     text-align: center;
                     line-height: 29px;
 
-                    /* 특이사항 input의 스타일 */
+                    /* 특이사항 input */
                     input {
-                        width: 100%; /* 셀 크기에 맞게 너비를 조정 */
-                        padding: 5px; /* padding 추가 */
+                        width: 100%; 
+                        padding: 5px; 
                         border: 1px solid #ccc;
-                        box-sizing: border-box; /* padding을 포함한 너비로 설정 */
+                        box-sizing: border-box; 
                     }
                 }
             }
         }
     }
 }
-
-// @@@@@@@@@@@@@@@
 
 .modal {
     display: flex;
@@ -63,9 +61,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* 화면 전체를 차지하도록 설정 */
+    width: 100%; 
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 회색 반투명 배경 */
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .modal-content {
@@ -73,13 +71,12 @@
     padding: 20px;
     border-radius: 10px;
     width: 400px;
-    max-height: 80vh; /* 최대 높이를 설정 */
-    overflow-y: auto; /* 세로 스크롤 추가 */
+    max-height: 80vh; 
+    overflow-y: auto; 
     position: relative;
     box-sizing: border-box;
 }
 
-/* 스크롤바 스타일을 추가하여 border-radius 효과를 적용 */
 .modal-content::-webkit-scrollbar {
     width: 10px;
 }
@@ -88,11 +85,3 @@
     background: #888;
     border-radius: 10px;
 }
-
-// .close {
-//     position: absolute;
-//     top: 10px;
-//     right: 10px;
-//     font-size: 30px;
-//     cursor: pointer;
-// }

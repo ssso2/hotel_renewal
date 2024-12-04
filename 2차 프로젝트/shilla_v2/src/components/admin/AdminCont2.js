@@ -8,7 +8,7 @@ const AdminCont2 = () => {
     const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열기/닫기
     const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 방 예약 정보
 
-    // 객실 목록을 가져오는 함수
+    // 객실 목록 가져오는 함수
     const fetchRooms = () => {
         axios.get("http://localhost:5002/bk/roomManagement")
             .then(response => {
@@ -136,8 +136,8 @@ const AdminCont2 = () => {
                                 {selectedRoom.map((reservation, index) => (
                                     <div key={index}>
                                         <p><strong>예약 ID:</strong> {reservation.reservation_id}</p>
-                                        <p><strong>예약 시작일:</strong> {formatDate(reservation.start_date)}</p> {/* 날짜 형식 변환 */}
-                                        <p><strong>예약 종료일:</strong> {formatDate(reservation.end_date)}</p> {/* 날짜 형식 변환 */}
+                                        <p><strong>예약 시작일:</strong> {formatDate(reservation.start_date)}</p> 
+                                        <p><strong>예약 종료일:</strong> {formatDate(reservation.end_date)}</p> 
                                         <p><strong>예약취소여부:</strong> {reservation.Cancel === '0' ? 'N' : 'Y'}</p>
                                         <br />
                                     </div>
