@@ -1,5 +1,6 @@
 import React from "react";
 
+// 집컴에서 되는지 확인중..()
 const AdminCont2 = () => {
     return (
         <div className="cont cont2">
