@@ -1,0 +1,24 @@
+.room-man-detail {
+    padding: 20px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .reservation-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .reservation-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+
+        p {
+            margin: 5px 0;
+        }
+    }
+}

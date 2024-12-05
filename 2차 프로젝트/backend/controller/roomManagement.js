@@ -83,6 +83,26 @@ module.exports = () => {
     }
 });
 
+router.get("/detail/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const [roomDetails] = await db.execute(
+            "SELECT * FROM room WHERE room_id = ?",
+            [id]
+        );
+
+        if (roomDetails.length === 0) {
+            return res.status(404).json({ message: "해당 방 정보를 찾을 수 없습니다." });
+        }
+
+        res.json(roomDetails[0]);
+    } catch (err) {
+        console.error("방 정보 조회 실패: ", err.message);
+        res.status(500).json({ message: "방 정보 조회 중 오류가 발생했습니다." });
+    }
+});
+
+
 
     
     
