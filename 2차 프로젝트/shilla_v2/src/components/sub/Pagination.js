@@ -7,7 +7,6 @@ const Pagination = ({
     onPageChange,
     pagesPerGroup = 5, // 한 그룹에 표시할 페이지 수
 }) => {
-    
     const currentGroup = Math.ceil(currentPage / pagesPerGroup); // 현재 페이지 그룹
     const totalGroups = Math.ceil(totalPages / pagesPerGroup); // 총 그룹 수
 
@@ -24,6 +23,7 @@ const Pagination = ({
         <div className="pagination">
             {/* 처음으로 */}
             <button
+                className="first"
                 onClick={() => onPageChange(1)}
                 disabled={currentPage === 1}
             >
@@ -31,6 +31,7 @@ const Pagination = ({
             </button>
             {/* 이전 그룹 */}
             <button
+                className="prev"
                 onClick={() => onPageChange(startPage - 1)}
                 disabled={currentGroup === 1}
             >
@@ -40,7 +41,7 @@ const Pagination = ({
             {pages.map((page) => (
                 <button
                     key={page}
-                    className={page === currentPage ? "active" : ""}
+                    className={`page ${page === currentPage ? "active" : ""}`}
                     onClick={() => onPageChange(page)}
                 >
                     {page}
@@ -48,6 +49,7 @@ const Pagination = ({
             ))}
             {/* 다음 그룹 */}
             <button
+                className="next"
                 onClick={() => onPageChange(endPage + 1)}
                 disabled={currentGroup === totalGroups}
             >
@@ -55,6 +57,7 @@ const Pagination = ({
             </button>
             {/* 마지막으로 */}
             <button
+                className="last"
                 onClick={() => onPageChange(totalPages)}
                 disabled={currentPage === totalPages}
             >

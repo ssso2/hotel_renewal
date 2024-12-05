@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 const RoomManDetail = () => {
     const { id } = useParams(); // URL에서 room_id 가져오기
     const [roomDetails, setRoomDetails] = useState(null); // 방 정보 상태
     const [reservations, setReservations] = useState([]); // 예약 정보 상태
     const [error, setError] = useState(""); // 오류 메시지 상태
 
+
     // 방 상세 정보 가져오기
     useEffect(() => {
         const fetchRoomDetails = async () => {
             try {
-                const response = await axios.get(
-                    `http://localhost:5002/bk/roomManagement/detail/${id}` // 방 정보 API 호출
-                );
+                const response = await axios.get(`${bkURL}/detail/${id}`)
                 setRoomDetails(response.data);
             } catch (err) {
                 console.error("방 정보 가져오는 중 오류 발생:", err);

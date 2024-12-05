@@ -4,17 +4,20 @@ import axios from "axios";
 import Pagination from "../sub/Pagination";
 import "./AdminCont2.scss";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 
 const AdminCont2 = () => {
     const [rooms, setRooms] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
     const navigate = useNavigate();
-
+    axios.get(`${bkURL}`)
     // 객실 목록 가져오는 함수
     const fetchRooms = () => {
         axios
-            .get("http://localhost:5002/bk/roomManagement")
+            // .get("http://localhost:5002/bk/roomManagement")
+            .get(`${bkURL}`)
             .then((response) => {
                 setRooms(response.data);
             })
@@ -43,7 +46,7 @@ const AdminCont2 = () => {
 
     return (
         <div className="cont cont2">
-            <h2>객실 관리</h2>
+            <h2>객실 관리33</h2>
             <div className="table">
                 <div className="table-header">
                     <div className="table-row">

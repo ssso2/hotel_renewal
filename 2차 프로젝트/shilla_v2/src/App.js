@@ -26,6 +26,7 @@ import Fitness2 from "./components/lifeStyle/Fitness2";
 import Fitness3 from "./components/lifeStyle/Fitness3";
 import Fitness4 from "./components/lifeStyle/Fitness4";
 import WalkingTrails from "./components/lifeStyle/walkingTrails";
+import AdminCont2 from "./components/admin/AdminCont2";
 
 // login
 import Login from "./components/sub/Login";
@@ -161,6 +162,8 @@ function App() {
                 <Route path="/fitness3" element={<Fitness3 />}></Route>
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
                 <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
+
+                <Route path="/admin/roomManagement" element={<AdminCont2 />} />
             </Routes>
         </div>
     );
