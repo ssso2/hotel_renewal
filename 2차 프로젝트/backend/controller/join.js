@@ -28,9 +28,9 @@ module.exports = upload => {
         try {
             const [ret] = await conn.execute(sql, data)
             
-            const newId = ret.insertId;
-            console.log('회원정보입력완료',newId);
-            res.json({newId})
+            // const newId = ret.insertId;
+            // console.log('회원정보입력완료',newId);
+            res.json({ret})
         } catch (err) {
 
             console.log("회원정보입력 sql 실패 : ", err.message);

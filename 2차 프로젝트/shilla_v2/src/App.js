@@ -29,6 +29,7 @@ import Login from "./components/sub/Login";
 // join
 import JoinComp1 from "./components/sub/JoinComp1";
 import JoinComp2 from "./components/sub/JoinComp2";
+import Welcome from "./components/sub/Welcome";
 
 // offer
 import SpecialOffer from "./components/specialoffer/SpecialOffer";
@@ -81,6 +82,7 @@ function App() {
                 {/* 회원가입 */}
                 <Route path="/Join" element={<JoinComp1></JoinComp1>}></Route>
                 <Route path="/myinfo" element={<JoinComp2></JoinComp2>}></Route>
+                <Route path="/Welcome" element={<Welcome></Welcome>}></Route>
                 {/* 연락처 */}
                 <Route path="/info" element={<Info></Info>}></Route>
                 {/* 오시는길 */}
