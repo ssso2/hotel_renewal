@@ -125,7 +125,8 @@ const OfferDetail1_pkgcon = ({ img }) => {
             item: ["02-2230-3310"],
         },
     ];
-    const imgurl = `http://192.168.0.16:5002/bk/files/${img}`;
+    const imgurl = `http://192.168.0.12:5002/bk/files/${img}`;
+    // const imgurl = `http://192.168.123.100:5002/bk/files/${img}`;
     return (
         <div>
             {/* <!-- 패키지내용 --> */}

@@ -48,7 +48,7 @@ const options = {
   },
 }
 
-const AdminCont2Chart = () => {
+const AdminCont4Chart = () => {
   const [chartData, setChartData] = useState({
       labels: [],
       datasets: [],
@@ -60,16 +60,34 @@ const AdminCont2Chart = () => {
         const response = await axios.get('http://localhost:5002/bk/admin')
         
         const labels = response.data.map((item) => item.room_id)
+        const rooms = response.data.map((item) => item.room_type)
+        const beds = response.data.map((item) => item.bed_type)
         const prices = response.data.map((item) => item.day_price)
 
         setChartData({
           labels: labels,
           datasets: [
             {
-              label: "판매 현황",
-              data: prices,
-              backgroundColor: "#aee123",
-              borderColor: "#aee123",
+              label: "객실 유무",
+              data: `${rooms}`,
+              backgroundColor: "#9a01c3",
+              borderColor: "#9a01c3",
+              fill: false,
+              tension: 0.1,
+            },
+            {
+              label: "가격",
+              data: `${prices}`,
+              backgroundColor: "#2699a1",
+              borderColor: "#2699a1",
+              fill: false,
+              tension: 0.1,
+            },
+            {
+              label: "침대 유무",
+              data: `${beds}`,
+              backgroundColor: "#5c3dd1",
+              borderColor: "#5c3dd1",
               fill: false,
               tension: 0.1,
             },
@@ -85,10 +103,10 @@ const AdminCont2Chart = () => {
 
   return (
     <div>
-      <h2>매출 현황</h2>
+      <h2>객실별 매출 현황</h2>
         <Bar options={options} data={chartData} />
     </div>
   )
 }
 
-export default AdminCont2Chart;
+export default AdminCont4Chart;

@@ -32,18 +32,19 @@ const OfferMain4 = ({ offer }) => {
             <div className="event-container">
                 <ul className="pkg-all list-item" data-type="all">
                     {offer
-                        .filter(
-                            list =>
-                                keywordColumns.some(
-                                    keyword => list[keyword] === "1"
-                                ) // 키워드 중 하나라도 1인지 확인
-                        )
+                        // .filter(
+                        //     list =>
+                        //         keywordColumns.some(
+                        //             keyword => list[keyword] === "1"
+                        //         ) // 키워드 중 하나라도 1인지 확인
+                        // )
                         .map(data => {
-                            const imgurl = `http://192.168.0.16:5002/bk/files/${data.upSystem}`;
+                            const imgurl = `http://192.168.0.12:5002/bk/files/${data.upSystem}`;
+                            // const imgurl = `http://192.168.123.100:5002/bk/files/${data.upSystem}`;
                             return (
                                 <li
                                     className="list-container product-item"
-                                    data-type="couple"
+                                    data-type={data.offer_type}
                                     key={data.offer_id}
                                 >
                                     <Link
@@ -78,6 +79,9 @@ const OfferMain4 = ({ offer }) => {
                                                         </p>
                                                     )
                                             )}
+                                            {/* <p className="list-keword">
+                                                {data.badge}
+                                            </p> */}
                                             <h3>{data.offer_name}</h3>
                                             <p className="offer-des">
                                                 {data.offer_description}

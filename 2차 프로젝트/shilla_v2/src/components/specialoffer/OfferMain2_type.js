@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "../../scss/sub01_01_main.scss";
 import { Link } from "react-router-dom";
 
-const OfferMain2_type = () => {
+const OfferMain2_type = ({ offertype, setoffertype }) => {
+    // console.log("offertype", { offertype });
     const [typeOpen, settypeOpen] = useState(false);
     const [select, setselect] = useState("전체");
+    const [selectType, setselectType] = useState("");
 
     const type = [
         {
@@ -28,11 +30,19 @@ const OfferMain2_type = () => {
             name: "프로모션",
         },
     ];
+
+    const typehandle = e => {
+        // const selectType = e.target.value;
+        // setoffertype(selectType === "전체" ? "" : selectType);
+        setoffertype(e.target.value);
+        console.log("선택타입", e.target.value);
+    };
     return (
         <>
             <div className="pkg-filter-sort">
                 <p className="kw-title">유형구분</p>
-                <div className={`dropdown type ${typeOpen ? "on" : ""}`}>
+                {/* 기존형태 */}
+                {/* <div className={`dropdown type ${typeOpen ? "on" : ""}`}>
                     <div
                         className="typebox"
                         data-type="all"
@@ -57,18 +67,33 @@ const OfferMain2_type = () => {
                             );
                         })}
                     </ul>
+                </div> */}
+                {/* 셀렉트박스 */}
+                <div className="dropdown type">
+                    <select
+                        name="offer_type"
+                        // id="typeboxwrap"
+                        value={offertype}
+                        className="typebox"
+                        onChange={typehandle}
+                    >
+                        <option className="filter-type" value="All">
+                            전체
+                        </option>
+                        <option className="filter-type" value="커플">
+                            커플
+                        </option>
+                        <option className="filter-type" value="패밀리">
+                            패밀리
+                        </option>
+                        <option className="filter-type" value="친구">
+                            친구
+                        </option>
+                        <option className="filter-type" value="프로모션">
+                            프로모션
+                        </option>
+                    </select>
                 </div>
-                {/* <select
-                            name="type"
-                            id="typebox"
-                            className="dropdown type"
-                        >
-                            <option value="all">전체</option>
-                            <option value="couple">커플</option>
-                            <option value="familly">패밀리</option>
-                            <option value="friends">친구</option>
-                            <option value="promotion">프로모션</option>
-                        </select> */}
             </div>
         </>
     );

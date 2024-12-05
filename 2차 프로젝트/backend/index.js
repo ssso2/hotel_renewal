@@ -65,18 +65,27 @@ const upload = multer({
 // board 라우터 추가
 const boardRouter = require("./controller/board.js");
 app.use("/bk/board", boardRouter(upload));
+// board_comment 라우터 추가
+const boardCommentRouter = require("./controller/board_comment.js");
+app.use("/bk/comment", boardCommentRouter(upload));
 // login 라우터 추가
 const loginRouter = require("./controller/login.js");
 app.use("/bk/login", loginRouter(upload));
+// join 라우터 추가
+const joinRouter = require("./controller/join.js");
+app.use("/bk/join", joinRouter(upload));
 // specialoffer 라우터 추가
 const offerRouter = require("./controller/specialOffer.js");
 app.use("/bk/specialOffer", offerRouter(upload));
 // reservation 라우터 추가
 const reservationRouter = require("./controller/reservations.js");
 app.use("/bk/reserve", reservationRouter);
+// admin dashboard 라우터 추가
+const adminDashboardRouter = require("./controller/adminDashboard.js");
+app.use("/bk/admin", adminDashboardRouter);
 // 객실관리 라우터 추가
 const roomManRouter = require("./controller/roomManagement.js");
-app.use("/bk/roomManagement", roomManRouter())
+app.use("/bk/roomManagement", roomManRouter());
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
 app.get("*", (req, res) => {

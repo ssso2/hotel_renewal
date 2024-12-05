@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import DateRangePicker from "./DateRangePicker";
-import PackageRoomItem from "./PackageRoomItem";  // 패키지 컴포넌트
-import OneRoomItem from "./OneRoomItem";  // 객실 컴포넌트
-// import { useLocation } from "react-router-dom";
+import PackageRoomItem from "./PackageRoomItem";
+import OneRoomItem from "./OneRoomItem";
 import "../../scss/res_search.scss";
 
 function Res_search() {
   const navigate = useNavigate();
-  // const queryParams = new URLSearchParams(location.search);
 
   // 상태 관리
   const [checkInDate, setCheckInDate] = useState(null); // 체크인 날짜
@@ -17,35 +14,33 @@ function Res_search() {
   const [availablePackages, setAvailablePackages] = useState([]); // 예약 가능한 패키지 목록
   const [availableRooms, setAvailableRooms] = useState([]); // 예약 가능한 객실 목록
   const [showPicker, setShowPicker] = useState(false); // 날짜 선택기 표시 여부
-  const [tab, setTab] = useState('package'); // 'package' or 'room' 탭 선택 상태
-  const [popupAdultCount, setPopupAdultCount] = useState(0); // 팝업에서 사용하는 성인 수
-  const [popupChildrenCount, setPopupChildrenCount] = useState(0); // 팝업에서 사용하는 어린이 수
-  const [confirmedAdultCount, setConfirmedAdultCount] = useState(0); // 확인버튼을 누를 때의 성인 수
-  const [confirmedChildrenCount, setConfirmedChildrenCount] = useState(0); // 확인버튼을 누를 때의 어린이 수
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [tab, setTab] = useState("package"); // 탭 상태
+  const [popupAdultCount, setPopupAdultCount] = useState(0); // 팝업 성인 수
+  const [popupChildrenCount, setPopupChildrenCount] = useState(0); // 팝업 어린이 수
+  const [confirmedAdultCount, setConfirmedAdultCount] = useState(0); // 확인된 성인 수
+  const [confirmedChildrenCount, setConfirmedChildrenCount] = useState(0); // 확인된 어린이 수
+  const [isPopupVisible, setIsPopupVisible] = useState(false); // 팝업 표시 여부
 
   const togglePicker = () => setShowPicker(!showPicker);
-   // 팝업 상태 토글
-   const togglePopup = () => {
+
+  const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
 
-    // 팝업이 열릴 때 현재 확인된 값을 팝업 초기 값으로 설정
     if (!isPopupVisible) {
       setPopupAdultCount(confirmedAdultCount);
       setPopupChildrenCount(confirmedChildrenCount);
     }
   };
 
-  // 날짜 변경 핸들러
   const handleDateChange = ({ startDate, endDate }) => {
     setCheckInDate(startDate);
     setCheckOutDate(endDate);
   };
-  // 확인 버튼 핸들러
+
   const handleConfirm = () => {
     setConfirmedAdultCount(popupAdultCount);
     setConfirmedChildrenCount(popupChildrenCount);
-    setIsPopupVisible(false); // 팝업 닫기
+    setIsPopupVisible(false);
   };
 
   const incrementCount = (type) => {
@@ -58,59 +53,9 @@ function Res_search() {
     if (type === "children" && popupChildrenCount > 0) setPopupChildrenCount((prev) => prev - 1);
   };
 
-  
-  // Axios 요청에서 오류 처리
-const handleSearch = async () => {
-
-  // 날짜가 선택되지 않았으면 alert
-  if (!checkInDate || !checkOutDate) {
-    alert("날짜를 선택해주세요");
-    return;
-  }
-// 날짜에 하루를 더하는 함수
-const addOneDay = (date) => {
-  const newDate = new Date(date); // 새로운 날짜 객체 생성
-  newDate.setDate(newDate.getDate() + 1); // 하루 더하기
-  return newDate;
-};
-  const startDate = addOneDay(checkInDate).toISOString().split('T')[0];
-  const endDate = addOneDay(checkOutDate).toISOString().split('T')[0];
-
-  console.log("시작일:", startDate);
-    console.log("종료일:", endDate);
-
-  try {
-    const response = await axios.post("http://192.168.0.46:5002/bk/reserve", {
-      startDate,
-      endDate
-    });
-
-    if (response.status === 200) {
-      const { availableRooms, availablePackages } = response.data;
-      setAvailableRooms(availableRooms); // 객실 목록 업데이트
-      setAvailablePackages(availablePackages); // 패키지 목록 업데이트
-    }
-  } catch (error) {
-    console.error("예약 가능한 객실 조회 실패:", error.message); // 오류 메시지 출력
-    if (error.response) {
-      // 서버 응답이 있을 때
-      console.error("서버 응답 오류:", error.response.data);
-      console.error("서버 응답 상태:", error.response.status);
-    } else if (error.request) {
-      // 요청이 보내졌지만 응답이 없을 때   
-      console.error("응답 없음:", error.request);
-    } else {
-      // 기타 오류
-      console.error("오류 발생:", error.message);
-    }
-  }
-};
-
-// 컴포넌트가 마운트되었을 때, 페이지를 맨 위로 스크롤
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="container">
@@ -119,7 +64,7 @@ useEffect(() => {
           <h2>날짜, 인원 선택</h2>
           <div className="reservation-wrap">
             <div className="date-wrap">
-            <h4>CHECK IN / OUT</h4>
+              <h4>CHECK IN / OUT</h4>
               <DateRangePicker
                 onDateChange={handleDateChange}
                 showPicker={showPicker}
@@ -143,13 +88,14 @@ useEffect(() => {
             <button
               type="button"
               className="reservation-search-btn"
-              onClick={handleSearch}
-            > 
+              onClick={() => alert("검색 기능")}
+            >
               검색
             </button>
           </div>
-        {/* 팝업 */}
-        {isPopupVisible && (
+
+          {/* 팝업 */}
+          {isPopupVisible && (
             <div className="reservation-popup">
               <form action="">
                 <ul className="popup-left">
@@ -209,19 +155,19 @@ useEffect(() => {
           )}
         </div>
 
-        
-
-        {/* 탭 변경 */}
         <div className="tabs">
-          <button onClick={() => setTab('package')}>패키지 {availablePackages.length > 0 ? `(${availablePackages.length})` : ''}</button>
-          <button onClick={() => setTab('room')}>객실 {availableRooms.length > 0 ? `(${availableRooms.length})` : ''}</button>
+          <button onClick={() => setTab("package")}>
+            패키지 {availablePackages.length > 0 ? `(${availablePackages.length})` : ""}
+          </button>
+          <button onClick={() => setTab("room")}>
+            객실 {availableRooms.length > 0 ? `(${availableRooms.length})` : ""}
+          </button>
         </div>
 
-        {/* 선택된 탭에 따라 콘텐츠 표시 */}
         <div className="content-list">
-          {tab === 'package' ? (
+          {tab === "package" ? (
             <div className="package-list">
-              <h3>패키지 </h3>
+              <h3>패키지</h3>
               {availablePackages.map((pkg) => (
                 <PackageRoomItem key={pkg.offer_id} packageData={pkg} />
               ))}
