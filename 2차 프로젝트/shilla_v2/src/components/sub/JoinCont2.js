@@ -1,9 +1,17 @@
 import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import '../../scss/myinfo.scss'
+
+const bkURL = process.env.REACT_APP_BACK_URL;
 
 const JoinCont2 = () => {
 
+    const navigate = useNavigate()
+
     useEffect(()=>{
+
+        document.title = '회원가입:정보입력';
+
         $(document).ready(function () {
             // 수정된 부분
             let today = new Date();
@@ -184,11 +192,36 @@ const JoinCont2 = () => {
         }
     })
 
+    function joinSubmitGo(e){
+        e.preventDefault()
+
+        const frmData = new FormData(document.joinFrm) //아래 폼태그 name 값 가져옴
+
+        const data = Object.fromEntries(frmData);
+
+        console.log('joinSubmitGo() 진입');
+        console.log(data);
+
+
+        axios.post(`${bkURL}/join`,data)
+        .then(res =>{
+            console.log('회원정보입력 등록 완료 : ', res.data);
+            alert('회원 가입 되었습니다.');
+            navigate(`/board/detail/${res.data.newId}`)
+            // navigate('/board/detail');
+
+        }).catch(err =>{
+            console.log('회원정보입력 등록 오류 : ', err);
+        })
+    }
+
+
+
     return (
         <>
             <div class="form-wrap">
                 <div class="center">
-                    <form id="shilla-join" method="post">
+                    <form name="joinFrm" id="shilla-join" method="post"  onSubmit={joinSubmitGo}>
                         <div class="join-container">
                             <h3 class="info-title">개인정보 입력</h3>
 
@@ -286,7 +319,7 @@ const JoinCont2 = () => {
 
                             <div class="info-group">
                                 <div class="input-container">
-                                    <button type="button" id="submit">가입하기</button>
+                                    <button type="submit" id="submit">가입하기</button>
                                 </div>
                             </div>
                         </div>

@@ -5,7 +5,8 @@ const JoinCont1 = () => {
 
     useEffect(()=>{
 
-        
+        document.title = '회원가입:약관동의';
+
         // 체크박스 전체 동의, 전체 해제
         document.getElementById('agree-all').addEventListener('change', function () {
             const chkboxes = document.querySelectorAll('input[type="checkbox"]');

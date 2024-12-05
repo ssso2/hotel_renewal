@@ -4,7 +4,7 @@ import JoinCont1 from './JoinCont1'
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 
-const JoinComp = () => {
+const JoinComp1 = () => {
 
     return (
         <>  
@@ -15,5 +15,5 @@ const JoinComp = () => {
     );
 };
 
-export default JoinComp;
+export default JoinComp1;
 
