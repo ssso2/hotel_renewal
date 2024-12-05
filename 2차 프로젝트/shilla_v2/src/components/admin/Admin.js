@@ -27,10 +27,9 @@ const Admin = () => {
 
     },[])
 
-
     return (
         <>
-            {/* <Header/> */}
+            <Header/>
             <div className="admin-wrap">
                 <div className="center">
                     <AdminTabMenu/>

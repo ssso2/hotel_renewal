@@ -1,4 +1,6 @@
 import { Line } from "react-chartjs-2";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +11,10 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+// Chart.js import 불러오기
 
+
+// Chart.js 등록
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -20,8 +25,7 @@ ChartJS.register(
   Legend
 );
 
-const labels = ["2017", "2018", "2019", "2020", "2021", "2022", "2023"];
-
+// 차트 옵션 설정
 const options = {
   responsive: true,
   interaction: {
@@ -34,10 +38,11 @@ const options = {
       },
     },
     y: {
-        beginAtZero: {
-            display: true,
-        },
-    }
+      beginAtZero: {
+        display: true,
+        text: "인원",
+      },
+    },
   },
   plugins: {
     legend: {
@@ -46,37 +51,52 @@ const options = {
   },
 };
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "React",
-      data: [32, 42, 51, 60, 51, 95, 97],
-      backgroundColor: "#0CD3FF",
-      borderColor: "#0CD3FF",
-    },
-    {
-      label: "Angular",
-      data: [37, 42, 41, 37, 31, 44, 42],
-      backgroundColor: "#a6120d",
-      borderColor: "#a6120d",
-    },
-    {
-      label: "Vue",
-      data: [60, 54, 54, 28, 27, 49, 52],
-      backgroundColor: "#FFCA29",
-      borderColor: "#FFCA29",
-    },
-  ],
-};
 
-const Chart1 = () => {
+// chart1
+const AdminCont1Chart = () => {
+  const [chartData, setChartData] = useState({
+    labels: [],
+    datasets: [],
+  })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5002/bk/admin')
+                
+
+        const labels = response.data.map((item) => item.room_id)
+        const occupancy = response.data.map((item) => item.max_occupancy)
+
+        setChartData({
+          labels: labels,
+          datasets: [
+            {
+              label: "방문자 수",
+              data: occupancy,
+              backgroundColor: "#0CD3FF",
+              borderColor: "#0CD3FF",
+              fill: false,
+              tension: 0.1,
+            },
+          ],
+        })
+      } catch (error) {
+        console.error("데이터 가져오기 실패", error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+
+
   return (
     <div>
-      <h1>방문자 현황</h1>
-        <Line options={options} data={data} />
+      <h2>방문자 현황</h2>
+      <Line options={options} data={chartData} />
     </div>
-  );
-};
+  )
+}
 
-export default Chart1;
+export default AdminCont1Chart;

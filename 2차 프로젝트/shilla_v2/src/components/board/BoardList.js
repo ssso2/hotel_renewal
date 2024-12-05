@@ -30,8 +30,6 @@ const BoardList = () => {
         axios.get(`${bkURL}/board`)
         .then(res =>{
             setText(res.data);
-            console.log('text:',res.data);
-            
         })
         .catch(err=>{
             console.error('에러발생 : ', err);

@@ -28,7 +28,6 @@ const LoginComp = () => {
                 // 세션정보 저장
                 sessionStorage.setItem("id", mem.member_id);
                 sessionStorage.setItem("name", mem.name);
-                sessionStorage.setItem("grade", mem.grade);
 
                 alert(`${mem.name}님, 로그인 성공`);
                 navigate("/");
