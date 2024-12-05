@@ -45,24 +45,25 @@ module.exports = upload => {
 
     // 쓰기
     router.post("/detail/:board_id", async(req, res) => {
-        console.log("백엔드 join",req);
+        console.log("백엔드 댓글 쓰기",req);
 
-        let sql = 'insert into board_comment (title,context,secret,reg_date) values (?,?,?,sysdate())';
+        let sql = 'insert into board_comment (board_id,author,context,member_id,date) values (?,?,?,?,sysdate())';
 
 
         let data = [
-            req.body.title,
+            req.body.board_id,
+            req.body.author,
             req.body.context,
-            req.body.secret,
+            req.body.member_id,
         ];
-        console.log("백엔드 join",data);
+        console.log("백엔드 댓글 쓰기",data);
 
         try {
             const [ret] = await conn.execute(sql, data)
             
-            const newId = ret.insertId;
-            console.log('쓰기완료',newId);
-            res.json({newId})
+            // const newId = ret.insertId;
+            console.log('게시판 댓글 쓰기완료',ret);
+            res.json(ret)
         } catch (err) {
 
             console.log("sql 실패 : ", err.message);
@@ -72,9 +73,9 @@ module.exports = upload => {
 
     });
 
-    router.delete("/detail/:board_id", async(req, res) => {
+    router.delete("/detail/:comment_id", async(req, res) => {
         console.log("삭제 진입:" + req.params.comment_id);
-        console.log(req.body);
+        console.log(req.params.comment_id);
 
 
         try {
@@ -89,22 +90,21 @@ module.exports = upload => {
 
     });
 
-    router.put("/detail/:board_id", async(req, res) => {
-        //console.log(req.body)
+    router.put("/detail/:comment_id", async(req, res) => {
+        console.log("댓글수정 진입 ",req.body)
         let data = [
-            req.body.title,
             req.body.context,
-            req.params.comment_id
+            req.body.comment_id
         ]
         console.log(data);
 
         try {
-            const [ret] = await conn.execute('update board_comment set title=?, context=? where comment_id = ?', data)
-            res.send("수정성공");
+            const [ret] = await conn.execute('update board_comment set context=? where comment_id = ?', data)
+            res.send("댓글수정성공");
         } catch (err) {
 
-            console.log("sql 실패 : ", err.message);
-            ret.status(500).send('db오류')
+            console.log("댓글수정sql 실패 : ", err.message);
+            ret.status(500).send('댓글 수정 db오류')
 
         }
         

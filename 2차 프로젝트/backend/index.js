@@ -71,6 +71,9 @@ app.use("/bk/comment", boardCommentRouter(upload));
 // login 라우터 추가
 const loginRouter = require("./controller/login.js");
 app.use("/bk/login", loginRouter(upload));
+// join 라우터 추가
+const joinRouter = require("./controller/join.js");
+app.use("/bk/join", joinRouter(upload));
 // specialoffer 라우터 추가
 const offerRouter = require("./controller/specialOffer.js");
 app.use("/bk/specialOffer", offerRouter(upload));
