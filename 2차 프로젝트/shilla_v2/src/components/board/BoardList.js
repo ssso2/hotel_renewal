@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import '../../scss/reset.css'
 import '../../scss/common.scss'
@@ -9,7 +9,6 @@ import SecretPage from "./SecretPage";
 const bkURL = process.env.REACT_APP_BACK_URL;
 
 const BoardList = () => {
-
 
     const [text,setText] = useState([])
     const [user,setUser] = useState(null)
@@ -40,6 +39,12 @@ const BoardList = () => {
 
     },[])
 
+    const navigate = useNavigate()
+
+    if(!user){
+        navigate('/login');
+    }
+
 
     return (
         <div className="container">
@@ -57,7 +62,7 @@ const BoardList = () => {
                         return <ul className="post" key={idx}>
                                     <li className="post-num">{list.board_id}</li>
                                     <SecretPage  data={list} user={user}/>
-                                    <li className="post-writer">{list.author}</li>
+                                    <li className="post-writer">{user.name}</li>
                                     <li className="post-date">{list.reg_str}</li>
                                 </ul>
                     })
