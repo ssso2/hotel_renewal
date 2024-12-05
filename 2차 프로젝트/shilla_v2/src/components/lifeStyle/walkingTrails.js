@@ -15,6 +15,23 @@ import "../../scss/sub-detail.scss"
 
 
 function walkingTrails() {
+    // <!-- 산책로 지도보기 팝업 -->
+    <div class="lypop" data-lyOpen="pop-map">
+        <div class="lypop-wp mid">
+            <div class="lypop-content">
+                <div class="lypop-title">
+                    <strong>산책로 지도 보기</strong>
+                    <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-map"><span class="hide">닫기</span></a>
+                </div>
+                <div class="lypop-ct">
+                    <div class="img-wrap">
+                        <img src="../../img/sub/R00000024F3P_KR.jpg" alt=""/>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
     const galleryImages = "../../img/sub/R00000009MP2_KR.jpg";
 
@@ -57,6 +74,7 @@ function walkingTrails() {
         <Footer/>
         </>
     )
+    
 }
 
 export default walkingTrails
