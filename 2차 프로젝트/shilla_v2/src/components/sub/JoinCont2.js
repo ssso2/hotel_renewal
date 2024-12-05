@@ -13,7 +13,7 @@ const JoinCont2 = () => {
     const navigate = useNavigate()
 
     const [memId,setMemId] = useState([])
-    const [idchk, setIdchk] = useState(false); // 아이디 중복 확인 상태 저장
+   // const [idchk, setIdchk] = useState(false); // 아이디 중복 확인 상태 저장
 
     useEffect(()=>{
 
@@ -175,50 +175,93 @@ const JoinCont2 = () => {
     // 아이디 유효성 검사
     // 아이디 중복확인 함수
     const checkIdDuplicate = (inputId) => {
-        idPubChk = false
+       
         const idtype = /^[A-Za-z0-9]{6,}$/;
         if (!inputId) {
             document.querySelector('.pop-using .modal-txt').innerHTML = '아이디를 입력하세요.';
             document.getElementById('id-error').textContent = '아이디를 입력하세요.';
-            setIdchk(false); // 아이디가 없으면 중복확인 불가능
+            //setIdchk(false); // 아이디가 없으면 중복확인 불가능
             return;
         } else if (inputId.length < 6) {
             document.querySelector('.pop-using .modal-txt').innerHTML = '아이디는 6글자 이상이어야 합니다.';
             document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
-            setIdchk(false); // 아이디 길이가 짧으면 중복확인 불가능
+           // setIdchk(false); // 아이디 길이가 짧으면 중복확인 불가능
             return;
         } else if (!idtype.test(inputId)) {
             document.querySelector('.pop-using .modal-txt').innerHTML = '아이디는 영문자와 숫자만 사용 가능합니다.';
             document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용 가능합니다.';
-            setIdchk(false); // 아이디 형식이 틀리면 중복확인 불가능
+          //  setIdchk(false); // 아이디 형식이 틀리면 중복확인 불가능
             return;
         } else {
             // 아이디 중복 확인
             const isIdUsed = memId.some(member => member.member_id === inputId); // 중복 확인
             if (isIdUsed) {
-                document.querySelector('.pop-using .modal-txt').innerHTML = '현재 사용중인 아이디 입니다.<br> 다른 아이디를 사용해주세요.';
-                setIdchk(false); // 아이디가 중복되면 중복확인 불가능
+                // document.querySelector('.pop-using .modal-txt').innerHTML = '현재 사용중인 아이디 입니다.<br> 다른 아이디를 사용해주세요.';
+               // setIdchk(false); // 아이디가 중복되면 중복확인 불가능
             } else {
                 document.querySelector('.pop-using .modal-txt').innerHTML = '사용가능한 아이디입니다.';
                 document.getElementById('id-error').textContent = '';
-                setIdchk(true); // 아이디가 중복되지 않으면 사용가능
-                idPubChk = true
+               // setIdchk(true); // 아이디가 중복되지 않으면 사용가능
+                
+
+                // setIdchk(idPubChk);
             }
         }
     };
 
+
+
+    async function idDBCnt(inputId) {
+
+        if(!num){
+            console.log('Num 없음');
+            return 
+        }
+        try {
+            const res = await axios.get(`${bkURL}/join/idChk/${inputId}`);
+           
+            console.log('idDBCnt : ',res.data.cnt);
+            return res.data.cnt
+            
+            
+            
+        } catch (error) {
+            console.error('에러발생 : ', error);
+            return 1
+        }
+    }
+
+
+
     // 아이디 입력 시 실시간 중복 확인
     const handleIdChange = (e) => {
         const inputId = e.target.value.trim();
-        checkIdDuplicate(inputId); // 아이디 입력 시 실시간으로 중복확인 진행
+        //if(checkIdDuplicate(inputId)) {// 아이디 입력 시 실시간으로 중복확인 진행
+
+        if(idDBCnt(inputId)==0){
+            document.querySelector('.pop-using .modal-txt').innerHTML = '사용가능한 아이디입니다.';
+            document.getElementById('id-error').textContent = '';
+            idPubChk = true;
+
+        }else{
+            document.querySelector('.pop-using .modal-txt').innerHTML = '현재 사용중인 아이디 입니다.<br> 다른 아이디를 사용해주세요.';
+            idPubChk = false;
+        }
+        
+        console.log("handleIdChange : ", idPubChk)
     };
 
     // 중복 확인 버튼 클릭 시
     const handleIdChkClick = () => {
-
+        idPubChk = false
        
         const inputId = document.getElementById('pid').value.trim();
         checkIdDuplicate(inputId);  // 중복 확인 함수 호출 후, idchk 상태가 변경됨
+
+
+
+
+        idPubChk = true
     };
 
 
@@ -228,7 +271,7 @@ const JoinCont2 = () => {
         e.preventDefault();
     
         // 아이디 중복확인 여부 체크
-        if (!idchk) {  // 아이디 중복확인 상태가 false일 경우, 가입을 진행하지 않음
+        if (!idPubChk) {  // 아이디 중복확인 상태가 false일 경우, 가입을 진행하지 않음
             document.getElementById('id-error').textContent = '아이디 중복확인을 해주세요.';
             return;  // 가입이 진행되지 않도록 함
         }

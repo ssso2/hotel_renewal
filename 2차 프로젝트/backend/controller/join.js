@@ -6,12 +6,12 @@ const fs = require("fs");
 
 // 인덱스에서 넘기는 자료를 받아서 처리
 module.exports = upload => {
-    router.get("/", async (req, res) => {
+    router.get("/idChk/:member_id", async (req, res) => {
         console.log("회원가입 목록 접근");
 
         try {
-            const [ret] = await conn.execute('select member_id from member')
-            res.json(ret);
+            const [ret] = await conn.execute('select count(*) as cnt from member where member_id = ?',[req.params.member_id])
+            res.json(ret[0]);
         } catch (err) {
 
             console.log("회원가입 sql 실패 : ", err.message);
