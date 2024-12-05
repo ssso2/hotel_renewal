@@ -6,12 +6,26 @@ const fs = require("fs");
 
 // 인덱스에서 넘기는 자료를 받아서 처리
 module.exports = upload => {
+    router.get("/", async (req, res) => {
+        console.log("회원가입 목록 접근");
+
+        try {
+            const [ret] = await conn.execute('select member_id from member')
+            res.json(ret);
+        } catch (err) {
+
+            console.log("회원가입 sql 실패 : ", err.message);
+            ret.status(500).send('회원가입 db오류')
+
+        }
+        
+    });
 
     // 쓰기
     router.post("/", async(req, res) => {
         console.log("회원가입 join",req);
 
-        let sql = 'insert into member (member_id,pw,name,name_eng,email,phone,birth,join_date,grade) values (?,?,?,?,?,?,sysdate(),3)';
+        let sql = 'insert into member (member_id,pw,name,name_eng,email,phone,birth,grade,join_date) values (?,?,?,?,?,?,?,sysdate())';
 
 
         let data = [
@@ -39,6 +53,8 @@ module.exports = upload => {
         }
 
     });
+
+
 
 
     return router;
