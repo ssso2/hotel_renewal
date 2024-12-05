@@ -64,6 +64,11 @@ import Suite_Presidential from "./components/room/Suite_Presidential";
 
 import Lounge_ExecutiveLounge from "./components/room/Lounge_ExecutiveLounge";
 
+//notice
+import Noticelist from "./components/notice/Noticelist";
+import NoticeTemp from "./components/notice/NoticeTemp";
+import Noticedetail from "./components/notice/Noticedetail";
+
 function App() {
     return (
         <div>
@@ -94,6 +99,14 @@ function App() {
                     <Route path="detail/:id" element={<OfferDetail />} />
                     <Route path="event" element={<Event />} />
                     <Route path="event/detail/1" element={<EventDetail1 />} />
+                </Route>
+            </Routes>
+
+            {/* 공지사항 */}
+            <Routes>
+                <Route path="/notice" element={<NoticeTemp />}>
+                    <Route path="" element={<Noticelist />} />
+                    <Route path="detail/:id" element={<Noticedetail />} />
                 </Route>
             </Routes>
 

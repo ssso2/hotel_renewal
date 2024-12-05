@@ -3,7 +3,7 @@ import "../../scss/sub01_01_main.scss";
 import { Link } from "react-router-dom";
 
 function OfferProd({ rec }) {
-    const imgurl = `http://192.168.0.12:5002/bk/files/${rec.upSystem}`;
+    const imgurl = `http://localhost:5002/bk/files/${rec.upSystem}`;
     // const imgurl = `http://192.168.123.100:5002/bk/files/${rec.upSystem}`;
 
     return (

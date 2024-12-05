@@ -11,7 +11,7 @@ const OfferMain = () => {
     const fetchData = async () => {
         try {
             const res = await axios.get(
-                "http://192.168.0.12:5002/bk/specialOffer"
+                "http://192.168.0.20:5002/bk/specialOffer"
                 // "http://192.168.123.100:5002/bk/specialOffer"
             );
             console.log("갔다옴 : ", res.data);

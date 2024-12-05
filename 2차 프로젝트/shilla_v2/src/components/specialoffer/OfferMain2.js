@@ -39,7 +39,7 @@ const OfferMain2 = ({ setOfferlists }) => {
         try {
             console.log("폼데이터", myData);
             const res = await axios.put(
-                "http://192.168.0.12:5002/bk/specialOffer",
+                "http://localhost:5002/bk/specialOffer",
                 myData
             );
             console.log("필터데이터", res.data);
