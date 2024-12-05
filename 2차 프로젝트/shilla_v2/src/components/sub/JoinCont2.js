@@ -5,6 +5,9 @@ import '../../scss/myinfo.scss'
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
+
+var idPubChk = false
+
 const JoinCont2 = () => {
 
     const navigate = useNavigate()
@@ -172,17 +175,21 @@ const JoinCont2 = () => {
     // 아이디 유효성 검사
     // 아이디 중복확인 함수
     const checkIdDuplicate = (inputId) => {
+        idPubChk = false
         const idtype = /^[A-Za-z0-9]{6,}$/;
         if (!inputId) {
             document.querySelector('.pop-using .modal-txt').innerHTML = '아이디를 입력하세요.';
+            document.getElementById('id-error').textContent = '아이디를 입력하세요.';
             setIdchk(false); // 아이디가 없으면 중복확인 불가능
             return;
         } else if (inputId.length < 6) {
             document.querySelector('.pop-using .modal-txt').innerHTML = '아이디는 6글자 이상이어야 합니다.';
+            document.getElementById('id-error').textContent = '아이디는 6글자 이상이어야 합니다.';
             setIdchk(false); // 아이디 길이가 짧으면 중복확인 불가능
             return;
         } else if (!idtype.test(inputId)) {
             document.querySelector('.pop-using .modal-txt').innerHTML = '아이디는 영문자와 숫자만 사용 가능합니다.';
+            document.getElementById('id-error').textContent = '아이디는 영문자와 숫자만 사용 가능합니다.';
             setIdchk(false); // 아이디 형식이 틀리면 중복확인 불가능
             return;
         } else {
@@ -193,7 +200,9 @@ const JoinCont2 = () => {
                 setIdchk(false); // 아이디가 중복되면 중복확인 불가능
             } else {
                 document.querySelector('.pop-using .modal-txt').innerHTML = '사용가능한 아이디입니다.';
+                document.getElementById('id-error').textContent = '';
                 setIdchk(true); // 아이디가 중복되지 않으면 사용가능
+                idPubChk = true
             }
         }
     };
@@ -206,22 +215,14 @@ const JoinCont2 = () => {
 
     // 중복 확인 버튼 클릭 시
     const handleIdChkClick = () => {
+
+       
         const inputId = document.getElementById('pid').value.trim();
         checkIdDuplicate(inputId);  // 중복 확인 함수 호출 후, idchk 상태가 변경됨
     };
 
 
-    function redundancyChk() {
 
-        axios.get(`${bkURL}/join`)
-        .then(res => {
-            setMemId(res.data);  
-        })
-        .catch(err => {
-            console.error('에러발생 : ', err);
-        });
-
-    }
 
     const joinSubmitGo = (e) => {
         e.preventDefault();
