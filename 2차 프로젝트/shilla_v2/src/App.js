@@ -103,12 +103,10 @@ function App() {
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
                     <Route path="detail/payment" element={<PaymentPage />} />
-                    {/* <Route path="join" element={<BoardJoin/>} /> */}
-                    {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
                 </Route>
             </Routes>
 
-            <Routes>
+            <Routes>   
                 <Route path="/room" element={<Room />} />
                 <Route path="/standard" element={<Standard />} />
 

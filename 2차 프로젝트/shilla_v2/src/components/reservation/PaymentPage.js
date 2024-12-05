@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./paymentPage.module.scss";
+import styles from "../../scss/paymentPage.module.scss";
 
 function PaymentPage() {
   const navigate = useNavigate();

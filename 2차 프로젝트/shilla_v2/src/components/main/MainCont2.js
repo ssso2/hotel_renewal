@@ -1,65 +1,78 @@
-import React from 'react'
-import '../../scss/reset.css'
-import '../../scss/common.scss'
-import '../../scss/main.scss'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import DateRangePicker from "../reservation/DateRangePicker"; // 경로 확인
+import "../../scss/reset.css";
+import "../../scss/common.scss";
+import "../../scss/main.scss";
 
 const MainCont2 = () => {
+  const navigate = useNavigate();
+
+  const [checkInDate, setCheckInDate] = useState(null);
+  const [checkOutDate, setCheckOutDate] = useState(null);
+  const [adultCount, setAdultCount] = useState(1);
+  const [childrenCount, setChildrenCount] = useState(0);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+
+  const toggleDatePicker = () => setShowDatePicker(!showDatePicker);
+
+  const handleDateChange = ({ startDate, endDate }) => {
+    setCheckInDate(startDate);
+    setCheckOutDate(endDate);
+  };
+
+  const handleButtonConfirm = () => {
+    const startDate = checkInDate ? checkInDate.toISOString().split("T")[0] : "";
+    const endDate = checkOutDate ? checkOutDate.toISOString().split("T")[0] : "";
+
+    // navigate 호출 시 state로 값 전달
+    navigate("/reserve/", {
+      state: {
+        startDate,
+        endDate,
+        adultCount,
+        childrenCount,
+      },
+    });
+  };
+
   return (
-    <>
-        {/* <!-- s:// cont2. 메인 예약 폼 --> */}
-        <section className="cont2">
-            <div className="center">
-                <div className="reservation-wrap">
-                    <div className="date-wrap">
-                        <span className="tit">CHECK IN / OUT</span>
-                        <input className="date" type="text" name="daterange" value=""/>
-                    </div>
-                    <div className="room-wrap">
-                        <div className="box room">
-                            <span className="tit">ROOM</span>
-                            <span className="num">1</span>
-                        </div>
-                        <div className="box adult">
-                            <span className="tit">ADULT</span>
-                            <span className="num">1</span>
-                        </div>
-                        <div className="box children">
-                            <span className="tit">CHILDREN</span>
-                            <span className="num">1</span>
-                        </div>
-                    </div>
-                    <button type="submit" onclick="location.href='../html/sub/reservation.html'" className="search" title="예약페이지로 이동">검색</button>
-                    <div className="reservation-popup">
-                        <form action="">
-                            <ul className="popup-left">
-                                <li>
-                                    <div className="tit">객실 1</div>
-                                    <div className="count-wrap adult">
-                                        <button type="button" className="btn-down"><span className="blind">숫자 내리기</span></button>
-                                        <p className="adult">성인 <span className="num">0</span></p>
-                                        <button type="button" className="btn-up"><span className="blind">숫자 올리기</span></button>
-                                    </div>
-                                    <div className="count-wrap children">
-                                        <button type="button" className="btn-down"><span className="blind">숫자 내리기</span></button>
-                                        <p className="children">어린이 <span className="num">0</span></p>
-                                        <button type="button" className="btn-up"><span className="blind">숫자 올리기</span></button>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div className="popup-right">
-                                <p className="desc">* 어린이 기준 : 37개월 - 12세</p>
-                                <button type="button">확인</button>
-                            </div>
-                        </form>
-
-                        <button className="close-btn"><span className="blind">닫기</span></button>
-                    </div>
-                </div>
+    <section className="cont2">
+      <div className="center">
+        <div className="reservation-wrap">
+          <div className="date-wrap" onClick={handleButtonConfirm}>
+          {/* onClick={toggleDatePicker} */}
+            <span className="tit">
+              CHECK IN / OUT
+              <DateRangePicker
+                onDateChange={handleDateChange}
+                showPicker={showDatePicker}
+                togglePicker={toggleDatePicker}
+              />
+            </span>
+          </div>
+          <div className="room-wrap">
+            <div className="box adult">
+              <span className="tit">ADULT</span>
+              <span className="num">{adultCount}</span>
             </div>
-        </section>
-        {/* <!-- e:// cont2. 메인 예약 폼 --> */}
-    </>
-  )
-}
+            <div className="box children">
+              <span className="tit">CHILDREN</span>
+              <span className="num">{childrenCount}</span>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={handleButtonConfirm}
+            className="search"
+            title="예약페이지로 이동"
+          >
+            검색
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default MainCont2
+export default MainCont2;

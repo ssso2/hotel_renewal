@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import "../../scss/paymentModal.scss"
 
 function PaymentPage() {
   const navigate = useNavigate();
