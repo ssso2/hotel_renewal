@@ -11,37 +11,31 @@ const RoomManDetail = () => {
     const [error, setError] = useState(""); // 오류 메시지 상태
 
 
-    // 방 상세 정보 가져오기
     useEffect(() => {
         const fetchRoomDetails = async () => {
             try {
-                const response = await axios.get(`${bkURL}/detail/${id}`)
+                const response = await axios.get(`http://localhost:5002/bk/admin/roomManagement/detail/${id}`);
                 setRoomDetails(response.data);
             } catch (err) {
                 console.error("방 정보 가져오는 중 오류 발생:", err);
                 setError("방 정보를 가져올 수 없습니다.");
             }
         };
-
-        fetchRoomDetails();
-    }, [id]);
-
-    // 예약 정보 가져오기
-    useEffect(() => {
+    
         const fetchReservations = async () => {
             try {
-                const response = await axios.get(
-                    `http://localhost:5002/bk/roomManagement/reservations/${id}` // 예약 정보 API 호출
-                );
+                const response = await axios.get(`http://localhost:5002/bk/admin/roomManagement/reservations/${id}`);
                 setReservations(response.data);
             } catch (err) {
                 console.error("예약 정보 가져오는 중 오류 발생:", err);
                 setError("예약 정보를 가져올 수 없습니다.");
             }
         };
-
+    
+        fetchRoomDetails();
         fetchReservations();
     }, [id]);
+    
 
     if (error) {
         return <div>{error}</div>; // 오류 메시지 출력
@@ -68,7 +62,6 @@ const RoomManDetail = () => {
                         <p><strong>시작일:</strong> {reservation.start_date}</p>
                         <p><strong>종료일:</strong> {reservation.end_date}</p>
                         <p><strong>취소 여부:</strong> {reservation.Cancel === "0" ? "N" : "Y"}</p>
-                        <p><strong>가격:</strong> {reservation.prod_price}</p>
                         <br />
                     </div>
                 ))
