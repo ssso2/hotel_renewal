@@ -61,11 +61,11 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
         console.log(myData);
         console.log(id);
 
-
         axios.put(`${bkURL}/comment/detail/${id}`,myData)
         .then(res=>{
             console.log('댓글 수정 성공',res.data);
-            commentFetchData()
+            commentFetchData();
+            commentModifySet(1);
         })
         .catch(err=>{
             console.error('댓글 수정 실패',err);
@@ -89,7 +89,6 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
         }
         else if(commentModify === 0){
             console.log("modifyData.context",modifyData.context);
-            
             return  <form name="commentModifyFrm">
                         <input name="comment_id" value={modifyData.comment_id} type="hidden"/>
                         <div className="textarea">
