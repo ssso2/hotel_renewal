@@ -129,11 +129,13 @@ const JoinCont2 = () => {
                 <form name="joinFrm" id="shilla-join" method="post" onSubmit={handleSubmit}>
                     <div className="join-container">
                         <h3 className="info-title">개인정보 입력</h3>
-
+                        {/* 국문 이름 입력 */}
                         <JoinName valid={isNameValid} setValid={setNameValid} setNameKor={setNameKor} />
+                        {/* 영문 이름 입력 */}
                         <JoinNameEng valid={isNameEngValid} setValid={setNameEngValid} setNameEng={setNameEng} />
+                        {/* 생년월일 입력 */}
                         <JoinDateSelector valid={valid} setValid={setValid} setBirth={setBirth}/>
-
+                        {/* 아이디 입력 */}
                         <div className="info-group">
                             <div className="input-container">
                                 <label htmlFor="pid">아이디 <font color="#F00">*</font></label>
@@ -152,9 +154,11 @@ const JoinCont2 = () => {
                                 </div>
                             </div>
                         </div>
-
+                        {/* 비밀번호 입력 */}
                         <JoinPw valid={isPwValid} setValid={setPwValid} setPw={setPw} />
+                        {/* 연락처 입력 */}
                         <JoinPhone valid={isPhoneValid} setValid={setPhoneValid} setPhone={setPhone} />
+                        {/* 이메일 입력 */}
                         <JoinEmail valid={isEmailValid} setValid={setEmailValid} setEmail={setEmail} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />
 
                         <div className="info-group">
