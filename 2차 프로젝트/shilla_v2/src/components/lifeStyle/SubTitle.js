@@ -13,9 +13,9 @@ const SubTitle = () => {
         } else if (location.pathname === '/fitness2') {
             return { title: "실내 체육관", breadcrumb: "실내 체육관" };
         } else if (location.pathname === '/fitness3') {
-            return { title: "실내 체육관", breadcrumb: "실내 골프장" };
+            return { title: "실내 골프장", breadcrumb: "실내 골프장" };
         } else if (location.pathname === '/fitness4') {
-            return { title: "실내 체육관", breadcrumb: "실내 사우나" };
+            return { title: "실내 사우나", breadcrumb: "실내 사우나" };
         } else if (location.pathname === '/walkingTrails') {
             return { title: "산책로", breadcrumb: "산책로" };
         } else {

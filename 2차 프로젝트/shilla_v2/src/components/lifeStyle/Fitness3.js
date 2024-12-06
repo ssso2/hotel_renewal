@@ -4,8 +4,10 @@ import Header from '../common/Header';
 import Tab2 from './Tab2';
 import SubTitle from './SubTitle';
 import Gallery2 from './Gallery2';
+import Introduction from './Introduction';
 import Location from './Location';
 import Desc from './Desc';
+import Introduction2 from './Introduction2';
 import Footer from '../common/Footer';
 
 import "../../scss/common.scss"
@@ -13,7 +15,6 @@ import "../../scss/header.scss"
 import "../../scss/footer.scss"
 import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
-import Introduction from './Introduction';
 
 
 function Fitness3() {
@@ -47,10 +48,6 @@ function Fitness3() {
             intro: '고객 여러분의 안전을 위하여 음주 후 체육관, 사우나, 실내 수영장 등의 피트니스 시설 이용은 제한될 수 있습니다.',
             rules: [],
         },
-        {
-            intro: '실내 체육관 입장 시 반드시 운동복과 실내용 운동화를 착용해 주시기 바랍니다.',
-            rules: [],
-        },
     ];
 
     return (
@@ -72,6 +69,7 @@ function Fitness3() {
                                         <Desc propDesc={descData} />
                                     </div>
                                 </div>
+                                <Introduction2 />
                             </div>
                         </div>
                     </div>
