@@ -45,7 +45,13 @@ import Event from "./components/specialoffer/Event";
 import EventDetail1 from "./components/specialoffer/EventDetail1";
 
 // admin
-import Admin from "./components/admin/Admin";
+import AdminTemp from './components/admin/AdminTemp'
+import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
+import AdminRoom from "./components/admin/room/AdminRoom";
+import AdminMember from "./components/admin/member/AdminMember";
+import AdminReservation from "./components/admin/reservation/AdminReservation";
+import AdminCs from "./components/admin/cs/AdminCs";
+import AdminSales from "./components/admin/sales/AdminSales";
 
 // reservation
 import PaymentPage from "./components/reservation/PaymentPage";
@@ -84,7 +90,14 @@ function App() {
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
                 {/* 관리자페이지 */}
-                <Route path="/admin" element={<Admin></Admin>}></Route>
+                <Route path="/admin" element={<AdminTemp></AdminTemp>}>
+                    <Route path="" element={<AdminDashboard />} />
+                    <Route path="/room" element={<AdminRoom />} />
+                    <Route path="/member" element={<AdminMember />} />
+                    <Route path="/reservation" element={<AdminReservation />} />
+                    <Route path="/cs" element={<AdminCs />} />
+                    <Route path="/sales" element={<AdminSales />} />
+                </Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
                 {/* 회원가입 */}
@@ -98,9 +111,9 @@ function App() {
                 {/* 문의하기 */}
                 <Route path="/board" element={<BoardTemp />}>
                     <Route path="" element={<BoardList />} />
-                    <Route path="detail/:num" element={<BoardDetail />} />
-                    <Route path="join" element={<BoardJoin />} />
-                    <Route path="modify/:num" element={<BoardModify />} />
+                    <Route path="/detail/:num" element={<BoardDetail />} />
+                    <Route path="/join" element={<BoardJoin />} />
+                    <Route path="/modify/:num" element={<BoardModify />} />
                 </Route>
             </Routes>
 
