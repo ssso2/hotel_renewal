@@ -14,14 +14,14 @@ function PaymentPage() {
     // adultBf,
     // childBf,
     // extraBed,
-    // productId,
+    productId,
     paySum,
   } = location.state || {};
 
   console.log("체크인, 체크아웃 날짜 : ", reservationDate);
   console.log("객실 : ", roomType);
   console.log("paySum : ", paySum)
-//   console.log("product_id : ", productId);
+  console.log("product_id : ", productId);
 
   // 상태
   // const [reservationDate, setReservationDate] = useState("");
@@ -39,7 +39,7 @@ function PaymentPage() {
     // 예약 데이터를 준비합니다.
     const reservationData = {
       memberId: name,
-    //   productId: productId,
+      productId: productId,
       startDate: reservationDate.split(" ~ ")[0],
       endDate: reservationDate.split(" ~ ")[1],
       totPrice: paySum,
