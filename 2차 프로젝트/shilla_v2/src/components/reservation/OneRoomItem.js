@@ -1,15 +1,36 @@
 import React from "react";
 import '../../scss/oneRoomItem.scss'
+import { useNavigate } from "react-router-dom";
 
-function OneRoomItem({ roomData }) {
+function OneRoomItem({ roomData, checkInDate, checkOutDate }) {
+  const navigate = useNavigate()
+
+  console.log(roomData, checkInDate, checkOutDate)
+  
+  const handleReservation = () => {
+    // 예약하기 버튼 클릭 시, ResMainAllRoomDetail.js 페이지로 전달
+    if (checkInDate && checkOutDate) {
+      navigate("/reserve/detailallroom", {
+        state: {
+          checkInDate,
+          checkOutDate,
+          dayPrice: roomData.day_price,
+          roomType: roomData.room_type,
+          productId: roomData.product_id,
+        },
+      });
+      console.log(checkInDate, checkOutDate, roomData.day_price, roomData.room_type, roomData.product_id)
+    }else{
+      alert("체크인 및 체크아웃 날짜를 선택해주세요")
+    }
+  }
+  
   return (
     <div className="room-item">
       <h4>{roomData.room_type}</h4>
       <p>가격: {roomData.day_price}원</p>
-      {/* <p>최대 수용 인원: {roomData.max_occupancy}명</p> */}
       <div className="room-details">
-        {/* <p>체크인: {roomData.check_in}</p>
-        <p>청소 상태: {roomData.clean}</p> */}
+      <button onClick={handleReservation}>예약하기</button>
       </div>
     </div>
   );
