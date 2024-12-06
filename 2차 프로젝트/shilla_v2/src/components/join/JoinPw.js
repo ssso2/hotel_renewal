@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const JoinPw = ({ valid, setValid }) => {
+const JoinPw = ({ valid, setValid, setPw}) => {
   const [password, setPassword] = useState(''); // 패스워드 상태
   const [confirmPassword, setConfirmPassword] = useState(''); // 패스워드 확인 상태
   const [errorMessage, setErrorMessage] = useState('');  // 에러 메시지 상태
@@ -33,6 +33,7 @@ const JoinPw = ({ valid, setValid }) => {
   const handlePasswordChange = (e) => {
     const value = e.target.value;
     setPassword(value);
+    setPw(password)
     validatePassword(value, confirmPassword);
   };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const JoinNameEng = ({ valid, setValid }) => {
+const JoinNameEng = ({ valid, setValid, setNameEng}) => {
   const [firstname, setFirstname] = useState(''); // First name 상태
   const [lastname, setLastname] = useState(''); // Last name 상태
   const [errorMessage, setErrorMessage] = useState('');  // 에러 메시지 상태
@@ -18,6 +18,10 @@ const JoinNameEng = ({ valid, setValid }) => {
   };
 
   useEffect(() => {
+    const fullName = `${firstname} ${lastname}`.trim();
+    setNameEng(fullName);  // 부모 컴포넌트의 상태로 영문 이름 업데이트
+
+    // 유효성 검사
     if (!firstname && !lastname) {
       setValid(true); // 처음 화면에서는 에러 메시지가 안 보이도록
       setErrorMessage('');
@@ -28,7 +32,7 @@ const JoinNameEng = ({ valid, setValid }) => {
       setValid(true);
       setErrorMessage('');
     }
-  }, [firstname, lastname]);
+  }, [firstname, lastname, setValid, setNameEng]);
 
   return (
     <div className="info-group">

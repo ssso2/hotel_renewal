@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from 'react';
 
-const JoinEmail = ({ valid, setValid }) => {
-  const [email, setEmail] = useState(''); // 이메일 상태
+const JoinEmail = ({ valid, setValid, setEmail }) => {
+  const [mail, setMail] = useState(''); // 이메일 상태
   const [errorMessage, setErrorMessage] = useState('');  // 에러 메시지 상태
 
   const mailtype = /^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
+    setMail(value);
     setEmail(value);
   };
 
   useEffect(() => {
-    if (!email) {
+    if (!mail) {
       setValid(true); // 처음 화면에서는 에러 메시지가 안 보이도록
       setErrorMessage('');
-    } else if (!mailtype.test(email)) {
+    } else if (!mailtype.test(mail)) {
       setValid(false);
       setErrorMessage('유효하지 않은 이메일 형식입니다.');
     } else {
       setValid(true);
       setErrorMessage('');
     }
-  }, [email]);
+  }, [mail]);
 
   return (
     <div className="info-group">
@@ -36,7 +37,7 @@ const JoinEmail = ({ valid, setValid }) => {
             type="text"
             id="mail"
             placeholder="honggildong@naver.com"
-            value={email}
+            value={mail}
             required
             onChange={handleEmailChange}
           />

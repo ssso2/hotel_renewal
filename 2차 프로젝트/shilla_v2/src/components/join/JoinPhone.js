@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const JoinPhone = ({ valid, setValid }) => {
+const JoinPhone = ({ valid, setValid, setPhone }) => {
   const [startNum, setStartNum] = useState(''); // 시작 번호
   const [middleNum, setMiddleNum] = useState(''); // 중간 번호
   const [lastNum, setLastNum] = useState(''); // 마지막 번호
@@ -48,6 +48,9 @@ const JoinPhone = ({ valid, setValid }) => {
 
   // 전화번호가 변경될 때마다 유효성 검사 실행
   useEffect(() => {
+    const phoneNum = `${startNum}-${middleNum}-${lastNum}`.trim();
+    setPhone(phoneNum);
+
     validatePhoneNumber(startNum, middleNum, lastNum);
   }, [startNum, middleNum, lastNum]);
 

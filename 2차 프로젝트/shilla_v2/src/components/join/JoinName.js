@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const JoinName = ({ valid, setValid }) => {
+const JoinName = ({ valid, setValid, setNameKor }) => {
   const [name, setName] = useState(''); // 이름 상태
   const [errorMessage, setErrorMessage] = useState('');  // 에러 메시지 상태
 
@@ -9,6 +9,7 @@ const JoinName = ({ valid, setValid }) => {
   const handleNameChange = (e) => {
     const value = e.target.value;
     setName(value);
+    setNameKor(value);
   };
 
   useEffect(() => {

@@ -25,7 +25,7 @@ module.exports = upload => {
     router.post("/", async(req, res) => {
         console.log("회원가입 join",req);
 
-        let sql = 'INSERT INTO member (member_id, pw, name, name_eng, email, phone, birth, grade, join_date) VALUES (?, ?, ?, ?, ?, ?, ?, "user", sysdate())';
+        let sql = 'INSERT INTO member (member_id, pw, name, name_eng, email, phone, birth, grade, withdrawal, join_date) VALUES (?, ?, ?, ?, ?, ?, ?, 3,false, sysdate())';
 
 
         let data = [

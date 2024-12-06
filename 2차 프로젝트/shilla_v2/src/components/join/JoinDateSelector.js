@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const JoinDateSelector = () => {
+const JoinDateSelector = ({setBirth}) => {
     const today = new Date();
     const currentYear = today.getFullYear();
     const currentMonth = today.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줌
@@ -32,6 +32,9 @@ const JoinDateSelector = () => {
 
     // 월이 변경될 때마다 날짜를 업데이트
     useEffect(() => {
+        const birthday = `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`.trim();
+        setBirth(birthday);
+
         const maxDays = updateDays(year, month);
         if (day > maxDays) {
         setDay(maxDays); // 선택한 일이 그 달의 마지막 일보다 크면 마지막 날로 설정
@@ -79,7 +82,7 @@ const JoinDateSelector = () => {
                     <label htmlFor="year">생년월일</label>
                     <div className="input-wrap">
                         <div className="birth">
-                            <select id="year" value={year} onChange={handleYearChange}>
+                            <select id="year" name='year' value={year} onChange={handleYearChange}>
                             {years.map((y) => (
                                 <option key={y} value={y}>
                                 {y}년
@@ -88,7 +91,7 @@ const JoinDateSelector = () => {
                             </select>
 
 
-                            <select id="month" value={month} onChange={handleMonthChange}>
+                            <select id="month" name='month' value={month} onChange={handleMonthChange}>
                             {months.map((m) => (
                                 <option key={m} value={m}>
                                 {m < 10 ? `0${m}` : m}월
@@ -98,7 +101,7 @@ const JoinDateSelector = () => {
 
 
 
-                            <select id="day" value={day} onChange={handleDayChange}>
+                            <select id="day" name='day' value={day} onChange={handleDayChange}>
                             {days.map((d) => (
                                 <option key={d} value={d}>
                                 {d < 10 ? `0${d}` : d}일
