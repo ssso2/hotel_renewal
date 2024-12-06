@@ -22,6 +22,12 @@ import LifeStyle from "./components/lifeStyle/LifeStyle";
 import OutdoorPool from "./components/lifeStyle/OutdoorPool";
 import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
+import Fitness2 from "./components/lifeStyle/Fitness2";
+import Fitness3 from "./components/lifeStyle/Fitness3";
+import Fitness4 from "./components/lifeStyle/Fitness4";
+import WalkingTrails from "./components/lifeStyle/walkingTrails";
+import AdminCont2 from "./components/admin/AdminCont2";
+import RoomManDetail from "./components/admin/RoomManDetail";
 
 // login
 import Login from "./components/login/Login";
@@ -164,6 +170,13 @@ function App() {
                 <Route path="/outdoorPool" element={<OutdoorPool />}></Route>
                 <Route path="/outdoorPool2" element={<OutdoorPool2 />}></Route>
                 <Route path="/fitness" element={<Fitness />}></Route>
+                <Route path="/fitness2" element={<Fitness2 />}></Route>
+                <Route path="/fitness3" element={<Fitness3 />}></Route>
+                <Route path="/fitness4" element={<Fitness4 />}></Route>
+                <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
+
+                <Route path="/admin/roomManagement" element={<AdminCont2 />} />
+                <Route path="/admin/roomManagement/detail/:id" element={<RoomManDetail />} />
             </Routes>
         </div>
     );
