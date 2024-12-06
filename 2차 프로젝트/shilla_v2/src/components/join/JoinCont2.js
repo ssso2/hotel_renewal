@@ -23,6 +23,12 @@ const JoinCont2 = () => {
     const [phone, setPhone] = useState('');  // 전화번호 상태
     const [birth, setBirth] = useState('');  // 생년월일 상태
 
+    const [isEmailValid, setEmailValid] = useState(true);
+    const [isNameValid, setNameValid] = useState(true);
+    const [isNameEngValid, setNameEngValid] = useState(true);
+    const [isPhoneValid, setPhoneValid] = useState(true);
+    const [isPwValid, setPwValid] = useState(true);
+
     const idtype = /^[A-Za-z0-9]{6,}$/; // 아이디 유효성 정규표현식
 
     // 아이디 유효성 검사
@@ -114,6 +120,9 @@ const JoinCont2 = () => {
         }
     };
 
+    // 모든 유효성 검사가 통과했는지 확인하는 함수
+    const isFormValid = isEmailValid && isNameValid && isNameEngValid && isPhoneValid && isPwValid && valid;
+
     return (
         <div className="form-wrap">
             <div className="center">
@@ -121,8 +130,8 @@ const JoinCont2 = () => {
                     <div className="join-container">
                         <h3 className="info-title">개인정보 입력</h3>
 
-                        <JoinName valid={valid} setValid={setValid} setNameKor={setNameKor} />
-                        <JoinNameEng valid={valid} setValid={setValid} setNameEng={setNameEng} />
+                        <JoinName valid={isNameValid} setValid={setNameValid} setNameKor={setNameKor} />
+                        <JoinNameEng valid={isNameEngValid} setValid={setNameEngValid} setNameEng={setNameEng} />
                         <JoinDateSelector valid={valid} setValid={setValid} setBirth={setBirth}/>
 
                         <div className="info-group">
@@ -144,13 +153,13 @@ const JoinCont2 = () => {
                             </div>
                         </div>
 
-                        <JoinPw valid={valid} setValid={setValid} setPw={setPw} />
-                        <JoinPhone valid={valid} setValid={setValid} setPhone={setPhone} />
-                        <JoinEmail valid={valid} setValid={setValid} setEmail={setEmail} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />
+                        <JoinPw valid={isPwValid} setValid={setPwValid} setPw={setPw} />
+                        <JoinPhone valid={isPhoneValid} setValid={setPhoneValid} setPhone={setPhone} />
+                        <JoinEmail valid={isEmailValid} setValid={setEmailValid} setEmail={setEmail} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />
 
                         <div className="info-group">
                             <div className="input-container">
-                                <button type="submit" id="submit">가입하기</button>
+                                <button type="submit" id="submit" disabled={!isFormValid}>가입하기</button>
                             </div>
                         </div>
                     </div>

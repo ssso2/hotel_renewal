@@ -65,6 +65,7 @@ const JoinPhone = ({ valid, setValid, setPhone }) => {
                 name="startNum"
                 id="start"
                 value={startNum}
+                required
                 onChange={handleStartNumChange}
               >
                 <option value="">선택</option>
@@ -81,6 +82,7 @@ const JoinPhone = ({ valid, setValid, setPhone }) => {
                 value={middleNum}
                 onChange={handleMiddleNumChange}
                 maxLength="4"
+                required
                 placeholder="중간 번호"
               />
               <input
@@ -90,6 +92,7 @@ const JoinPhone = ({ valid, setValid, setPhone }) => {
                 value={lastNum}
                 onChange={handleLastNumChange}
                 maxLength="4"
+                required
                 placeholder="마지막 번호"
               />
               <span className="error-message" id="tel-error">{errorMessage}</span>
