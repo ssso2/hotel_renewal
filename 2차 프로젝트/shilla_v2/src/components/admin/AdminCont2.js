@@ -51,7 +51,7 @@ const AdminCont2 = () => {
                 ...editedRooms[roomId],
             })
             .then(() => {
-                alert("수정 완료!");
+                alert("수정이 완료되었습니다.");
                 fetchRooms(); // 수정 후 데이터 새로고침
             })
             .catch((error) => {

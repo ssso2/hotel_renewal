@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // 메인 스타일
 import "react-date-range/dist/theme/default.css"; // 기본 테마 스타일
-import "./dateRangePicker.scss";
+import "../../scss/dateRangePicker.scss";
 
 const DateRangePicker = ({ onDateChange, showPicker, togglePicker }) => {
   const [range, setRange] = useState([
@@ -38,19 +38,6 @@ const DateRangePicker = ({ onDateChange, showPicker, togglePicker }) => {
     togglePicker();
   };
 
-    // // 캘린더 외부 클릭 감지
-    // useEffect(() => {
-    //   const handleClickOutside = (event) => {
-    //     if (pickerRef.current && !pickerRef.current.contains(event.target)) {
-    //       setShowPicker(false);
-    //     }
-    //   };
-  
-    //   document.addEventListener("mousedown", handleClickOutside);
-    //   return () => {
-    //     document.removeEventListener("mousedown", handleClickOutside);
-    //   };
-    // }, [setShowPicker]);
 
   return (
     <div>

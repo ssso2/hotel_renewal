@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./tabContentItem.scss"; // 필요 시 스타일 파일 추가
 
-function TabContentItem() {
+function TabContentItem({room}) {
   const navigate = useNavigate();
   const [isRoomTypeVisible, setIsRoomTypeVisible] = useState(false); // 상태 관리
 
@@ -37,7 +37,7 @@ function TabContentItem() {
             </div>
             <div className="r-box">
               <div className="price">
-                <em></em> 468,000원 ~
+                <em></em> 4300원 ~
               </div>
               <div className="btn-wrap">
                 <button type="button" className="reserve-btn" onClick={toggleRoomType}>
@@ -51,7 +51,7 @@ function TabContentItem() {
           {isRoomTypeVisible && ( // 조건부 렌더링
             <ul className="room-type-select">
               <li>
-                <div className="tit">[standard]Deluxe</div>
+                <div className="tit">룸타입</div>
                 <div className="bed-type">
                   <div className="box">
                     <div>

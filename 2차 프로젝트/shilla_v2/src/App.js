@@ -12,10 +12,10 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
 // info
-import Info from "./components/sub/Info";
+import Info from "./components/info/Info";
 
-// /location
-import Location from "./components/sub/Location";
+// location
+import Location from "./components/location/Location";
 
 // lifestyle
 import LifeStyle from "./components/lifeStyle/LifeStyle";
@@ -30,7 +30,12 @@ import AdminCont2 from "./components/admin/AdminCont2";
 import RoomManDetail from "./components/admin/RoomManDetail";
 
 // login
-import Login from "./components/sub/Login";
+import Login from "./components/login/Login";
+
+// join
+import JoinComp1 from "./components/join/JoinComp1";
+import JoinComp2 from "./components/join/JoinComp2";
+import Welcome from "./components/join/Welcome";
 
 // offer
 import SpecialOffer from "./components/specialoffer/SpecialOffer";
@@ -46,6 +51,8 @@ import Admin from "./components/admin/Admin";
 import PaymentPage from "./components/reservation/PaymentPage";
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
+import ResMainAllRoomDetail from "./components/reservation/ResMainAllRoomDetail"
+import ResMainAllRoomPayment from "./components/reservation/ResMainAllRoomPayment"
 import Res_detail from "./components/reservation/Res_detail";
 
 // room
@@ -80,6 +87,10 @@ function App() {
                 <Route path="/admin" element={<Admin></Admin>}></Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
+                {/* 회원가입 */}
+                <Route path="/Join" element={<JoinComp1></JoinComp1>}></Route>
+                <Route path="/myinfo" element={<JoinComp2></JoinComp2>}></Route>
+                <Route path="/Welcome" element={<Welcome></Welcome>}></Route>
                 {/* 연락처 */}
                 <Route path="/info" element={<Info></Info>}></Route>
                 {/* 오시는길 */}
@@ -108,13 +119,13 @@ function App() {
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
+                    <Route path="detailallroom"element={<ResMainAllRoomDetail />}/>
+                    <Route path="detail/paymentallroom" element={<ResMainAllRoomPayment/>}/>
                     <Route path="detail/payment" element={<PaymentPage />} />
-                    {/* <Route path="join" element={<BoardJoin/>} /> */}
-                    {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
                 </Route>
             </Routes>
 
-            <Routes>
+            <Routes>   
                 <Route path="/room" element={<Room />} />
                 <Route path="/standard" element={<Standard />} />
 

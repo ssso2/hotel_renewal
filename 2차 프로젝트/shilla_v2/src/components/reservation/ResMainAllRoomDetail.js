@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation, } from "react-router-dom";
 import PaymentModal from "./PaymentModal";
 import "../../scss/res_detail.scss";
 
-function Res_detail(props) {
+function ResMainAllRoomDetail(props) {
 
   const navigate = useNavigate()
   const location = useLocation(); // 전달된 상태 가져오기
@@ -16,18 +16,18 @@ function Res_detail(props) {
 
   
   // 전달된 데이터
-  const { checkInDate, checkOutDate, offerPrice, offerName, productId } = location.state || {};
+  const { checkInDate, checkOutDate, dayPrice, roomType, productId} = location.state || {};
 
-  console.log("Res_search.js에서 받은 데이터")
+  console.log("받은 데이터")
   console.log("product아이디 : ",productId)
   console.log("체크인 : ",checkInDate)
   console.log("체크아웃 : ",checkOutDate)
-  console.log("이름 : ",offerName)
-  console.log("가격 : ",offerPrice)
+  console.log("이름 : ",roomType)
+  console.log("가격 : ",dayPrice)
   // productId가 없다면 오류 처리
-  if (!productId) {
-    console.error("productId가 전달x");
-  }
+//   if (!productId) {
+//     console.error("productId가 전달x");
+//   }
 
   // 날짜에 하루를 더하는 함수
   const addOneDay = (date) => {
@@ -50,7 +50,7 @@ function Res_detail(props) {
     childBf: 0, // 어린이 조식 수
     extraBed: 0, // 엑스트라 베드 수
   })
-  const [paySum, setPaySum] = useState(offerPrice || 0); // 기본 요금 설정
+  const [paySum, setPaySum] = useState(dayPrice || 0); // 기본 요금 설정
   const [modalMessage, setModalMessage] = useState("") // 모달 메시지
   const [showModal, setShowModal] = useState(false) // 모달 표시 여부
   const [guideChecked, setGuideChecked] = useState(false) // 유의사항 체크 여부
@@ -69,12 +69,12 @@ function Res_detail(props) {
   // options 샅애가 벼경될 때 요금을 다시 계산
   useEffect(() => {
     const total =
-      offerPrice +
+      dayPrice +
       options.adultBf * 60000 +
       options.childBf * 38000 +
       options.extraBed * 66000;
     setPaySum(total)
-  }, [options, offerPrice])
+  }, [options, dayPrice])
 
 
   // 합계 구하는 함수
@@ -119,10 +119,10 @@ function Res_detail(props) {
   // }
 
   // PaymentPage로 이동
-  navigate("/reserve/detail/payment", {
+  navigate("/reserve/detail/paymentallroom", {
     state: {
       reservationDate: `${formattedCheckInDate} ~ ${formattedCheckOutDate}`, // 예약 날짜
-      roomName: offerName,  // offerName 객실
+      roomType: roomType,  // offerName 객실
       // adultBf: options.adultBf,
       // childBf: options.childBf,
       // extraBed: options.extraBed,
@@ -164,7 +164,7 @@ function Res_detail(props) {
                       className="room-name"
                       type="text"
                       name="rsv-date"
-                      value={offerName || "룸"}
+                      value={roomType || "룸"}
                     />
                   </div>
                 </li>
@@ -182,7 +182,7 @@ function Res_detail(props) {
                 <li className="list">
                   <h4>객실 요금</h4>
                   <div className="box price">
-                    <span className="rsv-price">{offerPrice}</span>
+                    <span className="rsv-price">{dayPrice}</span>
                     <span>원</span>
                   </div>
                 </li>
@@ -556,4 +556,4 @@ function Res_detail(props) {
   );
 }
 
-export default Res_detail;
+export default ResMainAllRoomDetail;
