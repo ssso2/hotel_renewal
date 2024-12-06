@@ -12,10 +12,10 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
 // info
-import Info from "./components/sub/Info";
+import Info from "./components/info/Info";
 
-// /location
-import Location from "./components/sub/Location";
+// location
+import Location from "./components/location/Location";
 
 // lifestyle
 import LifeStyle from "./components/lifeStyle/LifeStyle";
@@ -24,11 +24,12 @@ import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
 
 // login
-import Login from "./components/sub/Login";
+import Login from "./components/login/Login";
 
 // join
-import JoinComp1 from "./components/sub/JoinComp1";
-import JoinComp2 from "./components/sub/JoinComp2";
+import JoinComp1 from "./components/join/JoinComp1";
+import JoinComp2 from "./components/join/JoinComp2";
+import Welcome from "./components/join/Welcome";
 
 // offer
 import SpecialOffer from "./components/specialoffer/SpecialOffer";
@@ -83,6 +84,7 @@ function App() {
                 {/* 회원가입 */}
                 <Route path="/Join" element={<JoinComp1></JoinComp1>}></Route>
                 <Route path="/myinfo" element={<JoinComp2></JoinComp2>}></Route>
+                <Route path="/Welcome" element={<Welcome></Welcome>}></Route>
                 {/* 연락처 */}
                 <Route path="/info" element={<Info></Info>}></Route>
                 {/* 오시는길 */}

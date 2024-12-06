@@ -9,6 +9,7 @@ const path = require("path");
 app.use(cors()); //다른 포트에서 들어와도 열어주도록 cors 세팅
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json()); // JSON 파싱 미들웨어 추가
 
 // 세션 설정
 app.use(
