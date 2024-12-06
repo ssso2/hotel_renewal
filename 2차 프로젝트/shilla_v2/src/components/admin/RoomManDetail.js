@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // useNavigate 추가
 import axios from "axios";
-
-const bkURL = process.env.REACT_APP_BACK_URL;
+import "./RoomManDetail.scss";
 
 const RoomManDetail = () => {
     const { id } = useParams(); // URL에서 room_id 가져오기
+    const navigate = useNavigate(); // 페이지 이동을 위한 hook 추가
     const [roomDetails, setRoomDetails] = useState(null); // 방 정보 상태
     const [reservations, setReservations] = useState([]); // 예약 정보 상태
     const [error, setError] = useState(""); // 오류 메시지 상태
 
+    // 날짜 포맷팅 함수
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+    };
 
     useEffect(() => {
         const fetchRoomDetails = async () => {
@@ -21,7 +29,7 @@ const RoomManDetail = () => {
                 setError("방 정보를 가져올 수 없습니다.");
             }
         };
-    
+
         const fetchReservations = async () => {
             try {
                 const response = await axios.get(`http://localhost:5002/bk/admin/roomManagement/reservations/${id}`);
@@ -31,11 +39,10 @@ const RoomManDetail = () => {
                 setError("예약 정보를 가져올 수 없습니다.");
             }
         };
-    
+
         fetchRoomDetails();
         fetchReservations();
     }, [id]);
-    
 
     if (error) {
         return <div>{error}</div>; // 오류 메시지 출력
@@ -46,28 +53,37 @@ const RoomManDetail = () => {
     }
 
     return (
-        <div>
-            <h2>방 상세 정보</h2>
-            <p><strong>ID:</strong> {roomDetails.room_id}</p>
-            <p><strong>설명:</strong> {roomDetails.description}</p>
-            <p><strong>타입:</strong> {roomDetails.room_type}</p>
-            <p><strong>금액:</strong> {roomDetails.day_price}</p>
-            <p><strong>최대 인원:</strong> {roomDetails.max_occupancy}</p>
-
-            <h2>예약 정보</h2>
+        <div className="room-man-detail">
+            <h2>예약 내역</h2>
             {reservations.length > 0 ? (
-                reservations.map((reservation) => (
-                    <div key={reservation.reservation_id}>
-                        <p><strong>예약 ID:</strong> {reservation.reservation_id}</p>
-                        <p><strong>시작일:</strong> {reservation.start_date}</p>
-                        <p><strong>종료일:</strong> {reservation.end_date}</p>
-                        <p><strong>취소 여부:</strong> {reservation.Cancel === "0" ? "N" : "Y"}</p>
-                        <br />
-                    </div>
-                ))
+                <table className="reservation-table">
+                    <thead>
+                        <tr>
+                            <th>예약 ID</th>
+                            <th>시작일</th>
+                            <th>종료일</th>
+                            <th>취소 여부</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {reservations.map((reservation) => (
+                            <tr key={reservation.reservation_id}>
+                                <td>{reservation.reservation_id}</td>
+                                <td>{formatDate(reservation.start_date)}</td>
+                                <td>{formatDate(reservation.end_date)}</td>
+                                <td>{reservation.Cancel === "0" ? "N" : "Y"}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             ) : (
                 <p>예약 정보가 없습니다.</p>
             )}
+
+            {/* 목록으로 가기 버튼 */}
+            <button className="back-button" onClick={() => navigate(-1)}>
+                목록으로 가기
+            </button>
         </div>
     );
 };

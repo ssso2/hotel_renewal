@@ -8,6 +8,12 @@ const bkURL = process.env.REACT_APP_BACK_URL;
 
 const AdminCont2 = () => {
     const [rooms, setRooms] = useState([]);
+    const [editedRooms, setEditedRooms] = useState({}); // 수정된 데이터 저장
+
+    
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5; // 한 페이지에 보여줄 아이템 수
+
 
     // 객실 목록 가져오는 함수
     const fetchRooms = () => {
@@ -25,9 +31,43 @@ const AdminCont2 = () => {
         fetchRooms();
     }, []);
 
+    // 입력값 변경
+    const handleChange = (roomId, key, value) => {
+        setEditedRooms((prev) => ({
+            ...prev,
+            [roomId]: {
+                ...prev[roomId],
+                [key]: value,
+            },
+        }));
+    };
+
+    // 수정완료 버튼 클릭
+    const handleUpdate = (roomId) => {
+
+        axios
+            .post(`http://localhost:5002/bk/admin/roomManagement/update`, {
+                roomId,
+                ...editedRooms[roomId],
+            })
+            .then(() => {
+                alert("수정 완료!");
+                fetchRooms(); // 수정 후 데이터 새로고침
+            })
+            .catch((error) => {
+                console.error("수정 중 오류 발생:", error);
+                alert("수정에 실패했습니다.");
+            });
+    };
+
+
+    // 현재 페이지 데이터 계산
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentRooms = rooms.slice(startIndex, startIndex + itemsPerPage);
+
     return (
         <div className="cont cont2">
-            <h2>객실 관리555</h2>
+            <h2>객실 관리</h2>
             <div className="table">
                 <div className="table-header">
                     <div className="table-row">
@@ -38,35 +78,56 @@ const AdminCont2 = () => {
                         <div className="cell">침대</div>
                         <div className="cell">금액</div>
                         <div className="cell">최대인원</div>
+                        <div className="cell"></div>
                     </div>
                 </div>
                 <div className="table-body">
-                    {rooms.map((room) => (
+                    {currentRooms.map((room) => (
                         <div key={room.room_id} className="table-row">
                             <div className="cell clickable">
-                                {/* Link로 디테일 페이지 이동 */}
                                 <Link to={`/admin/roomManagement/detail/${room.room_id}`}>
                                     <button>{room.room_id}</button>
                                 </Link>
                             </div>
-                            <div className="cell">{room.description}</div>
                             <div className="cell">
-                                {room.check_in ? "체크인" : "체크아웃"}
+                                <input
+                                    type="text"
+                                    defaultValue={room.description}
+                                    onChange={(e) =>
+                                        handleChange(room.room_id, "description", e.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className="cell">
+                                <select
+                                    defaultValue={room.check_in}
+                                    onChange={(e) =>
+                                        handleChange(room.room_id, "check_in", e.target.value)
+                                    }
+                                >
+                                    <option value="0">체크아웃</option>
+                                    <option value="1">체크인</option>
+                                </select>
                             </div>
                             <div className="cell">{room.room_type}</div>
                             <div className="cell">{room.bed_type}</div>
                             <div className="cell">{room.day_price}</div>
                             <div className="cell">{room.max_occupancy}</div>
+                            <div className="cell">
+                                <button onClick={() => handleUpdate(room.room_id)}>수정</button>
+                            </div>
                         </div>
+                        
                     ))}
                 </div>
             </div>
             {/* 페이지네이션 */}
-            {/* <Pagination
+            <Pagination
+                totalItems={rooms.length}
+                itemsPerPage={itemsPerPage}
                 currentPage={currentPage}
-                totalPages={Math.ceil(rooms.length / itemsPerPage)}
-                onPageChange={handlePageChange}
-            /> */}
+                onPageChange={setCurrentPage}
+            />
         </div>
     );
 };

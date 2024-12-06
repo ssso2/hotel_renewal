@@ -1,24 +1,46 @@
 .room-man-detail {
-    padding: 20px;
+    position: relative; /* 자식 요소를 기준으로 정렬 가능 */
+
+    .back-button {
+        position: absolute;
+        top: -9px;
+        right: 10px;
+        padding: 10px 15px;
+        margin-bottom: 30px;
+        background-color: grey;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+
+        
+    }
 
     h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
+        margin-top: 50px; 
+        text-align: center;
     }
 
-    .reservation-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+    .reservation-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
 
-    .reservation-item {
-        border: 1px solid #ccc;
-        padding: 10px;
-        border-radius: 5px;
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
 
-        p {
-            margin: 5px 0;
+        th {
+            background-color: #f4f4f4;
+        }
+
+        td {
+            background-color: #ffffff;
         }
     }
 }

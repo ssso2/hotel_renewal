@@ -6,6 +6,7 @@ import Gallery from './Gallery';
 import Introduction from './Introduction';
 import Location from './Location';
 import Button from './Button';
+import MapPopUp from './MapPopUp';
 import InfoTable from './InfoTable';
 import InfoRule from './InfoRule';
 import Footer from '../common/Footer';
@@ -50,6 +51,7 @@ function OutdoorPool2() {
     };
 
     const btnData = "Cabana Map"
+    const MapImage = "../../img/sub/cabana-map.jpg";
 
     return (
         <>
@@ -68,6 +70,7 @@ function OutdoorPool2() {
                                 <div class="info-wrap mt-0">
                                     <Location propLocation = {locationData}/>
                                     <Button propBtn={btnData}/>
+                                    <MapPopUp propImage={MapImage} propBtn={btnData}/>
                                 </div>
                                 <InfoTable propData={tableData} />
                                 <InfoRule />
