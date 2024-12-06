@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Pagination from "../sub/Pagination";
-import "./AdminCont2.scss";
+import "../../scss/AdminCont2.scss";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 

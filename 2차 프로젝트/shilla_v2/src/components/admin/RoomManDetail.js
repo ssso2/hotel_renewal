@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"; // useNavigate 추가
 import axios from "axios";
-import "./RoomManDetail.scss";
+import "../../scss/RoomManDetail.scss";
 
 const RoomManDetail = () => {
     const { id } = useParams(); // URL에서 room_id 가져오기
