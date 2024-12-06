@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PaymentModal from "./PaymentModal";
-import "./res_detail.scss";
+import "../../scss/res_detail.scss";
 
 function Res_detail(props) {
 

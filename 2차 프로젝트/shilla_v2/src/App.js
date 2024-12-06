@@ -117,7 +117,7 @@ function App() {
                 </Route>
             </Routes>
 
-            <Routes>
+            <Routes>   
                 <Route path="/room" element={<Room />} />
                 <Route path="/standard" element={<Standard />} />
 
