@@ -213,7 +213,7 @@ const JoinCont2 = () => {
 
     async function idDBCnt(inputId) {
 
-        if(!num){
+        if(!inputId){
             console.log('Num 없음');
             return 
         }

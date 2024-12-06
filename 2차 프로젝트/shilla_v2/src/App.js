@@ -12,10 +12,10 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
 // info
-import Info from "./components/sub/Info";
+import Info from "./components/info/Info";
 
-// /location
-import Location from "./components/sub/Location";
+// location
+import Location from "./components/location/Location";
 
 // lifestyle
 import LifeStyle from "./components/lifeStyle/LifeStyle";
@@ -24,12 +24,12 @@ import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
 
 // login
-import Login from "./components/sub/Login";
+import Login from "./components/login/Login";
 
 // join
-import JoinComp1 from "./components/sub/JoinComp1";
-import JoinComp2 from "./components/sub/JoinComp2";
-import Welcome from "./components/sub/Welcome";
+import JoinComp1 from "./components/join/JoinComp1";
+import JoinComp2 from "./components/join/JoinComp2";
+import Welcome from "./components/join/Welcome";
 
 // offer
 import SpecialOffer from "./components/specialoffer/SpecialOffer";
@@ -109,9 +109,9 @@ function App() {
             {/* 예약페이지 */}
             <Routes>
                 <Route path="/reserve" element={<Res_temp />}>
-                    <Route path="" element={<Res_search />} />
-                    <Route path="detail" element={<Res_detail />} />
-                    <Route path="detail/payment" element={<PaymentPage />} />
+                    {/* <Route path="" element={<Res_search />} /> */}
+                    {/* <Route path="detail" element={<Res_detail />} /> */}
+                    {/* <Route path="detail/payment" element={<PaymentPage />} /> */}
                     {/* <Route path="join" element={<BoardJoin/>} /> */}
                     {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
                 </Route>

@@ -25,7 +25,7 @@ module.exports = upload => {
     router.post("/", async(req, res) => {
         console.log("회원가입 join",req);
 
-        let sql = 'insert into member (member_id,pw,name,name_eng,email,phone,birth,grade,join_date) values (?,?,?,?,?,?,?,sysdate())';
+        let sql = 'INSERT INTO member (member_id, pw, name, name_eng, email, phone, birth, grade, join_date) VALUES (?, ?, ?, ?, ?, ?, ?, "user", sysdate())';
 
 
         let data = [
@@ -39,18 +39,13 @@ module.exports = upload => {
         ];
         console.log("회원가입 join",data);
 
-        try {
-            const [ret] = await conn.execute(sql, data)
-            
-            // const newId = ret.insertId;
-            // console.log('회원정보입력완료',newId);
-            res.json({ret})
-        } catch (err) {
-
-            console.log("회원정보입력 sql 실패 : ", err.message);
-            ret.status(500).send('회원정보입력 db오류')
-
-        }
+    try {
+        const [ret] = await conn.execute(sql, data);
+        res.json({ ret });
+    } catch (err) {
+        console.log("회원정보입력 sql 실패: ", err.message);
+        res.status(500).send('회원정보입력 DB 오류');
+    }
 
     });
 
