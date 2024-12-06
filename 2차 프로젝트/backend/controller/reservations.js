@@ -20,6 +20,18 @@ router.post('/', async (req, res) => {
     `, [endDate, startDate]);
 
     // 예약이 겹치지 않는 패키지 조회
+    // const [availablePackages] = await db.execute(`
+    //   SELECT sp.*
+    //   FROM specialoffer_pkg sp
+    //   WHERE sp.room_id NOT IN (
+    //     SELECT p.room_id
+    //     FROM reservation res
+    //     JOIN product p ON res.product_id = p.product_id
+    //     WHERE (res.start_date <= ? AND res.end_date >= ?)
+    //   )
+    //   AND sp.start_date <= ? AND sp.end_date >= ?;
+    // `, [endDate, startDate, endDate, startDate]);
+
     const [availablePackages] = await db.execute(`
      select t1.*, product_id from (SELECT sp.*
       FROM specialoffer_pkg sp
