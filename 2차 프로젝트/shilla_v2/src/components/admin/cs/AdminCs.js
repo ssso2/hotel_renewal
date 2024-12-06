@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
-import Header from '../common/Header'
-import Footer from '../common/Footer'
-import AdminTabMenu from './AdminTabMenu'
+import Header from '../../common/Header'
+import Footer from '../../common/Footer'
+import AdminTabMenu from '../AdminTabMenu'
 import AdminCont5 from "./AdminCont5"
-import '../../scss/admin.scss'
+import '../../../scss/admin.scss'
 
 const AdminCs = () => {
 
@@ -17,7 +17,9 @@ const AdminCs = () => {
             <div className="admin-wrap">
                 <div className="center">
                     <AdminTabMenu/>
-                    <AdminCont5/>
+                    <div className="tab-contents">
+                        <AdminCont5/>
+                    </div>
                 </div>
             </div>
             <Footer/>

@@ -26,8 +26,8 @@ import Fitness2 from "./components/lifeStyle/Fitness2";
 import Fitness3 from "./components/lifeStyle/Fitness3";
 import Fitness4 from "./components/lifeStyle/Fitness4";
 import WalkingTrails from "./components/lifeStyle/walkingTrails";
-import AdminCont2 from "./components/admin/AdminCont2";
-import RoomManDetail from "./components/admin/RoomManDetail";
+// import AdminCont2 from "./components/admin/AdminCont2";
+// import RoomManDetail from "./components/admin/RoomManDetail";
 
 // login
 import Login from "./components/login/Login";
@@ -92,11 +92,11 @@ function App() {
                 {/* 관리자페이지 */}
                 <Route path="/admin" element={<AdminTemp></AdminTemp>}>
                     <Route path="" element={<AdminDashboard />} />
-                    <Route path="/room" element={<AdminRoom />} />
-                    <Route path="/member" element={<AdminMember />} />
-                    <Route path="/reservation" element={<AdminReservation />} />
-                    <Route path="/cs" element={<AdminCs />} />
-                    <Route path="/sales" element={<AdminSales />} />
+                    <Route path="room" element={<AdminRoom />} />
+                    <Route path="member" element={<AdminMember />} />
+                    <Route path="reservation" element={<AdminReservation />} />
+                    <Route path="cs" element={<AdminCs />} />
+                    <Route path="sales" element={<AdminSales />} />
                 </Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
@@ -111,9 +111,9 @@ function App() {
                 {/* 문의하기 */}
                 <Route path="/board" element={<BoardTemp />}>
                     <Route path="" element={<BoardList />} />
-                    <Route path="/detail/:num" element={<BoardDetail />} />
-                    <Route path="/join" element={<BoardJoin />} />
-                    <Route path="/modify/:num" element={<BoardModify />} />
+                    <Route path="detail/:num" element={<BoardDetail />} />
+                    <Route path="join" element={<BoardJoin />} />
+                    <Route path="modify/:num" element={<BoardModify />} />
                 </Route>
             </Routes>
 
@@ -188,8 +188,8 @@ function App() {
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
                 <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
 
-                <Route path="/admin/roomManagement" element={<AdminCont2 />} />
-                <Route path="/admin/roomManagement/detail/:id" element={<RoomManDetail />} />
+                {/* <Route path="/admin/roomManagement" element={<AdminCont2 />} /> */}
+                {/* <Route path="/admin/roomManagement/detail/:id" element={<RoomManDetail />} /> */}
             </Routes>
         </div>
     );
