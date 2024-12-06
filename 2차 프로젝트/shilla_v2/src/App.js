@@ -44,6 +44,8 @@ import Admin from "./components/admin/Admin";
 import PaymentPage from "./components/reservation/PaymentPage";
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
+import ResMainAllRoomDetail from "./components/reservation/ResMainAllRoomDetail"
+import ResMainAllRoomPayment from "./components/reservation/ResMainAllRoomPayment"
 import Res_detail from "./components/reservation/Res_detail";
 
 // room
@@ -109,6 +111,8 @@ function App() {
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
+                    <Route path="detailallroom"element={<ResMainAllRoomDetail />}/>
+                    <Route path="detail/paymentallroom" element={<ResMainAllRoomPayment/>}/>
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
             </Routes>

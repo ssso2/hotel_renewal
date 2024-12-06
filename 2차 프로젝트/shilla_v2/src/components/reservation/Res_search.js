@@ -4,12 +4,10 @@ import { useEffect } from "react";
 import DateRangePicker from "./DateRangePicker";
 import PackageRoomItem from "./PackageRoomItem"; // 패키지 컴포넌트
 import OneRoomItem from "./OneRoomItem"; // 객실 컴포넌트
-// import { useLocation } from "react-router-dom";
 import "../../scss/res_search.scss";
 
 function Res_search() {
   const navigate = useNavigate();
-  // const queryParams = new URLSearchParams(location.search);
 
   // 상태 관리
   const [checkInDate, setCheckInDate] = useState(null); // 체크인 날짜
@@ -106,7 +104,6 @@ function Res_search() {
     }
   };
 
-  // 컴포넌트가 마운트되었을 때, 페이지를 맨 위로 스크롤
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -132,7 +129,7 @@ function Res_search() {
               </div>
               <div className="box adult">
                 <span className="tit">ADULT</span>
-                <span className="num">{confirmedAdultCount}</span>
+                <span className="num">1</span>
               </div>
               <div className="box children">
                 <span className="tit">CHILDREN</span>
@@ -166,14 +163,16 @@ function Res_search() {
             <div className="package-list">
               <h3>패키지 </h3>
               {availablePackages.map((pkg) => (
-                <PackageRoomItem key={pkg.offer_id} packageData={pkg} />
+                <PackageRoomItem key={pkg.offer_id} packageData={pkg} checkInDate={checkInDate} 
+                checkOutDate={checkOutDate}/>
               ))}
             </div>
           ) : (
             <div className="room-list">
               <h3>객실</h3>
               {availableRooms.map((room) => (
-                <OneRoomItem key={room.room_id} roomData={room} />
+                <OneRoomItem key={room.room_id} roomData={room} checkInDate={checkInDate} 
+                checkOutDate={checkOutDate}/>
               ))}
             </div>
           )}
