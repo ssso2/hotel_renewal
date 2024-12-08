@@ -1,3 +1,5 @@
+// 객실에서 예약하기 버튼하면 들어가는 js
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -12,10 +14,10 @@ function Res_search() {
   // 상태 관리
   const [checkInDate, setCheckInDate] = useState(null); // 체크인 날짜
   const [checkOutDate, setCheckOutDate] = useState(null); // 체크아웃 날짜
-  const [availablePackages, setAvailablePackages] = useState([]); // 예약 가능한 패키지 목록
+//   const [availablePackages, setAvailablePackages] = useState([]); // 예약 가능한 패키지 목록
   const [availableRooms, setAvailableRooms] = useState([]); // 예약 가능한 객실 목록
   const [showPicker, setShowPicker] = useState(false); // 날짜 선택기 표시 여부
-  const [tab, setTab] = useState("package"); // 'package' or 'room' 탭 선택 상태
+//   const [tab, setTab] = useState("package"); // 'package' or 'room' 탭 선택 상태
   const [popupAdultCount, setPopupAdultCount] = useState(0); // 팝업에서 사용하는 성인 수
   const [popupChildrenCount, setPopupChildrenCount] = useState(0); // 팝업에서 사용하는 어린이 수
   const [confirmedAdultCount, setConfirmedAdultCount] = useState(0); // 확인버튼을 누를 때의 성인 수
@@ -147,7 +149,7 @@ function Res_search() {
         </div>
 
         {/* 탭 변경 */}
-        <div className="tabs">
+        {/* <div className="tabs">
           <button onClick={() => setTab("package")}>
             패키지{" "}
             {availablePackages.length > 0 ? `${availablePackages.length}` : ""}
@@ -155,27 +157,19 @@ function Res_search() {
           <button onClick={() => setTab("room")}>
             객실 {availableRooms.length > 0 ? `${availableRooms.length}` : ""}
           </button>
-        </div>
+        </div> */}
 
-        {/* 선택된 탭에 따라 콘텐츠 표시 */}
-        <div className="content-list">
-          {tab === "package" ? (
-            <div className="package-list">
-              <h3>패키지 </h3>
-              {availablePackages.map((pkg) => (
-                <PackageRoomItem key={pkg.offer_id} packageData={pkg} checkInDate={checkInDate} 
-                checkOutDate={checkOutDate}/>
-              ))}
-            </div>
-          ) : (
-            <div className="room-list">
-              <h3>객실</h3>
-              {availableRooms.map((room) => (
-                <OneRoomItem key={room.room_id} roomData={room} checkInDate={checkInDate} 
-                checkOutDate={checkOutDate}/>
-              ))}
-            </div>
-          )}
+        {/* 객실만 보이도록 탭 제거 */}
+        <div className="room-list">
+          <h3>객실</h3>
+          {availableRooms.map((room) => (
+            <OneRoomItem
+              key={room.room_id}
+              roomData={room}
+              checkInDate={checkInDate}
+              checkOutDate={checkOutDate}
+            />
+          ))}
         </div>
       </section>
     </div>
