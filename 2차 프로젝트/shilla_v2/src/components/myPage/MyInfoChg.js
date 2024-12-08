@@ -2,7 +2,9 @@ import React from 'react'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import MyPageTab from './MyPageTab'
-import MyInfoCont from './MyInfoCont'
+import MyPwChk from './MyPwChk'
+import MyInfoChgCont from './MyInfoChgCont'
+
 
 
 const MyInfo = () => {
@@ -16,7 +18,7 @@ const MyInfo = () => {
                     <div className="depth3-tab-wrap">
                         <MyPageTab/>
                         <div className="content">
-                            <MyInfoCont/>
+                            <MyInfoChgCont/>
                         </div>
                     </div>
                 </div>

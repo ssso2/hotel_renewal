@@ -23,7 +23,7 @@ const MyPageTab = () => {
     }, [location, myPageTabTit]); // location이 변경될 때마다 activeIndex를 업데이트
     
     return (
-      <ul class="tab tab-long">
+      <ul className="tab tab-long">
           {myPageTabTit.map((item, index) => (
               <li key={index} className={index === activeIndex ? "on" : ""}>
                   <Link to={item.link} >{item.title}</Link>
