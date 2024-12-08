@@ -75,6 +75,9 @@ app.use("/bk/login", loginRouter(upload));
 // join 라우터 추가
 const joinRouter = require("./controller/join.js");
 app.use("/bk/join", joinRouter(upload));
+// myPage 라우터 추가
+const myPageInfoRouter = require("./controller/myPageInfo.js");
+app.use("/bk/myPage", myPageInfoRouter(upload));
 // specialoffer 라우터 추가
 const offerRouter = require("./controller/specialOffer.js");
 app.use("/bk/specialOffer", offerRouter(upload));
