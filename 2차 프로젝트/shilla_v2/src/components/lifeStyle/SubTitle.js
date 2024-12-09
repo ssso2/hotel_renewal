@@ -36,7 +36,7 @@ const SubTitle = () => {
             <h2>{title}</h2>
             <ul className="location">
                 <li><Link to="/">홈</Link></li>
-                <li><Link to="../sub/sub04.html">라이프스타일</Link></li>
+                <li><Link to="/lifeStyle">라이프스타일</Link></li>
                 <li><Link to="#self">{breadcrumb}</Link></li>
             </ul>
         </div>

@@ -28,6 +28,11 @@ import Fitness4 from "./components/lifeStyle/Fitness4";
 import WalkingTrails from "./components/lifeStyle/WalkingTrails";
 import Jogging from "./components/lifeStyle/Jogging";
 import Shopping from "./components/lifeStyle/Shopping";
+import Shopping2 from "./components/lifeStyle/Shopping2";
+
+// wedding & party
+import Wedding from "./components/party/Wedding";
+import Wedding2 from "./components/party/Wedding2";
 
 // login
 import Login from "./components/login/Login";
@@ -226,6 +231,13 @@ function App() {
                 <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
                 <Route path="/jogging" element={<Jogging />}></Route>
                 <Route path="/shopping" element={<Shopping />}></Route>
+                <Route path="/shopping2" element={<Shopping2 />}></Route>
+            </Routes>
+
+            {/* 웨딩&연회 */}
+            <Routes>
+                <Route path="/wedding" element={<Wedding />}></Route>
+                <Route path="/wedding2" element={<Wedding2 />}></Route>
             </Routes>
         </div>
     );
