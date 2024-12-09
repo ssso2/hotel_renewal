@@ -52,7 +52,7 @@ function PaymentPage() {
       totPrice: paySum,
       adultCnt: 1,
       childCnt: 0,
-      cancel: "No", // 기본 취소 여부
+      cancel: 0, // 기본 취소 여부
     };
 
     try {

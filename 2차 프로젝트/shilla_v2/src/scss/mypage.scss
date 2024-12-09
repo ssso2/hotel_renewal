@@ -15,7 +15,7 @@
         min-height: 220px;
 
         .change-info-chk,
-        .reservate-info,
+        // .reservate-info,
         .inquiry-info {
             display: flex;
             flex-direction: column;
@@ -128,8 +128,10 @@
                 font-size: 14px;
                 box-sizing: border-box;
             }
-            #id,
-            #birth {
+            #userId,
+            #userName,
+            #userName_eng,
+            #userBirth {
                 background-color: #ddd;
             }
         }
@@ -150,9 +152,9 @@
             }
         }
 
-        #edit {
+        .edit-btn,.withdrawal-btn {
             display: block;
-            margin: 50px auto;
+            margin: 50px auto 20px;
             width: 500px;
             padding: 10px;
             border: none;
@@ -165,6 +167,10 @@
             &:hover {
                 background-color: #333;
             }
+        }
+        .withdrawal-btn {
+            background-color: #bbb;
+            margin-top: 20px;
         }
     }
 }
