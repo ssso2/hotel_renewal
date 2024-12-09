@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../scss/AdminCont5.scss";
 import { Link } from "react-router-dom";
 import AdminCont5_search from "./AdminCont5_search";
 import AdminCont5_type from "./AdminCont5_type";

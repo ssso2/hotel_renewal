@@ -59,10 +59,6 @@ const upload = multer({
 // const mainRouter = require("./controller/main.js");
 // app.use("/bk/", examRouter(upload));
 
-// // notice 라우터 추가
-// const noticeRouter = require("./controller/notice.js");
-// app.use("/bk/notice", noticeRouter(upload));
-
 // board 라우터 추가
 const boardRouter = require("./controller/board.js");
 app.use("/bk/board", boardRouter(upload));
@@ -92,7 +88,10 @@ const roomManRouter = require("./controller/roomManagement.js");
 app.use("/bk/admin/roomManagement", roomManRouter());
 // 공지사항 라우터 추가
 const noticeRouter = require("./controller/notice.js");
-app.use("/bk/notice", noticeRouter());
+app.use("/bk/notice", noticeRouter(upload)); //업로드 객체전달 중요
+// // admin notice 라우터 추가
+// const adminnoticeRouter = require("./controller/adminNotice.js");
+// app.use("/bk/notice", adminnoticeRouter());
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
 app.get("*", (req, res) => {

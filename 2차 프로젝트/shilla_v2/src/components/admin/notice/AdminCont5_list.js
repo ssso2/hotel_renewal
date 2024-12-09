@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../scss/AdminCont5.scss";
 import { Link } from "react-router-dom";
 
 const AdminCont5_list = () => {
@@ -22,7 +21,7 @@ const AdminCont5_list = () => {
             <div className="listwrapper">
                 <div className="header">
                     <h3>공지사항리스트 </h3>
-                    <Link to="/admin/join" className="submit">
+                    <Link to="/admin/notice/register" className="submit">
                         공지사항 등록
                     </Link>
                 </div>
@@ -42,12 +41,7 @@ const AdminCont5_list = () => {
                                 <div className="N-num">{data.notice_id}</div>
                                 <div className="N-option">{data.category}</div>
                                 <div className="N-title">
-                                    <Link
-                                        to={`/notice/detail/${data.notice_id}`}
-                                        className="Nlink"
-                                    >
-                                        {data.title}
-                                    </Link>
+                                    <span className="Nlink">{data.title}</span>
                                 </div>
                                 <div className="N-view"> {data.view_point}</div>
                                 <div className="N-date">
@@ -65,7 +59,10 @@ const AdminCont5_list = () => {
                                     }
                                 </div>
                                 <div className="MDbtn">
-                                    <Link to="" className="modify">
+                                    <Link
+                                        to={`/admin/notice/modify/${data.notice_id}`}
+                                        className="modify"
+                                    >
                                         수정
                                     </Link>
                                     <span>/</span>

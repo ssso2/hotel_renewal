@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const AdminCont5_register_option = () => {
+const AdminCont5_Modify_option = () => {
     return (
         <div className="listwrap option">
             <div className="header">
@@ -28,14 +28,14 @@ const AdminCont5_register_option = () => {
             </table>
             <div className="button-container">
                 <button type="reset" className="cancel">
-                    <Link to="/notice">취소</Link>
+                    <Link to="/admin/notice">취소</Link>
                 </button>
                 <button type="submit" className="submit">
-                    등록
+                    저장
                 </button>
             </div>
         </div>
     );
 };
 
-export default AdminCont5_register_option;
+export default AdminCont5_Modify_option;

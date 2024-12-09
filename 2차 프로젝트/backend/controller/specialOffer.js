@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const conn = require("../db");
 const fs = require("fs");
+const { start } = require("repl");
 
 module.exports = upload => {
     router.get("/", async (req, res) => {
@@ -74,12 +75,20 @@ module.exports = upload => {
         if (sqlData.offer_type == "All") {
             delete sqlData["offer_type"];
         }
-        if (sqlData) {
+        //기존 선생님
+        // if (sqlData) {
+        //     var whereSql = " where ";
+        if (sqlData.date_range) {
+            delete sqlData["date_range"];
             var whereSql = " where ";
 
             ////날짜 필터 조건처리 이 자리에 코드 짜기
 
             for (const key in sqlData) {
+                if (sqlData[key] === "end_date") {
+                    whereSql += " start_date >= ? and";
+                    whereData.push(sqlData[key]);
+                }
                 whereSql += " " + key + " = ? and";
                 whereData.push(sqlData[key]);
             }

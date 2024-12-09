@@ -29,6 +29,15 @@ const OfferMain2 = ({ setOfferlists }) => {
         // setfiltered(myData);
         const frmData = new FormData(document.myFrm);
         const myData = Object.fromEntries(frmData);
+        if (myData.date_range) {
+            const [start_date, end_date] = myData.date_range
+                .toString()
+                .split(" ~ ");
+            console.log(start_date);
+            console.log(end_date);
+            myData.start_date = start_date;
+            myData.end_date = end_date;
+        }
         try {
             console.log("폼데이터", myData);
             const res = await axios.put(
@@ -50,7 +59,7 @@ const OfferMain2 = ({ setOfferlists }) => {
             {/* <!-- 필터박스 --> */}
             <form className="pkg-filter-box-wrapper" name="myFrm">
                 <div className="pkg-filter-box">
-                    {/* <OfferMain2_date /> */}
+                    <OfferMain2_date />
                     <OfferMain2_type
                         offertype={offertype}
                         setoffertype={setoffertype}

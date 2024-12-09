@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../scss/AdminCont5.scss";
 import { Link } from "react-router-dom";
 
 const AdminCont5_type = ({ Ntype, setNtype }) => {

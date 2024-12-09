@@ -52,6 +52,9 @@ import AdminMember from "./components/admin/member/AdminMember";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
 import AdminNotice from "./components/admin/notice/AdminNotice";
+import AdminNoticeMain from "./components/admin/notice/AdminCont5_main";
+import AdminRegister from "./components/admin/notice/AdminCont5_register";
+import AdminModify from "./components/admin/notice/AdminCont5_Modify";
 import AdminSales from "./components/admin/sales/AdminSales";
 
 // myPage
@@ -107,7 +110,11 @@ function App() {
                     <Route path="room" element={<AdminRoom />} />
                     <Route path="member" element={<AdminMember />} />
                     <Route path="reservation" element={<AdminReservation />} />
-                    <Route path="notice" element={<AdminNotice />} />
+                    <Route path="notice" element={<AdminNotice />}>
+                        <Route path="" element={<AdminNoticeMain />} />
+                        <Route path="register" element={<AdminRegister />} />
+                        <Route path="modify/:id" element={<AdminModify />} />
+                    </Route>
                     <Route path="cs" element={<AdminCs />} />
                     <Route path="sales" element={<AdminSales />} />
                 </Route>
