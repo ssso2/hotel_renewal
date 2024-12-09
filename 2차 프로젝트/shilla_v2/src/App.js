@@ -49,6 +49,7 @@ import AdminTemp from './components/admin/AdminTemp'
 import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminMember from "./components/admin/member/AdminMember";
+import AdminCont3 from "./components/admin/member/AdminCont3";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
 import AdminSales from "./components/admin/sales/AdminSales";
@@ -100,6 +101,7 @@ function App() {
                     <Route path="" element={<AdminDashboard />} />
                     <Route path="room" element={<AdminRoom />} />
                     <Route path="member" element={<AdminMember />} />
+                    {/* <Route path="memberBoard" element={<AdminCont3 />} />  */}
                     <Route path="reservation" element={<AdminReservation />} />
                     <Route path="cs" element={<AdminCs />} />
                     <Route path="sales" element={<AdminSales />} />
