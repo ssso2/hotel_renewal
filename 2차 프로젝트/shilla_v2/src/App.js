@@ -51,6 +51,7 @@ import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminMember from "./components/admin/member/AdminMember";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
+import AdminNotice from "./components/admin/notice/AdminNotice";
 import AdminSales from "./components/admin/sales/AdminSales";
 
 // myPage
@@ -101,6 +102,7 @@ function App() {
                     <Route path="room" element={<AdminRoom />} />
                     <Route path="member" element={<AdminMember />} />
                     <Route path="reservation" element={<AdminReservation />} />
+                    <Route path="notice" element={<AdminNotice />} />
                     <Route path="cs" element={<AdminCs />} />
                     <Route path="sales" element={<AdminSales />} />
                 </Route>
