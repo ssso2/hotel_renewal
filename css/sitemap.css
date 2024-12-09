@@ -1,0 +1,69 @@
+.sitemap-wrap {
+  width: 100%;
+}
+.sitemap-wrap .sitemap.top {
+  padding-top: 20px;
+}
+.sitemap-wrap .sitemap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 70px;
+  border-bottom: 1px solid #ddd;
+}
+.sitemap-wrap .sitemap .map-list {
+  width: 220px;
+  padding-left: 20px;
+}
+.sitemap-wrap .sitemap .map-list .map-title {
+  border-bottom: 2px solid #7a6c64;
+  line-height: 3;
+  font-weight: 700;
+}
+.sitemap-wrap .sitemap .map-list h3 {
+  margin-top: 22px;
+  margin-bottom: 10px;
+}
+.sitemap-wrap .sitemap .map-list a {
+  display: block;
+}
+.sitemap-wrap .sitemap .map-list .item-bar {
+  position: relative;
+  padding-left: 15px;
+  line-height: 1.5;
+}
+.sitemap-wrap .sitemap .map-list .item-bar::before {
+  content: "-";
+  position: absolute;
+  left: 2px;
+}
+.sitemap-wrap .sitemap a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1240px) {
+  .sitemap-wrap .sitemap {
+    padding: 70px 0;
+  }
+  .sitemap-wrap .sitemap.top {
+    padding-top: 0px;
+  }
+  .sitemap-wrap .sitemap.top .map-list {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sitemap-wrap .sitemap .map-list {
+    width: 160px;
+  }
+  .sitemap-wrap .sitemap .map-list .map-title {
+    font-size: 2.6vw;
+  }
+  .sitemap-wrap .sitemap .map-list h3 {
+    font-size: 2.2vw;
+    font-weight: 600;
+  }
+  .sitemap-wrap .sitemap .map-list a {
+    font-size: 1.9vw;
+  }
+}

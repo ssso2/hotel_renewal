@@ -4,7 +4,7 @@ const AdminCont5 = () => {
     return (
         <div className="cont cont5">
             <h2>고객센터</h2>
-            <div>미답변 문의 관리</div>
+            <div>공지사항 관리</div>
         </div>
     );
 };

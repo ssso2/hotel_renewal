@@ -20,7 +20,7 @@ const OfferMain4 = ({ offer }) => {
         breakfast: "조식",
         lounge: "라운지혜택",
         anniversry: "기념일",
-        pool: "수영장",
+        pool: "야외수영장",
         three_people: "성인3인",
         consecutive_night: "2박이상",
         kids: "키즈",
@@ -39,8 +39,8 @@ const OfferMain4 = ({ offer }) => {
                         //         ) // 키워드 중 하나라도 1인지 확인
                         // )
                         .map(data => {
-                            const imgurl = `http://192.168.0.12:5002/bk/files/${data.upSystem}`;
-                            // const imgurl = `http://192.168.123.100:5002/bk/files/${data.upSystem}`;
+                            const imgurl = `http://localhost:5002/bk/files/${data.upSystem}`;
+
                             return (
                                 <li
                                     className="list-container product-item"
@@ -52,7 +52,7 @@ const OfferMain4 = ({ offer }) => {
                                     >
                                         <div className="img-wrapper">
                                             <img src={imgurl} />
-                                            <div className="pkg-rewards">
+                                            {/* <div className="pkg-rewards">
                                                 <img
                                                     src={
                                                         "../../img/sub/gift.png"
@@ -61,7 +61,7 @@ const OfferMain4 = ({ offer }) => {
                                                 <div className="reward">
                                                     리워즈혜택
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
                                         <div className="txt-wrapper">
                                             {keywordColumns.map(

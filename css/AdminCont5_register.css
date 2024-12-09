@@ -1,0 +1,104 @@
+.cont5 {
+  padding: 20px;
+}
+.cont5 h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+.cont5 .list .listwrapper {
+  padding: 30px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.cont5 .list .listwrap {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 50px 20px;
+}
+.cont5 .list .option {
+  padding-top: 0px;
+}
+.cont5 .list .r-table {
+  width: 100%;
+  table-layout: fixed;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border-top: 1px solid #333;
+  margin: 10px 0;
+}
+.cont5 .list .r-table .r-row {
+  width: 100%;
+  font-weight: bold;
+  line-height: 70px;
+  border-bottom: 1px solid #333;
+}
+.cont5 .list .r-table .r-row .N-title {
+  padding: 0 50px 0 10px;
+  background-color: #faf8f4;
+}
+.cont5 .list .r-table .r-row .N-con {
+  width: 100%;
+  padding: 0 30px;
+  font-weight: bold;
+  color: #333;
+}
+.cont5 .list .r-table .r-row .N-con input {
+  border: 1px solid #ccc;
+}
+.cont5 .list .r-table .r-row .N-con .area {
+  border: 1px solid #ccc;
+  height: 200px;
+  width: 100%;
+  overflow-y: auto;
+}
+.cont5 .list .r-table .r-row .areabox {
+  padding: 20px 30px;
+}
+.cont5 .list .r-table .r-row .fileup {
+  padding: 0 26px 0 10px;
+  background-color: #faf8f4;
+}
+.cont5 .list .r-table .r-row .N-type {
+  padding: 0 30px;
+  font-weight: 500;
+}
+.cont5 .list .r-table .r-row .N-type .radio {
+  margin-left: 10px;
+}
+.cont5 .list .button-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.cont5 .list .button-container .cancel {
+  box-sizing: border-box;
+  background: #fff;
+  color: #333;
+  border: 1px solid #333;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+.cont5 .list .button-container .cancel:hover {
+  background-color: #efefef;
+}
+.cont5 .list .button-container .submit {
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+  border: 1px solid #333;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.cont5 .list .button-container .submit:hover {
+  background-color: #555;
+  color: #fff;
+}

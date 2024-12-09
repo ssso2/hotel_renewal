@@ -18,11 +18,16 @@ const OfferDetail = () => {
     const [Offerdetails, setOfferdetails] = useState({});
     const { id } = useParams();
     const fetchData = async () => {
+        // if (!id) {
+        //     console.log("스페셜오퍼 패키지 없음");
+        //     return;
+        // }
         try {
             const res = await axios.get(
                 //     `http://192.168.123.100:5002/bk/specialOffer/detail/${id}`
                 // );
-                `http://192.168.0.12:5002/bk/specialOffer/detail/${id}`
+                // `http://192.168.0.20:5002/bk/specialOffer/detail/${id}`
+                `http://localhost:5002/bk/specialOffer/detail/${id}`
             );
             console.log("갔다옴 : ", res.data);
             setOfferdetails(res.data);
@@ -33,12 +38,15 @@ const OfferDetail = () => {
     useEffect(() => {
         document.title = "신라호텔 - 스페셜오퍼";
         fetchData();
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         console.log("디테일", Offerdetails.end_date);
     }, [Offerdetails]);
 
+    // if (!Offerdetails) {
+    //     return <div> Offerdetails 없음</div>;
+    // }
     return (
         <div className="container offerdetail">
             <div className="center">
