@@ -3,6 +3,7 @@ import Header from '../common/Header'
 import Footer from '../common/Footer'
 import MyPageTab from './MyPageTab'
 import MyInfoCont from './MyInfoCont'
+import '../../scss/mypage.scss'
 
 
 const MyInfo = () => {

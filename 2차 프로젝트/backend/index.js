@@ -77,13 +77,16 @@ const joinRouter = require("./controller/join.js");
 app.use("/bk/join", joinRouter(upload));
 // myPage 라우터 추가
 const myPageInfoRouter = require("./controller/myPageInfo.js");
-app.use("/bk/myPage", myPageInfoRouter(upload));
+app.use("/bk/mypage", myPageInfoRouter(upload));
 // specialoffer 라우터 추가
 const offerRouter = require("./controller/specialOffer.js");
 app.use("/bk/specialOffer", offerRouter(upload));
 // reservation 라우터 추가
 const reservationRouter = require("./controller/reservations.js");
 app.use("/bk/reserve", reservationRouter);
+// admin reserve 라우터 추가
+const adminReserveRouter = require("./controller/adminReserve.js");
+app.use("/bk/admin/reservation", adminReserveRouter)
 // admin dashboard 라우터 추가
 const adminDashboardRouter = require("./controller/adminDashboard.js");
 app.use("/bk/admin/dashboard", adminDashboardRouter);

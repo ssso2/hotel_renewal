@@ -4,6 +4,7 @@ import Header from '../common/Header';
 import Tab2 from './Tab2';
 import SubTitle from './SubTitle';
 import Gallery2 from './Gallery2';
+import Introduction from './Introduction';
 import Location from './Location';
 import Desc from './Desc';
 import GroupExercise from './GroupExercise';
@@ -14,7 +15,6 @@ import "../../scss/header.scss"
 import "../../scss/footer.scss"
 import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
-import Introduction from './Introduction';
 
 
 function Fitness2() {

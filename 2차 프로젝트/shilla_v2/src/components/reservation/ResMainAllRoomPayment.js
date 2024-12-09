@@ -52,13 +52,13 @@ function PaymentPage() {
       totPrice: paySum,
       adultCnt: 1,
       childCnt: 0,
-      cancel: "No", // 기본 취소 여부
+      cancel: 0, // 기본 취소 여부
     };
 
     try {
       // axios를 사용하여 서버로 예약 데이터를 전송합니다.
       const response = await axios.post(
-        "http://172.30.1.16:5002/bk/reserve/save",
+        "http://192.168.0.13:5002/bk/reserve/save",
         reservationData
       );
 
@@ -105,7 +105,7 @@ function PaymentPage() {
 
     try {
       const paymentResponse = await axios.post(
-        "http://172.30.1.16:5002/bk/reserve/savepayment", // 결제 저장 API
+        "http://192.168.0.13:5002/bk/reserve/savepayment", // 결제 저장 API
         paymentData
       );
 

@@ -25,9 +25,14 @@ import Fitness from "./components/lifeStyle/Fitness";
 import Fitness2 from "./components/lifeStyle/Fitness2";
 import Fitness3 from "./components/lifeStyle/Fitness3";
 import Fitness4 from "./components/lifeStyle/Fitness4";
-import WalkingTrails from "./components/lifeStyle/walkingTrails";
-// import AdminCont2 from "./components/admin/AdminCont2";
-// import RoomManDetail from "./components/admin/RoomManDetail";
+import WalkingTrails from "./components/lifeStyle/WalkingTrails";
+import Jogging from "./components/lifeStyle/Jogging";
+import Shopping from "./components/lifeStyle/Shopping";
+import Shopping2 from "./components/lifeStyle/Shopping2";
+
+// wedding & party
+import Wedding from "./components/party/Wedding";
+import Wedding2 from "./components/party/Wedding2";
 
 // login
 import Login from "./components/login/Login";
@@ -48,6 +53,7 @@ import EventDetail1 from "./components/specialoffer/EventDetail1";
 import AdminTemp from "./components/admin/AdminTemp";
 import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
+import AdminRoomDetail from "./components/admin/room/AdminRoomDetail";
 import AdminMember from "./components/admin/member/AdminMember";
 // import AdminCont3 from "./components/admin/member/AdminCont3";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
@@ -60,6 +66,7 @@ import MyPageTemp from "./components/myPage/MyPageTemp";
 import MyInfo from "./components/myPage/MyInfo";
 import MyPwChk from "./components/myPage/MyPwChk";
 import MyInfoChg from "./components/myPage/MyInfoChg";
+import MyReservation from "./components/myPage/MyReservation";
 
 // reservation
 import PaymentPage from "./components/reservation/PaymentPage";
@@ -106,6 +113,7 @@ function App() {
                 <Route path="/admin" element={<AdminTemp></AdminTemp>}>
                     <Route path="" element={<AdminDashboard />} />
                     <Route path="room" element={<AdminRoom />} />
+                    <Route path="room/detail/:id" element={<AdminRoomDetail />} />
                     <Route path="member" element={<AdminMember />} />
                     {/* <Route path="memberBoard" element={<AdminCont3 />} />  */}
                     <Route path="reservation" element={<AdminReservation />} />
@@ -118,7 +126,7 @@ function App() {
                     <Route path="" element={<MyInfo />} />
                     <Route path="myPwChk" element={<MyPwChk />} />
                     <Route path="myInfoChg" element={<MyInfoChg />} />
-                    {/* <Route path="myReservation" element={<MyReservation />} /> */}
+                    <Route path="myReservation" element={<MyReservation />} />
                     {/* <Route path="myInquiry" element={<MyInquiry />} /> */}
                 </Route>
                 {/* 로그인 */}
@@ -223,13 +231,16 @@ function App() {
                 <Route path="/fitness2" element={<Fitness2 />}></Route>
                 <Route path="/fitness3" element={<Fitness3 />}></Route>
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
-                <Route
-                    path="/walkingTrails"
-                    element={<WalkingTrails />}
-                ></Route>
+                <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
+                <Route path="/jogging" element={<Jogging />}></Route>
+                <Route path="/shopping" element={<Shopping />}></Route>
+                <Route path="/shopping2" element={<Shopping2 />}></Route>
+            </Routes>
 
-                {/* <Route path="/admin/roomManagement" element={<AdminCont2 />} /> */}
-                {/* <Route path="/admin/roomManagement/detail/:id" element={<RoomManDetail />} /> */}
+            {/* 웨딩&연회 */}
+            <Routes>
+                <Route path="/wedding" element={<Wedding />}></Route>
+                <Route path="/wedding2" element={<Wedding2 />}></Route>
             </Routes>
         </div>
     );

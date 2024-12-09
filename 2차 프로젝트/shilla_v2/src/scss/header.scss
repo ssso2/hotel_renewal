@@ -22,10 +22,9 @@ header {
         justify-content: space-between;
 
         & > .btn-wrap {
-            display: none;
             margin: 0;
 
-            &.on {display: block;}
+            // &.on {display: block;}
     
             &.login,&.admin {
                 line-height: 1;

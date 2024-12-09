@@ -2,9 +2,8 @@ import React from 'react'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import MyPageTab from './MyPageTab'
-import MyPwChkCont from './MyPwChkCont'
-
-
+import MyReservationCont from './MyReservationCont'
+import '../../scss/myreservation.scss'
 
 
 const MyInfo = () => {
@@ -18,7 +17,7 @@ const MyInfo = () => {
                     <div className="depth3-tab-wrap">
                         <MyPageTab/>
                         <div className="content">
-                            <MyPwChkCont/>
+                            <MyReservationCont/>
                         </div>
                     </div>
                 </div>
@@ -29,4 +28,3 @@ const MyInfo = () => {
 }
 
 export default MyInfo
-

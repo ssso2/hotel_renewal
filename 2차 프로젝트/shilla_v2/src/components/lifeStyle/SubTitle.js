@@ -18,6 +18,12 @@ const SubTitle = () => {
             return { title: "실내 사우나", breadcrumb: "실내 사우나" };
         } else if (location.pathname === '/walkingTrails') {
             return { title: "산책로", breadcrumb: "산책로" };
+        } else if (location.pathname === '/jogging') {
+            return { title: "조깅코스", breadcrumb: "조깅코스" };
+        } else if (location.pathname === '/shopping') {
+            return { title: "아케이드", breadcrumb: "아케이드" };
+        } else if (location.pathname === '/shopping2') {
+            return { title: "신라면세점", breadcrumb: "신라면세점" };
         } else {
             return { title: "페이지 제목", breadcrumb: "현재 위치" }; 
         } 
@@ -30,7 +36,7 @@ const SubTitle = () => {
             <h2>{title}</h2>
             <ul className="location">
                 <li><Link to="/">홈</Link></li>
-                <li><Link to="../sub/sub04.html">라이프스타일</Link></li>
+                <li><Link to="/lifeStyle">라이프스타일</Link></li>
                 <li><Link to="#self">{breadcrumb}</Link></li>
             </ul>
         </div>
