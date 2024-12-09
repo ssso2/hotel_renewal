@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"; // useNavigate 추가
 import axios from "axios";
+import Header from '../../common/Header'
+import Footer from '../../common/Footer'
+import AdminTabMenu from '../AdminTabMenu'
 import "../../../scss/RoomManDetail.scss";
+import '../../../scss/admin.scss'
+
 
 
 const AdminRoomDetail = () => {
@@ -21,6 +26,7 @@ const AdminRoomDetail = () => {
     };
 
     useEffect(() => {
+        document.title = "신라호텔:관리자"
         const fetchRoomDetails = async () => {
             try {
                 const response = await axios.get(`http://localhost:5002/bk/admin/roomManagement/detail/${id}`);
@@ -54,39 +60,54 @@ const AdminRoomDetail = () => {
     }
 
     return (
-        <div className="room-man-detail">
-            <h2>예약 내역</h2>
-            {reservations.length > 0 ? (
-                <table className="reservation-table">
-                    <thead>
-                        <tr>
-                            <th>예약 ID</th>
-                            <th>시작일</th>
-                            <th>종료일</th>
-                            <th>취소 여부</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {reservations.map((reservation) => (
-                            <tr key={reservation.reservation_id}>
-                                <td>{reservation.reservation_id}</td>
-                                <td>{formatDate(reservation.start_date)}</td>
-                                <td>{formatDate(reservation.end_date)}</td>
-                                <td>{reservation.Cancel === "0" ? "N" : "Y"}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            ) : (
-                <p>예약 정보가 없습니다.</p>
-            )}
 
-            {/* 목록으로 가기 버튼 */}
-            <button className="back-button" onClick={() => navigate(-1)}>
-                목록으로 가기
-            </button>
-        </div>
+        <>
+            <Header/>
+            <div className="admin-wrap">
+                <div className="center">
+                    <AdminTabMenu/>
+                    <div className="tab-contents">
+                        <div className="room-man-detail">
+                            <h2>예약 내역</h2>
+                            {reservations.length > 0 ? (
+                                <table className="reservation-table">
+                                    <thead>
+                                        <tr>
+                                            <th>예약 ID</th>
+                                            <th>시작일</th>
+                                            <th>종료일</th>
+                                            <th>취소 여부</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {reservations.map((reservation) => (
+                                            <tr key={reservation.reservation_id}>
+                                                <td>{reservation.reservation_id}</td>
+                                                <td>{formatDate(reservation.start_date)}</td>
+                                                <td>{formatDate(reservation.end_date)}</td>
+                                                <td>{reservation.Cancel === "0" ? "N" : "Y"}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            ) : (
+                                <p>예약 정보가 없습니다.</p>
+                            )}
+
+                            {/* 목록으로 가기 버튼 */}
+                            <button className="back-button" onClick={() => navigate(-1)}>
+                                목록으로 가기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Footer/>
+        </>
+        
+        
     );
 };
 
 export default AdminRoomDetail;
+

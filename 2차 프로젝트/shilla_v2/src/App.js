@@ -26,8 +26,6 @@ import Fitness2 from "./components/lifeStyle/Fitness2";
 import Fitness3 from "./components/lifeStyle/Fitness3";
 import Fitness4 from "./components/lifeStyle/Fitness4";
 import WalkingTrails from "./components/lifeStyle/walkingTrails";
-// import AdminCont2 from "./components/admin/AdminCont2";
-// import RoomManDetail from "./components/admin/RoomManDetail";
 
 // login
 import Login from "./components/login/Login";
@@ -49,7 +47,6 @@ import AdminTemp from "./components/admin/AdminTemp";
 import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminRoomDetail from "./components/admin/room/AdminRoomDetail";
-// import RoomManDetail from "./components/admin/RoomManDetail";
 import AdminMember from "./components/admin/member/AdminMember";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
@@ -224,13 +221,7 @@ function App() {
                 <Route path="/fitness2" element={<Fitness2 />}></Route>
                 <Route path="/fitness3" element={<Fitness3 />}></Route>
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
-                <Route
-                    path="/walkingTrails"
-                    element={<WalkingTrails />}
-                ></Route>
-
-                {/* <Route path="/admin/roomManagement" element={<AdminCont2 />} /> */}
-                {/* <Route path="/admin/roomManagement/detail/:id" element={<RoomManDetail />} /> */}
+                <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
             </Routes>
         </div>
     );
