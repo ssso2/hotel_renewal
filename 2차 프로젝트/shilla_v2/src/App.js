@@ -71,7 +71,9 @@ function App() {
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
                 {/* 관리자페이지 */}
-                <Route path="/admin" element={<Admin></Admin>}></Route>
+                <Route path="/admin" element={<Admin></Admin>}>
+                   
+                </Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
                 {/* 연락처 */}

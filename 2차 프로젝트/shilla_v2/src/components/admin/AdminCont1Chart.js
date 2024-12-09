@@ -62,18 +62,21 @@ const AdminCont1Chart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin')
-                
+        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/person')
+        console.log(response.data)
 
-        const labels = response.data.map((item) => item.room_id)
-        const occupancy = response.data.map((item) => item.max_occupancy)
+        const labels =  response.data.map((item) => item.dateCalc)
+        console.log("labels" , labels)
+        
+        const personCnt = response.data.map((item) => item.personCnt)
+        
 
         setChartData({
           labels: labels,
           datasets: [
             {
               label: "방문자 수",
-              data: occupancy,
+              data: personCnt,
               backgroundColor: "#0CD3FF",
               borderColor: "#0CD3FF",
               fill: false,
@@ -88,8 +91,6 @@ const AdminCont1Chart = () => {
 
     fetchData()
   }, [])
-
-
 
   return (
     <div>

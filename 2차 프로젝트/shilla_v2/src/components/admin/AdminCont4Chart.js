@@ -37,8 +37,10 @@ const options = {
     y: {
       beginAtZero: {
         display: true,
-        text: "인원",
       },
+      ticks: {
+        stepSize: 5,
+      }
     },
   },
   plugins: {
@@ -57,37 +59,23 @@ const AdminCont4Chart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin')
+        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/cancel')
+        console.log(response.data)
+
+        const labels =  response.data.map((item) => item.room_type)
+        console.log("labels" , labels)
         
-        const labels = response.data.map((item) => item.room_id)
-        const rooms = response.data.map((item) => item.room_type)
-        const beds = response.data.map((item) => item.bed_type)
-        const prices = response.data.map((item) => item.day_price)
+        const cancelRoom = response.data.map((item) => item.room_count)
+        console.log(cancelRoom)
 
         setChartData({
           labels: labels,
           datasets: [
             {
-              label: "객실 유무",
-              data: `${rooms}`,
+              label: "객실 취소 현황",
+              data: cancelRoom,
               backgroundColor: "#9a01c3",
               borderColor: "#9a01c3",
-              fill: false,
-              tension: 0.1,
-            },
-            {
-              label: "가격",
-              data: `${prices}`,
-              backgroundColor: "#2699a1",
-              borderColor: "#2699a1",
-              fill: false,
-              tension: 0.1,
-            },
-            {
-              label: "침대 유무",
-              data: `${beds}`,
-              backgroundColor: "#5c3dd1",
-              borderColor: "#5c3dd1",
               fill: false,
               tension: 0.1,
             },
@@ -103,7 +91,7 @@ const AdminCont4Chart = () => {
 
   return (
     <div>
-      <h2>객실별 매출 현황</h2>
+      <h2>객실별 취소 현황</h2>
         <Bar options={options} data={chartData} />
     </div>
   )

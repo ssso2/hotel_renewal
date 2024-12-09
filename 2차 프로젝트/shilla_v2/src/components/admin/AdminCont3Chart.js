@@ -24,29 +24,31 @@ ChartJS.register(
 
 // 차트 옵션 설정
 const options = {
-  responsive: true,
-  interaction: {
-    intersect: true,
-  },
-  scales: {
-    x: {
-      grid: {
+  type: 'line',
+  options: {
+    responsive: false,
+    scales: {
+      x: {
         display: true,
+        title: {
+          display: true,
+          text: 'Month',
+          color: '#911',
+          // padding: {top: 20, left: 0, right: 0, bottom: 0}
+        }
       },
-    },
-    y: {
-      beginAtZero: {
+      y: {
         display: true,
-        text: "인원",
-      },
-    },
+        title: {
+          display: true,
+          text: 'Value',
+          color: '#191',
+          // padding: {top: 10, left: 0, right: 0, bottom: 0}
+        }
+      }
+    }
   },
-  plugins: {
-    legend: {
-      position: "bottom",
-    },
-  },
-}
+};
 
 const AdminCont3Chart = () => {
   const [chartData, setChartData] = useState({
@@ -57,32 +59,36 @@ const AdminCont3Chart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin')
+        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/sell')
         
-        const labels = response.data.map((item) => item.room_id)
-        const rooms = response.data.map((item) => item.room_type)
-        const beds = response.data.map((item) => item.bed_type)
-        const prices = response.data.map((item) => item.day_price)
+        const labels =  response.data.map((item) => item.room_type)
+        console.log("labels" , labels)
+        
+        const roomSell = response.data.map((item) => item.total_price)
+        console.log(roomSell)
+
+        const monthly = response.data.map((item) => item.month)
+        console.log(monthly)
 
         setChartData({
           labels: labels,
           datasets: [
-            // {
-            //   label: "침대 타입",
-            //   data: beds,
-            //   backgroundColor: "#aee123",
-            //   borderColor: "#aee123",
-            //   fill: false,
-            //   tension: 0.1,
-            // },
             {
-              label: "판매 금액",
-              data: prices,
-              backgroundColor: "#7b31e4",
-              borderColor: "#7b31e4",
+              label: "객실별 매출 현황",
+              data: roomSell,
+              backgroundColor: "#ffb1c1",
+              borderColor: "#ff6384",
               fill: false,
               tension: 0.1,
             },
+            // {
+            //   label: "월별 현황",
+            //   data: monthly,
+            //   backgroundColor: "#ffb1c1",
+            //   borderColor: "#ff6384",
+            //   fill: false,
+            //   tension: 0.1,
+            // },
           ],
         })
       } catch (error) {
