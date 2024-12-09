@@ -7,7 +7,8 @@ const AdminTabMenu = () => {
         {text : '객실관리', class : '', link : '/admin/room'},
         {text : '회원관리', class : '', link : '/admin/member'},
         {text : '예약관리', class : '', link : '/admin/reservation'},
-        {text : '고객센터', class : '', link : '/admin/cs'},
+        {text : '고객센터:공지사항', class : '', link : '/admin/notice'},
+        {text : '고객센터:문의게시판', class : '', link : '/admin/cs'},
         {text : '매출현황', class : '', link : '/admin/sales'}
     ];
 
