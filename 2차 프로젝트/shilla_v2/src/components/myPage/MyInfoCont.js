@@ -39,12 +39,10 @@ const MyInfoCont = () => {
 
     },[])
 
-
-
-
     const myInfoText = [
         { title: "아이디", id: "userid", value: text.member_id },
-        { title: "이름", id: "username", value: text.name },
+        { title: "이름(국문)", id: "username", value: text.name },
+        { title: "이름(영문)", id: "username_eng", value: text.name_eng },
         { title: "생년월일", id: "userbirth", value: text.birth },
         { title: "연락처", id: "contact", value: text.phone },
         { title: "이메일", id: "mail", value: text.email },
