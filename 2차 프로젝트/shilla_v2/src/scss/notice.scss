@@ -13,7 +13,6 @@
     .Nboard-nav,
     .listwrap {
         height: 50px;
-
         display: flex;
         justify-content: space-around;
         text-align: center;
@@ -28,107 +27,89 @@
     .N-num {
         width: 10%;
         text-align: center;
-        background-color: #aff;
+        // background-color: #aff;
     }
     .N-title {
-        width: 70%;
+        width: 60%;
         text-align: center;
         padding-left: 20px;
-        i {
-            margin-right: 5px;
+        .Nlink {
+            white-space: nowrap;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
+
         :hover {
             font-weight: 600;
         }
     }
+    .N-option,
     .N-view,
     .N-date {
         width: 10%;
         text-align: center;
     }
 
-    // .N-num {
-    //     width: 10%;
-    //     text-align: center;
-    // }
-
-    // .N-title {
-    //     width: 70%;
-    //     text-align: center;
-    //     padding-left: 20px;
-    //     i {
-    //         margin-right: 5px;
-    //     }
-    // }
-
-    // .N-view,
-    // .N-date {
-    //     width: 10%;
-    //     text-align: center;
-    // }
-
+    //<Noticesearch>
     .Nsearch-wrap {
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin: 10px 0;
-
-        .btn-wrap {
-            width: 100px;
-            margin-left: 10px;
-        }
-
-        .btn {
-            width: 100%;
-            background-color: #333;
-        }
+        justify-content: center;
+        margin: 30px 0;
+        background-color: #faf8f4;
+        padding: 20px;
     }
 
-    .search {
-        width: 300px;
+    .Nform {
+        width: 60%;
         height: 40px;
         margin: 10px;
         color: #ccc;
-        border: 1px solid #ccc;
-        border-radius: 10px;
+        // border: 1px solid #ccc;
+        // border-radius: 10px;
         display: flex;
-        overflow: hidden;
-        .Nform {
-            width: 100%;
-            height: 30px;
-            background-color: #faf;
-        }
+        justify-content: space-around;
+        // overflow: hidden;
+        // background-color: #faf;
+        display: flex;
+        line-height: 40px;
+    }
+    .Nfilter {
+        // margin-left: 10%;
+        width: 20%;
+        height: 40px;
+        border: 1px solid #ccc;
+        // background-color: #aaf;
+    }
 
-        a {
-            height: 100%;
-        }
+    .search-bar {
+        width: 60%;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
 
-        input {
-            display: inline-block;
-            width: 100%;
-            padding: 10px;
-        }
-
-        span {
-            color: #aaa;
-            font-weight: 600;
-            line-height: 35px;
-            margin-right: 10px;
-        }
+    .s-btn {
+        width: 10%;
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+        background-color: #7a6c64;
+        margin-right: 10px;
+        // border: 1px solid #ccc;
     }
 }
-
 // 반응형
 @media screen and (max-width: 1240px) {
     .container {
-        .title {
+        .Ntitle {
             margin: 25px 5px;
             font-weight: bold;
             color: #333;
         }
 
-        .board-nav {
+        .Nboard-nav {
             height: 50px;
             font-weight: bold;
             display: flex;
@@ -136,155 +117,117 @@
             text-align: center;
             line-height: 50px;
             background-color: #faf8f4;
-            .post-num {
+            .N-num {
                 display: none;
+            }
+            .N-title {
+                width: 60%;
+                text-align: center;
+            }
+            .N-option,
+            .N-view,
+            .Nt-date {
                 width: 10%;
                 text-align: center;
             }
-
-            .post-title {
-                width: 50%;
-                text-align: center;
-            }
-
-            .post-writer,
-            .post-date {
-                width: 20%;
-                text-align: center;
-            }
         }
 
-        .post {
-            height: 50px;
-            display: flex;
-            justify-content: space-around;
-            line-height: 50px;
-            border-bottom: 1px solid #ccc;
-
-            .post-num {
-                display: none;
-                width: 10%;
-                text-align: center;
-            }
-
-            .post-title {
-                width: 50%;
-                text-align: left;
-                .post-title:hover {
-                    font-weight: 600;
+        .Nboard {
+            .listwrap {
+                height: 50px;
+                display: flex;
+                justify-content: space-around;
+                line-height: 50px;
+                border-bottom: 1px solid #ccc;
+                .N-num {
+                    display: none;
                 }
-                a {
-                    white-space: nowrap;
-                    display: block;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+
+                .N-title {
+                    width: 60%;
+                    text-align: left;
+                    .N-title:hover {
+                        font-weight: 600;
+                    }
                 }
-            }
-
-            .post-writer,
-            .post-date {
-                width: 20%;
-                text-align: center;
-            }
-        }
-
-        .search-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 10px 0;
-
-            .btn-wrap {
-                width: 20%;
-                max-width: 100px;
-            }
-
-            .btn {
-                width: 100%;
-                background-color: #333;
-            }
-        }
-
-        .search {
-            width: 50%;
-            max-width: 300px;
-            height: 40px;
-            margin: 10px;
-            color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            display: flex;
-            overflow: hidden;
-
-            a {
-                height: 100%;
-            }
-
-            input {
-                display: inline-block;
-                width: 100%;
-                padding: 10px;
-            }
-
-            span {
-                color: #aaa;
-                font-weight: 600;
-                line-height: 35px;
-                margin-right: 10px;
+                .N-option,
+                .N-view,
+                .N-date {
+                    width: 10%;
+                    text-align: center;
+                }
             }
         }
     }
 }
 @media screen and (max-width: 768px) {
     .container {
-        .board-nav {
+        .Nboard-nav {
             display: none;
         }
+        .Nboard {
+            .listwrap {
+                height: auto;
+                display: block;
+                padding: 10px 0;
+                border-bottom: 1px solid #ccc;
+                .N-option {
+                    width: 60px;
+                    margin-top: 10px;
+                    background-color: #faf8f4;
+                    line-height: 1.7;
+                    border-radius: 3px;
+                    // border: 1px solid #333;
+                    // color: #fff;
+                }
+                .N-title {
+                    width: 100%;
+                    text-align: left;
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 1.2;
+                    .Nlink {
+                        white-space: nowrap;
+                        display: block;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        padding-top: 20px;
+                    }
+                }
+                .N-view {
+                    width: 68px;
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #666;
+                    // margin-left: 2px !important;
+                    background: url(../../public/img/icon/icons_view.png)
+                        no-repeat right 0px center;
+                    background-size: 22%;
+                    padding-left: 22px;
+                    text-align: left;
+                }
+                .N-date {
+                    width: auto;
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #666;
+                    margin-left: 10px !important;
+                }
 
-        .post {
-            height: auto;
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid #ccc;
-
-            .post-title {
-                width: 100%;
-                text-align: left;
-                font-size: 16px;
-                font-weight: bold;
-                margin-bottom: 0;
-                line-height: 1.2;
-
-                a {
-                    white-space: nowrap;
-                    display: block;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    padding-top: 20px;
+                .N-date::before {
+                    content: " | ";
+                    margin-right: 10px;
+                    color: #ccc;
                 }
             }
-
-            .post-writer {
-                width: auto;
-                display: inline-block;
-                text-align: left;
-                font-size: 12px;
-                color: #666;
-                margin-left: 20px !important;
-            }
-            .post-date {
-                width: auto;
-                display: inline-block;
-                text-align: left;
-                font-size: 12px;
-                color: #666;
-                margin-left: 0px !important;
-            }
-
-            .post-writer::after {
-                content: " | ";
-                margin: 0 2px;
-                color: #ccc;
+        }
+        .listwrap {
+            text-align: left;
+        }
+        .Nsearch-wrap {
+            width: 100%;
+            .Nform {
+                width: 100%;
             }
         }
     }

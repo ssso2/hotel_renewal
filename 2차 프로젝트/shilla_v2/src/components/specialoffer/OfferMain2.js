@@ -22,13 +22,6 @@ const OfferMain2 = ({ setOfferlists }) => {
     });
     // const [filtered, setfiltered] = useState();
 
-    //초기화버튼
-    // const handlereset = e => {
-    //     e.preventDefault();
-    //     setoffertype("");
-    //     setofferkeword(false);
-    // };
-
     //검색버튼
     const handleSearch = async e => {
         e.preventDefault();
@@ -55,11 +48,7 @@ const OfferMain2 = ({ setOfferlists }) => {
     return (
         <>
             {/* <!-- 필터박스 --> */}
-            <form
-                className="pkg-filter-box-wrapper"
-                // action="#"
-                name="myFrm"
-            >
+            <form className="pkg-filter-box-wrapper" name="myFrm">
                 <div className="pkg-filter-box">
                     {/* <OfferMain2_date /> */}
                     <OfferMain2_type

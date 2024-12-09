@@ -2,14 +2,11 @@ import React from "react";
 import "../../scss/sub01_01_main.scss";
 import { Link } from "react-router-dom";
 
-function OfferProd({ rec }) {
+function OfferProd({ rec, index }) {
     const imgurl = `http://localhost:5002/bk/files/${rec.upSystem}`;
-    // const imgurl = `http://192.168.123.100:5002/bk/files/${rec.upSystem}`;
-
+    const className = index > 2 ? "rec-section none" : "rec-section";
     return (
-        // <div className={aaa.classname} key={i}>
-        <div className="rec-section">
-            {/* <a href={aaa.link}> */}
+        <div className={className}>
             <Link to={`/specialOffer/detail/${rec.offer_id}`}>
                 <div className="img-wrap">
                     <img src={imgurl} />
