@@ -8,9 +8,9 @@ const MyInfoChgCont = () => {
 
     const navigate = useNavigate();
 
-
     const [text,setText] = useState([])
     const [user,setUser] = useState(null)
+    
 
     useEffect(()=>{
 
@@ -39,59 +39,44 @@ const MyInfoChgCont = () => {
 
     },[])
 
+    const myInfoTextReadOnly = [
+        { title: "아이디", id: "userId", value: text.member_id, name: 'userId',type : 'text' },
+        { title: "이름(국문)", id: "userName", value: text.name, name: 'userName',type : 'text' },
+        { title: "이름(영문)", id: "userName_eng", value: text.name_eng, name: 'userName_eng',type : 'text' },
+        { title: "생년월일", id: "userBirth", value: text.birth, name: 'userBirth',type : 'text' },
+    ];
+
     const myInfoText = [
-        { title: "아이디", id: "userId", value: text.member_id },
-        { title: "이름(국문)", id: "userName", value: text.name },
-        { title: "이름(영문)", id: "userName_eng", value: text.name_eng },
-        { title: "생년월일", id: "userBirth", value: text.birth },
-        { title: "연락처", id: "userPhone", value: text.phone },
-        { title: "이메일", id: "userEmail", value: text.email },
-        { title: "이메일", id: "userEmail", value: text.email },
-        { title: "이메일", id: "userEmail", value: text.email },
+        { title: "연락처", id: "userPhone", value: text.phone, name: 'userPhone',type : 'text' },
+        { title: "이메일", id: "userEmail", value: text.email, name: 'userEmail',type : 'text' },
+        { title: "현 비밀번호", id: "oldPw", value: '', name: 'oldPw',type : 'password' },
+        { title: "새 비밀번호", id: "newPw", value: '', name: 'newPw',type : 'password' },
+        { title: "새 비밀번호", id: "newPwChk", value: '', name: 'newPwChk',type : 'password' },
     ];
 
     return (
         <div className="mypage-info" id="mypage-info">
             <h2 className="title">회원정보 수정</h2>
-            <label className="my-info">
-                <p>아이디</p>
-                <input type="text" id="userId" name="userId" value="center121212" readonly />
-            </label>
-            <label className="my-info">
-                <p>이름(국문)</p>
-                <input type="text" id="userName" name="userName" value="홍길동" readonly />
-            </label>
-            <label className="my-info">
-                <p>이름(영문)</p>
-                <input type="text" id="userName_eng" name="userName_eng" value="center121212" readonly />
-            </label>
-            <label className="my-info">
-                <p>생년월일</p>
-                <input type="text" id="userBirth" name="userBirth" value="1991.08.31" readonly />
-            </label>
-            <label className="my-info">
-                <p>연락처</p>
-                <input type="text" id="userPhone" name="userPhone" value="010-0000-0000" />
-            </label>
-            <label className="my-info">
-                <p>이메일</p>
-                <input type="text" id="userEmail" name="userEmail" value="endorphin@naver.com" />
-            </label>
-            <label className="my-info">
-                <div className="pwcheck">
-                    <p>비밀번호</p>
-                    <input type="password" name="userPw" id="userPw" />
-                </div>
-            </label>
-            <label className="my-info">
-                <div className="pwcheck">
-                    <p>비밀번호 확인</p>
-                    <input type="password" name="pwChk" id="pwChk" />
-                </div>
-            </label>
-            <label className="my-pw">
-                <p id="error-message2"></p>
-            </label>
+            {
+                myInfoTextReadOnly.map((item, index) => {
+                    return (
+                        <label className="my-info" key={index}>
+                            <p>{item.title}</p>
+                            <input type={item.type} id={item.id} name={item.name} value={item.value} readOnly/>
+                        </label>
+                    );
+                })
+            }
+            {
+                myInfoText.map((item, index) => {
+                    return (
+                        <label className="my-info" key={index}>
+                            <p>{item.title}</p>
+                            <input type={item.type} id={item.id} name={item.name} placeholder={item.value}/>
+                        </label>
+                    );
+                })
+            }
             <input type="button" className="edit-btn" value="수정완료" />
         </div>
     )

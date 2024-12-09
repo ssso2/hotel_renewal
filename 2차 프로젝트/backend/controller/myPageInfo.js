@@ -24,26 +24,26 @@ module.exports = upload => {
     });
 
     // 회원정보 수정
-    // router.put("/myInfoChg/:id", async(req, res) => {
-    //     //console.log(req.body)
-    //     let data = [
-    //         req.body.title,
-    //         req.body.context,
-    //         req.params.num
-    //     ]
-    //     console.log(data);
+    router.put("/myInfoChg/:id", async(req, res) => {
+        console.log(req.body)
+        let data = [
+            req.body.phone,
+            req.body.email,
+            req.body.pw
+        ]
+        console.log(data);
 
-    //     try {
-    //         const [ret] = await conn.execute('update member set phone=?, email=? where pw = ?', data)
-    //         res.send("수정성공");
-    //     } catch (err) {
+        try {
+            const [ret] = await conn.execute('update member set phone=?, email=? where pw = ?', data)
+            res.send("회원정보 수정성공");
+        } catch (err) {
 
-    //         console.log("sql 실패 : ", err.message);
-    //         ret.status(500).send('db오류')
+            console.log("sql 실패 : ", err.message);
+            ret.status(500).send('회원정보 수정 db오류')
 
-    //     }
+        }
         
-    // });
+    });
 
     return router;
 };
