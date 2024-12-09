@@ -4,7 +4,7 @@ import axios from "axios";
 import "../../../scss/RoomManDetail.scss";
 
 
-const RoomManDetail = () => {
+const AdminRoomDetail = () => {
     const { id } = useParams(); // URL에서 room_id 가져오기
     const navigate = useNavigate(); // 페이지 이동을 위한 hook 추가
     const [roomDetails, setRoomDetails] = useState(null); // 방 정보 상태
@@ -89,4 +89,4 @@ const RoomManDetail = () => {
     );
 };
 
-export default RoomManDetail;
+export default AdminRoomDetail;
