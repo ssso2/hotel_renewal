@@ -84,6 +84,9 @@ app.use("/bk/specialOffer", offerRouter(upload));
 // reservation 라우터 추가
 const reservationRouter = require("./controller/reservations.js");
 app.use("/bk/reserve", reservationRouter);
+// admin reserve 라우터 추가
+const adminReserveRouter = require("./controller/adminReserve.js");
+app.use("/bk/admin/reservation", adminReserveRouter)
 // admin dashboard 라우터 추가
 const adminDashboardRouter = require("./controller/adminDashboard.js");
 app.use("/bk/admin", adminDashboardRouter);
