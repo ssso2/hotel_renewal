@@ -29,7 +29,7 @@ const MyInfoChgCont = () => {
             <label className="my-pw">
                 <p id="error-message2"></p>
             </label>
-            <input type="button" id="edit" value="수정완료" />
+            <input type="button" className="edit-btn" value="수정완료" />
         </div>
     )
 }

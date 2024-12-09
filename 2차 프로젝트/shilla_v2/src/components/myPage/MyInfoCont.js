@@ -34,7 +34,8 @@ const MyInfoCont = () => {
                     );
                 })
             }
-            <input type="button" id="edit" value="회원정보 수정" onClick={pwChkGo} />  {/* 수정된 부분 */}
+            <input type="button" className="edit-btn" value="회원정보 수정" onClick={pwChkGo} /> 
+            <input type="button" className="withdrawal-btn" value="회원 탈퇴" /> 
         </div>
     );
 };
