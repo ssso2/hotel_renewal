@@ -15,7 +15,7 @@ import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
 
-function walkingTrails() {
+function WalkingTrails() {
     
 
     const galleryImages = "../../img/sub/R00000009MP2_KR.jpg";
@@ -64,4 +64,4 @@ function walkingTrails() {
     
 }
 
-export default walkingTrails
+export default WalkingTrails
