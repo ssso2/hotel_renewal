@@ -5,10 +5,6 @@ import Footer from "../common/Footer";
 import { Link } from "react-router-dom";
 import OfferProd from "./OfferProd";
 
-{
-    /* <script src="../../js/sub/sub01_01.js" defer></script> */
-}
-
 const OfferMain1 = ({ offer }) => {
     const rec = [
         {
@@ -30,12 +26,16 @@ const OfferMain1 = ({ offer }) => {
         <>
             {/* <!--추천상품 --> */}
             <div className="rec-wrapper">
-                {recId.map(id => {
+                {recId.map((id, index) => {
                     const item = offer.find(
                         offerData => offerData.offer_id === id
                     );
                     return item ? (
-                        <OfferProd rec={item} key={item.offer_id} />
+                        <OfferProd
+                            rec={item}
+                            key={item.offer_id}
+                            index={index}
+                        />
                     ) : null;
                 })}
             </div>

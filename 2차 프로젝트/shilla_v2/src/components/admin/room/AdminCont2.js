@@ -85,7 +85,7 @@ const AdminCont2 = () => {
                     {currentRooms.map((room) => (
                         <div key={room.room_id} className="table-row">
                             <div className="cell clickable">
-                                <Link to={`/admin/roomManagement/detail/${room.room_id}`}>
+                                <Link to={`/admin/room/detail/${room.room_id}`}>
                                     <button>{room.room_id}</button>
                                 </Link>
                             </div>

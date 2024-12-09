@@ -1,0 +1,85 @@
+.container {
+  margin: 150px 0;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+}
+.container .title {
+  margin: 25px 5px;
+  font-weight: bold;
+  color: #333;
+}
+.container .board-nav {
+  height: 50px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  line-height: 50px;
+  background-color: #faf8f4;
+}
+.container .post {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.container .post .post-title:hover {
+  font-weight: 600;
+}
+.container .post-num {
+  width: 100px;
+  text-align: center;
+}
+.container .post-title {
+  width: calc(100% - 500px);
+  text-align: center;
+}
+.container .post-title a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container .post-writer,
+.container .post-date {
+  width: 200px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1240px) {
+  .container {
+    margin: 150px 0;
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .container .post-num {
+    width: 10%;
+    text-align: center;
+    display: none;
+  }
+  .container .post-title {
+    width: 50%;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .container .post-title a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .container .post-writer,
+  .container .post-date {
+    width: 20%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container .post {
+    height: 80px;
+    line-height: 80px;
+  }
+}
