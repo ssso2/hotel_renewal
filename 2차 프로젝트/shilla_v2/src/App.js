@@ -25,7 +25,9 @@ import Fitness from "./components/lifeStyle/Fitness";
 import Fitness2 from "./components/lifeStyle/Fitness2";
 import Fitness3 from "./components/lifeStyle/Fitness3";
 import Fitness4 from "./components/lifeStyle/Fitness4";
-import WalkingTrails from "./components/lifeStyle/walkingTrails";
+import WalkingTrails from "./components/lifeStyle/WalkingTrails";
+import Jogging from "./components/lifeStyle/Jogging";
+import Shopping from "./components/lifeStyle/Shopping";
 
 // login
 import Login from "./components/login/Login";
@@ -222,6 +224,8 @@ function App() {
                 <Route path="/fitness3" element={<Fitness3 />}></Route>
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
                 <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
+                <Route path="/jogging" element={<Jogging />}></Route>
+                <Route path="/shopping" element={<Shopping />}></Route>
             </Routes>
         </div>
     );

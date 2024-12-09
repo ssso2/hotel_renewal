@@ -16,11 +16,21 @@
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
 
-        
+        &:hover {
+            color: black;
+        }
     }
 
     h2 {
         margin-top: 50px; 
+        text-align: center;
+    }
+
+    .noRes {
+        border: 1px solid #adadad;
+        line-height: 95px;
+        height: 100px;
+        margin-top: 50px;
         text-align: center;
     }
 

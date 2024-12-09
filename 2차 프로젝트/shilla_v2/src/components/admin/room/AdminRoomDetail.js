@@ -91,7 +91,9 @@ const AdminRoomDetail = () => {
                                     </tbody>
                                 </table>
                             ) : (
-                                <p>예약 정보가 없습니다.</p>
+                                <div className="noRes">
+                                    <h4>예약 정보가 없습니다.</h4>
+                                </div>
                             )}
 
                             {/* 목록으로 가기 버튼 */}
