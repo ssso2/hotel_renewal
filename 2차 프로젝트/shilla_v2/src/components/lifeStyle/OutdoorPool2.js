@@ -6,6 +6,7 @@ import Gallery from './Gallery';
 import Introduction from './Introduction';
 import Location from './Location';
 import Button from './Button';
+import MapPopUp from './MapPopUp';
 import InfoTable from './InfoTable';
 import InfoRule from './InfoRule';
 import Footer from '../common/Footer';
@@ -49,6 +50,9 @@ function OutdoorPool2() {
         혜택: "- 식음료 기본세트 포함<br/>- 어번 아일랜드 운영 시간 동안 이용 가능",
     };
 
+    const btnData = "Cabana Map"
+    const MapImage = "../../img/sub/cabana-map.jpg";
+
     return (
         <>
         <Header/>
@@ -65,7 +69,8 @@ function OutdoorPool2() {
                                 <Introduction {...introData} />
                                 <div class="info-wrap mt-0">
                                     <Location propLocation = {locationData}/>
-                                    <Button />
+                                    <Button propBtn={btnData}/>
+                                    <MapPopUp propImage={MapImage} propBtn={btnData}/>
                                 </div>
                                 <InfoTable propData={tableData} />
                                 <InfoRule />

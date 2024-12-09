@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "../common/Header"
 import Footer from "../common/Footer"
-import LoginComp from "../sub/LoginComp"
+import LoginComp from "./LoginComp"
 import '../../scss/header.scss'
 import '../../scss/footer.scss'
 

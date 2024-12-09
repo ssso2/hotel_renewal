@@ -6,12 +6,26 @@ const fs = require("fs");
 
 // 인덱스에서 넘기는 자료를 받아서 처리
 module.exports = upload => {
+    router.get("/idChk/:member_id", async (req, res) => {
+        console.log("회원가입 목록 접근");
+
+        try {
+            const [ret] = await conn.execute('select count(*) as cnt from member where member_id = ?',[req.params.member_id])
+            res.json(ret[0]);
+        } catch (err) {
+
+            console.log("회원가입 sql 실패 : ", err.message);
+            ret.status(500).send('회원가입 db오류')
+
+        }
+        
+    });
 
     // 쓰기
     router.post("/", async(req, res) => {
         console.log("회원가입 join",req);
 
-        let sql = 'insert into member (member_id,pw,name,name_eng,email,phone,birth,join_date,grade) values (?,?,?,?,?,?,sysdate(),3)';
+        let sql = 'INSERT INTO member (member_id, pw, name, name_eng, email, phone, birth, grade, withdrawal, join_date) VALUES (?, ?, ?, ?, ?, ?, ?, 3,false, sysdate())';
 
 
         let data = [
@@ -25,20 +39,17 @@ module.exports = upload => {
         ];
         console.log("회원가입 join",data);
 
-        try {
-            const [ret] = await conn.execute(sql, data)
-            
-            const newId = ret.insertId;
-            console.log('회원정보입력완료',newId);
-            res.json({newId})
-        } catch (err) {
-
-            console.log("회원정보입력 sql 실패 : ", err.message);
-            ret.status(500).send('회원정보입력 db오류')
-
-        }
+    try {
+        const [ret] = await conn.execute(sql, data);
+        res.json({ ret });
+    } catch (err) {
+        console.log("회원정보입력 sql 실패: ", err.message);
+        res.status(500).send('회원정보입력 DB 오류');
+    }
 
     });
+
+
 
 
     return router;

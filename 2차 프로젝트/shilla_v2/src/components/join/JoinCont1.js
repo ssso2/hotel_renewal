@@ -38,23 +38,23 @@ const JoinCont1 = () => {
     return (
         <>
             {/* <!-- 약관 동의 --> */}
-            <div class="form-wrap">
-                <div class="center">
+            <div className="form-wrap">
+                <div className="center">
                     <form id="shilla-join" action="#" method="post">
-                        <div class="clause-wrap">
-                            <h2 class="join">신라 멤버십 가입</h2>
-                            <h3 class="agree">약관동의</h3>
-                            <h4 class="direction">약관 및 개인정보 수집, 이용 사항을 확인하시고 동의여부에 체크해주시기 바랍니다.</h4>
+                        <div className="clause-wrap">
+                            <h2 className="join">신라 멤버십 가입</h2>
+                            <h3 className="agree">약관동의</h3>
+                            <h4 className="direction">약관 및 개인정보 수집, 이용 사항을 확인하시고 동의여부에 체크해주시기 바랍니다.</h4>
 
-                            <div class="check-all" id="check-all">
+                            <div className="check-all" id="check-all">
                                 <input type="checkbox" id="agree-all" />
                                 <label for="agree-all"> 모든 필수 약관에 동의합니다.</label>
                             </div>
 
-                            <div class="clause-container">
+                            <div className="clause-container">
                                 <b>신라리워즈 이용약관에 대한 동의 (필수)</b>
                                 {/* <!-- 약관 1 --> */}
-                                <div class="clause">
+                                <div className="clause">
                                     <p>제1조 멤버십 규정 일반</p>
                                     <br />
 
@@ -904,14 +904,14 @@ const JoinCont1 = () => {
                                     <br />
                                 </div>
 
-                                <div class="checkbox">
+                                <div className="checkbox">
                                     <input type="checkbox" id="chk1" />
                                     <label for="chk1"> 동의</label>
                                 </div>
 
                                 <b>개인정보 수집, 이용에 대한 동의 (필수)</b>
                                 {/* <!-- 약관 2 --> */}
-                                <div class="clause">
+                                <div className="clause">
                                     <p>1. 수집 이용 항목</p>
                                     <br />
 
@@ -937,14 +937,14 @@ const JoinCont1 = () => {
                                     <br />
                                 </div>
 
-                                <div class="checkbox">
+                                <div className="checkbox">
                                     <input type="checkbox" id="chk2" />
                                     <label for="chk2"> 동의</label>
                                 </div>
 
                                 <b>개인정보 제3자 제공에 대한 동의 (필수)</b>
                                 {/* <!-- 약관 3 --> */}
-                                <div class="clause">
+                                <div className="clause">
                                     <p>1. 제공받는 자</p>
                                     <br />
 
@@ -973,13 +973,13 @@ const JoinCont1 = () => {
                                     <br />
                                 </div>
 
-                                <div class="checkbox">
+                                <div className="checkbox">
                                     <input type="checkbox" id="chk3" />
                                     <label for="chk3"> 동의</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="next">
+                        <div className="next">
                             {/* <!-- <a href="./myinfo.html" type="button" id="btn-next"  data-lybtn="pop-alert">본인인증 후 가입</a> --> */}
                             {/* <!-- <button type="button" id="btn-next" data-lybtn="pop-alert" onclick = "location.href='./myinfo.html'">본인인증 후 가입</button> --> */}
                             <button type="button" id="btn-next" data-lybtn="pop-alert" onclick="">본인인증 후 가입</button>
@@ -990,16 +990,16 @@ const JoinCont1 = () => {
 
 
             {/* <!-- alert --> */}
-            <div class="lypop join" data-lyOpen="pop-alert" tabindex="0">
-                <div class="lypop-wp min">
-                    <div class="lypop-content">
-                        <div class="lypop-title">
+            <div className="lypop join" data-lyOpen="pop-alert" tabindex="0">
+                <div className="lypop-wp min">
+                    <div className="lypop-content">
+                        <div className="lypop-title">
                             <strong>회원가입</strong>
                         </div>
-                        <div class="lypop-ct">
-                            <p class="modal-txt">먼저 약관에 동의하셔야 합니다.</p>
-                            <div class="btn-wrap type5">
-                                <button class="btn btn-04 join-alert-chk-btn" data-lyClose="pop-mypage1"><span>확인</span></button>
+                        <div className="lypop-ct">
+                            <p className="modal-txt">먼저 약관에 동의하셔야 합니다.</p>
+                            <div className="btn-wrap type5">
+                                <button className="btn btn-04 join-alert-chk-btn" data-lyClose="pop-mypage1"><span>확인</span></button>
                             </div>
                         </div>
                     </div>

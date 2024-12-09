@@ -9,6 +9,7 @@ const path = require("path");
 app.use(cors()); //다른 포트에서 들어와도 열어주도록 cors 세팅
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json()); // JSON 파싱 미들웨어 추가
 
 // 세션 설정
 app.use(
@@ -74,6 +75,9 @@ app.use("/bk/login", loginRouter(upload));
 // join 라우터 추가
 const joinRouter = require("./controller/join.js");
 app.use("/bk/join", joinRouter(upload));
+// myPage 라우터 추가
+const myPageInfoRouter = require("./controller/myPageInfo.js");
+app.use("/bk/myPage", myPageInfoRouter(upload));
 // specialoffer 라우터 추가
 const offerRouter = require("./controller/specialOffer.js");
 app.use("/bk/specialOffer", offerRouter(upload));
@@ -85,7 +89,7 @@ const adminDashboardRouter = require("./controller/adminDashboard.js");
 app.use("/bk/admin", adminDashboardRouter);
 // 객실관리 라우터 추가
 const roomManRouter = require("./controller/roomManagement.js");
-app.use("/bk/roomManagement", roomManRouter());
+app.use("/bk/admin/roomManagement", roomManRouter());
 // 공지사항 라우터 추가
 const noticeRouter = require("./controller/notice.js");
 app.use("/bk/notice", noticeRouter());
