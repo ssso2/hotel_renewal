@@ -22,13 +22,13 @@ const AdminCont1 = () => {
                         <AdminCont2Chart />
                     </div>
                 </div>
-                <div className="chart-wrap">
+                <div className="chart-wide">
                     <h3>객실별 판매 현황(월별 비교)</h3>
                     <div className="chart">
                         <AdminCont3Chart />
                     </div>
                 </div>
-                <div className="chart-wrap">
+                <div className="chart-wide">
                     <h3>객실별 취소 현황(월별 비교)</h3>
                     <div className="chart">
                         <AdminCont4Chart />

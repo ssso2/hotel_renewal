@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+}
+.container .faq {
+  margin: 25px 5px;
+  font-weight: bold;
+  color: #333;
+}
+.container .text-container .title {
+  box-sizing: border-box;
+  display: block;
+  margin: 10px 0;
+  padding: 20px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.container .text-container .content {
+  box-sizing: border-box;
+  min-height: 200px;
+  margin: 10px 0;
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: none;
+}
+.container .post-list {
+  align-items: center;
+  margin-top: 50px;
+}
+.container .post-list .board-nav {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 40px;
+  background-color: #eaeaea;
+}
+.container .post-list .board-nav .post-num {
+  width: 10%;
+}
+.container .post-list .board-nav .post-title {
+  width: 70%;
+}
+.container .post-list .board-nav .post-writer,
+.container .post-list .board-nav .post-date {
+  width: 10%;
+}
+.container .post-list .post {
+  display: flex;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+}
+.container .post-list .post .post-num {
+  width: 10%;
+  text-align: center;
+}
+.container .post-list .post .post-title {
+  width: 70%;
+  text-align: center;
+}
+.container .post-list .post .post-title:hover {
+  font-weight: 600;
+}
+.container .post-list .post .post-title a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container .post-list .post .post-writer,
+.container .post-list .post .post-date {
+  width: 10%;
+  text-align: center;
+}
+.container .list {
+  width: 100px;
+  padding: 10px;
+  margin-top: 30px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #7a6c64;
+  color: #fff;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1240px) {
+  .container .post-list {
+    align-items: center;
+    margin-top: 50px;
+  }
+  .container .post-list .board-nav .post-num {
+    width: 10%;
+  }
+  .container .post-list .board-nav .post-title {
+    width: 50%;
+  }
+  .container .post-list .board-nav .post-writer,
+  .container .post-list .board-nav .post-date {
+    width: 20%;
+  }
+  .container .post-list .post .post-num {
+    width: 10%;
+    text-align: center;
+  }
+  .container .post-list .post .post-title {
+    width: 50%;
+    text-align: center;
+  }
+  .container .post-list .post .post-title:hover {
+    font-weight: 600;
+  }
+  .container .post-list .post .post-writer,
+  .container .post-list .post .post-date {
+    width: 20%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container .post-list .post {
+    line-height: 70px;
+  }
+}

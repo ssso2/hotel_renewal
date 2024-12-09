@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
 import AdminCont3Detail from './AdminCont3Detail';
@@ -7,7 +7,7 @@ import AdminCont3Detail from './AdminCont3Detail';
 function AdminCont3List(props) {
     const [member, memberSet] = useState ( [ ] )
     // const [room, roomSet] = useState ( [ ] )
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
         document.title = "회원관리"
 
@@ -34,16 +34,6 @@ function AdminCont3List(props) {
     return (
         <div className="cont cont3">
         <h2>회원관리</h2>
-
-        {/* 만드는 방식은 AdminTabContants.js */}
-        {/* <Cont3List /> */}
-        {/* <Cont3Detail /> */}
-
-        {/* 디자인은 Admin.js처럼 작업을 해야 한다 */}
-        {/* 왜냐면 탭메뉴처럼 구동해야 되기 때문에 */}
-
-        {/* 데이터 줘야 되니까 조건부 렌더링 방식 */}
-
         <table>
             <thead>
                 <tr>
@@ -59,9 +49,8 @@ function AdminCont3List(props) {
             {
                 member.map( (item, index) => {
                     return <tr key={index}>
-                        {/* <td onClick={ () => navigate(`/admin/member/${item.member_id}`)} > */}
                         <td>
-                            <button>
+                            <button onClick={ () => navigate(`/admin/member/${item.member_id}`)}>
                                 {item.member_id}
                             </button>
                         </td>

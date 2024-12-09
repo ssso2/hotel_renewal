@@ -45,7 +45,7 @@ function AdminCont3Detail(props) {
             </div>
         })
       }
-      <Link to="/admin">목록으로</Link>
+      <Link to="/admin/member">목록으로</Link>
     </>
   );
 }

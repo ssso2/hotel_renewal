@@ -38,9 +38,6 @@ const options = {
       beginAtZero: {
         display: true,
       },
-      ticks: {
-        stepSize: 5,
-      }
     },
   },
   plugins: {
@@ -62,37 +59,46 @@ const AdminCont4Chart = () => {
         const response = await axios.get('http://localhost:5002/bk/admin/dashboard/cancel')
         console.log(response.data)
 
-        const labels =  response.data.map((item) => item.room_type)
-        console.log("labels" , labels)
-        
-        const cancelRoom = response.data.map((item) => item.room_count)
-        console.log(cancelRoom)
+        const lastCancel = response.data.lastCancel;
+        const nowCancel = response.data.nowCancel;
+
+        const labels = lastCancel.map((item) => item.room_type)
+        const roomCancel = lastCancel.map((item) => item.Cancel)
+        const roomNowCancel = nowCancel.map((item) => item.Cancel)
 
         setChartData({
           labels: labels,
           datasets: [
             {
-              label: "객실 취소 현황",
-              data: cancelRoom,
-              backgroundColor: "#9a01c3",
-              borderColor: "#9a01c3",
+              label: "객실별 지난 달 현황",
+              data: roomCancel,
+              backgroundColor: "#ffb1c1",
+              borderColor: "#ff6384",
+              fill: false,
+              tension: 0.1,
+            },
+            {
+              label: "객실별 이번 달 현황",
+              data: roomNowCancel,
+              backgroundColor: "#63ce2a",
+              borderColor: "#63ce2a",
               fill: false,
               tension: 0.1,
             },
           ],
         })
       } catch (error) {
-        console.error("데이터 가져오기 실패", error)
+        console.error("데이터 가져오기 실패", error);
       }
     }
 
     fetchData()
-  }, [])
+  }, []);
 
   return (
     <div>
       <h2>객실별 취소 현황</h2>
-        <Bar options={options} data={chartData} />
+      <Bar options={options} data={chartData} />
     </div>
   )
 }

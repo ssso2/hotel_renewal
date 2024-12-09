@@ -45,27 +45,28 @@ import Event from "./components/specialoffer/Event";
 import EventDetail1 from "./components/specialoffer/EventDetail1";
 
 // admin
-import AdminTemp from './components/admin/AdminTemp'
+import AdminTemp from "./components/admin/AdminTemp";
 import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminMember from "./components/admin/member/AdminMember";
-import AdminCont3 from "./components/admin/member/AdminCont3";
+// import AdminCont3 from "./components/admin/member/AdminCont3";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
+import AdminNotice from "./components/admin/notice/AdminNotice";
 import AdminSales from "./components/admin/sales/AdminSales";
 
 // myPage
-import MyPageTemp from "./components/myPage/MyPageTemp"
-import MyInfo from "./components/myPage/MyInfo"
-import MyPwChk from "./components/myPage/MyPwChk"
-import MyInfoChg from "./components/myPage/MyInfoChg"
+import MyPageTemp from "./components/myPage/MyPageTemp";
+import MyInfo from "./components/myPage/MyInfo";
+import MyPwChk from "./components/myPage/MyPwChk";
+import MyInfoChg from "./components/myPage/MyInfoChg";
 
 // reservation
 import PaymentPage from "./components/reservation/PaymentPage";
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
-import ResMainAllRoomDetail from "./components/reservation/ResMainAllRoomDetail"
-import ResMainAllRoomPayment from "./components/reservation/ResMainAllRoomPayment"
+import ResMainAllRoomDetail from "./components/reservation/ResMainAllRoomDetail";
+import ResMainAllRoomPayment from "./components/reservation/ResMainAllRoomPayment";
 import Res_detail from "./components/reservation/Res_detail";
 
 // room
@@ -90,6 +91,11 @@ import Suite_Presidential from "./components/room/Suite_Presidential";
 
 import Lounge_ExecutiveLounge from "./components/room/Lounge_ExecutiveLounge";
 
+//notice
+import Noticelist from "./components/notice/Noticelist";
+import NoticeTemp from "./components/notice/NoticeTemp";
+import Noticedetail from "./components/notice/Noticedetail";
+
 function App() {
     return (
         <div>
@@ -103,6 +109,7 @@ function App() {
                     <Route path="member" element={<AdminMember />} />
                     {/* <Route path="memberBoard" element={<AdminCont3 />} />  */}
                     <Route path="reservation" element={<AdminReservation />} />
+                    <Route path="notice" element={<AdminNotice />} />
                     <Route path="cs" element={<AdminCs />} />
                     <Route path="sales" element={<AdminSales />} />
                 </Route>
@@ -143,18 +150,32 @@ function App() {
                 </Route>
             </Routes>
 
+            {/* 공지사항 */}
+            <Routes>
+                <Route path="/notice" element={<NoticeTemp />}>
+                    <Route path="" element={<Noticelist />} />
+                    <Route path="detail/:id" element={<Noticedetail />} />
+                </Route>
+            </Routes>
+
             {/* 예약페이지 */}
             <Routes>
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
-                    <Route path="detailallroom"element={<ResMainAllRoomDetail />}/>
-                    <Route path="detail/paymentallroom" element={<ResMainAllRoomPayment/>}/>
+                    <Route
+                        path="detailallroom"
+                        element={<ResMainAllRoomDetail />}
+                    />
+                    <Route
+                        path="detail/paymentallroom"
+                        element={<ResMainAllRoomPayment />}
+                    />
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
             </Routes>
 
-            <Routes>   
+            <Routes>
                 <Route path="/room" element={<Room />} />
                 <Route path="/standard" element={<Standard />} />
 
@@ -202,7 +223,10 @@ function App() {
                 <Route path="/fitness2" element={<Fitness2 />}></Route>
                 <Route path="/fitness3" element={<Fitness3 />}></Route>
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
-                <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
+                <Route
+                    path="/walkingTrails"
+                    element={<WalkingTrails />}
+                ></Route>
 
                 {/* <Route path="/admin/roomManagement" element={<AdminCont2 />} /> */}
                 {/* <Route path="/admin/roomManagement/detail/:id" element={<RoomManDetail />} /> */}

@@ -1,0 +1,55 @@
+.paymentContainer {
+  max-width: 800px;
+  margin: 200px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+.paymentContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+.paymentContainer .paymentForm .formGroup {
+  margin-bottom: 15px;
+}
+.paymentContainer .paymentForm .formGroup label {
+  display: block;
+  font-size: 16px;
+  color: #495057;
+  margin-bottom: 5px;
+}
+.paymentContainer .paymentForm .formGroup input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.paymentContainer .buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.paymentContainer .buttonContainer button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.paymentContainer .buttonContainer button:hover {
+  background-color: #0056b3;
+}
+.paymentContainer .buttonContainer button.cancelBtn {
+  background-color: #dc3545;
+}
+.paymentContainer .buttonContainer button.cancelBtn:hover {
+  background-color: #b02a37;
+}

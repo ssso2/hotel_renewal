@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+.container .depth3-tab-wrap .tab li {
+  width: 50%;
+}
+.container .depth3-tab-wrap .lost-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0;
+}
+.container .depth3-tab-wrap .lost-info .lost-id {
+  margin: 20px auto;
+}
+.container .depth3-tab-wrap .lost-info .comment {
+  text-align: center;
+  margin: 20px auto;
+}
+.container .depth3-tab-wrap .lost-info .comment p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px auto;
+  line-height: 30px;
+  padding: 0 20px;
+}
+.container .depth3-tab-wrap .lost-info .indentity-confirm {
+  width: 150px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #7a6c64;
+  border: 2px solid #7a6c64;
+  box-sizing: border-box;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .depth3-tab-wrap .lost-info .indentity-confirm:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+.id-chk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0;
+}
+.id-chk .my-id {
+  margin: 20px auto;
+}
+.id-chk .comment {
+  text-align: center;
+}
+.id-chk .comment p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px auto;
+  line-height: 30px;
+  padding: 0 20px;
+}
+.id-chk .comment span {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.id-chk #login {
+  width: 150px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 30px;
+  font-size: 16px;
+  background-color: #7a6c64;
+  border: 2px solid #7a6c64;
+  box-sizing: border-box;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.id-chk #login:hover {
+  background-color: #333;
+  border-color: #333;
+}

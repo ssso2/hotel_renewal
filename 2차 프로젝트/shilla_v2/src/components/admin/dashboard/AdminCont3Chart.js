@@ -33,8 +33,8 @@ const options = {
         title: {
           display: true,
           text: 'Month',
+          fontSize: 20,
           color: '#911',
-          // padding: {top: 20, left: 0, right: 0, bottom: 0}
         }
       },
       y: {
@@ -42,8 +42,8 @@ const options = {
         title: {
           display: true,
           text: 'Value',
+          fontSize: 20,
           color: '#191',
-          // padding: {top: 10, left: 0, right: 0, bottom: 0}
         }
       }
     }
@@ -52,57 +52,56 @@ const options = {
 
 const AdminCont3Chart = () => {
   const [chartData, setChartData] = useState({
-      labels: [],
-      datasets: [],
+    labels: [],
+    datasets: [],
   })
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5002/bk/admin/dashboard/sell')
+        console.log(response.data)
         
-        const labels =  response.data.map((item) => item.room_type)
-        console.log("labels" , labels)
-        
-        const roomSell = response.data.map((item) => item.total_price)
-        console.log(roomSell)
+        const lastMM = response.data.lastMM;
+        const nowMM = response.data.nowMM;
 
-        const monthly = response.data.map((item) => item.month)
-        console.log(monthly)
+        const labels = lastMM.map((item) => item.room_type)
+        const roomSell = lastMM.map((item) => item.tot_price)
+        const roomNowSell = nowMM.map((item) => item.tot_price)
 
         setChartData({
           labels: labels,
           datasets: [
             {
-              label: "객실별 매출 현황",
+              label: "객실별 지난 달 현황",
               data: roomSell,
               backgroundColor: "#ffb1c1",
               borderColor: "#ff6384",
               fill: false,
               tension: 0.1,
             },
-            // {
-            //   label: "월별 현황",
-            //   data: monthly,
-            //   backgroundColor: "#ffb1c1",
-            //   borderColor: "#ff6384",
-            //   fill: false,
-            //   tension: 0.1,
-            // },
+            {
+              label: "객실별 이번 달 현황",
+              data: roomNowSell,
+              backgroundColor: "#63ce2a",
+              borderColor: "#63ce2a",
+              fill: false,
+              tension: 0.1,
+            },
           ],
         })
       } catch (error) {
-        console.error("데이터 가져오기 실패", error)
+        console.error("데이터 가져오기 실패", error);
       }
     }
 
     fetchData()
-  }, [])
+  }, []);
 
   return (
     <div>
       <h2>객실별 매출 현황</h2>
-        <Bar options={options} data={chartData} />
+      <Bar options={options} data={chartData} />
     </div>
   )
 }
