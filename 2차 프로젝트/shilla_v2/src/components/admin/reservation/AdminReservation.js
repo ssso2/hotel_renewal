@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../common/Header";
 import Footer from "../../common/Footer";
 import AdminTabMenu from "../AdminTabMenu";
@@ -8,29 +8,31 @@ import "../../../scss/admin.scss";
 const AdminReservation = () => {
   const [todayReservations, setTodayReservations] = useState([]);
 
-  // 날짜에 하루를 더하는 함수
-  const addOneDay = (date) => {
-    const newDate = new Date(date);
-    newDate.setDate(newDate.getDate() + 1); // 하루를 더함
-    return newDate; // 날짜 객체를 반환
-  };
   useEffect(() => {
-    document.title = "신라호텔:관리자";
+    document.title = "신라호텔: 관리자";
 
-    // 오늘 날짜 구하기
-    const today = addOneDay(new Date().toISOString().split('T')[0]);
-    
-    fetch()
+    // 오늘 날짜 가져오기
+    const today = new Date().toISOString().split("T")[0];  // 오늘 날짜만 사용
+
+    // DB에서 오늘 예약 정보를 가져오는 API 호출
+    axios
+      .get(`http://192.168.0.13:5002/bk/admin/reservation?date=${today}`)
+      .then((response) => {
+        setTodayReservations(response.data);  // 서버 응답 데이터 설정
+      })
+      .catch((error) => {
+        console.error("오늘 예약 fetching x :", error);
+      });
   }, []);
 
   return (
-    <>
+    <> 
       <Header />
       <div className="admin-wrap">
         <div className="center">
           <AdminTabMenu />
           <div className="tab-contents">
-            <AdminCont4 />
+            <AdminCont4 todayReservations={todayReservations} />
           </div>
         </div>
       </div>
