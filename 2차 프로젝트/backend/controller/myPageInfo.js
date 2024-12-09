@@ -6,12 +6,12 @@ const fs = require("fs");
 
 // 인덱스에서 넘기는 자료를 받아서 처리
 module.exports = upload => {
-    router.get("/", async (req, res) => {
+    router.get("/:id", async (req, res) => {
         console.log("myPageInfo 목록 접근");
 
         try {
-            const [ret] = await conn.execute('select * from member')
-            res.json(ret);
+            const [ret] = await conn.execute('select birth,email,grade,join_date,member_id,name,name_eng,phone from member where member_id = ?',[req.params.id])
+            res.json(ret[0]);
         } catch (err) {
 
             console.log("myPageInfo sql 실패 : ", err.message);

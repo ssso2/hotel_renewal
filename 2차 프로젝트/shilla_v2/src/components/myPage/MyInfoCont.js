@@ -8,12 +8,46 @@ const MyInfoCont = () => {
 
     const navigate = useNavigate();
 
+
+    const [text,setText] = useState([])
+    const [user,setUser] = useState(null)
+
+    useEffect(()=>{
+
+        // 로그인 여부 확인
+        const id = sessionStorage.getItem("id");
+        const name = sessionStorage.getItem("name");
+        const grade = sessionStorage.getItem("grade");
+        
+        if(id){
+            setUser({'id':id,"name": name,"grade":grade})
+            
+        }else{
+            setUser(null)
+        }
+
+        console.log("회원정보수정 시작 ",id)
+        axios.get(`${bkURL}/mypage/${id}`)
+        .then(res =>{
+            console.log("회원정보수정 시작데이터 받아옴 ",res.data)
+            setText(res.data);
+            
+        })
+        .catch(err=>{
+            console.error('마이페이지 에러발생 : ', err);
+        })
+
+    },[])
+
+
+
+
     const myInfoText = [
-        { title: "아이디", id: "userid", value: "center121212" },
-        { title: "이름", id: "username", value: "박세라" },
-        { title: "생년월일", id: "userbirth", value: "1991.08.31" },
-        { title: "연락처", id: "contact", value: "010-0000-0000" },
-        { title: "이메일", id: "mail", value: "endorphin@naver.com" },
+        { title: "아이디", id: "userid", value: text.member_id },
+        { title: "이름", id: "username", value: text.name },
+        { title: "생년월일", id: "userbirth", value: text.birth },
+        { title: "연락처", id: "contact", value: text.phone },
+        { title: "이메일", id: "mail", value: text.email },
     ];
 
     // pwChkGo 함수는 navigate를 호출하여 페이지 이동
