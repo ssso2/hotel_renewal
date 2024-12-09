@@ -1,18 +1,56 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation, } from "react-router-dom";
 import PaymentModal from "./PaymentModal";
-import "./res_detail.scss";
+import "../../scss/res_detail.scss";
 
 function Res_detail(props) {
 
   const navigate = useNavigate()
+  const location = useLocation(); // 전달된 상태 가져오기
+
+  // const addOneDay = (date) => {
+  //   const newDate = new Date(date); // 새로운 날짜 객체 생성
+  //   newDate.setDate(newDate.getDate() + 1); // 하루 더하기
+  //   return newDate;
+  // };
+
+  
+  // 전달된 데이터
+  const { checkInDate, checkOutDate, offerPrice, offerName, productId } = location.state || {};
+
+  console.log("Res_search.js에서 받은 데이터")
+  console.log("product아이디 : ",productId)
+  console.log("체크인 : ",checkInDate)
+  console.log("체크아웃 : ",checkOutDate)
+  console.log("이름 : ",offerName)
+  console.log("가격 : ",offerPrice)
+  // productId가 없다면 오류 처리
+  if (!productId) {
+    console.error("productId가 전달x");
+  }
+
+  // 날짜에 하루를 더하는 함수
+  const addOneDay = (date) => {
+    const newDate = new Date(date); // 새로운 날짜 객체 생성
+    newDate.setDate(newDate.getDate() + 1); // 하루 더하기
+    return newDate;
+  };
+
+  const formattedCheckInDate = addOneDay(checkInDate).toISOString().split("T")[0];
+  const formattedCheckOutDate = addOneDay(checkOutDate).toISOString().split("T")[0];
+
+  console.log("체크인 : ",checkInDate)
+  console.log("체크아웃 : ", checkOutDate)
+
+  console.log("포멧체크인 : ", formattedCheckInDate)
+  console.log("포멧체크아웃 : ", formattedCheckOutDate)
 
   const [options, setOptions] = useState({
     adultBf: 0, // 성인 조식 수
     childBf: 0, // 어린이 조식 수
     extraBed: 0, // 엑스트라 베드 수
   })
-  const [paySum, setPaySum] = useState(468000) // 요금 합계
+  const [paySum, setPaySum] = useState(offerPrice || 0); // 기본 요금 설정
   const [modalMessage, setModalMessage] = useState("") // 모달 메시지
   const [showModal, setShowModal] = useState(false) // 모달 표시 여부
   const [guideChecked, setGuideChecked] = useState(false) // 유의사항 체크 여부
@@ -31,12 +69,12 @@ function Res_detail(props) {
   // options 샅애가 벼경될 때 요금을 다시 계산
   useEffect(() => {
     const total =
-      468000 +
+      offerPrice +
       options.adultBf * 60000 +
       options.childBf * 38000 +
       options.extraBed * 66000;
     setPaySum(total)
-  }, [options])
+  }, [options, offerPrice])
 
 
   // 합계 구하는 함수
@@ -53,6 +91,7 @@ function Res_detail(props) {
       // setModalMessage("유의사항, 취소 및 환불 규정을 모두 체크를 해주셔야 결제 가능합니다");
       // setShowModal(true);
       alert("유의사항, 취소 및 환불 규정을 모두 체크를 해주셔야 결제 가능합니다")
+      console.log("유의사항 에러")
       return;
     }
 
@@ -61,6 +100,7 @@ function Res_detail(props) {
       // setModalMessage("개인정보 수집ㆍ이용 동의해야지만 결제 가능합니다.");
       // setShowModal(true);
       alert("개인정보 수집ㆍ이용 동의해야지만 결제 가능합니다")
+      console.log("개인정보 수집 에러")
       return;
     }
 
@@ -69,6 +109,7 @@ function Res_detail(props) {
       // setModalMessage("개인정보 제3자 제공에 대한 동의해야 결제가 가능합니다.");
       // setShowModal(true);
       alert("개인정보 제3자 제공에 대한 동의해야 결제가 가능합니다")
+      console.log("제3자 에러")
       return;
     }
 
@@ -78,7 +119,17 @@ function Res_detail(props) {
   // }
 
   // PaymentPage로 이동
-  navigate("/reserve/detail/payment");
+  navigate("/reserve/detail/payment", {
+    state: {
+      reservationDate: `${formattedCheckInDate} ~ ${formattedCheckOutDate}`, // 예약 날짜
+      roomName: offerName,  // offerName 객실
+      // adultBf: options.adultBf,
+      // childBf: options.childBf,
+      // extraBed: options.extraBed,
+      productId: productId,
+      paySum: paySum,
+    },
+  });
 };
   // 모달 창 닫기
   const closeModal = () => {
@@ -103,7 +154,7 @@ function Res_detail(props) {
                     className="date"
                     type="text"
                     name="rsv-date"
-                    value="2024.01.01-2024.01.02"
+                    value={`${formattedCheckInDate} ~ ${formattedCheckOutDate}`}
                   />
                 </li>
                 <li className="list">
@@ -113,7 +164,7 @@ function Res_detail(props) {
                       className="room-name"
                       type="text"
                       name="rsv-date"
-                      value="디럭스"
+                      value={offerName || "룸"}
                     />
                   </div>
                 </li>
@@ -121,23 +172,23 @@ function Res_detail(props) {
                   <h4>인원수</h4>
                   <div className="box adult">
                     <span>성인</span>
-                    <span className="mem-num">4</span>
+                    <span className="mem-num">1</span>
                   </div>
                   <div className="box child">
                     <span>어린이</span>
-                    <span className="mem-num">1</span>
+                    <span className="mem-num">0</span>
                   </div>
                 </li>
                 <li className="list">
                   <h4>객실 요금</h4>
                   <div className="box price">
-                    <span className="rsv-price">468000</span>
+                    <span className="rsv-price">{offerPrice}</span>
                     <span>원</span>
                   </div>
                 </li>
               </ul>
             </div>
-            <ul className="option">
+            {/* <ul className="option">
               <h3>옵션 선택사항</h3>
               <li className="list">
                 <h4>조식</h4>
@@ -269,7 +320,7 @@ function Res_detail(props) {
                   37개월 미만의 유아 동반 시 조식에 대한 요금은 무료입니다.
                 </p>
               </div>
-            </ul>
+            </ul> */}
             <ul className="guide">
               <h3>유의사항</h3>
               <li className="list">

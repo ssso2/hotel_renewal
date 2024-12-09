@@ -7,14 +7,16 @@ import OfferMain4 from "./OfferMain4";
 
 const OfferMain = () => {
     const [Offerlists, setOfferlists] = useState([]);
+    const [rOfferlists, setrOfferlists] = useState([]);
     const fetchData = async () => {
         try {
             const res = await axios.get(
-                "http://192.168.0.16:5002/bk/specialOffer"
+                "http://192.168.0.12:5002/bk/specialOffer"
+                // "http://192.168.123.100:5002/bk/specialOffer"
             );
             console.log("갔다옴 : ", res.data);
             setOfferlists(res.data);
-            console.log(Offerlists);
+            setrOfferlists(res.data); // 추천상품을위한 리스트
         } catch (err) {
             console.error("에러발생 : ", err);
         }
@@ -34,18 +36,18 @@ const OfferMain = () => {
                         <h2>객실패키지</h2>
                         <ul className="location">
                             <li>
-                                <Link to="../index.html">홈</Link>
+                                <Link to="/">홈</Link>
                             </li>
                             <li>
-                                <Link to="./sub01_01.html">스페셜오퍼</Link>
+                                <Link to="#">스페셜오퍼</Link>
                             </li>
                             <li>
                                 <Link to="#">객실패키지</Link>
                             </li>
                         </ul>
                     </div>
-                    <OfferMain1 offer={Offerlists} />
-                    <OfferMain2 />
+                    <OfferMain1 offer={rOfferlists} />
+                    <OfferMain2 setOfferlists={setOfferlists} />
                     <OfferMain3 offer={Offerlists} />
                     <OfferMain4 offer={Offerlists} />
                 </div>

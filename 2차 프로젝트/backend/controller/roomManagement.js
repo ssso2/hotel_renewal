@@ -16,52 +16,41 @@ module.exports = () => {
         }
     });
 
-    router.post('/update', async (req, res) => {
-        const { roomId, description, check_in } = req.body;
+router.get("/detail/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const [roomDetails] = await conn.execute( // conn으로 수정
+            "SELECT * FROM room WHERE room_id = ?",
+            [id]
+        );
 
-        if (!roomId) {
-            return res.status(400).send("roomId 필수");
+        if (roomDetails.length === 0) {
+            return res.status(404).json({ message: "해당 방 정보를 찾을 수 없습니다." });
         }
 
-        try {
-            if (description !== undefined) {
-                await conn.execute(
-                    'UPDATE room SET description = ? WHERE room_id = ?',
-                    [description, roomId]
-                );
-            }
+        res.json(roomDetails[0]);
+    } catch (err) {
+        console.error("방 정보 조회 실패: ", err.message);
+        res.status(500).json({ message: "방 정보 조회 중 오류가 발생했습니다." });
+    }
+});
 
-            if (check_in !== undefined) {
-                await conn.execute(
-                    'UPDATE room SET check_in = ? WHERE room_id = ?',
-                    [check_in, roomId]
-                );
-            }
 
-            res.send('수정 완료');
-        } catch (err) {
-            console.error('SQL 수정 실패: ', err.message);
-            res.status(500).send('DB 수정 중 오류 발생');
-        }
-    });
-
-   // 특정 호수에 대한 예약 정보 조회
-   router.get("/reservations/:roomId", async (req, res) => {
+router.get("/reservations/:roomId", async (req, res) => {
     const { roomId } = req.params;
     try {
-        // room_id로 해당 product_id를 찾음
         const [productData] = await conn.execute(
             "SELECT product_id FROM product WHERE room_id = ?",
             [roomId]
         );
 
         if (productData.length === 0) {
+            console.log(`No product_id found for room_id: ${roomId}`);
             return res.status(404).send("해당 방에 대한 예약 정보가 없음");
         }
 
         const productId = productData[0].product_id;
 
-        // product_id를 기반으로 예약 정보 조회
         const [reservations] = await conn.execute(
             `SELECT r.room_id, r.description, p.prod_price, res.reservation_id,
                 res.start_date, res.end_date, res.Cancel
@@ -73,6 +62,7 @@ module.exports = () => {
         );
 
         if (reservations.length === 0) {
+            console.log(`No reservations found for product_id: ${productId}`);
             return res.json({ message: "예약 정보가 없음" });
         }
 
@@ -83,9 +73,35 @@ module.exports = () => {
     }
 });
 
+router.post('/update', async (req, res) => {
+    const { roomId, description, check_in } = req.body;
 
-    
-    
+    if (!roomId) {
+        return res.status(400).send("roomId 필수");
+    }
+
+    try {
+        if (description !== undefined) {
+            await conn.execute(
+                'UPDATE room SET description = ? WHERE room_id = ?',
+                [description, roomId]
+            );
+        }
+
+        if (check_in !== undefined) {
+            await conn.execute(
+                'UPDATE room SET check_in = ? WHERE room_id = ?',
+                [check_in, roomId]
+            );
+        }
+
+        res.send('수정 완료');
+    } catch (err) {
+        console.error('SQL 수정 실패: ', err.message);
+        res.status(500).send('DB 수정 중 오류 발생');
+    }
+});
+
 
     return router;
 };

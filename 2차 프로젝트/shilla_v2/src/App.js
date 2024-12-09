@@ -12,19 +12,30 @@ import BoardModify from "./components/board/BoardModify";
 import BoardTemp from "./components/board/Temp";
 
 // info
-import Info from "./components/sub/Info";
+import Info from "./components/info/Info";
 
-// /location
-import Location from "./components/sub/Location";
+// location
+import Location from "./components/location/Location";
 
 // lifestyle
 import LifeStyle from "./components/lifeStyle/LifeStyle";
 import OutdoorPool from "./components/lifeStyle/OutdoorPool";
 import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
+import Fitness2 from "./components/lifeStyle/Fitness2";
+import Fitness3 from "./components/lifeStyle/Fitness3";
+import Fitness4 from "./components/lifeStyle/Fitness4";
+import WalkingTrails from "./components/lifeStyle/walkingTrails";
+// import AdminCont2 from "./components/admin/AdminCont2";
+// import RoomManDetail from "./components/admin/RoomManDetail";
 
 // login
-import Login from "./components/sub/Login";
+import Login from "./components/login/Login";
+
+// join
+import JoinComp1 from "./components/join/JoinComp1";
+import JoinComp2 from "./components/join/JoinComp2";
+import Welcome from "./components/join/Welcome";
 
 // offer
 import SpecialOffer from "./components/specialoffer/SpecialOffer";
@@ -34,12 +45,26 @@ import Event from "./components/specialoffer/Event";
 import EventDetail1 from "./components/specialoffer/EventDetail1";
 
 // admin
-import Admin from "./components/admin/Admin";
+import AdminTemp from './components/admin/AdminTemp'
+import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
+import AdminRoom from "./components/admin/room/AdminRoom";
+import AdminMember from "./components/admin/member/AdminMember";
+import AdminReservation from "./components/admin/reservation/AdminReservation";
+import AdminCs from "./components/admin/cs/AdminCs";
+import AdminSales from "./components/admin/sales/AdminSales";
+
+// myPage
+import MyPageTemp from "./components/myPage/MyPageTemp"
+import MyInfo from "./components/myPage/MyInfo"
+import MyPwChk from "./components/myPage/MyPwChk"
+import MyInfoChg from "./components/myPage/MyInfoChg"
 
 // reservation
 import PaymentPage from "./components/reservation/PaymentPage";
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
+import ResMainAllRoomDetail from "./components/reservation/ResMainAllRoomDetail"
+import ResMainAllRoomPayment from "./components/reservation/ResMainAllRoomPayment"
 import Res_detail from "./components/reservation/Res_detail";
 
 // room
@@ -71,11 +96,28 @@ function App() {
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
                 {/* 관리자페이지 */}
-                <Route path="/admin" element={<Admin></Admin>}>
-                   
+                <Route path="/admin" element={<AdminTemp></AdminTemp>}>
+                    <Route path="" element={<AdminDashboard />} />
+                    <Route path="room" element={<AdminRoom />} />
+                    <Route path="member" element={<AdminMember />} />
+                    <Route path="reservation" element={<AdminReservation />} />
+                    <Route path="cs" element={<AdminCs />} />
+                    <Route path="sales" element={<AdminSales />} />
+                </Route>
+                {/* 마이페이지 */}
+                <Route path="/mypage" element={<MyPageTemp></MyPageTemp>}>
+                    <Route path="" element={<MyInfo />} />
+                    <Route path="myPwChk" element={<MyPwChk />} />
+                    <Route path="myInfoChg" element={<MyInfoChg />} />
+                    {/* <Route path="myReservation" element={<MyReservation />} /> */}
+                    {/* <Route path="myInquiry" element={<MyInquiry />} /> */}
                 </Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
+                {/* 회원가입 */}
+                <Route path="/Join" element={<JoinComp1></JoinComp1>}></Route>
+                <Route path="/myinfo" element={<JoinComp2></JoinComp2>}></Route>
+                <Route path="/Welcome" element={<Welcome></Welcome>}></Route>
                 {/* 연락처 */}
                 <Route path="/info" element={<Info></Info>}></Route>
                 {/* 오시는길 */}
@@ -104,13 +146,13 @@ function App() {
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
+                    <Route path="detailallroom"element={<ResMainAllRoomDetail />}/>
+                    <Route path="detail/paymentallroom" element={<ResMainAllRoomPayment/>}/>
                     <Route path="detail/payment" element={<PaymentPage />} />
-                    {/* <Route path="join" element={<BoardJoin/>} /> */}
-                    {/* <Route path="modify/:num" element={<BoardModify/>} /> */}
                 </Route>
             </Routes>
 
-            <Routes>
+            <Routes>   
                 <Route path="/room" element={<Room />} />
                 <Route path="/standard" element={<Standard />} />
 
@@ -155,6 +197,13 @@ function App() {
                 <Route path="/outdoorPool" element={<OutdoorPool />}></Route>
                 <Route path="/outdoorPool2" element={<OutdoorPool2 />}></Route>
                 <Route path="/fitness" element={<Fitness />}></Route>
+                <Route path="/fitness2" element={<Fitness2 />}></Route>
+                <Route path="/fitness3" element={<Fitness3 />}></Route>
+                <Route path="/fitness4" element={<Fitness4 />}></Route>
+                <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
+
+                {/* <Route path="/admin/roomManagement" element={<AdminCont2 />} /> */}
+                {/* <Route path="/admin/roomManagement/detail/:id" element={<RoomManDetail />} /> */}
             </Routes>
         </div>
     );

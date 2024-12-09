@@ -3,23 +3,28 @@ import Header from "../common/Header";
 import Footer from "../common/Footer";
 import "../../scss/sub01_01_main.scss";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-const OfferMain2_btn = () => {
+const OfferMain2_btn = ({ handlereset, handleSearch }) => {
     return (
-        <>
-            <div className="pkg-btnbox">
-                <input
-                    type="button"
-                    className="pkg-filter-resetbtn"
-                    value="초기화"
-                />
-                <input
-                    type="button"
-                    className="pkg-filter-searchbtn"
-                    value="검색"
-                />
-            </div>
-        </>
+        <div className="pkg-btnbox">
+            <button type="reset" className="pkg-filter-resetbtn">
+                초기화
+            </button>
+            <input
+                type="button"
+                className="pkg-filter-searchbtn"
+                value="검색"
+                onClick={handleSearch}
+            />
+            {/* <button
+                type="submit"
+                className="pkg-filter-searchbtn"
+                onClick={handleSearch}
+            >
+                검색
+            </button> */}
+        </div>
     );
 };
 

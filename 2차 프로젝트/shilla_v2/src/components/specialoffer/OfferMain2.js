@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import "../../scss/sub01_01_main.scss";
@@ -8,17 +8,71 @@ import OfferMain2_date from "./OfferMain2_date";
 import OfferMain2_kewords from "./OfferMain2_keword";
 import OfferMain2_btn from "./OfferMain2_btn";
 
-const OfferMain2 = () => {
-    const [filter, setfilter] = useState(false);
+const OfferMain2 = ({ setOfferlists }) => {
+    const [offertype, setoffertype] = useState("");
+    const [offerkeword, setofferkeword] = useState("");
+    const [filterKewords, setfilterKewords] = useState({
+        breakfast: 0,
+        lounge: 0,
+        anniversry: 0,
+        pool: 0,
+        three_people: 0,
+        consecutive_night: 0,
+        kids: 0,
+    });
+    // const [filtered, setfiltered] = useState();
+
+    //초기화버튼
+    // const handlereset = e => {
+    //     e.preventDefault();
+    //     setoffertype("");
+    //     setofferkeword(false);
+    // };
+
+    //검색버튼
+    const handleSearch = async e => {
+        e.preventDefault();
+
+        // setfiltered(myData);
+        const frmData = new FormData(document.myFrm);
+        const myData = Object.fromEntries(frmData);
+        try {
+            console.log("폼데이터", myData);
+            const res = await axios.put(
+                "http://192.168.0.12:5002/bk/specialOffer",
+                myData
+            );
+            console.log("필터데이터", res.data);
+            alert("필터클릭완료");
+            setOfferlists(res.data);
+
+            // setfiltered(res.data);
+        } catch (err) {
+            console.error("에러메세지", err);
+        }
+    };
+
     return (
         <>
             {/* <!-- 필터박스 --> */}
-            <form className="pkg-filter-box-wrapper" action="#" method="GET">
+            <form
+                className="pkg-filter-box-wrapper"
+                // action="#"
+                name="myFrm"
+            >
                 <div className="pkg-filter-box">
-                    <OfferMain2_date />
-                    <OfferMain2_type />
-                    <OfferMain2_kewords />
-                    <OfferMain2_btn />
+                    {/* <OfferMain2_date /> */}
+                    <OfferMain2_type
+                        offertype={offertype}
+                        setoffertype={setoffertype}
+                    />
+                    <OfferMain2_kewords
+                        offerkeword={offerkeword}
+                        setofferkeword={setofferkeword}
+                        filterKewords={filterKewords}
+                        setfilterKewords={setfilterKewords}
+                    />
+                    <OfferMain2_btn handleSearch={handleSearch} />
                 </div>
             </form>
         </>

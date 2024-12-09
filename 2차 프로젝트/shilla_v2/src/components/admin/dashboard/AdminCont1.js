@@ -3,7 +3,7 @@ import AdminCont1Chart from './AdminCont1Chart'
 import AdminCont2Chart from './AdminCont2Chart'
 import AdminCont3Chart from './AdminCont3Chart'
 import AdminCont4Chart from './AdminCont4Chart'
-import '../../scss/admin.scss'
+import '../../../scss/admin.scss'
 
 const AdminCont1 = () => {
     return (
