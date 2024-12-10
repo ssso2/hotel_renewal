@@ -27,7 +27,7 @@ function Wedding3() {
     ];
 
     const introData = {
-        text: `The Shilla Look`,
+        title: `The Shilla Look`,
         description: `고객의 라이프 스타일에 맞춰 전문 디렉터와 컨설턴트들이 제안하는 '디자인 웨딩', '스타일 웨딩'을 만나보실 수 있습니다.`,
         tel: "Tel) 02-2230-3321",
     };
