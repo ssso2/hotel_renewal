@@ -4,7 +4,7 @@ import Tab from "./Tab";
 import SubTitle from './SubTitle';
 import Gallery from './Gallery';
 import Introduction from './Introduction';
-import Location1 from './Location'
+import Location from './Location'
 import Location2 from '../lifeStyle/Location'
 import Footer from '../common/Footer';
 
@@ -89,11 +89,11 @@ function Wedding2() {
                                 <Introduction {...introData} />
                                 <div class="info-wrap">
                                     <strong>루비</strong>
-                                    <Location1 propLocation = {locationData}/>
+                                    <Location propLocation = {locationData}/>
                                     <strong>토파즈</strong>
-                                    <Location1 propLocation = {locationData2}/>
+                                    <Location propLocation = {locationData2}/>
                                     <strong>에메랄드</strong>
-                                    <Location1 propLocation = {locationData3}/>
+                                    <Location propLocation = {locationData3}/>
                                     <strong>내정</strong>
                                     <Location2 propLocation = {locationData4}/>
                                     <br/>

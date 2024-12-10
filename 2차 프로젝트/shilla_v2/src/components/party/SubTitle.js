@@ -10,6 +10,12 @@ const SubTitle = () => {
             return { title: "영빈관", breadcrumb: "영빈관" };
         } else if (location.pathname === '/wedding3') {
             return { title: "대연회장", breadcrumb: "웨딩스타일" };
+        } else if (location.pathname === '/corporateParty') {
+            return { title: "대연회장", breadcrumb: "웨딩스타일" };
+        } else if (location.pathname === '/corporateParty2') {
+            return { title: "대연회장", breadcrumb: "웨딩스타일" };
+        } else if (location.pathname === '/corporateParty3') {
+            return { title: "대연회장", breadcrumb: "웨딩스타일" };
         } else {
             return { title: "페이지 제목", breadcrumb: "현재 위치" }; 
         } 
