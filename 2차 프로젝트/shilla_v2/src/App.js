@@ -33,6 +33,7 @@ import Shopping2 from "./components/lifeStyle/Shopping2";
 // wedding & party
 import Wedding from "./components/party/Wedding";
 import Wedding2 from "./components/party/Wedding2";
+import Wedding3 from "./components/party/Wedding3";
 
 // login
 import Login from "./components/login/Login";
@@ -239,6 +240,7 @@ function App() {
             <Routes>
                 <Route path="/wedding" element={<Wedding />}></Route>
                 <Route path="/wedding2" element={<Wedding2 />}></Route>
+                <Route path="/wedding3" element={<Wedding3 />}></Route>
             </Routes>
         </div>
     );
