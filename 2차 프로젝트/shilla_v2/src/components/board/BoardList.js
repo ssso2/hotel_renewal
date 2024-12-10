@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+=======
+import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
+>>>>>>> parent of edd7108 (게시판 확인 작업 중)
 import axios from 'axios';
 import '../../scss/reset.css'
 import '../../scss/common.scss'
@@ -37,12 +42,15 @@ const BoardList = () => {
 
     }, []);
 
+<<<<<<< HEAD
     const navigate = useNavigate();
 
     // user가 없으면 로그인 페이지로 이동
     if (!user) {
         navigate('/login');
     }
+=======
+>>>>>>> parent of edd7108 (게시판 확인 작업 중)
 
     return (
         <div className="container">
@@ -55,6 +63,7 @@ const BoardList = () => {
                     <li className="post-date">작성일</li>
                 </ul>
 
+<<<<<<< HEAD
                 {text.length > 0 ? (
                     text.map((list, idx) => {
                         return (
@@ -67,6 +76,16 @@ const BoardList = () => {
                                 <li className="post-date">{list.reg_str || '날짜 없음'}</li> {/* reg_str이 없으면 '날짜 없음' */}
                             </ul>
                         );
+=======
+                {
+                    text.map((list,idx)=>{
+                        return <ul className="post" key={idx}>
+                                    <li className="post-num">{list.board_id}</li>
+                                    <SecretPage  data={list} user={user}/>
+                                    <li className="post-writer">{list.author}</li>
+                                    <li className="post-date">{list.reg_str}</li>
+                                </ul>
+>>>>>>> parent of edd7108 (게시판 확인 작업 중)
                     })
                 ) : (
                     <div>게시글이 없습니다.</div>  // 텍스트가 비어있을 경우 안내 메시지
