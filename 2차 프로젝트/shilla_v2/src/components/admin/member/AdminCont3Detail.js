@@ -1,31 +1,33 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 function AdminCont3Detail(props) {
-  // reservation 변수, reservationSet 업데이트 함수 useState로 [] 빈배열 생성
-  const [reservation, reservationSet] = useState ( [ ] )
-  
-  // 회원 정보 데이터 불러오기 reservationData 변수로 받기
+  const [member, memberSet] = useState([]);
+  const [ reservation, reservationSet ] = useState ( [ ] );
+  const { member_id } = useParams();
+
   const reservationData = () => {
-      axios.get('http://localhost:5002/bk/admin/member')
+    
+      axios.get(`http://localhost:5002/bk/admin/member/${member_id}`)
       .then (
-          res => { // 응답 받으면
+          res => {
               console.log("데이터 받기 성공", res.data.reservations)
-              reservationSet(res.data.reservations) // reservationSet 데이터 호출하기
+              reservationSet(res.data.reservations)
+              memberSet(res.data.members)
           }
       )
       .catch (
-          err => { // 에러 나면
-              console.log("데이터 받기 에러 발생", err) // 에러메시지 콘솔 출력
+          err => {
+              console.log("데이터 받기 에러 발생", err)
           }
       )
   }
 
-  useEffect ( () => { // reservationData 이벤트 실행
-    reservationData() // reservationData를 호출 (한번만 호출)
-  }, []) // [] 빈배열로 한번 호출
+  useEffect ( () => {
 
+    reservationData()
+  }, [member_id])
 
   return (
     <>

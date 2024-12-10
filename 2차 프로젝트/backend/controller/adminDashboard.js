@@ -5,8 +5,6 @@ const cors = require("cors");
 
 router.use(cors());
 
-
-
 // Chart 첫번째 차트 DB 연결
 router.get("/person", async (req, res) => {
     console.log("연결 접근")
@@ -44,33 +42,33 @@ router.get("/sell", async (req, res) => {
 
     try {
         const [sellValue1] = await conn.execute(`select DISTINCT room.room_type , IFNULL(tot_price,0) as tot_price from room
-        left outer join (select room_type, sum(tot_price) as tot_price
-        from (select reservation.end_date, room.room_type, reservation.tot_price from room
-        left outer join product
-        on room.room_id = product.room_id
-        left outer join reservation 
-        on reservation.product_id = product.product_id
-        where reservation.Cancel != 1
-        and date_format(date_sub(sysdate(), interval 1 month), '%Y-%m') = date_format(reservation.end_date, '%Y-%m')
-        ) as chart3
-        group by room_type) t4
-        on room.room_type = t4.room_type
-        order by room.room_type`)
+left outer join (select room_type, sum(tot_price) as tot_price
+from (select reservation.end_date, room.room_type, reservation.tot_price from room
+left outer join product
+on room.room_id = product.room_id
+left outer join reservation 
+on reservation.product_id = product.product_id
+where reservation.Cancel != 1
+and date_format(date_sub(sysdate(), interval 1 month), '%Y-%m') = date_format(reservation.end_date, '%Y-%m')
+) as chart3
+group by room_type) t4
+on room.room_type = t4.room_type
+order by room.room_type`)
         console.log("연결 성공3", sellValue1)
 
         const [sellValue2] = await conn.execute(`select DISTINCT room.room_type , IFNULL(tot_price,0) as tot_price from room
-        left outer join (select room_type, sum(tot_price) as tot_price
-        from (select reservation.end_date, room.room_type, reservation.tot_price from room
-        left outer join product
-        on room.room_id = product.room_id
-        left outer join reservation 
-        on reservation.product_id = product.product_id
-        where reservation.Cancel != 1
-        and date_format(now(), '%Y-%m') = date_format(reservation.end_date, '%Y-%m')
-        ) as chart3
-        group by room_type) t4
-        on room.room_type = t4.room_type
-        order by room.room_type`)
+left outer join (select room_type, sum(tot_price) as tot_price
+from (select reservation.end_date, room.room_type, reservation.tot_price from room
+left outer join product
+on room.room_id = product.room_id
+left outer join reservation 
+on reservation.product_id = product.product_id
+where reservation.Cancel != 1
+and date_format(now(), '%Y-%m') = date_format(reservation.end_date, '%Y-%m')
+) as chart3
+group by room_type) t4
+on room.room_type = t4.room_type
+order by room.room_type;`)
 
         console.log("연결 성공3", sellValue2)
         res.json({lastMM:sellValue1,
@@ -89,34 +87,34 @@ router.get("/cancel", async (req, res) => {
     console.log("연결 접근")
 
     try {
-        const [cancelValue1] = await conn.execute(`select DISTINCT room.room_type , IFNULL(Cancel,0) as Cancel from room
-        left outer join (select room_type, count(Cancel) as Cancel
-        from (select reservation.end_date, room.room_type, reservation.Cancel from room
-        left outer join product
-        on room.room_id = product.room_id
-        left outer join reservation 
-        on reservation.product_id = product.product_id
-        where reservation.Cancel != '1'
-        and date_format(date_sub(sysdate(), interval 1 month), '%Y-%m') = date_format(reservation.end_date, '%Y-%m')
-        ) as chart3
-        group by room_type) table4
-        on room.room_type = table4.room_type
-        order by room.room_type`)
+        const [cancelValue1] = await conn.execute(`select DISTINCT room.room_type , IFNULL(Cancel,0) as cancel from room
+left outer join (select room_type, sum(Cancel) as cancel
+from (select reservation.end_date, room.room_type, reservation.cancel from room
+left outer join product
+on room.room_id = product.room_id
+left outer join reservation 
+on reservation.product_id = product.product_id
+where reservation.Cancel = 1
+and date_format(date_sub(sysdate(), interval 1 month), '%Y-%m') = date_format(reservation.end_date, '%Y-%m')
+) as chart3
+group by room_type) t4
+on room.room_type = t4.room_type
+order by room.room_type`)
         console.log("연결 성공4", cancelValue1)
 
-        const [cancelValue2] = await conn.execute(`select DISTINCT room.room_type , IFNULL(Cancel,0) as Cancel from room
-        left outer join (select room_type, count(Cancel) as Cancel
-        from (select reservation.end_date, room.room_type, reservation.Cancel from room
-        left outer join product
-        on room.room_id = product.room_id
-        left outer join reservation 
-        on reservation.product_id = product.product_id
-        where reservation.Cancel != '1'
-        and date_format(now(), '%Y-%m') = date_format(reservation.end_date, '%Y-%m')
-        ) as chart4
-        group by room_type) table4
-        on room.room_type = table4.room_type
-        order by room.room_type`)
+        const [cancelValue2] = await conn.execute(`select DISTINCT room.room_type , IFNULL(Cancel,0) as cancel from room
+left outer join (select room_type, sum(Cancel) as cancel
+from (select reservation.end_date, room.room_type, reservation.cancel from room
+left outer join product
+on room.room_id = product.room_id
+left outer join reservation 
+on reservation.product_id = product.product_id
+where reservation.Cancel = 1
+and date_format(now(), '%Y-%m') = date_format(reservation.end_date, '%Y-%m')
+) as chart4
+group by room_type) table4
+on room.room_type = table4.room_type
+order by room.room_type`)
 
         console.log("연결 성공4", cancelValue2)
         res.json({lastCancel:cancelValue1,

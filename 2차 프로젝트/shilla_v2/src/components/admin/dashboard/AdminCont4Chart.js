@@ -59,12 +59,12 @@ const AdminCont4Chart = () => {
         const response = await axios.get('http://localhost:5002/bk/admin/dashboard/cancel')
         console.log(response.data)
 
-        const lastCancel = response.data.lastCancel;
-        const nowCancel = response.data.nowCancel;
+        const lastCancel = response.data.lastCancel
+        const nowCancel = response.data.nowCancel
 
         const labels = lastCancel.map((item) => item.room_type)
-        const roomCancel = lastCancel.map((item) => item.Cancel)
-        const roomNowCancel = nowCancel.map((item) => item.Cancel)
+        const roomCancel = lastCancel.map((item) => item.cancel)
+        const roomNowCancel = nowCancel.map((item) => item.cancel)
 
         setChartData({
           labels: labels,
