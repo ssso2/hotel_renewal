@@ -58,7 +58,7 @@ function PaymentPage() {
     try {
       // axios를 사용하여 서버로 예약 데이터를 전송합니다.
       const response = await axios.post(
-        "http://192.168.0.13:5002/bk/reserve/save",
+        "http://localhost:5002/bk/reserve/save",
         reservationData
       );
 
@@ -105,7 +105,7 @@ function PaymentPage() {
 
     try {
       const paymentResponse = await axios.post(
-        "http://192.168.0.13:5002/bk/reserve/savepayment", // 결제 저장 API
+        "http://localhost:5002/bk/reserve/savepayment", // 결제 저장 API
         paymentData
       );
 
