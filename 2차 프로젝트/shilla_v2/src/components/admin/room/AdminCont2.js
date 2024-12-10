@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Pagination from "../../sub/Pagination";
 import "../../../scss/AdminCont2.scss";
@@ -9,11 +9,10 @@ const bkURL = process.env.REACT_APP_BACK_URL;
 const AdminCont2 = () => {
     const [rooms, setRooms] = useState([]);
     const [editedRooms, setEditedRooms] = useState({}); // 수정된 데이터 저장
-
+    const navigate = useNavigate();
     
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5; // 한 페이지에 보여줄 아이템 수
-
 
     // 객실 목록 가져오는 함수
     const fetchRooms = () => {
@@ -84,10 +83,10 @@ const AdminCont2 = () => {
                 <div className="table-body">
                     {currentRooms.map((room) => (
                         <div key={room.room_id} className="table-row">
-                            <div className="cell clickable">
-                                <Link to={`/admin/room/detail/${room.room_id}`}>
-                                    <button>{room.room_id}</button>
-                                </Link>
+                            <div className="cell clickable"
+                                onClick={() => navigate(`/admin/room/detail/${room.room_id}`)}
+                            >
+                                {room.room_id}
                             </div>
                             <div className="cell">
                                 <input

@@ -57,10 +57,13 @@ const AdminCont2Chart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin')
-        
-        const labels = response.data.map((item) => item.room_id)
-        const prices = response.data.map((item) => item.day_price)
+        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/price')
+        console.log(response.data)
+
+        const labels = response.data.map((item) => item.dateCalc)
+        console.log("으흠", labels)
+
+        const prices = response.data.map((item) => item.totalPrice)
 
         setChartData({
           labels: labels,

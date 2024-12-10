@@ -25,7 +25,14 @@ import Fitness from "./components/lifeStyle/Fitness";
 import Fitness2 from "./components/lifeStyle/Fitness2";
 import Fitness3 from "./components/lifeStyle/Fitness3";
 import Fitness4 from "./components/lifeStyle/Fitness4";
-import WalkingTrails from "./components/lifeStyle/walkingTrails";
+import WalkingTrails from "./components/lifeStyle/WalkingTrails";
+import Jogging from "./components/lifeStyle/Jogging";
+import Shopping from "./components/lifeStyle/Shopping";
+import Shopping2 from "./components/lifeStyle/Shopping2";
+
+// wedding & party
+import Wedding from "./components/party/Wedding";
+import Wedding2 from "./components/party/Wedding2";
 
 // login
 import Login from "./components/login/Login";
@@ -48,6 +55,7 @@ import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminRoomDetail from "./components/admin/room/AdminRoomDetail";
 import AdminMember from "./components/admin/member/AdminMember";
+import AdminCont3 from "./components/admin/member/AdminCont3";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
 import AdminNotice from "./components/admin/notice/AdminNotice";
@@ -95,6 +103,7 @@ import Noticelist from "./components/notice/Noticelist";
 import NoticeTemp from "./components/notice/NoticeTemp";
 import Noticedetail from "./components/notice/Noticedetail";
 
+
 function App() {
     return (
         <div>
@@ -107,6 +116,7 @@ function App() {
                     <Route path="room" element={<AdminRoom />} />
                     <Route path="room/detail/:id" element={<AdminRoomDetail />} />
                     <Route path="member" element={<AdminMember />} />
+                    <Route path="member/:id" element={<AdminCont3 />} /> 
                     <Route path="reservation" element={<AdminReservation />} />
                     <Route path="notice" element={<AdminNotice />} />
                     <Route path="cs" element={<AdminCs />} />
@@ -222,6 +232,15 @@ function App() {
                 <Route path="/fitness3" element={<Fitness3 />}></Route>
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
                 <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
+                <Route path="/jogging" element={<Jogging />}></Route>
+                <Route path="/shopping" element={<Shopping />}></Route>
+                <Route path="/shopping2" element={<Shopping2 />}></Route>
+            </Routes>
+
+            {/* 웨딩&연회 */}
+            <Routes>
+                <Route path="/wedding" element={<Wedding />}></Route>
+                <Route path="/wedding2" element={<Wedding2 />}></Route>
             </Routes>
         </div>
     );

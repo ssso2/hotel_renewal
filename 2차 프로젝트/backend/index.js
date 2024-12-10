@@ -89,7 +89,12 @@ const adminReserveRouter = require("./controller/adminReserve.js");
 app.use("/bk/admin/reservation", adminReserveRouter)
 // admin dashboard 라우터 추가
 const adminDashboardRouter = require("./controller/adminDashboard.js");
-app.use("/bk/admin", adminDashboardRouter);
+app.use("/bk/admin/dashboard", adminDashboardRouter);
+// admin memberboard 라우터 추가
+const adminMemberboardRouter = require("./controller/adminMemberboard.js");
+app.use("/bk/admin/member", adminMemberboardRouter());
+
+
 // 객실관리 라우터 추가
 const roomManRouter = require("./controller/roomManagement.js");
 app.use("/bk/admin/roomManagement", roomManRouter());
