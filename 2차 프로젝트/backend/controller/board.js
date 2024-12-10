@@ -10,7 +10,7 @@ module.exports = upload => {
         console.log("board 목록 접근");
 
         try {
-            const [ret] = await conn.execute('select *, DATE_FORMAT(date,\'%Y-%m-%d\') as reg_str from board')
+            const [ret] = await conn.execute('select *, DATE_FORMAT(date,\'%Y-%m-%d\') as reg_str from board ORDER BY board_id DESC')
             res.json(ret);
         } catch (err) {
 

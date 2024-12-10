@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const conn = require("../db");
-const fs = require("fs");
 
-
-// 인덱스에서 넘기는 자료를 받아서 처리
 module.exports = upload => {
 
     // 회원정보 받아오기
@@ -12,37 +9,71 @@ module.exports = upload => {
         console.log("myPageInfo 목록 접근");
 
         try {
-            const [ret] = await conn.execute('select birth,email,grade,join_date,member_id,name,name_eng,phone from member where member_id = ?',[req.params.id])
+            const [ret] = await conn.execute('select birth,email,grade,join_date,member_id,name,name_eng,phone from member where member_id = ? ',[req.params.id])
             res.json(ret[0]);
         } catch (err) {
-
             console.log("myPageInfo sql 실패 : ", err.message);
-            ret.status(500).send('myPageInfo db오류')
-
+            ret.status(500).send('myPageInfo db오류');
         }
-        
+    });
+
+    // 내 문의내역
+    router.get("/myInquiry", async (req, res) => {
+        console.log("myPageInfo 목록 접근");
+
+        try {
+            const [ret] = await conn.execute('select birth,email,grade,join_date,member_id,name,name_eng,phone from member where member_id = ? ',[req.params.id])
+            res.json(ret[0]);
+        } catch (err) {
+            console.log("myPageInfo sql 실패 : ", err.message);
+            ret.status(500).send('myPageInfo db오류');
+        }
+    });
+
+    // 기존 비밀번호 확인
+    router.post("/myInfoChg", async (req, res) => {
+        console.log("회원정보수정 pw 확인 목록 접근");
+    
+        try {
+            const { id, pw } = req.body;
+            console.log("받은 데이터:", { id, pw });
+
+            const sql = "SELECT member_id FROM member WHERE member_id = ? AND pw = ?";
+            const param = [id, pw];
+
+            const [rows] = await conn.execute(sql, param);
+            if (rows.length > 0) {
+                res.status(200).send("비밀번호 확인 성공");
+            } else {
+                console.log("비밀번호 확인 실패");
+                res.status(400).send('비밀번호 확인 실패');
+            }
+        } catch (err) {
+            console.log("회원정보수정 pw 확인 서버 오류:", err.message);
+            res.status(500).send('회원정보수정 pw 확인 서버 오류');
+        }
     });
 
     // 회원정보 수정
-    router.put("/myInfoChg/:id", async(req, res) => {
-        console.log(req.body)
-        let data = [
-            req.body.phone,
-            req.body.email,
-            req.body.pw
-        ]
-        console.log(data);
+    router.put("/myInfoChg/:id", async (req, res) => {
+        console.log("회원정보 수정 요청: ", req.body);
+        const { phone, email, pw } = req.body;
 
         try {
-            const [ret] = await conn.execute('update member set phone=?, email=? where pw = ?', data)
-            res.send("회원정보 수정성공");
+            // 전화번호와 이메일 수정, 비밀번호가 일치하는지 확인
+            const sql = "UPDATE member SET phone = ?, email = ?, pw = ? WHERE member_id = ?";
+            const params = [phone, email, pw, req.params.id];
+
+            const [result] = await conn.execute(sql, params);
+            if (result.affectedRows > 0) {
+                res.status(200).send("회원정보 수정 성공");
+            } else {
+                res.status(400).send("비밀번호 불일치");
+            }
         } catch (err) {
-
-            console.log("sql 실패 : ", err.message);
-            ret.status(500).send('회원정보 수정 db오류')
-
+            console.error("회원정보 수정 오류: ", err.message);
+            res.status(500).send("회원정보 수정 실패");
         }
-        
     });
 
     return router;

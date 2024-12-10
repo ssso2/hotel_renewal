@@ -36,9 +36,51 @@ const BoardDetail = () => {
         }
     }
     // console.log(detailText.title);
+
+
+    async function commentFetchData(){
+        if(!num){
+            console.log('Num 없음');
+            return
+        }
+        try{
+            const res = await axios.get(`${bkURL}/comment`);
+            console.log('res.data',res.data);
+            setCommentText(res.data);
+        }catch(error){
+            console.error('에러발생', error);
+            
+        }
+    }
     
     useEffect(()=>{
         document.title ="게시글 상세보기"
+
+        // 로그인 여부 확인
+        // const id = sessionStorage.getItem("id");
+        // const name = sessionStorage.getItem("name");
+        // const grade = sessionStorage.getItem("grade");
+
+        // if(id){
+        //     setUser({'id':id,"name": name,"grade":grade})
+        // }else{
+        //     setUser(null)
+        // }
+        // console.log('user : ');
+        // console.log(user);
+
+        // axios.get(`${bkURL}/comment`)
+        // .then(res=>{
+        //     setCommentText(res.data)
+        //     console.log('댓글데이터',res.data);
+            
+        // })
+        // .catch(err=>{
+        //     console.error('에러발생',err);
+            
+        // })
+
+
         fetchData();
         commentFetchData();
 

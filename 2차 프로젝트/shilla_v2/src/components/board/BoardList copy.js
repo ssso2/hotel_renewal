@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import '../../scss/reset.css'
@@ -10,38 +10,39 @@ const bkURL = process.env.REACT_APP_BACK_URL;
 
 const BoardList = () => {
 
-    const [text, setText] = useState([]);  // 게시판 데이터
-    const [user, setUser] = useState(null); // 로그인 정보
+    const [text,setText] = useState([])
+    const [user,setUser] = useState(null)
 
-    useEffect(() => {
+    useEffect(()=>{
 
         // 로그인 여부 확인
         const id = sessionStorage.getItem("id");
         const name = sessionStorage.getItem("name");
         const grade = sessionStorage.getItem("grade");
         
-        if (id) {
-            setUser({ 'id': id, "name": name, "grade": grade });
-        } else {
-            setUser(null);
+        if(id){
+            setUser({'id':id,"name": name,"grade":grade})
+            
+        }else{
+            setUser(null)
         }
 
         axios.get(`${bkURL}/board`)
-            .then(res => {
-                setText(res.data);
-            })
-            .catch(err => {
-                console.error('에러발생 : ', err);
-            });
+        .then(res =>{
+            setText(res.data);
+        })
+        .catch(err=>{
+            console.error('에러발생 : ', err);
+        })
 
-    }, []);
+    },[])
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
-    // user가 없으면 로그인 페이지로 이동
-    if (!user) {
+    if(!user){
         navigate('/login');
     }
+
 
     return (
         <div className="container">
@@ -54,22 +55,16 @@ const BoardList = () => {
                     <li className="post-date">작성일</li>
                 </ul>
 
-                {text.length > 0 ? (
-                    text.map((list, idx) => {
-                        return (
-                            <ul className="post" key={idx}>
-                                <li className="post-num">{list.board_id}</li>
-                                <SecretPage data={list} user={user} />
-                                <li className="post-writer">
-                                    {user ? user.name : '알 수 없음'} {/* user가 null일 경우 '알 수 없음' */}
-                                </li>
-                                <li className="post-date">{list.reg_str || '날짜 없음'}</li> {/* reg_str이 없으면 '날짜 없음' */}
-                            </ul>
-                        );
+                {
+                    text.map((list,idx)=>{
+                        return <ul className="post" key={idx}>
+                                    <li className="post-num">{list.board_id}</li>
+                                    <SecretPage  data={list} user={user}/>
+                                    <li className="post-writer">{user.name}</li>
+                                    <li className="post-date">{list.reg_str}</li>
+                                </ul>
                     })
-                ) : (
-                    <div>게시글이 없습니다.</div>  // 텍스트가 비어있을 경우 안내 메시지
-                )}
+                }
 
                 <div className="search-wrap">
                     <div className="search" role="search">
@@ -84,7 +79,10 @@ const BoardList = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
 export default BoardList;
+
+

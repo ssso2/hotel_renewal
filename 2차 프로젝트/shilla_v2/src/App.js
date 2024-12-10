@@ -56,9 +56,9 @@ import AdminSales from "./components/admin/sales/AdminSales";
 // myPage
 import MyPageTemp from "./components/myPage/MyPageTemp";
 import MyInfo from "./components/myPage/MyInfo";
-import MyPwChk from "./components/myPage/MyPwChk";
 import MyInfoChg from "./components/myPage/MyInfoChg";
 import MyReservation from "./components/myPage/MyReservation";
+import MyInquiry from "./components/myPage/MyInquiry";
 
 // reservation
 import PaymentPage from "./components/reservation/PaymentPage";
@@ -113,12 +113,11 @@ function App() {
                     <Route path="sales" element={<AdminSales />} />
                 </Route>
                 {/* 마이페이지 */}
-                <Route path="/mypage" element={<MyPageTemp></MyPageTemp>}>
+                <Route path="/myPage" element={<MyPageTemp></MyPageTemp>}>
                     <Route path="" element={<MyInfo />} />
-                    <Route path="myPwChk" element={<MyPwChk />} />
                     <Route path="myInfoChg" element={<MyInfoChg />} />
                     <Route path="myReservation" element={<MyReservation />} />
-                    {/* <Route path="myInquiry" element={<MyInquiry />} /> */}
+                    <Route path="myInquiry" element={<MyInquiry />} />
                 </Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>

@@ -99,7 +99,8 @@
             justify-content: center;
             flex-wrap: wrap;
             line-height: 1.5;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
+            position: relative;
             .pwcheck {
                 display: flex;
                 align-items: center;
@@ -107,6 +108,13 @@
                     width: 100px;
                     text-align: left;
                 }
+            }
+            .error-msg {
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: red;
             }
 
             p {
