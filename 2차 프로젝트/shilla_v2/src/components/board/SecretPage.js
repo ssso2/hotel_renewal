@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import Secret from "./Secret";
 
 const SecretPage = ({data,user}) => {
-
-
     if(data.secret == 1 && user.id != data.member_id){
         if(user.grade == 1){
             return <li className="post-title"><Link to={`/board/detail/${data.board_id}`}><Secret detailText={data}/>{data.title}</Link></li>

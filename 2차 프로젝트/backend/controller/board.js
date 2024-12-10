@@ -42,7 +42,7 @@ module.exports = upload => {
     router.post("/join", async(req, res) => {
         console.log("백엔드 join",req);
 
-        let sql = 'insert into board (title,context,secret,date) values (?,?,?,sysdate())';
+        let sql = 'insert into board (title,context,secret,reg_date) values (?,?,?,sysdate())';
 
 
         let data = [

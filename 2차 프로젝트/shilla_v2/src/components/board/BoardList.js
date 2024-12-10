@@ -10,8 +10,9 @@ const bkURL = process.env.REACT_APP_BACK_URL;
 
 const BoardList = () => {
 
-    const [text, setText] = useState([]);  // 게시판 데이터
-    const [user, setUser] = useState(null); // 로그인 정보
+
+    const [text,setText] = useState([])
+    const [user,setUser] = useState(null)
 
     useEffect(() => {
 
