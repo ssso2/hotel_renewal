@@ -38,6 +38,14 @@ const Gallery = ({ propImages }) => {
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper"
+                breakpoints={{
+                    0: {
+                        slidesPerView: 2, // 화면 너비가 1240px 이하일 때 썸네일 2개
+                    },
+                    1240: {
+                        slidesPerView: 4, // 화면 너비가 1241px 이상일 때 썸네일 4개
+                    },
+                }}
             >
                 {propImages.map((img, index) => (
                     <SwiperSlide key={index}>
