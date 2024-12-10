@@ -37,7 +37,6 @@ const options = {
     y: {
       beginAtZero: {
         display: true,
-        text: "인원",
       },
     },
   },
@@ -57,54 +56,49 @@ const AdminCont4Chart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin')
-        
-        const labels = response.data.map((item) => item.room_id)
-        const rooms = response.data.map((item) => item.room_type)
-        const beds = response.data.map((item) => item.bed_type)
-        const prices = response.data.map((item) => item.day_price)
+        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/cancel')
+        console.log(response.data)
+
+        const lastCancel = response.data.lastCancel
+        const nowCancel = response.data.nowCancel
+
+        const labels = lastCancel.map((item) => item.room_type)
+        const roomCancel = lastCancel.map((item) => item.cancel)
+        const roomNowCancel = nowCancel.map((item) => item.cancel)
 
         setChartData({
           labels: labels,
           datasets: [
             {
-              label: "객실 유무",
-              data: `${rooms}`,
-              backgroundColor: "#9a01c3",
-              borderColor: "#9a01c3",
+              label: "객실별 지난 달 현황",
+              data: roomCancel,
+              backgroundColor: "#ffb1c1",
+              borderColor: "#ff6384",
               fill: false,
               tension: 0.1,
             },
             {
-              label: "가격",
-              data: `${prices}`,
-              backgroundColor: "#2699a1",
-              borderColor: "#2699a1",
-              fill: false,
-              tension: 0.1,
-            },
-            {
-              label: "침대 유무",
-              data: `${beds}`,
-              backgroundColor: "#5c3dd1",
-              borderColor: "#5c3dd1",
+              label: "객실별 이번 달 현황",
+              data: roomNowCancel,
+              backgroundColor: "#63ce2a",
+              borderColor: "#63ce2a",
               fill: false,
               tension: 0.1,
             },
           ],
         })
       } catch (error) {
-        console.error("데이터 가져오기 실패", error)
+        console.error("데이터 가져오기 실패", error);
       }
     }
 
     fetchData()
-  }, [])
+  }, []);
 
   return (
     <div>
-      <h2>객실별 매출 현황</h2>
-        <Bar options={options} data={chartData} />
+      <h2>객실별 취소 현황</h2>
+      <Bar options={options} data={chartData} />
     </div>
   )
 }

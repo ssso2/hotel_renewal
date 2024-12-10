@@ -56,6 +56,7 @@ import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminRoomDetail from "./components/admin/room/AdminRoomDetail";
 import AdminMember from "./components/admin/member/AdminMember";
+import AdminCont3 from "./components/admin/member/AdminCont3";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
 import AdminNotice from "./components/admin/notice/AdminNotice";
@@ -103,6 +104,7 @@ import Noticelist from "./components/notice/Noticelist";
 import NoticeTemp from "./components/notice/NoticeTemp";
 import Noticedetail from "./components/notice/Noticedetail";
 
+
 function App() {
     return (
         <div>
@@ -115,6 +117,7 @@ function App() {
                     <Route path="room" element={<AdminRoom />} />
                     <Route path="room/detail/:id" element={<AdminRoomDetail />} />
                     <Route path="member" element={<AdminMember />} />
+                    <Route path="member/:id" element={<AdminCont3 />} /> 
                     <Route path="reservation" element={<AdminReservation />} />
                     <Route path="notice" element={<AdminNotice />} />
                     <Route path="cs" element={<AdminCs />} />
