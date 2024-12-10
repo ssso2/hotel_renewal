@@ -17,16 +17,29 @@ module.exports = upload => {
         }
     });
 
-    // 내 문의내역
+    // 내 문의 내역
     router.get("/myInquiry", async (req, res) => {
-        console.log("myPageInfo 목록 접근");
-
+        console.log("내 문의 내역 접근");  // 이 로그가 콘솔에 출력되어야 합니다.
+    
+        // 'member_id'를 쿼리 파라미터로 받아옵니다.
+        const { member_id } = req.query;
+    
+        if (!member_id) {
+            return res.status(400).send("회원 ID가 없습니다.");
+        }
+    
         try {
-            const [ret] = await conn.execute('select birth,email,grade,join_date,member_id,name,name_eng,phone from member where member_id = ? ',[req.params.id])
-            res.json(ret[0]);
+            // 해당 member_id에 맞는 문의 내역만 가져오기
+            const [ret] = await conn.execute('SELECT * FROM board WHERE member_id = ?', [member_id]);
+    
+            if (ret.length === 0) {
+                return res.status(404).send("문의 내역이 없습니다.");
+            }
+    
+            res.json(ret);  // 문의 내역 데이터를 반환합니다.
         } catch (err) {
-            console.log("myPageInfo sql 실패 : ", err.message);
-            ret.status(500).send('myPageInfo db오류');
+            console.log("myInquiry sql 실패 : ", err.message);
+            res.status(500).send('내 문의 내역 DB 오류');
         }
     });
 
