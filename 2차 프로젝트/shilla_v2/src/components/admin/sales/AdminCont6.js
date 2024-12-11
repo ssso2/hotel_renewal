@@ -119,10 +119,10 @@ const AdminCont6 = () => {
             <table>
                 <thead>
                     <tr>
-                        <th>예약 ID</th>
+                        <th>예약 번호</th>
                         <th>호수</th>
-                        <th>시작 날짜</th>
-                        <th>종료 날짜</th>
+                        <th>시작일</th>
+                        <th>종료일</th>
                         <th>취소 여부</th>
                         <th>금액</th>
                     </tr>
@@ -134,7 +134,7 @@ const AdminCont6 = () => {
                             <td>{data.room_id}</td>
                             <td>{formatDate(data.start_date)}</td>
                             <td>{formatDate(data.end_date)}</td>
-                            <td>{data.Cancel === '0' ? '취소안됨' : '취소됨'}</td>
+                            <td>{data.Cancel === '0' ? 'N' : 'Y'}</td>
                             <td>{data.tot_price.toLocaleString()}원</td>
                         </tr>
                     ))}
