@@ -63,6 +63,10 @@ const upload = multer({
 // const noticeRouter = require("./controller/notice.js");
 // app.use("/bk/notice", noticeRouter(upload));
 
+// myPage reserve 라우터 추가
+const myPageReserveRouter = require("./controller/myPageReservation.js");
+app.use("/bk/myPage/myReservation", myPageReserveRouter);
+
 // board 라우터 추가
 const boardRouter = require("./controller/board.js");
 app.use("/bk/board", boardRouter(upload));
@@ -84,6 +88,9 @@ app.use("/bk/specialOffer", offerRouter(upload));
 // reservation 라우터 추가
 const reservationRouter = require("./controller/reservations.js");
 app.use("/bk/reserve", reservationRouter);
+// myPage reserve 라우터 추가
+// const myPageReserveRouter = require("./controller/myPageReservation.js");
+// app.use("/bk/myPage/myReservation", myPageReserveRouter);
 // admin reserve 라우터 추가
 const adminReserveRouter = require("./controller/adminReserve.js");
 app.use("/bk/admin/reservation", adminReserveRouter)
