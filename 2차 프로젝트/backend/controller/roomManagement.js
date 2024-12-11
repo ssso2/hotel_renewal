@@ -53,7 +53,7 @@ router.get("/reservations/:roomId", async (req, res) => {
 
         const [reservations] = await conn.execute(
             `SELECT r.room_id, r.description, p.prod_price, res.reservation_id,
-                res.start_date, res.end_date, res.Cancel
+                res.member_id, res.start_date, res.end_date, res.Cancel
              FROM reservation res
              JOIN product p ON res.product_id = p.product_id
              JOIN room r ON p.room_id = r.room_id

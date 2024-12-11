@@ -73,7 +73,8 @@ const AdminRoomDetail = () => {
                                 <table className="reservation-table">
                                     <thead>
                                         <tr>
-                                            <th>예약 ID</th>
+                                            <th>예약 번호</th>
+                                            <th>회원 id</th>
                                             <th>시작일</th>
                                             <th>종료일</th>
                                             <th>취소 여부</th>
@@ -83,6 +84,7 @@ const AdminRoomDetail = () => {
                                         {reservations.map((reservation) => (
                                             <tr key={reservation.reservation_id}>
                                                 <td>{reservation.reservation_id}</td>
+                                                <td>{reservation.member_id}</td>
                                                 <td>{formatDate(reservation.start_date)}</td>
                                                 <td>{formatDate(reservation.end_date)}</td>
                                                 <td>{reservation.Cancel === "0" ? "N" : "Y"}</td>
