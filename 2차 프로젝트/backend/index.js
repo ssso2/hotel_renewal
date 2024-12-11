@@ -59,6 +59,14 @@ const upload = multer({
 // const mainRouter = require("./controller/main.js");
 // app.use("/bk/", examRouter(upload));
 
+// // notice 라우터 추가
+// const noticeRouter = require("./controller/notice.js");
+// app.use("/bk/notice", noticeRouter(upload));
+
+// myPage reserve 라우터 추가
+const myPageReserveRouter = require("./controller/myPageReservation.js");
+app.use("/bk/myPage/myReservation", myPageReserveRouter);
+
 // board 라우터 추가
 const boardRouter = require("./controller/board.js");
 app.use("/bk/board", boardRouter(upload));
@@ -73,16 +81,26 @@ const joinRouter = require("./controller/join.js");
 app.use("/bk/join", joinRouter(upload));
 // myPage 라우터 추가
 const myPageInfoRouter = require("./controller/myPageInfo.js");
-app.use("/bk/myPage", myPageInfoRouter(upload));
+app.use("/bk/mypage", myPageInfoRouter(upload));
 // specialoffer 라우터 추가
 const offerRouter = require("./controller/specialOffer.js");
 app.use("/bk/specialOffer", offerRouter(upload));
 // reservation 라우터 추가
 const reservationRouter = require("./controller/reservations.js");
 app.use("/bk/reserve", reservationRouter);
+// myPage reserve 라우터 추가
+// const myPageReserveRouter = require("./controller/myPageReservation.js");
+// app.use("/bk/myPage/myReservation", myPageReserveRouter);
+// admin reserve 라우터 추가
+const adminReserveRouter = require("./controller/adminReserve.js");
+app.use("/bk/admin/reservation", adminReserveRouter);
 // admin dashboard 라우터 추가
 const adminDashboardRouter = require("./controller/adminDashboard.js");
-app.use("/bk/admin", adminDashboardRouter);
+app.use("/bk/admin/dashboard", adminDashboardRouter);
+// admin memberboard 라우터 추가
+const adminMemberboardRouter = require("./controller/adminMemberboard.js");
+app.use("/bk/admin/member", adminMemberboardRouter());
+
 // 객실관리 라우터 추가
 const roomManRouter = require("./controller/roomManagement.js");
 app.use("/bk/admin/roomManagement", roomManRouter());
@@ -92,6 +110,9 @@ app.use("/bk/notice", noticeRouter(upload)); //업로드 객체전달 중요
 // // admin notice 라우터 추가
 // const adminnoticeRouter = require("./controller/adminNotice.js");
 // app.use("/bk/notice", adminnoticeRouter());
+// 매출현황 라우터 추가
+const salesRouter = require("./controller/salesManagement.js");
+app.use("/bk/sales", salesRouter());
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
 app.get("*", (req, res) => {

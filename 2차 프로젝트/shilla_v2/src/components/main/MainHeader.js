@@ -72,7 +72,7 @@ const MainHeader = () => {
             gnbMenu : [
                 {link : '/info', text : '연락처'},
                 {link : '/notice', text : '공지사항'},
-                {link : '/faq', text : 'FAQ'},
+                // {link : '/faq', text : 'FAQ'},
                 {link : '/board', text : '문의하기'},
                 {link : '/location', text : '오시는길'},
             ]
@@ -86,13 +86,11 @@ const MainHeader = () => {
 
     useEffect(()=>{
         const id = sessionStorage.getItem("id");
-        // if(!id){ //로그인 정보가 없다면 로그인 페이지로 이동
-        //     navigate("/login") 
-        // }
         const name = sessionStorage.getItem("name");
+        const grade = sessionStorage.getItem("grade");
 
         if(id){
-            setUser({'id':id,"name": name})
+            setUser({'id':id,"name": name,"grade":grade})
         }else{
             setUser(null)
         }
@@ -101,33 +99,36 @@ const MainHeader = () => {
         
     },[])
 
+
+
+
     
-    if(!user){
-        return (
-            <div class="main-header" id="MainHeader">
-                <header className="active" >
-                    <div className="gnbbg" ></div>
-                    <div className="center">
-                        <h1 className="logo">
-                            <Link to='/'>
-                                <img src="img/common/logo-w.png" alt=""/>
-                            </Link>
-                        </h1>
-                        <HeaderComp1 gnbMenu={gnbMenu}/>
-                        <HeaderComp2 user={user}/>
+    // if(!user){
+    //     return (
+    //         <div class="main-header" id="MainHeader">
+    //             <header className="active" >
+    //                 <div className="gnbbg" ></div>
+    //                 <div className="center">
+    //                     <h1 className="logo">
+    //                         <Link to='/'>
+    //                             <img src="img/common/logo-w.png" alt=""/>
+    //                         </Link>
+    //                     </h1>
+    //                     <HeaderComp1 gnbMenu={gnbMenu}/>
+    //                     <HeaderComp2 user={user}/>
                         
-                        {/* <!-- 모바일 햄버거 버튼 --> */}
-                        <HeaderComp3/>
-                    </div>
-                </header>
-                {/* <!-- 모바일 메뉴 --> */}
-                <div className="m_wrap">
-                    <HeaderComp4Login user={user}/>
-                    <HeaderComp5 gnbMenu={gnbMenu}/>
-                </div>
-            </div>
-        )
-    }
+    //                     {/* <!-- 모바일 햄버거 버튼 --> */}
+    //                     <HeaderComp3/>
+    //                 </div>
+    //             </header>
+    //             {/* <!-- 모바일 메뉴 --> */}
+    //             <div className="m_wrap">
+    //                 <HeaderComp4Login user={user}/>
+    //                 <HeaderComp5 gnbMenu={gnbMenu}/>
+    //             </div>
+    //         </div>
+    //     )
+    // }
 
     return (
         <div class="main-header" id="MainHeader">

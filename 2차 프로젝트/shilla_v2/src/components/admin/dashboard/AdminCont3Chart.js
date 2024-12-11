@@ -24,79 +24,84 @@ ChartJS.register(
 
 // 차트 옵션 설정
 const options = {
-  responsive: true,
-  interaction: {
-    intersect: true,
-  },
-  scales: {
-    x: {
-      grid: {
+  type: 'line',
+  options: {
+    responsive: false,
+    scales: {
+      x: {
         display: true,
+        title: {
+          display: true,
+          text: 'Month',
+          fontSize: 20,
+          color: '#911',
+        }
       },
-    },
-    y: {
-      beginAtZero: {
+      y: {
         display: true,
-        text: "인원",
-      },
-    },
+        title: {
+          display: true,
+          text: 'Value',
+          fontSize: 20,
+          color: '#191',
+        }
+      }
+    }
   },
-  plugins: {
-    legend: {
-      position: "bottom",
-    },
-  },
-}
+};
 
 const AdminCont3Chart = () => {
   const [chartData, setChartData] = useState({
-      labels: [],
-      datasets: [],
+    labels: [],
+    datasets: [],
   })
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin')
+        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/sell')
+        console.log(response.data)
         
-        const labels = response.data.map((item) => item.room_id)
-        const rooms = response.data.map((item) => item.room_type)
-        const beds = response.data.map((item) => item.bed_type)
-        const prices = response.data.map((item) => item.day_price)
+        const lastMM = response.data.lastMM;
+        const nowMM = response.data.nowMM;
+
+        const labels = lastMM.map((item) => item.room_type)
+        const roomSell = lastMM.map((item) => item.tot_price)
+        const roomNowSell = nowMM.map((item) => item.tot_price)
 
         setChartData({
           labels: labels,
           datasets: [
-            // {
-            //   label: "침대 타입",
-            //   data: beds,
-            //   backgroundColor: "#aee123",
-            //   borderColor: "#aee123",
-            //   fill: false,
-            //   tension: 0.1,
-            // },
             {
-              label: "판매 금액",
-              data: prices,
-              backgroundColor: "#7b31e4",
-              borderColor: "#7b31e4",
+              label: "객실별 지난 달 현황",
+              data: roomSell,
+              backgroundColor: "#ffb1c1",
+              borderColor: "#ff6384",
+              fill: false,
+              tension: 0.1,
+            },
+            {
+              label: "객실별 이번 달 현황",
+              data: roomNowSell,
+              backgroundColor: "#63ce2a",
+              borderColor: "#63ce2a",
               fill: false,
               tension: 0.1,
             },
           ],
         })
       } catch (error) {
-        console.error("데이터 가져오기 실패", error)
+        console.error("데이터 가져오기 실패", error);
       }
     }
 
     fetchData()
-  }, [])
+  }, []);
 
   return (
     <div>
       <h2>객실별 매출 현황</h2>
-        <Bar options={options} data={chartData} />
+      <Bar options={options} data={chartData} />
     </div>
   )
 }

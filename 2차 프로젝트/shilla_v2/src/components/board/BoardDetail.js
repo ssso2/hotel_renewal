@@ -35,10 +35,52 @@ const BoardDetail = () => {
             console.error('에러발생 : ', error);
         }
     }
+
+    async function commentFetchData() {
+
+        if(!num){
+            console.log('Num 없음');
+            return 
+        }
+        try {
+            const res = await axios.get(`${bkURL}/comment`);
+            console.log('res.data : ',res.data);
+            setCommentText(res.data);
+            console.log('commentText : ',commentText);
+            
+        } catch (error) {
+            console.error('에러발생 : ', error);
+        }
+    }
     // console.log(detailText.title);
     
     useEffect(()=>{
         document.title ="게시글 상세보기"
+
+        // 로그인 여부 확인
+        const id = sessionStorage.getItem("id");
+        const name = sessionStorage.getItem("name");
+        const grade = sessionStorage.getItem("grade");
+        
+        if(id){
+            setUser({'id':id,"name": name,"grade":grade})
+            
+        }else{
+            setUser(null)
+        }
+
+
+
+        axios.get(`${bkURL}/comment`)
+        .then(res =>{
+            setCommentText(res.data);
+            console.log('댓글데이터:',res.data);
+            
+        })
+        .catch(err=>{
+            console.error('에러발생 : ', err);
+        })
+
         fetchData();
         commentFetchData();
 
@@ -86,10 +128,10 @@ const BoardDetail = () => {
                 <div className="text-container">
                     <div className="title-wrap">
                         <div className="title">
-                            <p className="subject"><i className="fa-solid fa-lock"></i>{detailText.title}</p>
+                            <p className="subject"><Secret detailText={detailText}/>{detailText.title}</p>
                             <div className="writer-wrap">
-                                <p className="writer">{detailText.author}</p>
-                                <p className="submit-time">{detailText.reg_strDate}</p>
+                                <p className="writer">{detailText.writer_name}</p>
+                                <p className="submit-time">{detailText.reg_str}</p>
                             </div>
                         </div>
                     </div>
