@@ -1,5 +1,13 @@
 import React from 'react';
 
+// 고정된 아이콘과 타입 데이터
+const capacityData = [
+    { type: "Reception", icon: "../../img/sub/reception.gif" },
+    { type: "Theater", icon: "../../img/sub/theater.gif" },
+    { type: "Classroom", icon: "../../img/sub/classroom.gif" },
+    { type: "Round Table", icon: "../../img/sub/round.gif" },
+];
+
 const Dynasty = ({ data }) => {
     return (
         <>
@@ -22,10 +30,10 @@ const Dynasty = ({ data }) => {
                         <li className="list">
                             <h4>수용인원</h4>
                             <ul className="flex">
-                                {info.capacity.map((item, idx) => (
+                                {capacityData.map((item, idx) => (
                                     <li key={idx}>
-                                        <img src={item.icon} alt="" />
-                                        <p>{item.type}<br/>{item.number}</p>
+                                        <img src={item.icon} alt={item.type} />
+                                        <p>{item.type}<br />{info.numbers[idx]}</p>
                                     </li>
                                 ))}
                             </ul>
@@ -34,7 +42,7 @@ const Dynasty = ({ data }) => {
                 </div>
             ))}
         </>
-    )
-}
+    );
+};
 
 export default Dynasty;

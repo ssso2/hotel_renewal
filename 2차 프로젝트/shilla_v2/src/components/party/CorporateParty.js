@@ -6,6 +6,7 @@ import Gallery from './Gallery';
 import Introduction from './Introduction';
 import Buttons from './Buttons';
 import Dynasty from './Dynasty';
+import Popup from './Popup';
 import Footer from '../common/Footer';
 
 import "../../scss/common.scss"
@@ -38,27 +39,63 @@ function CorporateParty() {
             location: "서울신라호텔 2층",
             area: "1,168.4 m²",
             size: "50.8m x 23.0m / 층고 6.2m",
-            capacity: [
-                { icon: "../../img/sub/reception.gif", type: "Reception", number: "1,000" },
-                { icon: "../../img/sub/theater.gif", type: "Theater", number: "1,000" },
-                { icon: "../../img/sub/classNameroom.gif", type: "classNameroom", number: "800" },
-                { icon: "../../img/sub/round.gif", type: "Round Table", number: "800" },
-            ],
+            numbers: ["1,000", "1,000", "800", "800"],
         },
         {
             title: "다이너스티 1",
             location: "서울신라호텔 2층",
             area: "458.3 m²",
             size: "21.1m x 23.0m / 층고 6.2m",
-            capacity: [
-                { icon: "../../img/sub/reception.gif", type: "Reception", number: "400" },
-                { icon: "../../img/sub/theater.gif", type: "Theater", number: "400" },
-                { icon: "../../img/sub/classNameroom.gif", type: "classNameroom", number: "320" },
-                { icon: "../../img/sub/round.gif", type: "Round Table", number: "320" },
-            ],
+            numbers: ["400", "400", "320", "320"],
+        },
+        {
+            title: "다이너스티 2",
+            location: "서울신라호텔 2층",
+            area: "370.3 m²",
+            size: "16.1m x 23.0m / 층고 6.2m",
+            numbers: ["300", "300", "240", "240"],
+        },
+        {
+            title: "다이너스티 3",
+            location: "서울신라호텔 2층",
+            area: "305.9 m²",
+            size: "13.3m x 23.0m / 층고 6.2m",
+            numbers: ["240", "240", "200", "200"],
+        },
+        {
+            title: "다이너스티 1+2",
+            location: "서울신라호텔 2층",
+            area: "855.6 m²",
+            size: "37.0m x 23.0m / 층고 6.2m",
+            numbers: ["700", "700", "560", "560"],
+        },
+        {
+            title: "다이너스티 2+3",
+            location: "서울신라호텔 2층",
+            area: "676.2 m²",
+            size: "29.4m x 23.0m / 층고 6.2m",
+            numbers: ["540", "540", "440", "440"],
+        },
+        {
+            title: "다이너스티 A",
+            location: "서울신라호텔 2층",
+            area: "577.3 m²",
+            size: "25.1m x 23.0m / 층고 6.2m",
+            numbers: ["450", "450", "380", "380"],
+        },
+        {
+            location: "서울신라호텔 2층",
+            area: "586.5 m²",
+            size: "25.5m x 23.0m / 층고 6.2m",
+            numbers: ["450", "450", "380", "380"],
         },
     ];
 
+    const popUpData = [
+        { id: "pop-floor-plan01", title: "도면보기", imgSrc: "../../img/sub/floor-plan-01.gif", buttonLabel: "도면보기" },
+        { id: "pop-floor-plan02", title: "입체도33면보기", imgSrc: "../../img/sub/Dynasty_kr.jpg", buttonLabel: "입체도면보기" },
+        { id: "pop-floor-plan03", title: "DYNASTY Floor Map", imgSrc: "../../img/sub/floor-plan-02.gif", buttonLabel: "DYNASTY Floor Map" },
+    ];
 
     return (
         <>
@@ -74,8 +111,10 @@ function CorporateParty() {
                             <div className="context">
                                 <Introduction {...introData}/>
                                 <Buttons/>
+                                {popUpData.map((popup) => (
+                                    <Popup key={popup.id} id={popup.id} title={popup.title} imgSrc={popup.imgSrc} />
+                                ))}
                                 <Dynasty data={infoData} />
-
                             </div>
                         </div>
                     </div>
