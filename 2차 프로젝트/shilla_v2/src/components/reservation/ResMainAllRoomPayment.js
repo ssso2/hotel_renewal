@@ -3,9 +3,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "../../scss/paymentPage.module.scss";
 
-function PaymentPage() {
+function AllRoomPaymentPage() {
   const location = useLocation();
   const navigate = useNavigate();
+
+  // 세션에서 로그인된 사용자 ID 가져오기
+  const memberId = sessionStorage.getItem("id");
 
   // 데이터를 갖고옴
   const {
@@ -43,9 +46,15 @@ function PaymentPage() {
       return;
     }
 
+    if (!memberId) {
+      alert("로그인이 필요합니다.");
+      navigate("/login");
+      return;
+    }
+
     // 예약 데이터를 준비합니다.
     const reservationData = {
-      memberId: name,
+      memberId: memberId,
       productId: productId,
       startDate: reservationDate.split(" ~ ")[0],
       endDate: reservationDate.split(" ~ ")[1],
@@ -177,4 +186,4 @@ function PaymentPage() {
     </div>
   );
 }
-export default PaymentPage;
+export default AllRoomPaymentPage;

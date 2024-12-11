@@ -7,8 +7,6 @@ import '../../scss/myreservation.scss'
 
 
 const MyInfo = () => {
-
-
     return (
         <>
             <Header/>
@@ -27,4 +25,4 @@ const MyInfo = () => {
     )
 }
 
-export default MyInfo
+export default MyInfo;
