@@ -36,11 +36,10 @@ router.get("/", (req, res) => {
   conn.query(query, [memberId], (err, results) => {
     if (err) {
       console.error("쿼리 오류:", err);
-      res.status(500).send("DB 에러");
-      return;
+      return res.status(500).send("DB 에러");
     }
-    console.log("쿼리 결과: ", results); // 쿼리 결과 확인
-    res.json(results);
+    console.log("쿼리 결과: ", results);  // 여기에서 결과 확인
+    res.json(results); // 결과를 클라이언트로 반환
   });
 });
 

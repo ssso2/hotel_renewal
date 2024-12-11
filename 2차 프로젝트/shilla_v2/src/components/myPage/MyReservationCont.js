@@ -15,10 +15,13 @@ const MyReservationCont = () => {
             "http://localhost:5002/bk/myPage/myReservation",
             { params: { member_id: memberId } }
           );
-          console.log("API 응답 데이터:", response.data);
-          setReservations(response.data);
+          console.log("API 응답 데이터:", response.data);  // 응답 데이터 확인
+          setReservations(response.data);  // 예약 내역 설정
+          setLoading(false);  // 로딩 완료
         } catch (error) {
           console.error("예약 데이터를 가져오지 못했습니다.", error);
+          setError("예약 데이터를 가져오지 못했습니다.");
+          setLoading(false);
         }
       };
 
