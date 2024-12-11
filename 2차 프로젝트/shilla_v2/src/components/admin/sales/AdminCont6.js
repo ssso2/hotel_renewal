@@ -120,6 +120,7 @@ const AdminCont6 = () => {
                 <thead>
                     <tr>
                         <th>예약 번호</th>
+                        <th>회원 id</th>
                         <th>호수</th>
                         <th>시작일</th>
                         <th>종료일</th>
@@ -131,6 +132,7 @@ const AdminCont6 = () => {
                     {currentData.map((data, index) => (
                         <tr key={index}>
                             <td>{data.reservation_id}</td>
+                            <td>{data.member_id}</td>
                             <td>{data.room_id}</td>
                             <td>{formatDate(data.start_date)}</td>
                             <td>{formatDate(data.end_date)}</td>

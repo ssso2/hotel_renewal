@@ -31,7 +31,7 @@ module.exports = () => {
         const { year, month, room } = req.query;
 
         let query = `
-            SELECT r.reservation_id, p.room_id, r.start_date, r.end_date, r.Cancel, r.tot_price
+            SELECT r.reservation_id, r.member_id, p.room_id, r.start_date, r.end_date, r.Cancel, r.tot_price
             FROM reservation r
             JOIN product p ON r.product_id = p.product_id
             WHERE 1 = 1
