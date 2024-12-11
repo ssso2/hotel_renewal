@@ -44,6 +44,50 @@ router.get("/", async(req, res) => {
     console.error("쿼리 오류:", error);
     res.status(500).send("DB 에러");
   }
+});  
+
+router.post('/cancel', async (req, res) => {
+  const { reservationId, totPrice } = req.body;
+  const today = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+  console.log("받은 reservationId: ", reservationId);
+  console.log("받은 totPrice: ", totPrice);
+
+  if (!reservationId) {
+    return res.status(400).send("reservationId가 제공되지 않았습니다.");
+  }
+
+  try {
+    // reservation 테이블 업데이트
+    const [reservationResult] = await conn.execute(
+      `UPDATE reservation SET Cancel = 1 WHERE reservation_id = ?`,
+      [reservationId]
+    );
+
+    if (reservationResult.affectedRows === 0) {
+      throw new Error("reservation 업데이트 실패");
+    }
+
+    // payment 테이블 업데이트
+    const [paymentResult] = await conn.execute(
+      `UPDATE payment
+       SET refund = '1',
+           refund_date = ?,
+           refund_amount = ?
+       WHERE reservation_id = ?`,
+      [today, totPrice, reservationId]
+    );
+
+    if (paymentResult.affectedRows === 0) {
+      throw new Error("payment 업데이트 실패");
+    }
+
+    res.status(200).send("예약 및 결제가 취소되었습니다.");
+  } catch (error) {
+    console.error("예약 취소 중 오류 발생: ", error.message);
+
+    res.status(500).send("예약 취소 처리 중 오류가 발생했습니다.");
+  }
 });
 
 module.exports = router;

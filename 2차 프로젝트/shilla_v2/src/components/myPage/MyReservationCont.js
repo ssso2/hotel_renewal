@@ -10,30 +10,21 @@ const MyReservationCont = () => {
 
   useEffect(() => {
     if (memberId) {
-      console.log("memberId : ", memberId);
-
       const fetchReservations = async () => {
         try {
           const response = await axios.get(
             "http://localhost:5002/bk/myPage/myReservation",
             { params: { member_id: memberId } }
           );
-          console.log("API 응답 데이터:", response.data); // 응답 데이터 확인
-          setReservations(response.data); // 예약 내역 설정
+          setReservations(response.data);
         } catch (error) {
-          console.error("예약 데이터를 가져오지 못했습니다.", error);
-          setError("예약 데이터를 가져오지 못했습니다.");
+          setError("예약 데이터를 가져오지 x");
         }
       };
 
       fetchReservations();
     }
   }, [memberId]);
-
-  const handleCancel = (reservationId) => {
-    alert(`예약 ID ${reservationId}가 취소되었습니다.`);
-    // 추가적으로 서버에 예약 취소 요청을 보낼 수 있습니다.
-  };
 
   if (error) {
     return <div>{error}</div>;
@@ -43,6 +34,39 @@ const MyReservationCont = () => {
     return <div>예약 내역이 없습니다</div>;
   }
 
+  const handleCancel = async (reservationId, totPrice) => {
+    console.log("reservationId : ", reservationId);
+    const confirmCancel = window.confirm("해당 객실상품을 예약 취소하겠습니까");
+    if (confirmCancel) {
+      try {
+        await axios.post(
+          "http://localhost:5002/bk/myPage/myReservation/cancel",
+          {
+            reservationId,
+            totPrice,
+          }
+        );
+        alert("예약이 취소되었습니다.");
+        // 예약 목록 갱신
+        setReservations((prev) =>
+          prev.filter(
+            (reservation) => reservation.reservation_id !== reservationId
+          )
+        );
+      } catch (error) {
+        console.error("예약 취소 중 오류 발생:", error);
+        alert("예약 취소 중 오류가 발생했습니다.");
+      }
+    }
+  };
+
+  // if (error) {
+  //   return <div>{error}</div>;
+  // }
+
+  // if (!reservations.length) {
+  //   return <div>예약 내역이 없습니다</div>;
+  // }
 
   return (
     <div className="reservate-info" id="reservate-info">
@@ -83,7 +107,14 @@ const MyReservationCont = () => {
               </div>
               {/* 예약취소 버튼 조건 */}
               {endDate > today && (
-                <button className="cancle-btn">예약취소</button>
+                <button
+                  className="cancle-btn"
+                  onClick={() =>
+                    handleCancel(res.reservation_id, res.tot_price)
+                  }
+                >
+                  예약취소
+                </button>
               )}
             </div>
           );
