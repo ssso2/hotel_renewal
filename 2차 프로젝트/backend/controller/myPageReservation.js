@@ -4,7 +4,7 @@ const conn = require("../db");
 
 
 // module.exports = upload => {
-router.get("/", (req, res) => {
+router.get("/", async(req, res) => {
   const memberId = req.query.member_id;
   console.log("받은 memberId: ", memberId);
 
@@ -19,6 +19,7 @@ router.get("/", (req, res) => {
       r.end_date,
       r.adult_cnt,
       r.child_cnt,
+      r.tot_price,
       p.product_id,
       p.room_id,
       rm.room_type,
@@ -31,17 +32,18 @@ router.get("/", (req, res) => {
       AND r.Cancel = 0;
   `;
 
-  console.log("실행된 쿼리: ", query);
+  try {
+    console.log("실행된 쿼리: ", query);
 
-  conn.execute(query, [memberId]).then((results)=>{
-    console.log("쿼리 결과: ", results);  // 여기에서 결과 확인
-    res.json(results); // 결과를 클라이언트로 반환
-  }).catch((err) => {
-    
-      console.error("쿼리 오류:", err);
-      res.status(500).send("DB 에러");
-    
-  });
+    // 데이터베이스 쿼리 실행
+    const [rows] = await conn.execute(query, [memberId]);
+
+    console.log("쿼리 결과: ", rows); // 쿼리 결과 로그 출력
+    res.json(rows); // 클라이언트로 결과 반환
+  } catch (error) {
+    console.error("쿼리 오류:", error);
+    res.status(500).send("DB 에러");
+  }
 });
 
 module.exports = router;
