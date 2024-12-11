@@ -76,6 +76,9 @@ const MyReservationCont = () => {
           const today = new Date(); // 현재 날짜
           const endDate = new Date(res.end_date); // 예약 종료 날짜
 
+          // 여기서 tot_price가 숫자인지 확인하고, 숫자가 아니면 0을 기본값으로 설정
+          const totalPrice = typeof res.tot_price === 'number' ? res.tot_price : 0;
+
           return (
             <div className="reser-room" key={res.reservation_id}>
               <div className="contents-wrap">
@@ -101,7 +104,7 @@ const MyReservationCont = () => {
                     이용 인원 : {res.adult_cnt}명(성인), {res.child_cnt}명(아동)
                   </div>
                   <div className="info-item">
-                    결제 금액 : {res.tot_price.toLocaleString()}원
+                    결제 금액 : {totalPrice.toLocaleString()}원
                   </div>
                 </div>
               </div>
