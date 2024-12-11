@@ -1,10 +1,10 @@
 import React from "react";
 
-const EventDetail1_header = () => {
+const EventDetail1_header = ({ title }) => {
     return (
         <div>
             <div class="sub-title">
-                <h2>Taste of Vietnam</h2>
+                <h2>{title}</h2>
                 <ul class="location">
                     <li>
                         <a href="../index.html">홈</a>

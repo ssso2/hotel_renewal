@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../../scss/AdminCont5_register.scss";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import AdminCont5_register_option from "./AdminCont5_register_option";
+import AdminCont5_register_btn from "./AdminCont5_register_btn";
 import AdminCont5_register_require from "./AdminCont5_register_require";
 
 const AdminCont5_register = () => {
     const navigate = useNavigate();
+    const [category, setcategory] = useState({});
 
     const registerGo = async e => {
         e.preventDefault();
@@ -37,14 +38,13 @@ const AdminCont5_register = () => {
                 <div className="listwrap">
                     <form name="myfrm" onSubmit={registerGo}>
                         <div className="header">
-                            <h3>공지사항 등록 - 기본 정보</h3>
+                            <h3>공지사항 등록</h3>
                         </div>
-                        <AdminCont5_register_require />
-
-                        <div className="header">
-                            <h3>기타</h3>
-                        </div>
-                        <AdminCont5_register_option />
+                        <AdminCont5_register_require
+                            category={category}
+                            setcategory={setcategory}
+                        />
+                        <AdminCont5_register_btn />
                     </form>
                 </div>
             </div>

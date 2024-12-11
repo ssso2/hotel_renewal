@@ -9,6 +9,7 @@ import OfferMain2_kewords from "./OfferMain2_keword";
 import OfferMain2_btn from "./OfferMain2_btn";
 
 const OfferMain2 = ({ setOfferlists }) => {
+    const [range, setRange] = useState([{ startDate: null, endDate: null }]);
     const [offertype, setoffertype] = useState("");
     const [offerkeword, setofferkeword] = useState("");
     const [filterKewords, setfilterKewords] = useState({
@@ -20,6 +21,13 @@ const OfferMain2 = ({ setOfferlists }) => {
         consecutive_night: 0,
         kids: 0,
     });
+
+    // 데이트레인지피커 상태 초기화
+    // const handleReset = e => {
+    //     e.preventDefault();
+    //     setRange([{ startDate: null, endDate: null }]);
+    //     console.log("리셋눌림");
+    // };
     // const [filtered, setfiltered] = useState();
 
     //검색버튼
@@ -45,10 +53,8 @@ const OfferMain2 = ({ setOfferlists }) => {
                 myData
             );
             console.log("필터데이터", res.data);
-            alert("필터클릭완료");
+            alert("검색완료");
             setOfferlists(res.data);
-
-            // setfiltered(res.data);
         } catch (err) {
             console.error("에러메세지", err);
         }
@@ -57,7 +63,11 @@ const OfferMain2 = ({ setOfferlists }) => {
     return (
         <>
             {/* <!-- 필터박스 --> */}
-            <form className="pkg-filter-box-wrapper" name="myFrm">
+            <form
+                className="pkg-filter-box-wrapper"
+                name="myFrm"
+                // onReset={handleReset}
+            >
                 <div className="pkg-filter-box">
                     <OfferMain2_date />
                     <OfferMain2_type

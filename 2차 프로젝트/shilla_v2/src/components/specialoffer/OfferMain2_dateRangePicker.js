@@ -13,8 +13,8 @@ const OfferMain2_dateRangePicker = ({
 }) => {
     const [range, setRange] = useState([
         {
-            startDate: new Date(),
-            endDate: new Date(),
+            startDate: null,
+            endDate: null,
             key: "selection",
         },
     ]);
@@ -25,13 +25,18 @@ const OfferMain2_dateRangePicker = ({
         onDateChange({ startDate, endDate });
     };
 
-    const formatDate = date => format(date, "yyyy-MM-dd");
+    const formatDate = date => {
+        if (!date) {
+            return "";
+        }
+        return format(date, "yyyy-MM-dd");
+    };
 
     const handleCancel = () => {
         setRange([
             {
-                startDate: new Date(),
-                endDate: new Date(),
+                startDate: null,
+                endDate: null,
                 key: "selection",
             },
         ]);
@@ -47,12 +52,21 @@ const OfferMain2_dateRangePicker = ({
             <input
                 type="text"
                 name="date_range"
-                value={`${formatDate(range[0].startDate)} ~ ${formatDate(
-                    range[0].endDate
-                )}`}
+                placeholder="날짜를 입력하세요."
+                value={
+                    range[0]?.startDate && range[0]?.endDate
+                        ? `${formatDate(range[0].startDate)} ~ ${formatDate(
+                              range[0].endDate
+                          )}`
+                        : ""
+                }
                 onClick={togglePicker}
-                style={{ cursor: "pointer" }}
                 className="date-picker-input"
+                onChange={e => {
+                    if (!e.target.value.trim()) {
+                        console.log("날짜범위없음");
+                    }
+                }}
             />
             {showPicker && (
                 <div className="date-picker-popup">
@@ -65,6 +79,7 @@ const OfferMain2_dateRangePicker = ({
                         direction="horizontal"
                         minDate={new Date()}
                         locale={ko} // 한글 로케일로 적용
+                        showDateDisplay={false} // rdrDateDisplayWrapper 요소삭제
                     />
                     <div className="date-picker-footer">
                         <div className="selected-dates">

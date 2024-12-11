@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const AdminCont5_type = ({ Ntype, setNtype }) => {
-    const handleType = e => {
+    const handleType = async e => {
         setNtype(e.target.value);
         console.log("선택타입", Ntype);
     };
@@ -10,15 +10,15 @@ const AdminCont5_type = ({ Ntype, setNtype }) => {
         <div className="search-container">
             <div className="cell">상세검색</div>
             <select
-                name="type"
-                id=""
+                name="category"
+                value={Ntype}
                 className="category"
                 onChange={handleType}
             >
-                <option value="all">분류</option>
-                <option value="notice">공지</option>
-                <option value="guide">안내</option>
-                <option value="event">이벤트</option>
+                <option value="분류">분류</option>
+                <option value="공지">공지</option>
+                <option value="안내">안내</option>
+                <option value="이벤트">이벤트</option>
             </select>
         </div>
     );

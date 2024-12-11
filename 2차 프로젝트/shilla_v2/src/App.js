@@ -43,6 +43,7 @@ import OfferMain from "./components/specialoffer/OfferMain";
 import OfferDetail from "./components/specialoffer/OfferDetail";
 import Event from "./components/specialoffer/Event";
 import EventDetail1 from "./components/specialoffer/EventDetail1";
+import EventDetail2 from "./components/specialoffer/EventDetail2";
 
 // admin
 import AdminTemp from "./components/admin/AdminTemp";
@@ -152,6 +153,7 @@ function App() {
                     <Route path="detail/:id" element={<OfferDetail />} />
                     <Route path="event" element={<Event />} />
                     <Route path="event/detail/1" element={<EventDetail1 />} />
+                    <Route path="event/detail/2" element={<EventDetail2 />} />
                 </Route>
             </Routes>
 

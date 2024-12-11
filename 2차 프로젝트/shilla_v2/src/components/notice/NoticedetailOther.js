@@ -18,15 +18,19 @@ const NoticedetailOther = ({ id }) => {
                         이전으로{" "}
                     </Link>
                 ) : (
-                    <div>첫 공지사항입니다.</div>
+                    <div className="txt">첫 공지사항입니다.</div>
                 )}
             </div>
             <div className="next">
                 <div className="icn2">다음글</div>
-                <Link to={`/notice/detail/${nextID}`} className="txt">
-                    {" "}
-                    다음으로{" "}
-                </Link>
+                {nextID <= id + 1 ? (
+                    <Link to={`/notice/detail/${nextID}`} className="txt">
+                        {" "}
+                        다음으로{" "}
+                    </Link>
+                ) : (
+                    <div className="txt">마지막 공지사항입니다.</div>
+                )}
             </div>
         </div>
     );

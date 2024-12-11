@@ -51,7 +51,13 @@
                     // margin: 25px 5px;
                     font-weight: bold;
                     color: #333;
-                    input {
+                    .filename {
+                        padding-top: 20px;
+                    }
+                    .title,
+                    .file {
+                        width: 100%;
+                        padding-left: 5px;
                         border: 1px solid #ccc;
                     }
                     .area {
@@ -59,6 +65,7 @@
                         height: 200px;
                         width: 100%;
                         overflow-y: auto;
+                        padding-left: 5px;
                     }
                 }
                 .areabox {
@@ -71,8 +78,11 @@
                 .N-type {
                     padding: 0 30px;
                     font-weight: 500;
-                    .radio {
-                        margin-left: 10px;
+                    .category {
+                        width: 100px;
+                        padding-left: 5px;
+                        border: 1px solid #ccc;
+                        color: #333;
                     }
                 }
             }
@@ -82,6 +92,7 @@
             display: flex;
             justify-content: flex-end;
             width: 100%;
+            text-align: center;
             .cancel {
                 box-sizing: border-box;
                 background: #fff;

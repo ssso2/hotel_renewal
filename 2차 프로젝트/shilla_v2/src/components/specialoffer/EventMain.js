@@ -11,7 +11,7 @@ const eventlists = [
         des: "더 파크뷰에서 경험하는 베트남 미식 여행",
         date: "2024-09-24 ~ 2024-09-26",
         price: "92,000 원",
-        link: "../../html/sub/sub01_02_01.html",
+        link: "detail/1",
     },
     {
         id: "2",
