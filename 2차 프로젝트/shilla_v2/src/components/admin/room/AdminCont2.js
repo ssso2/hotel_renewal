@@ -66,7 +66,7 @@ const AdminCont2 = () => {
 
     return (
         <div className="cont cont2">
-            <h2>객실 관리</h2>
+            <h2>객실관리</h2>
             <div className="table">
                 <div className="table-header">
                     <div className="table-row">

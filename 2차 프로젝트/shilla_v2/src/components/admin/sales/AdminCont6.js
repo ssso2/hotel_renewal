@@ -23,7 +23,7 @@ const AdminCont6 = () => {
 
 
 
-    // 날짜 포맷팅 함수
+    // 날짜 변환 함수
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const year = date.getFullYear();
@@ -59,13 +59,15 @@ const AdminCont6 = () => {
                         room: selectedRoom,
                     },
                 });
+                
                 setFilteredData(response.data);
     
                 // 취소되지 않은 예약만 합산
-                const total = response.data
-                    .filter((item) => item.Cancel === '0')
-                    .reduce((acc, curr) => acc + curr.tot_price, 0);
+                const total = response.data.reduce((acc, curr) => acc + (curr.Cancel === '0' ? curr.tot_price : 0), 0);
                 setTotalPrice(total);
+    
+                // 필터링 걸리면 1페이지로 이동
+                setCurrentPage(1);
             } catch (error) {
                 console.error("매출 데이터를 불러오는 중 오류 발생:", error);
             }
@@ -74,12 +76,13 @@ const AdminCont6 = () => {
         fetchSalesData();
     }, [selectedYear, selectedMonth, selectedRoom]);
     
+    
 
     return (
         <div className="cont cont6">
             <h2>매출현황</h2>
         
-            {/* 필터링 드롭다운과 총 합계 표시 */}
+            {/* 필터링 드롭다운과 총 합계 */}
             <div className="filter-container">
                 <div className="filters">
                     <label>연도</label>
