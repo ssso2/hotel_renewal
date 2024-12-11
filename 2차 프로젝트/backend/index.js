@@ -108,6 +108,9 @@ app.use("/bk/admin/roomManagement", roomManRouter());
 // 공지사항 라우터 추가
 const noticeRouter = require("./controller/notice.js");
 app.use("/bk/notice", noticeRouter());
+// 매출현황 라우터 추가
+const salesRouter = require("./controller/salesManagement.js");
+app.use("/bk/sales", salesRouter());
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
 app.get("*", (req, res) => {
