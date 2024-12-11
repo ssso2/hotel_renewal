@@ -3,17 +3,23 @@ import axios from 'axios';
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
-const CommentWrite = ({user,detailText, commentFetchData}) => {
+const CommentWrite = ({user,detailText,setDetailText, commentFetchData}) => {
 
     function CommentsubmitGo(e){
         e.preventDefault()
+        console.log("detailText",detailText);
+        
 
         const frmData = new FormData(document.commentFrm) //아래 폼태그 name 값 가져옴
 
         const data = Object.fromEntries(frmData);
+        
         data['board_id'] = detailText.board_id
+        data['answer'] = detailText.answer
         data['member_id'] = user.id
         data['author'] = user.name
+
+        
 
         console.log('CommentsubmitGo() 진입');
         console.log(data);

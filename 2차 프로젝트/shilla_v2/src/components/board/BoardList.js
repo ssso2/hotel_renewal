@@ -42,7 +42,7 @@ const BoardList = () => {
     if(!user){
         navigate('/login');
     }
-
+    console.log('텍스트',text);
 
     return (
         <div className="container">
