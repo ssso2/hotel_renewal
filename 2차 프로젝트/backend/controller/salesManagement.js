@@ -7,11 +7,12 @@ module.exports = () => {
     router.get("/filters", async (req, res) => {
         try {
             const [years] = await conn.execute("SELECT DISTINCT YEAR(start_date) AS year FROM reservation");
-            const [months] = await conn.execute("SELECT DISTINCT MONTH(start_date) AS month FROM reservation");
+            const [months] = await conn.execute("SELECT DISTINCT MONTH(start_date) AS month FROM reservation ORDER BY month");
             const [rooms] = await conn.execute(`
                 SELECT DISTINCT p.room_id 
                 FROM reservation r
                 JOIN product p ON r.product_id = p.product_id
+                ORDER BY p.room_id
             `);
 
             res.json({

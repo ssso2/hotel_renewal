@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../../../scss/AdminCont6.scss";
+import Pagination from "../../sub/Pagination";
+
 
 const AdminCont6 = () => {
     const [selectedYear, setSelectedYear] = useState('');
@@ -11,6 +14,23 @@ const AdminCont6 = () => {
     const [years, setYears] = useState([]);
     const [months, setMonths] = useState([]);
     const [rooms, setRooms] = useState([]);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentData = filteredData.slice(startIndex, startIndex + itemsPerPage);
+
+
+
+    // 날짜 포맷팅 함수
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+    };
 
     // 연도, 월, 호수 데이터를 불러오는 함수
     useEffect(() => {
@@ -40,48 +60,60 @@ const AdminCont6 = () => {
                     },
                 });
                 setFilteredData(response.data);
-                setTotalPrice(response.data.reduce((acc, curr) => acc + curr.tot_price, 0));
+    
+                // 취소되지 않은 예약만 합산
+                const total = response.data
+                    .filter((item) => item.Cancel === '0')
+                    .reduce((acc, curr) => acc + curr.tot_price, 0);
+                setTotalPrice(total);
             } catch (error) {
                 console.error("매출 데이터를 불러오는 중 오류 발생:", error);
             }
         };
-
+    
         fetchSalesData();
     }, [selectedYear, selectedMonth, selectedRoom]);
+    
 
     return (
         <div className="cont cont6">
             <h2>매출현황</h2>
-
-            {/* 필터링 드롭다운 */}
-            <div>
-                <label>연도 선택:</label>
-                <select onChange={(e) => setSelectedYear(e.target.value)} value={selectedYear}>
-                    <option value="">전체</option>
-                    {years.map((year) => (
-                        <option key={year} value={year}>{year}년</option>
-                    ))}
-                </select>
-
-                <label>월 선택:</label>
-                <select onChange={(e) => setSelectedMonth(e.target.value)} value={selectedMonth} disabled={!selectedYear}>
-                    <option value="">전체</option>
-                    {months.map((month) => (
-                        <option key={month} value={month}>{month}월</option>
-                    ))}
-                </select>
-
-                <label>호수 선택:</label>
-                <select onChange={(e) => setSelectedRoom(e.target.value)} value={selectedRoom} disabled={!selectedMonth}>
-                    <option value="">전체</option>
-                    {rooms.map((room) => (
-                        <option key={room} value={room}>{room}호</option>
-                    ))}
-                </select>
+        
+            {/* 필터링 드롭다운과 총 합계 표시 */}
+            <div className="filter-container">
+                <div className="filters">
+                    <label>연도</label>
+                    <select onChange={(e) => setSelectedYear(e.target.value)} value={selectedYear}>
+                        <option value="">전체</option>
+                        {years.map((year) => (
+                            <option key={year} value={year}>{year}년</option>
+                        ))}
+                    </select>
+        
+                    <label>월</label>
+                    <select onChange={(e) => setSelectedMonth(e.target.value)} value={selectedMonth}>
+                        <option value="">전체</option>
+                        {months.map((month) => (
+                            <option key={month} value={month}>{month}월</option>
+                        ))}
+                    </select>
+        
+                    <label>호수</label>
+                    <select onChange={(e) => setSelectedRoom(e.target.value)} value={selectedRoom}>
+                        <option value="">전체</option>
+                        {rooms.map((room) => (
+                            <option key={room} value={room}>{room}호</option>
+                        ))}
+                    </select>
+                </div>
+        
+                <div className="total-price">
+                    총 합계: {totalPrice.toLocaleString()}원
+                </div>
             </div>
-
+        
             {/* 매출 데이터 표 */}
-            <table border="1" style={{ width: '100%', marginTop: '20px', textAlign: 'center' }}>
+            <table>
                 <thead>
                     <tr>
                         <th>예약 ID</th>
@@ -93,25 +125,28 @@ const AdminCont6 = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredData.map((data, index) => (
+                    {currentData.map((data, index) => (
                         <tr key={index}>
                             <td>{data.reservation_id}</td>
                             <td>{data.room_id}</td>
-                            <td>{data.start_date}</td>
-                            <td>{data.end_date}</td>
-                            <td>{data.cancel === '0' ? 'N' : 'Y'}</td>
+                            <td>{formatDate(data.start_date)}</td>
+                            <td>{formatDate(data.end_date)}</td>
+                            <td>{data.Cancel === '0' ? '취소안됨' : '취소됨'}</td>
                             <td>{data.tot_price.toLocaleString()}원</td>
                         </tr>
                     ))}
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <td colSpan="5"><strong>합계</strong></td>
-                        <td><strong>{totalPrice.toLocaleString()}원</strong></td>
-                    </tr>
-                </tfoot>
             </table>
+
+            <Pagination
+                totalItems={filteredData.length}
+                itemsPerPage={itemsPerPage}
+                currentPage={currentPage}
+                onPageChange={setCurrentPage}
+            />
+
         </div>
+    
     );
 };
 
