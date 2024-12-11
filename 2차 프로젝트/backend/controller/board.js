@@ -42,35 +42,6 @@ module.exports = upload => {
 
 
     // 쓰기
-    // router.post("/join", async(req, res) => {
-    //     console.log("백엔드 join",req);
-
-    //     let sql = 'insert into board (title,context,secret,date) values (?,?,?,sysdate())';
-
-
-    //     let data = [
-    //         req.body.title,
-    //         req.body.context,
-    //         req.body.secret,
-    //     ];
-    //     console.log("백엔드 join",data);
-
-    //     try {
-    //         const [ret] = await conn.execute(sql, data)
-            
-    //         const newId = ret.insertId;
-    //         console.log('쓰기완료',newId);
-    //         res.json({newId})
-    //     } catch (err) {
-
-    //         console.log("sql 실패 : ", err.message);
-    //         ret.status(500).send('db오류')
-
-    //     }
-
-    // });
-
-    // 쓰기
     router.post("/join", async (req, res) => {
         console.log("백엔드 join", req.body);
 

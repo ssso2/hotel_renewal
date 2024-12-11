@@ -39,7 +39,7 @@ const MyInquiryCont = () => {
     return (
         <div className="myinquiry">
             <h2 className="title">내 문의 내역</h2>
-            <ul className="board-nav">
+            <ul className="board-nav my-page">
                 <li className="post-num">번호</li>
                 <li className="post-title">제목</li>
                 <li className="post-date">작성일</li>
