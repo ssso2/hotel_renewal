@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import MyPwChkCont from "./MyPwChkCont";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -50,7 +51,13 @@ const MyInfoCont = () => {
 
     // pwChkGo 함수는 navigate를 호출하여 페이지 이동
     function pwChkGo() {
-        navigate('/myPage/myPwChk');  // 페이지 이동
+        navigate('/myPage/myInfoChg');  // 페이지 이동
+    }
+    function withdrawalGo() {
+        // setUser.grade = 5
+        alert(`${user.name}님, 회원 탈퇴 되었습니다`);
+        sessionStorage.clear();
+        navigate('/');
     }
 
     return (
@@ -67,7 +74,7 @@ const MyInfoCont = () => {
                 })
             }
             <input type="button" className="edit-btn" value="회원정보 수정" onClick={pwChkGo} /> 
-            <input type="button" className="withdrawal-btn" value="회원 탈퇴" /> 
+            <input type="button" className="withdrawal-btn" value="회원 탈퇴"  onClick={withdrawalGo}/> 
         </div>
     );
 };

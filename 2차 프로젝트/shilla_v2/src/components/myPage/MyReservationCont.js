@@ -1,39 +1,80 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const MyPwChkCont = () => {
-    return (
-        <div class="reservate-info" id="reservate-info">
-            <div class="reservation">
-                <div class="info-title">객실 예약내역</div>
-                <div class="reser-room">
-                    <div className='contents-wrap'>
-                        <div class="room"><img src="../../img/sub/roomSuiteRoyal01.jpg" /></div>
-                        <div class="reservation-info">
-                            <div class="info-item">객실타입: 이그제큐티브</div>
-                            <div class="info-item">예약일자: 2023-09-24 ~ 2023-09-25(1박)</div>
-                            <div class="info-item">체크인 시간: 15:00</div>
-                            <div class="info-item">체크아웃 시간: 11:00</div>
-                            <div class="info-item">이용 인원: 2명</div>
-                        </div>
-                    </div>
-                    <button className='cancle-btn'>예약취소</button>
+const MyReservationCont = () => {
+  const [reservations, setReservations] = useState([]);
+  
+  const memberId = sessionStorage.getItem("id"); // 세션에서 member_id 가져오기
+
+  useEffect(() => {
+    if (memberId) {
+      console.log("memberId : ", memberId);
+
+      const fetchReservations = async () => {
+        try {
+          const response = await axios.get(
+            "http://localhost:5002/bk/myPage/myReservation",
+            { params: { member_id: memberId } }
+          );
+          console.log("API 응답 데이터:", response.data);  // 응답 데이터 확인
+          setReservations(response.data);  // 예약 내역 설정
+          //setLoading(false);  // 로딩 완료
+        } catch (error) {
+          console.error("예약 데이터를 가져오지 못했습니다.", error);
+          setError("예약 데이터를 가져오지 못했습니다.");
+          //setLoading(false);
+        }
+      };
+
+      fetchReservations();
+    }
+  }, [memberId]);
+
+  if(!reservations){
+    return <div>로딩중</div>
+  }
+
+  return (
+    <div className="reservate-info" id="reservate-info">
+      <div className="reservation">
+        <div className="info-title">나의 예약내역</div>
+        {reservations.length > 0 ? (
+          reservations.map((res) => (
+            <div className="reser-room" key={res.reservation_id}>
+              <div className="contents-wrap">
+                <div className="room">
+                  {/* <img
+                    src={`../../img/sub/${
+                      res.offer_name || res.room_type
+                    }.jpg`}
+                    alt={res.offer_name || res.room_type}
+                  /> */}
                 </div>
-                <div class="reser-room">
-                    <div className='contents-wrap'>
-                        <div class="package"><img src="../../img/sub/urban-01.jpg" /></div>
-                        <div class="reservation-info">
-                            <div class="info-item">패키지명: [성인3인] 어번 아일랜드 All Day 입장 + 엑스트라베드 1대 제공</div>
-                            <div class="info-item">예약일자: 2023-10-24 ~ 2023-10-25(1박)</div>
-                            <div class="info-item">체크인 시간: 15:00</div>
-                            <div class="info-item">체크아웃 시간: 11:00</div>
-                            <div class="info-item">이용 인원: 2명</div>
-                        </div>
-                    </div>    
-                    <button className='cancle-btn'>예약취소</button>
+                <div className="reservation-info">
+                  <div className="info-item">
+                    패키지명: {res.offer_name || "N/A"}
+                  </div>
+                  <div className="info-item">
+                    객실명: {res.room_type || "N/A"}
+                  </div>
+                  <div className="info-item">
+                    예약일자: {res.start_date} ~ {res.end_date}
+                  </div>
+                  <div className="info-item">체크아웃 시간: 11:00</div>
+                  <div className="info-item">
+                    이용 인원: {res.adult_cnt}명(성인), {res.child_cnt}명(아동)
+                  </div>
                 </div>
+              </div>
+              <button className="cancle-btn">예약취소</button>
             </div>
-        </div>
-    )
-}
+          ))
+        ) : (
+          <p>예약 내역이 없습니다</p>
+        )}
+      </div>
+    </div>
+  );
+};
 
-export default MyPwChkCont
+export default MyReservationCont;

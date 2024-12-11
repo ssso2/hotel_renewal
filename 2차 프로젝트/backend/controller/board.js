@@ -10,7 +10,7 @@ module.exports = upload => {
         console.log("board 목록 접근");
 
         try {
-            const [ret] = await conn.execute('select *, DATE_FORMAT(date,\'%Y-%m-%d\') as reg_str from board')
+            const [ret] = await conn.execute('select board.*,member.name as writer_name, DATE_FORMAT(date,\'%Y-%m-%d\') as reg_str from board JOIN member ON board.member_id = member.member_id ORDER BY board_id DESC')
             res.json(ret);
         } catch (err) {
 
@@ -22,11 +22,14 @@ module.exports = upload => {
     });
 
     //detail
-    router.get("/detail/:num", async (req, res) => {
+    router.get("/detail/:board_id", async (req, res) => {
         console.log("board detail 접근");
 
         try {
-            const [ret] = await conn.execute("select * from board where num = ?",[req.params.num])
+            // const [ret] = await conn.execute("select *,DATE_FORMAT(date,\'%Y-%m-%d %H:%i:%s\') as reg_str from board where board_id = ?",[req.params.board_id])
+            const [ret] = await conn.execute("select board.*, member.name as writer_name, DATE_FORMAT(date,\'%Y-%m-%d %H:%i:%s\') as reg_str from board JOIN member ON board.member_id = member.member_id where board.board_id = ?",[req.params.board_id])
+            console.log(req.params);
+            
             res.json(ret[0]);
         } catch (err) {
 
@@ -39,42 +42,40 @@ module.exports = upload => {
 
 
     // 쓰기
-    router.post("/join", async(req, res) => {
-        console.log("백엔드 join",req);
+    router.post("/join", async (req, res) => {
+        console.log("백엔드 join", req.body);
 
-        let sql = 'insert into board (title,context,secret,date) values (?,?,?,sysdate())';
-
+        // member_id 추가
+        let sql = 'insert into board (title, context, secret, date, member_id) values (?, ?, ?, sysdate(), ?)';
 
         let data = [
             req.body.title,
             req.body.context,
             req.body.secret,
+            req.body.member_id, // member_id를 추가
         ];
-        console.log("백엔드 join",data);
+        console.log("백엔드 join", data);
 
         try {
             const [ret] = await conn.execute(sql, data)
-            
+
             const newId = ret.insertId;
-            console.log('쓰기완료',newId);
-            res.json({newId})
+            console.log('쓰기완료', newId);
+            res.json({ newId });
         } catch (err) {
-
             console.log("sql 실패 : ", err.message);
-            ret.status(500).send('db오류')
-
+            res.status(500).send('db오류');
         }
-
     });
 
-    router.delete("/delete/:num", async(req, res) => {
-        console.log("삭제 진입:" + req.params.num);
+    router.delete("/delete/:board_id", async(req, res) => {
+        console.log("삭제 진입:" + req.params.board_id);
         console.log(req.body);
 
 
         try {
-            const [ret] = await conn.execute('delete from board where num = ?',[req.params.num])
-            res.send("삭제 성공:" + req.params.num);
+            const [ret] = await conn.execute('delete from board where board_id = ?',[req.params.board_id])
+            res.send("삭제 성공:" + req.params.board_id);
         } catch (err) {
 
             console.log("sql 실패 : ", err.message);
@@ -84,17 +85,17 @@ module.exports = upload => {
 
     });
 
-    router.put("/modify/:num", async(req, res) => {
+    router.put("/modify/:board_id", async(req, res) => {
         //console.log(req.body)
         let data = [
             req.body.title,
             req.body.context,
-            req.params.num
+            req.params.board_id
         ]
         console.log(data);
 
         try {
-            const [ret] = await conn.execute('update board set title=?, context=? where num = ?', data)
+            const [ret] = await conn.execute('update board set title=?, context=? where board_id = ?', data)
             res.send("수정성공");
         } catch (err) {
 

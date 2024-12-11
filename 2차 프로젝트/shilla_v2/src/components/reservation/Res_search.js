@@ -78,7 +78,7 @@ function Res_search() {
     console.log("종료일:", endDate);
 
     try {
-      const response = await axios.post("http://192.168.0.13:5002/bk/reserve", {
+      const response = await axios.post("http://localhost:5002/bk/reserve", {
         startDate,
         endDate,
       });

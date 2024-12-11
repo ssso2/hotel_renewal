@@ -72,7 +72,7 @@ const MainHeader = () => {
             gnbMenu : [
                 {link : '/info', text : '연락처'},
                 {link : '/notice', text : '공지사항'},
-                {link : '/faq', text : 'FAQ'},
+                // {link : '/faq', text : 'FAQ'},
                 {link : '/board', text : '문의하기'},
                 {link : '/location', text : '오시는길'},
             ]
