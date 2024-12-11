@@ -3,6 +3,7 @@ import axios from "axios";
 
 const MyReservationCont = () => {
   const [reservations, setReservations] = useState([]);
+  
   const memberId = sessionStorage.getItem("id"); // 세션에서 member_id 가져오기
 
   useEffect(() => {
@@ -17,17 +18,21 @@ const MyReservationCont = () => {
           );
           console.log("API 응답 데이터:", response.data);  // 응답 데이터 확인
           setReservations(response.data);  // 예약 내역 설정
-          setLoading(false);  // 로딩 완료
+          //setLoading(false);  // 로딩 완료
         } catch (error) {
           console.error("예약 데이터를 가져오지 못했습니다.", error);
           setError("예약 데이터를 가져오지 못했습니다.");
-          setLoading(false);
+          //setLoading(false);
         }
       };
 
       fetchReservations();
     }
   }, [memberId]);
+
+  if(!reservations){
+    return <div>로딩중</div>
+  }
 
   return (
     <div className="reservate-info" id="reservate-info">
