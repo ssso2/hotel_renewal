@@ -6,7 +6,7 @@ import MyReservationCont from './MyReservationCont'
 import '../../scss/myreservation.scss'
 
 
-const MyInfo = () => {
+const MyReservation = () => {
     return (
         <>
             <Header/>
@@ -25,4 +25,4 @@ const MyInfo = () => {
     )
 }
 
-export default MyInfo;
+export default MyReservation;
