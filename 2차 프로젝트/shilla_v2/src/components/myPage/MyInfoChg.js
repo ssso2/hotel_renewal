@@ -6,7 +6,7 @@ import MyInfoChgCont from './MyInfoChgCont'
 
 
 
-const MyInfo = () => {
+const MyInfoChg = () => {
 
 
     return (
@@ -27,4 +27,4 @@ const MyInfo = () => {
     )
 }
 
-export default MyInfo
+export default MyInfoChg

@@ -7,7 +7,7 @@ import '../../scss/mypage.scss'
 import '../../scss/myinquiry.scss'
 
 
-const MyInfo = () => {
+const MyInquiry = () => {
 
 
     return (
@@ -30,4 +30,4 @@ const MyInfo = () => {
     )
 }
 
-export default MyInfo
+export default MyInquiry
