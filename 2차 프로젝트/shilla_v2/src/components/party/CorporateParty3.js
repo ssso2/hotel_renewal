@@ -7,7 +7,7 @@ import Introduction from './Introduction';
 import Buttons2 from './Buttons2';
 import Card from './Card';
 import Footer from '../common/Footer';
-// import Popup from './Popup';
+import Popup from './Popup';
 
 import "../../scss/common.scss"
 import "../../scss/header.scss"
@@ -104,7 +104,40 @@ function CorporateParty3() {
       
     ];
     
-    console.log(cardData);
+    const popUpData = [
+      {
+        id: "pop-floor-plan02",
+        title: "입체도면보기",
+        imgSrc: "../../img/sub/SmallSizeRoom_kr.jpg",
+      },
+      {
+        id: "pop-floor-plan03",
+        title: "Small Rooms Floor Map",
+        imgSrc: "../../img/sub/ssRmFmap.jpg",
+      },
+      {
+        id: "pop-floor-plan01-1",
+        title: "라일락 도면보기",
+        imgSrc: "../../img/sub/lilacMap.gif",
+      },
+      {
+        id: "pop-floor-plan01-2",
+        title: "마로니에 도면보기",
+        imgSrc: "../../img/sub/mrMap.jpg",
+      },
+      {
+        id: "pop-floor-plan01-3",
+        title: "메이플 도면보기",
+        imgSrc: "../../img/sub/mapleMap.jpg",
+      },
+      {
+        id: "pop-floor-plan01-4",
+        title: "오키드 도면보기",
+        imgSrc: "../../img/sub/orchidMap.jpg",
+      },
+    ];
+    
+
 
     return (
         <>
@@ -134,9 +167,9 @@ function CorporateParty3() {
             </div>
         </div>
         <Footer/>
-        {/* {popUpData.map((popup) => (
+        {popUpData.map((popup) => (
             <Popup key={popup.id} id={popup.id} title={popup.title} imgSrc={popup.imgSrc} />
-        ))} */}
+        ))}
         </>
     )
 }
