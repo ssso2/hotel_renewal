@@ -93,6 +93,10 @@ app.use("/bk/admin/dashboard", adminDashboardRouter);
 // admin memberboard 라우터 추가
 const adminMemberboardRouter = require("./controller/adminMemberboard.js");
 app.use("/bk/admin/member", adminMemberboardRouter());
+// admin reserve 라우터 추가
+const adminDetailboardRouter = require("./controller/adminMemberboard.js");
+app.use("/bk/admin/member/detail", adminDetailboardRouter());
+
 
 
 // 객실관리 라우터 추가

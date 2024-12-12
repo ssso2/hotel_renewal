@@ -55,7 +55,7 @@ import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminRoomDetail from "./components/admin/room/AdminRoomDetail";
 import AdminMember from "./components/admin/member/AdminMember";
-import AdminCont3 from "./components/admin/member/AdminCont3";
+import AdminCont3Detail from "./components/admin/member/AdminCont3Detail";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
 import AdminNotice from "./components/admin/notice/AdminNotice";
@@ -116,7 +116,7 @@ function App() {
                     <Route path="room" element={<AdminRoom />} />
                     <Route path="room/detail/:id" element={<AdminRoomDetail />} />
                     <Route path="member" element={<AdminMember />} />
-                    <Route path="member/:id" element={<AdminCont3 />} /> 
+                    <Route path="member/:id" element={<AdminCont3Detail />} />
                     <Route path="reservation" element={<AdminReservation />} />
                     <Route path="notice" element={<AdminNotice />} />
                     <Route path="cs" element={<AdminCs />} />
