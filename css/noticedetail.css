@@ -53,13 +53,13 @@
   width: 60%;
   height: auto;
 }
-.container.board .button-container {
+.container.board .button-container.notice {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   width: 100%;
 }
-.container.board .button-container .listgo {
+.container.board .button-container.notice .listgo {
   box-sizing: border-box;
   background: #7a6c64;
   color: #fff;
@@ -69,7 +69,7 @@
   border-radius: 5px;
   transition: background-color 0.3s;
 }
-.container.board .button-container .listgo:hover {
+.container.board .button-container.notice .listgo:hover {
   background-color: #6a5b54;
 }
 

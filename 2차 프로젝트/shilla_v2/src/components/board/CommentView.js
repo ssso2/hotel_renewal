@@ -127,7 +127,7 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
 
     }
     if(user.grade == 1){
-        return (<CommentWrite user={user} detailText={detailText}  commentFetchData={commentFetchData}/>)
+        return (<CommentWrite user={user} detailText={detailText} setDetailText={setDetailText} commentFetchData={commentFetchData}/>)
     }
     return;
 };

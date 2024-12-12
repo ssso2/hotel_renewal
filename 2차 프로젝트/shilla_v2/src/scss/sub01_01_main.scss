@@ -86,20 +86,32 @@
     .kw-title {
         display: block;
         margin-bottom: 20px;
+        line-height: 1.7;
     }
 }
 .pkg-datepicker-box {
     flex-grow: 4;
+    .date-picker-input {
+        width: 100%;
+        height: 30px;
+        padding: 0px;
+        color: #333333;
+        font-size: 1rem;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        font-weight: 400;
+        @include ellipsis;
+    }
 }
 
-.date {
-    width: 100%;
-    height: 30px;
-    padding-left: 5px;
-    color: #333333;
-    font-size: 1rem;
-    border-bottom: 1px solid #ddd;
-}
+// .date {
+//     width: 100%;
+//     height: 30px;
+//     padding-left: 5px;
+//     color: #333333;
+//     font-size: 1rem;
+//     border-bottom: 1px solid #ddd;
+// }
 
 .pkg-filter-sort {
     flex-grow: 1;
@@ -119,7 +131,7 @@
                 width: calc(100% / 6);
                 height: 100%;
                 text-align: center;
-                font-size: 12px;
+                // font-size: 12px;
                 input[type="checkbox"] {
                     display: none;
                 }
@@ -127,7 +139,8 @@
                     display: inline-block;
                     white-space: nowrap;
                     background-color: #fff;
-                    border: 1px solid #333;
+                    // border: 1px solid #333;
+                    border: 1px solid #ddd;
                     border-radius: 5px;
                     width: 100%;
                     height: 100%;
@@ -194,7 +207,8 @@
 }
 .typebox {
     width: 100%;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+    // border-bottom: 1px solid #ddd;
 }
 .sortbox {
     border: 1px solid #ddd;
@@ -400,50 +414,6 @@
     }
 }
 
-// //페이지네이션
-// .page-container {
-//     width: 100%;
-//     height: 50px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     margin: 50px 0 20px 0;
-//     .pkg-paging {
-//         display: flex;
-//         & button {
-//             display: inline-block;
-//             margin-right: 20px;
-//             font-size: 20px;
-//         }
-//     }
-//     .active {
-//         font-weight: bold;
-//         text-decoration: underline;
-//     }
-//     .pagepng {
-//         background-image: url("../img/common/bg_pageination.png");
-//         width: 25px;
-//         height: 25px;
-//         border: none;
-//         background-color: #fff;
-//     }
-// }
-// #first-page {
-//     background-position: 0 0;
-// }
-
-// #prev-page {
-//     background-position: 0 -25px;
-// }
-
-// #next-page {
-//     background-position: 0 -50px;
-// }
-
-// #last-page {
-//     background-position: 0 -75px;
-// }
-
 // 반응형
 @media screen and (max-width: 1500px) {
     // .daterangepicker {
@@ -554,13 +524,22 @@
         padding: 20px 0px 0px 20px;
         margin: 10px;
     }
-    .pkg-datepicker-box .date {
-        width: 42%;
-        padding-left: 5px;
-        color: #333333;
-        font-size: 16px;
-        border-bottom: 1px solid #ddd;
+    .pkg-datepicker-box {
+        .date-picker-input {
+            width: 42%;
+            // padding-left: 5px;
+            // color: #333333;
+            // font-size: 16px;
+            // border-bottom: 1px solid #ddd;
+        }
     }
+    // .pkg-datepicker-box .date {
+    //     width: 42%;
+    //     padding-left: 5px;
+    //     color: #333333;
+    //     font-size: 16px;
+    //     border-bottom: 1px solid #ddd;
+    // }
 
     .pkg-filter-sort {
         .dropdown {
