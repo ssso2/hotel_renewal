@@ -18,7 +18,7 @@ import Info from "./components/info/Info";
 import Location from "./components/location/Location";
 
 // lifestyle
-import LifeStyle from "./components/lifeStyle/Party";
+import LifeStyle from "./components/lifeStyle/LifeStyle";
 import OutdoorPool from "./components/lifeStyle/OutdoorPool";
 import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
@@ -31,6 +31,7 @@ import Shopping from "./components/lifeStyle/Shopping";
 import Shopping2 from "./components/lifeStyle/Shopping2";
 
 // wedding & party
+import Party from "./components/party/Party";
 import Wedding from "./components/party/Wedding";
 import Wedding2 from "./components/party/Wedding2";
 import Wedding3 from "./components/party/Wedding3";
@@ -278,6 +279,7 @@ function App() {
 
             {/* 웨딩&연회 */}
             <Routes>
+                <Route path="/party" element={<Party />}></Route>
                 <Route path="/wedding" element={<Wedding />}></Route>
                 <Route path="/wedding2" element={<Wedding2 />}></Route>
                 <Route path="/wedding3" element={<Wedding3 />}></Route>
