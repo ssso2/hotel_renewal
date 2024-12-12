@@ -50,36 +50,51 @@ const AdminCont3Detail = () => {
 
     return (
         <>
-            <Header/>
-            <div className="admin-wrap">
-                <div className="center">
-                    <AdminTabMenu/>
-                    <div className="tab-contents">
-                        <div>
-                            {/* member.name(member 안에 DB의 name)과 id(useParam에서 전달된 회원 ID)를 호출 */}
-                            {/* 예약 정보가 하나라도 있을 경우 ↓ reservation.map 실행 */}
+            <div className="cont cont3">
+                <Header/>
+                <div className="admin-wrap">
+                    <div className="center">
+                        <AdminTabMenu/>
+                        <div className="tab-contents">
                             <h2>{`${member.name}(${id})님의 회원 정보`}</h2>
-                            {reservation.length > 0 ? (
-                                reservation.map((item, idx) => (
-                                    <div key={idx}>
-                                        <span> 예약번호 : {item.reservation_id} </span>
-                                        <span> 생일 : {item.birth} </span>
-                                        <span> 체크인 : {`${new Date(item.start_date).getFullYear().toString().slice(2)}-
-                                        ${(new Date(item.start_date).getMonth() + 1).toString().padStart(2, '0')}-
-                                        ${new Date(item.start_date).getDate().toString().padStart(2, '0')}`} </span>
-                                        <span> 체크아웃 : {`${new Date(item.end_date).getFullYear().toString().slice(2)}-
-                                        ${(new Date(item.end_date).getMonth() + 1).toString().padStart(2, '0')}-
-                                        ${new Date(item.end_date).getDate().toString().padStart(2, '0')}`} </span>
-                                        <span> 총금액 : {item.tot_price} </span>
-                                        <span> 성인인원 : {item.adult_cnt} </span>
-                                        <span> 어린이인원 : {item.child_cnt} </span>
-                                        <span> 이용현황 : {item.Cancel == 1 ? "예약취소" : "정상이용"} </span>
-                                        {item.description && <span> 비고 : {item.description} </span>}
-                                    </div>
-                                ))
-                            ) : (
-                                <p>예약 정보가 없습니다.</p>
-                            )}
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>예약번호</td>
+                                        <td>생일</td>
+                                        <td>체크인</td>
+                                        <td>체크아웃</td>
+                                        <td>총금액</td>
+                                        <td>성인</td>
+                                        <td>어린이</td>
+                                        <td>이용 현황</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {reservation.length > 0 ? (
+                                        reservation.map((item, idx) => (
+                                            <tr key={idx}>
+                                                <td>{item.reservation_id} </td>
+                                                <td>{item.birth} </td>
+                                                <td>{`${new Date(item.start_date).getFullYear().toString().slice(2)}-
+                                                ${(new Date(item.start_date).getMonth() + 1).toString().padStart(2, '0')}-
+                                                ${new Date(item.start_date).getDate().toString().padStart(2, '0')}`} </td>
+                                                <td>{`${new Date(item.end_date).getFullYear().toString().slice(2)}-
+                                                ${(new Date(item.end_date).getMonth() + 1).toString().padStart(2, '0')}-
+                                                ${new Date(item.end_date).getDate().toString().padStart(2, '0')}`} </td>
+                                                <td>{item.tot_price} </td>
+                                                <td>{item.adult_cnt} 명 </td>
+                                                <td>{item.child_cnt} 명 </td>
+                                                <td>
+                                                    {item.Cancel === 1 ? "예약 취소" : `정상 이용 ${item.description ? `- ${item.description}` : ""}`}
+                                                </td>
+                                            </tr>
+                                        ))
+                                    ) : (
+                                        <td colspan="9">예약 정보가 없습니다.</td>
+                                    )}
+                                </tbody>
+                            </table>
                             <Link to="/admin/member">목록으로</Link>
                         </div>
                     </div>
