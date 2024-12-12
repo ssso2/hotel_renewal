@@ -1,61 +1,48 @@
 .cont4 {
-    // 테이블 스타일 설정
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // 테이블 그림자
-      border-radius: 8px; // 둥근 테두리
-    //   overflow: hidden;
-  
-      caption {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #333;
-      }
-  
-      thead {
-        background-color: #007bff;
-        color: white;
-        // text-transform: uppercase;
-      }
-  
-      th,
-      td {
-        padding: 12px 16px;
-        text-align: left;
-        border: 1px solid #ddd;
-        font-size: 14px;
-      }
-  
-      th {
-        font-weight: bold;
-        font-size: 16px;
-      }
-  
-      tr:nth-child {
-        background-color: #f1f1f1; // 짝수 행 배경색
-      }
-  
-    //   tr:hover {
-    //     background-color: #f9f9f9; // 마우스 hover 시 배경색
-    //   }
-  
-      td {
-        color: #555;
-        transition: all 0.3s ease-in-out; // 애니메이션 효과
-      }
-  
-      // td:hover {
-      //   cursor: pointer; // hover 시 커서 변경
-      // }
-  
+  // 테이블 스타일 설정
+  table {
+    width: 100%;
+    max-width: 800px; // 테이블의 최대 너비 설정
+    margin: 20px auto; // 테이블 가운데 정렬 및 위아래 여백
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // 테이블 그림자
+    border-radius: 8px; // 둥근 테두리
+
+    caption {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
     }
-    
-    // 예약 목록이 없을 경우 스타일링
-    p {
+
+    thead {
+      background-color: #007bff;
+      color: white;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    th {
+      padding: 12px 16px;
+      text-align: left;
+      border: 1px solid #ddd;
+      font-weight: bold;
       font-size: 16px;
-      color: #666;
+    }
+
+    tr:nth-child {
+      background-color: #f1f1f1; // 짝수 행 배경색
+    }
+
+    td {
+      color: #555;
+      text-align: center;
     }
   }
+
+}
