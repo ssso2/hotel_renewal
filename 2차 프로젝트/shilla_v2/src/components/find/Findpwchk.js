@@ -13,23 +13,23 @@ const Findpwchk = ({ memberlist, setmemberlist, id, idchkhandle }) => {
                             <input
                                 type="text"
                                 id="pw"
-                                name="member_id"
-                                minlength="12"
-                                maxlength="16"
+                                name="id"
+                                // minlength="12"
+                                // maxlength="16"
                                 placeholder="아이디를 입력해주세요."
+                                required
                             />
-                            <button id="edit" onClick={idchkhandle}>
-                                아이디확인
-                            </button>
                         </div>
                         <div className="title">패스워드</div>
                         <div className="input-wrap">
                             <input
                                 type="password"
                                 id="pw"
-                                minlength="12"
-                                maxlength="16"
+                                name="newpw"
+                                // minlength="12"
+                                // maxlength="16"
                                 placeholder="영문, 숫자, 특수문자를 포함하여 12~16자"
+                                required
                             />
                             <span
                                 className="error-message"
@@ -41,9 +41,10 @@ const Findpwchk = ({ memberlist, setmemberlist, id, idchkhandle }) => {
                             <input
                                 type="password"
                                 id="pwchk"
-                                minlength="12"
-                                maxlength="16"
+                                // minlength="12"
+                                // maxlength="16"
                                 placeholder="영문, 숫자, 특수문자를 포함하여 12~16자"
+                                required
                             />
                             <span
                                 className="error-message"
@@ -53,7 +54,9 @@ const Findpwchk = ({ memberlist, setmemberlist, id, idchkhandle }) => {
                     </form>
                 </div>
             </div>
-            <input type="button" id="edit" value="변경완료" />
+            <button id="edit" onClick={idchkhandle}>
+                변경완료
+            </button>
         </div>
     );
 };
