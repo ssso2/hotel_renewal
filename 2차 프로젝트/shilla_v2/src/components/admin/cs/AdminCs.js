@@ -2,8 +2,9 @@ import React, { useEffect } from "react"
 import Header from '../../common/Header'
 import Footer from '../../common/Footer'
 import AdminTabMenu from '../AdminTabMenu'
-import AdminCont7 from "./AdminCont7"
+import AdminCsCont from "./AdminCsCont"
 import '../../../scss/admin.scss'
+
 
 const AdminCs = () => {
 
@@ -18,7 +19,7 @@ const AdminCs = () => {
                 <div className="center">
                     <AdminTabMenu/>
                     <div className="tab-contents">
-                        <AdminCont7/>
+                        <AdminCsCont/>
                     </div>
                 </div>
             </div>
