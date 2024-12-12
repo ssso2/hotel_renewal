@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../common/Header';
 import Tab2 from "./Tab2";
-// import SubTitle from './SubTitle';
+import SubTitle from './SubTitle';
 // import Gallery from './Gallery';
 import Footer from '../common/Footer';
 
@@ -21,14 +21,7 @@ function CorporateParty2() {
                     <Tab2/>
                     <div className="tab-contents">
                         <div className="tab-cont cont1 on">
-                            <div className="sub-title">
-                                <h2>영빈관</h2>
-                                <ul className="location">
-                                    <li><a href="../index.html">홈</a></li>
-                                    <li><a href="../sub/sub05.html#company">기업연회</a></li>
-                                    <li><a href="#self">영빈관</a></li>
-                                </ul>
-                            </div>
+                            <SubTitle/>
                             <div className="gallery no-slide">
                                 <img src="../../img/sub/gbRoom-2.jpg" alt=""/>
                             </div>
