@@ -247,15 +247,13 @@
 }
 
 @media screen and (max-width: 768px) {
-
-    .pw-chk{
+    .pw-chk {
         width: 100%;
-        .input-container .input-wrap{
+        .input-container .input-wrap {
             width: calc(100% - 100px);
             input {
                 width: calc(100% - 10px);
             }
-        } 
-    } 
+        }
+    }
 }
-

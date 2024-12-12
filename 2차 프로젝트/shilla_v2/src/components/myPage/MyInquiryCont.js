@@ -65,7 +65,7 @@ const MyInquiryCont = () => {
                                 <li className="post-num">{item.board_id}</li>
                                 <li className="inquiry-title"><Link to={`/board/detail/${item.board_id}`}>{item.title}</Link></li>
                                 <li className="inquiry-date">{item.reg_str}</li>
-                                <li className="inquiry-status">{(item.answer === 1)?"답변완료":"미답변"}</li>
+                                <li className="inquiry-status">{(item.answer === 1)?"답변 완료":"답변 대기"}</li>
                             </ul>
                         </li>
                     ))

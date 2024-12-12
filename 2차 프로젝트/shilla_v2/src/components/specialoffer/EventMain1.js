@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const EventMain1 = ({ data }) => {
     return (
@@ -17,9 +18,9 @@ const EventMain1 = ({ data }) => {
             </div>
             <div className="bottom-wrapper">
                 <p className="offer-pay">{data.price}</p>
-                <a href={data.link} className="event-btn">
+                <Link to={data.link} className="event-btn">
                     자세히 보기
-                </a>
+                </Link>
             </div>
         </li>
     );

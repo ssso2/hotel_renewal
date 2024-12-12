@@ -47,6 +47,18 @@ const Noticelist = () => {
         }
     };
 
+    // 날짜출력
+    const formatter = new Intl.DateTimeFormat("ko-KR", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+        timeZone: "Asia/Seoul",
+    });
+
     return (
         <div>
             <div className="container">
@@ -74,11 +86,10 @@ const Noticelist = () => {
                                 </div>
                                 <div className="N-view"> {data.view_point}</div>
                                 <div className="N-date">
-                                    {
-                                        new Date(data.reg_date)
-                                            .toISOString()
-                                            .split("T")[0]
-                                    }
+                                    {formatter
+                                        .format(new Date(data.reg_date))
+                                        .replace(/\. /g, "-") // 날짜 구분자를 "-"로 변경
+                                        .replace(/-\d{2}:\d{2}:\d{2}$/, "")}
                                 </div>
                             </li>
                         ))}

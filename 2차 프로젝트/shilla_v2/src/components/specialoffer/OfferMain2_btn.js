@@ -11,19 +11,19 @@ const OfferMain2_btn = ({ handlereset, handleSearch }) => {
             <button type="reset" className="pkg-filter-resetbtn">
                 초기화
             </button>
-            <input
+            {/* <input
                 type="button"
                 className="pkg-filter-searchbtn"
                 value="검색"
                 onClick={handleSearch}
-            />
-            {/* <button
+            /> */}
+            <button
                 type="submit"
                 className="pkg-filter-searchbtn"
                 onClick={handleSearch}
             >
                 검색
-            </button> */}
+            </button>
         </div>
     );
 };

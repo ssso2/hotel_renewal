@@ -9,36 +9,32 @@ const MyInfoCont = () => {
 
     const navigate = useNavigate();
 
+    const [text, setText] = useState([]);
+    const [user, setUser] = useState(null);
 
-    const [text,setText] = useState([])
-    const [user,setUser] = useState(null)
-
-    useEffect(()=>{
-
+    useEffect(() => {
         // 로그인 여부 확인
         const id = sessionStorage.getItem("id");
         const name = sessionStorage.getItem("name");
         const grade = sessionStorage.getItem("grade");
-        
-        if(id){
-            setUser({'id':id,"name": name,"grade":grade})
-            
-        }else{
-            setUser(null)
+
+        if (id) {
+            setUser({ 'id': id, "name": name, "grade": grade });
+        } else {
+            setUser(null);
         }
 
-        console.log("회원정보수정 시작 ",id)
+        console.log("회원정보수정 시작 ", id);
         axios.get(`${bkURL}/mypage/${id}`)
-        .then(res =>{
-            console.log("회원정보수정 시작데이터 받아옴 ",res.data)
-            setText(res.data);
-            
-        })
-        .catch(err=>{
-            console.error('마이페이지 에러발생 : ', err);
-        })
+            .then(res => {
+                console.log("회원정보수정 시작데이터 받아옴 ", res.data);
+                setText(res.data);
+            })
+            .catch(err => {
+                console.error('마이페이지 에러발생 : ', err);
+            });
 
-    },[])
+    }, []);
 
     const myInfoText = [
         { title: "아이디", id: "userid", value: text.member_id },
@@ -53,11 +49,21 @@ const MyInfoCont = () => {
     function pwChkGo() {
         navigate('/myPage/myInfoChg');  // 페이지 이동
     }
+
     function withdrawalGo() {
-        // setUser.grade = 5
-        alert(`${user.name}님, 회원 탈퇴 되었습니다`);
-        sessionStorage.clear();
-        navigate('/');
+        if (window.confirm("정말로 회원 탈퇴를 진행하시겠습니까?")) {
+            if (user && user.id) {
+                axios.put(`${bkURL}/mypage/withdraw/${user.id}`)
+                    .then(res => {
+                        alert(`${user.name}님, 회원 탈퇴가 완료되었습니다.`);
+                        sessionStorage.clear();
+                        navigate('/');
+                    })
+                    .catch(err => {
+                        console.error('회원 탈퇴 실패: ', err);
+                    });
+            }
+        }
     }
 
     return (
@@ -73,8 +79,8 @@ const MyInfoCont = () => {
                     );
                 })
             }
-            <input type="button" className="edit-btn" value="회원정보 수정" onClick={pwChkGo} /> 
-            <input type="button" className="withdrawal-btn" value="회원 탈퇴"  onClick={withdrawalGo}/> 
+            <input type="button" className="edit-btn" value="회원정보 수정" onClick={pwChkGo} />
+            <input type="button" className="withdrawal-btn" value="회원 탈퇴" onClick={withdrawalGo} />
         </div>
     );
 };

@@ -5,11 +5,6 @@ import NoticedetailOther from "./NoticedetailOther";
 
 const Noticedetail = () => {
     const [Noticedetails, setNoticedetails] = useState([]);
-
-    // const currentpost = Noticedetails.find(post => post.state === "current");
-    // const prevpost = Noticedetails.find(post => post.state === "prev");
-    // const nextpost = Noticedetails.find(post => post.state === "next");
-    // console.log(currentpost);
     const { id } = useParams();
 
     const fetchData = async () => {
@@ -57,7 +52,7 @@ const Noticedetail = () => {
                     </div>
                 </div>
                 <NoticedetailOther id={id} />
-                <div className="button-container">
+                <div className="button-container notice">
                     <Link to="/notice" className="listgo">
                         목록으로
                     </Link>

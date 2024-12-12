@@ -35,7 +35,7 @@ const events = [
         link: "",
     },
 ];
-const EventMain = () => {
+const EventMain3 = () => {
     return (
         <>
             <h2 class="event-title">EVENT</h2>
@@ -50,4 +50,4 @@ const EventMain = () => {
     );
 };
 
-export default EventMain;
+export default EventMain3;
