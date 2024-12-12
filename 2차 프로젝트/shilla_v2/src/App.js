@@ -80,7 +80,7 @@ import MyReservation from "./components/myPage/MyReservation";
 import MyInquiry from "./components/myPage/MyInquiry";
 
 // reservation
-import ResOfferRoomId from "./components/reservation/ResOfferRoomId";
+import ResOffer from "./components/reservation/ResOffer";
 import PaymentPage from "./components/reservation/PaymentPage";
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
@@ -207,7 +207,7 @@ function App() {
                     <Route path="detail/paymentallroom" element={<ResMainAllRoomPayment />}/>
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
-                <Route path="/reserve/:product_id" element={<ResOfferRoomId />} /> />
+                <Route path="/reserve/:product_id" element={<ResOffer/>} />
             </Routes>
 
             <Routes>

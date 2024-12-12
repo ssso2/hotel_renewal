@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Header from "../common/Header";
+import Footer from "../common/Footer";
 import { useParams } from "react-router-dom";
 import OfferDateRangePicker from "./OfferDateRangePicker";
 import PackageRoomItem from "./PackageRoomItem"; // 패키지 컴포넌트
@@ -111,6 +113,7 @@ function ResOfferRoomId(props) {
   };
 
   return (
+    
     <div className="container">
       <section className="reservation">
         <div className="center">
@@ -124,7 +127,7 @@ function ResOfferRoomId(props) {
                   setCheckOutDate(endDate);
                 }}
                 showPicker={showPicker}
-                togglePicker={togglePicker}
+                togglePicker={() => setShowPicker(!showPicker)}
                 minDate={new Date(offerData.start_date)}
                 maxDate={new Date(offerData.end_date)}
               />
