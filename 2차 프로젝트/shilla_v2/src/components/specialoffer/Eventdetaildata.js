@@ -4,7 +4,7 @@ export const img = [
     "/img/sub/eventMemory.jpg",
     "/img/sub/eventPopera.jpg",
     "/img/sub/eventWhisky.jpg",
-    "/img/sub/eventSweet.jpg",
+    "/img/sub/eventTeddy.jpg",
 ];
 
 //내용
@@ -82,6 +82,7 @@ export const pmt = [
         "[Singer Line Up]",
         "JTBC '팬텀싱어' 출신 멤버 '박유겸', '최진호', '최민우', '이한범'은 폭발적인 성량과 매력적인 보이스로 사랑받는 가수들입니다. 뮤지컬, 크로스오버, 오페라 등 다채로운 퍼포먼스를 선보이고 있습니다.",
     ],
+    [""],
 ];
 
 //이벤트세부내용
@@ -132,6 +133,18 @@ export const event = [
             ],
         },
     ],
+    [
+        {
+            title: "| The Balvenie New Spanish Oak Cask 17 Year Old",
+            img: "/img/sub/Whisky.jpg",
+            item: [
+                "몰트 마스터 켈시 맥케크니와 창고 마스터 조지 패터슨이 직접 선별한 완벽한 조화의 한정 수량 캐스크",
+                "(Nose) 신선한 오크에서 오는 깊은 흙 내음, 섬세한 꽃향기",
+                "(Taste) 꿀과 셔벗의 생동감 있는 조화가 토피와 시나몬의 매콤함으로 뒷받침되는 깊이",
+                "(Finish) 깊고 지속적인 피니시",
+            ],
+        },
+    ],
 ];
 
 //다른패키지
@@ -159,16 +172,30 @@ export const pkglist = [
     },
     {
         link: "/specialOffer/event/detail/5",
-        img: "/img/sub/eventWhisky2.jpg",
-        title: "The Exclusive Launch of The Balvenie Limited Edition Whisky",
+        img: "/img/sub/eventTeddy2.jpg",
+        title: "Shilla Bear X Blue Dragon Keyring Limited Edition",
         date: "2024-12-09 ~ 2025-02-07",
-        pay: "740,000원 ~",
+        pay: "45,000 원 ~",
     },
     {
         link: "/specialOffer/event/detail/1",
-        img: "/img/sub/eventWhisky2.jpg",
-        title: "The Exclusive Launch of The Balvenie Limited Edition Whisky",
+        img: "/img/sub/eventVietnam2.jpg",
+        title: "Taste of Vietnam",
         date: "2024-12-09 ~ 2025-02-07",
-        pay: "740,000원 ~",
+        pay: "230,000원 ~",
+    },
+    {
+        link: "/specialOffer/event/detail/2",
+        img: "/img/sub/eventMemory2.jpg",
+        title: "An Enchanting Memory",
+        date: "2024-11-01 ~ 2025-01-31",
+        pay: "930,000원 ~",
+    },
+    {
+        link: "/specialOffer/event/detail/3",
+        img: "/img/sub/eventPopera2.jpg",
+        title: "Popera Whisky Serenade",
+        date: "2024-12-18 ~ 2025-01-22",
+        pay: "360,000 원 ~",
     },
 ];

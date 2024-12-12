@@ -5,17 +5,17 @@ import EventDetail_con from "./EventDetail_con";
 import EventDetail_des from "./EventDetail_des";
 import EventDetail_othercard from "./EventDetail_othercard";
 
-const EventDetail2 = () => {
+const EventDetail5 = () => {
     return (
         <div className="container">
             <div className="center">
-                <EventDetail1_header title="An Enchanting Memory" />
-                <EventDetail_con img={img[1]} section={section[1]} />
+                <EventDetail1_header title="Shilla Bear X Blue Dragon Keyring Limited Edition" />
+                <EventDetail_con img={img[4]} section={section[4]} />
                 <EventDetail_des />
-                <EventDetail_othercard pkglist={pkglist.slice(1, 4)} />
+                <EventDetail_othercard pkglist={pkglist.slice(4, 7)} />
             </div>
         </div>
     );
 };
 
-export default EventDetail2;
+export default EventDetail5;
