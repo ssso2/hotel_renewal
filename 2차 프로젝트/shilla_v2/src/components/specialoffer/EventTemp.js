@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 
-const SpecialOffer = () => {
+const EventTemp = () => {
     return (
         <>
             <Header />
@@ -13,4 +13,4 @@ const SpecialOffer = () => {
     );
 };
 
-export default SpecialOffer;
+export default EventTemp;

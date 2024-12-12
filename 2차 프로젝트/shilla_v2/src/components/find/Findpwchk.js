@@ -1,7 +1,6 @@
 import React from "react";
 
-const Findpwchk = ({ memberlist, setmemberlist, id, idchkhandle }) => {
-    console.log("아이디", id);
+const Findpwchk = ({ memberlist, setmemberlist, idchkhandle }) => {
     return (
         <div className="pw-chk" id="pw-chk">
             <h2 className="my-pw">비밀번호 변경</h2>
@@ -41,6 +40,7 @@ const Findpwchk = ({ memberlist, setmemberlist, id, idchkhandle }) => {
                             <input
                                 type="password"
                                 id="pwchk"
+                                name="newpwchk"
                                 // minlength="12"
                                 // maxlength="16"
                                 placeholder="영문, 숫자, 특수문자를 포함하여 12~16자"
