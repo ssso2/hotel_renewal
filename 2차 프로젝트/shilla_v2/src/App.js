@@ -62,7 +62,7 @@ import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminRoomDetail from "./components/admin/room/AdminRoomDetail";
 import AdminMember from "./components/admin/member/AdminMember";
-import AdminCont3 from "./components/admin/member/AdminCont3";
+import AdminCont3Detail from "./components/admin/member/AdminCont3Detail";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
 import AdminNotice from "./components/admin/notice/AdminNotice";
@@ -79,7 +79,7 @@ import MyReservation from "./components/myPage/MyReservation";
 import MyInquiry from "./components/myPage/MyInquiry";
 
 // reservation
-import ResOfferRoomId from "./components/reservation/ResOfferRoomId";
+import ResOffer from "./components/reservation/ResOffer";
 import PaymentPage from "./components/reservation/PaymentPage";
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
@@ -134,7 +134,7 @@ function App() {
                         element={<AdminRoomDetail />}
                     />
                     <Route path="member" element={<AdminMember />} />
-                    <Route path="member/:id" element={<AdminCont3 />} />
+                    <Route path="member/:id" element={<AdminCont3Detail />} />
                     <Route path="reservation" element={<AdminReservation />} />
                     <Route path="notice" element={<AdminNotice />}>
                         <Route path="" element={<AdminNoticeMain />} />
@@ -215,11 +215,7 @@ function App() {
                     />
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
-                <Route
-                    path="/reserve/:product_id"
-                    element={<ResOfferRoomId />}
-                />{" "}
-                />
+                <Route path="/reserve/:product_id" element={<ResOffer />} />
             </Routes>
 
             <Routes>

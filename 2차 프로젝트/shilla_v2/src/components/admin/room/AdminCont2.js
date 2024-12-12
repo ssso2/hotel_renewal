@@ -70,25 +70,25 @@ const AdminCont2 = () => {
             <div className="table">
                 <div className="table-header">
                     <div className="table-row">
-                        <div className="cell">호수</div>
-                        <div className="cell">특이사항</div>
+                        <div className="cell small">호수</div>
+                        <div className="cell wide">특이사항</div>
                         <div className="cell">체크인</div>
-                        <div className="cell">타입</div>
-                        <div className="cell">침대</div>
+                        <div className="cell type">타입</div>
+                        <div className="cell small">침대</div>
                         <div className="cell">금액</div>
-                        <div className="cell">최대인원</div>
-                        <div className="cell"></div>
+                        <div className="cell small">최대인원</div>
+                        <div className="cell small"></div>
                     </div>
                 </div>
                 <div className="table-body">
                     {currentRooms.map((room) => (
                         <div key={room.room_id} className="table-row">
-                            <div className="cell clickable"
+                            <div className="cell  small clickable"
                                 onClick={() => navigate(`/admin/room/detail/${room.room_id}`)}
                             >
                                 {room.room_id}
                             </div>
-                            <div className="cell">
+                            <div className="cell wide">
                                 <input
                                     type="text"
                                     defaultValue={room.description}
@@ -108,11 +108,11 @@ const AdminCont2 = () => {
                                     <option value="1">체크인</option>
                                 </select>
                             </div>
-                            <div className="cell">{room.room_type}</div>
-                            <div className="cell">{room.bed_type}</div>
+                            <div className="cell type">{room.room_type}</div>
+                            <div className="cell small">{room.bed_type}</div>
                             <div className="cell">{room.day_price}</div>
-                            <div className="cell">{room.max_occupancy}</div>
-                            <div className="cell">
+                            <div className="cell small">{room.max_occupancy}</div>
+                            <div className="cell small">
                                 <button onClick={() => handleUpdate(room.room_id)}>수정</button>
                             </div>
                         </div>

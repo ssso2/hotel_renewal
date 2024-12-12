@@ -13,7 +13,7 @@ const AdminTodayRes = ({ todayReservations, cancelledReservations }) => {
   return (
     <div className="cont cont4">
       <h2>예약관리</h2>
-      <div>당일 예약 현황</div>
+      <h3>당일 예약 현황</h3>
       <table border="">
         <thead>
           <tr>
@@ -56,7 +56,7 @@ const AdminTodayRes = ({ todayReservations, cancelledReservations }) => {
         </tbody>
       </table>
 
-      <div>당일 취소 현황</div>
+      <h3>당일 취소 현황</h3>
       <table border="">
         <thead>
           <tr>
