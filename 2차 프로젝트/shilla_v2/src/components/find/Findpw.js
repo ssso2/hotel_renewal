@@ -3,8 +3,9 @@ import Header from "../common/Header";
 import Footer from "../common/Footer";
 import { title, commentpw } from "./Finddata";
 import "../../scss/findpw.scss";
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import Findpwchk from "./Findpwchk";
+import axios from "axios";
 
 const Findpw = () => {
     const [click, setclick] = useState(false);
@@ -29,13 +30,21 @@ const Findpw = () => {
 
     const idchkhandle = async e => {
         e.preventDefault();
-        // const frmdata = await axios.
-        //         try {
+        console.log(Object.fromEntries(new FormData(document.myfrm)));
 
-        //         } catch (error) {
-
-        //         }
-        //         alert("아이디를 확인했습니다.");
+        const frmdata = new FormData(document.myfrm);
+        const mydata = Object.fromEntries(frmdata);
+        const res = await axios.put("http://localhost:5002/bk/idchk", mydata);
+        try {
+            console.log("폼데이터", frmdata);
+            console.log("마이데이터", mydata);
+            console.log("갔다옴", res.data);
+            if (res.data.exists) {
+                alert("아이디를 확인했습니다.");
+            } else alert("없는 아이디입니다.");
+        } catch (error) {
+            console.log("에러메세지", error);
+        }
     };
     return (
         <>
