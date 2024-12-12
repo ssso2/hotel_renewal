@@ -82,6 +82,7 @@ function ResOfferRoomId(props) {
       }
     };
     fetchOfferData();
+    
   }, [product_id]);
 
   if(!offerData) {
