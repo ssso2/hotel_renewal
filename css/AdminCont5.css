@@ -216,12 +216,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.cont5 .search .searchwrap .list-container .N-title :hover,
-.cont5 .search .listwrapper .list-container .N-title :hover,
-.cont5 .list .searchwrap .list-container .N-title :hover,
-.cont5 .list .listwrapper .list-container .N-title :hover {
-  font-weight: 600;
-}
 .cont5 .search .searchwrap .list-container .N-option,
 .cont5 .search .searchwrap .list-container .N-view,
 .cont5 .search .searchwrap .list-container .N-date,
@@ -252,4 +246,11 @@
   display: flex;
   padding: 0 10px;
   justify-content: space-around;
+  align-items: center;
+}
+.cont5 .search .searchwrap .list-container .MDbtn :hover,
+.cont5 .search .listwrapper .list-container .MDbtn :hover,
+.cont5 .list .searchwrap .list-container .MDbtn :hover,
+.cont5 .list .listwrapper .list-container .MDbtn :hover {
+  font-weight: 700;
 }

@@ -33,6 +33,9 @@ import Shopping2 from "./components/lifeStyle/Shopping2";
 // wedding & party
 import Wedding from "./components/party/Wedding";
 import Wedding2 from "./components/party/Wedding2";
+import Wedding3 from "./components/party/Wedding3";
+import CorporateParty from "./components/party/CorporateParty";
+import CorporateParty2 from "./components/party/CorporateParty2";
 
 // login
 import Login from "./components/login/Login";
@@ -48,6 +51,10 @@ import OfferMain from "./components/specialoffer/OfferMain";
 import OfferDetail from "./components/specialoffer/OfferDetail";
 import Event from "./components/specialoffer/Event";
 import EventDetail1 from "./components/specialoffer/EventDetail1";
+import EventDetail2 from "./components/specialoffer/EventDetail2";
+import EventDetail3 from "./components/specialoffer/EventDetail3";
+import EventDetail4 from "./components/specialoffer/EventDetail4";
+import EventDetail5 from "./components/specialoffer/EventDetail5";
 
 // admin
 import AdminTemp from "./components/admin/AdminTemp";
@@ -59,16 +66,20 @@ import AdminCont3Detail from "./components/admin/member/AdminCont3Detail";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
 import AdminCs from "./components/admin/cs/AdminCs";
 import AdminNotice from "./components/admin/notice/AdminNotice";
+import AdminNoticeMain from "./components/admin/notice/AdminCont5_main";
+import AdminRegister from "./components/admin/notice/AdminCont5_register";
+import AdminModify from "./components/admin/notice/AdminCont5_Modify";
 import AdminSales from "./components/admin/sales/AdminSales";
 
 // myPage
 import MyPageTemp from "./components/myPage/MyPageTemp";
 import MyInfo from "./components/myPage/MyInfo";
-import MyPwChk from "./components/myPage/MyPwChk";
 import MyInfoChg from "./components/myPage/MyInfoChg";
 import MyReservation from "./components/myPage/MyReservation";
+import MyInquiry from "./components/myPage/MyInquiry";
 
 // reservation
+import ResOfferRoomId from "./components/reservation/ResOfferRoomId";
 import PaymentPage from "./components/reservation/PaymentPage";
 import Res_search from "./components/reservation/Res_search";
 import Res_temp from "./components/reservation/Res_temp";
@@ -103,6 +114,9 @@ import Noticelist from "./components/notice/Noticelist";
 import NoticeTemp from "./components/notice/NoticeTemp";
 import Noticedetail from "./components/notice/Noticedetail";
 
+//find
+import Findid from "./components/find/Findid";
+import Findpw from "./components/find/Findpw";
 
 function App() {
     return (
@@ -114,21 +128,27 @@ function App() {
                 <Route path="/admin" element={<AdminTemp></AdminTemp>}>
                     <Route path="" element={<AdminDashboard />} />
                     <Route path="room" element={<AdminRoom />} />
-                    <Route path="room/detail/:id" element={<AdminRoomDetail />} />
+                    <Route
+                        path="room/detail/:id"
+                        element={<AdminRoomDetail />}
+                    />
                     <Route path="member" element={<AdminMember />} />
                     <Route path="member/:id" element={<AdminCont3Detail />} />
                     <Route path="reservation" element={<AdminReservation />} />
-                    <Route path="notice" element={<AdminNotice />} />
+                    <Route path="notice" element={<AdminNotice />}>
+                        <Route path="" element={<AdminNoticeMain />} />
+                        <Route path="register" element={<AdminRegister />} />
+                        <Route path="modify/:id" element={<AdminModify />} />
+                    </Route>
                     <Route path="cs" element={<AdminCs />} />
                     <Route path="sales" element={<AdminSales />} />
                 </Route>
                 {/* 마이페이지 */}
-                <Route path="/mypage" element={<MyPageTemp></MyPageTemp>}>
+                <Route path="/myPage" element={<MyPageTemp></MyPageTemp>}>
                     <Route path="" element={<MyInfo />} />
-                    <Route path="myPwChk" element={<MyPwChk />} />
                     <Route path="myInfoChg" element={<MyInfoChg />} />
                     <Route path="myReservation" element={<MyReservation />} />
-                    {/* <Route path="myInquiry" element={<MyInquiry />} /> */}
+                    <Route path="myInquiry" element={<MyInquiry />} />
                 </Route>
                 {/* 로그인 */}
                 <Route path="/login" element={<Login></Login>}></Route>
@@ -156,7 +176,16 @@ function App() {
                     <Route path="detail/:id" element={<OfferDetail />} />
                     <Route path="event" element={<Event />} />
                     <Route path="event/detail/1" element={<EventDetail1 />} />
+                    <Route path="event/detail/2" element={<EventDetail2 />} />
+                    <Route path="event/detail/3" element={<EventDetail3 />} />
+                    <Route path="event/detail/4" element={<EventDetail4 />} />
+                    <Route path="event/detail/5" element={<EventDetail5 />} />
                 </Route>
+            </Routes>
+            {/* 아이디, 비밀번호 찾기 */}
+            <Routes>
+                <Route path="/findid" element={<Findid />} />
+                <Route path="/findpw" element={<Findpw />} />
             </Routes>
 
             {/* 공지사항 */}
@@ -172,16 +201,12 @@ function App() {
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
-                    <Route
-                        path="detailallroom"
-                        element={<ResMainAllRoomDetail />}
-                    />
-                    <Route
-                        path="detail/paymentallroom"
-                        element={<ResMainAllRoomPayment />}
-                    />
+                    {/* <Route path=":id" element={<ResOfferRoomId />} /> */}
+                    <Route path="detailallroom" element={<ResMainAllRoomDetail />}/>
+                    <Route path="detail/paymentallroom" element={<ResMainAllRoomPayment />}/>
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
+                <Route path="/reserve/:product_id" element={<ResOfferRoomId />} /> />
             </Routes>
 
             <Routes>
@@ -232,7 +257,10 @@ function App() {
                 <Route path="/fitness2" element={<Fitness2 />}></Route>
                 <Route path="/fitness3" element={<Fitness3 />}></Route>
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
-                <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
+                <Route
+                    path="/walkingTrails"
+                    element={<WalkingTrails />}
+                ></Route>
                 <Route path="/jogging" element={<Jogging />}></Route>
                 <Route path="/shopping" element={<Shopping />}></Route>
                 <Route path="/shopping2" element={<Shopping2 />}></Route>
@@ -242,6 +270,15 @@ function App() {
             <Routes>
                 <Route path="/wedding" element={<Wedding />}></Route>
                 <Route path="/wedding2" element={<Wedding2 />}></Route>
+                <Route path="/wedding3" element={<Wedding3 />}></Route>
+                <Route
+                    path="/corporateParty"
+                    element={<CorporateParty />}
+                ></Route>
+                <Route
+                    path="/corporateParty2"
+                    element={<CorporateParty2 />}
+                ></Route>
             </Routes>
         </div>
     );

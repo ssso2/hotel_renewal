@@ -59,9 +59,9 @@ const upload = multer({
 // const mainRouter = require("./controller/main.js");
 // app.use("/bk/", examRouter(upload));
 
-// // notice 라우터 추가
-// const noticeRouter = require("./controller/notice.js");
-// app.use("/bk/notice", noticeRouter(upload));
+// myPage reserve 라우터 추가
+const myPageReserveRouter = require("./controller/myPageReservation.js");
+app.use("/bk/myPage/myReservation", myPageReserveRouter);
 
 // board 라우터 추가
 const boardRouter = require("./controller/board.js");
@@ -84,9 +84,14 @@ app.use("/bk/specialOffer", offerRouter(upload));
 // reservation 라우터 추가
 const reservationRouter = require("./controller/reservations.js");
 app.use("/bk/reserve", reservationRouter);
+const offerReserveRouter = require("./controller/reserveOffer.js");
+app.use("/bk/reserve", offerReserveRouter);
+// myPage reserve 라우터 추가
+// const myPageReserveRouter = require("./controller/myPageReservation.js");
+// app.use("/bk/myPage/myReservation", myPageReserveRouter);
 // admin reserve 라우터 추가
 const adminReserveRouter = require("./controller/adminReserve.js");
-app.use("/bk/admin/reservation", adminReserveRouter)
+app.use("/bk/admin/reservation", adminReserveRouter);
 // admin dashboard 라우터 추가
 const adminDashboardRouter = require("./controller/adminDashboard.js");
 app.use("/bk/admin/dashboard", adminDashboardRouter);
@@ -98,13 +103,19 @@ const adminDetailboardRouter = require("./controller/adminMemberboard.js");
 app.use("/bk/admin/member/detail", adminDetailboardRouter());
 
 
-
 // 객실관리 라우터 추가
 const roomManRouter = require("./controller/roomManagement.js");
 app.use("/bk/admin/roomManagement", roomManRouter());
 // 공지사항 라우터 추가
 const noticeRouter = require("./controller/notice.js");
-app.use("/bk/notice", noticeRouter());
+app.use("/bk/notice", noticeRouter(upload)); //업로드 객체전달 중요
+
+// 매출현황 라우터 추가
+const salesRouter = require("./controller/salesManagement.js");
+app.use("/bk/sales", salesRouter());
+// 아이디,비밀번호찾기 라우터 추가
+const findRouter = require("./controller/find.js");
+app.use("/bk/find", findRouter);
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
 app.get("*", (req, res) => {

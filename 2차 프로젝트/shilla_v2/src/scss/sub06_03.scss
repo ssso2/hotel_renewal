@@ -9,6 +9,14 @@
         color: #333;
     }
 
+    .fa-star {
+        color: red;
+        position: relative;
+        top: -10px;
+        right: -5px;
+        font-size: 7px;
+    }
+
     .board-nav {
         height: 50px;
         font-weight: bold;
@@ -19,6 +27,9 @@
         background-color: #faf8f4;
         .post-title {
             text-align: center;
+        }
+        &.my-page {
+            line-height: 30px;
         }
     }
 

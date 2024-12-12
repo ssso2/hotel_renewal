@@ -3,17 +3,25 @@ import axios from 'axios';
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
-const CommentWrite = ({user,detailText, commentFetchData}) => {
+const CommentWrite = ({user,detailText,setDetailText, commentFetchData}) => {
 
     function CommentsubmitGo(e){
         e.preventDefault()
+        console.log("detailText",detailText);
+        
 
         const frmData = new FormData(document.commentFrm) //아래 폼태그 name 값 가져옴
 
         const data = Object.fromEntries(frmData);
+
+
+        
         data['board_id'] = detailText.board_id
+        data['answer'] = detailText.answer
         data['member_id'] = user.id
         data['author'] = user.name
+
+        
 
         console.log('CommentsubmitGo() 진입');
         console.log(data);
@@ -24,6 +32,20 @@ const CommentWrite = ({user,detailText, commentFetchData}) => {
             console.log('등록 완료 : ', res.data);
             alert('등록되었습니다.');
             commentFetchData()
+
+
+            // 댓글 작성 후 board 테이블의 answer 값을 업데이트 
+            axios.put(`${bkURL}/board/answer/${detailText.board_id}`, { answer: 1 }) 
+            .then(res => { 
+                console.log('answer 업데이트 완료 : ', res.data); 
+                // detailText의 answer 값을 업데이트 
+                setDetailText(prev => ({ ...prev, answer: 1 })
+                ); 
+            }) 
+            .catch(err => { 
+                console.log('answer 업데이트 오류 : ', err); 
+            });
+            
 
         }).catch(err =>{
             console.log('등록 오류 : ', err);

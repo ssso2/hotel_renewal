@@ -42,7 +42,7 @@ const BoardList = () => {
     if(!user){
         navigate('/login');
     }
-
+    console.log('텍스트',text);
 
     return (
         <div className="container">
@@ -60,7 +60,7 @@ const BoardList = () => {
                         return <ul className="post" key={idx}>
                                     <li className="post-num">{list.board_id}</li>
                                     <SecretPage  data={list} user={user}/>
-                                    <li className="post-writer">{user.name}</li>
+                                    <li className="post-writer">{list.writer_name}</li>
                                     <li className="post-date">{list.reg_str}</li>
                                 </ul>
                     })

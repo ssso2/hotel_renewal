@@ -68,6 +68,7 @@ function Res_detail(props) {
 
   // options 샅애가 벼경될 때 요금을 다시 계산
   useEffect(() => {
+    window.scrollTo(0, 0);
     const total =
       offerPrice +
       options.adultBf * 60000 +

@@ -55,7 +55,6 @@ function Wedding() {
                                 <Location propLocation = {locationData}/>
                             </div>
                         </div>
-                       
                     </div>
                 </div>
             </div>

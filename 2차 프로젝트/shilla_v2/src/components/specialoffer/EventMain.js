@@ -11,7 +11,7 @@ const eventlists = [
         des: "더 파크뷰에서 경험하는 베트남 미식 여행",
         date: "2024-09-24 ~ 2024-09-26",
         price: "92,000 원",
-        link: "../../html/sub/sub01_02_01.html",
+        link: "detail/1",
     },
     {
         id: "2",
@@ -21,7 +21,7 @@ const eventlists = [
         des: "패스트리 부티크에서 샤인머스캣 쇼트케이크를 선보입니다.",
         date: "2024-09-09 ~ 2024-11-30",
         price: "92,000 원",
-        link: "#",
+        link: "",
     },
     {
         id: "3",
@@ -41,7 +41,7 @@ const eventlists = [
         des: "팝페라 공연과 함께 즐기는 위스키와 푸드",
         date: "2024-09-27 ~ 2024-10-05",
         price: "290,000 원 ~",
-        link: "",
+        link: "detail/3",
     },
     {
         id: "5",
@@ -91,7 +91,7 @@ const eventlists = [
         des: "더 디스틸러스 라이브러리에서만 만나볼 수 있는 발베니 한정판 위스키",
         date: "2024-08-27 ~ 2024-12-31",
         price: "",
-        link: "",
+        link: "detail/4",
     },
     {
         id: "10",
@@ -101,7 +101,7 @@ const eventlists = [
         des: "테이블 L'amour 105에서 영원히 기억에 남을 프로포즈 순간",
         date: "2024-08-27 ~ 2024-12-31",
         price: "1,300,000 원",
-        link: "",
+        link: "detail/2",
     },
     {
         id: "11",
@@ -131,7 +131,7 @@ const eventlists = [
         des: "패스트리 부티크의 24년 한정판 블루 드래곤 키링",
         date: "2024-08-27 ~ 2024-12-31",
         price: "45,000 원",
-        link: "",
+        link: "detail/5",
     },
     {
         id: "14",

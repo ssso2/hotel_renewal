@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom"; // useNavigate 추가
+import { useParams, useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import Header from '../../common/Header'
 import Footer from '../../common/Footer'
@@ -16,7 +16,7 @@ const AdminRoomDetail = () => {
     const [reservations, setReservations] = useState([]); // 예약 정보 상태
     const [error, setError] = useState(""); // 오류 메시지 상태
 
-    // 날짜 포맷팅 함수
+    // 날짜 변환 함수
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const year = date.getFullYear();
@@ -52,11 +52,11 @@ const AdminRoomDetail = () => {
     }, [id]);
 
     if (error) {
-        return <div>{error}</div>; // 오류 메시지 출력
+        return <div>{error}</div>; 
     }
 
     if (!roomDetails) {
-        return <div>방 정보를 불러오는 중입니다...</div>; // 로딩 상태
+        return <div>방 정보 불러오는 중</div>; 
     }
 
     return (
@@ -68,12 +68,13 @@ const AdminRoomDetail = () => {
                     <AdminTabMenu/>
                     <div className="tab-contents">
                         <div className="room-man-detail">
-                            <h2>예약 내역</h2>
+                            <h2>{roomDetails.room_id}호 예약 내역</h2>
                             {reservations.length > 0 ? (
                                 <table className="reservation-table">
                                     <thead>
                                         <tr>
-                                            <th>예약 ID</th>
+                                            <th>예약 번호</th>
+                                            <th>회원 id</th>
                                             <th>시작일</th>
                                             <th>종료일</th>
                                             <th>취소 여부</th>
@@ -83,6 +84,7 @@ const AdminRoomDetail = () => {
                                         {reservations.map((reservation) => (
                                             <tr key={reservation.reservation_id}>
                                                 <td>{reservation.reservation_id}</td>
+                                                <td>{reservation.member_id}</td>
                                                 <td>{formatDate(reservation.start_date)}</td>
                                                 <td>{formatDate(reservation.end_date)}</td>
                                                 <td>{reservation.Cancel === "0" ? "N" : "Y"}</td>
@@ -96,7 +98,6 @@ const AdminRoomDetail = () => {
                                 </div>
                             )}
 
-                            {/* 목록으로 가기 버튼 */}
                             <button className="back-button" onClick={() => navigate(-1)}>
                                 목록으로 가기
                             </button>

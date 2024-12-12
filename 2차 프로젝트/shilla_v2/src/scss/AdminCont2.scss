@@ -1,5 +1,5 @@
 .cont2 {
-    padding: 20px;
+
 
     h2 {
         margin-bottom: 20px;
@@ -7,13 +7,20 @@
         text-align: center;
     }
 
+    select {
+        padding: 4px;
+        border: 1px solid #ddd;
+    }
+
     .table {
         border-collapse: collapse;
         width: 100%;
         margin: 0 auto;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 
         .table-header {
-            background-color: #f4f4f4;
+            background-color: #777;
+            color: #fff;
             font-weight: bold;
 
             .table-row {
@@ -22,7 +29,7 @@
                 .cell {
                     flex: 1;
                     padding: 10px;
-                    border: 1px solid #ccc;
+                    border-left: 1px solid #ddd;
                     text-align: center;
                     word-break: break-word; /* 긴 텍스트 줄바꿈 */
                 }
@@ -32,7 +39,7 @@
         .table-body {
             .table-row {
                 display: flex;
-                background-color: #f0f0f0;
+                background-color: #fff;
 
                 .clickable {
                     cursor: pointer;
@@ -45,7 +52,8 @@
                 .cell {
                     flex: 1;
                     padding: 10px;
-                    border: 1px solid #ccc;
+                    border-left: 1px solid #ddd;
+                    border-bottom: 1px solid #ddd;
                     text-align: center;
                     line-height: 29px;
 
@@ -58,7 +66,7 @@
                     }
 
                     button {
-                        padding: 2px 7px;
+                        padding: 5px 10px;
                         background-color: #adadad;
                         color: #fff;
                         border: none;

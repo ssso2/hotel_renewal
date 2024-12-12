@@ -14,7 +14,7 @@ const Noticesearch = ({ Ntype, setNtype, Ntext, setNtext, handleSearch }) => {
                 <input
                     className="search-bar"
                     type="text"
-                    name="keword" // 폼데이터키역할
+                    name="keyword" // 폼데이터키역할
                     value={Ntext} // 폼데이터값
                     placeholder="검색어를 입력해주세요."
                     onChange={e => setNtext(e.target.value)}
