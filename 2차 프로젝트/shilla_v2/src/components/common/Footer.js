@@ -44,6 +44,8 @@ const Footer = () => {
     let [infoData,infoDataSet] = useState(footerDataInfo);
     let [historyData,historyDataSet] = useState(footerDataHistory);
 
+
+
     return (
         <>
             <footer>
