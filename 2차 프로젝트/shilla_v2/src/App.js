@@ -18,7 +18,7 @@ import Info from "./components/info/Info";
 import Location from "./components/location/Location";
 
 // lifestyle
-import LifeStyle from "./components/lifeStyle/LifeStyle";
+import LifeStyle from "./components/lifeStyle/Party";
 import OutdoorPool from "./components/lifeStyle/OutdoorPool";
 import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
@@ -36,6 +36,7 @@ import Wedding2 from "./components/party/Wedding2";
 import Wedding3 from "./components/party/Wedding3";
 import CorporateParty from "./components/party/CorporateParty";
 import CorporateParty2 from "./components/party/CorporateParty2";
+import CorporateParty3 from "./components/party/CorporateParty3";
 
 // login
 import Login from "./components/login/Login";
@@ -287,6 +288,10 @@ function App() {
                 <Route
                     path="/corporateParty2"
                     element={<CorporateParty2 />}
+                ></Route>
+                <Route
+                    path="/corporateParty3"
+                    element={<CorporateParty3 />}
                 ></Route>
             </Routes>
         </div>
