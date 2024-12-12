@@ -3,7 +3,7 @@ import Header from "../common/Header";
 import Footer from "../common/Footer";
 import { title, commentpw } from "./Finddata";
 import "../../scss/findpw.scss";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, Navigate, useNavigate } from "react-router-dom";
 import Findpwchk from "./Findpwchk";
 import axios from "axios";
 
@@ -13,35 +13,34 @@ const Findpw = () => {
         setclick(true);
     };
 
-    const [memberlist, setmemberlist] = useState([]);
-    const [id, setid] = useState("");
-    const fetchdata = async () => {
-        try {
-            const res = await axios.get("http://localhost:5002/bk/find");
-            console.log("받아옴", res.data);
-            setmemberlist(res.data);
-        } catch (error) {
-            console.error("에러메세지", error);
-        }
-    };
-    useEffect(() => {
-        fetchdata();
-    }, []);
+    const navigate = useNavigate();
 
     const idchkhandle = async e => {
         e.preventDefault();
-        console.log(Object.fromEntries(new FormData(document.myfrm)));
-
         const frmdata = new FormData(document.myfrm);
         const mydata = Object.fromEntries(frmdata);
-        const res = await axios.put("http://localhost:5002/bk/idchk", mydata);
+        console.log("폼입력데이터", mydata);
+
+        if (!mydata.id) {
+            console.log("아이디를 입력하세요.");
+        } else if (!mydata.newpw) {
+            console.log("비밀번호를 입력하세요.");
+        } else if (!mydata.newpwchk) {
+            console.log("비밀번호를 확인하세요.");
+        }
+
+        const res = await axios.put(
+            "http://localhost:5002/bk/find/newpw",
+            mydata
+        );
+
         try {
-            console.log("폼데이터", frmdata);
-            console.log("마이데이터", mydata);
-            console.log("갔다옴", res.data);
-            if (res.data.exists) {
+            // console.log("res.data", res.data, "값", res.data.success);
+            if (res.data.success) {
+                // console.log("갔다옴", res.data);
                 alert("아이디를 확인했습니다.");
-            } else alert("없는 아이디입니다.");
+                navigate("/login");
+            } else alert("일치하는 아이디가 없습니다.");
         } catch (error) {
             console.log("에러메세지", error);
         }
@@ -80,12 +79,7 @@ const Findpw = () => {
                                 </button>
                             </div>
                         ) : (
-                            <Findpwchk
-                                memberlist={memberlist}
-                                setmemberlist={setmemberlist}
-                                idchkhandle={idchkhandle}
-                                id={id}
-                            />
+                            <Findpwchk idchkhandle={idchkhandle} />
                         )}
                     </div>
                 </div>

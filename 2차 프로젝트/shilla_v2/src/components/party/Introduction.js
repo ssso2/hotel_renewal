@@ -1,4 +1,4 @@
-const Introduction = ({ title, description, tel, children }) => {
+const Introduction = ({ title, description, tel }) => {
     return (
         <>
             <div className="Introduction">

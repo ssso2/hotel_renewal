@@ -63,6 +63,8 @@
         .cont {
             h2 {
                 margin-bottom: 50px;
+                font-size: 24px;
+                text-align: center;
             }
             .chart-group {
                 display: flex;
@@ -122,6 +124,7 @@
                 .table-title {
                     background: #777;
                     color: #fff;
+                    font-weight: bold;
                     .tit {
                         padding: 10px 5px;
                     }

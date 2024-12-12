@@ -6,8 +6,8 @@ import Gallery from './Gallery';
 import Introduction from './Introduction';
 import Buttons from './Buttons';
 import Dynasty from './Dynasty';
-import Popup from './Popup';
 import Footer from '../common/Footer';
+import Popup from './Popup';
 
 import "../../scss/common.scss"
 import "../../scss/header.scss"
@@ -93,7 +93,7 @@ function CorporateParty() {
 
     const popUpData = [
         { id: "pop-floor-plan01", title: "도면보기", imgSrc: "../../img/sub/floor-plan-01.gif", buttonLabel: "도면보기" },
-        { id: "pop-floor-plan02", title: "입체도33면보기", imgSrc: "../../img/sub/Dynasty_kr.jpg", buttonLabel: "입체도면보기" },
+        { id: "pop-floor-plan02", title: "입체도면보기", imgSrc: "../../img/sub/Dynasty_kr.jpg", buttonLabel: "입체도면보기" },
         { id: "pop-floor-plan03", title: "DYNASTY Floor Map", imgSrc: "../../img/sub/floor-plan-02.gif", buttonLabel: "DYNASTY Floor Map" },
     ];
 
@@ -111,9 +111,6 @@ function CorporateParty() {
                             <div className="context">
                                 <Introduction {...introData}/>
                                 <Buttons/>
-                                {popUpData.map((popup) => (
-                                    <Popup key={popup.id} id={popup.id} title={popup.title} imgSrc={popup.imgSrc} />
-                                ))}
                                 <Dynasty data={infoData} />
                             </div>
                         </div>
@@ -122,6 +119,9 @@ function CorporateParty() {
             </div>
         </div>
         <Footer/>
+        {popUpData.map((popup) => (
+            <Popup key={popup.id} id={popup.id} title={popup.title} imgSrc={popup.imgSrc} />
+        ))}
         </>
     )
 }
