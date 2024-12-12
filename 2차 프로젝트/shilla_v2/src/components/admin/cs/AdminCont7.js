@@ -2,7 +2,7 @@ import React from "react";
 
 const AdminCont5 = () => {
     return (
-        <div className="cont cont5">
+        <div className="cont cont7">
             <h2>고객센터: 문의하기</h2>
             <div class="board-answer-table">
                 <ul class="table-title">
