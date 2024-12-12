@@ -9,7 +9,7 @@ const OfferDetail1_dday = ({ endDate, pID }) => {
         const deadT = new Date(endDate).getTime();
         setdeadline(deadT);
     }, [endDate]); // 로드전 NaN방지
-
+  
     // 현재 및 남은 시간 상태관리
     // const [deadline] = useState(new Date("2024-12-04").getTime());
     const [now, setnow] = useState(Date.now());
