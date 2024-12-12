@@ -7,7 +7,7 @@ router.get("/:product_id", async (req,res) => {
   
     try {
       const [offerData] = await db.execute(`
-        SELECT sp.start_date, sp.end_date, sp.offer_nameW
+        SELECT sp.start_date, sp.end_date, sp.offer_name
         FROM product p
         JOIN specialoffer_pkg sp ON p.offer_id = sp.offer_id
         WHERE p.product_id = ?
