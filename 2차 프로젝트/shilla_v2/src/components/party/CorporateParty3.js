@@ -51,7 +51,7 @@ function CorporateParty3() {
           { icon: "../../img/sub/classroom.gif", type: "Classroom", number: "100" },
           { icon: "../../img/sub/round.gif", type: "Round Table", number: "100" },
         ],
-        buttonId: "pop-floor-plan01-5",
+        buttonId: "pop-floor-plan01-1",
       },
       {
         title: "마로니에",
@@ -157,9 +157,7 @@ function CorporateParty3() {
                                 {cardData.map((card) => (
                                   <Card key={card.buttonId} {...card} />
                                 ))}
-                                
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
