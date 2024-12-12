@@ -117,6 +117,7 @@ import Noticedetail from "./components/notice/Noticedetail";
 //find
 import Findid from "./components/find/Findid";
 import Findpw from "./components/find/Findpw";
+import EventTemp from "./components/specialoffer/EventTemp";
 
 function App() {
     return (
@@ -174,12 +175,14 @@ function App() {
                 <Route path="/specialOffer" element={<SpecialOffer />}>
                     <Route path="" element={<OfferMain />} />
                     <Route path="detail/:id" element={<OfferDetail />} />
-                    <Route path="event" element={<Event />} />
-                    <Route path="event/detail/1" element={<EventDetail1 />} />
-                    <Route path="event/detail/2" element={<EventDetail2 />} />
-                    <Route path="event/detail/3" element={<EventDetail3 />} />
-                    <Route path="event/detail/4" element={<EventDetail4 />} />
-                    <Route path="event/detail/5" element={<EventDetail5 />} />
+                </Route>
+                <Route path="/event" element={<EventTemp />}>
+                    <Route path="" element={<Event />} />
+                    <Route path="detail/1" element={<EventDetail1 />} />
+                    <Route path="detail/2" element={<EventDetail2 />} />
+                    <Route path="detail/3" element={<EventDetail3 />} />
+                    <Route path="detail/4" element={<EventDetail4 />} />
+                    <Route path="detail/5" element={<EventDetail5 />} />
                 </Route>
             </Routes>
             {/* 아이디, 비밀번호 찾기 */}
@@ -202,11 +205,21 @@ function App() {
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
                     {/* <Route path=":id" element={<ResOfferRoomId />} /> */}
-                    <Route path="detailallroom" element={<ResMainAllRoomDetail />}/>
-                    <Route path="detail/paymentallroom" element={<ResMainAllRoomPayment />}/>
+                    <Route
+                        path="detailallroom"
+                        element={<ResMainAllRoomDetail />}
+                    />
+                    <Route
+                        path="detail/paymentallroom"
+                        element={<ResMainAllRoomPayment />}
+                    />
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
-                <Route path="/reserve/:product_id" element={<ResOfferRoomId />} /> />
+                <Route
+                    path="/reserve/:product_id"
+                    element={<ResOfferRoomId />}
+                />{" "}
+                />
             </Routes>
 
             <Routes>

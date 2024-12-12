@@ -4,7 +4,7 @@ const conn = require("../db");
 
 router.get("/", async (req, res) => {
     try {
-        console.log("멤버목록접근");
+        console.log("회원목록 접근");
         const [ret] = await conn.execute("select * from member");
         res.json(ret);
     } catch (error) {
@@ -13,29 +13,34 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.put("/idchk", async (req, res) => {
+router.put("/newpw", async (req, res) => {
     const { id, newpw } = req.body;
-    try {
-        console.log("멤버목록접근", id, pw);
+    console.log(req.body);
 
+    try {
+        console.log("비밀번호변경 접근");
+        // 프론트에서 id받아 쿼리 실행
         const [ret] = await conn.execute(
             "select * from member where member_id= ?",
             [id]
         );
-        await conn.execute("update member set newpw = ? where member_id= ?", [
+        // 일치하는 id없을 때 처리
+        if (ret.length === 0) {
+            console.log("일치하는id없음");
+            return res.json({ success: false });
+        }
+        // 회원일경우 일치하는 id(조건)에 비밀번호 업데이트
+        await conn.execute("update member set pw = ? where member_id= ?", [
             newpw,
             id,
         ]);
-        res.json({
-            success: true,
-            message: "비밀번호 변경 성공",
-        });
-        if (ret.length === 0) {
-            return res.status(404).json({ success: false, message: "ID 없음" });
-        }
+        // success : 프론트에서 아이디 있는지 없는지에 따라 처리하기위한 키
+        res.json({ success: true });
+        console.log(id, newpw, "비밀번호 변경 성공");
     } catch (error) {
-        console.log("sql 실패 : ", err.message);
+        console.log("sql 실패 : ", error.message);
         ret.status(500).json({ success: false, message: "서버 오류 발생" });
     }
 });
+
 module.exports = router;
