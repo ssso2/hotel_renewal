@@ -5,7 +5,7 @@ const AdminCont5 = () => {
         <div className="cont cont5">
             <h2>공지사항</h2>
             <div>미답변 문의 관리</div>
-            <div>공자서헝</div>
+
         </div>
     );
 };

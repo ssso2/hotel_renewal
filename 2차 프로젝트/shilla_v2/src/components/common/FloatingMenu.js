@@ -5,28 +5,7 @@ import { Link } from "react-router-dom";
 const FloatingMenu = () => {
 
     useEffect(()=>{
-        $(function () {
-            // 레이어 팝업
-            $(".lypop_close").on("click", function () {
-                $(".lypop").hide();
-            });
-        
-            $("[data-lybtn]").each(function () {
-                var lypop = $(this).attr("data-lybtn");
-                $(this).click(function () {
-                    $(".lypop").hide();
-                    $("[data-lyOpen =" + lypop + "]")
-                        .show()
-                        .focus();
-                });
-                $("[data-lyClose]").click(function () {
-                    var lypopClose = $(this).attr("data-lyClose");
-                    $("[data-lyOpen =" + lypop + "]").hide();
-                    $("[data-lybtn =" + lypopClose + "]").focus();
-                });
-            });
 
-        });
     })
     return (
         <article className="floating-menu">

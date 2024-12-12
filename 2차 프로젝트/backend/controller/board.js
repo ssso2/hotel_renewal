@@ -85,6 +85,21 @@ module.exports = upload => {
 
     });
 
+
+    // answer 업데이트
+    router.put("/answer/:board_id", async(req, res) => { 
+        console.log("answer 업데이트 진입", req.params.board_id); 
+        
+        try { 
+            const [ret] = await conn.execute('update board set answer = ? where board_id = ?', [req.body.answer, req.params.board_id]); 
+            res.send("answer 업데이트 성공"); 
+        } catch (err) { 
+            console.log("answer 업데이트 sql 실패 : ", err.message); 
+            res.status(500).send('db오류'); 
+        } 
+    });
+
+    
     router.put("/modify/:board_id", async(req, res) => {
         //console.log(req.body)
         let data = [

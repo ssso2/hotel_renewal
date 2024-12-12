@@ -105,14 +105,7 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
     }
     // console.log("commentModify:",commentModify);
 
-
-
-
-
-
     for(let i = 0; i < commentText.length; i++){
-
-        
         if(detailText.board_id == commentText[i].board_id){
             return  <div>
                         <span className="reply-title">댓글</span>
@@ -124,7 +117,6 @@ const CommentView = ({commentText,setCommentText,detailText,setDetailText,user,c
                         </div>
                     </div>
         }
-
     }
     if(user.grade == 1){
         return (<CommentWrite user={user} detailText={detailText} setDetailText={setDetailText} commentFetchData={commentFetchData}/>)
