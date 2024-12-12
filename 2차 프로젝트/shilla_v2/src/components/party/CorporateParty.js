@@ -6,8 +6,8 @@ import Gallery from './Gallery';
 import Introduction from './Introduction';
 import Buttons from './Buttons';
 import Dynasty from './Dynasty';
-import Popup from './Popup';
 import Footer from '../common/Footer';
+import Popup from './Popup';
 
 import "../../scss/common.scss"
 import "../../scss/header.scss"
@@ -111,9 +111,6 @@ function CorporateParty() {
                             <div className="context">
                                 <Introduction {...introData}/>
                                 <Buttons/>
-                                {popUpData.map((popup) => (
-                                    <Popup key={popup.id} id={popup.id} title={popup.title} imgSrc={popup.imgSrc} />
-                                ))}
                                 <Dynasty data={infoData} />
                             </div>
                         </div>
@@ -122,6 +119,9 @@ function CorporateParty() {
             </div>
         </div>
         <Footer/>
+        {popUpData.map((popup) => (
+            <Popup key={popup.id} id={popup.id} title={popup.title} imgSrc={popup.imgSrc} />
+        ))}
         </>
     )
 }
