@@ -18,7 +18,7 @@ import Info from "./components/info/Info";
 import Location from "./components/location/Location";
 
 // lifestyle
-import LifeStyle from "./components/lifeStyle/LifeStyle";
+import LifeStyle from "./components/lifeStyle/Party";
 import OutdoorPool from "./components/lifeStyle/OutdoorPool";
 import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
