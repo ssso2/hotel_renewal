@@ -41,7 +41,7 @@ join product on product.offer_id = t1.offer_id and t1.room_id = product.room_id
   } catch (error) {
     console.error("데이터 가져오기 오류:", error);
     res.status(500).send("데이터 가져오기 오류");
-  }
+  } 
 });
 
 // 매인 패키지 예약 저장 API
@@ -87,7 +87,5 @@ router.post('/savepayment', async (req, res) => {
     res.status(500).send("서버 오류로 결제를 저장할 수 없습니다.");
   }
 });
-
-
 
 module.exports = router;

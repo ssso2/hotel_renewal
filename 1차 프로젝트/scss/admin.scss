@@ -80,5 +80,60 @@
                 }
             }
         }
+
+        .cont5 {
+            .board-answer-table {
+                
+                .table-title,
+                .table-contents {
+                    display: flex;
+                    & > li {
+                        padding: 10px 5px;
+                        width: 12%;
+                        border-left: 1px solid #ddd;
+                        border-bottom: 1px solid #ddd;
+                        text-align: center;
+                    }
+                    .no {
+                        width: 8%; 
+                    }
+                    .tit {
+                        padding: 0;
+                        width: 56%; 
+                        & > a {
+                            padding: 10px 5px;
+                            width: 100%;
+                            height: 100%;
+                            &:hover {
+                                text-decoration: underline;
+                                text-underline-position: under;
+                            }
+                        }
+                    }
+
+                }
+                .table-title {
+                    background: #777;
+                    color: #fff;
+                    .tit {
+                        padding: 10px 5px;
+                    }
+                }
+                .table-contents{
+                    background: #eee;
+                    color: #000;
+                    &.completed {
+                        background: #fff;
+                        color: #333;
+                    }
+                    .fa-star {
+                        position: relative;
+                        top: -8px;
+                        font-size: 7px;
+                        color: red;
+                    }
+                }
+            }
+        }
     }
 }

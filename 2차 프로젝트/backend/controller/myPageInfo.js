@@ -88,5 +88,25 @@ module.exports = upload => {
         }
     });
 
+
+    // 회원 탈퇴 
+    router.put("/withdraw/:id", async (req, res) => { 
+        console.log("회원 탈퇴 요청: ", req.params.id); 
+        try {
+             const sql = "UPDATE member SET withdrawal = 1, withdrawal_date = NOW(), grade = 5 WHERE member_id = ?"; 
+             const params = [req.params.id]; 
+
+             const [result] = await conn.execute(sql, params); 
+             if (result.affectedRows > 0) { 
+                res.status(200).send("회원 탈퇴 성공"); 
+            } else { res.status(400).send("회원 탈퇴 실패"); 
+
+            } 
+        } catch (err) { 
+            console.error("회원 탈퇴 오류: ", err.message); 
+            res.status(500).send("회원 탈퇴 실패"); 
+        } 
+    });
+
     return router;
 };
