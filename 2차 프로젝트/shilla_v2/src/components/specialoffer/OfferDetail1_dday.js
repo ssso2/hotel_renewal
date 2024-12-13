@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const OfferDetail1_dday = ({ endDate, pID }) => {
     // 마감일 설정
@@ -9,7 +9,7 @@ const OfferDetail1_dday = ({ endDate, pID }) => {
         const deadT = new Date(endDate).getTime();
         setdeadline(deadT);
     }, [endDate]); // 로드전 NaN방지
-  
+
     // 현재 및 남은 시간 상태관리
     // const [deadline] = useState(new Date("2024-12-04").getTime());
     const [now, setnow] = useState(Date.now());
@@ -43,6 +43,18 @@ const OfferDetail1_dday = ({ endDate, pID }) => {
         return clearInterval(timerInterval);
     }, [deadline]);
 
+    //로그인여부확인
+    const navigate = useNavigate();
+    const handlereserve = () => {
+        const member_id = sessionStorage.getItem("id");
+        if (member_id) {
+            navigate(`/reserve/${pID}`);
+        } else {
+            alert("회원만 예약 가능합니다.");
+            navigate("/login");
+        }
+    };
+
     return (
         <div className="d-day-wrap">
             <div className="d-day">
@@ -50,11 +62,17 @@ const OfferDetail1_dday = ({ endDate, pID }) => {
                     <span>
                         마감까지 {remain.days}일 {remain.hours}시간{" "}
                         {remain.minutes}분 {remain.seconds}초 남음
-                        <Link to={`/reserve/${pID}`}>
+                        <button
+                            onClick={handlereserve}
+                            className="d-day-reservation"
+                        >
+                            지금 바로 예약하기
+                        </button>
+                        {/* <Link to={`/reserve/${pID}`}>
                             <div className="d-day-reservation">
                                 지금 바로 예약하기
                             </div>
-                        </Link>
+                        </Link> */}
                     </span>
                 ) : (
                     <div className="Tclear">예약이 마감되었습니다.</div>

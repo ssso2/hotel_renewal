@@ -106,7 +106,7 @@ const MyReservationCont = () => {
                 </div>
                 <div className="reservation-info">
                   <div className="info-item">패키지명 : {res.offer_name || "N/A"}</div>
-                  <div className="info-item">객실 타입 : {res.room_type || "N/A"}</div>
+                  <div className="info-item">객실 타입 : {res.room_type || "N/A"} [{res.room_id}호]</div>
                   <div className="info-item">
                     예약일자 : {res.start_date} ~ {res.end_date}
                   </div>

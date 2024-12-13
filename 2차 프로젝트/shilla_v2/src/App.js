@@ -65,14 +65,16 @@ import EventDetail4 from "./components/specialoffer/EventDetail4";
 import EventDetail5 from "./components/specialoffer/EventDetail5";
 
 // admin
-import AdminTemp from "./components/admin/AdminTemp";
 import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
 import AdminRoom from "./components/admin/room/AdminRoom";
 import AdminRoomDetail from "./components/admin/room/AdminRoomDetail";
 import AdminMember from "./components/admin/member/AdminMember";
 import AdminCont3Detail from "./components/admin/member/AdminCont3Detail";
 import AdminReservation from "./components/admin/reservation/AdminReservation";
+import AdminCsTemp from "./components/admin/cs/AdminCsTemp";
 import AdminCs from "./components/admin/cs/AdminCs";
+import AdminCsdetail from "./components/admin/cs/AdminCsDetail";
+// import AdminCsModify from "./components/admin/cs/AdminCsModify";
 import AdminNotice from "./components/admin/notice/AdminNotice";
 import AdminNoticeMain from "./components/admin/notice/AdminCont5_main";
 import AdminRegister from "./components/admin/notice/AdminCont5_register";
@@ -134,24 +136,25 @@ function App() {
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
                 {/* 관리자페이지 */}
-                <Route path="/admin" element={<AdminTemp></AdminTemp>}>
-                    <Route path="" element={<AdminDashboard />} />
-                    <Route path="room" element={<AdminRoom />} />
-                    <Route
-                        path="room/detail/:id"
-                        element={<AdminRoomDetail />}
-                    />
-                    <Route path="member" element={<AdminMember />} />
-                    <Route path="member/:id" element={<AdminCont3Detail />} />
-                    <Route path="reservation" element={<AdminReservation />} />
-                    <Route path="notice" element={<AdminNotice />}>
-                        <Route path="" element={<AdminNoticeMain />} />
-                        <Route path="register" element={<AdminRegister />} />
-                        <Route path="modify/:id" element={<AdminModify />} />
-                    </Route>
-                    <Route path="cs" element={<AdminCs />} />
-                    <Route path="sales" element={<AdminSales />} />
+                {/* <Route path="/admin" element={<AdminTemp></AdminTemp>}></Route> */}
+                <Route path="admin/dashboard" element={<AdminDashboard />} />
+                <Route path="admin/room" element={<AdminRoom />} />
+                <Route path="admin/room/detail/:id" element={<AdminRoomDetail />}/>
+                <Route path="admin/member" element={<AdminMember />} />
+                <Route path="admin/member/:id" element={<AdminCont3Detail />} />
+                <Route path="admin/reservation" element={<AdminReservation />} />
+                <Route path="admin/notice" element={<AdminNotice />}>
+                    <Route path="" element={<AdminNoticeMain />} />
+                    <Route path="register" element={<AdminRegister />} />
+                    <Route path="modify/:id" element={<AdminModify />} />
                 </Route>
+                <Route path="/admin/cs" element={<AdminCsTemp />} >
+                    <Route path="" element={<AdminCs />} />
+                    <Route path="detail/:num" element={<AdminCsdetail />} />
+                    {/* <Route path="modify/:board_id" element={<AdminCsModify />} /> */}
+                </Route>
+                <Route path="admin/sales" element={<AdminSales />} />
+                
                 {/* 마이페이지 */}
                 <Route path="/myPage" element={<MyPageTemp></MyPageTemp>}>
                     <Route path="" element={<MyInfo />} />

@@ -55,7 +55,7 @@ const OfferMain2_kewords = ({ offerkeword, setofferkeword }) => {
                                         value={keworddata.name}
                                         onChange={btnhandle}
                                     />
-                                    <label for={keworddata.id}>
+                                    <label htmlFor={keworddata.id}>
                                         {keworddata.name}
                                     </label>
                                 </li>
@@ -73,7 +73,7 @@ const OfferMain2_kewords = ({ offerkeword, setofferkeword }) => {
                                         value={keworddata.name}
                                         onChange={btnhandle}
                                     />
-                                    <label for={keworddata.id}>
+                                    <label htmlFor={keworddata.id}>
                                         {keworddata.name}
                                     </label>
                                 </li>

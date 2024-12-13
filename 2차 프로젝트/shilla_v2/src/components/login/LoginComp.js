@@ -43,6 +43,13 @@ const LoginComp = () => {
         })
     }
 
+    // 키보드에서 엔터가 눌렸을 때 로그인 함수 호출
+    function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+        loginGo();
+        }
+    }
+
     return (
         <>
             {/* <!-- 로그인 --> */}
@@ -53,19 +60,19 @@ const LoginComp = () => {
                             <h2>로 그 인</h2>
                             <div className="hello">서울 신라호텔에 오신 것을 환영합니다.</div>
                             <div className="part-id">
-                                <label for="id">아이디 </label>
-                                <input type="text" id="id" autocomplete="on" name="id"/>
+                                <label htmlFor="id">아이디 </label>
+                                <input type="text" id="id" autoComplete="on" name="id" onKeyDown={handleKeyDown} />
                             </div>
                             <div className="part-pw">
-                                <label for="pw">비밀번호 </label>
-                                <input type="password" id="pw" maxlength="16" name="pw"/>
+                                <label htmlFor="pw">비밀번호 </label>
+                                <input type="password" id="pw" maxLength="16" name="pw" onKeyDown={handleKeyDown} />
                             </div>
                             <div className="part-error">
                                 <p id="error-message" className="error-message">아이디와 비밀번호를 확인해 주세요.</p>
                                 <p id="error-message2" className="error-message">패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.</p>
                                 <p id="error-message3" className="error-message">아이디는 영문자와 숫자만(6글자 이상) 사용 가능합니다.</p>
                             </div>
-                            <button type="button" className="btn-login" onClick={loginGo} >로그인</button>
+                            <button type="button" className="btn-login" onClick={loginGo}>로그인</button>
 
                             <div className="link-wrap">
                                 <Link to="/join">회원가입</Link>

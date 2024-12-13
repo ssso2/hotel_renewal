@@ -32,7 +32,7 @@ const OfferMain2 = ({ setOfferlists }) => {
 
     //검색버튼
     const handleSearch = async e => {
-        e.preventDefault();
+        // e.preventDefault();
 
         // setfiltered(myData);
         const frmData = new FormData(document.myFrm);
@@ -59,7 +59,13 @@ const OfferMain2 = ({ setOfferlists }) => {
             console.error("에러메세지", err);
         }
     };
-
+    //초기화버튼
+    const handleReset = e => {
+        // e.preventDefault();
+        setRange([{ startDate: null, endDate: null }]);
+        setoffertype("");
+        setofferkeword("");
+    };
     return (
         <>
             {/* <!-- 필터박스 --> */}
@@ -80,7 +86,10 @@ const OfferMain2 = ({ setOfferlists }) => {
                         filterKewords={filterKewords}
                         setfilterKewords={setfilterKewords}
                     />
-                    <OfferMain2_btn handleSearch={handleSearch} />
+                    <OfferMain2_btn
+                        handleReset={handleReset}
+                        handleSearch={handleSearch}
+                    />
                 </div>
             </form>
         </>

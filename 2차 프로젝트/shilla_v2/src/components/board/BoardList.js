@@ -5,6 +5,7 @@ import '../../scss/reset.css'
 import '../../scss/common.scss'
 import '../../scss/sub06_03.scss'
 import SecretPage from "./SecretPage";
+import Pagination  from "../sub/Pagination";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -12,6 +13,12 @@ const BoardList = () => {
 
     const [text,setText] = useState([])
     const [user,setUser] = useState(null)
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentData = text.slice(startIndex, startIndex + itemsPerPage);
 
     useEffect(()=>{
 
@@ -41,8 +48,10 @@ const BoardList = () => {
 
     if(!user){
         navigate('/login');
+        return <></>
     }
     console.log('텍스트',text);
+    
 
     return (
         <div className="container">
@@ -56,7 +65,7 @@ const BoardList = () => {
                 </ul>
 
                 {
-                    text.map((list,idx)=>{
+                    currentData.map((list,idx)=>{
                         return <ul className="post" key={idx}>
                                     <li className="post-num">{list.board_id}</li>
                                     <SecretPage  data={list} user={user}/>
@@ -77,6 +86,13 @@ const BoardList = () => {
                         </div>
                     </div>
                 </div>
+
+                <Pagination
+                totalItems={text.length}
+                itemsPerPage={itemsPerPage}
+                currentPage={currentPage}
+                onPageChange={setCurrentPage}
+            />
             </div>
         </div>
 

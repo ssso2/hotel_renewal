@@ -16,7 +16,7 @@ const OfferMain2_date = () => {
     return (
         <>
             <div className="pkg-datepicker-box">
-                <label for="daterange3" className="kw-title">
+                <label htmlFor="daterange3" className="kw-title">
                     기간조회
                 </label>
                 <OfferMain2_dateRangePicker
@@ -32,7 +32,7 @@ const OfferMain2_date = () => {
                         name="daterange3"
                         id="daterange3"
                         value=""
-                        autocomplete="off"
+                        autoComplete="off"
                         placeholder="예약기간을 선택하세요."
                     />
                 </span> */}

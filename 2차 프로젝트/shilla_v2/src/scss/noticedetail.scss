@@ -42,20 +42,22 @@
         }
 
         .content {
-            box-sizing: border-box;
-            height: 100%;
-            overflow: auto;
-            line-height: 1.7;
-            padding: 20px 30px;
-            overflow: auto;
-            border: 1px solid #e0e0e0;
-            border-top: none;
-            border-radius: 10px;
-            margin-top: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            .imgstyle {
-                width: 60%;
-                height: auto;
+            &.ncontent {
+                box-sizing: border-box;
+                height: 100%;
+                overflow: auto;
+                line-height: 1.7;
+                padding: 20px 30px;
+                overflow: auto;
+                border: 1px solid #e0e0e0;
+                border-top: none;
+                border-radius: 10px;
+                margin-top: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                .imgstyle {
+                    width: 60%;
+                    height: auto;
+                }
             }
         }
     }

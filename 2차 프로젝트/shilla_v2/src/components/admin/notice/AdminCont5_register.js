@@ -10,8 +10,18 @@ const AdminCont5_register = () => {
 
     const registerGo = async e => {
         e.preventDefault();
+
         const frmdata = new FormData(document.myfrm);
         const mydata = Object.fromEntries(frmdata);
+        // console.log("제목값", mydata);
+        if (!mydata.title) {
+            alert("제목을 입력하세요.", mydata.title);
+            return;
+        }
+        if (!mydata.context) {
+            alert("내용을 입력하세요.");
+            return;
+        }
 
         try {
             console.log("입력폼데이터", mydata);

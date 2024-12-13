@@ -1,22 +1,21 @@
 import React from "react";
-import Header from "../common/Header";
-import Footer from "../common/Footer"
+import Header from "../../common/Header"
+import Footer from "../../common/Footer"
 import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 
-
-const BoardTemp = () => {
+const AdminCsTemp = () => {
     useEffect(()=>{
-        document.title = "문의하기"
+        document.title = "신라호텔:관리자-문의하기"
     })
 
     return (
             <>
-                <Header/>
+                <Header></Header>
                 <Outlet/>
                 <Footer></Footer>
             </>
         );
 };
 
-export default BoardTemp;
+export default AdminCsTemp;
