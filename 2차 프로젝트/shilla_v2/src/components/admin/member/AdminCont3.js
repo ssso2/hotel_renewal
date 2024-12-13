@@ -5,7 +5,6 @@ import axios from 'axios';
 import "../../../scss/AdminCont3.scss";
 
 
-
 function AdminCont3() {
     const [member, memberSet] = useState([])
     const [modify, modifySet] = useState([])
@@ -109,8 +108,6 @@ function AdminCont3() {
                             <select value={item.grade}
                                 onChange={(e) => {
                                         handleGradeChange(e, item)
-                                        // gradeChange(e.target.value, item.member_id)
-                                        // gradeUpdate(item)
                                     }}
                                 >
                                     {/* <option value="1">{item.grade === "1" ? "관리자" : "관리자"}</option> */}

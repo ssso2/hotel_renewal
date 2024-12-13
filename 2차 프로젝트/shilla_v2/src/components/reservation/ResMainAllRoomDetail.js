@@ -451,7 +451,7 @@ function ResMainAllRoomDetail(props) {
                   // checked="guidedChecked"
                   onChange={() => setGuideChecked(!guideChecked)}
                 />
-                <label for="guide-chk">
+                <label htmlFor="guide-chk">
                   유의사항, 취소 및 환불 규정을 모두 확인해주세요.
                 </label>
               </div>
@@ -482,7 +482,7 @@ function ResMainAllRoomDetail(props) {
                 </div>
                 <div className="chk-wrap">
                   <input type="radio" name="personalInfoAgree" id="personalInfoAgree-agree" value="agree" onChange={(e) => setPersonalInfoAgree(e.target.value)} />
-                  <label for="personalInfoAgree-agree">동의함</label>
+                  <label htmlFor="personalInfoAgree-agree">동의함</label>
                   <input
                     type="radio"
                     name="personalInfoAgree"
@@ -490,7 +490,7 @@ function ResMainAllRoomDetail(props) {
                     value="disagree"
                     onChange={(e) => setPersonalInfoAgree(e.target.value)}
                   />
-                  <label for="personalInfoAgree-disagree">동의하지 않음</label>
+                  <label htmlFor="personalInfoAgree-disagree">동의하지 않음</label>
                 </div>
               </div>
               <div className="suggest-agr">
@@ -516,7 +516,7 @@ function ResMainAllRoomDetail(props) {
                 </div>
                 <div className="chk-wrap">
                   <input type="radio" name="thirdPartyAgree" id="thirdPartyAgree-agree" value="agree" onChange={(e) => setThirdPartyAgree(e.target.value)} />
-                  <label for="thirdPartyAgree-agree">동의함</label>
+                  <label htmlFor="thirdPartyAgree-agree">동의함</label>
                   <input
                     type="radio"
                     name="thirdPartyAgree"
@@ -524,7 +524,7 @@ function ResMainAllRoomDetail(props) {
                     value="disagree"
                     onChange={(e) => setThirdPartyAgree(e.target.value)}
                   />
-                  <label for="thirdPartyAgree-disagree">동의하지 않음</label>
+                  <label htmlFor="thirdPartyAgree-disagree">동의하지 않음</label>
                 </div>
               </div>
             </div>

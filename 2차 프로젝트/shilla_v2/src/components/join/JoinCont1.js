@@ -48,7 +48,7 @@ const JoinCont1 = () => {
 
                             <div className="check-all" id="check-all">
                                 <input type="checkbox" id="agree-all" />
-                                <label for="agree-all"> 모든 필수 약관에 동의합니다.</label>
+                                <label htmlFor="agree-all"> 모든 필수 약관에 동의합니다.</label>
                             </div>
 
                             <div className="clause-container">
@@ -906,7 +906,7 @@ const JoinCont1 = () => {
 
                                 <div className="checkbox">
                                     <input type="checkbox" id="chk1" />
-                                    <label for="chk1"> 동의</label>
+                                    <label htmlFor="chk1"> 동의</label>
                                 </div>
 
                                 <b>개인정보 수집, 이용에 대한 동의 (필수)</b>
@@ -939,7 +939,7 @@ const JoinCont1 = () => {
 
                                 <div className="checkbox">
                                     <input type="checkbox" id="chk2" />
-                                    <label for="chk2"> 동의</label>
+                                    <label htmlFor="chk2"> 동의</label>
                                 </div>
 
                                 <b>개인정보 제3자 제공에 대한 동의 (필수)</b>
@@ -975,7 +975,7 @@ const JoinCont1 = () => {
 
                                 <div className="checkbox">
                                     <input type="checkbox" id="chk3" />
-                                    <label for="chk3"> 동의</label>
+                                    <label htmlFor="chk3"> 동의</label>
                                 </div>
                             </div>
                         </div>
@@ -999,7 +999,7 @@ const JoinCont1 = () => {
                         <div className="lypop-ct">
                             <p className="modal-txt">먼저 약관에 동의하셔야 합니다.</p>
                             <div className="btn-wrap type5">
-                                <button className="btn btn-04 join-alert-chk-btn" data-lyClose="pop-mypage1"><span>확인</span></button>
+                                <button className="btn btn-04 join-alert-chk-btn" data-lyclose="pop-mypage1"><span>확인</span></button>
                             </div>
                         </div>
                     </div>

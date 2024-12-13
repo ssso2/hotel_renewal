@@ -63,7 +63,7 @@ const OfferMain2_kewords = ({
                                         checked={filterKewords[keword.id] === 1} // 기본 false
                                         onChange={kewordhandle}
                                     />
-                                    <label for={keword.id}>
+                                    <label htmlFor={keword.id}>
                                         {keword.kname}
                                     </label>
                                 </li>

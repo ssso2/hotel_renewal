@@ -159,7 +159,7 @@ const MainCont5Popup = () => {
                 <div class="lypop-content">
                     <div class="lypop-title">
                         <strong>호텔 찾기</strong>
-                        <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-hotel-box">
+                        <a href="javascrip:void();" class="lypop-close" data-lyclose="pop-hotel-box">
                             <span class="hide">닫기</span>
                         </a>
                     </div>
@@ -190,7 +190,7 @@ const MainCont5Popup = () => {
                             }
                         </div>
                         <div class="btn-wrap type5">
-                            <button class="btn btn-04" data-lyClose="pop-hotel-box"><span>닫기</span></button>
+                            <button class="btn btn-04" data-lyclose="pop-hotel-box"><span>닫기</span></button>
                         </div>
                     </div>
                 </div>

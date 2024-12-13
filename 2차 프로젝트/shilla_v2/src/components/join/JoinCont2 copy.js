@@ -329,9 +329,9 @@ const JoinCont2 = () => {
 
                             <div className="info-group">
                                 <div className="input-container">
-                                    <label for="ko-name">국문 이름 <font color="#F00">*</font> </label>
+                                    <label htmlFor="ko-name">국문 이름 <font color="#F00">*</font> </label>
                                     <div className="input-wrap">
-                                        <input name="name" type="text" id="ko-name" minlength="2" maxlength="5" placeholder="홍길동" />
+                                        <input name="name" type="text" id="ko-name" minlength="2" maxLength="5" placeholder="홍길동" />
                                         <span className="error-message" id="koname-error"></span>
                                     </div>
                                 </div>
@@ -339,7 +339,7 @@ const JoinCont2 = () => {
 
                             <div className="info-group">
                                 <div className="input-container">
-                                    <label for="en-name">영문 이름 <font color="#F00">*</font> </label>
+                                    <label htmlFor="en-name">영문 이름 <font color="#F00">*</font> </label>
                                     <div className="input-wrap">
                                         <div className="eng">
                                             <input type="text" id="firstname" placeholder="First name" className="name-input" name="firstname"/>
@@ -352,7 +352,7 @@ const JoinCont2 = () => {
 
                             <div className="info-group">
                                 <div className="input-container">
-                                    <label for="birth">생년월일</label>
+                                    <label htmlFor="birth">생년월일</label>
                                     <div className="input-wrap">
                                         <div className="birth">
                                             <select name="year" id="year"></select>
@@ -366,7 +366,7 @@ const JoinCont2 = () => {
 
                             <div className="info-group">
                                 <div className="input-container">
-                                    <label for="pid">아이디 <font color="#F00">*</font></label>
+                                    <label htmlFor="pid">아이디 <font color="#F00">*</font></label>
                                     <div className="input-wrap">
                                         <input name="member_id" type="text" id="pid" minlength="6" placeholder="영문자, 숫자로 구성 (6자 이상)" onChange={handleIdChange}/>
                                         <button type="button" id="id-chk" data-lybtn="pop-using" onClick={handleIdChkClick}>중복확인</button>
@@ -377,9 +377,9 @@ const JoinCont2 = () => {
 
                             <div className="info-group">
                                 <div className="input-container">
-                                    <label for="pw">패스워드 <font color="#F00">*</font></label>
+                                    <label htmlFor="pw">패스워드 <font color="#F00">*</font></label>
                                     <div className="input-wrap">
-                                        <input name="pw" type="password" id="pw" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                        <input name="pw" type="password" id="pw" minlength="12" maxLength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
                                         <span className="error-message" id="pw-error"></span>
                                     </div>
                                 </div>
@@ -387,9 +387,9 @@ const JoinCont2 = () => {
 
                             <div className="info-group">
                                 <div className="input-container">
-                                    <label for="pwchk">패스워드확인 <font color="#F00">*</font></label>
+                                    <label htmlFor="pwchk">패스워드확인 <font color="#F00">*</font></label>
                                     <div className="input-wrap">
-                                        <input type="password" id="pwchk" minlength="12" maxlength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
+                                        <input type="password" id="pwchk" minlength="12" maxLength="16" placeholder="영문, 숫자, 특수문자 포함 12-16자" />
                                         <span className="error-message" id="pwchk-error"></span>
                                     </div>
                                 </div>
@@ -397,12 +397,12 @@ const JoinCont2 = () => {
 
                             <div className="info-group">
                                 <div className="input-container">
-                                    <label for="tel">연락처 <font color="#F00">*</font></label>
+                                    <label htmlFor="tel">연락처 <font color="#F00">*</font></label>
                                     <div className="input-wrap">
                                         <div className="tel-num">
                                             <select name="startNum" id="start"></select>
-                                            <input name="middleNum" type="text" id="middle" maxlength="4" oninput="maxLengthCheck(this)" />
-                                            <input name="lastNum" type="text" id="last" maxlength="4" oninput="maxLengthCheck(this)" />
+                                            <input name="middleNum" type="text" id="middle" maxLength="4" oninput="maxLengthCheck(this)" />
+                                            <input name="lastNum" type="text" id="last" maxLength="4" oninput="maxLengthCheck(this)" />
                                             <span className="error-message" id="tel-error"></span>
                                         </div>
                                     </div>
@@ -411,7 +411,7 @@ const JoinCont2 = () => {
 
                             <div className="info-group">
                                 <div className="input-container">
-                                    <label for="mail">이메일 <font color="#F00">*</font></label>
+                                    <label htmlFor="mail">이메일 <font color="#F00">*</font></label>
                                     <div className="input-wrap">
                                         <input name="email" type="text" id="mail" placeholder="honggildong@naver.com" />
                                         <span className="error-message" id="mail-error"></span>
@@ -439,7 +439,7 @@ const JoinCont2 = () => {
                         <div className="lypop-ct">
                             <p className="modal-txt"></p>
                             <div className="btn-wrap type5">
-                                <button className="btn btn-04" data-lyClose="pop-using"><span>확인</span></button>
+                                <button className="btn btn-04" data-lyclose="pop-using"><span>확인</span></button>
                             </div>
                         </div>
                     </div>

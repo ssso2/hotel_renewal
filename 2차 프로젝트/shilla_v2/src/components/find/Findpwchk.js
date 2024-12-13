@@ -79,7 +79,7 @@ const Findpwchk = ({ id }) => {
                                 id="pwchk"
                                 name="newpw"
                                 // minlength="12"
-                                // maxlength="16"
+                                // maxLength="16"
                                 placeholder="영문, 숫자, 특수문자를 포함하여 12~16자"
                                 required
                             />
