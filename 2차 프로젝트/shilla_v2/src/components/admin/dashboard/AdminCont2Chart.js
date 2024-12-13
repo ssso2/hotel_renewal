@@ -24,20 +24,31 @@ ChartJS.register(
 
 // 차트 옵션 설정
 const options = {
-  responsive: true,
   interaction: {
     intersect: true,
   },
   scales: {
     x: {
-      grid: {
+      title: {
         display: true,
+        text: "월별",
+        font: {
+          size: 14,
+          style: 'italic',
+        },
       },
     },
     y: {
+      title: {
+        display: true,
+        text: "매출액",
+        font: {
+          size: 14,
+          style: 'italic',
+        },
+      },
       beginAtZero: {
         display: true,
-        text: "인원",
       },
     },
   },
@@ -88,8 +99,7 @@ const AdminCont2Chart = () => {
 
   return (
     <div>
-      <h2>매출 현황</h2>
-        <Bar options={options} data={chartData} />
+        <Bar options={options} data={chartData} width={350} height={300} />
     </div>
   )
 }

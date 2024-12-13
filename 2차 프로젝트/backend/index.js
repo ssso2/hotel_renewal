@@ -92,6 +92,9 @@ app.use("/bk/reserve", offerReserveRouter);
 // admin reserve 라우터 추가
 const adminReserveRouter = require("./controller/adminReserve.js");
 app.use("/bk/admin/reservation", adminReserveRouter);
+// admin 문의하기 라우터 추가
+const adminCsRouter = require("./controller/adminCs.js");
+app.use("/bk/admin/cs", adminCsRouter(upload));
 // admin dashboard 라우터 추가
 const adminDashboardRouter = require("./controller/adminDashboard.js");
 app.use("/bk/admin/dashboard", adminDashboardRouter);

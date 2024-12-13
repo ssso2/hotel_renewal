@@ -3,6 +3,12 @@
     padding: 30px 0 100px;
     .center {
         display: flex;
+        &.board {
+            flex-direction: column;
+        }
+    }
+    .container {
+        margin: 0;
     }
     .admin-tab {
         margin-right: 30px;
@@ -82,6 +88,7 @@
                     width: 100%;
                     padding: 20px;
                     background: #fff;
+                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1)
                 }
                 .chart-wrap {
                     margin-bottom: 50px;
@@ -95,6 +102,7 @@
                         padding: 20px;
                         width: 100%;
                         background: #fff;
+                        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1)
                     }
                     &:first-child {margin-right: 50px;}
                 }
@@ -141,7 +149,7 @@
                         padding: 10px 5px;
                     }
                 }
-                .table-contents{
+                .table-contents {
                     background: #eee;
                     color: #000;
                     &.completed {

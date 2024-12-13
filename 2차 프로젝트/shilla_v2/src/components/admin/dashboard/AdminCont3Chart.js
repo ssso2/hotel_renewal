@@ -24,31 +24,41 @@ ChartJS.register(
 
 // 차트 옵션 설정
 const options = {
-  type: 'line',
-  options: {
-    responsive: false,
-    scales: {
-      x: {
-        display: true,
-        title: {
-          display: true,
-          text: 'Month',
-          fontSize: 20,
-          color: '#911',
-        }
-      },
-      y: {
-        display: true,
-        title: {
-          display: true,
-          text: 'Value',
-          fontSize: 20,
-          color: '#191',
-        }
-      }
-    }
+  responsive: true,
+  interaction: {
+    intersect: true,
   },
-};
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: "방별",
+        font: {
+          size: 14,
+          style: 'italic',
+        },
+      },
+    },
+    y: {
+      title: {
+        display: true,
+        text: "매출액",
+        font: {
+          size: 14,
+          style: 'italic',
+        },
+      },
+      beginAtZero: {
+        display: true,
+      },
+    },
+  },
+  plugins: {
+    legend: {
+      position: "bottom",
+    },
+  },
+}
 
 const AdminCont3Chart = () => {
   const [chartData, setChartData] = useState({
@@ -100,7 +110,6 @@ const AdminCont3Chart = () => {
 
   return (
     <div>
-      <h2>객실별 매출 현황</h2>
       <Bar options={options} data={chartData} />
     </div>
   )
