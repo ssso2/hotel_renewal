@@ -102,7 +102,6 @@ app.use("/bk/admin/member", adminMemberboardRouter());
 const adminDetailboardRouter = require("./controller/adminMemberboard.js");
 app.use("/bk/admin/member/detail", adminDetailboardRouter());
 
-
 // 객실관리 라우터 추가
 const roomManRouter = require("./controller/roomManagement.js");
 app.use("/bk/admin/roomManagement", roomManRouter());
@@ -118,6 +117,9 @@ const findRouter = require("./controller/find.js");
 app.use("/bk/find", findRouter);
 
 // 위에 거론하지 않은 라우팅 주소는 프론트엔드의 index.html 로 접근
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });

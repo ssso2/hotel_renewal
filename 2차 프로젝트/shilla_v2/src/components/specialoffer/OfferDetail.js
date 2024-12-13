@@ -15,7 +15,7 @@ import { useParams } from "react-router-dom";
 
 const OfferDetail = () => {
     // 스페셜오퍼 리스트
-    const [Offerdetails, setOfferdetails] = useState({});
+    const [Offerdetails, setOfferdetails] = useState(null);
     const { id } = useParams();
     const fetchData = async () => {
         // if (!id) {
@@ -40,13 +40,22 @@ const OfferDetail = () => {
         fetchData();
     }, [id]);
 
-    useEffect(() => {
-        console.log("디테일", Offerdetails.end_date);
-    }, [Offerdetails]);
+    // useEffect(() => {
+    //     console.log("디테일", Offerdetails.end_date);
+    // }, [Offerdetails]);
 
     // if (!Offerdetails) {
     //     return <div> Offerdetails 없음</div>;
     // }
+    if (!Offerdetails) {
+        console.log("Offerdetails 없어서 <>");
+        return <></>;
+    }
+
+    if (!id) {
+        console.log("id 없어서 <>");
+        return <></>;
+    }
 
     return (
         <div className="container offerdetail">
