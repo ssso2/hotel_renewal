@@ -27,21 +27,37 @@ ChartJS.register(
 
 // 차트 옵션 설정
 const options = {
-  responsive: true,
   interaction: {
     intersect: true,
   },
   scales: {
     x: {
+      title: {
+        display: true,
+        text: "월별",
+        font: {
+          size: 14,
+          style: 'italic',
+        },
+      },
       grid: {
         display: true,
       },
     },
     y: {
-      beginAtZero: {
+      title: {
         display: true,
-        text: "인원",
+        text: "방문자 수",
+        font: {
+          size: 14,
+          style: 'italic',
+        },
       },
+      ticks: {
+        beginAtZero: {
+          display: true,
+        },
+      }
     },
   },
   plugins: {
@@ -94,8 +110,7 @@ const AdminCont1Chart = () => {
 
   return (
     <div>
-      <h2>방문자 현황</h2>
-      <Line options={options} data={chartData} />
+      <Line options={options} data={chartData} width={350} height={300} />
     </div>
   )
 }
