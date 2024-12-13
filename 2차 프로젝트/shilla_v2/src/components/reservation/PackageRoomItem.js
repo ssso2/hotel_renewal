@@ -4,10 +4,16 @@ import { useNavigate } from "react-router-dom";
 
 function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
   const navigate = useNavigate();
+  const memberId = sessionStorage.getItem("id");
 
   console.log(packageData, checkInDate, checkOutDate)
 
   const handleReservation = () => {
+    if (!memberId) {
+      alert("로그인이 필요합니다.");
+      navigate("/login");
+      return;
+    }
     // 예약하기 버튼 클릭 시, Res_detail 페이지로 데이터 전달
     if (checkInDate && checkOutDate) {
       navigate("/reserve/detail", {
