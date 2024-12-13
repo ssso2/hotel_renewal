@@ -16,7 +16,6 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
     // useEffect(() => {
     //     fetchData();
     // }, []);
-    console.log(new Date("2024-10-27").toISOString());
 
     const delGo = async id => {
         console.log("삭제요청 id:", id);
@@ -37,11 +36,10 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
                     },
                 }
             );
-            console.log("삭제성공", res.data);
+            // console.log("삭제성공", res.data);
             alert("삭제되었습니다.");
 
-            setNoticelists(prev => prev.filter(item => item.id !== id));
-            navigate("/admin/notice");
+            setNoticelists(prev => prev.filter(item => item.notice_id !== id));
         } catch (error) {
             console.error("삭제실패", error);
         }
@@ -51,10 +49,10 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false,
+        // hour: "2-digit",
+        // minute: "2-digit",
+        // second: "2-digit",
+        // hour12: false,
         timeZone: "Asia/Seoul",
     });
 
@@ -69,7 +67,7 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
                 </div>
                 <div className="list-container">
                     <ul className="Nboard-nav">
-                        <li className="N-num">번호</li>
+                        {/* <li className="N-num">번호</li> */}
                         <li className="N-option">분류</li>
                         <li className="N-title">제목</li>
                         <li className="N-view">조회수</li>
@@ -80,7 +78,7 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
                     <ul className="Nboard">
                         {Noticelists.map(data => (
                             <li className="listwrap" key={data.notice_id}>
-                                <div className="N-num">{data.notice_id}</div>
+                                {/* <div className="N-num">{data.notice_id}</div> */}
                                 <div className="N-option">{data.category}</div>
                                 <div className="N-title">
                                     <span className="Nlink">{data.title}</span>
@@ -89,20 +87,14 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
                                 <div className="N-date">
                                     {formatter
                                         .format(new Date(data.reg_date))
-                                        .replace(/\. /g, "-")
-                                        .replace(
-                                            /(\d{4}-\d{2}-\d{2})-(\d{2}:\d{2}:\d{2})/,
-                                            "$1 $2"
-                                        )}
+                                        .replace(/\. ?/g, "-")
+                                        .replace(/-$/, "")}
                                 </div>
                                 <div className="N-date">
                                     {formatter
                                         .format(new Date(data.edit_date))
-                                        .replace(/\. /g, "-")
-                                        .replace(
-                                            /(\d{4}-\d{2}-\d{2})-(\d{2}:\d{2}:\d{2})/,
-                                            "$1 $2"
-                                        )}
+                                        .replace(/\. ?/g, "-")
+                                        .replace(/-$/, "")}
                                 </div>
                                 <div className="MDbtn">
                                     <Link

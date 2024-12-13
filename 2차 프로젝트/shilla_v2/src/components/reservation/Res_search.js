@@ -169,11 +169,8 @@ function Res_search() {
             </div>
           ) : (
             <div className="room-list">
-              <h3>객실</h3>
-              {availableRooms.map((room) => (
-                <OneRoomItem key={room.room_id} roomData={room} checkInDate={checkInDate} 
-                checkOutDate={checkOutDate}/>
-              ))}
+              <div>객실</div>
+              <OneRoomItem rooms={availableRooms} checkInDate={checkInDate} checkOutDate={checkOutDate} />
             </div>
           )}
         </div>

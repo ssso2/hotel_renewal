@@ -14,7 +14,7 @@ const MainCont6 = () => {
                     <p className="en-tit">GALLERY</p>
                 </div>
                 <div className="video_wrap">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/pBQsNC6-6XU" title="Where the heritage of the Shilla meets local flavor - SMQD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/pBQsNC6-6XU" title="Where the heritage of the Shilla meets local flavor - SMQD" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </section>

@@ -17,20 +17,7 @@ const EventDetail_des = ({ pmt, event }) => {
                         {event.map((des, i) => (
                             <li className="event-detail">
                                 <h3>{des.title}</h3>
-                                {/* {des.img ? (<span className="img-txt">
-                                    <img src={des.img} alt="" />
-                                    {des.item.map((add, idx) => (
-                                        <span className="txt-box" key={idx}>
-                                            <p>{add}</p>
-                                        </span>
-                                    ))}
-                                </span>) : {des.item.map((add, idx) => (
-                                        <span className="txt-box" key={idx}>
-                                            <p>{add}</p>
-                                        </span>
-                                    ))}} */}
                                 <span className="img-txt">
-                                    <img src={des.img} alt="" />
                                     {des.item.map((add, idx) => (
                                         <span className="txt-box" key={idx}>
                                             <p>{add}</p>
@@ -41,7 +28,7 @@ const EventDetail_des = ({ pmt, event }) => {
                         ))}
                     </ul>
                     <div className="a-wrap">
-                        <Link to="/specialOffer/event">
+                        <Link to="/event">
                             <div className="aList">목록</div>
                         </Link>
                     </div>

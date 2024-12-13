@@ -36,7 +36,7 @@
   text-align: right;
   line-height: 1.7;
 }
-.container.board .text-container .content {
+.container.board .text-container .content.ncontent {
   box-sizing: border-box;
   height: 100%;
   overflow: auto;
@@ -49,7 +49,7 @@
   margin-top: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.container.board .text-container .content .imgstyle {
+.container.board .text-container .content.ncontent .imgstyle {
   width: 60%;
   height: auto;
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../scss/notice.scss";
 import Noticesearch from "./Noticesearch";
 // import { useParams } from "react-router-dom";
@@ -9,6 +9,27 @@ const Noticelist = () => {
     const [Noticelists, setNoticelists] = useState([]);
     const [Ntype, setNtype] = useState("all");
     const [Ntext, setNtext] = useState("");
+    const navigate = useNavigate();
+
+    //////// 로그인 여부 확인
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        const id = sessionStorage.getItem("id");
+        const name = sessionStorage.getItem("name");
+        const grade = sessionStorage.getItem("grade");
+
+        if (id) {
+            setUser({ id: id, name: name, grade: grade });
+        } else {
+            setUser(null);
+        }
+    }, []);
+
+    if (!user) {
+        navigate("/login");
+    }
+    console.log("유저", user);
+    //////
 
     //공지사항 전체
     const fetchData = async () => {
@@ -59,13 +80,18 @@ const Noticelist = () => {
         timeZone: "Asia/Seoul",
     });
 
+    // 공지사항 최대id 계산(...배열전개)
+    const maxId = Math.max(...Noticelists.map(item => item.notice_id));
+
+    console.log("개수", maxId);
+
     return (
         <div>
             <div className="container">
                 <div className="center">
                     <h2 className="Ntitle">공지사항</h2>
                     <ul className="Nboard-nav">
-                        <li className="N-num">번호</li>
+                        {/* <li className="N-num">번호</li> */}
                         <li className="N-option">분류</li>
                         <li className="N-title">제목</li>
                         <li className="N-view">조회수</li>
@@ -74,7 +100,7 @@ const Noticelist = () => {
                     <ul className="Nboard">
                         {Noticelists.map(data => (
                             <li className="listwrap" key={data.notice_id}>
-                                <div className="N-num">{data.notice_id}</div>
+                                {/* <div className="N-num">{data.notice_id}</div> */}
                                 <div className="N-option">{data.category}</div>
                                 <div className="N-title">
                                     <Link

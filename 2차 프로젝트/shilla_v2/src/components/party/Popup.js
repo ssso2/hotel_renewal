@@ -7,7 +7,7 @@ const Popup = ({ id, title, imgSrc }) => {
                 <div className="lypop-content">
                     <div className="lypop-title">
                         <strong>{title}</strong>
-                        <a href="javascript:void(0);" className="lypop-close" data-lyClose={id}>
+                        <a href="javascript:void(0);" className="lypop-close" data-lyclose={id}>
                             <span className="hide">닫기</span>
                         </a>
                     </div>
@@ -16,7 +16,7 @@ const Popup = ({ id, title, imgSrc }) => {
                             <img src={imgSrc} alt={title} />
                         </div>
                         <div className="btn-wrap type5">
-                            <button className="btn btn-04" data-lyClose={id}>
+                            <button className="btn btn-04" data-lyclose={id}>
                                 <span>닫기</span>
                             </button>
                         </div>

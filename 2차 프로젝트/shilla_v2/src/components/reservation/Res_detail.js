@@ -16,14 +16,15 @@ function Res_detail(props) {
 
   
   // 전달된 데이터
-  const { checkInDate, checkOutDate, offerPrice, offerName, productId } = location.state || {};
-
+  const { checkInDate, checkOutDate, offerPrice, offerName, roomId, productId } = location.state || {};
+ 
   console.log("Res_search.js에서 받은 데이터")
   console.log("product아이디 : ",productId)
   console.log("체크인 : ",checkInDate)
   console.log("체크아웃 : ",checkOutDate)
   console.log("이름 : ",offerName)
   console.log("가격 : ",offerPrice)
+  console.log("객실호수 : ",roomId)
   // productId가 없다면 오류 처리
   if (!productId) {
     console.error("productId가 전달x");
@@ -127,6 +128,7 @@ function Res_detail(props) {
       // adultBf: options.adultBf,
       // childBf: options.childBf,
       // extraBed: options.extraBed,
+      roomId: roomId,
       productId: productId,
       paySum: paySum,
     },
@@ -165,7 +167,7 @@ function Res_detail(props) {
                       className="room-name"
                       type="text"
                       name="rsv-date"
-                      value={offerName || "룸"}
+                      value={`${offerName} [${roomId}호]`}
                     />
                   </div>
                 </li>
@@ -189,139 +191,6 @@ function Res_detail(props) {
                 </li>
               </ul>
             </div>
-            {/* <ul className="option">
-              <h3>옵션 선택사항</h3>
-              <li className="list">
-                <h4>조식</h4>
-                <div className="breakfast">
-                  <div className="count-wrap adult">
-                    <p>성인 조식 / 60,000원</p>
-                    <div className="button-wrap">
-                      <button
-                        type="button"
-                        className="btn-down"
-                        onClick={() => {
-                          updateOption("adultBf", -1);
-                          priceSum();
-                        }}
-                        disabled={options.adultBf === 0}>
-                        <span className="blind">숫자 내리기</span>
-                      </button>
-                      <span className="num" id="num">
-                        {options.adultBf}
-                      </span>
-                      <button
-                        type="button"
-                        className="btn-up"
-                        onClick={() => {
-                          updateOption("adultBf", 1);
-                          priceSum();
-                        }}>
-                        <span className="blind">숫자 올리기</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="count-wrap child">
-                    <p>어린이 조식 / 38,000원</p>
-                    <div className="button-wrap">
-                      <button
-                        type="button"
-                        className="btn-down"
-                        onClick={() => {
-                          updateOption("childBf", -1);
-                          priceSum();
-                        }}
-                        disabled={options.childBf === 0}>
-                        <span className="blind">숫자 내리기</span>
-                      </button>
-                      <span className="num">{options.childBf}</span>
-                      <button
-                        type="button"
-                        className="btn-up"
-                        onClick={() => {
-                          updateOption("childBf", 1);
-                          priceSum();
-                        }}>
-                        <span className="blind">숫자 올리기</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className="list">
-                <h4>엑스트라 베드</h4>
-                <div className="count-wrap bed">
-                  <p>베드 추가 / 66,000원</p>
-                  <div className="button-wrap">
-                    <button
-                      type="button"
-                      className="btn-down"
-                      onClick={() => {
-                        updateOption("extraBed", -1);
-                        priceSum();
-                      }}
-                      disabled={options.extraBed === 0}>
-                      <span className="blind">숫자 내리기</span>
-                    </button>
-                    <span className="num">{options.extraBed}</span>
-                    <button
-                      type="button"
-                      className="btn-up"
-                      onClick={() => {
-                        updateOption("extraBed", 1);
-                        priceSum();
-                      }}>
-                      <span className="blind">숫자 올리기</span>
-                    </button>
-                  </div>
-                </div>
-              </li>
-              <li className="list">
-                <h4>체크인 예정 시간</h4>
-                <select name="in-time" id="in-time">
-                  <option value=""></option>
-                  <option value="15">15:00</option>
-                  <option value="16">16:00</option>
-                  <option value="17">17:00</option>
-                  <option value="18">18:00</option>
-                  <option value="19">19:00</option>
-                  <option value="20">20:00</option>
-                  <option value="21">21:00</option>
-                  <option value="22">22:00</option>
-                  <option value="23">23:00</option>
-                  <option value="24">24:00</option>
-                </select>
-              </li>
-              <li className="list">
-                <h4>추가 요청사항</h4>
-                <textarea
-                  className="comment"
-                  name=""
-                  id=""
-                  placeholder="공항 교통편 문의 또는 호텔 이용 시 문의하실 사항이 있으시면 입력해 주십시오."
-                ></textarea>
-              </li>
-              <div className="desc-wrap">
-                <p className="desc">
-                  위 안내된 요금은 모두 부가가치세 10%가 포함된 금액입니다.
-                </p>
-                <p className="desc">
-                  위 조식 요금은 투숙객에 한하여 할인이 적용된 금액이며 체크인
-                  1일 전 18시 이후 조식 추가 요청 시에는 정상요금 (성인 86,000원
-                  / 어린이 43,000원)으로 이용 가능합니다.
-                </p>
-                <p className="desc">
-                  성인 : 만 13세 이상 / 어린이 : 37개월 이상 ~ 만 12세 이하
-                </p>
-                <p className="desc">
-                  조식이 포함된 패키지를 예약하실 경우 추가 인원에 대한 조식만
-                  선택해주시기 바랍니다.
-                </p>
-                <p className="desc">
-                  37개월 미만의 유아 동반 시 조식에 대한 요금은 무료입니다.
-                </p>
-              </div>
-            </ul> */}
             <ul className="guide">
               <h3>유의사항</h3>
               <li className="list">
@@ -451,7 +320,7 @@ function Res_detail(props) {
                   // checked="guidedChecked"
                   onChange={() => setGuideChecked(!guideChecked)}
                 />
-                <label for="guide-chk">
+                <label htmlFor="guide-chk">
                   유의사항, 취소 및 환불 규정을 모두 확인해주세요.
                 </label>
               </div>
@@ -482,7 +351,7 @@ function Res_detail(props) {
                 </div>
                 <div className="chk-wrap">
                   <input type="radio" name="personalInfoAgree" id="personalInfoAgree-agree" value="agree" onChange={(e) => setPersonalInfoAgree(e.target.value)} />
-                  <label for="personalInfoAgree-agree">동의함</label>
+                  <label htmlFor="personalInfoAgree-agree">동의함</label>
                   <input
                     type="radio"
                     name="personalInfoAgree"
@@ -490,7 +359,7 @@ function Res_detail(props) {
                     value="disagree"
                     onChange={(e) => setPersonalInfoAgree(e.target.value)}
                   />
-                  <label for="personalInfoAgree-disagree">동의하지 않음</label>
+                  <label htmlFor="personalInfoAgree-disagree">동의하지 않음</label>
                 </div>
               </div>
               <div className="suggest-agr">
@@ -516,7 +385,7 @@ function Res_detail(props) {
                 </div>
                 <div className="chk-wrap">
                   <input type="radio" name="thirdPartyAgree" id="thirdPartyAgree-agree" value="agree" onChange={(e) => setThirdPartyAgree(e.target.value)} />
-                  <label for="thirdPartyAgree-agree">동의함</label>
+                  <label htmlFor="thirdPartyAgree-agree">동의함</label>
                   <input
                     type="radio"
                     name="thirdPartyAgree"
@@ -524,7 +393,7 @@ function Res_detail(props) {
                     value="disagree"
                     onChange={(e) => setThirdPartyAgree(e.target.value)}
                   />
-                  <label for="thirdPartyAgree-disagree">동의하지 않음</label>
+                  <label htmlFor="thirdPartyAgree-disagree">동의하지 않음</label>
                 </div>
               </div>
             </div>
@@ -535,11 +404,11 @@ function Res_detail(props) {
                 <span>원</span>
               </div>
               <div className="btn-wrap type1">
-                <Link
-                  to="../../html/sub/reservation.html"
-                  className="btn btn-03">
+                <button
+                  className="btn btn-03"
+                  onClick={() => navigate(-1)}>
                   이전으로 돌아가기
-                </Link>
+                </button>
                 <button
                   className="btn btn-01"
                   id="pay"

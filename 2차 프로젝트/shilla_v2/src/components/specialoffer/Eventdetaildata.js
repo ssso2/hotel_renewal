@@ -150,7 +150,7 @@ export const event = [
 //다른패키지
 export const pkglist = [
     {
-        link: "/specialOffer/event/detail/2",
+        link: "/event/detail/2",
         img: "/img/sub/eventMemory2.jpg",
         title: "An Enchanting Memory",
         date: "2024-11-01 ~ 2025-01-31",

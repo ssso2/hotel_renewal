@@ -13,8 +13,41 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.put("/newpw", async (req, res) => {
-    const { id, newpw } = req.body;
+router.put("/idchk", async (req, res) => {
+    const { id } = req.body;
+    console.log(req.body);
+
+    try {
+        console.log("본인확인 접근");
+        // 프론트에서 id받아 쿼리 실행
+        const [ret] = await conn.execute(
+            "select * from member where member_id= ?",
+            [id]
+        );
+        if (id === "") {
+            return;
+        }
+        // 일치하는 id없을 때 처리
+        if (ret.length === 0) {
+            console.log("일치하는id없음");
+            return res.json({ success: false });
+        }
+        // 회원일경우 일치하는 id(조건)에 비밀번호 업데이트
+        // await conn.execute("update member set pw = ? where member_id= ?", [
+        //     newpw,
+        //     id,
+        // ]);
+        // success : 프론트에서 아이디 있는지 없는지에 따라 처리하기위한 키
+        console.log(id, "id확인 성공");
+        res.json({ id: ret[0].member_id, success: true });
+    } catch (error) {
+        console.log("sql 실패 : ", error.message);
+        ret.status(500).json({ success: false, message: "서버 오류 발생" });
+    }
+});
+
+router.put("/pwchk", async (req, res) => {
+    const { id, pw, newpw } = req.body;
     console.log(req.body);
 
     try {
@@ -24,19 +57,22 @@ router.put("/newpw", async (req, res) => {
             "select * from member where member_id= ?",
             [id]
         );
+        if (id === "") {
+            return;
+        }
         // 일치하는 id없을 때 처리
         if (ret.length === 0) {
             console.log("일치하는id없음");
             return res.json({ success: false });
         }
         // 회원일경우 일치하는 id(조건)에 비밀번호 업데이트
-        await conn.execute("update member set pw = ? where member_id= ?", [
-            newpw,
-            id,
-        ]);
+        // await conn.execute("update member set pw = ? where member_id= ?", [
+        //     newpw,
+        //     id,
+        // ]);
         // success : 프론트에서 아이디 있는지 없는지에 따라 처리하기위한 키
-        res.json({ success: true });
-        console.log(id, newpw, "비밀번호 변경 성공");
+        console.log(id, "id확인 성공", ret);
+        res.json({ member_id: ret[0], success: true });
     } catch (error) {
         console.log("sql 실패 : ", error.message);
         ret.status(500).json({ success: false, message: "서버 오류 발생" });

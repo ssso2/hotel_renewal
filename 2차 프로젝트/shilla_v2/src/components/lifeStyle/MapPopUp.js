@@ -6,7 +6,7 @@ const MapPopUp = ( {propImage, propBtn} ) => {
                 <div class="lypop-content">
                     <div class="lypop-title">
                         <strong>{propBtn}</strong>
-                        <a href="javascrip:void();" class="lypop-close" data-lyClose="pop-map"><span class="hide">닫기</span></a>
+                        <a href="javascrip:void();" class="lypop-close" data-lyclose="pop-map"><span class="hide">닫기</span></a>
                     </div>
                     <div class="lypop-ct">
                         <div class="img-wrap">

@@ -102,8 +102,11 @@ module.exports = upload => {
             whereData.push(sqlData[key]);
         }
 
-        whereSql = whereSql.substring(0, whereSql.lastIndexOf("and"));
+        whereSql += " end_date > sysdate()";
+        // whereSql = whereSql.substring(0, whereSql.lastIndexOf("and"));
+        // whereSql += "where end_date > sysdate()";
         sql += whereSql;
+
         console.log(whereSql);
         console.log(whereData);
 
