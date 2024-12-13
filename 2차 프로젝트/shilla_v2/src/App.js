@@ -39,6 +39,7 @@ import CorporateParty from "./components/party/CorporateParty";
 import CorporateParty2 from "./components/party/CorporateParty2";
 import CorporateParty3 from "./components/party/CorporateParty3";
 import FamilyParty from "./components/party/FamilyParty";
+import FamilyParty2 from "./components/party/FamilyParty2";
 
 // login
 import Login from "./components/login/Login";
@@ -299,6 +300,10 @@ function App() {
                 <Route
                     path="/familyParty"
                     element={<FamilyParty />}
+                ></Route>
+                <Route
+                    path="/familyParty2"
+                    element={<FamilyParty2 />}
                 ></Route>
             </Routes>
         </div>
