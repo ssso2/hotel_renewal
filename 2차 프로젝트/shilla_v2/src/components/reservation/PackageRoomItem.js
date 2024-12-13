@@ -6,7 +6,27 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
 
-  console.log(packageData, checkInDate, checkOutDate)
+  const formatDate = (date) => {
+    if (!date) return "미정"; // null 또는 undefined 처리
+    const parsedDate = new Date(date); // date가 ISO 문자열이어도 Date 객체로 변환
+    if (isNaN(parsedDate)) return "유효하지 않은 날짜"; // 유효하지 않은 날짜 처리
+  
+    const year = parsedDate.getUTCFullYear(); // UTC 기준으로 연도 추출
+    const month = String(parsedDate.getUTCMonth() + 1).padStart(2, '0'); // UTC 기준으로 월 추출
+    const day = String(parsedDate.getUTCDate()).padStart(2, '0'); // UTC 기준으로 일 추출
+  
+    return `${year}-${month}-${day}`;
+  };
+
+  // 패키지의 기간 포맷
+  const formattedStartDate = formatDate(packageData.start_date);
+  const formattedEndDate = formatDate(packageData.end_date);
+
+  console.log("패키지 포맷 기간 시작날짜 : ",formattedStartDate)
+  console.log("패키지 포맷 기간 시작날짜 : ",formattedEndDate)
+
+
+  console.log("packageData,체크인, 체크아웃 : ",packageData, checkInDate, checkOutDate)
 
   const handleReservation = () => {
     if (!memberId) {
@@ -18,8 +38,8 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
     if (checkInDate && checkOutDate) {
       navigate("/reserve/detail", {
         state: {
-          checkInDate,
-          checkOutDate,
+          checkInDate: formattedCheckInDate,
+          checkOutDate: formattedCheckOutDate, 
           offerPrice: packageData.offer_price,
           offerName: packageData.offer_name,
           productId: packageData.product_id,
@@ -35,12 +55,13 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
     <div className="package-item">
       <h4>{packageData.offer_name}</h4>
       <p>{packageData.offer_description}</p>
+      <p>패키지 기간: {formattedStartDate} ~ {formattedEndDate}</p>
       <p>가격: {packageData.offer_price}원</p>
       <div className="package-details">
         <button onClick={handleReservation}>예약하기</button>
       </div>
     </div>
   );
-}
+} 
 
 export default PackageRoomItem;
