@@ -16,6 +16,10 @@ const SubTitle = () => {
             return { title: "영빈관", breadcrumb: "영빈관" };
         } else if (location.pathname === '/corporateParty3') {
             return { title: "중·소연회장", breadcrumb: "중·소연회장" };
+        } else if (location.pathname === '/familyParty') {
+            return { title: "가족연회안내", breadcrumb: "가족연회안내" };
+        } else if (location.pathname === '/familyParty2') {
+            return { title: "중·소연회장", breadcrumb: "중·소연회장" };
         } else {
             return { title: "페이지 제목", breadcrumb: "현재 위치" }; 
         } 

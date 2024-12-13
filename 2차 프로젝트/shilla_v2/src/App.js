@@ -38,6 +38,7 @@ import Wedding3 from "./components/party/Wedding3";
 import CorporateParty from "./components/party/CorporateParty";
 import CorporateParty2 from "./components/party/CorporateParty2";
 import CorporateParty3 from "./components/party/CorporateParty3";
+import FamilyParty from "./components/party/FamilyParty";
 
 // login
 import Login from "./components/login/Login";
@@ -294,6 +295,10 @@ function App() {
                 <Route
                     path="/corporateParty3"
                     element={<CorporateParty3 />}
+                ></Route>
+                <Route
+                    path="/familyParty"
+                    element={<FamilyParty />}
                 ></Route>
             </Routes>
         </div>
