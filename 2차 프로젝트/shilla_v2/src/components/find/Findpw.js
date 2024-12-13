@@ -6,6 +6,7 @@ import "../../scss/findpw.scss";
 import { Form, Link, Navigate, useNavigate } from "react-router-dom";
 import Findpwchk from "./Findpwchk";
 import axios from "axios";
+import Findpw_confirm from "./Findpw_confirm";
 
 const Findpw = () => {
     const [click, setclick] = useState(false);
@@ -14,33 +15,41 @@ const Findpw = () => {
     };
 
     const navigate = useNavigate();
-
+    const [id, setid] = useState("");
+    const [iderr, setiderr] = useState("");
+    const [confirmbtn, setconfirmbtn] = useState(false);
     const idchkhandle = async e => {
         e.preventDefault();
         const frmdata = new FormData(document.myfrm);
         const mydata = Object.fromEntries(frmdata);
         console.log("폼입력데이터", mydata);
-
+        console.log("아이디불일치", confirmbtn);
+        // if (!mydata.id && !mydata.newpw && !mydata.newpwchk) {
+        //     alert("내용을 모두 입력해주세요.");
+        //     setiderr("아이디를 입력하세요.");
+        //     setpwerr("비밀번호를 입력하세요.");
+        //     setpwchkerr("비밀번호를 확인해주세요.");
+        //     return;
+        // }
         if (!mydata.id) {
-            console.log("아이디를 입력하세요.");
-        } else if (!mydata.newpw) {
-            console.log("비밀번호를 입력하세요.");
-        } else if (!mydata.newpwchk) {
-            console.log("비밀번호를 확인하세요.");
-        }
-
-        const res = await axios.put(
-            "http://localhost:5002/bk/find/newpw",
-            mydata
-        );
+            console.log("아이디미입력");
+            setiderr("아이디를 입력하세요.");
+        } else setiderr("");
 
         try {
+            const res = await axios.put(
+                "http://localhost:5002/bk/find/idchk",
+                mydata
+            );
             // console.log("res.data", res.data, "값", res.data.success);
             if (res.data.success) {
                 // console.log("갔다옴", res.data);
-                alert("아이디를 확인했습니다.");
-                navigate("/login");
-            } else alert("일치하는 아이디가 없습니다.");
+                setconfirmbtn(true);
+                setid(res.data.id);
+                alert(
+                    "아이디를 확인했습니다. 임시비밀번호는 등록된 이메일로 보내드리겠습니다.  '임시비밀번호 : asdfg12345!!' "
+                );
+            } else if (!res.data.success) alert("일치하는 아이디가 없습니다.");
         } catch (error) {
             console.log("에러메세지", error);
         }
@@ -79,7 +88,18 @@ const Findpw = () => {
                                 </button>
                             </div>
                         ) : (
-                            <Findpwchk idchkhandle={idchkhandle} />
+                            <Findpw_confirm
+                                idchkhandle={idchkhandle}
+                                iderr={iderr}
+                                setiderr={setiderr}
+                                id={id}
+                                // pwerr={pwerr}
+                                // setpwerr={setpwerr}
+                                // pwchkerr={pwchkerr}
+                                // setpwchkerr={setpwchkerr}
+                                confirmbtn={confirmbtn}
+                                setconfirmbtn={setconfirmbtn}
+                            />
                         )}
                     </div>
                 </div>

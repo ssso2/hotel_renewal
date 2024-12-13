@@ -5,10 +5,10 @@ import "../../scss/sub01_01_main.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const OfferMain2_btn = ({ handlereset, handleSearch }) => {
+const OfferMain2_btn = ({ handleReset, handleSearch }) => {
     return (
         <div className="pkg-btnbox">
-            <button type="reset" className="pkg-filter-resetbtn">
+            <button onClick={handleReset} className="pkg-filter-resetbtn">
                 초기화
             </button>
             {/* <input
@@ -18,7 +18,7 @@ const OfferMain2_btn = ({ handlereset, handleSearch }) => {
                 onClick={handleSearch}
             /> */}
             <button
-                type="submit"
+                type="button"
                 className="pkg-filter-searchbtn"
                 onClick={handleSearch}
             >

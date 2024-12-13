@@ -29,7 +29,17 @@ const Noticedetail = () => {
     if (!Noticedetails) {
         return <div>로딩중</div>;
     }
-
+    // 날짜출력
+    const formatter = new Intl.DateTimeFormat("ko-KR", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+        timeZone: "Asia/Seoul",
+    });
     return (
         <div className="container board">
             <div className="center">
@@ -41,17 +51,27 @@ const Noticedetail = () => {
                             <p className="subject">{Noticedetails.title}</p>
                             <div className="writer-wrap">
                                 {/* 초기값 undefinded 처리작업 필요*/}
+                                {/* {Noticedetails.reg_date &&
+                                    Noticedetails.reg_date.split("T")[0]} */}
                                 {Noticedetails.reg_date &&
-                                    Noticedetails.reg_date.split("T")[0]}
+                                    formatter
+                                        .format(
+                                            new Date(Noticedetails.reg_date)
+                                        )
+                                        .replace(/\. /g, "-")
+                                        .replace(
+                                            /(\d{4}-\d{2}-\d{2})-(\d{2}:\d{2}:\d{2})/,
+                                            "$1 $2"
+                                        )}
                             </div>
                         </div>
                     </div>
-                    <div className="content">
+                    <div className="content ncontent">
                         {imgurl && <img src={imgurl} className="imgstyle" />}
                         <div>{Noticedetails.context}</div>
                     </div>
                 </div>
-                <NoticedetailOther id={id} />
+                <NoticedetailOther id={id} Noticedetails={Noticedetails} />
                 <div className="button-container notice">
                     <Link to="/notice" className="listgo">
                         목록으로
