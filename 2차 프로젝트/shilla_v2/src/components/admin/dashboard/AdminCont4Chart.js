@@ -30,11 +30,24 @@ const options = {
   },
   scales: {
     x: {
-      grid: {
+      title: {
         display: true,
+        text: "방별",
+        font: {
+          size: 14,
+          style: 'italic',
+        },
       },
     },
     y: {
+      title: {
+        display: true,
+        text: "취소 수",
+        font: {
+          size: 14,
+          style: 'italic',
+        },
+      },
       beginAtZero: {
         display: true,
       },
@@ -97,7 +110,6 @@ const AdminCont4Chart = () => {
 
   return (
     <div>
-      <h2>객실별 취소 현황</h2>
       <Bar options={options} data={chartData} />
     </div>
   )

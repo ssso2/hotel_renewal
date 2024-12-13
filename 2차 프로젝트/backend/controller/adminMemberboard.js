@@ -1,7 +1,9 @@
 const express = require("express");
 const conn = require("../db");
 const router = express.Router();
+const cors = require('cors');
 
+router.use(cors());  // 모든 도메인에서 요청을 허용
 
 module.exports = () => {
     // 회원관리 메인 게시판 DB 연결
@@ -76,17 +78,17 @@ module.exports = () => {
     })
 
     router.put("/", async (req, res) => {
-        const { grade, member_id } = req.body
+        const { grade, member_id, description } = req.body
 
         console.log("PUT 요청 받은 데이터:", grade, member_id)
     
         console.log("put 접근하기");
-        console.log("grade : ", grade, "member_id : ", member_id)
+        console.log("grade : ", grade, "member_id : ", member_id, "description", description)
     
         try {
-            await conn.execute("update member set grade = ? where member_id = ?", [grade, member_id]);
+            await conn.execute("update member set grade = ?, description = ? where member_id = ?", [grade, description, member_id]);
             res.send("수정 완료");
-            console.log("결과 테스트", grade, member_id)
+            console.log("결과 테스트", grade, member_id, description)
         } catch (err) {
             console.error("POST 수정 실패 : ", err.message);
             res.status(500).send("POST 수정 과정 중 오류 발생");

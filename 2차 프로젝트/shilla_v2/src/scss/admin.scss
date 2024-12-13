@@ -76,6 +76,7 @@
                     width: 100%;
                     padding: 20px;
                     background: #fff;
+                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1)
                 }
                 .chart-wrap {
                     width: calc((100% - 50px) / 2);
@@ -84,6 +85,7 @@
                         padding: 20px;
                         width: 100%;
                         background: #fff;
+                        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1)
                     }
                 }
             }
@@ -129,7 +131,7 @@
                         padding: 10px 5px;
                     }
                 }
-                .table-contents{
+                .table-contents {
                     background: #eee;
                     color: #000;
                     &.completed {
