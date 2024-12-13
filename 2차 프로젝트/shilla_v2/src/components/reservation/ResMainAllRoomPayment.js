@@ -17,6 +17,7 @@ function AllRoomPaymentPage() {
     // adultBf,
     // childBf,
     // extraBed,
+    roomId,
     productId,
     paySum,
   } = location.state || {};
@@ -120,7 +121,12 @@ function AllRoomPaymentPage() {
 
       if (paymentResponse.status === 201) {
         alert("결제가 완료되었습니다!");
-        navigate("/"); // 결제 완료 후 홈페이지로 이동
+        const userConfirmed = window.confirm("예약페이지로 이동하시겠습니까?");
+        if (userConfirmed) {
+          navigate("/myPage/myReservation"); // 사용자가 확인을 누른 경우 예약 페이지로 이동
+        } else {
+          navigate("/");
+        }
       } else {
         alert("결제 저장에 실패");
       }
@@ -139,7 +145,10 @@ function AllRoomPaymentPage() {
       <h2>결제 페이지</h2>
       <form className={styles.paymentForm}>
         <div> 예약날짜 : {reservationDate}</div>
-        <div> 룸이름 : {roomType}</div>
+        <div>
+          {" "}
+          룸이름 : {roomType} [{roomId}호]
+        </div>
         <div className={styles.formGroup}>
           <label htmlFor="accountNumber">카드번호:</label>
           <input

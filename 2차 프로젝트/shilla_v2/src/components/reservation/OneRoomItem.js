@@ -36,10 +36,11 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
           checkOutDate,
           dayPrice: room.day_price,
           roomType: room.room_type,
+          roomId: room.room_id,
           productId: room.product_id,
         },
       });
-      console.log(checkInDate, checkOutDate, room.day_price, room.room_type, room.product_id);
+      console.log(checkInDate, checkOutDate, room.day_price, room.room_type, room.room_id, room.product_id);
     } else {
       alert("체크인 및 체크아웃 날짜를 선택해주세요");
     }

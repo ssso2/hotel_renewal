@@ -22,8 +22,13 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
   const formattedStartDate = formatDate(packageData.start_date);
   const formattedEndDate = formatDate(packageData.end_date);
 
+  // 체크인/체크아웃 날짜 포맷
+  const formattedCheckInDate = formatDate(checkInDate);
+  const formattedCheckOutDate = formatDate(checkOutDate);
+
   console.log("패키지 포맷 기간 시작날짜 : ",formattedStartDate)
   console.log("패키지 포맷 기간 시작날짜 : ",formattedEndDate)
+  console.log("packageData.room_id : ",packageData.room_id)
 
 
   console.log("packageData,체크인, 체크아웃 : ",packageData, checkInDate, checkOutDate)
@@ -42,10 +47,11 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
           checkOutDate: formattedCheckOutDate, 
           offerPrice: packageData.offer_price,
           offerName: packageData.offer_name,
+          roomId: packageData.room_id,
           productId: packageData.product_id,
         },
       });
-      console.log(checkInDate, checkOutDate, packageData.offer_price, packageData.offer_name, packageData.product_id);
+      console.log(checkInDate, checkOutDate, packageData.offer_price, packageData.offer_name, packageData.room_id, packageData.product_id);
     } else {
       alert("체크인 및 체크아웃 날짜를 선택해주세요");
     }
@@ -57,6 +63,7 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
       <p>{packageData.offer_description}</p>
       <p>패키지 기간: {formattedStartDate} ~ {formattedEndDate}</p>
       <p>가격: {packageData.offer_price}원</p>
+      <p>{packageData.room_id}</p>
       <div className="package-details">
         <button onClick={handleReservation}>예약하기</button>
       </div>
