@@ -57,8 +57,8 @@ const MainCont5 = () => {
                         .show()
                         .focus();
                 });
-                $("[data-lyClose]").click(function () {
-                    var lypopClose = $(this).attr("data-lyClose");
+                $("[data-lyclose]").click(function () {
+                    var lypopClose = $(this).attr("data-lyclose");
                     $("[data-lyOpen =" + lypop + "]").hide();
                     $("[data-lybtn =" + lypopClose + "]").focus();
                 });

@@ -14,7 +14,7 @@ const Findpwchk = ({ memberlist, setmemberlist, idchkhandle }) => {
                                 id="pw"
                                 name="id"
                                 // minlength="12"
-                                // maxlength="16"
+                                // maxLength="16"
                                 placeholder="아이디를 입력해주세요."
                                 required
                             />
@@ -26,7 +26,7 @@ const Findpwchk = ({ memberlist, setmemberlist, idchkhandle }) => {
                                 id="pw"
                                 name="newpw"
                                 // minlength="12"
-                                // maxlength="16"
+                                // maxLength="16"
                                 placeholder="영문, 숫자, 특수문자를 포함하여 12~16자"
                                 required
                             />
@@ -42,7 +42,7 @@ const Findpwchk = ({ memberlist, setmemberlist, idchkhandle }) => {
                                 id="pwchk"
                                 name="newpwchk"
                                 // minlength="12"
-                                // maxlength="16"
+                                // maxLength="16"
                                 placeholder="영문, 숫자, 특수문자를 포함하여 12~16자"
                                 required
                             />
