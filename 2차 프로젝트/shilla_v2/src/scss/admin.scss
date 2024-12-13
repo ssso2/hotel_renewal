@@ -9,6 +9,33 @@
     }
     .container {
         margin: 0;
+        &.board {
+            padding: 0;
+            .text-container .title-wrap .title {
+                margin: 0;
+                padding: 10px 25px;
+                border: 1px solid #777;
+                border-radius: 0;
+                background-color: #777;
+                color: #fff;
+                .writer-wrap {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+            }
+            .text-container .content {
+                margin-top: 0;
+                background-color: #fff;
+                border-radius: 0;
+                min-height: 232px;
+                height: auto;
+            }
+            .text-container .reply-container .reply-box-sec {
+                border-radius: 0;
+                background: #fff;
+            }
+        }
     }
     .admin-tab {
         margin-right: 30px;
