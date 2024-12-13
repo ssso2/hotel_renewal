@@ -41,6 +41,10 @@ import CorporateParty3 from "./components/party/CorporateParty3";
 import FamilyParty from "./components/party/FamilyParty";
 import FamilyParty2 from "./components/party/FamilyParty2";
 
+// dining
+import Restaurant from "./components/dining/Restaurant";
+import Restaurant2 from "./components/dining/Restaurant2";
+
 // login
 import Login from "./components/login/Login";
 
@@ -305,6 +309,12 @@ function App() {
                     path="/familyParty2"
                     element={<FamilyParty2 />}
                 ></Route>
+            </Routes>
+
+            {/* 다이닝 */}
+            <Routes>
+                <Route path="/restaurant" element={<Restaurant />}></Route>
+                <Route path="/restaurant2" element={<Restaurant2 />}></Route>
             </Routes>
         </div>
     );
