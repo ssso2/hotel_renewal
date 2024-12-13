@@ -2,7 +2,7 @@ import React from "react";
 import "../../scss/noticedetail.scss";
 import { Link, Navigate, useParams } from "react-router-dom";
 
-const NoticedetailOther = ({ id }) => {
+const NoticedetailOther = ({ id, Noticedetails }) => {
     // const { id } = useParams;
     console.log(id);
     const prevID = parseInt(id, 10) - 1;

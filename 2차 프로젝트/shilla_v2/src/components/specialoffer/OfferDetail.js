@@ -47,6 +47,7 @@ const OfferDetail = () => {
     // if (!Offerdetails) {
     //     return <div> Offerdetails 없음</div>;
     // }
+
     return (
         <div className="container offerdetail">
             <div className="center">
