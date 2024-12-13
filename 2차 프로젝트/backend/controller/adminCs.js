@@ -15,7 +15,7 @@ module.exports = upload => {
                 JOIN member ON member.member_id = board.member_id
                 ORDER BY board.answer ASC, board.board_id DESC;
             `);
-            res.json(ret); // board 테이블 데이터를 반환
+            res.json(ret); 
         } catch (err) {
             console.log("sql 실패 : ", err.message);
             res.status(500).send('db오류');
@@ -23,24 +23,27 @@ module.exports = upload => {
     });
 
     //detail
-    // router.get("/detail/:board_id", async (req, res) => {
-    //     console.log("board_comment detail 접근");
+    router.get("/detail/:board_id", async (req, res) => {
+        console.log("board detail 접근");
 
-    //     try {
-    //         const [ret] = await conn.execute("select *, DATE_FORMAT(date,\'%Y-%m-%d %H:%i:%s\') as reg_str from board_comment where comment_id = ?",[req.params.comment_id])
-    //         res.json(ret[0]);
-    //     } catch (err) {
+        try {
+            const [ret] = await conn.execute("select board.*, member.name as writer_name, DATE_FORMAT(date,\'%Y-%m-%d %H:%i:%s\') as reg_str from board JOIN member ON board.member_id = member.member_id where board.board_id = ?",[req.params.board_id])
+            console.log(req.params);
+            
+            res.json(ret[0]);
+        } catch (err) {
 
-    //         console.log("sql 실패 : ", err.message);
-    //         ret.status(500).send('디테일 db오류')
+            console.log("sql 실패 : ", err.message);
+            ret.status(500).send('db오류')
 
-    //     }
-    // });
+        }
+        
+    });
 
 
     // 쓰기
     // router.post("/detail/:board_id", async(req, res) => {
-    //     console.log("백엔드 댓글 쓰기",req);
+    //     console.log("adminCsboard 백엔드 댓글 쓰기",req);
 
     //     let sql = 'insert into board_comment (board_id,author,context,member_id,date) values (?,?,?,?,sysdate())';
 
@@ -57,36 +60,36 @@ module.exports = upload => {
     //         const [ret] = await conn.execute(sql, data)
             
     //         // const newId = ret.insertId;
-    //         console.log('게시판 댓글 쓰기완료',ret);
+    //         console.log('adminCsboard 댓글 쓰기완료',ret);
     //         res.json(ret)
     //     } catch (err) {
 
-    //         console.log("sql 실패 : ", err.message);
-    //         ret.status(500).send('db오류')
+    //         console.log("adminCsboard sql 실패 : ", err.message);
+    //         ret.status(500).send('adminCsboard db오류')
 
     //     }
 
     // });
 
     // router.delete("/detail/:comment_id", async(req, res) => {
-    //     console.log("삭제 진입:" + req.params.comment_id);
+    //     console.log("adminCsboard 삭제 진입:" + req.params.comment_id);
     //     console.log(req.params.comment_id);
 
 
     //     try {
     //         const [ret] = await conn.execute('delete from board_comment where comment_id = ?',[req.params.comment_id])
-    //         res.send("삭제 성공:" + req.params.comment_id);
+    //         res.send("adminCsboard 삭제 성공:" + req.params.comment_id);
     //     } catch (err) {
 
-    //         console.log("sql 실패 : ", err.message);
-    //         ret.status(500).send('db오류')
+    //         console.log("adminCsboard sql 실패 : ", err.message);
+    //         ret.status(500).send('adminCsboard db오류')
 
     //     }
 
     // });
 
     // router.put("/detail/:comment_id", async(req, res) => {
-    //     console.log("댓글수정 진입 ",req.body)
+    //     console.log("adminCsboard 댓글수정 진입 ",req.body)
     //     let data = [
     //         req.body.context,
     //         req.body.comment_id
@@ -95,11 +98,11 @@ module.exports = upload => {
 
     //     try {
     //         const [ret] = await conn.execute('update board_comment set context=? where comment_id = ?', data)
-    //         res.send("댓글수정성공");
+    //         res.send("adminCsboard 댓글수정성공");
     //     } catch (err) {
 
-    //         console.log("댓글수정sql 실패 : ", err.message);
-    //         ret.status(500).send('댓글 수정 db오류')
+    //         console.log("adminCsboard 댓글수정sql 실패 : ", err.message);
+    //         ret.status(500).send('adminCsboard 댓글 수정 db오류')
 
     //     }
         

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
 import AdminTabMenu from '../AdminTabMenu'
-import AdminCsCont from "./AdminCsCont"
+import AdminCsCont_detail from "./AdminCsCont_detail"
 import '../../../scss/admin.scss'
 
 
-const AdminCs = () => {
+const AdminCsDstail = () => {
 
     return (
         <>
@@ -12,7 +12,7 @@ const AdminCs = () => {
                 <div className="center">
                     <AdminTabMenu/>
                     <div className="tab-contents">
-                        <AdminCsCont/>
+                        <AdminCsCont_detail/>
                     </div>
                 </div>
             </div>
@@ -20,4 +20,4 @@ const AdminCs = () => {
     );
 };
 
-export default AdminCs;
+export default AdminCsDstail;

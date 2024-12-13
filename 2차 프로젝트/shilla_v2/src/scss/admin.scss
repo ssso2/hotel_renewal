@@ -3,6 +3,12 @@
     padding: 30px 0 100px;
     .center {
         display: flex;
+        &.board {
+            flex-direction: column;
+        }
+    }
+    .container {
+        margin: 0;
     }
     .admin-tab {
         margin-right: 30px;
