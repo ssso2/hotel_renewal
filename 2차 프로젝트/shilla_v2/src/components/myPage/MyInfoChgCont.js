@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import MyPwChkCont from "./MyPwChkCont";
+import ReadOnlyData from "./ReadOnlyData";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -102,13 +103,6 @@ const MyInfoChgCont = () => {
         }
     };
 
-    const readOnlyData = [
-        { title: "아이디", id: "userId", value: text.member_id, name: 'userId', type: 'text' },
-        { title: "이름(국문)", id: "userName", value: text.name, name: 'userName', type: 'text' },
-        { title: "이름(영문)", id: "userName_eng", value: text.name_eng, name: 'userName_eng', type: 'text' },
-        { title: "생년월일", id: "userBirth", value: text.birth, name: 'userBirth', type: 'text' },
-    ];
-
     const myInfoText = [
         { title: "연락처", id: "userPhone", value: userPhone, name: 'userPhone', type: 'text' },
         { title: "이메일", id: "userEmail", value: userEmail, name: 'userEmail', type: 'text' },
@@ -124,16 +118,8 @@ const MyInfoChgCont = () => {
     return (
         <form name="myInfoChgFrm" className="mypage-info" id="mypage-info" onSubmit={handleSubmit}>
             <h2 className="title">회원정보 수정</h2>
-            {
-                readOnlyData.map((item, index) => {
-                    return (
-                        <label className="my-info" key={index}>
-                            <p>{item.title}</p>
-                            <input type={item.type} id={item.id} name={item.name} value={item.value} readOnly />
-                        </label>
-                    );
-                })
-            }
+            <ReadOnlyData text={text}/>
+
             {
                 myInfoText.map((item, index) => {
                     return (
