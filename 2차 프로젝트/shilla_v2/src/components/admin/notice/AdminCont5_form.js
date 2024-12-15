@@ -20,8 +20,8 @@ const AdminCont5_form = ({
 
     return (
         <form className="searchwrap" name="myfrm">
-            <AdminCont5_search Txtinput={Txtinput} setTxtinput={setTxtinput} />
-            <AdminCont5_type setNtype={setNtype} Ntype={Ntype} />
+            <AdminCont5_search Txtinput={Txtinput} setTxtinput={setTxtinput} setNtype={setNtype} Ntype={Ntype} />
+            {/* <AdminCont5_type setNtype={setNtype} Ntype={Ntype} /> */}
             <AdminCont5_btn
                 handleReset={handleReset}
                 handleSearch={handleSearch}

@@ -8,16 +8,21 @@
     //검색
     .search,
     .list {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         // .searchwrap {
         //     padding: 30px 20px;
         //     // background-color: #fff;
         // }
+        .searchwrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
         .searchwrap,
         .listwrapper {
-            padding: 30px 20px;
+            padding: 0;
             // height: 500px;
-            background-color: #fff;
+            // background-color: #fff;
             border-radius: 5px;
             // font-weight: bold;
             // padding: 20px 0;
@@ -32,9 +37,9 @@
                     box-sizing: border-box;
                     background: #fff;
                     color: #333;
-                    border: 1px solid #333;
-                    width: 100px;
-                    padding: 10px;
+                    border: 1px solid #ddd;
+                    // width: 100px;
+                    padding: 5px 10px;
                     border-radius: 5px;
                     margin-right: 10px;
                     transition: background-color 0.3s;
@@ -47,8 +52,8 @@
                     background: #333;
                     color: #fff;
                     border: 1px solid #333;
-                    width: 100px;
-                    padding: 10px;
+                    width: 62px;
+                    padding: 5px 10px;
                     border-radius: 5px;
                     cursor: pointer;
                     transition: background-color 0.3s;
@@ -60,8 +65,9 @@
             }
             .search-container {
                 display: flex;
-                justify-content: flex-start;
-                margin-bottom: 16px;
+                // justify-content: flex-start;
+                align-items: center;
+                // margin-bottom: 16px;
                 // background-color: #faf;
                 line-height: 2;
                 font-size: 14px;
@@ -74,7 +80,7 @@
 
                 .con,
                 .category {
-                    padding: 0 10px;
+                    padding: 5px 10px;
                     border-radius: 5px;
                     border: 1px solid #ccc;
                 }
@@ -117,22 +123,25 @@
                 }
                 .Nboard-nav {
                     font-weight: bold;
-                    line-height: 50px;
+                    // line-height: 50px;
                     color: #fff;
+                    & > li {
+                        padding: 10px;
+                    }
                 }
                 .Nboard-nav,
                 .listwrap {
                     height: auto;
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: unset;
                     text-align: center;
                     background-color: #777;
                 }
                 .Nboard {
                     .listwrap {
                         background-color: #fff;
-                        border-radius: 5px;
-                        padding: 30px 0px;
+                        border-radius:0;
+                        padding: 0px;
                         border-bottom: 1px solid #ccc;
                     }
                 }
@@ -146,9 +155,10 @@
                     // background-color: #aff;
                 }
                 .N-title {
-                    width: 40%;
+                    width: 47%;
                     text-align: center;
-                    padding: 0 10px;
+                    padding: 10px;
+                    border-left: 1px solid #ddd;
                     .Nlink {
                         white-space: nowrap;
                         display: block;
@@ -161,17 +171,34 @@
                 .N-date,
                 .MDbtn,
                 .add {
+                    padding: 10px;
                     width: 10%;
+                    border-left: 1px solid #ddd;
                     text-align: center;
                 }
 
+                .add,
                 .MDbtn {
+                    width: 13%;
                     display: flex;
                     padding: 0 10px;
                     justify-content: space-around;
                     align-items: center;
                     :hover {
                         font-weight: 700;
+                    }
+                    & > .modify,
+                    & > .delete {
+                        padding: 5px 10px;
+                        background: #adadad;
+                        color: #fff;
+                        border-radius: 4px;
+                        line-height: 1;
+                    }
+                    & > .delete {
+                        border: 1px solid #ddd;
+                        color: #fff;
+                        background: #777;
                     }
                 }
             }
