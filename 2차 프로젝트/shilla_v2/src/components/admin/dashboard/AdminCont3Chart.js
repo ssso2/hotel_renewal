@@ -24,6 +24,8 @@ ChartJS.register(
 
 // 차트 옵션 설정
 const options = {
+  type: 'bar',
+  indexAxis: 'y',
   responsive: true,
   interaction: {
     intersect: true,
@@ -32,33 +34,22 @@ const options = {
     x: {
       title: {
         display: true,
-        text: "방별",
+        text: "매출금액",
         font: {
           size: 14,
-          style: 'italic',
         },
-      },
-    },
-    y: {
-      title: {
-        display: true,
-        text: "매출액",
-        font: {
-          size: 14,
-          style: 'italic',
-        },
-      },
-      beginAtZero: {
-        display: true,
-      },
+      }
     },
   },
-  plugins: {
-    legend: {
-      position: "bottom",
+  options: {
+    indexAxis: 'x',
+    elements: {
+      bar: {
+        borderWidth: 2,
+      }
     },
   },
-}
+};
 
 const AdminCont3Chart = () => {
   const [chartData, setChartData] = useState({
