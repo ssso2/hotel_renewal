@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Pagination from "../sub/Pagination";
 
 const OfferMain4 = ({ offer }) => {
     // console.log(`파일옵니까: ${(<img src={offerimg} />)}`);
@@ -25,13 +26,19 @@ const OfferMain4 = ({ offer }) => {
         consecutive_night: "2박이상",
         kids: "키즈",
     };
+    //페이지네이션
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentlist = offer.slice(startIndex, startIndex + itemsPerPage);
 
     return (
         <>
             {/* <!-- 패키지 리스트 --> */}
             <div className="event-container">
                 <ul className="pkg-all list-item" data-type="all">
-                    {offer
+                    {currentlist
                         // .filter(
                         //     list =>
                         //         keywordColumns.some(
@@ -109,6 +116,12 @@ const OfferMain4 = ({ offer }) => {
                         <div>{item.offer_name}</div>
                     </div>
                 ))} */}
+                <Pagination
+                    totalItems={offer.length}
+                    itemsPerPage={itemsPerPage}
+                    currentPage={currentPage}
+                    onPageChange={setCurrentPage}
+                />
             </div>
         </>
     );

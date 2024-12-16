@@ -4,6 +4,7 @@ import OfferMain1 from "./OfferMain1";
 import OfferMain2 from "./OfferMain2";
 import OfferMain3 from "./OfferMain3";
 import OfferMain4 from "./OfferMain4";
+import Pagination from "../sub/Pagination";
 
 const OfferMain = () => {
     const [Offerlists, setOfferlists] = useState([]);
