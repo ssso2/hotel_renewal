@@ -8,12 +8,22 @@
 
     .list {
         .listwrapper {
-            padding: 30px 20px;
+            // padding: 30px 20px;
             // height: 500px;
-            background-color: #fff;
+            // background-color: #fff;
             border-radius: 5px;
             // font-weight: bold;
             // padding: 20px 0;
+
+            & > .btn-wrap {
+                justify-content: end;
+                .submit {
+                    padding:10px;
+                    background: #333;
+                    color: #fff;
+                    border-radius: 4px;
+                }
+            }
         }
         .listwrap {
             background-color: #fff;

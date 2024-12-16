@@ -15,7 +15,7 @@ const HeaderComp2 = ({user}) => {
     const LoginGroup = () => {
         if(user && user.grade == 1){
             return  <div className="btn-wrap admin">
-                        <Link to="/admin" className="user-name-btn" title="관리자페이지로 이동">
+                        <Link to="/admin/dashboard" className="user-name-btn" title="관리자페이지로 이동">
                             <i className="fa-regular fa-user"></i>
                             <p>관리자<span>님</span></p>
                         </Link>

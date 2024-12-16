@@ -110,71 +110,73 @@ function Res_search() {
 
   return (
     <div className="container">
-      <section className="reservation">
-        <div className="center">
-          <h2>날짜, 인원 선택</h2>
-          <div className="reservation-wrap">
-            <div className="date-wrap">
-              <h4>CHECK IN / OUT</h4>
-              <DateRangePicker
-                onDateChange={handleDateChange}
-                showPicker={showPicker}
-                togglePicker={togglePicker}
-              />
+      <div className="center">
+        <section className="reservation">
+          <div className="center">
+            <h2>날짜, 인원 선택</h2>
+            <div className="reservation-wrap">
+              <div className="date-wrap">
+                <h4>CHECK IN / OUT</h4>
+                <DateRangePicker
+                  onDateChange={handleDateChange}
+                  showPicker={showPicker}
+                  togglePicker={togglePicker}
+                />
+              </div>
+              <div className="room-wrap" onClick={togglePopup}>
+                <div className="box room">
+                  <span className="tit">ROOM</span>
+                  <span className="num">1</span>
+                </div>
+                <div className="box adult">
+                  <span className="tit">ADULT</span>
+                  <span className="num">1</span>
+                </div>
+                <div className="box children">
+                  <span className="tit">CHILDREN</span>
+                  <span className="num">{confirmedChildrenCount}</span>
+                </div>
+              </div>
+              <button
+                type="button"
+                className="reservation-search-btn"
+                onClick={handleSearch}
+              >
+                검색
+              </button>
             </div>
-            <div className="room-wrap" onClick={togglePopup}>
-              <div className="box room">
-                <span className="tit">ROOM</span>
-                <span className="num">1</span>
-              </div>
-              <div className="box adult">
-                <span className="tit">ADULT</span>
-                <span className="num">1</span>
-              </div>
-              <div className="box children">
-                <span className="tit">CHILDREN</span>
-                <span className="num">{confirmedChildrenCount}</span>
-              </div>
-            </div>
-            <button
-              type="button"
-              className="reservation-search-btn"
-              onClick={handleSearch}
-            >
-              검색
+          </div>
+
+          {/* 탭 변경 */}
+          <div className="tabs">
+            <button onClick={() => setTab("package")}>
+              패키지{" "}
+              {availablePackages.length > 0 ? `${availablePackages.length}` : ""}
+            </button>
+            <button onClick={() => setTab("room")}>
+              객실 {availableRooms.length > 0 ? `${availableRooms.length}` : ""}
             </button>
           </div>
-        </div>
 
-        {/* 탭 변경 */}
-        <div className="tabs">
-          <button onClick={() => setTab("package")}>
-            패키지{" "}
-            {availablePackages.length > 0 ? `${availablePackages.length}` : ""}
-          </button>
-          <button onClick={() => setTab("room")}>
-            객실 {availableRooms.length > 0 ? `${availableRooms.length}` : ""}
-          </button>
-        </div>
-
-        {/* 선택된 탭에 따라 콘텐츠 표시 */}
-        <div className="content-list">
-          {tab === "package" ? (
-            <div className="package-list">
-              <h3>패키지 </h3>
-              {availablePackages.map((pkg) => (
-                <PackageRoomItem key={pkg.offer_id} packageData={pkg} checkInDate={checkInDate} 
-                checkOutDate={checkOutDate}/>
-              ))}
-            </div>
-          ) : (
-            <div className="room-list">
-              <div>객실</div>
-              <OneRoomItem rooms={availableRooms} checkInDate={checkInDate} checkOutDate={checkOutDate} />
-            </div>
-          )}
-        </div>
-      </section>
+          {/* 선택된 탭에 따라 콘텐츠 표시 */}
+          <div className="content-list">
+            {tab === "package" ? (
+              <div className="package-list">
+                <h3>패키지 </h3>
+                {availablePackages.map((pkg) => (
+                  <PackageRoomItem key={pkg.offer_id} packageData={pkg} checkInDate={checkInDate} 
+                  checkOutDate={checkOutDate}/>
+                ))}
+              </div>
+            ) : (
+              <div className="room-list">
+                <div>객실</div>
+                <OneRoomItem rooms={availableRooms} checkInDate={checkInDate} checkOutDate={checkOutDate} />
+              </div>
+            )}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

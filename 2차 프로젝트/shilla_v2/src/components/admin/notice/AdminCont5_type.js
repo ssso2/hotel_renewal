@@ -15,7 +15,7 @@ const AdminCont5_type = ({ Ntype, setNtype }) => {
                 className="category"
                 onChange={handleType}
             >
-                <option value="분류">분류</option>
+                <option value="분류">전체</option>
                 <option value="공지">공지</option>
                 <option value="안내">안내</option>
                 <option value="이벤트">이벤트</option>
