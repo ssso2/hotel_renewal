@@ -7,7 +7,7 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
 
     //페이지네이션
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5; // 한 페이지에 보여줄 아이템 수
+    const itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const currentlist = Noticelists.slice(
