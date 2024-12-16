@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import Tab from "./Tab";
 import SubTitle from './SubTitle';
@@ -20,6 +20,9 @@ import "../../scss/sub-detail.scss"
 
 
 function OutdoorPool2() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const galleryImages = [
         "../../img/sub/cabana-01.jpg",
