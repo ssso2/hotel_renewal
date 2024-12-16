@@ -1,26 +1,11 @@
 import React from "react";
 import Findpwchk from "./Findpwchk";
 
-const Findpw_confirm = ({
-    idchkhandle,
-    iderr,
-    id,
-    // pwerr,
-    // setpwerr,
-    // pwchkerr,
-    // setpwchkerr,
-    confirmbtn,
-}) => {
+const Findpw_confirm = ({ idchkhandle, iderr, id, confirmbtn }) => {
     return (
         <div className="pw-chk" id="pw-chk">
             {confirmbtn ? (
-                <Findpwchk
-                    id={id}
-                    // pwerr={pwerr}
-                    // setpwerr={setpwerr}
-                    // pwchkerr={pwchkerr}
-                    // setpwchkerr={setpwchkerr}
-                />
+                <Findpwchk id={id} />
             ) : (
                 <>
                     <h2 className="my-pw">본인인증</h2>

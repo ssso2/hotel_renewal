@@ -11,36 +11,49 @@ const LoginComp = () => {
     const navigate = useNavigate()
 
 
-    function loginGo(){
-
-        const frmData = new FormData(document.loginFrm) //아래 폼태그 name 값 가져옴
+    function loginGo() {
+        const frmData = new FormData(document.loginFrm); // 아래 폼태그 name 값 가져옴
         const data = Object.fromEntries(frmData);
 
         console.log('loginGo() 진입');
         console.log(data);
 
+        axios.post(`${bkURL}/login`, data)
+            .then(res => {
+                console.log('서버 응답:', res.data);
+                if (res.data) {
+                    const mem = res.data;
 
-        axios.post(`${bkURL}/login`,data)
-        .then(res =>{
-            // console.log('서버 응답 수신 : ', res.data);
-            if(res.data){
-                const mem = res.data;
-                // 세션정보 저장
-                sessionStorage.setItem("id", mem.member_id);
-                sessionStorage.setItem("name", mem.name);
-                sessionStorage.setItem("grade", mem.grade);
+                    console.log('회원 등급:', mem.grade); 
 
-                alert(`${mem.name}님, 로그인 성공`);
-                navigate("/");
-                
-            }else{
-                alert("로그인 실패");
-            }
+                    // 등급이 4 또는 5인 경우 처리
+                    if (mem.grade == 4) {
+                        alert('이용불가회원입니다. 현재 이용이 불가능합니다. \n자세한 내용을 알고 싶으시면 \n대표전화 02-2233-3131 으로 문의 주세요.');
+                        navigate('/');
+                        return; 
+                    }
 
+                    if (mem.grade == 5) {
+                        alert('이미 탈퇴한 회원입니다. 현재 이용이 불가능합니다. \n자세한 내용을 알고 싶으시면 \n대표전화 02-2233-3131 으로 문의 주세요.');
+                        navigate('/');
+                        return; 
+                    }
 
-        }).catch(err =>{
-            console.log('서버에러 발생 : ', err);
-        })
+                    // 세션정보 저장
+                    sessionStorage.setItem("id", mem.member_id);
+                    sessionStorage.setItem("name", mem.name);
+                    sessionStorage.setItem("grade", mem.grade);
+
+                    alert(`${mem.name}님, 로그인 성공`);
+                    navigate("/");
+
+                } else {
+                    alert("로그인 실패");
+                }
+
+            }).catch(err => {
+                console.log('서버에러 발생 : ', err);
+            });
     }
 
     // 키보드에서 엔터가 눌렸을 때 로그인 함수 호출

@@ -52,9 +52,9 @@ const OfferDetail1_info = () => {
         },
     ];
     return (
-        <div class="pkg-info">
+        <div className="pkg-info">
             <p>안내사항</p>
-            <ul class="info-txt">
+            <ul className="info-txt">
                 {info.map(item => (
                     <OfferDetail1_itembar data={item.elem} key={item.id} />
                 ))}

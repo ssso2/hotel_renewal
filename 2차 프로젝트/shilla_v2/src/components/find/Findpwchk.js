@@ -1,27 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Findpwchk = ({ id }) => {
-    //유효성검사
-    // const pw = document.getElementById("pw").value.trim();
-    // if (!(pwtype.test(pw) || pwtype.test(pwchk))) {
-    //     document.getElementById("pw-error").textContent =
-    //         "패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.";
-    //     document.getElementById("pwchk-error").textContent =
-    //         "패스워드는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다.";
-    //     valid = false;
-    // } else if (pwtype.test(pw)) {
-    //     document.getElementById("pw-error").textContent = "";
-    //     valid = true;
-    // }
     const [pwerr, setpwerr] = useState("");
     const [pwchkerr, setpwchkerr] = useState("");
     // console.log("아이디오나", id);
+    const navigate = useNavigate();
 
     const pwchkhandle = async e => {
         e.preventDefault();
         const frmdata = new FormData(document.myfrm);
         const mydata = Object.fromEntries(frmdata);
         console.log("폼입력데이터", mydata);
+        const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%~]).{12,16}$/;
 
         if (!mydata.pw && !mydata.newpw) {
             alert("내용을 모두 입력해주세요.");
@@ -31,21 +22,30 @@ const Findpwchk = ({ id }) => {
             console.log("비밀번호 미입력");
             setpwerr("임시비밀번호를 입력하세요.");
         } else setpwerr("");
-        if (!mydata.newpw) {
-            console.log("비밀번호 미확인");
-            setpwchkerr("새로운 비밀번호를 입력해주세요.");
-        } else setpwchkerr("");
-        try {
-            const res = await axios.put(
-                "http://localhost:5002/bk/find/pwchk",
-                mydata,
-                [id]
+        // if (!mydata.newpw) {
+        //     console.log("비밀번호 미확인");
+        //     setpwchkerr("새로운 비밀번호를 입력해주세요.");
+        // } else
+        if (!pwtype.test(mydata.newpw)) {
+            console.log("유효성검사 불만족");
+            setpwchkerr(
+                "비밀번호는 영문, 숫자, 특수문자를 포함하여 12~16자여야 합니다."
             );
+            return;
+        } else setpwchkerr("");
+
+        try {
+            const res = await axios.put("http://localhost:5002/bk/find/pwchk", {
+                ...mydata,
+                id,
+            });
             console.log("res.data", res.data, "값", res.data.success);
+
             if (res.data.success) {
                 console.log("갔다옴", res.data);
                 // setconfirmbtn(true);
                 alert("비밀번호가 변경되었습니다.");
+                navigate("/login");
             } else if (!res.data.success)
                 alert("임시비밀번호가 일치하지않습니다.");
         } catch (error) {

@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import MyPwChkCont from "./MyPwChkCont";
+import ReadOnlyData from "./ReadOnlyData";
+import MyPhoneChg from "./MyPhoneChg";
+import InputWithValidation from "./InputWithValidation";  // 추가된 컴포넌트
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
 const MyInfoChgCont = () => {
     const navigate = useNavigate();
-
     const [text, setText] = useState({});
     const [user, setUser] = useState(null);
     const [pwChk, pwChkSet] = useState(0);
@@ -17,8 +19,10 @@ const MyInfoChgCont = () => {
     const [userEmail, setUserEmail] = useState('');
     const [oldPw, setOldPw] = useState('');
     const [error, setError] = useState('');
+    const [valid, setValid] = useState(false); // 연락처 유효성 검사 상태
 
     const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%~]).{12,16}$/;
+    const mailtype = /^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
     useEffect(() => {
         const id = sessionStorage.getItem("id");
@@ -42,7 +46,6 @@ const MyInfoChgCont = () => {
                     console.error('Error fetching user data: ', err);
                 });
         }
-
     }, []);
 
     const handleSubmit = async (e) => {
@@ -81,7 +84,7 @@ const MyInfoChgCont = () => {
             if (err.response) {
                 setError(err.response.data); // 서버에서 전송된 에러 메시지 표시
             } else {
-                setError('비밀번호 확인 실패 또는 회원정보 수정에 실패했습니다.');
+                alert('회원정보 수정에 실패했습니다.')
             }
             console.error('Error during password verification or update:', err);
         }
@@ -102,52 +105,73 @@ const MyInfoChgCont = () => {
         }
     };
 
-    const readOnlyData = [
-        { title: "아이디", id: "userId", value: text.member_id, name: 'userId', type: 'text' },
-        { title: "이름(국문)", id: "userName", value: text.name, name: 'userName', type: 'text' },
-        { title: "이름(영문)", id: "userName_eng", value: text.name_eng, name: 'userName_eng', type: 'text' },
-        { title: "생년월일", id: "userBirth", value: text.birth, name: 'userBirth', type: 'text' },
-    ];
-
-    const myInfoText = [
-        { title: "연락처", id: "userPhone", value: userPhone, name: 'userPhone', type: 'text' },
-        { title: "이메일", id: "userEmail", value: userEmail, name: 'userEmail', type: 'text' },
-        { title: "현 비밀번호", id: "oldPw", value: oldPw, name: 'oldPw', type: 'password' },
-        { title: "새 비밀번호", id: "newPw", value: newPw, name: 'newPw', type: 'password' },
-        { title: "비밀번호 확인", id: "newPwChk", value: newPwChk, name: 'newPwChk', type: 'password' },
-    ];
-
     if (!pwChk) {
-        return <MyPwChkCont user={user} pwChkSet={pwChkSet} />
+        return <MyPwChkCont user={user} pwChkSet={pwChkSet} />;
     }
 
     return (
         <form name="myInfoChgFrm" className="mypage-info" id="mypage-info" onSubmit={handleSubmit}>
             <h2 className="title">회원정보 수정</h2>
-            {
-                readOnlyData.map((item, index) => {
-                    return (
-                        <label className="my-info" key={index}>
-                            <p>{item.title}</p>
-                            <input type={item.type} id={item.id} name={item.name} value={item.value} readOnly />
-                        </label>
-                    );
-                })
-            }
-            {
-                myInfoText.map((item, index) => {
-                    return (
-                        <label className="my-info" key={index}>
-                            <p>{item.title}</p>
-                            <input type={item.type} id={item.id} name={item.name} value={item.value} onChange={handleChange} />
-                            {item.name === 'newPw' && error && <span className="error-msg">{error}</span>}
-                        </label>
-                    );
-                })
-            }
+            <ReadOnlyData text={text} />
+
+            {/* 연락처 입력 */}
+            <label className="my-info">
+                <p>연락처</p>
+                <MyPhoneChg
+                    valid={valid}
+                    setValid={setValid}
+                    setPhone={setUserPhone}
+                    userPhone={userPhone} // 현재 전화번호 전달
+                />
+                {error && <span className="error-msg">{error}</span>}
+            </label>
+
+            {/* 이메일 입력 */}
+            <InputWithValidation
+                label="이메일"
+                id="userEmail"
+                name="userEmail"
+                value={userEmail}
+                onChange={handleChange}
+                validationFn={(value) => mailtype.test(value) ? '' : '유효한 이메일 주소를 입력해주세요.'}
+            />
+
+            {/* 기존 비밀번호 */}
+            <InputWithValidation
+                label="현 비밀번호"
+                id="oldPw"
+                name="oldPw"
+                value={oldPw}
+                onChange={handleChange}
+                validationFn={(value) => value ? '' : '현재 비밀번호를 확인해주세요.'}
+                type="password"
+            />
+
+            {/* 새 비밀번호 */}
+            <InputWithValidation
+                label="새 비밀번호"
+                id="newPw"
+                name="newPw"
+                value={newPw}
+                onChange={handleChange}
+                validationFn={(value) => pwtype.test(value) ? '' : '새 비밀번호는 12~16자 사이, 영문자, 숫자, 특수문자를 포함해야 합니다.'}
+                type="password"
+            />
+
+            {/* 새 비밀번호 확인 */}
+            <InputWithValidation
+                label="비밀번호 확인"
+                id="newPwChk"
+                name="newPwChk"
+                value={newPwChk}
+                onChange={handleChange}
+                validationFn={(value) => value === newPw ? '' : '새 비밀번호와 새 비밀번호 확인이 일치하지 않습니다.'}
+                type="password"
+            />
+
             <input type="submit" className="edit-btn" value="수정완료" />
         </form>
-    )
+    );
 };
 
 export default MyInfoChgCont;

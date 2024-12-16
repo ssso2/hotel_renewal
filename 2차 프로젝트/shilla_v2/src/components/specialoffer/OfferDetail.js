@@ -15,7 +15,7 @@ import { useParams } from "react-router-dom";
 
 const OfferDetail = () => {
     // 스페셜오퍼 리스트
-    const [Offerdetails, setOfferdetails] = useState({});
+    const [Offerdetails, setOfferdetails] = useState(null);
     const { id } = useParams();
     const fetchData = async () => {
         // if (!id) {
@@ -24,9 +24,6 @@ const OfferDetail = () => {
         // }
         try {
             const res = await axios.get(
-                //     `http://192.168.123.100:5002/bk/specialOffer/detail/${id}`
-                // );
-                // `http://192.168.0.20:5002/bk/specialOffer/detail/${id}`
                 `http://localhost:5002/bk/specialOffer/detail/${id}`
             );
             console.log("갔다옴 : ", res.data);
@@ -40,13 +37,17 @@ const OfferDetail = () => {
         fetchData();
     }, [id]);
 
-    useEffect(() => {
-        console.log("디테일", Offerdetails.end_date);
-    }, [Offerdetails]);
+    // useEffect(() => {
+    //     console.log("디테일", Offerdetails.end_date);
+    // }, [Offerdetails]);
 
     // if (!Offerdetails) {
     //     return <div> Offerdetails 없음</div>;
     // }
+    if (!Offerdetails) {
+        console.log("Offerdetails 없어서 <>");
+        return <></>;
+    }
 
     return (
         <div className="container offerdetail">

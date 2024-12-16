@@ -30,8 +30,8 @@ const OfferDetail1_other = () => {
         <div class="other-event">
             <div class="other-title">다른 패키지</div>
             <ul class="other-list">
-                {pkglist.map(pkg => (
-                    <OfferDetail1_othercard data={pkg} />
+                {pkglist.map((pkg, index) => (
+                    <OfferDetail1_othercard data={pkg} index={index} />
                 ))}
             </ul>
         </div>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../scss/notice.scss";
 import Noticesearch from "./Noticesearch";
+import Pagination from "../sub/Pagination";
 // import { useParams } from "react-router-dom";
 
 const Noticelist = () => {
@@ -46,6 +47,15 @@ const Noticelist = () => {
         document.title = "공지사항";
         fetchData();
     }, []);
+    //페이지네이션
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5; // 한 페이지에 보여줄 아이템 수
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentlist = Noticelists.slice(
+        startIndex,
+        startIndex + itemsPerPage
+    );
 
     //검색
     const handleSearch = async e => {
@@ -86,7 +96,7 @@ const Noticelist = () => {
     console.log("개수", maxId);
 
     return (
-        <div>
+        <>
             <div className="container">
                 <div className="center">
                     <h2 className="Ntitle">공지사항</h2>
@@ -98,7 +108,7 @@ const Noticelist = () => {
                         <li className="N-date">작성일</li>
                     </ul>
                     <ul className="Nboard">
-                        {Noticelists.map(data => (
+                        {currentlist.map(data => (
                             <li className="listwrap" key={data.notice_id}>
                                 {/* <div className="N-num">{data.notice_id}</div> */}
                                 <div className="N-option">{data.category}</div>
@@ -131,7 +141,14 @@ const Noticelist = () => {
                     />
                 </div>
             </div>
-        </div>
+            {/* 페이지네이션 */}
+            <Pagination
+                totalItems={Noticelists.length}
+                itemsPerPage={itemsPerPage}
+                currentPage={currentPage}
+                onPageChange={setCurrentPage}
+            />
+        </>
     );
 };
 
