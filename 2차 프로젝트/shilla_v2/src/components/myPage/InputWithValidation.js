@@ -1,30 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-const InputWithValidation = ({ label, id, name, value, onChange, validationFn, type = 'text' }) => {
-    const [error, setError] = useState('');
+const InputWithValidation = ({ label, id, name, value, onChange, validationFn, error, type = "text" }) => {
+    const [validationError, setValidationError] = useState('');
 
-    const handleBlur = () => {
-        const validationError = validationFn(value);
-        setError(validationError);
-    };
-
-    const handleChange = (e) => {
-        onChange(e);
-        setError(''); // 입력하는 동안 에러 메시지 초기화
-    };
+    useEffect(() => {
+        if (validationFn) {
+            setValidationError(validationFn(value));
+        }
+    }, [value, validationFn]);
 
     return (
         <label className="my-info">
             <p>{label}</p>
             <input
-                type={type}
                 id={id}
                 name={name}
+                type={type}
                 value={value}
-                onChange={handleChange}
-                onBlur={handleBlur}
+                onChange={onChange}
+                className={validationError || error ? 'error' : ''}
             />
-            {error && <span className="error-msg">{error}</span>}
+            {(validationError || error) && <span className="error-msg">{validationError || error}</span>}
         </label>
     );
 };
