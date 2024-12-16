@@ -274,10 +274,10 @@
                     right: 0;
                     width: 10px;
                     height: 10px;
-                    background: url(../img/icon/icn_collps01.png)no-repeat center / cover;
+                    background: url(../../public/img/icon/icn_collps01.png)no-repeat center / cover;
                 }
                 &.on::after{
-                    background: url(../img/icon/icn_collps02.png)no-repeat center / cover;
+                    background: url(../../public/img/icon/icn_collps02.png)no-repeat center / cover;
                 }
             }
         }
@@ -297,10 +297,10 @@
                     right: 0;
                     width: 10px;
                     height: 10px;
-                    background: url(../img/icon/icn_collps01.png)no-repeat center / cover;
+                    background: url(../../public/img/icon/icn_collps01.png)no-repeat center / cover;
                 }
                 &.on::after{
-                    background: url(../img/icon/icn_collps02.png)no-repeat center / cover;
+                    background: url(../../public/img/icon/icn_collps02.png)no-repeat center / cover;
                 }
             }
             .select-sort {
@@ -373,7 +373,7 @@
                     left: 0;
                     width: 15px;
                     height: 15px;
-                    background: url(../img/icon/btn_refresh.png)no-repeat center / 100% auto;
+                    background: url(../../public/img/icon/btn_refresh.png)no-repeat center / 100% auto;
                 }
 
                 &:hover {
@@ -455,13 +455,13 @@
                         left: 10px;
                         width: 28px;
                         height: 20px;
-                        background: url(../img/icon/bedtype_02.png) no-repeat center / cover;
+                        background: url(../../public/img/icon/bedtype_02.png) no-repeat center / cover;
                     }
                 }
                 &.twin  label::before {
                     width: 33px;
                     height: 20px;
-                    background: url(../img/icon/bedtype_01.png) no-repeat center / cover;
+                    background: url(../../public/img/icon/bedtype_01.png) no-repeat center / cover;
                 }
                 // 보관함 담기 버튼
                 button {
@@ -860,7 +860,7 @@
                 //         left: 0;
                 //         width: 15px;
                 //         height: 15px;
-                //         background: url(../img/icon/btn_refresh.png)no-repeat center / 100% auto;
+                //         background: url(../../public/img/icon/btn_refresh.png)no-repeat center / 100% auto;
                 //     }
     
                 //     &:hover {
@@ -945,13 +945,13 @@
         //                     left: 10px;
         //                     width: 28px;
         //                     height: 20px;
-        //                     background: url(../img/icon/bedtype_02.png) no-repeat center / cover;
+        //                     background: url(../../public/img/icon/bedtype_02.png) no-repeat center / cover;
         //                 }
         //             }
         //             &.twin  label::before {
         //                 width: 33px;
         //                 height: 20px;
-        //                 background: url(../img/icon/bedtype_01.png) no-repeat center / cover;
+        //                 background: url(../../public/img/icon/bedtype_01.png) no-repeat center / cover;
         //             }
         //             // 보관함 담기 버튼
         //             button {

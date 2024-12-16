@@ -75,7 +75,7 @@ const AdminCsCont_detail = () => {
             return;
         }
         try {
-            const res = await axios.get(`${bkURL}/admin/cs/detail/${num}`);  // board_id에 해당하는 댓글 가져오기
+            const res = await axios.get(`${bkURL}/comment`);  // board_id에 해당하는 댓글 가져오기
             console.log('res.data : ', res.data);
             setCommentText(res.data);  // 댓글 리스트 저장
         } catch (error) {
@@ -87,7 +87,7 @@ const AdminCsCont_detail = () => {
     function commentDelGo(no) {
         console.log('commentDelGo 진입', no);
 
-        axios.delete(`${bkURL}/admin/cs/detail/${no}`)  // 댓글 삭제 요청
+        axios.delete(`${bkURL}/comment/detail/${no}`)  // 댓글 삭제 요청
         .then(res => {
             console.log('삭제완료', res.data);
             alert('삭제되었습니다.');

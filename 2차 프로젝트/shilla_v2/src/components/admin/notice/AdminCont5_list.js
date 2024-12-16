@@ -57,12 +57,12 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
         <>
             <div className="list">
                 <div className="listwrapper">
-                    <div className="header">
+                    {/* <div className="header">
                         <h3>공지사항리스트 </h3>
                         <Link to="/admin/notice/register" className="submit">
                             공지사항 등록
                         </Link>
-                    </div>
+                    </div> */}
                     <div className="list-container">
                         <ul className="Nboard-nav">
                             {/* <li className="N-num">번호</li> */}
@@ -108,7 +108,6 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
                                         >
                                             수정
                                         </Link>
-                                        <span>/</span>
                                         <button
                                             className="delete"
                                             onClick={() =>
@@ -121,6 +120,11 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                    <div className="btn-wrap">
+                        <Link to="/admin/notice/register" className="submit">
+                            공지사항 등록
+                        </Link>
                     </div>
                 </div>
             </div>
