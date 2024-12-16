@@ -1,15 +1,11 @@
 import React from 'react';
-import TimeTable from './TimeTable';
 
-const Introduction = ({ title, restaurantName, paragraphs, includeTimeTable = false }) => {
+const Introduction2 = ({ title, restaurantName, paragraphs, rooms }) => {
   return (
     <div className="Introduction">
       <h3>
         {title} <strong>{restaurantName}</strong>
       </h3>
-      
-      {/* 조건부로 TimeTable 렌더링 */}
-      {includeTimeTable && <TimeTable />}
 
       {paragraphs.map((para, index) => (
         <React.Fragment key={index}>
@@ -25,8 +21,23 @@ const Introduction = ({ title, restaurantName, paragraphs, includeTimeTable = fa
         </React.Fragment>
       ))}
 
+      <div className="group">
+        {rooms.map((room, index) => (
+          <React.Fragment key={index}>
+            <b>{room.title}</b>
+            <p className={room.className}>
+              {room.text.split('\n').map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  {i < room.text.split('\n').length - 1 && <br />}
+                </React.Fragment>
+              ))}
+            </p>
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default Introduction;
+export default Introduction2;

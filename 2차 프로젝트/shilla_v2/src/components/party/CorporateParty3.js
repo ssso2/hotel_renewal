@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import Tab2 from "./Tab2";
 import SubTitle from './SubTitle';
@@ -16,6 +16,10 @@ import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
 function CorporateParty3() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
     const galleryData = "../../img/sub/gbRoom-3.jpg";
 
     const introData = {

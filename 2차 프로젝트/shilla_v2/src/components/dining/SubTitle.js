@@ -14,6 +14,12 @@ const SubTitle = () => {
             return { title: "팔선", breadcrumb: "팔선" };
         } else if (location.pathname === '/restaurant5') {
             return { title: "더 파크뷰", breadcrumb: "더 파크뷰" };
+        } else if (location.pathname === '/lounge') {
+            return { title: "더 라이브러리", breadcrumb: "더 라이브러리" };
+        } else if (location.pathname === '/lounge2') {
+            return { title: "더 디스틸러스 라이브러리", breadcrumb: "더 디스틸러스 라이브러리" };
+        } else if (location.pathname === '/bakery') {
+            return { title: "패스트리 부티크", breadcrumb: "패스트리 부티크" };
         } else {
             return { title: "페이지 제목", breadcrumb: "현재 위치" }; 
         } 

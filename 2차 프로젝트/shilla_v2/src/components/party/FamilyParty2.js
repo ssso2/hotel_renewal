@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import Tab3 from './Tab3';
 import SubTitle from './SubTitle';
@@ -14,6 +14,9 @@ import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
 const FamilyParty2 = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const galleryImages = [
         "../../img/sub/cbInfo-2-01.jpg",

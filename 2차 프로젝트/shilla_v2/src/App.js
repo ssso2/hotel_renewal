@@ -42,8 +42,15 @@ import FamilyParty from "./components/party/FamilyParty";
 import FamilyParty2 from "./components/party/FamilyParty2";
 
 // dining
+import Dining from "./components/dining/Dining";
 import Restaurant from "./components/dining/Restaurant";
 import Restaurant2 from "./components/dining/Restaurant2";
+import Restaurant3 from "./components/dining/Restaurant3";
+import Restaurant4 from "./components/dining/Restaurant4";
+import Restaurant5 from "./components/dining/Restaurant5";
+import Lounge from "./components/dining/Lounge";
+import Lounge2 from "./components/dining/Lounge2";
+import Bakery from "./components/dining/Bakery";
 
 // login
 import Login from "./components/login/Login";
@@ -316,8 +323,15 @@ function App() {
 
             {/* 다이닝 */}
             <Routes>
+                <Route path="/dining" element={<Dining />}></Route>
                 <Route path="/restaurant" element={<Restaurant />}></Route>
                 <Route path="/restaurant2" element={<Restaurant2 />}></Route>
+                <Route path="/restaurant3" element={<Restaurant3 />}></Route>
+                <Route path="/restaurant4" element={<Restaurant4 />}></Route>
+                <Route path="/restaurant5" element={<Restaurant5 />}></Route>
+                <Route path="/Lounge" element={<Lounge />}></Route>
+                <Route path="/Lounge2" element={<Lounge2 />}></Route>
+                <Route path="/Bakery" element={<Bakery />}></Route>
             </Routes>
         </div>
     );

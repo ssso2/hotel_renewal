@@ -76,6 +76,9 @@
                     width: 200px;
                     font-size: 15px;
                     color: #7A6C64;
+                    &.restH4 {
+                        width: 120px;
+                    }
                 }
                 .txt-wrap{
                     width: calc(100% - 200px);

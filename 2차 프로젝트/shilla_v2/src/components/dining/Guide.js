@@ -1,14 +1,15 @@
 import React from 'react';
+import Desc from './Desc';
 
-const Guide = ({ reservationInfo, notice }) => {
+const Guide = ({ reservationInfo, notice, propDesc }) => {
   return (
     <div className="guide">
       <div className="list">
-        <h4>예약 안내</h4>
+        <h4 className='restH4'>예약 안내</h4>
         <p className="txt" dangerouslySetInnerHTML={{ __html: reservationInfo }} />
       </div>
       <div className="list">
-        <h4>공지사항</h4>
+        <h4 className='restH4'>공지사항</h4>
         <div className="txt-wrap">
           <p className="txt" dangerouslySetInnerHTML={{ __html: notice.main }} />
           <ul className="txt">
@@ -21,6 +22,7 @@ const Guide = ({ reservationInfo, notice }) => {
           </ul>
         </div>
       </div>
+      <Desc propDesc={propDesc} />
     </div>
   );
 };

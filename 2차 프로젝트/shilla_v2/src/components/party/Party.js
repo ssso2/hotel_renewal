@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 
@@ -22,8 +23,8 @@ const Party = () => {
               </p>
             </div>
             <ul className="location">
-              <li><a href="../index.html">홈</a></li>
-              <li><a href="#self">웨딩 & 연회</a></li>
+              <li><Link to="/">홈</Link></li>
+              <li><Link to="#self">웨딩 & 연회</Link></li>
             </ul>
           </div>
 
@@ -39,30 +40,30 @@ const Party = () => {
             <ul className="sub-list line-3">
               <li>
                 <h3>대연회장</h3>
-                <a href="../sub/sub05_01_01.html">
+                <Link to="/wedding">
                   <div className="img-wrap">
                     <img src="../../img/sub/wd-1-01.jpg" alt="" />
                   </div>
                   <p className="view-more">자세히보기</p>
-                </a>
+                </Link>
               </li>
               <li>
                 <h3>영빈관</h3>
-                <a href="../sub/sub05_01_02.html">
+                <Link to="/wedding2">
                   <div className="img-wrap">
                     <img src="../../img/sub/wd-2-01.jpg" alt="" />
                   </div>
                   <p className="view-more">자세히보기</p>
-                </a>
+                </Link>
               </li>
               <li>
                 <h3>웨딩스타일</h3>
-                <a href="../sub/sub05_01_03.html">
+                <Link to="/wedding3">
                   <div className="img-wrap">
                     <img src="../../img/sub/wd-3-01.jpg" alt="" />
                   </div>
                   <p className="view-more">자세히보기</p>
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -77,30 +78,30 @@ const Party = () => {
             <ul className="sub-list line-3">
               <li>
                 <h3>대연회장</h3>
-                <a href="../sub/sub05_02_01.html">
+                <Link to="/corporateParty">
                   <div className="img-wrap">
                     <img src="../../img/sub/gbRoom-1-01.jpg" alt="" />
                   </div>
                   <p className="view-more">자세히보기</p>
-                </a>
+                </Link>
               </li>
               <li>
                 <h3>영빈관</h3>
-                <a href="../sub/sub05_02_02.html">
+                <Link to="/corporateParty2">
                   <div className="img-wrap">
                     <img src="../../img/sub/gbRoom-2.jpg" alt="" />
                   </div>
                   <p className="view-more">자세히보기</p>
-                </a>
+                </Link>
               </li>
               <li>
                 <h3>중 &middot; 소형 연회장</h3>
-                <a href="../sub/sub05_02_03.html">
+                <Link to="/corporateParty3">
                   <div className="img-wrap">
                     <img src="../../img/sub/gbRoom-3.jpg" alt="" />
                   </div>
                   <p className="view-more">자세히보기</p>
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -115,21 +116,21 @@ const Party = () => {
             <ul className="sub-list line-2">
               <li>
                 <h3>가족연회장</h3>
-                <a href="../sub/sub05_03_01.html">
+                <Link to="/familyParty">
                   <div className="img-wrap">
                     <img src="../../img/sub/cbInfo-1-01.jpg" alt="" />
                   </div>
                   <p className="view-more">자세히보기</p>
-                </a>
+                </Link>
               </li>
               <li>
                 <h3>중 &middot; 소형 연회장</h3>
-                <a href="../sub/sub05_03_02.html">
+                <Link to="/familyParty2">
                   <div className="img-wrap">
                     <img src="../../img/sub/cbInfo-2-01.jpg" alt="" />
                   </div>
                   <p className="view-more">자세히보기</p>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

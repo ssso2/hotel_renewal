@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import SubTitle from './SubTitle';
 import Gallery2 from './Gallery2';
@@ -13,6 +13,9 @@ import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
 function Jogging() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     
     const galleryImages = "../../img/sub/R0000002471W_KR.jpg";
 

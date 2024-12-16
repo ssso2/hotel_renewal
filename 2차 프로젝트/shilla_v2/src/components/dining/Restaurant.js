@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import Tab from './Tab';
 import SubTitle from './SubTitle';
@@ -6,8 +6,6 @@ import Gallery from './Gallery';
 import Introduction from './Introduction';
 import InfoList from './InfoList';
 import Guide from './Guide';
-import Desc from './Desc';
-// import Location2 from '../lifeStyle/Location'
 import Footer from '../common/Footer';
 
 import "../../scss/common.scss"
@@ -17,6 +15,10 @@ import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
 const Restaurant = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
     const galleryImages = [
         "../../img/sub/dining-1-01.jpg",
         "../../img/sub/dining-1-02.jpg",
@@ -29,13 +31,22 @@ const Restaurant = () => {
     ];
     
     const introData = {
-        title: `전통과 품격의 한식 레스토랑 <strong>라연</strong>`,
-        description: `전통의 맛을 세심하고 세련되게 표현한 한식당, 羅宴 
-      禮와 格을 갖추어 정성으로 차려낸 라연만의 한식 정찬을 선보입니다.
-      
-      전국 각지에서 엄선한 제철 식재료를 정통 조리법을 바탕으로 
-      현대적으로 재해석한 라연에서 한식의 정수를 경험해 보시기 바랍니다.`
+        title: "전통과 품격의 한식 레스토랑",
+        restaurantName: "라연",
+        paragraphs: [
+          {
+            strong: null, // strong 텍스트가 없으므로 null
+            className: "txt",
+            text: "전통의 맛을 세심하고 세련되게 표현한 한식당, 羅宴 \n禮와 格을 갖추어정성으로 차려낸 라연만의 한식 정찬을 선보입니다."
+          },
+          {
+            strong: null,
+            className: "txt small",
+            text: "전국 각지에서 엄선한 제철 식재료를 정통 조리법을 바탕으로\n현대적으로 재해석한 라연에서 한식의 정수를 경험해 보시기 바랍니다."
+          }
+        ]
       };
+      
       
     
     const infoData = [
@@ -93,8 +104,7 @@ const Restaurant = () => {
                             <div class="context">
                                 <Introduction {...introData} />
                                 <InfoList propInfo={infoData} />
-                                <Guide {...guideData} />
-                                <Desc propDesc={descData} />
+                                <Guide {...guideData} propDesc={descData} />
                             </div>
                         </div>
                     </div>

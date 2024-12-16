@@ -14,11 +14,11 @@ const Tab = () => {
             <li className={`tab3 ${location.pathname === '/restaurant3' ? 'on' : ''}`}>
                 <Link to="/restaurant3">아리아께</Link>
             </li>
-            <li className={`tab3 ${location.pathname === '/restaurant3' ? 'on' : ''}`}>
-                <Link to="/restaurant3">팔선</Link>
+            <li className={`tab4 ${location.pathname === '/restaurant4' ? 'on' : ''}`}>
+                <Link to="/restaurant4">팔선</Link>
             </li>
-            <li className={`tab3 ${location.pathname === '/restaurant3' ? 'on' : ''}`}>
-                <Link to="/restaurant3">더 파크뷰</Link>
+            <li className={`tab5 ${location.pathname === '/restaurant5' ? 'on' : ''}`}>
+                <Link to="/restaurant5">더 파크뷰</Link>
             </li>
         </ul>
     )  
