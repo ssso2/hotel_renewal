@@ -18,7 +18,7 @@ const OfferDetail1_dday = ({ endDate, pID }) => {
     // 타이머 업데이트 함수
     const updateTimer = () => {
         const current = Date.now();
-        console.log("current", current);
+        // console.log("current", current);
         const timeRemaining = deadline - current;
 
         if (timeRemaining < 0) {
