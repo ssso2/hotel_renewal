@@ -47,36 +47,42 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
   };
 
   return (
-    <div className="room-group">
-      {Object.entries(roomGroups).map(([roomType, roomList]) => (
-        <div key={roomType} className="room-type">
-          {/* 룸 타입과 기본 정보 표시 */}
-          <div className="room-type-header">
-            <div className="room-info">
-              <h4>{roomType}</h4>
-              <p>가격: {roomList[0]?.day_price}원</p>
-              <p>총 개수: {roomList.length}개</p>
-            </div>
-            <button onClick={() => toggleRoomType(roomType)}>
-              {expandedRoomType === roomType ? "숨기기" : "남은 호수 보기"}
-            </button>
-          </div>
+    <ul className="tab-cont room on">
+        {Object.entries(roomGroups).map(([roomType, roomList]) => (
+        <li key={roomType} className="room-type">
+          <div className="box-wrap">
 
-          {/* 호수 리스트 표시 */}
-          {expandedRoomType === roomType && (
-            <div className="room-list">
-              {roomList.map((room) => (
-                <div key={room.room_id} className="room-item">
-                  <h4>{room.room_type}</h4>
-                  <p>룸 호수: {room.room_id}</p>
-                  <button onClick={() => handleReservation(room)}>예약하기</button>
+            <div className="l-box">
+                <div className="img-wrap">
+                    <img src="img/sub/cabana-01.jpg" alt=""/>
                 </div>
-              ))}
+                <div className="txt-wrap">
+                    <div className="context">
+                        <h3 className="tit room">{roomType}</h3>
+                        <div className="price"><em>{roomList[0]?.day_price}</em>원 ~</div>
+                        <p className="desc">총 개수: {roomList.length}개</p>
+                        <button type="button" className="pop-btn room" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                        <button  className="pop-btn room" onClick={() => toggleRoomType(roomType)}>{expandedRoomType === roomType ? "숨기기" : "남은 호수 보기 +"}</button>
+                    </div>
+                </div>
             </div>
-          )}
-        </div>
+            <div className="r-box">
+              {expandedRoomType === roomType && (
+                <div className="room-list">
+                  {roomList.map((room) => (
+                    <div key={room.room_id} className="room-item">
+                      {/* <h4>{room.room_type}</h4> */}
+                      <p>룸 호수: {room.room_id}</p>
+                      <button className="btn" onClick={() => handleReservation(room)}>예약하기<i className="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
