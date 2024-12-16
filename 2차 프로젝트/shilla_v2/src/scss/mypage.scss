@@ -92,11 +92,28 @@
             color: #333;
         }
 
+        .my-info {
+            width: 500px;
+            .info-group {
+                width: 400px;
+                .tel-num {
+                    select {
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        width: 100px;
+                    }
+                    input {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
         .my-info,
         .user-info-wrap {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             flex-wrap: wrap;
             line-height: 1.5;
             margin: 0 auto 30px;
@@ -112,9 +129,9 @@
             .error-msg {
                 position: absolute;
                 bottom: -25px;
-                left: 50%;
-                transform: translateX(-50%);
+                left: 100px;
                 color: red;
+                width: max-content;
             }
 
             p {
@@ -135,6 +152,9 @@
                 border-radius: 5px;
                 font-size: 14px;
                 box-sizing: border-box;
+                &.phone-num {
+                    width: 140px;
+                }
             }
             #userId,
             #userName,

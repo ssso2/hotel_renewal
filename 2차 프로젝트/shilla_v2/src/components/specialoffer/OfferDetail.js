@@ -24,9 +24,6 @@ const OfferDetail = () => {
         // }
         try {
             const res = await axios.get(
-                //     `http://192.168.123.100:5002/bk/specialOffer/detail/${id}`
-                // );
-                // `http://192.168.0.20:5002/bk/specialOffer/detail/${id}`
                 `http://localhost:5002/bk/specialOffer/detail/${id}`
             );
             console.log("갔다옴 : ", res.data);
@@ -49,11 +46,6 @@ const OfferDetail = () => {
     // }
     if (!Offerdetails) {
         console.log("Offerdetails 없어서 <>");
-        return <></>;
-    }
-
-    if (!id) {
-        console.log("id 없어서 <>");
         return <></>;
     }
 

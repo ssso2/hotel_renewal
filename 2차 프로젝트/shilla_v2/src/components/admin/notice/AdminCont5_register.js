@@ -47,9 +47,9 @@ const AdminCont5_register = () => {
             <div className="list">
                 <div className="listwrap">
                     <form name="myfrm" onSubmit={registerGo}>
-                        <div className="header">
+                        {/* <div className="header">
                             <h3>공지사항 등록</h3>
-                        </div>
+                        </div> */}
                         <AdminCont5_register_require
                             category={category}
                             setcategory={setcategory}

@@ -39,7 +39,6 @@ const AdminCont3Detail = () => {
                     <AdminTabMenu/>
                     <div className="tab-contents">
                         <h2>{`${name}(${id})님의 회원 정보`}</h2> 
-                        {/* <div>ㅁㅁ 정보가 없습니다.</div> */}
                         <Link to="/admin/member">목록으로</Link>
                     </div>
                 </div>
@@ -47,6 +46,28 @@ const AdminCont3Detail = () => {
             <Footer/>
         </>
     }
+
+    const getReservation = (item) => {
+        const today = new Date();
+        const formattedToday = today.setHours(0, 0, 0, 0); // 오늘 날짜 자정 기준으로 설정
+    
+        // start_date와 join_date를 Date 객체로 변환
+        const startDate = new Date(item.start_date).setHours(0, 0, 0, 0); // 예약 시작일 자정으로 설정
+        const joinDate = new Date(item.join_date).setHours(0, 0, 0, 0); // 가입일 자정으로 설정
+    
+        if (item.Cancel === "1") {
+            return "예약 취소"; // 예약 취소
+        } else if (startDate < formattedToday) {
+            return "이용 완료"; // 오늘 날짜 이전에 예약 시작
+        } else if (startDate >= formattedToday && joinDate <= formattedToday) {
+            return "예약 완료"; // 오늘 날짜 이후에 시작하지만 이미 예약 완료된 경우
+        } else if (joinDate > formattedToday) {
+            return "예약 확정"; // 오늘 날짜 이후에 이용할 예약
+        } else {
+            return "예약 상태 불명"; // 조건에 맞지 않으면 예비 상태
+        }
+    };
+
 
     return (
         <>
@@ -60,7 +81,6 @@ const AdminCont3Detail = () => {
                             <div className="board-memberInfo-table">
                                 <ul className="table-title">
                                     <li>예약번호</li>
-                                    <li>생일</li>
                                     <li>체크인</li>
                                     <li>체크아웃</li>
                                     <li>총금액</li>
@@ -72,7 +92,6 @@ const AdminCont3Detail = () => {
                                     reservation.map((item, idx) => (
                                         <ul className="table-contents" key={idx}>
                                             <li>{item.reservation_id} </li>
-                                            <li>{item.birth} </li>
                                             <li>{`${new Date(item.start_date).getFullYear().toString().slice(2)}-
                                             ${(new Date(item.start_date).getMonth() + 1).toString().padStart(2, '0')}-
                                             ${new Date(item.start_date).getDate().toString().padStart(2, '0')}`} </li>
@@ -82,9 +101,7 @@ const AdminCont3Detail = () => {
                                             <li>{item.tot_price.toLocaleString()}원 </li>
                                             <li>{item.adult_cnt} 명 </li>
                                             <li>{item.child_cnt} 명 </li>
-                                            <li>
-                                                {item.Cancel === 1 ? "예약 취소" : `정상 이용 ${item.description ? `- ${item.description}` : ""}`}
-                                            </li>
+                                            <li>{getReservation(item)}</li>
                                         </ul>
                                     ))
                                 ) : (

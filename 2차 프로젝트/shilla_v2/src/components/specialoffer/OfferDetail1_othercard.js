@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const OfferDetail1_othercard = ({ data }) => {
+const OfferDetail1_othercard = ({ data, index }) => {
     return (
         <>
-            <li class="other-item">
+            <li class="other-item" key={index}>
                 <Link to="../../html/sub/sub01_01_02.html">
                     <div class="img-box">
                         <img src={data.img} />
