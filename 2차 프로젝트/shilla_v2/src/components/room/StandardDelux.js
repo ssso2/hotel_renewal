@@ -1,9 +1,13 @@
 import Header from '../common/Header';
+import Tab from './Tab';
+import SubTitle from './SubTitle';
+import SwiperGallery from './SwiperGallery';
 import Footer from '../common/Footer';
-import Tab from './Tab'
 
 import '../../scss/common.scss';
 import '../../scss/reset.css';
+import "../../scss/header.scss";
+import "../../scss/footer.scss";
 import '../../scss/sub-list.scss';
 import '../../scss/sub-detail.scss';
 import '../../scss/sub-room.scss';
@@ -11,124 +15,71 @@ import '../../scss/swiperStyles.css';
 
 import { Link, useLocation } from 'react-router-dom';
 import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
 
 
-
 function StandardDelux() {
-    // const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const navigate = useNavigate()
 
-    const galleryImages = [
+    const galleryImgs = [
         "../../img/sub/roomStandardDelux01.jpg",
         "../../img/sub/roomStandardDelux02.jpg",
         "../../img/sub/roomStandardDelux03.jpg",
         "../../img/sub/roomStandardDelux04.jpg"
     ]
 
+    const roomIntro = {
+        title: "디럭스",
+        description: "모던한 콘셉트의 아늑한 공간 안에 편안한 휴식을 선사하는 침구와 업무를 위한 책상을 갖추어 효율적인 구성이 돋보이는 객실입니다.",
+        subDescription: "안락한 공간이 주는 편안함과 함께 일상에서 벗어난 듯한 특별한 휴식을 경험해보시기 바랍니다."
+    }
+
+    const roomInfo = {
+        title: "객실 정보",
+        item: [
+            {
+                listTitle: "위치",
+                description: "서울신라호텔 7~22층",
+            },
+            {
+                listTitle: "전망",
+                description: "남산 또는 시티 뷰",
+            },
+            {
+                listTitle: "침대",
+                description: "더블(킹 사이즈), 트윈",
+            },
+            {
+                listTitle: "크기",
+                description: "36㎡",
+            },
+            {
+                listTitle: "룸구성",
+                description: "침실 1, 욕실 1, 화장실 1",
+            },
+            {
+                listTitle: "문의",
+                description: "02-2230-3310",
+            },
+        ]
+    }
+
     return (
         <>
-            <Header />
-            <div className="container">
-                <div className="center">
-                    <div className="depth3-tab-wrap">
-                        <Tab />
-                    </div>
+            <Tab />
+            <div className="tab-contents">
+                <div className="tab-cont cont1 on">
+                    <SubTitle />
+                    <SwiperGallery galleryImgs={ galleryImgs } />
+
+                    
+
                 </div>
             </div>
-            <Footer />
         </>
     )
 
     // return (
-    //     <>
-    //         <ul className="tab tab-long">
-    //             <li className="tab1 on"><Link to="/standard">디럭스</Link></li>
-    //             <li className="tab2"><Link to="/businessDeluxe">비즈니스 디럭스</Link></li>
-    //             <li className="tab3"><Link to="/barrierFreeDeluxe">베리어프리 비즈니스 디럭스</Link></li>
-    //             <li className="tab4"><Link to="/grandCornerDeluxe">그랜드 코너 디럭스</Link></li>
-    //         </ul>
-    //         <div className="tab-contents">
-    //             <div className="tab-cont cont1 on">
-    //                 <div className="sub-title">
-    //                     <h2>디럭스</h2>
-    //                     <ul className="location">
-    //                         <li><Link to="/">홈</Link></li>
-    //                         <li><Link to="/room">객실</Link></li>
-    //                         <li><Link to="/standard">디럭스</Link></li>
-    //                     </ul>
-    //                 </div>
-
-    //                 <Swiper style={{
-    //                     '--swiper-navigation-color': '#fff',
-    //                     '--swiper-pagination-color': '#fff',
-    //                     }}
-    //                     loop={true}
-    //                     spaceBetween={10}
-    //                     navigation={true}
-    //                     thumbs={{ swiper: thumbsSwiper }}
-    //                     modules={[FreeMode, Navigation, Thumbs]}
-    //                     className="StandardSwiper" >
-
-    //                 <div className="standard-delux-gallery gallery">
-    //                     <div className="swiper StandardSwiper">
-    //                         <div className="swiper-wrapper">
-    //                             <SwiperSlide>
-    //                                 <img src="/img/sub/roomStandardDelux01.jpg" />
-    //                             </SwiperSlide>
-    //                             <SwiperSlide>
-    //                                 <img src="/img/sub/roomStandardDelux02.jpg" />
-    //                             </SwiperSlide>
-    //                             <SwiperSlide>
-    //                                 <img src="/img/sub/roomStandardDelux03.jpg" />
-    //                             </SwiperSlide>
-    //                             <SwiperSlide>
-    //                                 <img src="/img/sub/roomStandardDelux04.jpg" />
-    //                             </SwiperSlide>
-    //                         </div>
-    //                     </div>
-    //                     <div className="swiper-button-next"></div>
-    //                     <div className="swiper-button-prev"></div>
-    //                 </div>
-
-    //                 </Swiper>
-
-    //                 <Swiper
-    //                     onSwiper={setThumbsSwiper}
-    //                     loop={true}
-    //                     spaceBetween={10}
-    //                     slidesPerView={4}
-    //                     freeMode={true}
-    //                     watchSlidesProgress={true}
-    //                     modules={[FreeMode, Navigation, Thumbs]}
-    //                     className="thumbnail-swiper" >
-                    
-
-    //                 <div thumbsSlider="" className="swiper thumbnail-swiper">
-    //                     <div className="swiper-wrapper">
-    //                         <SwiperSlide>
-    //                             <img src="../../img/sub/roomStandardDelux01.jpg" />
-    //                         </SwiperSlide>
-    //                         <SwiperSlide>
-    //                             <img src="../../img/sub/roomStandardDelux02.jpg" />
-    //                         </SwiperSlide>
-    //                         <SwiperSlide>
-    //                             <img src="../../img/sub/roomStandardDelux03.jpg" />
-    //                         </SwiperSlide>
-    //                         <SwiperSlide>
-    //                             <img src="../../img/sub/roomStandardDelux04.jpg" />
-    //                         </SwiperSlide>
-    //                     </div>
-    //                 </div>
-    //                 </Swiper>
-    //             </div>
-
     //             <div className="context">
     //                 <div className="Introduction">
     //                     <h3 className="room-title">디럭스</h3>

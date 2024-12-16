@@ -58,16 +58,16 @@ const OfferDetail1_pkgdesA = () => {
     return (
         <>
             {/* <!-- 패키지 상세설명 반응형 --> */}
-            <div class="accordion-description-wrap">
+            <div className="accordion-description-wrap">
                 {pkgcards.map(item => (
-                    <div class="accordion-description" key={item.id}>
-                        <div class="head-wrap">
+                    <div className="accordion-description" key={item.id}>
+                        <div className="head-wrap">
                             <img src={item.img} />
-                            <p class="slide-text">{item.title}</p>
+                            <p className="slide-text">{item.title}</p>
                         </div>
-                        <ul class="des-wrap">
+                        <ul className="des-wrap">
                             {item.description.map(con => (
-                                <li class={con.cName} key={con}>
+                                <li className={con.cName} key={con}>
                                     {" "}
                                     {con.des}
                                 </li>

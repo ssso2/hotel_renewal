@@ -64,9 +64,9 @@ const AdminCont5_Modify = () => {
             <div className="list">
                 <div className="listwrap">
                     <form name="myfrm">
-                        <div className="header">
+                        {/* <div className="header">
                             <h3>공지사항 수정</h3>
-                        </div>
+                        </div> */}
                         <AdminCont5_Modify_require
                             category={category}
                             setcategory={setcategory}

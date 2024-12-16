@@ -34,18 +34,12 @@ const options = {
         text: "월별",
         font: {
           size: 14,
-          style: 'italic',
         },
       },
     },
     y: {
       title: {
         display: true,
-        text: "매출액",
-        font: {
-          size: 14,
-          style: 'italic',
-        },
       },
       beginAtZero: {
         display: true,
@@ -54,7 +48,9 @@ const options = {
   },
   plugins: {
     legend: {
-      position: "bottom",
+      position: "top",
+      labels: {
+      },
     },
   },
 }
@@ -80,7 +76,7 @@ const AdminCont2Chart = () => {
           labels: labels,
           datasets: [
             {
-              label: "판매 현황",
+              label: "매출금액 판매 현황",
               data: prices,
               backgroundColor: "#aee123",
               borderColor: "#aee123",
