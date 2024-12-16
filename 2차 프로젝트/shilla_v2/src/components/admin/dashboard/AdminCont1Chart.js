@@ -37,7 +37,6 @@ const options = {
         text: "월별",
         font: {
           size: 14,
-          style: 'italic',
         },
       },
       grid: {
@@ -45,14 +44,6 @@ const options = {
       },
     },
     y: {
-      title: {
-        display: true,
-        text: "방문자 수",
-        font: {
-          size: 14,
-          style: 'italic',
-        },
-      },
       ticks: {
         beginAtZero: {
           display: true,
@@ -62,7 +53,7 @@ const options = {
   },
   plugins: {
     legend: {
-      position: "bottom",
+      position: "top",
     },
   },
 };
@@ -91,7 +82,7 @@ const AdminCont1Chart = () => {
           labels: labels,
           datasets: [
             {
-              label: "방문자 수",
+              label: "월별 방문자 수",
               data: personCnt,
               backgroundColor: "#0CD3FF",
               borderColor: "#0CD3FF",
