@@ -6,6 +6,7 @@ import '../../scss/common.scss'
 import '../../scss/sub06_03.scss'
 import SecretPage from "./SecretPage";
 import Pagination  from "../sub/Pagination";
+import Noticesearch from "../notice/Noticesearch";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -13,6 +14,9 @@ const BoardList = () => {
 
     const [text,setText] = useState([])
     const [user,setUser] = useState(null)
+
+    const [Ntype, setNtype] = useState("all");
+    const [Ntext, setNtext] = useState("");
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
@@ -43,6 +47,28 @@ const BoardList = () => {
         })
 
     },[])
+
+
+    //검색
+    const handleSearch = async e => {
+        e.preventDefault();
+
+        const frmData = new FormData(document.myFrm);
+        const myData = Object.fromEntries(frmData);
+
+        try {
+            console.log("폼데이터", myData);
+            const res = await axios.put(
+                "http://localhost:5002/bk/board",
+                myData
+            );
+            console.log("필터데이터", res.data);
+            alert("검색완료");
+            setText(res.data);
+        } catch (err) {
+            console.error("에러메세지", err);
+        }
+    };
 
     const navigate = useNavigate()
 
@@ -75,16 +101,23 @@ const BoardList = () => {
                     })
                 }
 
+
+                <div className="btn-wrap type4">
+                    <div className="align">
+                        <Link to="/board/join" className="btn btn-01">문의하기</Link>
+                    </div>
+                </div>
                 <div className="search-wrap">
-                    <div className="search" role="search">
-                        <input type="text" />
-                        <button className="search-btn" type="button"><span>검색</span></button>
-                    </div>
-                    <div className="btn-wrap type4">
-                        <div className="align">
-                            <Link to="/board/join" className="btn btn-01">문의하기</Link>
-                        </div>
-                    </div>
+                    <Noticesearch
+                        text={text}
+                        setText={setText}
+                        Ntype={Ntype}
+                        setNtype={setNtype}
+                        Ntext={Ntext}
+                        setNtext={setNtext}
+                        handleSearch={handleSearch}
+                    />
+
                 </div>
 
                 <Pagination
