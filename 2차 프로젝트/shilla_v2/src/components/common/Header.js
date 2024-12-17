@@ -4,7 +4,6 @@ import HeaderComp1 from "./HeaderComp1";
 import HeaderComp2 from "./HeaderComp2";
 import HeaderComp3 from "./HeaderComp3";
 import HeaderComp4 from "./HeaderComp4";
-import HeaderComp4Login from "./HeaderComp4Login";
 import HeaderComp5 from "./HeaderComp5";
 import '../../scss/reset.css'
 import '../../scss/common.scss'
