@@ -141,7 +141,7 @@ import EventTemp from "./components/specialoffer/EventTemp";
 
 function App() {
     return (
-        <div>
+        <>
             <Routes>
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
@@ -189,10 +189,9 @@ function App() {
                     <Route path="join" element={<BoardJoin />} />
                     <Route path="modify/:num" element={<BoardModify />} />
                 </Route>
-            </Routes>
+            
 
-            {/* 스페셜오퍼 */}
-            <Routes>
+                {/* 스페셜오퍼 */}
                 <Route path="/specialOffer" element={<SpecialOffer />}>
                     <Route path="" element={<OfferMain />} />
                     <Route path="detail/:id" element={<OfferDetail />} />
@@ -205,42 +204,32 @@ function App() {
                     <Route path="detail/4" element={<EventDetail4 />} />
                     <Route path="detail/5" element={<EventDetail5 />} />
                 </Route>
-            </Routes>
-            {/* 아이디, 비밀번호 찾기 */}
-            <Routes>
+            
+                {/* 아이디, 비밀번호 찾기 */}
                 <Route path="/findid" element={<Findid />} />
                 <Route path="/findpw" element={<Findpw />} />
-            </Routes>
+            
 
-            {/* 공지사항 */}
-            <Routes>
+                {/* 공지사항 */}
                 <Route path="/notice" element={<NoticeTemp />}>
                     <Route path="" element={<Noticelist />} />
                     <Route path="detail/:id" element={<Noticedetail />} />
                 </Route>
-            </Routes>
+           
 
-            {/* 예약페이지 */}
-            <Routes>
+                {/* 예약페이지 */}
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
                     {/* <Route path=":id" element={<ResOfferRoomId />} /> */}
-                    <Route
-                        path="detailallroom"
-                        element={<ResMainAllRoomDetail />}
-                    />
-                    <Route
-                        path="detail/paymentallroom"
-                        element={<ResMainAllRoomPayment />}
-                    />
+                    <Route path="detailallroom" element={<ResMainAllRoomDetail />}/>
+                    <Route path="detail/paymentallroom" element={<ResMainAllRoomPayment />}/>
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
                 <Route path="/reserve/:product_id" element={<ResOffer />} />
-            </Routes>
+           
 
-            {/* 객실 */}
-            <Routes>
+                {/* 객실 */}
                 <Route path="/room" element={<Room />} />
 
                 {/* 스탠다드 */}
@@ -272,10 +261,9 @@ function App() {
 
                 {/* 이그제큐티브 라운지 */}
                 <Route path="/executiveLounge" element={<Lounge_ExecutiveLounge />} />
-            </Routes>
+           
 
-            {/* 라이프스타일 */}
-            <Routes>
+                {/* 라이프스타일 */}
                 <Route path="/lifeStyle" element={<LifeStyle />}></Route>
                 <Route path="/outdoorPool" element={<OutdoorPool />}></Route>
                 <Route path="/outdoorPool2" element={<OutdoorPool2 />}></Route>
@@ -283,45 +271,25 @@ function App() {
                 <Route path="/fitness2" element={<Fitness2 />}></Route>
                 <Route path="/fitness3" element={<Fitness3 />}></Route>
                 <Route path="/fitness4" element={<Fitness4 />}></Route>
-                <Route
-                    path="/walkingTrails"
-                    element={<WalkingTrails />}
-                ></Route>
+                <Route path="/walkingTrails" element={<WalkingTrails />}></Route>
                 <Route path="/jogging" element={<Jogging />}></Route>
                 <Route path="/shopping" element={<Shopping />}></Route>
                 <Route path="/shopping2" element={<Shopping2 />}></Route>
-            </Routes>
+            
 
-            {/* 웨딩&연회 */}
-            <Routes>
+                {/* 웨딩&연회 */}
                 <Route path="/party" element={<Party />}></Route>
                 <Route path="/wedding" element={<Wedding />}></Route>
                 <Route path="/wedding2" element={<Wedding2 />}></Route>
                 <Route path="/wedding3" element={<Wedding3 />}></Route>
-                <Route
-                    path="/corporateParty"
-                    element={<CorporateParty />}
-                ></Route>
-                <Route
-                    path="/corporateParty2"
-                    element={<CorporateParty2 />}
-                ></Route>
-                <Route
-                    path="/corporateParty3"
-                    element={<CorporateParty3 />}
-                ></Route>
-                <Route
-                    path="/familyParty"
-                    element={<FamilyParty />}
-                ></Route>
-                <Route
-                    path="/familyParty2"
-                    element={<FamilyParty2 />}
-                ></Route>
-            </Routes>
+                <Route path="/corporateParty" element={<CorporateParty />}></Route>
+                <Route path="/corporateParty2" element={<CorporateParty2 />}></Route>
+                <Route path="/corporateParty3" element={<CorporateParty3 />}></Route>
+                <Route path="/familyParty" element={<FamilyParty />}></Route>
+                <Route path="/familyParty2" element={<FamilyParty2 />}></Route>
+           
 
-            {/* 다이닝 */}
-            <Routes>
+                {/* 다이닝 */}
                 <Route path="/dining" element={<Dining />}></Route>
                 <Route path="/restaurant" element={<Restaurant />}></Route>
                 <Route path="/restaurant2" element={<Restaurant2 />}></Route>
@@ -332,7 +300,7 @@ function App() {
                 <Route path="/Lounge2" element={<Lounge2 />}></Route>
                 <Route path="/Bakery" element={<Bakery />}></Route>
             </Routes>
-        </div>
+        </>
     );
 }
 

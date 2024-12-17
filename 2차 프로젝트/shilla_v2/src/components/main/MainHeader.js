@@ -4,8 +4,8 @@ import HeaderComp1 from "../common/HeaderComp1";
 import HeaderComp2 from "../common/HeaderComp2";
 import HeaderComp3 from "../common/HeaderComp3";
 import HeaderComp4 from "../common/HeaderComp4";
-import HeaderComp4Login from "../common/HeaderComp4Login";
-import HeaderComp4Admin from "../common/HeaderComp4Admin";
+// import HeaderComp4Login from "../common/HeaderComp4Login";
+// import HeaderComp4Admin from "../common/HeaderComp4Admin";
 import HeaderComp5 from "../common/HeaderComp5";
 import '../../scss/reset.css'
 import '../../scss/common.scss'
@@ -94,9 +94,7 @@ const MainHeader = () => {
         }else{
             setUser(null)
         }
-        console.log('user : ');
-        console.log(user);
-        
+
     },[])
 
 
@@ -105,7 +103,7 @@ const MainHeader = () => {
     
     // if(!user){
     //     return (
-    //         <div class="main-header" id="MainHeader">
+    //         <div className="main-header" id="MainHeader">
     //             <header className="active" >
     //                 <div className="gnbbg" ></div>
     //                 <div className="center">
@@ -131,7 +129,7 @@ const MainHeader = () => {
     // }
 
     return (
-        <div class="main-header" id="MainHeader">
+        <div className="main-header" id="MainHeader">
             <header className="active" >
                 <div className="gnbbg" ></div>
                 <div className="center">

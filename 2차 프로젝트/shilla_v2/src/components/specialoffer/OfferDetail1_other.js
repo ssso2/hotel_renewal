@@ -27,9 +27,9 @@ const OfferDetail1_other = () => {
         },
     ];
     return (
-        <div class="other-event">
-            <div class="other-title">다른 패키지</div>
-            <ul class="other-list">
+        <div className="other-event">
+            <div className="other-title">다른 패키지</div>
+            <ul className="other-list">
                 {pkglist.map((pkg, index) => (
                     <OfferDetail1_othercard data={pkg} index={index} />
                 ))}

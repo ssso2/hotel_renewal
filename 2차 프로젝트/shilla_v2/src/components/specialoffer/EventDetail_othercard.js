@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 
 const EventDetail1_othercard = ({ pkglist }) => {
     return (
-        <div class="other-event">
-            <div class="other-title">다른 이벤트</div>
-            <ul class="other-list">
+        <div className="other-event">
+            <div className="other-title">다른 이벤트</div>
+            <ul className="other-list">
                 {pkglist.map((pkg, index) => (
-                    <li class="other-item" key={index}>
+                    <li className="other-item" key={index}>
                         <Link to={pkg.link}>
-                            <div class="img-box">
+                            <div className="img-box">
                                 <img src={pkg.img} />
                             </div>
                             <dl>
                                 <dt>{pkg.title}</dt>
-                                <dd class="other-date">{pkg.date}</dd>
-                                <dd class="other-pay">{pkg.pay}</dd>
+                                <dd className="other-date">{pkg.date}</dd>
+                                <dd className="other-pay">{pkg.pay}</dd>
                             </dl>
                         </Link>
                     </li>

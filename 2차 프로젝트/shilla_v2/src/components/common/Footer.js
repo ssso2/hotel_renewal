@@ -10,9 +10,9 @@ const Footer = () => {
         { link : "https://post.naver.com/my.nhn?memberNo=46212769", title : "네이버 포스트 새창 열기", iClass : "fa-solid fa-blog"},
     ]
     const footerDataMenu = [
-        {link :"#self", title : "호텔소개"},
-        {link :"#self", title : "호텔정보"},
-        {link :"#self", title : "층별안내도"},
+        {link :"javascrip:void();", title : "호텔소개"},
+        {link :"javascrip:void();", title : "호텔정보"},
+        {link :"javascrip:void();", title : "층별안내도"},
         {link :"/sub/sitemap", title : "사이트맵"},
     ]
     const footerDataList = [
@@ -68,7 +68,7 @@ const Footer = () => {
                     <div className="f_bot">
                         <div className="f_list">
                             {
-                                listData.map((item,index)=><span key={index}><Link to="#self">{item.title}</Link></span>)
+                                listData.map((item,index)=><span key={index}><Link to="javascrip:void();">{item.title}</Link></span>)
                             }
                         </div>
                         <ul className="f_info">

@@ -980,8 +980,6 @@ const JoinCont1 = () => {
                             </div>
                         </div>
                         <div className="next">
-                            {/* <!-- <a href="./myinfo.html" type="button" id="btn-next"  data-lybtn="pop-alert">본인인증 후 가입</a> --> */}
-                            {/* <!-- <button type="button" id="btn-next" data-lybtn="pop-alert" onclick = "location.href='./myinfo.html'">본인인증 후 가입</button> --> */}
                             <button type="button" id="btn-next" data-lybtn="pop-alert" onclick="">본인인증 후 가입</button>
                         </div>
                     </form>

@@ -16,9 +16,9 @@ const Info = () => {
     return (
         <>
             <Header/>
-            <div class="container">
-                <div class="center">
-                    <div class="contact-wrap">
+            <div className="container">
+                <div className="center">
+                    <div className="contact-wrap">
                         <InfoComp1/>
                         <InfoComp2/>
                         <InfoComp3/>

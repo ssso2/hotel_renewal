@@ -90,15 +90,15 @@ const Lounge2 = () => {
     return (
         <>
         <Header/>
-        <div class="container">
-            <div class="center">
-                <div class="depth3-tab-wrap">
+        <div className="container">
+            <div className="center">
+                <div className="depth3-tab-wrap">
                     <Tab2/>
-                    <div class="tab-contents">
-                        <div class="tab-cont cont1 on">
+                    <div className="tab-contents">
+                        <div className="tab-cont cont1 on">
                             <SubTitle/>
                             <Gallery propImages={galleryImages} />
-                            <div class="context">
+                            <div className="context">
                                 <Introduction2 {...introData} />
                                 <InfoList propInfo={infoData} />
                             </div>

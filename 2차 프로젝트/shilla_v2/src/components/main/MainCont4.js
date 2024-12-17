@@ -12,7 +12,7 @@ const MainCont4 = () => {
             text_kor : '스탠다드',
             text_eng : 'Standard',
             type : [
-                { delay : "0", link : '/standard/deluxe', title : "디럭스룸 페이지로 이동" , text : '디럭스'},
+                { delay : "0", link : '/standard', title : "디럭스룸 페이지로 이동" , text : '디럭스'},
                 { delay : "100", link : '/standard/businessDeluxe', title : "비지니스 디럭스룸 페이지로 이동" , text : '비지니스 디럭스'},
                 { delay : "200", link : '/standard/barrierFreeDeluxe', title : "베리어프리 비지니스 디럭스룸 페이지로 이동" , text : '베리어프리 비지니스 디럭스'},
                 { delay : "300", link : '/standard/grandCornerDeluxe', title : "그랜드 코너 디럭스룸 페이지로 이동" , text : '그랜드 코너 디럭스'},
