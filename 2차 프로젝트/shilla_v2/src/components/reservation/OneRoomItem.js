@@ -59,27 +59,37 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
                 <div className="txt-wrap">
                     <div className="context">
                         <h3 className="tit room">{roomType}</h3>
-                        <div className="price"><em>{roomList[0]?.day_price}</em>원 ~</div>
                         <p className="desc">총 개수: {roomList.length}개</p>
                         <button type="button" className="pop-btn room" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
-                        <button  className="pop-btn room" onClick={() => toggleRoomType(roomType)}>{expandedRoomType === roomType ? "숨기기" : "남은 호수 보기 +"}</button>
+
                     </div>
                 </div>
             </div>
             <div className="r-box">
+                <div className="price"><em>{roomList[0]?.day_price}</em>원 ~</div>
+                <div className="btn-wrap">
+                    <button type="button" className="btn" onClick={() => toggleRoomType(roomType)}>{expandedRoomType === roomType ? "숨기기" : "남은 호수 보기"}<i className="fa-solid fa-chevron-down"></i></button>
+                </div>
+
+            </div>
+          </div>
+          
+          <div class="room-type-list">
               {expandedRoomType === roomType && (
                 <div className="room-list">
                   {roomList.map((room) => (
                     <div key={room.room_id} className="room-item">
-                      {/* <h4>{room.room_type}</h4> */}
-                      <p>룸 호수: {room.room_id}</p>
-                      <button className="btn" onClick={() => handleReservation(room)}>예약하기<i className="fa-solid fa-chevron-down"></i></button>
+                      <div className="room-type">
+                        <h4>{room.room_type}</h4>
+                        <p>룸 호수: {room.room_id}</p>
+                      </div>
+                      <button className="btn" onClick={() => handleReservation(room)}>예약하기</button>
                     </div>
                   ))}
                 </div>
               )}
-            </div>
           </div>
+
         </li>
       ))}
     </ul>

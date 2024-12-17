@@ -557,7 +557,7 @@
                     font-weight: 500;
                 }
                 .btn {
-                    width: 150px;
+                    width: 160px;
                     line-height: 50px;
                     background: #7A6C64;
                     font-size: 16px;
@@ -581,13 +581,7 @@
                 }
             }
         }
-        &.room {
-            & > li {
-                .box-wrap {
-                    align-items: start;
-                }
-            }
-        }
+
     }
 }
 
@@ -725,7 +719,7 @@
                         font-size: 22px;
                     }
                     .btn {
-                        width: 120px;
+                        // width: 120px;
                     }   
                 }
             }
@@ -1073,7 +1067,7 @@
                         // font-weight: 500;
                     }
                     .btn {
-                        width: 120px;
+                        // width: 120px;
                         // line-height: 50px;
                         // background: #7A6C64;
                         // font-size: 16px;
