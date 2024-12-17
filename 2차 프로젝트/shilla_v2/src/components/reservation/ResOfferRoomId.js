@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
 import { useParams } from "react-router-dom";
 import OfferDateRangePicker from "./OfferDateRangePicker";
 import PackageRoomItem from "./PackageRoomItem"; // 패키지 컴포넌트
-import OneRoomItem from "./OneRoomItem"; // 객실 컴포넌트
 import "../../scss/res_search.scss";
 
 function ResOfferRoomId(props) {
@@ -21,7 +18,7 @@ function ResOfferRoomId(props) {
   const [availablePackages, setAvailablePackages] = useState([]); // 예약 가능한 패키지 목록
   // const [availableRooms, setAvailableRooms] = useState([]); // 예약 가능한 객실 목록
   const [showPicker, setShowPicker] = useState(false); // 날짜 선택기 표시 여부
-  // const [tab, setTab] = useState("package"); // 'package' or 'room' 탭 선택 상태
+  const [tab, setTab] = useState("package"); // 'package' or 'room' 탭 선택 상태
   const [popupAdultCount, setPopupAdultCount] = useState(0); // 팝업에서 사용하는 성인 수
   const [popupChildrenCount, setPopupChildrenCount] = useState(0); // 팝업에서 사용하는 어린이 수
   const [confirmedAdultCount, setConfirmedAdultCount] = useState(0); // 확인버튼을 누를 때의 성인 수
@@ -75,18 +72,17 @@ function ResOfferRoomId(props) {
         );
         if (response.status === 200) {
           setOfferData(response.data);
-          console.log("setOfferData : ",response.data)
+          console.log("setOfferData : ", response.data);
         }
       } catch (error) {
         console.log(" offer 데이터 조회 오류 ", error);
       }
     };
     fetchOfferData();
-    
   }, [product_id]);
 
-  if(!offerData) {
-    return <div>offer data 로드가 되지 않음</div>
+  if (!offerData) {
+    return <div>offer data 로드가 되지 않음</div>;
   }
 
   const handleSearch = async () => {
@@ -114,7 +110,6 @@ function ResOfferRoomId(props) {
   };
 
   return (
-    
     <div className="container reservation">
       <section className="reservation">
         <div className="center">
@@ -154,21 +149,143 @@ function ResOfferRoomId(props) {
             >
               검색
             </button>
-          </div>
-        </div>
+            <div className="reservation-popup">
+              <form action="">
+                <ul className="popup-left">
+                  <li>
+                    <div className="tit">객실 1</div>
+                    <div className="count-wrap adult">
+                      <button type="button" className="btn-down">
+                        <span className="blind">숫자 내리기</span>
+                      </button>
+                      <p className="adult">
+                        성인 <span className="num">0</span>
+                      </p>
+                      <button type="button" className="btn-up">
+                        <span className="blind">숫자 올리기</span>
+                      </button>
+                    </div>
+                    <div className="count-wrap children">
+                      <button type="button" className="btn-down">
+                        <span className="blind">숫자 내리기</span>
+                      </button>
+                      <p className="children">
+                        어린이 <span className="num">0</span>
+                      </p>
+                      <button type="button" className="btn-up">
+                        <span className="blind">숫자 올리기</span>
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+                <div className="popup-right">
+                  <p className="desc">* 어린이 기준 : 37개월 - 12세</p>
+                  <button type="button">확인</button>
+                </div>
+              </form>
 
-        {/* 선택된 탭에 따라 콘텐츠 표시 */}
-        <div className="tab-cont-wrap">
-          <div className="tab-cont package on">
-            <h3>패키지 </h3>
-            {availablePackages.map((pkg) => (
-              <PackageRoomItem
-                key={pkg.offer_id}
-                packageData={pkg}
-                checkInDate={checkInDate}
-                checkOutDate={checkOutDate}
-              />
-            ))}
+              <button className="close-btn">
+                <span className="blind">닫기</span>
+              </button>
+            </div>
+          </div>
+          <div className="no-select">
+            예약을 원하시는 날짜, 인원을 선택해주세요.
+          </div>
+          <div className="search-results-wrap on">
+            <div className="tab-wrap">
+              <ul className="tab">
+                <li className="on" onClick={() => setTab("package")}>
+                  패키지 (
+                  <em className="num">
+                    {availablePackages.length > 0
+                      ? `${availablePackages.length}`
+                      : ""}
+                  </em>
+                  )
+                </li>
+                {/* <li  onClick={() => setTab("room")}>객실 (<em className="num">{availableRooms.length > 0 ? `${availableRooms.length}` : ""}</em>)</li> */}
+              </ul>
+              <div className="keyword-sorting">
+                <div className="keyword-wrap">
+                  <button className="keyword-btn">키워드</button>
+                </div>
+                <div className="sorting-wrap">
+                  <div className="selected">낮은 가격 순</div>
+                  <ul className="select-sort">
+                    <li className="on">낮은 가격 순</li>
+                    <li>높은 가격 순</li>
+                    <li>최신 순</li>
+                    <li>인기 순</li>
+                    <li>추천 순</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="keyword-box">
+              <form action="">
+                <div className="top-wrap">
+                  <span>키워드 검색</span>
+                  <button type="reset">선택해제</button>
+                </div>
+                <div className="bottom-wrap">
+                  <ul className="chk-boxs">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="keyword"
+                        id="breakfast"
+                        value="breakfast"
+                      />
+                      <label for="breakfast">조식</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="lounge" />
+                      <label for="lounge">라운지 혜택</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="special-day" />
+                      <label for="special-day">기념일</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="outdoor-pool" />
+                      <label for="outdoor-pool">야외수영장</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="adults-3" />
+                      <label for="adults-3">성인3인</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="keyword"
+                        id="more-than-2day"
+                      />
+                      <label for="more-than-2day">2박이상</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="kids" />
+                      <label for="kids">키즈</label>
+                    </li>
+                  </ul>
+                  <button type="button">적용</button>
+                </div>
+              </form>
+            </div>
+
+            {/* 선택된 탭에 따라 콘텐츠 표시 */}
+            <div className="tab-cont-wrap">
+              <div className="tab-cont package on">
+                {availablePackages.map((pkg) => (
+                  <PackageRoomItem
+                    key={pkg.offer_id}
+                    packageData={pkg}
+                    checkInDate={checkInDate}
+                    checkOutDate={checkOutDate}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
