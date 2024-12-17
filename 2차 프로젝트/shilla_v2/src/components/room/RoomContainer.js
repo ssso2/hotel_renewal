@@ -19,7 +19,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 36㎡',
                 },
                 {
-                    link: "/businessDeluxe",
+                    link: "/standard/businessDeluxe",
                     img: "/img/sub/roomStandardBusiness01.jpg",
                     title: '비즈니스 디럭스',
                     subTitle: '휴식이 필요한 비즈니스 고객을 위한 공간',
@@ -27,7 +27,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 43㎡',
                 },
                 {
-                    link: "/barrierFreeDeluxe",
+                    link: "/standard/barrierFreeDeluxe",
                     img: "/img/sub/roomStandardBarrierFree01.jpg",
                     title: '배리어프리 비즈니스 디럭스',
                     subTitle: '모두가 편리하게 이용하도록 설계된 공간',
@@ -35,7 +35,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 43㎡',
                 },
                 {
-                    link: "/grandCornerDeluxe",
+                    link: "/standard/grandCornerDeluxe",
                     img: "/img/sub/roomStandardGrand01.jpg",
                     title: '그랜드 코너 디럭스',
                     subTitle: '여유로운 휴식을 위한 공간',
@@ -48,7 +48,7 @@ const RoomContainer = () => {
             type: '이그제큐티브',
             RoomBox: [
                 {
-                    link: "/execBusinessDeluxe",
+                    link: "/executive/execBusinessDeluxe",
                     img: "/img/sub/roomExecutiveBusiness01.jpg",
                     title: '이그제큐티브 비즈니스 디럭스',
                     subTitle: '휴식이 필요한 비즈니스 고객을 위한 공간',
@@ -56,7 +56,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 43㎡',
                 },
                 {
-                    link: "/execGrandDeluxe",
+                    link: "/executive/execGrandDeluxe",
                     img: "/img/sub/roomExecutiveGrand01.jpg",
                     title: '이그제큐티브 그랜드 디럭스',
                     subTitle: '여유로운 만족을 위한 공간',
@@ -69,7 +69,7 @@ const RoomContainer = () => {
             type: '스위트',
             RoomBox: [
                 {
-                    link: "/superior",
+                    link: "/suite/superior",
                     img: "/img/sub/roomSuiteCorner01.jpg",
                     title: '수페리어 스위트',
                     subTitle: '영빈관이 내려다 보이는 아늑하고 모던한 공간',
@@ -77,7 +77,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 66㎡',
                 },
                 {
-                    link: "/korean",
+                    link: "/suite/korean",
                     img: "/img/sub/roomSuiteKorean01.jpg",
                     title: '코리안 스위트',
                     subTitle: '한국 전통의 미를 경험할 수 있는 단 하나 뿐인 공간',
@@ -85,7 +85,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 66㎡',
                 },
                 {
-                    link: "/corner",
+                    link: "/suite/corner",
                     img: "/img/sub/roomSuiteCorner01.jpg",
                     title: '코너 스위트',
                     subTitle: '조용하고 안락한 분위기의 여유로운 공간',
@@ -93,7 +93,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 68㎡',
                 },
                 {
-                    link: "/premier",
+                    link: "/suite/premier",
                     img: "/img/sub/roomSuitePremier01.jpg",
                     title: '프리미어 스위트',
                     subTitle: '비즈니스와 휴식을 동시에 취할 수 있는 공간',
@@ -101,7 +101,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 84㎡',
                 },
                 {
-                    link: "/royal",
+                    link: "/suite/royal",
                     img: "/img/sub/roomSuiteRoyal01.jpg",
                     title: '로열 스위트',
                     subTitle: '모던한 분위기의 고급스러운 공간',
@@ -109,7 +109,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 124㎡',
                 },
                 {
-                    link: "/shilla",
+                    link: "/suite/shilla",
                     img: "/img/sub/roomSuiteShilla01.jpg",
                     title: '신라 스위트',
                     subTitle: '신라만의 특별한 서비스와 경험을 누릴 수 있는 공간',
@@ -117,7 +117,7 @@ const RoomContainer = () => {
                     description2: '객실크기 : 159㎡',
                 },
                 {
-                    link: "/presidential",
+                    link: "/suite/presidential",
                     img: "/img/sub/roomSuitePresidential01.jpg",
                     title: '프레지덴셜 스위트',
                     subTitle: '세상의 모든 품격과 럭셔리함을 갖춘 공간',

@@ -1,15 +1,15 @@
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import RoomContainer from './RoomContainer';
+import { Outlet } from 'react-router-dom';
 
-function Room() {
+function SuiteTemp() {
     return (
         <>
             <Header />
-            <RoomContainer />
+            <Outlet />
             <Footer />
         </>
     );
 }
 
-export default Room;
+export default SuiteTemp;
