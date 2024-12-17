@@ -45,15 +45,15 @@ function Wedding() {
     return (
         <>
         <Header/>
-        <div class="container">
-            <div class="center">
-                <div class="depth3-tab-wrap">
+        <div className="container">
+            <div className="center">
+                <div className="depth3-tab-wrap">
                     <Tab/>
-                    <div class="tab-contents">
-                        <div class="tab-cont cont1 on">
+                    <div className="tab-contents">
+                        <div className="tab-cont cont1 on">
                             <SubTitle />
                             <Gallery propImages={galleryImages} />
-                            <div class="context">
+                            <div className="context">
                                 <Introduction {...introData} />
                                 <Location propLocation = {locationData}/>
                             </div>

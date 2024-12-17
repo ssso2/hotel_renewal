@@ -74,7 +74,7 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
             </div>
           </div>
           
-          <div class="room-type-list">
+          <div className="room-type-list">
               {expandedRoomType === roomType && (
                 <div className="room-list">
                   {roomList.map((room) => (

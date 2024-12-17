@@ -13,8 +13,8 @@ const Contents = ({ sections }) => {
             </p>
           </div>
           <ul className="location">
-            <li><a href="../index.html">홈</a></li>
-            <li><a href="#self">라이프스타일</a></li>
+            <li><Link to="/">홈</Link></li>
+            <li><Link to="javascrip:void();">라이프스타일</Link></li>
           </ul>
         </div>
 

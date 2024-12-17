@@ -7,9 +7,9 @@ const Popup = ({ id, title, imgSrc }) => {
                 <div className="lypop-content">
                     <div className="lypop-title">
                         <strong>{title}</strong>
-                        <a href="javascript:void(0);" className="lypop-close" data-lyclose={id}>
+                        <Link to="javascript:void(0);" className="lypop-close" data-lyclose={id}>
                             <span className="hide">닫기</span>
-                        </a>
+                        </Link>
                     </div>
                     <div className="lypop-ct">
                         <div className="img-wrap">

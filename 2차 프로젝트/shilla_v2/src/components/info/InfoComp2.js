@@ -13,7 +13,7 @@ const InfoComp2 = () => {
         <>
             {
                 infoMid.map((item,index)=>{
-                    return  <div key={index} class={item.class}>
+                    return  <div key={index} className={item.class}>
                                 <p>{item.tit}</p>
                                 <p>{item.tel}</p>
                             </div>

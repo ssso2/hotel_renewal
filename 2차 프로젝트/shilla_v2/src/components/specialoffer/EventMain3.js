@@ -38,9 +38,9 @@ const events = [
 const EventMain3 = () => {
     return (
         <>
-            <h2 class="event-title">EVENT</h2>
-            <div class="event-container">
-                <ul class="list-item">
+            <h2 className="event-title">EVENT</h2>
+            <div className="event-container">
+                <ul className="list-item">
                     {events.map(item => (
                         <EventMain1 data={item} key={item.id} />
                     ))}

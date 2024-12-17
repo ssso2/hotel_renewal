@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 
 const MainCont5Popup = () => {
     const hotelListPopUp = [
@@ -154,30 +155,30 @@ const MainCont5Popup = () => {
     let [hotelList,hotelListSet] = useState(hotelListPopUp)
     return (
         // <!-- 지점 찾기 팝업 -->
-        <div class="lypop hotel-list" data-lyOpen="pop-hotel-box">
-            <div class="lypop-wp big">
-                <div class="lypop-content">
-                    <div class="lypop-title">
+        <div className="lypop hotel-list" data-lyopen="pop-hotel-box">
+            <div className="lypop-wp big">
+                <div className="lypop-content">
+                    <div className="lypop-title">
                         <strong>호텔 찾기</strong>
-                        <a href="javascrip:void();" class="lypop-close" data-lyclose="pop-hotel-box">
-                            <span class="hide">닫기</span>
-                        </a>
+                        <Link to="javascrip:void();" className="lypop-close" data-lyclose="pop-hotel-box">
+                            <span className="hide">닫기</span>
+                        </Link>
                     </div>
-                    <div class="lypop-ct">
-                        <div class="hotel-box-wrap">
+                    <div className="lypop-ct">
+                        <div className="hotel-box-wrap">
                             {
                                 hotelList.map((item,index)=>{
-                                    return  <div class={item.divClass} key={index}>
+                                    return  <div className={item.divClass} key={index}>
                                                 <h4>{item.h4Text}</h4>
-                                                <div class="area-wrap">
+                                                <div className="area-wrap">
                                                     {
                                                         item.area.map((area,idx)=>{
-                                                            return  <div class="area " key={idx}>
+                                                            return  <div className="area " key={idx}>
                                                                         <h5>{area.h5Text}</h5>
-                                                                        <div class="hotel-link-wrap">
+                                                                        <div className="hotel-link-wrap">
                                                                             {
                                                                                 area.list.map((list,i)=>{
-                                                                                    return <a key={i} href={list.hotelLink} target={list.target} title={list.title}>{list.text}</a>
+                                                                                    return <Link to={list.hotelLink} key={i}  target={list.target} title={list.title}>{list.text}</Link>
                                                                                 })
                                                                             }
                                                                         </div>
@@ -189,8 +190,8 @@ const MainCont5Popup = () => {
                                 })
                             }
                         </div>
-                        <div class="btn-wrap type5">
-                            <button class="btn btn-04" data-lyclose="pop-hotel-box"><span>닫기</span></button>
+                        <div className="btn-wrap type5">
+                            <button className="btn btn-04" data-lyclose="pop-hotel-box"><span>닫기</span></button>
                         </div>
                     </div>
                 </div>

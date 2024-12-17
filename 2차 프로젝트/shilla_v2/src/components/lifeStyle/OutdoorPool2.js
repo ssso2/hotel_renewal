@@ -70,7 +70,7 @@ function OutdoorPool2() {
 
                             <div className="context">
                                 <Introduction {...introData} />
-                                <div class="info-wrap mt-0">
+                                <div className="info-wrap mt-0">
                                     <Location propLocation = {locationData}/>
                                     <Button propBtn={btnData}/>
                                     <MapPopUp propImage={MapImage} propBtn={btnData}/>

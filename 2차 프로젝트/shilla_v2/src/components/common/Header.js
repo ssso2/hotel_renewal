@@ -143,9 +143,6 @@ const Header = () => {
         }else{
             setUser(null)
         }
-        console.log('user : ');
-        console.log(user);
-
 
 
         if(header && gnb && gnbBg && gnb1Depth && mBtn && mWrap && depth1){

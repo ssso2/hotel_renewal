@@ -18,12 +18,12 @@ const InfoComp3 = () => {
 
     return (
         <>
-            <h2 class="restaurant">주요 업장 안내</h2>
-            <div class="res-container">
+            <h2 className="restaurant">주요 업장 안내</h2>
+            <div className="res-container">
             {
                 info.map((item,index)=>{
                     return  <Link to={item.link} key={index}>
-                                <div class="main-restaurant">
+                                <div className="main-restaurant">
                                     <p>{item.tit}</p>
                                     <p>{item.tel}</p>
                                 </div>

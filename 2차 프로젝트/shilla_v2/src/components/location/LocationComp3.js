@@ -33,14 +33,14 @@ const LocationComp3 = () => {
     const [locationGuide,locationGuideSet] = useState(locationGuideText)
     return (
        <>
-            <ul class="guide">
+            <ul className="guide">
                 <li><h3>교통편</h3></li>
                 {
                     locationGuide.map((item,index)=>{
-                        return  <li class="list" key={index}>
+                        return  <li className="list" key={index}>
                                     <h4>{item.tit}</h4>
-                                    <div class="txt-wrap">
-                                        <ul class="txt">
+                                    <div className="txt-wrap">
+                                        <ul className="txt">
                                             {
                                                 item.textWrap.map((guide,idx)=>(<li key={idx}><strong>{guide.boldTxt}</strong>{guide.txt}</li>))
                                             }
