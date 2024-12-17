@@ -5,8 +5,6 @@ import '../../scss/sub02.scss';
 
 const RoomCont2 = ( { space } ) => {
 
-    // forEach -- map 거의 비슷
-
     return (
         <>
             {/* 스탠다드부터 라운지까지 카드 반복 함수 */}
