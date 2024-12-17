@@ -127,7 +127,7 @@ function Res_search() {
                     <div className="room-wrap" onClick={togglePopup}>
                         <div className="box adult">
                             <span className="tit">ADULT</span>
-                            <span className="num">0</span>
+                            <span className="num">1</span>
                         </div>
                         <div className="box children">
                             <span className="tit">CHILDREN</span>

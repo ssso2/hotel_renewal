@@ -78,7 +78,7 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
                   
               </div>
               <div className="r-box">
-                  <div className="price"><em></em> {packageData.offer_price}원 ~</div>
+                  <div className="price"><em></em> {packageData.offer_price.toLocaleString()}원</div>
                   <div className="btn-wrap">
                       <button type="button" className="btn" onClick={handleReservation}>예약하기<i className="fa-solid fa-chevron-down"></i></button>
                   </div>

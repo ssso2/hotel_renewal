@@ -185,7 +185,7 @@ function Res_detail(props) {
                   <li className="list">
                     <h4>객실 요금</h4>
                     <div className="box price">
-                      <span className="rsv-price">{offerPrice}</span>
+                      <span className="rsv-price">{offerPrice.toLocaleString()}</span>
                       <span>원</span>
                     </div>
                   </li>

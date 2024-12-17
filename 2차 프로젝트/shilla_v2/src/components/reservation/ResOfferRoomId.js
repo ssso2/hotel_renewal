@@ -115,7 +115,7 @@ function ResOfferRoomId(props) {
 
   return (
     
-    <div className="container">
+    <div className="container reservation">
       <section className="reservation">
         <div className="center">
           <h2>날짜, 인원 선택</h2>
@@ -158,8 +158,8 @@ function ResOfferRoomId(props) {
         </div>
 
         {/* 선택된 탭에 따라 콘텐츠 표시 */}
-        <div className="content-list">
-          <div className="package-list">
+        <div className="tab-cont-wrap">
+          <div className="tab-cont package on">
             <h3>패키지 </h3>
             {availablePackages.map((pkg) => (
               <PackageRoomItem
