@@ -18,7 +18,7 @@ import Info from "./components/info/Info";
 import Location from "./components/location/Location";
 
 // lifestyle
-import LifeStyle from "./components/lifeStyle/Party";
+import LifeStyle from "./components/lifeStyle/LifeStyle";
 import OutdoorPool from "./components/lifeStyle/OutdoorPool";
 import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
@@ -31,12 +31,26 @@ import Shopping from "./components/lifeStyle/Shopping";
 import Shopping2 from "./components/lifeStyle/Shopping2";
 
 // wedding & party
+import Party from "./components/party/Party";
 import Wedding from "./components/party/Wedding";
 import Wedding2 from "./components/party/Wedding2";
 import Wedding3 from "./components/party/Wedding3";
 import CorporateParty from "./components/party/CorporateParty";
 import CorporateParty2 from "./components/party/CorporateParty2";
 import CorporateParty3 from "./components/party/CorporateParty3";
+import FamilyParty from "./components/party/FamilyParty";
+import FamilyParty2 from "./components/party/FamilyParty2";
+
+// dining
+import Dining from "./components/dining/Dining";
+import Restaurant from "./components/dining/Restaurant";
+import Restaurant2 from "./components/dining/Restaurant2";
+import Restaurant3 from "./components/dining/Restaurant3";
+import Restaurant4 from "./components/dining/Restaurant4";
+import Restaurant5 from "./components/dining/Restaurant5";
+import Lounge from "./components/dining/Lounge";
+import Lounge2 from "./components/dining/Lounge2";
+import Bakery from "./components/dining/Bakery";
 
 // login
 import Login from "./components/login/Login";
@@ -280,6 +294,7 @@ function App() {
 
             {/* 웨딩&연회 */}
             <Routes>
+                <Route path="/party" element={<Party />}></Route>
                 <Route path="/wedding" element={<Wedding />}></Route>
                 <Route path="/wedding2" element={<Wedding2 />}></Route>
                 <Route path="/wedding3" element={<Wedding3 />}></Route>
@@ -295,6 +310,27 @@ function App() {
                     path="/corporateParty3"
                     element={<CorporateParty3 />}
                 ></Route>
+                <Route
+                    path="/familyParty"
+                    element={<FamilyParty />}
+                ></Route>
+                <Route
+                    path="/familyParty2"
+                    element={<FamilyParty2 />}
+                ></Route>
+            </Routes>
+
+            {/* 다이닝 */}
+            <Routes>
+                <Route path="/dining" element={<Dining />}></Route>
+                <Route path="/restaurant" element={<Restaurant />}></Route>
+                <Route path="/restaurant2" element={<Restaurant2 />}></Route>
+                <Route path="/restaurant3" element={<Restaurant3 />}></Route>
+                <Route path="/restaurant4" element={<Restaurant4 />}></Route>
+                <Route path="/restaurant5" element={<Restaurant5 />}></Route>
+                <Route path="/Lounge" element={<Lounge />}></Route>
+                <Route path="/Lounge2" element={<Lounge2 />}></Route>
+                <Route path="/Bakery" element={<Bakery />}></Route>
             </Routes>
         </div>
     );

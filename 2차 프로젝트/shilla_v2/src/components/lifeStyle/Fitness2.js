@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import Tab2 from './Tab2';
 import SubTitle from './SubTitle';
@@ -18,6 +17,9 @@ import "../../scss/sub-detail.scss"
 
 
 function Fitness2() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const galleryImages = "../../img/sub/R00000009MES_KR.jpg";
 

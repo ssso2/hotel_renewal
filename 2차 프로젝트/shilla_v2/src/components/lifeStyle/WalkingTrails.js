@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import SubTitle from './SubTitle';
 import Gallery2 from './Gallery2';
@@ -16,7 +16,9 @@ import "../../scss/sub-detail.scss"
 
 
 function WalkingTrails() {
-    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const galleryImages = "../../img/sub/R00000009MP2_KR.jpg";
 

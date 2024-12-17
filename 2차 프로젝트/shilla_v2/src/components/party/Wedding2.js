@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import Tab from "./Tab";
 import SubTitle from './SubTitle';
@@ -15,6 +15,9 @@ import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
 function Wedding2() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const galleryImages = [
         "../../img/sub/wd-2-01.jpg",

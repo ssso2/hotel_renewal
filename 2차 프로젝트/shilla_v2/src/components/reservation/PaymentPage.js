@@ -143,10 +143,13 @@ function PaymentPage() {
 
   return (
     <div className={styles.paymentContainer}>
-      <h2>결제 페이지</h2>
+      <h2>결제 정보</h2>
       <form className={styles.paymentForm}>
-        <div> 예약날짜 : {reservationDate}</div>
-        <div>
+        <div className={styles.reserveDate}>
+          {" "}
+          예약날짜 : <p className={styles.resDate}>{reservationDate}</p>
+        </div>
+        <div className={styles.roomName}>
           {" "}
           룸이름 : {roomName} [{roomId}호]
         </div>
@@ -185,7 +188,7 @@ function PaymentPage() {
           <li>어린이 조식: {childBf}</li>
           <li>엑스트라 베드: {extraBed}</li>
         </ul> */}
-        <p>총 결제 금액: {paySum.toLocaleString()}원</p>
+        <p className={styles.totPrice}>총 결제 금액: {paySum.toLocaleString()}원</p>
       </form>
       <div className={styles.buttonContainer}>
         <button onClick={handleBoth}>결제 완료</button>

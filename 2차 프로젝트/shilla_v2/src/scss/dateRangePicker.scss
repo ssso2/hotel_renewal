@@ -1,6 +1,6 @@
 .date-picker-input {
   width: auto;
-  height: 50px;
+  height: auto;
   padding: 2px; /* 내부 여백 */
   font-size: 25px; /* 텍스트 크기 */
   // border: 1px solid #ccc;
@@ -8,6 +8,8 @@
   // outline: none;
   text-align: center;
   cursor: pointer;
+  position: relative;
+  top: 20px;
 }
 
 .date-picker-popup {

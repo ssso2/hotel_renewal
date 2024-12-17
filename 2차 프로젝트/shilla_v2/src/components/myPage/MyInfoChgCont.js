@@ -4,7 +4,7 @@ import axios from 'axios';
 import MyPwChkCont from "./MyPwChkCont";
 import ReadOnlyData from "./ReadOnlyData";
 import MyPhoneChg from "./MyPhoneChg";
-import InputWithValidation from "./InputWithValidation";  // 추가된 컴포넌트
+import InputWithValidation from "./InputWithValidation";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -18,8 +18,14 @@ const MyInfoChgCont = () => {
     const [userPhone, setUserPhone] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [oldPw, setOldPw] = useState('');
-    const [error, setError] = useState('');
-    const [valid, setValid] = useState(false); // 연락처 유효성 검사 상태
+    const [error, setError] = useState({
+        oldPw: '',
+        newPw: '',
+        newPwChk: '',
+        userPhone: '',
+        userEmail: ''
+    });  // 각 항목별로 에러 메시지 관리
+    const [valid, setValid] = useState(false); // 전화번호 유효성 검사 상태
 
     const pwtype = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%~]).{12,16}$/;
     const mailtype = /^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
@@ -53,13 +59,19 @@ const MyInfoChgCont = () => {
 
         // 비밀번호 유효성 검사 (새 비밀번호에 대해서만)
         if (newPw && !pwtype.test(newPw)) {
-            setError('새 비밀번호는 12~16자 사이, 영문자, 숫자, 특수문자를 포함해야 합니다.');
+            setError((prev) => ({
+                ...prev,
+                newPw: '새 비밀번호는 12~16자 사이, 영문자, 숫자, 특수문자를 포함해야 합니다.'
+            }));
             return;
         }
 
         // 새 비밀번호 확인 일치 여부 검사
         if (newPw !== newPwChk) {
-            setError('새 비밀번호와 새 비밀번호 확인이 일치하지 않습니다.');
+            setError((prev) => ({
+                ...prev,
+                newPwChk: '새 비밀번호와 새 비밀번호 확인이 일치하지 않습니다.'
+            }));
             return;
         }
 
@@ -82,9 +94,9 @@ const MyInfoChgCont = () => {
             }
         } catch (err) {
             if (err.response) {
-                setError(err.response.data); // 서버에서 전송된 에러 메시지 표시
+                setError({ ...error, form: err.response.data }); // 서버에서 전송된 에러 메시지 표시
             } else {
-                alert('회원정보 수정에 실패했습니다.')
+                alert('회원정보 수정에 실패했습니다.');
             }
             console.error('Error during password verification or update:', err);
         }
@@ -122,8 +134,9 @@ const MyInfoChgCont = () => {
                     setValid={setValid}
                     setPhone={setUserPhone}
                     userPhone={userPhone} // 현재 전화번호 전달
+                    setError={setError}
                 />
-                {error && <span className="error-msg">{error}</span>}
+                {error.userPhone && <span className="error-msg">{error.userPhone}</span>}
             </label>
 
             {/* 이메일 입력 */}
@@ -134,6 +147,7 @@ const MyInfoChgCont = () => {
                 value={userEmail}
                 onChange={handleChange}
                 validationFn={(value) => mailtype.test(value) ? '' : '유효한 이메일 주소를 입력해주세요.'}
+                error={error.userEmail}
             />
 
             {/* 기존 비밀번호 */}
@@ -145,6 +159,7 @@ const MyInfoChgCont = () => {
                 onChange={handleChange}
                 validationFn={(value) => value ? '' : '현재 비밀번호를 확인해주세요.'}
                 type="password"
+                error={error.oldPw}
             />
 
             {/* 새 비밀번호 */}
@@ -156,6 +171,7 @@ const MyInfoChgCont = () => {
                 onChange={handleChange}
                 validationFn={(value) => pwtype.test(value) ? '' : '새 비밀번호는 12~16자 사이, 영문자, 숫자, 특수문자를 포함해야 합니다.'}
                 type="password"
+                error={error.newPw}
             />
 
             {/* 새 비밀번호 확인 */}
@@ -167,9 +183,11 @@ const MyInfoChgCont = () => {
                 onChange={handleChange}
                 validationFn={(value) => value === newPw ? '' : '새 비밀번호와 새 비밀번호 확인이 일치하지 않습니다.'}
                 type="password"
+                error={error.newPwChk}
             />
 
             <input type="submit" className="edit-btn" value="수정완료" />
+            {error.form && <div className="error-msg">{error.form}</div>}
         </form>
     );
 };
