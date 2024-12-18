@@ -98,7 +98,7 @@ const Lounge = () => {
                             <Gallery propImages={galleryImages} />
                             <div className="context">
                                 <Introduction {...introData} />
-                                <InfoList propInfo={infoData} />
+                                <InfoList propInfo={infoData} bdNone={true}/>
                             </div>
                         </div>
                     </div>
