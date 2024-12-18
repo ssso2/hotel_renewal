@@ -4,8 +4,6 @@ import Tab3 from './Tab3';
 import SubTitle from './SubTitle';
 import Gallery from './Gallery';
 import Introduction from './Introduction';
-// import Location from './Location';
-// import Desc from './Desc';
 import Footer from '../common/Footer';
 
 import "../../scss/common.scss"
@@ -47,7 +45,7 @@ const FamilyParty = () => {
                             <SubTitle/>                    
                             <Gallery propImages={galleryImages} />
                             <div className="context">
-                                <Introduction {...introData} />
+                                <Introduction {...introData} labelType="inquiry" bdNone={true} />
                             </div>
                         </div>
 

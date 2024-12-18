@@ -2,7 +2,7 @@ import React from 'react';
 
 const Buttons2 = ({ propBtn }) => {
   return (
-    <div className="btn-wrap btn-250">
+    <div className="btn-wrap btn-250 weddingBtn">
       {propBtn.map((button) => (
         <button 
           key={button.id}
