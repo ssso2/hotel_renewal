@@ -78,6 +78,12 @@
         // background-color: #faf;
         display: flex;
         line-height: 40px;
+        .active {
+            display: block;
+        }
+        .lypop-wp {
+            top: 20%;
+        }
     }
     .Nfilter {
         // margin-left: 10%;

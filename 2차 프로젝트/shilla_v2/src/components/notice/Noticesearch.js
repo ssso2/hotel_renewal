@@ -5,8 +5,16 @@ import "../../scss/notice.scss";
 import Noticetype from "./Noticetype";
 import Noticebtn from "./Noticebtn";
 
-const Noticesearch = ({ Ntype, setNtype, Ntext, setNtext, handleSearch }) => {
+const Noticesearch = ({
+    Ntype,
+    setNtype,
+    Ntext,
+    setNtext,
+    handleSearch,
+    activepop,
+}) => {
     console.log("분류", Ntype, "검색어", Ntext);
+
     return (
         <div className="Nsearch-wrap">
             <form className="Nform" name="myFrm">
@@ -19,7 +27,7 @@ const Noticesearch = ({ Ntype, setNtype, Ntext, setNtext, handleSearch }) => {
                     placeholder="검색어를 입력해주세요."
                     onChange={e => setNtext(e.target.value)}
                 />
-                <Noticebtn handleSearch={handleSearch} />
+                <Noticebtn handleSearch={handleSearch} activepop={activepop} />
             </form>
         </div>
     );

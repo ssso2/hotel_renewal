@@ -8,9 +8,6 @@
   font-weight: bold;
   color: #333;
 }
-.container .Nboard-nav {
-  font-weight: bold;
-}
 .container .Nboard-nav,
 .container .listwrap {
   height: 50px;
@@ -19,6 +16,11 @@
   text-align: center;
   line-height: 50px;
   background-color: #faf8f4;
+  border-bottom: 1px solid #ddd;
+}
+.container .Nboard-nav {
+  font-weight: bold;
+  border: none;
 }
 .container .listwrap {
   background-color: transparent;
@@ -65,6 +67,12 @@
   justify-content: space-around;
   display: flex;
   line-height: 40px;
+}
+.container .Nform .active {
+  display: block;
+}
+.container .Nform .lypop-wp {
+  top: 20%;
 }
 .container .Nfilter {
   width: 20%;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Findpwchk from "./Findpwchk";
 
 const Findpw_confirm = ({ idchkhandle, iderr, id, confirmbtn }) => {
@@ -11,8 +11,7 @@ const Findpw_confirm = ({ idchkhandle, iderr, id, confirmbtn }) => {
                     <h2 className="my-pw">본인인증</h2>
                     <div className="comment">
                         <div className="input-container">
-                            <form name="myfrm">
-                                <div className="title">아이디확인</div>
+                            <form name="myfrm" className="id_chk">
                                 <div className="input-wrap">
                                     <input
                                         type="text"
@@ -21,7 +20,9 @@ const Findpw_confirm = ({ idchkhandle, iderr, id, confirmbtn }) => {
                                         placeholder="아이디를 입력해주세요."
                                         required
                                     />
-                                    {iderr && <div>{iderr}</div>}
+                                    {iderr && (
+                                        <div className="err">{iderr}</div>
+                                    )}
                                 </div>
                             </form>
                         </div>

@@ -18,19 +18,15 @@ const Findpw = () => {
     const [id, setid] = useState("");
     const [iderr, setiderr] = useState("");
     const [confirmbtn, setconfirmbtn] = useState(false);
+
+    //아이디확인버튼
     const idchkhandle = async e => {
         e.preventDefault();
         const frmdata = new FormData(document.myfrm);
         const mydata = Object.fromEntries(frmdata);
         console.log("폼입력데이터", mydata);
         console.log("아이디불일치", confirmbtn);
-        // if (!mydata.id && !mydata.newpw && !mydata.newpwchk) {
-        //     alert("내용을 모두 입력해주세요.");
-        //     setiderr("아이디를 입력하세요.");
-        //     setpwerr("비밀번호를 입력하세요.");
-        //     setpwchkerr("비밀번호를 확인해주세요.");
-        //     return;
-        // }
+
         if (!mydata.id) {
             console.log("아이디미입력");
             setiderr("아이디를 입력하세요.");
@@ -93,10 +89,6 @@ const Findpw = () => {
                                 iderr={iderr}
                                 setiderr={setiderr}
                                 id={id}
-                                // pwerr={pwerr}
-                                // setpwerr={setpwerr}
-                                // pwchkerr={pwchkerr}
-                                // setpwchkerr={setpwchkerr}
                                 confirmbtn={confirmbtn}
                                 setconfirmbtn={setconfirmbtn}
                             />

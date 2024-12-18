@@ -11,6 +11,7 @@ const Noticelist = () => {
     const [Ntype, setNtype] = useState("all");
     const [Ntext, setNtext] = useState("");
     const navigate = useNavigate();
+    const [activepop, setactivepop] = useState(false);
 
     // 로그인 여부 확인
     const [user, setUser] = useState(null);
@@ -84,8 +85,9 @@ const Noticelist = () => {
                 myData
             );
             console.log("필터데이터", res.data);
-            alert("검색완료");
+            // alert("검색완료");
             setNoticelists(res.data);
+            setactivepop(true);
         } catch (err) {
             console.error("에러메세지", err);
         }
@@ -150,6 +152,7 @@ const Noticelist = () => {
                         Ntext={Ntext}
                         setNtext={setNtext}
                         handleSearch={handleSearch}
+                        activepop={activepop}
                     />
                     {/* 페이지네이션 */}
                     <Pagination

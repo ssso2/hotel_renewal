@@ -20,7 +20,7 @@ const Findpwchk = ({ id }) => {
         }
         if (!mydata.pw) {
             console.log("비밀번호 미입력");
-            setpwerr("임시비밀번호를 입력하세요.");
+            setpwerr("메일로 전송된 임시비밀번호를 입력하세요.");
         } else setpwerr("");
         // if (!mydata.newpw) {
         //     console.log("비밀번호 미확인");
@@ -59,33 +59,41 @@ const Findpwchk = ({ id }) => {
             <div className="comment">
                 <div className="input-container">
                     <form name="myfrm">
-                        <div className="title">임시비밀번호</div>
-                        <div className="input-wrap">
-                            <input
-                                type="password"
-                                id="pw"
-                                name="pw"
-                                // minlength="12"
-                                // maxlength="16"
-                                placeholder="임시비밀번호를 입력하세요."
-                                required
-                            />
-                            {setpwerr && <div>{pwerr}</div>}
+                        <div className="chkwrap">
+                            <span className="title">임시비밀번호</span>
+                            <div className="input-wrap">
+                                <input
+                                    type="password"
+                                    id="pw"
+                                    name="pw"
+                                    // minlength="12"
+                                    // maxlength="16"
+                                    placeholder="임시비밀번호를 입력하세요."
+                                    required
+                                />
+                                {setpwerr && (
+                                    <div className="errmsg">{pwerr}</div>
+                                )}
+                            </div>
                         </div>
-                        <div className="title">새로운비밀번호</div>
-                        <div className="input-wrap">
-                            <input
-                                type="password"
-                                id="pwchk"
-                                name="newpw"
-                                // minlength="12"
-                                // maxLength="16"
-                                placeholder="영문, 숫자, 특수문자를 포함하여 12~16자"
-                                required
-                            />
-                            {setpwchkerr && (
-                                <div id="pwchk-error">{pwchkerr}</div>
-                            )}
+                        <div className="chkwrap">
+                            <span className="title">새로운비밀번호</span>
+                            <div className="input-wrap">
+                                <input
+                                    type="password"
+                                    id="pwchk"
+                                    name="newpw"
+                                    // minlength="12"
+                                    // maxLength="16"
+                                    placeholder="영문, 숫자, 특수문자를 포함하여 12~16자"
+                                    required
+                                />
+                                {setpwchkerr && (
+                                    <div id="pwchk-error" className="errmsg">
+                                        {pwchkerr}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </form>
                 </div>
