@@ -16,6 +16,11 @@
                 width: 50%;
                 margin: 0 auto;
                 gap: 10px;
+                &.weddingBtn{
+                    width: 100%;
+                    gap: 0px;
+                    padding-bottom: 20px;
+                }
             }
         }
 

@@ -155,8 +155,7 @@ function CorporateParty3() {
                             <SubTitle/>
                             <Gallery2 propImages={galleryData} />
                             <div className="context">
-                                <Introduction {...introData} />
-                                <Buttons2 propBtn={btnData}/>
+                                <Introduction {...introData} buttons={<Buttons2 propBtn={btnData} />} />
                                 <div className="info-wrap flex">
                                 {cardData.map((card) => (
                                   <Card key={card.buttonId} {...card} />

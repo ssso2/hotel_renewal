@@ -100,7 +100,7 @@ const Lounge2 = () => {
                             <Gallery propImages={galleryImages} />
                             <div className="context">
                                 <Introduction2 {...introData} />
-                                <InfoList propInfo={infoData} />
+                                <InfoList propInfo={infoData} bdNone={true}/>
                             </div>
                         </div>
                     </div>
