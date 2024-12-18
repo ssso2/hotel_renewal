@@ -67,7 +67,7 @@
   align-items: flex-start;
   justify-content: center;
 }
-.pw-chk .input-container label {
+.pw-chk .input-container .title {
   width: 100px;
   font-size: 16px;
   text-align: right;

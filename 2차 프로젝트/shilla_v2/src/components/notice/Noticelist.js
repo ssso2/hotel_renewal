@@ -12,7 +12,7 @@ const Noticelist = () => {
     const [Ntext, setNtext] = useState("");
     const navigate = useNavigate();
 
-    //////// 로그인 여부 확인
+    // 로그인 여부 확인
     const [user, setUser] = useState(null);
     useEffect(() => {
         const id = sessionStorage.getItem("id");
@@ -30,7 +30,6 @@ const Noticelist = () => {
         navigate("/login");
     }
     console.log("유저", user);
-    //////
 
     //공지사항 전체
     const fetchData = async () => {
@@ -47,9 +46,23 @@ const Noticelist = () => {
         document.title = "공지사항";
         fetchData();
     }, []);
+
+    //조회수
+    // const id = Noticelists.filter(item => item.notice_id);
+    const handleview = async id => {
+        console.log("제목클릭");
+        try {
+            const res = axios.put(`http://localhost:5002/bk/notice/${id}`);
+            console.log("조회수증가 성공");
+            // navigate(`http://localhost:5002/bk/notice/detail/${id}`);
+        } catch (error) {
+            console.error("갔다옴실패", error);
+        }
+    };
+
     //페이지네이션
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5; // 한 페이지에 보여줄 아이템 수
+    const itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const currentlist = Noticelists.slice(
@@ -90,11 +103,6 @@ const Noticelist = () => {
         timeZone: "Asia/Seoul",
     });
 
-    // 공지사항 최대id 계산(...배열전개)
-    const maxId = Math.max(...Noticelists.map(item => item.notice_id));
-
-    console.log("개수", maxId);
-
     return (
         <>
             <div className="container">
@@ -114,7 +122,10 @@ const Noticelist = () => {
                                 <div className="N-option">{data.category}</div>
                                 <div className="N-title">
                                     <Link
-                                        to={`/notice/detail/${data.notice_id}`}
+                                        to={`detail/${data.notice_id}`}
+                                        onClick={() =>
+                                            handleview(data.notice_id)
+                                        }
                                         className="Nlink"
                                     >
                                         {data.title}
@@ -130,6 +141,7 @@ const Noticelist = () => {
                             </li>
                         ))}
                     </ul>
+
                     <Noticesearch
                         Noticelists={Noticelists}
                         setNoticelists={setNoticelists}
@@ -139,15 +151,15 @@ const Noticelist = () => {
                         setNtext={setNtext}
                         handleSearch={handleSearch}
                     />
+                    {/* 페이지네이션 */}
+                    <Pagination
+                        totalItems={Noticelists.length}
+                        itemsPerPage={itemsPerPage}
+                        currentPage={currentPage}
+                        onPageChange={setCurrentPage}
+                    />
                 </div>
             </div>
-            {/* 페이지네이션 */}
-            <Pagination
-                totalItems={Noticelists.length}
-                itemsPerPage={itemsPerPage}
-                currentPage={currentPage}
-                onPageChange={setCurrentPage}
-            />
         </>
     );
 };

@@ -6,6 +6,9 @@ import NoticedetailOther from "./NoticedetailOther";
 const Noticedetail = () => {
     const [Noticedetails, setNoticedetails] = useState([]);
     const { id } = useParams();
+    // 공지사항 최대id 계산(...배열전개)
+    //  const maxId = Math.max(...noticelists.map(item => item.notice_id));
+    //  console.log("마지막아이디", maxId);
 
     const fetchData = async () => {
         try {
@@ -71,7 +74,6 @@ const Noticedetail = () => {
                         <div>{Noticedetails.context}</div>
                     </div>
                 </div>
-                <NoticedetailOther id={id} Noticedetails={Noticedetails} />
                 <div className="button-container notice">
                     <Link to="/notice" className="listgo">
                         목록으로

@@ -113,8 +113,9 @@ import Suite_Presidential from "./components/room/Suite_Presidential";
 import Lounge_ExecutiveLounge from "./components/room/Lounge_ExecutiveLounge";
 
 //notice
-import Noticelist from "./components/notice/Noticelist";
+// import Noticelist from "./components/notice/Noticelist";
 import NoticeTemp from "./components/notice/NoticeTemp";
+import Noticelist from "./components/notice/Noticelist";
 import Noticedetail from "./components/notice/Noticedetail";
 
 //find
@@ -132,22 +133,28 @@ function App() {
                 {/* <Route path="/admin" element={<AdminTemp></AdminTemp>}></Route> */}
                 <Route path="admin/dashboard" element={<AdminDashboard />} />
                 <Route path="admin/room" element={<AdminRoom />} />
-                <Route path="admin/room/detail/:id" element={<AdminRoomDetail />}/>
+                <Route
+                    path="admin/room/detail/:id"
+                    element={<AdminRoomDetail />}
+                />
                 <Route path="admin/member" element={<AdminMember />} />
                 <Route path="admin/member/:id" element={<AdminCont3Detail />} />
-                <Route path="admin/reservation" element={<AdminReservation />} />
+                <Route
+                    path="admin/reservation"
+                    element={<AdminReservation />}
+                />
                 <Route path="admin/notice" element={<AdminNotice />}>
                     <Route path="" element={<AdminNoticeMain />} />
                     <Route path="register" element={<AdminRegister />} />
                     <Route path="modify/:id" element={<AdminModify />} />
                 </Route>
-                <Route path="/admin/cs" element={<AdminCsTemp />} >
+                <Route path="/admin/cs" element={<AdminCsTemp />}>
                     <Route path="" element={<AdminCs />} />
                     <Route path="detail/:num" element={<AdminCsdetail />} />
                     {/* <Route path="modify/:board_id" element={<AdminCsModify />} /> */}
                 </Route>
                 <Route path="admin/sales" element={<AdminSales />} />
-                
+
                 {/* 마이페이지 */}
                 <Route path="/myPage" element={<MyPageTemp></MyPageTemp>}>
                     <Route path="" element={<MyInfo />} />
@@ -196,6 +203,7 @@ function App() {
             </Routes>
 
             {/* 공지사항 */}
+
             <Routes>
                 <Route path="/notice" element={<NoticeTemp />}>
                     <Route path="" element={<Noticelist />} />
