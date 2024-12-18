@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
     // 예약이 겹치지 않는 패키지 조회
     const [availablePackages] = await db.execute(`
-     select t1.*, product_id from (SELECT sp.*
+     select t1.*, product_id, t1.upSystem from (SELECT sp.*
       FROM specialoffer_pkg sp
       WHERE sp.room_id NOT IN (
         SELECT p.room_id

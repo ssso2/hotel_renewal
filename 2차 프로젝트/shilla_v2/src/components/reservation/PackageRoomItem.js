@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
+  const imgurl = `http://localhost:5002/bk/files/${packageData.upSystem}`
 
   const formatDate = (date) => {
     if (!date) return "미정"; // null 또는 undefined 처리
@@ -32,6 +33,7 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
 
 
   console.log("packageData,체크인, 체크아웃 : ",packageData, checkInDate, checkOutDate)
+  console.log("packageData.upSystem :",packageData.upSystem)
 
   const handleReservation = () => {
     if (!memberId) {
@@ -63,7 +65,7 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
           <div className="box-wrap">
               <div className="l-box">
                   <div className="img-wrap">
-                      <img src="img/sub/cabana-01.jpg" alt=""/>
+                  <img src={imgurl} alt="Package Image" />
                   </div>
                   <div className="txt-wrap">
                       <div className="context">
