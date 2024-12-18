@@ -12,8 +12,8 @@ const InfoComp1 = () => {
 
     return (
         <>
-            <h2 class="contact-us">연 락 처</h2>
-            <h3 class="comment">
+            <h2 className="contact-us">연 락 처</h2>
+            <h3 className="comment">
                 {
                     infoText.map((item,index)=>(<p key={index}>{item}</p>))
                 }

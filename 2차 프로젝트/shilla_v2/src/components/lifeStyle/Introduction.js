@@ -1,7 +1,7 @@
-const Introduction = ({ title, description, tel }) => {
+const Introduction = ({ title, description, tel, bdNone=false, pbNone=false }) => {
     return (
         <>
-            <div className="Introduction">
+            <div className={`Introduction ${bdNone ? 'bd-none' : ''} ${pbNone ? 'pb-0' : ''}`}>
                 <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>
                 <p className="txt" dangerouslySetInnerHTML={{ __html: description }}></p>
                 {tel && (  

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const InfoList = ({ propInfo }) => {
+const InfoList = ({ propInfo, bdNone=false }) => {
   return (
-    <ul className="info">
+    <ul className={`info ${bdNone ? 'bd-none' : ''}`}>
       {propInfo.map((item, index) => {
         const formattedContent = item.content.replace(/\n/g, '<br />');
         return (

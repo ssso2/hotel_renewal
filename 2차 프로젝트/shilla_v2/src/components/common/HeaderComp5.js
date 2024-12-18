@@ -11,7 +11,7 @@ const HeaderComp5 = ({gnbMenu}) => {
             {
                 gnbMenu.map((item,index)=>{
                     return  <li key={index} >
-                                <Link to='#self'>{item.title}</Link>
+                                <Link to='javascrip:void();'>{item.title}</Link>
                                 <ul className="m_sub">
                                     {
                                         item.gnbMenu.map((depth2,idx)=>{

@@ -45,11 +45,10 @@ function Shopping() {
                             <SubTitle/>
                             <Gallery2 propImages={galleryImages}/>
                             <div className="context">
-                                <Introduction {...introData} />
+                                <Introduction {...introData} bdNone={true} pbNone={true} />
                                 <div className="info-wrap mt-0">
                                     <Location propLocation={locationData} />
                                 </div>
-
                             </div>
                         </div>
                     </div>

@@ -133,7 +133,7 @@ function OutdoorPool() {
                             <Gallery propImages={galleryImages} />
                             <div className="context">
                                 <Introduction {...introData} />
-                                <div class="info-wrap mt-0">
+                                <div className="info-wrap mt-0">
                                     <Location propLocation = {locationData}/>
                                     <TitDesc propRules={rules} />
                                 </div>

@@ -1,19 +1,19 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import '../../scss/reset.css'
 import '../../scss/common.scss'
 import '../../scss/sub06_03.scss'
 import SecretPage from "./SecretPage";
-import Pagination  from "../sub/Pagination";
+import Pagination from "../sub/Pagination";
 import Noticesearch from "../notice/Noticesearch";
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
 const BoardList = () => {
 
-    const [text,setText] = useState([])
-    const [user,setUser] = useState(null)
+    const [text, setText] = useState([]);
+    const [user, setUser] = useState(null);
 
     const [Ntype, setNtype] = useState("all");
     const [Ntext, setNtext] = useState("");
@@ -24,30 +24,28 @@ const BoardList = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const currentData = text.slice(startIndex, startIndex + itemsPerPage);
 
-    useEffect(()=>{
+    useEffect(() => {
 
         // 로그인 여부 확인
         const id = sessionStorage.getItem("id");
         const name = sessionStorage.getItem("name");
         const grade = sessionStorage.getItem("grade");
         
-        if(id){
-            setUser({'id':id,"name": name,"grade":grade})
-            
-        }else{
-            setUser(null)
+        if(id) {
+            setUser({'id':id, "name": name, "grade":grade});
+        } else {
+            setUser(null);
         }
 
         axios.get(`${bkURL}/board`)
-        .then(res =>{
+        .then(res => {
             setText(res.data);
         })
-        .catch(err=>{
+        .catch(err => {
             console.error('에러발생 : ', err);
         })
 
-    },[])
-
+    }, []);
 
     //검색
     const handleSearch = async e => {
@@ -59,7 +57,7 @@ const BoardList = () => {
         try {
             console.log("폼데이터", myData);
             const res = await axios.put(
-                "http://localhost:5002/bk/board",
+                `${bkURL}/board`, 
                 myData
             );
             console.log("필터데이터", res.data);
@@ -70,14 +68,14 @@ const BoardList = () => {
         }
     };
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    if(!user){
+    if (!user) {
         navigate('/login');
-        return <></>
+        return <></>;
     }
-    console.log('텍스트',text);
-    
+
+    console.log('텍스트', text);
 
     return (
         <div className="container">
@@ -91,22 +89,22 @@ const BoardList = () => {
                 </ul>
 
                 {
-                    currentData.map((list,idx)=>{
+                    currentData.map((list, idx) => {
                         return <ul className="post" key={idx}>
                                     <li className="post-num">{list.board_id}</li>
-                                    <SecretPage  data={list} user={user}/>
-                                    <li className="post-writer">{list.writer_name}</li>
-                                    <li className="post-date">{list.reg_str}</li>
+                                    <SecretPage  data={list} user={user} />
+                                    <li className="post-writer">{list.writer_name}</li> {/* 작성자 추가 */}
+                                    <li className="post-date">{list.reg_str}</li> {/* 작성일 추가 */}
                                 </ul>
                     })
                 }
-
 
                 <div className="btn-wrap type4">
                     <div className="align">
                         <Link to="/board/join" className="btn btn-01">문의하기</Link>
                     </div>
                 </div>
+
                 <div className="search-wrap">
                     <Noticesearch
                         text={text}
@@ -117,21 +115,17 @@ const BoardList = () => {
                         setNtext={setNtext}
                         handleSearch={handleSearch}
                     />
-
                 </div>
 
                 <Pagination
-                totalItems={text.length}
-                itemsPerPage={itemsPerPage}
-                currentPage={currentPage}
-                onPageChange={setCurrentPage}
-            />
+                    totalItems={text.length}
+                    itemsPerPage={itemsPerPage}
+                    currentPage={currentPage}
+                    onPageChange={setCurrentPage}
+                />
             </div>
         </div>
-
     );
 };
 
 export default BoardList;
-
-

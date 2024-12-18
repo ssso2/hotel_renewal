@@ -9,7 +9,7 @@ const MainCont3 = () => {
     const MainCont3Data = [
         {
             delay : '0',
-            link : "../html/sub/sub01_01_04.html",
+            link : "/specialOffer/detail/58",
             img : "/img/main/special-1.jpg",
             title : 'OUR MEMORIES',
             date : '2024.05.01 ~ 2024.11.30',
@@ -17,7 +17,7 @@ const MainCont3 = () => {
         },
         {
             delay : '150',
-            link : "../html/sub/sub01_01_05.html",
+            link : "/specialOffer/detail/75",
             img : "/img/main/special-2.jpg",
             title : 'EVERLASTING MOMENT',
             date : '2024.04.01 ~ 2024.11.30',
@@ -25,7 +25,7 @@ const MainCont3 = () => {
         },
         {
             delay : '300',
-            link : "../html/sub/sub01_01_06.html",
+            link : "/specialOffer/detail/57",
             img : "/img/main/special-3.jpg",
             title : 'SWEET LTTLE CHEF',
             date : '2024.09 ~ 2024.11',

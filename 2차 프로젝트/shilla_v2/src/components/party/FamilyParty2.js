@@ -52,8 +52,8 @@ const FamilyParty2 = () => {
                             <SubTitle/>                    
                             <Gallery propImages={galleryImages} />
                             <div className="context">
-                                <Introduction {...introData} />
-                                <div class="info-wrap">
+                                <Introduction {...introData} labelType="inquiry" />
+                                <div className="info-wrap">
                                     <strong>라일락</strong>
                                     <Location2 propLocation = {locationData}/>
                                 </div>

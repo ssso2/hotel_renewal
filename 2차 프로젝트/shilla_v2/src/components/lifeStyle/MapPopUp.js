@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom';
+
 const MapPopUp = ( {propImage, propBtn} ) => {
 
     return (
-        <div class="lypop" data-lyOpen="pop-map">
-            <div class="lypop-wp mid">
-                <div class="lypop-content">
-                    <div class="lypop-title">
+        <div className="lypop" data-lyOpen="pop-map">
+            <div className="lypop-wp mid">
+                <div className="lypop-content">
+                    <div className="lypop-title">
                         <strong>{propBtn}</strong>
-                        <a href="javascrip:void();" class="lypop-close" data-lyclose="pop-map"><span class="hide">닫기</span></a>
+                        <Link to="javascrip:void();" className="lypop-close" data-lyclose="pop-map"><span className="hide">닫기</span></Link>
                     </div>
-                    <div class="lypop-ct">
-                        <div class="img-wrap">
+                    <div className="lypop-ct">
+                        <div className="img-wrap">
                             <img src={propImage} alt=""/>
                         </div>
                     </div>

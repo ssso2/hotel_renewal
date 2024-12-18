@@ -34,7 +34,7 @@ function CorporateParty() {
         title: "DYNASTY",
         description: `서울신라호텔의 대연회장 다이너스티는 행사 규모 및 성격에 따라 변화 가능한 구조로 영빈관 후정과 연계하여 사용하실 수 있습니다.<br/>
                     다양하게 활용 가능한 백드롭 Batten과 6.2m의 높은 층고, 하이테크 연회 시스템, 숙련된 전문 스텝의 노하우로 최고의 행사를 만들어 드립니다.`,
-        tel: "02-2230-3321",
+        tel: "Tel) 02-2230-3321",
     };
 
     const infoData = [
@@ -113,8 +113,7 @@ function CorporateParty() {
                             <SubTitle/>
                             <Gallery propImages={galleryImages} />
                             <div className="context">
-                                <Introduction {...introData}/>
-                                <Buttons/>
+                                <Introduction {...introData} buttons={<Buttons />} />
                                 <Dynasty data={infoData} />
                             </div>
                         </div>

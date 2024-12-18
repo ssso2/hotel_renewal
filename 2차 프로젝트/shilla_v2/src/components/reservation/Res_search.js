@@ -5,7 +5,7 @@ import DateRangePicker from "./DateRangePicker";
 import PackageRoomItem from "./PackageRoomItem"; // 패키지 컴포넌트
 import OneRoomItem from "./OneRoomItem"; // 객실 컴포넌트
 // import "../../scss/res_search.scss";
-import '../../scss/common.scss'
+import "../../scss/common.scss";
 import "../../scss/reservation.scss";
 
 function Res_search() {
@@ -112,240 +112,200 @@ function Res_search() {
 
   return (
     <div className="container reservation">
-        <section className="reservation">
-            <div className="center">
-                <h2>날짜, 인원 선택</h2>
-                <div className="reservation-wrap">
-                    <div className="date-wrap">
-                        <span className="tit">CHECK IN / OUT</span>
-                        <DateRangePicker
-                          onDateChange={handleDateChange}
-                          showPicker={showPicker}
-                          togglePicker={togglePicker}
-                        />
-                    </div>
-                    <div className="room-wrap" onClick={togglePopup}>
-                        <div className="box adult">
-                            <span className="tit">ADULT</span>
-                            <span className="num">0</span>
-                        </div>
-                        <div className="box children">
-                            <span className="tit">CHILDREN</span>
-                            <span className="num">{confirmedChildrenCount}</span>
-                        </div>
-                    </div>
-                    <button type="button" className="reservation-search-btn" onClick={handleSearch}>검색</button>
-                    <div className="reservation-popup">
-                        <form action="">
-                            <ul className="popup-left">
-                                <li>
-                                    <div className="tit">객실 1</div>
-                                    <div className="count-wrap adult">
-                                        <button type="button" className="btn-down"><span className="blind">숫자 내리기</span></button>
-                                        <p className="adult">성인 <span className="num">0</span></p>
-                                        <button type="button" className="btn-up"><span className="blind">숫자 올리기</span></button>
-                                    </div>
-                                    <div className="count-wrap children">
-                                        <button type="button" className="btn-down"><span className="blind">숫자 내리기</span></button>
-                                        <p className="children">어린이 <span className="num">0</span></p>
-                                        <button type="button" className="btn-up"><span className="blind">숫자 올리기</span></button>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div className="popup-right">
-                                <p className="desc">* 어린이 기준 : 37개월 - 12세</p>
-                                <button type="button">확인</button>
-                            </div>
-                        </form>
-
-                        <button className="close-btn"><span className="blind">닫기</span></button>
-                    </div>
-                </div>
-                <div className="no-select">예약을 원하시는 날짜, 인원을 선택해주세요.</div>
-                <div className="search-results-wrap on">
-                    <div className="tab-wrap">
-                        <ul className="tab">
-                            <li className="on" onClick={() => setTab("package")}>패키지 (<em className="num">{availablePackages.length > 0 ? `${availablePackages.length}` : ""}</em>)</li>
-                            <li  onClick={() => setTab("room")}>객실 (<em className="num">{availableRooms.length > 0 ? `${availableRooms.length}` : ""}</em>)</li>
-
-                        </ul>
-                        <div className="keyword-sorting">
-                            <div className="keyword-wrap">
-                                <button className="keyword-btn">키워드</button>
-                            </div>
-                            <div className="sorting-wrap">
-                                <div className="selected">낮은 가격 순</div>
-                                <ul className="select-sort">
-                                    <li className="on">낮은 가격 순</li>
-                                    <li>높은 가격 순</li>
-                                    <li>최신 순</li>
-                                    <li>인기 순</li>
-                                    <li>추천 순</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="keyword-box">
-                        <form action="">
-                            <div className="top-wrap">
-                                <span>키워드 검색</span>
-                                <button type="reset">선택해제</button>
-                            </div>
-                            <div className="bottom-wrap">
-                                <ul className="chk-boxs">
-                                    <li>
-                                        <input type="checkbox" name="keyword" id="breakfast" value="breakfast"/>
-                                        <label for="breakfast">조식</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="keyword" id="lounge"/>
-                                        <label for="lounge">라운지 혜택</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="keyword" id="special-day"/>
-                                        <label for="special-day">기념일</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="keyword" id="outdoor-pool"/>
-                                        <label for="outdoor-pool">야외수영장</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="keyword" id="adults-3"/>
-                                        <label for="adults-3">성인3인</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="keyword" id="more-than-2day"/>
-                                        <label for="more-than-2day">2박이상</label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="keyword" id="kids"/>
-                                        <label for="kids">키즈</label>
-                                    </li>
-                                </ul>
-                                <button type="button">적용</button>
-                            </div>
-                        </form>
-                    </div>
-                    {/* <div className="tab-cont-wrap">
-                        <ul className="tab-cont package on">
-                            <li>
-                                <div className="box-wrap">
-                                    <div className="l-box">
-                                        <div className="img-wrap">
-                                            <img src="img/sub/cabana-01.jpg" alt=""/>
-                                        </div>
-                                        <div className="txt-wrap">
-                                            <div className="context">
-                                                <span className="badge">추천</span>
-                                                <h3 className="tit">{packageData.offer_name}</h3>
-                                                <p className="desc">{packageData.offer_description}</p>
-                                                <button type="button" className="pop-btn" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="r-box">
-                                        <div className="price"><em></em> 468,000원 ~</div>
-                                        <div className="btn-wrap">
-                                            <button type="button" className="btn">예약하기<i className="fa-solid fa-chevron-down"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul className="room-type-select">
-                                    <li>
-                                        <div className="tit">[standard]Deluxe</div>
-                                        <div className="bed-type">
-                                            <div className="box">
-                                                <div>
-                                                    <input type="radio" name="standars-deluxe" id="standars-deluxe-double"/>
-                                                    <label for="standars-deluxe-double">Double</label>
-                                                </div>
-                                                <button type="button" className="cart-btn" onclick="location.href='../sub/payment.html'">보관함 담기</button>
-                                            </div>
-                                            <div className="box twin">
-                                                <div>
-                                                    <input type="radio" name="standars-deluxe" id="standars-deluxe-twin"/>
-                                                    <label for="standars-deluxe-twin">Twin</label>
-                                                </div>
-                                                <button type="button" className="cart-btn" onclick="location.href='../sub/payment.html'">보관함 담기</button>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul className="tab-cont room">
-                            <li>
-                                <div className="box-wrap">
-                                    <div className="l-box">
-                                        <div className="img-wrap">
-                                            <img src="img/sub/cabana-02.jpg" alt=""/>
-                                        </div>
-                                        <div className="txt-wrap">
-                                            <div className="context">
-                                                <span className="badge">추천</span>
-                                                <h3 className="tit">Member Exclusive</h3>
-                                                <p className="desc">리워즈 회원 전용 객실 할인</p>
-                                                <button type="button" className="pop-btn" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div className="r-box">
-                                        <div className="price"><em></em> 468,000원 ~</div>
-                                        <div className="btn-wrap">
-                                            <button type="button" className="btn">예약하기<i className="fa-solid fa-chevron-down"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul className="room-type-select">
-                                    <li>
-                                        <div className="tit">[standard]Deluxe</div>
-                                        <div className="bed-type">
-                                            <div className="box">
-                                                <div>
-                                                    <input type="radio" name="standars-deluxe" id="standars-deluxe-double"/>
-                                                    <label for="standars-deluxe-double">Double</label>
-                                                </div>
-                                                <button type="button" className="cart-btn" onclick="location.href='../sub/payment.html'">보관함 담기</button>
-                                            </div>
-                                            <div className="box twin">
-                                                <div>
-                                                    <input type="radio" name="standars-deluxe" id="standars-deluxe-twin"/>
-                                                    <label for="standars-deluxe-twin">Twin</label>
-                                                </div>
-                                                <button type="button" className="cart-btn" onclick="location.href='../sub/payment.html'">보관함 담기</button>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    </div> */}
-
-
-                    {/* 선택된 탭에 따라 콘텐츠 표시 */}
-                    <div className="tab-cont-wrap">
-                      {tab === "package" ? (
-                        <div className="tab-cont package on">
-                          {availablePackages.map((pkg) => (
-                            <PackageRoomItem key={pkg.offer_id} packageData={pkg} checkInDate={checkInDate} 
-                            checkOutDate={checkOutDate}/>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="tab-cont room on">
-                          <OneRoomItem rooms={availableRooms} checkInDate={checkInDate} checkOutDate={checkOutDate} />
-                        </div>
-                      )}
-                    </div>
-
-
-
-                </div>
+      <section className="reservation">
+        <div className="center">
+          <h2>날짜, 인원 선택</h2>
+          <div className="reservation-wrap">
+            <div className="date-wrap">
+              <span className="tit">CHECK IN / OUT</span>
+              <DateRangePicker
+                onDateChange={handleDateChange}
+                showPicker={showPicker}
+                togglePicker={togglePicker}
+              />
             </div>
-        </section>
+            <div className="room-wrap" onClick={togglePopup}>
+              <div className="box adult">
+                <span className="tit">ADULT</span>
+                <span className="num">1</span>
+              </div>
+              <div className="box children">
+                <span className="tit">CHILDREN</span>
+                <span className="num">{confirmedChildrenCount}</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="reservation-search-btn"
+              onClick={handleSearch}
+            >
+              검색
+            </button>
+            <div className="reservation-popup">
+              <form action="">
+                <ul className="popup-left">
+                  <li>
+                    <div className="tit">객실 1</div>
+                    <div className="count-wrap adult">
+                      <button type="button" className="btn-down">
+                        <span className="blind">숫자 내리기</span>
+                      </button>
+                      <p className="adult">
+                        성인 <span className="num">0</span>
+                      </p>
+                      <button type="button" className="btn-up">
+                        <span className="blind">숫자 올리기</span>
+                      </button>
+                    </div>
+                    <div className="count-wrap children">
+                      <button type="button" className="btn-down">
+                        <span className="blind">숫자 내리기</span>
+                      </button>
+                      <p className="children">
+                        어린이 <span className="num">0</span>
+                      </p>
+                      <button type="button" className="btn-up">
+                        <span className="blind">숫자 올리기</span>
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+                <div className="popup-right">
+                  <p className="desc">* 어린이 기준 : 37개월 - 12세</p>
+                  <button type="button">확인</button>
+                </div>
+              </form>
+
+              <button className="close-btn">
+                <span className="blind">닫기</span>
+              </button>
+            </div>
+          </div>
+          <div className="no-select">
+            예약을 원하시는 날짜, 인원을 선택해주세요.
+          </div>
+          <div className="search-results-wrap on">
+            <div className="tab-wrap">
+              <ul className="tab">
+                <li
+                  className={tab === "package" ? "on" : ""}
+                  onClick={() => setTab("package")}
+                >
+                  패키지 (
+                  <em className="num">
+                    {availablePackages.length > 0
+                      ? `${availablePackages.length}`
+                      : "0"}
+                  </em>
+                  )
+                </li>
+                <li
+                  className={tab === "room" ? "on" : ""}
+                  onClick={() => setTab("room")}
+                >
+                  객실 (
+                  <em className="num">
+                    {availableRooms.length > 0
+                      ? `${availableRooms.length}`
+                      : "0"}
+                  </em>
+                  )
+                </li>
+              </ul>
+
+              <div className="keyword-sorting">
+                <div className="keyword-wrap">
+                  <button className="keyword-btn">키워드</button>
+                </div>
+                <div className="sorting-wrap">
+                  <div className="selected">낮은 가격 순</div>
+                  <ul className="select-sort">
+                    <li className="on">낮은 가격 순</li>
+                    <li>높은 가격 순</li>
+                    <li>최신 순</li>
+                    <li>인기 순</li>
+                    <li>추천 순</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="keyword-box">
+              <form action="">
+                <div className="top-wrap">
+                  <span>키워드 검색</span>
+                  <button type="reset">선택해제</button>
+                </div>
+                <div className="bottom-wrap">
+                  <ul className="chk-boxs">
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="keyword"
+                        id="breakfast"
+                        value="breakfast"
+                      />
+                      <label htmlFor="breakfast">조식</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="lounge" />
+                      <label htmlFor="lounge">라운지 혜택</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="special-day" />
+                      <label htmlFor="special-day">기념일</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="outdoor-pool" />
+                      <label htmlFor="outdoor-pool">야외수영장</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="adults-3" />
+                      <label htmlFor="adults-3">성인3인</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        name="keyword"
+                        id="more-than-2day"
+                      />
+                      <label htmlFor="more-than-2day">2박이상</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="keyword" id="kids" />
+                      <label htmlFor="kids">키즈</label>
+                    </li>
+                  </ul>
+                  <button type="button">적용</button>
+                </div>
+              </form>
+            </div>
+
+            {/* 선택된 탭에 따라 콘텐츠 표시 */}
+            <div className="tab-cont-wrap">
+              {tab === "package" ? (
+                <div className="tab-cont package on">
+                  {availablePackages.map((pkg) => (
+                    <PackageRoomItem
+                      key={pkg.offer_id}
+                      packageData={pkg}
+                      checkInDate={checkInDate}
+                      checkOutDate={checkOutDate}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="tab-cont room on">
+                  <OneRoomItem
+                    rooms={availableRooms}
+                    checkInDate={checkInDate}
+                    checkOutDate={checkOutDate}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

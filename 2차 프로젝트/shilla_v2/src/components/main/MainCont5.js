@@ -58,8 +58,8 @@ const MainCont5 = () => {
                 if (lypop) {
                     $(this).click(function () {
                         $(".lypop").hide();
-                        // data-lyOpen 속성 값을 가진 요소를 찾고 보이게 함
-                        $("[data-lyOpen='" + lypop + "']").show().focus();
+                        // data-lyopen 속성 값을 가진 요소를 찾고 보이게 함
+                        $("[data-lyopen='" + lypop + "']").show().focus();
                     });
                 } else {
                     console.error("data-lybtn 속성이 비어있습니다.");
@@ -69,7 +69,7 @@ const MainCont5 = () => {
             // data-lyclose을 가진 요소 클릭 시 처리
             $("[data-lyclose]").click(function () {
                 var lypopClose = $(this).attr("data-lyclose");
-                $("[data-lyOpen='" + lypopClose + "']").hide();
+                $("[data-lyopen='" + lypopClose + "']").hide();
                 $("[data-lybtn='" + lypopClose + "']").focus();
             });
         });

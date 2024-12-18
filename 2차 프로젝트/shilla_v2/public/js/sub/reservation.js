@@ -53,11 +53,11 @@ for(let i = 0; i < reservationBtn.length; i++){
     reservationBtn[i].addEventListener("click",function(){
         if(!roomTypeSelect[i].classList.contains("on")){
             roomTypeSelect[i].classList.add("on");
-            reservationBtn[i].innerHTML = '닫기<i class="fa-solid fa-chevron-up"></i>';
+            reservationBtn[i].innerHTML = '닫기<i className="fa-solid fa-chevron-up"></i>';
         }
         else {
             roomTypeSelect[i].classList.remove("on");
-            reservationBtn[i].innerHTML = '예약하기<i class="fa-solid fa-chevron-down"></i>';
+            reservationBtn[i].innerHTML = '예약하기<i className="fa-solid fa-chevron-down"></i>';
         }
     });
 }

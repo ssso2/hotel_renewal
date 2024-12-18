@@ -6,6 +6,22 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
 
+  const roomImages = {
+    "스탠다드 디럭스": "../../img/sub/roomStandardBusiness01.jpg",
+    "비지니스 디럭스":"../../img/sub/roomStandardDelux01.jpg",
+    "베리어프리 비지니스 디럭스":"../../img/sub/roomStandardGrand01.jpg",
+    "그랜드코너 디럭스":"../../img/sub/roomStandardGrand02.jpg",
+    "이그제큐티브 비지니스 디럭스":"../../img/sub/roomExecutiveBusiness02.jpg",
+    "이그제큐티브 그랜드 디럭스":"../../img/sub/roomExecutiveGrand02.jpg",
+    "수페리어 스위트":"../../img/sub/roomSuiteSuperior01.jpg", 
+    "코리안 스위트":"../../img/sub/roomSuiteKorean02.jpg",
+    "코너 스위트":"../../img/sub/roomExecutiveGrand02.jpg",
+    "프리미어 스위트":"../../img/sub/roomSuitePremier01.jpg",
+    "로열 스위트":"../../img/sub/roomSuiteRoyal01.jpg",
+    "신라 스위트":"../../img/sub/roomSuiteShilla01.jpg",
+    "프레지덴셜 스위트":"../../img/sub/roomSuitePresidential08.jpg",
+  };
+
   // 룸 타입별 상태 관리
   const [expandedRoomType, setExpandedRoomType] = useState(null);
 
@@ -54,7 +70,7 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
 
             <div className="l-box">
                 <div className="img-wrap">
-                    <img src="img/sub/cabana-01.jpg" alt=""/>
+                    <img src={roomImages[roomType] || "../../img/sub/roomStandardBusiness01.jpg"} alt={roomType}/>
                 </div>
                 <div className="txt-wrap">
                     <div className="context">
@@ -66,7 +82,7 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
                 </div>
             </div>
             <div className="r-box">
-                <div className="price"><em>{roomList[0]?.day_price}</em>원 ~</div>
+                <div className="price"><em>{roomList[0]?.day_price.toLocaleString()}</em>원</div>
                 <div className="btn-wrap">
                     <button type="button" className="btn" onClick={() => toggleRoomType(roomType)}>{expandedRoomType === roomType ? "숨기기" : "남은 호수 보기"}<i className="fa-solid fa-chevron-down"></i></button>
                 </div>
@@ -74,7 +90,7 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
             </div>
           </div>
           
-          <div class="room-type-list">
+          <div className="room-type-list">
               {expandedRoomType === roomType && (
                 <div className="room-list">
                   {roomList.map((room) => (

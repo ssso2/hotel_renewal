@@ -95,15 +95,15 @@ const Restaurant4 = () => {
       return (
           <>
           <Header/>
-          <div class="container">
-              <div class="center">
-                  <div class="depth3-tab-wrap">
+          <div className="container">
+              <div className="center">
+                  <div className="depth3-tab-wrap">
                       <Tab/>
-                      <div class="tab-contents">
-                          <div class="tab-cont cont3 on">
+                      <div className="tab-contents">
+                          <div className="tab-cont cont3 on">
                               <SubTitle/>
                               <Gallery propImages={galleryImages} />
-                              <div class="context">
+                              <div className="context">
                                   <Introduction {...introData} />
                                   <InfoList propInfo={infoData} />
                                   <Guide {...guideData} />

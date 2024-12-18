@@ -3,17 +3,17 @@ import React from "react";
 const EventDetail1_header = ({ title }) => {
     return (
         <div>
-            <div class="sub-title">
+            <div className="sub-title">
                 <h2>{title}</h2>
-                <ul class="location">
+                <ul className="location">
                     <li>
-                        <a href="/">홈</a>
+                        <Link to="/">홈</Link>
                     </li>
                     <li>
-                        <a href="/specialOffer">스페셜오퍼</a>
+                        <Link to="/specialOffer">스페셜오퍼</Link>
                     </li>
                     <li>
-                        <a href="">이벤트</a>
+                        <Link to="">이벤트</Link>
                     </li>
                 </ul>
             </div>

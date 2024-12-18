@@ -25,7 +25,7 @@ const SubTitle = () => {
             <ul className="location">
                 <li><Link to="/">홈</Link></li>
                 <li><Link to="/room">객실</Link></li>
-                <li><Link to="#self">{breadcrumb}</Link></li>
+                <li><Link to="javascrip:void();">{breadcrumb}</Link></li>
             </ul>
         </div>
     );

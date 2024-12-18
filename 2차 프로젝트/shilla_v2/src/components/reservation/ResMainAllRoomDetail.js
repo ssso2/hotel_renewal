@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation, } from "react-router-dom";
-import PaymentModal from "./PaymentModal";
 import "../../scss/res_detail.scss";
 
 function ResMainAllRoomDetail(props) {
 
   const navigate = useNavigate()
   const location = useLocation(); // 전달된 상태 가져오기
+
+  const roomImages = {
+    "스탠다드 디럭스": "../../img/sub/roomStandardBusiness01.jpg",
+    "비지니스 디럭스":"../../img/sub/roomStandardDelux01.jpg",
+    "베리어프리 비지니스 디럭스":"../../img/sub/roomStandardGrand01.jpg",
+    "그랜드코너 디럭스":"../../img/sub/roomStandardGrand02.jpg",
+    "이그제큐티브 비지니스 디럭스":"../../img/sub/roomExecutiveBusiness02.jpg",
+    "이그제큐티브 그랜드 디럭스":"../../img/sub/roomExecutiveGrand02.jpg",
+    "수페리어 스위트":"../../img/sub/roomSuiteSuperior01.jpg", 
+    "코리안 스위트":"../../img/sub/roomSuiteKorean02.jpg",
+    "코너 스위트":"../../img/sub/roomExecutiveGrand02.jpg",
+    "프리미어 스위트":"../../img/sub/roomSuitePremier01.jpg",
+    "로열 스위트":"../../img/sub/roomSuiteRoyal01.jpg",
+    "신라 스위트":"../../img/sub/roomSuiteShilla01.jpg",
+    "프레지덴셜 스위트":"../../img/sub/roomSuitePresidential08.jpg",
+  };
 
   // const addOneDay = (date) => {
   //   const newDate = new Date(date); // 새로운 날짜 객체 생성
@@ -140,6 +155,7 @@ function ResMainAllRoomDetail(props) {
 
   return (
     <div className="container">
+      <div className="center">
       <section className="payment">
         <div className="center">
           <h2>예약 확인 및 결제</h2>
@@ -147,7 +163,7 @@ function ResMainAllRoomDetail(props) {
             <div className="info">
               <h3>예약 정보</h3>
               <div className="room-img">
-                <img src="../../img/sub/roomStandardDelux01.jpg" alt="" />
+              <img src={roomImages[roomType] || "../../img/sub/roomStandardBusiness01.jpg"} alt={roomType}/>
               </div>
               <ul className="rsv-info">
                 <li className="list">
@@ -184,7 +200,7 @@ function ResMainAllRoomDetail(props) {
                 <li className="list">
                   <h4>객실 요금</h4>
                   <div className="box price">
-                    <span className="rsv-price">{dayPrice}</span>
+                    <span className="rsv-price">{dayPrice.toLocaleString()}</span>
                     <span>원</span>
                   </div>
                 </li>
@@ -421,6 +437,7 @@ function ResMainAllRoomDetail(props) {
         </div>
         {showModal && <PaymentModal message={modalMessage} onClose={closeModal} />}
       </section>
+      </div>
     </div>
   );
 }
