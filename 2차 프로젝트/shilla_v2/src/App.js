@@ -18,7 +18,7 @@ import Info from "./components/info/Info";
 import Location from "./components/location/Location";
 
 // lifestyle
-import LifeStyle from "./components/lifeStyle/Party";
+import LifeStyle from "./components/lifeStyle/LifeStyle";
 import OutdoorPool from "./components/lifeStyle/OutdoorPool";
 import OutdoorPool2 from "./components/lifeStyle/OutdoorPool2";
 import Fitness from "./components/lifeStyle/Fitness";
@@ -31,12 +31,26 @@ import Shopping from "./components/lifeStyle/Shopping";
 import Shopping2 from "./components/lifeStyle/Shopping2";
 
 // wedding & party
+import Party from "./components/party/Party";
 import Wedding from "./components/party/Wedding";
 import Wedding2 from "./components/party/Wedding2";
 import Wedding3 from "./components/party/Wedding3";
 import CorporateParty from "./components/party/CorporateParty";
 import CorporateParty2 from "./components/party/CorporateParty2";
 import CorporateParty3 from "./components/party/CorporateParty3";
+import FamilyParty from "./components/party/FamilyParty";
+import FamilyParty2 from "./components/party/FamilyParty2";
+
+// dining
+import Dining from "./components/dining/Dining";
+import Restaurant from "./components/dining/Restaurant";
+import Restaurant2 from "./components/dining/Restaurant2";
+import Restaurant3 from "./components/dining/Restaurant3";
+import Restaurant4 from "./components/dining/Restaurant4";
+import Restaurant5 from "./components/dining/Restaurant5";
+import Lounge from "./components/dining/Lounge";
+import Lounge2 from "./components/dining/Lounge2";
+import Bakery from "./components/dining/Bakery";
 
 // login
 import Login from "./components/login/Login";
@@ -93,15 +107,18 @@ import Res_detail from "./components/reservation/Res_detail";
 // room
 import Room from "./components/room/Room";
 import Standard from "./components/room/Standard";
+import StandardTemp from "./components/room/StandardTemp";
 import Stand_BusinessDeluxe from "./components/room/Stand_BusinessDeluxe";
 import Stand_BarrierFreeDeluxe from "./components/room/Stand_BarrierFreeDeluxe";
 import Stand_GrandCornerDeluxe from "./components/room/Stand_GrandCornerDeluxe";
 
+import ExecutiveTemp from "./components/room/ExecutiveTemp";
 import Exec_Executive from "./components/room/Exec_Executive";
 import Exec_ExecBusinessDeluxe from "./components/room/Exec_ExecBusinessDeluxe";
 import Exec_GrandDeluxe from "./components/room/Exec_GrandDeluxe";
 
 import Suite from "./components/room/Suite";
+import SuiteTemp from "./components/room/SuiteTemp";
 import Suite_Superior from "./components/room/Suite_Superior";
 import Suite_Korean from "./components/room/Suite_Korean";
 import Suite_Corner from "./components/room/Suite_Corner";
@@ -125,7 +142,7 @@ import EventTemp from "./components/specialoffer/EventTemp";
 
 function App() {
     return (
-        <div>
+        <>
             <Routes>
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
@@ -179,10 +196,8 @@ function App() {
                     <Route path="join" element={<BoardJoin />} />
                     <Route path="modify/:num" element={<BoardModify />} />
                 </Route>
-            </Routes>
 
-            {/* 스페셜오퍼 */}
-            <Routes>
+                {/* 스페셜오퍼 */}
                 <Route path="/specialOffer" element={<SpecialOffer />}>
                     <Route path="" element={<OfferMain />} />
                     <Route path="detail/:id" element={<OfferDetail />} />
@@ -195,24 +210,19 @@ function App() {
                     <Route path="detail/4" element={<EventDetail4 />} />
                     <Route path="detail/5" element={<EventDetail5 />} />
                 </Route>
-            </Routes>
-            {/* 아이디, 비밀번호 찾기 */}
-            <Routes>
+
+                {/* 아이디, 비밀번호 찾기 */}
                 <Route path="/findid" element={<Findid />} />
                 <Route path="/findpw" element={<Findpw />} />
-            </Routes>
 
-            {/* 공지사항 */}
+                {/* 공지사항 */}
 
-            <Routes>
                 <Route path="/notice" element={<NoticeTemp />}>
                     <Route path="" element={<Noticelist />} />
                     <Route path="detail/:id" element={<Noticedetail />} />
                 </Route>
-            </Routes>
 
-            {/* 예약페이지 */}
-            <Routes>
+                {/* 예약페이지 */}
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
                     <Route path="detail" element={<Res_detail />} />
@@ -228,49 +238,62 @@ function App() {
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
                 <Route path="/reserve/:product_id" element={<ResOffer />} />
-            </Routes>
 
-            <Routes>
+                {/* 객실 */}
                 <Route path="/room" element={<Room />} />
-                <Route path="/standard" element={<Standard />} />
 
-                <Route
-                    path="/businessDeluxe"
-                    element={<Stand_BusinessDeluxe />}
-                />
-                <Route
-                    path="/barrierFreeDeluxe"
-                    element={<Stand_BarrierFreeDeluxe />}
-                />
-                <Route
-                    path="/grandCornerDeluxe"
-                    element={<Stand_GrandCornerDeluxe />}
-                />
+                {/* 스탠다드 */}
+                <Route path="/standard" element={<StandardTemp />}>
+                    <Route path="" element={<Standard />} />
+                    <Route
+                        path="businessDeluxe"
+                        element={<Stand_BusinessDeluxe />}
+                    />
+                    <Route
+                        path="barrierFreeDeluxe"
+                        element={<Stand_BarrierFreeDeluxe />}
+                    />
+                    <Route
+                        path="grandCornerDeluxe"
+                        element={<Stand_GrandCornerDeluxe />}
+                    />
+                </Route>
 
-                <Route path="/executive" element={<Exec_Executive />} />
-                <Route
-                    path="/execBusinessDeluxe"
-                    element={<Exec_ExecBusinessDeluxe />}
-                />
-                <Route path="/execGrandDeluxe" element={<Exec_GrandDeluxe />} />
+                {/* 이그제큐티브 */}
+                <Route path="/executive" element={<ExecutiveTemp />}>
+                    <Route path="" element={<Exec_Executive />} />
+                    <Route
+                        path="execBusinessDeluxe"
+                        element={<Exec_ExecBusinessDeluxe />}
+                    />
+                    <Route
+                        path="execGrandDeluxe"
+                        element={<Exec_GrandDeluxe />}
+                    />
+                </Route>
 
-                <Route path="/suite" element={<Suite />} />
-                <Route path="/superior" element={<Suite_Superior />} />
-                <Route path="/korean" element={<Suite_Korean />} />
-                <Route path="/corner" element={<Suite_Corner />} />
-                <Route path="/premier" element={<Suite_Premier />} />
-                <Route path="/royal" element={<Suite_Royal />} />
-                <Route path="/shilla" element={<Suite_Shilla />} />
-                <Route path="/presidential" element={<Suite_Presidential />} />
+                {/* 스위트 */}
+                <Route path="/suite" element={<SuiteTemp />}>
+                    <Route path="" element={<Suite />} />
+                    <Route path="superior" element={<Suite_Superior />} />
+                    <Route path="korean" element={<Suite_Korean />} />
+                    <Route path="corner" element={<Suite_Corner />} />
+                    <Route path="premier" element={<Suite_Premier />} />
+                    <Route path="royal" element={<Suite_Royal />} />
+                    <Route path="shilla" element={<Suite_Shilla />} />
+                    <Route
+                        path="presidential"
+                        element={<Suite_Presidential />}
+                    />
+                </Route>
 
+                {/* 이그제큐티브 라운지 */}
                 <Route
                     path="/executiveLounge"
                     element={<Lounge_ExecutiveLounge />}
                 />
-            </Routes>
 
-            {/* 라이프스타일 */}
-            <Routes>
+                {/* 라이프스타일 */}
                 <Route path="/lifeStyle" element={<LifeStyle />}></Route>
                 <Route path="/outdoorPool" element={<OutdoorPool />}></Route>
                 <Route path="/outdoorPool2" element={<OutdoorPool2 />}></Route>
@@ -285,10 +308,9 @@ function App() {
                 <Route path="/jogging" element={<Jogging />}></Route>
                 <Route path="/shopping" element={<Shopping />}></Route>
                 <Route path="/shopping2" element={<Shopping2 />}></Route>
-            </Routes>
 
-            {/* 웨딩&연회 */}
-            <Routes>
+                {/* 웨딩&연회 */}
+                <Route path="/party" element={<Party />}></Route>
                 <Route path="/wedding" element={<Wedding />}></Route>
                 <Route path="/wedding2" element={<Wedding2 />}></Route>
                 <Route path="/wedding3" element={<Wedding3 />}></Route>
@@ -304,8 +326,21 @@ function App() {
                     path="/corporateParty3"
                     element={<CorporateParty3 />}
                 ></Route>
+                <Route path="/familyParty" element={<FamilyParty />}></Route>
+                <Route path="/familyParty2" element={<FamilyParty2 />}></Route>
+
+                {/* 다이닝 */}
+                <Route path="/dining" element={<Dining />}></Route>
+                <Route path="/restaurant" element={<Restaurant />}></Route>
+                <Route path="/restaurant2" element={<Restaurant2 />}></Route>
+                <Route path="/restaurant3" element={<Restaurant3 />}></Route>
+                <Route path="/restaurant4" element={<Restaurant4 />}></Route>
+                <Route path="/restaurant5" element={<Restaurant5 />}></Route>
+                <Route path="/Lounge" element={<Lounge />}></Route>
+                <Route path="/Lounge2" element={<Lounge2 />}></Route>
+                <Route path="/Bakery" element={<Bakery />}></Route>
             </Routes>
-        </div>
+        </>
     );
 }
 

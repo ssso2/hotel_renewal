@@ -58,16 +58,34 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
   };
   
   return (
-    <div className="package-item">
-      <h4>{packageData.offer_name}</h4>
-      <p>{packageData.offer_description}</p>
-      <p>패키지 기간: {formattedStartDate} ~ {formattedEndDate}</p>
-      <p>가격: {packageData.offer_price}원</p>
-      <p>{packageData.room_id}</p>
-      <div className="package-details">
-        <button onClick={handleReservation}>예약하기</button>
-      </div>
-    </div>
+    <ul className="tab-cont package on">
+      <li>
+          <div className="box-wrap">
+              <div className="l-box">
+                  <div className="img-wrap">
+                      <img src="img/sub/cabana-01.jpg" alt=""/>
+                  </div>
+                  <div className="txt-wrap">
+                      <div className="context">
+                          <span className="badge">추천</span>
+                          <h3 className="tit">{packageData.offer_name}</h3>
+                          <p className="desc">{packageData.offer_description}</p>
+                          <p className="desc">패키지 기간: {formattedStartDate} ~ {formattedEndDate}</p>
+                          <p className="desc">해당 호실 : {packageData.room_id} 호 </p>
+                          <button type="button" className="pop-btn" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                      </div>
+                  </div>
+                  
+              </div>
+              <div className="r-box">
+                  <div className="price"><em></em> {packageData.offer_price.toLocaleString()}원</div>
+                  <div className="btn-wrap">
+                      <button type="button" className="btn" onClick={handleReservation}>예약하기<i className="fa-solid fa-chevron-down"></i></button>
+                  </div>
+              </div>
+          </div>
+      </li>
+  </ul>
   );
 } 
 

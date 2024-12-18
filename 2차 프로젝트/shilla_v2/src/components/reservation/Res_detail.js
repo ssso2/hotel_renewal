@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation, } from "react-router-dom";
-import PaymentModal from "./PaymentModal";
 import "../../scss/res_detail.scss";
 
 function Res_detail(props) {
@@ -186,7 +185,7 @@ function Res_detail(props) {
                   <li className="list">
                     <h4>객실 요금</h4>
                     <div className="box price">
-                      <span className="rsv-price">{offerPrice}</span>
+                      <span className="rsv-price">{offerPrice.toLocaleString()}</span>
                       <span>원</span>
                     </div>
                   </li>

@@ -1,7 +1,6 @@
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import RoomContainer from './RoomContainer';
-import { Outlet } from 'react-router-dom';
 
 function Room() {
     return (
@@ -9,7 +8,6 @@ function Room() {
             <Header />
             <RoomContainer />
             <Footer />
-            <Outlet />
         </>
     );
 }

@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-
+.container.reservation {
+    display: block !important;
+}
 //  예약 폼
 .reservation {
     padding: 120px 0;
@@ -497,6 +499,11 @@
                         height: 100%;
                     }
                 }
+                .price {
+                    margin-bottom: 10px;
+                    font-size: 25px;
+                    font-weight: 500;
+                }
                 .txt-wrap {
                     .badge {
                         display: inline-block;
@@ -511,17 +518,29 @@
                         margin-bottom: 20px;
                         font-size: 22px;
                         font-weight: 500;
+                        &.room {
+                            margin-top: 20px;
+                            font-weight: 600;
+                        }
                     }
                     .desc {
-                        margin: 0 0 20px 0;
+                        margin: 0 0 8px 0;
                         font-size: 16px;
                         color: #333;
                         font-weight: 400;
                         line-height: 1.5;
                     }
                     .pop-btn {
+                        margin-bottom: 10px;
                         font-size: 16px;
+                        display: block;
+
                         &:hover {
+                            text-decoration: underline;
+                            text-underline-position: under;
+                            text-decoration-color: #888;
+                        }
+                        &.room {
                             text-decoration: underline;
                             text-underline-position: under;
                             text-decoration-color: #888;
@@ -538,7 +557,7 @@
                     font-weight: 500;
                 }
                 .btn {
-                    width: 150px;
+                    width: 160px;
                     line-height: 50px;
                     background: #7A6C64;
                     font-size: 16px;
@@ -552,8 +571,17 @@
                         margin-left: 15px;
                     }
                 }   
+                .room-list {
+                    width: 465px;
+                    .room-item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
             }
         }
+
     }
 }
 
@@ -681,6 +709,9 @@
                         width: 255px;
                         height: 170px;
                     }
+                    .price {
+                        font-size: 22px;
+                    }
                 }
                 .r-box {
                     gap: 10px;
@@ -688,7 +719,7 @@
                         font-size: 22px;
                     }
                     .btn {
-                        width: 120px;
+                        // width: 120px;
                     }   
                 }
             }
@@ -1036,7 +1067,7 @@
                         // font-weight: 500;
                     }
                     .btn {
-                        width: 120px;
+                        // width: 120px;
                         // line-height: 50px;
                         // background: #7A6C64;
                         // font-size: 16px;

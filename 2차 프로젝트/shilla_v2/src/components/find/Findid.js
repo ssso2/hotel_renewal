@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import { title, commentid } from "./Finddata";
@@ -19,7 +20,7 @@ const Findid = () => {
                                 <span>아이디 찾기</span>
                             </li>
                             <li className="tab2">
-                                <a href="/findpw">비밀번호 찾기</a>
+                                <Link to="/findpw">비밀번호 찾기</Link>
                             </li>
                         </ul>
 
@@ -49,13 +50,13 @@ const Findid = () => {
                                     <span>endorp*****</span>
                                     <p>입니다.</p>
                                 </div>
-                                <a href="/login">
+                                <Link to="/login">
                                     <input
                                         type="button"
                                         id="login"
                                         value="로그인 하기"
                                     />
-                                </a>
+                                </Link>
                             </div>
                         )}
                     </div>

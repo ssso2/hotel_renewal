@@ -14,7 +14,7 @@ const OfferMain = () => {
             const res = await axios.get(
                 "http://localhost:5002/bk/specialOffer"
             );
-            console.log("갔다옴 : ", res.data);
+            // console.log("갔다옴 : ", res.data);
             setOfferlists(res.data);
             setrOfferlists(res.data); // 추천상품을위한 리스트
         } catch (err) {

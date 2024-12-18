@@ -12,7 +12,7 @@ const MainCont4 = () => {
             text_kor : '스탠다드',
             text_eng : 'Standard',
             type : [
-                { delay : "0", link : '/standard/deluxe', title : "디럭스룸 페이지로 이동" , text : '디럭스'},
+                { delay : "0", link : '/standard', title : "디럭스룸 페이지로 이동" , text : '디럭스'},
                 { delay : "100", link : '/standard/businessDeluxe', title : "비지니스 디럭스룸 페이지로 이동" , text : '비지니스 디럭스'},
                 { delay : "200", link : '/standard/barrierFreeDeluxe', title : "베리어프리 비지니스 디럭스룸 페이지로 이동" , text : '베리어프리 비지니스 디럭스'},
                 { delay : "300", link : '/standard/grandCornerDeluxe', title : "그랜드 코너 디럭스룸 페이지로 이동" , text : '그랜드 코너 디럭스'},
@@ -29,18 +29,18 @@ const MainCont4 = () => {
             ]
         },
         {
-            link : '/sweet',
+            link : '/suite',
             title : "수페리어 스위트 룸 페이지로 이동",
             text_kor : '스위트',
             text_eng : 'Suite',
             type : [
-                { delay : "0", link : '/sweet/superior', title : "수페리어 스위트 룸 페이지로 이동" , text : '수페리어 스위트'},
-                { delay : "100", link : '/sweet/korean', title : "코리안 스위트 룸 페이지로 이동" , text : '코리안 스위트'},
-                { delay : "200", link : '/sweet/corner', title : "코너 스위트 룸 페이지로 이동" , text : '코너 스위트'},
-                { delay : "300", link : '/sweet/premier', title : "프리미어 스위트 룸 페이지로 이동" , text : '프리미어 스위트'},
-                { delay : "400", link : '/sweet/royal', title : "로열 스위트 룸 페이지로 이동" , text : '로열 스위트'},
-                { delay : "500", link : '/sweet/silla', title : "신라 스위트 룸 페이지로 이동" , text : '신라 스위트'},
-                { delay : "600", link : '/sweet/presidential', title : "프레지덴셜 스위트 룸 페이지로 이동" , text : '프레지덴셜 스위트'},
+                { delay : "0", link : '/suite/superior', title : "수페리어 스위트 룸 페이지로 이동" , text : '수페리어 스위트'},
+                { delay : "100", link : '/suite/korean', title : "코리안 스위트 룸 페이지로 이동" , text : '코리안 스위트'},
+                { delay : "200", link : '/suite/corner', title : "코너 스위트 룸 페이지로 이동" , text : '코너 스위트'},
+                { delay : "300", link : '/suite/premier', title : "프리미어 스위트 룸 페이지로 이동" , text : '프리미어 스위트'},
+                { delay : "400", link : '/suite/royal', title : "로열 스위트 룸 페이지로 이동" , text : '로열 스위트'},
+                { delay : "500", link : '/suite/silla', title : "신라 스위트 룸 페이지로 이동" , text : '신라 스위트'},
+                { delay : "600", link : '/suite/presidential', title : "프레지덴셜 스위트 룸 페이지로 이동" , text : '프레지덴셜 스위트'},
             ]
         },
         {

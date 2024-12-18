@@ -6,7 +6,7 @@ const Introduction = ({ title, description, tel }) => {
                 <p className="txt" dangerouslySetInnerHTML={{ __html: description }}></p>
                 {tel && (  
                     <div className="tel">
-                        <span>예약 / 문의</span>
+                        <span>문의전화</span>
                         <p>{tel}</p>
                     </div>
                 )}

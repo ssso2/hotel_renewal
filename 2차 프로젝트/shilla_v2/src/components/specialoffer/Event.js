@@ -4,21 +4,21 @@ import EventMain from "./EventMain";
 const Event = () => {
     return (
         //    <!-- 메인 -->
-        <div class="container">
-            <div class="center">
-                <div class="sub-title">
+        <div className="container">
+            <div className="center">
+                <div className="sub-title">
                     <h2>이벤트</h2>
-                    <ul class="location">
+                    <ul className="location">
                         <li>
-                            <a href="../index.html">홈</a>
+                            <Link to="../index.html">홈</Link>
                         </li>
                         <li>
-                            <a href="../../html/sub/sub01_01.html">
+                            <Link to="../../html/sub/sub01_01.html">
                                 스페셜오퍼
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="">이벤트</a>
+                            <Link to="">이벤트</Link>
                         </li>
                     </ul>
                 </div>

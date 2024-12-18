@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import Tab from "./Tab";
 import SubTitle from './SubTitle';
@@ -14,7 +14,10 @@ import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
 function Wedding() {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     const galleryImages = [
         "../../img/sub/wd-1-01.jpg",
         "../../img/sub/wd-1-02.jpg",
@@ -42,15 +45,15 @@ function Wedding() {
     return (
         <>
         <Header/>
-        <div class="container">
-            <div class="center">
-                <div class="depth3-tab-wrap">
+        <div className="container">
+            <div className="center">
+                <div className="depth3-tab-wrap">
                     <Tab/>
-                    <div class="tab-contents">
-                        <div class="tab-cont cont1 on">
+                    <div className="tab-contents">
+                        <div className="tab-cont cont1 on">
                             <SubTitle />
                             <Gallery propImages={galleryImages} />
-                            <div class="context">
+                            <div className="context">
                                 <Introduction {...introData} />
                                 <Location propLocation = {locationData}/>
                             </div>

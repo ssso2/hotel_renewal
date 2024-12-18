@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../common/Header';
 import Tab from "./Tab";
 import SubTitle from './SubTitle';
@@ -15,6 +15,9 @@ import "../../scss/sub-list.scss"
 import "../../scss/sub-detail.scss"
 
 function Wedding2() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const galleryImages = [
         "../../img/sub/wd-2-01.jpg",
@@ -77,17 +80,17 @@ function Wedding2() {
     return (
         <>
         <Header/>
-        <div class="container">
-            <div class="center">
-                <div class="depth3-tab-wrap">
+        <div className="container">
+            <div className="center">
+                <div className="depth3-tab-wrap">
                     <Tab/>
-                    <div class="tab-contents">
-                        <div class="tab-cont cont1 on">
+                    <div className="tab-contents">
+                        <div className="tab-cont cont1 on">
                             <SubTitle />
                             <Gallery propImages={galleryImages} />
-                            <div class="context">
+                            <div className="context">
                                 <Introduction {...introData} />
-                                <div class="info-wrap">
+                                <div className="info-wrap">
                                     <strong>루비</strong>
                                     <Location propLocation = {locationData}/>
                                     <strong>토파즈</strong>

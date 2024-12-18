@@ -120,5 +120,78 @@ module.exports = upload => {
         }
         
     });
+
+
+    //filter
+    router.put("/", async (req, res) => {
+        var { category, keyword } = req.body;
+
+        var sql = "";
+        const params = [`%${keyword}%`];
+        console.log("board 필터 접근", category, keyword);
+
+        // 기존의 SQL 수정: 작성자(writer_name)와 작성일(reg_str)을 포함한 쿼리로 변경
+        if (category === "all") {
+            sql = `
+                SELECT board.*, 
+                    member.name AS writer_name, 
+                    DATE_FORMAT(board.date, '%Y-%m-%d') AS reg_str 
+                FROM board 
+                JOIN member ON board.member_id = member.member_id 
+                WHERE title LIKE ? OR context LIKE ?
+            `;
+            params.push(`%${keyword}%`);
+        } else if (category === "title") {
+            sql = `
+                SELECT board.*, 
+                    member.name AS writer_name, 
+                    DATE_FORMAT(board.date, '%Y-%m-%d') AS reg_str 
+                FROM board 
+                JOIN member ON board.member_id = member.member_id 
+                WHERE title LIKE ?
+            `;
+        } else if (category === "con") {
+            sql = `
+                SELECT board.*, 
+                    member.name AS writer_name, 
+                    DATE_FORMAT(board.date, '%Y-%m-%d') AS reg_str 
+                FROM board 
+                JOIN member ON board.member_id = member.member_id 
+                WHERE context LIKE ?
+            `;
+        } else if (category === "분류") {
+            sql = `
+                SELECT board.*, 
+                    member.name AS writer_name, 
+                    DATE_FORMAT(board.date, '%Y-%m-%d') AS reg_str 
+                FROM board 
+                JOIN member ON board.member_id = member.member_id 
+                WHERE title LIKE ?
+            `;
+        } else if (category === "공지" || category === "안내" || category === "이벤트") {
+            sql = `
+                SELECT board.*, 
+                    member.name AS writer_name, 
+                    DATE_FORMAT(board.date, '%Y-%m-%d') AS reg_str 
+                FROM board 
+                JOIN member ON board.member_id = member.member_id 
+                WHERE title LIKE ? AND category = ?
+            `;
+            params.push(category);
+        }
+
+        sql += " ORDER BY board_id DESC";
+
+        try {
+            const [ret] = await conn.execute(sql, params);
+            console.log("검색 결과:", ret);
+            res.json(ret);
+        } catch (err) {
+            console.log("sql 실패 : ", err.message);
+            res.status(500).send("db오류");
+        }
+    });
+
+
     return router;
 };

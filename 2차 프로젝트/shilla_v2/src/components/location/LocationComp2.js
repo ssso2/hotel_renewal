@@ -10,12 +10,12 @@ const LocationComp1 = () => {
     const [locationInfo,locationInfoSet] = useState(locationTopInfo)
     return (
        <>
-            <ul class="info">
+            <ul className="info">
                 {
                     locationInfo.map((item,index)=>{
-                        return  <li class="list" key={index}>
+                        return  <li className="list" key={index}>
                                     <h4>{item.tit}</h4>
-                                    <p class="txt">{item.txt}</p>
+                                    <p className="txt">{item.txt}</p>
                                 </li>
                     })
                 }

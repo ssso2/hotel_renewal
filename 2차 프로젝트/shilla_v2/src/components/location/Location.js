@@ -11,13 +11,13 @@ const Location = () => {
     return (
        <>
        <Header/>
-       <div class="container">
-            <div class="center">
-                <div class="depth3-tab-wrap">
-                    <div class="tab-contents">
-                        <div class="tab-cont cont on">
+       <div className="container">
+            <div className="center">
+                <div className="depth3-tab-wrap">
+                    <div className="tab-contents">
+                        <div className="tab-cont cont on">
                             <LocationComp1/>
-                            <div class="context">
+                            <div className="context">
                                 <LocationComp2/>
                                 <LocationComp3/>
                             </div>

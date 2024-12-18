@@ -18,7 +18,7 @@ const MyInquiry = () => {
                     <div className="depth3-tab-wrap">
                         <MyPageTab/>
                         <div id="board-container">
-                            <div class="inquiry-info" id="inquiry-info">
+                            <div className="inquiry-info" id="inquiry-info">
                                 <MyInquiryCont/>
                             </div>
                         </div>
