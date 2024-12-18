@@ -8,8 +8,15 @@ const SubTitle = () => {
     const getSubTitle = () => {
         if (location.pathname == "/standard") {
             return { title: "디럭스", breadcrumb: "디럭스"}
-        } 
+        } else if (location.pathname == "/standard/businessDeluxe") {
+            return { title: "비즈니스 디럭스", breadcrumb: "비즈니스 디럭스"}
+        } else if (location.pathname == "/standard/barrierFreeDeluxe") {
+            return { title: "배리어프리 비즈니스 디럭스", breadcrumb: "배리어프리 비즈니스 디럭스"}
+        } else if (location.pathname == "/standard/grandCornerDeluxe") {
+            return { title: "그랜드 코너 디럭스", breadcrumb: "그랜드 코너 디럭스"}
+        }
     }
+    
     const { title, breadcrumb } = getSubTitle()
     
     return (
