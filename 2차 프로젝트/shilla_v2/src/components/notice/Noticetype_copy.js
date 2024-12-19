@@ -3,23 +3,22 @@ import React, { useState } from "react";
 const Noticetype_copy = ({ Ntype, setNtype }) => {
     const [typeOpen, settypeOpen] = useState(false);
     const typehandle = async e => {
-        const selectType = e.target.value;
-        console.log("이타겟벨류", e.target.value);
+        // const selectType = e.target.getAttribute("data-type");
         settypeOpen(true);
-        setNtype(selectType);
-        console.log("검색타입", Ntype);
+        // setNtype(selectType);
+        // console.log("선택타입", selectType);
     };
-    const type = [
+    const types = [
         {
-            filter: "all",
+            value: "all",
             name: "전체",
         },
         {
-            filter: "title",
+            value: "title",
             name: "제목",
         },
         {
-            filter: "context",
+            value: "context",
             name: "내용",
         },
     ];
@@ -34,13 +33,15 @@ const Noticetype_copy = ({ Ntype, setNtype }) => {
                     {Ntype}
                 </div>
                 <ul className="dropdown-item-type">
-                    {type.map((typedata, i) => {
+                    {types.map((typedata, i) => {
                         return (
                             <li
                                 className="filter-type"
-                                data-type={typedata.filter}
-                                onClick={() => {
-                                    setNtype(typedata.name);
+                                data-type={typedata.value}
+                                onClick={e => {
+                                    setNtype(
+                                        e.target.getAttribute("data-type")
+                                    );
                                     settypeOpen(false);
                                 }}
                                 key={i}
