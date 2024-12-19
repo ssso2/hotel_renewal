@@ -1,3 +1,4 @@
+import Header from  "../common/Header";
 import Tab from "./Tab";
 import SubTitle from "./SubTitle";
 import SwiperGallery from "./SwiperGallery";
@@ -6,6 +7,10 @@ import Popup from "../room/Popup";
 import RoomInfo from "../room/RoomInfo";
 import RoomAmenity from "../room/RoomAmenity";
 import RoomGuide from "../room/RoomGuide";
+import Standard_desc1 from "./Standard_desc1";
+import Standard_desc2 from "./Standard_desc2";
+import Standard_desc3 from "./Standard_desc3";
+import Footer from  "../common/Footer";
 
 import "../../scss/common.scss";
 import "../../scss/reset.css";
@@ -47,27 +52,27 @@ function Standard() {
 
     const roomInfo = [
         {
-            listTitle: "위치",
+            title: "위치",
             description: "서울신라호텔 7~22층"
         },
         {
-            listTitle: "전망",
+            title: "전망",
             description: "남산 또는 시티 뷰"
         },
         {
-            listTitle: "침대",
+            title: "침대",
             description: "더블(킹 사이즈), 트윈"
         },
         {
-            listTitle: "크기",
+            title: "크기",
             description: "36㎡"
         },
         {
-            listTitle: "룸구성",
+            title: "룸구성",
             description: "침실 1, 욕실 1, 화장실 1"
         },
         {
-            listTitle: "문의",
+            title: "문의",
             description: "02-2230-3310"
         }
     ]
@@ -148,9 +153,12 @@ function Standard() {
         {
             title: "취소/변경/노쇼(No-show)",
             description: [
+                
                 "숙박 예정일 1일 전 18시까지는 위약금 없음",
+                "숙박 예정일 1일 전 18시 이후 취소/변경/노쇼 발생 시",
+
                 "성수기(5월~10월, 12월24일~31일) : 최초 1일 숙박 요금의 80%가 위약금으로 부과",
-                "비수기(성수기 외 기간) : 최초 1일 숙박 요금의 10%가 위약금으로 부과"
+                "비수기(성수기 외 기간) : 최초 1일 숙박 요금의 10%가 위약금으로 부과",
             ]
         },
         {
@@ -172,17 +180,10 @@ function Standard() {
                 "중식, 일식 : 점심 12:00~13:30, 저녁 17:30~20:30"
             ]
         },
-        {
-            title: "부대시설",
-            description: [
-                "투숙기간 내 무료 주차 가능",
-                "[피트니스 클럽 이용 안내]",
-                "체육관(Gym) 무료 이용(만 16세 이상 입장 가능)",
-                "실내 수영장 무료 이용(만 13세 이상 입장 가능)",
-                "사우나 이용 시 유료(만 13세 이상 입장 가능)",
-                "피트니스 클럽은 매월 세 번째 수요일 정기휴일"
-            ]
-        }
+    ]
+
+    const locationRoomGuide = [
+        { title: '위치', content: '서울신라호텔 3층' }
     ];
 
     const [room, roomSet] = useState(roomIntro);
@@ -193,6 +194,7 @@ function Standard() {
 
     return (
         <>
+            <Header />
             <div className="container">
                 <div className="center">
                     <div className="depth3-tab-wrap">
@@ -207,12 +209,17 @@ function Standard() {
                                     <RoomInfo roomInfo={roomInfo} />
                                     <RoomAmenity roomAmenity={roomAmenity} />
                                     <RoomGuide roomGuide={roomGuide} />
+                                    {/* <Standard_desc1 /> */}
+                                    {/* <Standard_desc2 /> */}
+                                    {/* <Standard_desc3 /> */}
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

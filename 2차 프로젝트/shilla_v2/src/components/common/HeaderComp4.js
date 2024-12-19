@@ -1,5 +1,6 @@
 import React from "react";
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import HeaderLoginGroup from './HeaderLoginGroup'
 
 const HeaderComp4 = ({user}) => {
 
@@ -11,35 +12,13 @@ const HeaderComp4 = ({user}) => {
         navigate('/login');
     }
 
-    
+
     return (
-        <div className="m_top">
-            {/* <!-- 비로그인시 --> */}
-            <div className="btn-wrap on">
-                <Link to="/join" className="join-btn"><i className="fa-solid fa-user-plus"></i>회원가입</Link>
-                <Link to="/login" className="login-btn">로그인<i className="fa-solid fa-arrow-right-to-bracket"></i> </Link>
+        <>
+            <div className="m_top">
+                <HeaderLoginGroup user={user} logout={logout}/>
             </div>
-            {/* <!-- 로그인시 --> */}
-            <div className="btn-wrap login">
-                <Link to="/mypage" className="user-name-btn" title="마이페이지로 이동">
-                    <i className="fa-regular fa-user"></i>
-                    <p>손주혜<span>님</span></p>
-                </Link>
-                <Link to="/" className="logout-btn">로그아웃
-                    <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                </Link>
-            </div>
-            {/* <!-- 관리자 로그인시 --> */}
-            <div className="btn-wrap admin">
-                <Link to="/admin/dashboard" className="user-name-btn" title="관리자페이지로 이동">
-                    <i className="fa-regular fa-user"></i>
-                    <p>관리자<span>님</span></p>
-                </Link>
-                <Link to="/" className="logout-btn">로그아웃
-                    <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                </Link>
-            </div>
-        </div>
+        </>
     );
 };
 

@@ -1,3 +1,4 @@
+import Header from  "../common/Header";
 import Tab from './Tab';
 import SubTitle from './SubTitle';
 import SwiperGallery from './SwiperGallery';
@@ -5,7 +6,8 @@ import Introduction from './Introduction';
 import Popup from '../room/Popup';
 import RoomInfo from '../room/RoomInfo';
 import RoomAmenity from '../room/RoomAmenity';
-import RoomGuide from '../room/RoomGuide';
+import RoomGuide from './RoomGuide';
+import Footer from "../common/Footer";
 
 import '../../scss/common.scss';
 import '../../scss/reset.css';
@@ -191,6 +193,7 @@ function Stand_BusinessDeluxe() {
 
     return (
         <>
+        <Header />
             <div className="container">
                 <div className="center">
                     <div className="depth3-tab-wrap">
@@ -211,6 +214,7 @@ function Stand_BusinessDeluxe() {
                     </div>
                 </div>
             </div>
+        <Footer />
         </>
     )
 }
