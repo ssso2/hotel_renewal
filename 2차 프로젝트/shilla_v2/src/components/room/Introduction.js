@@ -9,8 +9,7 @@ const Introduction = ( { introItem } ) => {
             <div className="btn-wrap type1">
                 <Link to="/reserve" className="btn btn-02">객실 예약하기</Link>
 
-                <button className="btn btn-01" data-lybtn="pop-eudInfo3">
-                    <span>객실 도면</span></button>
+                <button className="btn btn-01" data-lybtn="pop-eudInfo3"><span>객실 도면</span></button>
             </div>
         </div>
     )
