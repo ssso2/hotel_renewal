@@ -23,14 +23,10 @@ const Noticelist = () => {
         if (id) {
             setUser({ id: id, name: name, grade: grade });
         } else {
-            setUser(null);
+            navigate("/login");
         }
+        console.log("유저", user);
     }, []);
-
-    if (!user) {
-        navigate("/login");
-    }
-    console.log("유저", user);
 
     //공지사항 전체
     const fetchData = async () => {
