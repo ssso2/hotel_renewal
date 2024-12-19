@@ -23,6 +23,8 @@ function Res_search() {
   const [confirmedAdultCount, setConfirmedAdultCount] = useState(0); // 확인버튼을 누를 때의 성인 수
   const [confirmedChildrenCount, setConfirmedChildrenCount] = useState(0); // 확인버튼을 누를 때의 어린이 수
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [sortingOrder, setSortingOrder] = useState(""); // 정렬 상태 (낮은 가격 순 / 높은 가격 순)
+  const [isSortingOpen, setIsSortingOpen] = useState(false); // 정렬 옵션 드롭다운 열기/닫기
 
   const togglePicker = () => setShowPicker(!showPicker);
   // 팝업 상태 토글
@@ -58,6 +60,52 @@ function Res_search() {
       setPopupAdultCount((prev) => prev - 1);
     if (type === "children" && popupChildrenCount > 0)
       setPopupChildrenCount((prev) => prev - 1);
+  };
+
+  // 가격 정렬 함수
+  const sortPackages = (packages) => {
+    return packages.sort((a, b) => {
+      if (sortingOrder === "lowToHigh") {
+        return a.offer_price - b.offer_price;
+      } else if (sortingOrder === "highToLow") {
+        return b.offer_price - a.offer_price;
+      } else {
+        return 0; // 기본 정렬 없음
+      }
+    });
+  };
+
+  const sortRooms = (rooms) => {
+    return rooms.sort((a, b) => {
+      if (sortingOrder === "lowToHigh") {
+        return a.day_price - b.day_price;
+      } else if (sortingOrder === "highToLow") {
+        return b.day_price - a.day_price;
+      } else {
+        return 0; // 기본 정렬 없음
+      }
+    });
+  };
+
+  // 정렬 기준 변경 함수
+  const handleSortChange = (order) => {
+    setSortingOrder(order);
+    setIsSortingOpen(false); // 드롭다운을 닫음
+  };
+
+  useEffect(() => {
+    if (tab === "package") {
+      const sortedPackages = sortPackages([...availablePackages]);
+      setAvailablePackages(sortedPackages);
+    } else if (tab === "room") {
+      const sortedRooms = sortRooms([...availableRooms]);
+      setAvailableRooms(sortedRooms);
+    }
+  }, [sortingOrder, tab]);
+
+  // 드롭다운 토글 함수
+  const toggleSortingDropdown = () => {
+    setIsSortingOpen(!isSortingOpen); // 드롭다운 열기/닫기
   };
 
   // Axios 요청에서 오류 처리
@@ -214,18 +262,37 @@ function Res_search() {
               </ul>
 
               <div className="keyword-sorting">
-                <div className="keyword-wrap">
-                  <button className="keyword-btn">키워드</button>
-                </div>
-                <div className="sorting-wrap">
-                  <div className="selected">낮은 가격 순</div>
-                  <ul className="select-sort">
-                    <li className="on">낮은 가격 순</li>
-                    <li>높은 가격 순</li>
-                    <li>최신 순</li>
-                    <li>인기 순</li>
-                    <li>추천 순</li>
-                  </ul>
+              <div className="sorting-wrap">
+                  <div
+                    className={`selected ${isSortingOpen ? "on" : ""}`}
+                    onClick={toggleSortingDropdown}
+                  >
+                    {sortingOrder === ""
+                      ? "필터 가격 순"
+                      : sortingOrder === "lowToHigh"
+                      ? "낮은 가격 순"
+                      : "높은 가격 순"}
+                  </div>
+                  {isSortingOpen && (
+                    <ul className="select-sort">
+                      <li
+                        className={sortingOrder === "lowToHigh" ? "on" : ""}
+                        onClick={() =>
+                          handleSortChange("lowToHigh", "낮은 가격 순")
+                        }
+                      >
+                        낮은 가격 순
+                      </li>
+                      <li
+                        className={sortingOrder === "highToLow" ? "on" : ""}
+                        onClick={() =>
+                          handleSortChange("highToLow", "높은 가격 순")
+                        }
+                      >
+                        높은 가격 순
+                      </li>
+                    </ul>
+                  )}
                 </div>
               </div>
             </div>

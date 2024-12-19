@@ -51,9 +51,10 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
           offerName: packageData.offer_name,
           roomId: packageData.room_id,
           productId: packageData.product_id,
+          upSystem: packageData.upSystem,
         },
       });
-      console.log(checkInDate, checkOutDate, packageData.offer_price, packageData.offer_name, packageData.room_id, packageData.product_id);
+      console.log(checkInDate, checkOutDate, packageData.offer_price, packageData.offer_name, packageData.room_id, packageData.product_id, packageData.upSystem);
     } else {
       alert("체크인 및 체크아웃 날짜를 선택해주세요");
     }
