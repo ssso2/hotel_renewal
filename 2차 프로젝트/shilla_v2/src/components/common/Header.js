@@ -81,6 +81,7 @@ const Header = () => {
     const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
 
     const [user,setUser] = useState(null)
+    const [winSize,setWinSize] = useState("dt")
 
 
     useEffect(()=>{
@@ -99,6 +100,8 @@ const Header = () => {
     },[])
 
     useEffect(() => {
+        console.log("로그인 useEffect 실행");
+        
 
         const header = document.querySelector("header");
         const gnb = document.querySelector(".gnb");
@@ -166,6 +169,9 @@ const Header = () => {
             window.addEventListener("resize",function(){
                 if(window.innerWidth > 1500){
                     mWrap.classList.remove("move");
+                    setWinSize("dt");
+                }else{
+                    setWinSize("mobile");
                 }
             });
             
@@ -187,7 +193,7 @@ const Header = () => {
         }
         
         
-    },[user]);
+    },[user, winSize]);
 
 
     return (
