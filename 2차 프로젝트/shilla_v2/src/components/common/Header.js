@@ -79,9 +79,9 @@ const Header = () => {
     ];
 
     const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
-
     const [user,setUser] = useState(null)
     const [winSize,setWinSize] = useState("dt")
+    const [winPage,setWinPage] = useState(0)
 
 
     useEffect(()=>{
@@ -101,7 +101,8 @@ const Header = () => {
 
     useEffect(() => {
         console.log("로그인 useEffect 실행");
-        
+
+        if (!user || !winSize) return;
 
         const header = document.querySelector("header");
         const gnb = document.querySelector(".gnb");
@@ -191,7 +192,12 @@ const Header = () => {
                 });
             }
         }
-        
+
+
+        return () => {
+            window.removeEventListener("scroll", () => {});
+            window.removeEventListener("resize", () => {});
+        };
         
     },[user, winSize]);
 
@@ -206,7 +212,7 @@ const Header = () => {
                             <img src="/img/common/logo.png" alt="" />
                         </Link>
                     </h1>
-                    <HeaderComp1 gnbMenu={gnbMenu}/>
+                    <HeaderComp1 gnbMenu={gnbMenu} />
                     <HeaderComp2 user={user}/>
                     
                     {/* <!-- 모바일 햄버거 버튼 --> */}
@@ -216,7 +222,7 @@ const Header = () => {
             {/* <!-- 모바일 메뉴 --> */}
             <div className="m_wrap" >
                 <HeaderComp4 user={user}/>
-                <HeaderComp5 gnbMenu={gnbMenu}/>
+                <HeaderComp5 gnbMenu={gnbMenu} winPage={winPage} setWinPage={setWinPage}/>
             </div>
         </>
     );
