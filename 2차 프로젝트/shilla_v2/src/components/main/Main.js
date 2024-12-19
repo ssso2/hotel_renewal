@@ -149,10 +149,6 @@ const Main = () => {
         }
         
         
-
-        
-        
-        
         // 스와이퍼 API 슬라이드
         var mainSwiper = new Swiper(".cont1 .swiper", {
         spaceBetween: 30,

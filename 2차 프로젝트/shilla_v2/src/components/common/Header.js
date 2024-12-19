@@ -15,15 +15,6 @@ import '../../scss/header.scss'
 const Header = () => {
     const navigate = useNavigate()
 
-    const header = document.querySelector("header");
-    const gnb = document.querySelector(".gnb");
-    const gnbBg = document.querySelector(".gnbbg");
-    const gnb1Depth = document.querySelectorAll(".gnb > li");
-    // 모바일메뉴
-    const mBtn = document.querySelector(".m_btn");
-    const mWrap = document.querySelector(".m_wrap");
-    const depth1 = document.querySelectorAll(".m_gnb > li");
-
     const gnbTitle = [
         {
             link: "/specialOffer",
@@ -91,75 +82,6 @@ const Header = () => {
 
     const [user,setUser] = useState(null)
 
-    // 함수 부분 시작 -----------------------------------------------------------------------------------------------------------------------
-
-    function logout() {
-        sessionStorage.clear() //한번에 다 지우는 방법. removeItem으로 하면 하나씩 지울 수도 있다.
-        alert(`${user.name}님, 로그아웃되었습니다`);
-        navigate('/login');
-    }
-
-    // 스크롤 이벤트 관련 함수
-    // 과거의 스크롤바 위치값
-    let lastScrollTop = 0;
-    function scrollHeader() {
-        // 스크롤바의 위치값
-        let scTop = window.scrollY;
-
-        //스크롤바 내리면 헤더는 사라지고 스크롤바 올리면 헤더 나타남
-        if(scTop == 0){
-            header.classList.add("active");
-            mWrap.style.paddingTop = 80 + "px"
-        }
-        if(scTop > lastScrollTop) {
-            header.classList.remove("active");
-            mWrap.style.paddingTop = 0 + "px"
-        }
-        else{
-            header.classList.add("active");
-            mWrap.style.paddingTop = 80 + "px"
-        }
-        lastScrollTop = scTop;
-    }
-
-    // 화면 사이즈가 1500px보다 작아지면 모바일gnb가 닫힌다.
-    function resizeGo() {
-        if(window.innerWidth > 1500){
-            mWrap.classList.remove("move");
-        }
-    }
-
-    // gnb menu의 각 부분에 마우스 올리고 내렸을 때
-    function gnbMouseOver() {
-        for(let i = 0; i < gnb1Depth.length; i++){
-            gnb1Depth[i].addEventListener("mouseleave",function(){
-                gnb1Depth[i].classList.remove("on");
-            });
-            gnb1Depth[i].addEventListener("mouseover",function(){
-                gnb1Depth[i].classList.add("on");
-            });
-        }
-    }
-
-    // 모바일 GNB
-    function mGnbGo() {
-        for(let i = 0; i < depth1.length; i++){
-            depth1[i].addEventListener("click",()=>{
-                if(depth1[i].classList.contains("on")){
-                    depth1[i].classList.remove("on");
-                }
-                else{
-                    const depth1On = document.querySelectorAll(".m_gnb > li.on");
-                    for(let j = 0; j < depth1On.length; j++){
-                        depth1On[j].classList.remove("on");
-                    }
-                    depth1[i].classList.add("on");
-                }
-            });
-        }
-    }
-
-    // 함수 부분 끝 -----------------------------------------------------------------------------------------------------------------------
 
     useEffect(()=>{
 
@@ -175,31 +97,64 @@ const Header = () => {
         }
 
 
-        if(header && gnb && gnbBg && gnb1Depth && mBtn && mWrap && depth1){
-            // gnb에 마우스를 올렸을 때 동작
-            gnb.addEventListener("mouseover",()=>{
+    },[user])
+
+    useEffect(() => {
+
+        const header = document.querySelector("header");
+        const gnb = document.querySelector(".gnb");
+        const gnbBg = document.querySelector(".gnbbg");
+        const gnb1Depth = document.querySelectorAll(".gnb > li");
+        // 모바일메뉴
+        const mBtn = document.querySelector(".m_btn");
+        const mWrap = document.querySelector(".m_wrap");
+        const depth1 = document.querySelectorAll(".m_gnb > li");
+
+        if(header && gnb && gnbBg && gnb1Depth  && mBtn && mWrap && depth1){
+        
+            gnb.addEventListener("mouseover",function(){
                 gnbBg.classList.add("on");
             });
             
-            // gnb에서 마우스를 내렸을 때 동작
-            gnb.addEventListener("mouseleave",()=>{
+            gnb.addEventListener("mouseleave",function(){
                 gnbBg.classList.remove("on");
             });
 
-
-            // 스크롤 했을 때 header 변경 함수 호출
-            window.addEventListener("scroll", scrollHeader);
-            // 창 크기 1500 이하일 때 모바일 메뉴 닫기 함수 호출
-            window.addEventListener("resize", resizeGo);
-            // gnb menu의 각 부분에 마우스 올리고 내렸을 때
-            gnbMouseOver();
-            // 모바일 GNB
-            mGnbGo();
-
-
+            for(let i = 0; i < gnb1Depth.length; i++){
+                gnb1Depth[i].addEventListener("mouseleave",function(){
+                    gnb1Depth[i].classList.remove("on");
+                });
+                gnb1Depth[i].addEventListener("mouseover",function(){
+                    gnb1Depth[i].classList.add("on");
+                });
+            }
+            
+            // 과거의 스크롤바 위치값
+            let lastScrollTop = 0;
+            
+            window.addEventListener("scroll",function(){
+                // 스크롤바의 위치값
+                let scTop = window.scrollY;
+            
+                //스크롤바 내리면 헤더는 사라지고 스크롤바 올리면 헤더 나타남
+                if(scTop == 0){
+                    header.classList.add("active");
+                    mWrap.style.paddingTop = 80 + "px"
+                }
+                if(scTop > lastScrollTop) {
+                    header.classList.remove("active");
+                    mWrap.style.paddingTop = 0 + "px"
+                }
+                else{
+                    header.classList.add("active");
+                    mWrap.style.paddingTop = 80 + "px"
+                }
+                lastScrollTop = scTop;
+            });
+            
+            
             // 모바일 햄버거 버튼
-            mBtn.addEventListener("click",()=>{
-                
+            mBtn.addEventListener("click",function(){
                 if(!mBtn.classList.contains("move")){
                     mWrap.classList.add("move");
                     mBtn.classList.add("move");
@@ -209,10 +164,32 @@ const Header = () => {
                     mBtn.classList.remove("move");
                 }
             });
-
+            window.addEventListener("resize",function(){
+                console.log(window.innerWidth);
+                if(window.innerWidth > 1500){
+                    mWrap.classList.remove("move");
+                }
+            });
+            
+            // 모바일 GNB
+            for(let i = 0; i < depth1.length; i++){
+                depth1[i].addEventListener("click",function(){
+                    if(depth1[i].classList.contains("on")){
+                        depth1[i].classList.remove("on");
+                    }
+                    else{
+                        const depth1On = document.querySelectorAll(".m_gnb > li.on");
+                        for(let j = 0; j < depth1On.length; j++){
+                            depth1On[j].classList.remove("on");
+                        }
+                        depth1[i].classList.add("on");
+                    }
+                });
+            }
         }
-
-    },[header, gnb, gnbBg, gnb1Depth, mBtn, mWrap, depth1])
+        
+        
+    },[user]);
 
 
     return (
