@@ -4,7 +4,7 @@ import axios from "axios";
 import Header from '../../common/Header'
 import Footer from '../../common/Footer'
 import AdminTabMenu from '../AdminTabMenu'
-import "../../../scss/RoomManDetail.scss";
+import "../../../scss/AdminRoomDetail.scss";
 import '../../../scss/admin.scss'
 
 
