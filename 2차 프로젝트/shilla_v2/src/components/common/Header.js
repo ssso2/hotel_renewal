@@ -96,8 +96,7 @@ const Header = () => {
             setUser(null)
         }
 
-
-    },[user])
+    },[])
 
     useEffect(() => {
 
@@ -165,7 +164,6 @@ const Header = () => {
                 }
             });
             window.addEventListener("resize",function(){
-                console.log(window.innerWidth);
                 if(window.innerWidth > 1500){
                     mWrap.classList.remove("move");
                 }
