@@ -20,6 +20,8 @@ function PaymentPage() {
     roomId,
     productId,
     paySum,
+    adultCount,
+    childrenCount,
   } = location.state || {};
 
   console.log("체크인, 체크아웃 날짜 : ", reservationDate);
@@ -27,6 +29,8 @@ function PaymentPage() {
   console.log("paySum : ", paySum);
   console.log("room_id : ", roomId);
   console.log("product_id : ", productId);
+  console.log("adultCount : ", adultCount);
+  console.log("childrenCount : ", childrenCount);
 
   // 상태
   // const [reservationDate, setReservationDate] = useState("");
@@ -61,8 +65,8 @@ function PaymentPage() {
       startDate: reservationDate.split(" ~ ")[0],
       endDate: reservationDate.split(" ~ ")[1],
       totPrice: paySum,
-      adultCnt: 1,
-      childCnt: 0,
+      adultCnt: adultCount,
+      childCnt: childrenCount,
       cancel: 0, // 기본 취소 여부
     };
 
@@ -147,11 +151,15 @@ function PaymentPage() {
       <form className={styles.paymentForm}>
         <div className={styles.reserveDate}>
           {" "}
-          예약날짜 : <p className={styles.resDate}>{reservationDate}</p>
+          예약날짜 : {reservationDate}
         </div>
         <div className={styles.roomName}>
           {" "}
           룸이름 : {roomName} [{roomId}호]
+        </div>
+        <div className={styles.avaCount}>
+          {" "}
+          이용인원 : 성인: {adultCount} 어린이: {childrenCount}
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="accountNumber">카드번호:</label>

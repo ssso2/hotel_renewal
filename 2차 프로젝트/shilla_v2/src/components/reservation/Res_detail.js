@@ -24,6 +24,8 @@ function Res_detail(props) {
     offerName,
     roomId,
     productId,
+    adultCount,
+    childrenCount
   } = location.state || {};
 
   console.log("Res_search.js에서 받은 데이터");
@@ -33,6 +35,8 @@ function Res_detail(props) {
   console.log("이름 : ", offerName);
   console.log("가격 : ", offerPrice);
   console.log("객실호수 : ", roomId);
+  console.log("adultCount : ", adultCount);
+  console.log("childrenCount :", childrenCount);
   // productId가 없다면 오류 처리
   if (!productId) {
     console.error("productId가 전달x");
@@ -111,14 +115,14 @@ function Res_detail(props) {
   }, [options, offerPrice]);
 
   // 합계 구하는 함수
-  const priceSum = () => {
-    const total =
-      468000 +
-      options.adultBf * 60000 +
-      options.childBf * 38000 +
-      options.extraBed * 66000;
-    setPaySum(total);
-  };
+  // const priceSum = () => {
+  //   const total =
+  //     468000 +
+  //     options.adultBf * 60000 +
+  //     options.childBf * 38000 +
+  //     options.extraBed * 66000;
+  //   setPaySum(total);
+  // };
 
   const handlePayment = () => {
     // 유의사항 체크 여부 확인
@@ -166,6 +170,8 @@ function Res_detail(props) {
         roomId: roomId,
         productId: productId,
         paySum: paySum,
+        adultCount: adultCount,
+        childrenCount: childrenCount,
       },
     });
   };
@@ -198,6 +204,7 @@ function Res_detail(props) {
                       type="text"
                       name="rsv-date"
                       value={`${formattedCheckInDate} ~ ${formattedCheckOutDate}`}
+                      readOnly
                     />
                   </li>
                   <li className="list">
@@ -208,6 +215,7 @@ function Res_detail(props) {
                         type="text"
                         name="rsv-date"
                         value={`${offerName} [${roomId}호]`}
+                        readOnly
                       />
                     </div>
                   </li>
@@ -215,11 +223,11 @@ function Res_detail(props) {
                     <h4>인원수</h4>
                     <div className="box adult">
                       <span>성인</span>
-                      <span className="mem-num">1</span>
+                      <span className="mem-num"> {adultCount}</span>
                     </div>
                     <div className="box child">
                       <span>어린이</span>
-                      <span className="mem-num">0</span>
+                      <span className="mem-num"> {childrenCount}</span>
                     </div>
                   </li>
                   <li className="list">

@@ -2,7 +2,7 @@ import React from "react";
 import '../../scss/packageRoomItem.scss'
 import { useNavigate } from "react-router-dom";
 
-function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
+function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, childrenCount}) {
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
   const imgurl = `http://localhost:5002/bk/files/${packageData.upSystem}`
@@ -52,6 +52,8 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
           roomId: packageData.room_id,
           productId: packageData.product_id,
           upSystem: packageData.upSystem,
+          adultCount: adultCount,
+          childrenCount: childrenCount
         },
       });
       console.log(checkInDate, checkOutDate, packageData.offer_price, packageData.offer_name, packageData.room_id, packageData.product_id, packageData.upSystem);
