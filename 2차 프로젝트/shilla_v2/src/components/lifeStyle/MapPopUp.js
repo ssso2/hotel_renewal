@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const MapPopUp = ( {propImage, propBtn} ) => {
 
     return (
-        <div className="lypop" data-lyOpen="pop-map">
+        <div className="lypop" data-lyopen="pop-map">
             <div className="lypop-wp mid">
                 <div className="lypop-content">
                     <div className="lypop-title">

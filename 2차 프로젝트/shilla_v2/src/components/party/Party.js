@@ -42,7 +42,7 @@ const Party = () => {
             </div>
             <ul className="location">
               <li><Link to="/">홈</Link></li>
-              <li><Link to="javascript:void();">웨딩 & 연회</Link></li>
+              <li><Link to="/party">웨딩 & 연회</Link></li>
             </ul>
           </div>
 

@@ -47,7 +47,7 @@ const LifeStyle = () => {
             </div>
             <ul className="location">
               <li><Link to="/">홈</Link></li>
-              <li><Link to="javascript:void();">라이프스타일</Link></li>
+              <li><Link to="/lifestyle">라이프스타일</Link></li>
             </ul>
           </div>
 
