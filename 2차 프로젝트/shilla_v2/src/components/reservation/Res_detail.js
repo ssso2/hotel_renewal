@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useLocation, } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../../scss/res_detail.scss";
+import axios from "axios";
 
 function Res_detail(props) {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const location = useLocation(); // 전달된 상태 가져오기
+
+  // 상태관리
+  const [upSystemImg, setUpSystemImg] = useState("");
 
   // const addOneDay = (date) => {
   //   const newDate = new Date(date); // 새로운 날짜 객체 생성
@@ -13,17 +16,23 @@ function Res_detail(props) {
   //   return newDate;
   // };
 
-  
   // 전달된 데이터
-  const { checkInDate, checkOutDate, offerPrice, offerName, roomId, productId } = location.state || {};
- 
-  console.log("Res_search.js에서 받은 데이터")
-  console.log("product아이디 : ",productId)
-  console.log("체크인 : ",checkInDate)
-  console.log("체크아웃 : ",checkOutDate)
-  console.log("이름 : ",offerName)
-  console.log("가격 : ",offerPrice)
-  console.log("객실호수 : ",roomId)
+  const {
+    checkInDate,
+    checkOutDate,
+    offerPrice,
+    offerName,
+    roomId,
+    productId,
+  } = location.state || {};
+
+  console.log("Res_search.js에서 받은 데이터");
+  console.log("product아이디 : ", productId);
+  console.log("체크인 : ", checkInDate);
+  console.log("체크아웃 : ", checkOutDate);
+  console.log("이름 : ", offerName);
+  console.log("가격 : ", offerPrice);
+  console.log("객실호수 : ", roomId);
   // productId가 없다면 오류 처리
   if (!productId) {
     console.error("productId가 전달x");
@@ -36,35 +45,59 @@ function Res_detail(props) {
     return newDate;
   };
 
-  const formattedCheckInDate = addOneDay(checkInDate).toISOString().split("T")[0];
-  const formattedCheckOutDate = addOneDay(checkOutDate).toISOString().split("T")[0];
+  const formattedCheckInDate = addOneDay(checkInDate)
+    .toISOString()
+    .split("T")[0];
+  const formattedCheckOutDate = addOneDay(checkOutDate)
+    .toISOString()
+    .split("T")[0];
 
-  console.log("체크인 : ",checkInDate)
-  console.log("체크아웃 : ", checkOutDate)
+  console.log("체크인 : ", checkInDate);
+  console.log("체크아웃 : ", checkOutDate);
 
-  console.log("포멧체크인 : ", formattedCheckInDate)
-  console.log("포멧체크아웃 : ", formattedCheckOutDate)
+  console.log("포멧체크인 : ", formattedCheckInDate);
+  console.log("포멧체크아웃 : ", formattedCheckOutDate);
 
   const [options, setOptions] = useState({
     adultBf: 0, // 성인 조식 수
     childBf: 0, // 어린이 조식 수
     extraBed: 0, // 엑스트라 베드 수
-  })
+  });
   const [paySum, setPaySum] = useState(offerPrice || 0); // 기본 요금 설정
-  const [modalMessage, setModalMessage] = useState("") // 모달 메시지
-  const [showModal, setShowModal] = useState(false) // 모달 표시 여부
-  const [guideChecked, setGuideChecked] = useState(false) // 유의사항 체크 여부
-  const [personalInfoAgree, setPersonalInfoAgree] = useState("") // 개인정부 동의 상태
+  const [modalMessage, setModalMessage] = useState(""); // 모달 메시지
+  const [showModal, setShowModal] = useState(false); // 모달 표시 여부
+  const [guideChecked, setGuideChecked] = useState(false); // 유의사항 체크 여부
+  const [personalInfoAgree, setPersonalInfoAgree] = useState(""); // 개인정부 동의 상태
   const [thirdPartyAgree, setThirdPartyAgree] = useState(""); // 제ㄱ자 제공 동의 상태
-
-  
 
   const updateOption = (type, value) => {
     setOptions((prev) => ({
       ...prev,
-      [type]: Math.max(prev[type] + value, 0) // 0 미만 방지
-    }))
-  }
+      [type]: Math.max(prev[type] + value, 0), // 0 미만 방지
+    }));
+  };
+
+  useEffect(() => {
+    // productId로 upSystem 이미지를 가져오기
+    const fetchUpSystem = async () => {
+      try {
+        const response = await axios.post(
+          "http://localhost:5002/bk/reserve/detail",
+          {
+            productId, // location.state에서 productId를 전달받는다고 가정
+          }
+        );
+        setUpSystemImg(response.data.upSystem);
+        console.log("upSystemImg:", upSystemImg);
+      } catch (error) {
+        console.error("upSystem 이미지를 가져오지 못했습니다:", error);
+      }
+    };
+
+    if (productId) {
+      fetchUpSystem();
+    }
+  }, [productId]);
 
   // options 샅애가 벼경될 때 요금을 다시 계산
   useEffect(() => {
@@ -74,25 +107,28 @@ function Res_detail(props) {
       options.adultBf * 60000 +
       options.childBf * 38000 +
       options.extraBed * 66000;
-    setPaySum(total)
-  }, [options, offerPrice])
-
+    setPaySum(total);
+  }, [options, offerPrice]);
 
   // 합계 구하는 함수
   const priceSum = () => {
     const total =
       468000 +
-      options.adultBf * 60000 + options.childBf * 38000 + options.extraBed * 66000
-    setPaySum(total)
-  }
+      options.adultBf * 60000 +
+      options.childBf * 38000 +
+      options.extraBed * 66000;
+    setPaySum(total);
+  };
 
   const handlePayment = () => {
     // 유의사항 체크 여부 확인
     if (!guideChecked) {
       // setModalMessage("유의사항, 취소 및 환불 규정을 모두 체크를 해주셔야 결제 가능합니다");
       // setShowModal(true);
-      alert("유의사항, 취소 및 환불 규정을 모두 체크를 해주셔야 결제 가능합니다")
-      console.log("유의사항 에러")
+      alert(
+        "유의사항, 취소 및 환불 규정을 모두 체크를 해주셔야 결제 가능합니다"
+      );
+      console.log("유의사항 에러");
       return;
     }
 
@@ -100,8 +136,8 @@ function Res_detail(props) {
     if (personalInfoAgree !== "agree") {
       // setModalMessage("개인정보 수집ㆍ이용 동의해야지만 결제 가능합니다.");
       // setShowModal(true);
-      alert("개인정보 수집ㆍ이용 동의해야지만 결제 가능합니다")
-      console.log("개인정보 수집 에러")
+      alert("개인정보 수집ㆍ이용 동의해야지만 결제 가능합니다");
+      console.log("개인정보 수집 에러");
       return;
     }
 
@@ -109,34 +145,34 @@ function Res_detail(props) {
     if (thirdPartyAgree !== "agree") {
       // setModalMessage("개인정보 제3자 제공에 대한 동의해야 결제가 가능합니다.");
       // setShowModal(true);
-      alert("개인정보 제3자 제공에 대한 동의해야 결제가 가능합니다")
-      console.log("제3자 에러")
+      alert("개인정보 제3자 제공에 대한 동의해야 결제가 가능합니다");
+      console.log("제3자 에러");
       return;
     }
 
-  //      // 결제하기 페이지
-  //      setModalMessage("결제가 완료되었습니다. 이용해 주셔서 감사합니다!");
-  //   setShowModal(true);
-  // }
+    //      // 결제하기 페이지
+    //      setModalMessage("결제가 완료되었습니다. 이용해 주셔서 감사합니다!");
+    //   setShowModal(true);
+    // }
 
-  // PaymentPage로 이동
-  navigate("/reserve/detail/payment", {
-    state: {
-      reservationDate: `${formattedCheckInDate} ~ ${formattedCheckOutDate}`, // 예약 날짜
-      roomName: offerName,  // offerName 객실
-      // adultBf: options.adultBf,
-      // childBf: options.childBf,
-      // extraBed: options.extraBed,
-      roomId: roomId,
-      productId: productId,
-      paySum: paySum,
-    },
-  });
-};
+    // PaymentPage로 이동
+    navigate("/reserve/detail/payment", {
+      state: {
+        reservationDate: `${formattedCheckInDate} ~ ${formattedCheckOutDate}`, // 예약 날짜
+        roomName: offerName, // offerName 객실
+        // adultBf: options.adultBf,
+        // childBf: options.childBf,
+        // extraBed: options.extraBed,
+        roomId: roomId,
+        productId: productId,
+        paySum: paySum,
+      },
+    });
+  };
   // 모달 창 닫기
   const closeModal = () => {
-    setShowModal(false)
-  }
+    setShowModal(false);
+  };
 
   return (
     <div className="container">
@@ -148,7 +184,11 @@ function Res_detail(props) {
               <div className="info">
                 <h3>예약 정보</h3>
                 <div className="room-img">
-                  <img src="../../img/sub/roomStandardDelux01.jpg" alt="" />
+                  {upSystemImg ? (
+                    <img src={upSystemImg} alt="Room Image" />
+                  ) : (
+                    <p>이미지 없음</p>
+                  )}
                 </div>
                 <ul className="rsv-info">
                   <li className="list">
@@ -185,7 +225,9 @@ function Res_detail(props) {
                   <li className="list">
                     <h4>객실 요금</h4>
                     <div className="box price">
-                      <span className="rsv-price">{offerPrice.toLocaleString()}</span>
+                      <span className="rsv-price">
+                        {offerPrice.toLocaleString()}
+                      </span>
                       <span>원</span>
                     </div>
                   </li>
@@ -200,9 +242,9 @@ function Res_detail(props) {
                       <li>
                         기준 인원을 초과하여 투숙 시 추가 인원에 대해 별도의
                         요금이 부과됩니다. 추가 인원에 대한 기본 요금은 성인
-                        60,500원, 어린이 36,300원이며, 객실 타입 및 패키지 혜택에
-                        따라 상이합니다. (성인 기준 : 만 13세 이상, 어린이 기준 :
-                        37개월 이상 ~ 만 12세 이하){" "}
+                        60,500원, 어린이 36,300원이며, 객실 타입 및 패키지
+                        혜택에 따라 상이합니다. (성인 기준 : 만 13세 이상,
+                        어린이 기준 : 37개월 이상 ~ 만 12세 이하){" "}
                       </li>
                       <li>
                         37개월 미만의 유아 동반 시 추가 인원 요금 및 조식은
@@ -219,14 +261,15 @@ function Res_detail(props) {
                         사진이 포함된 신분증을 반드시 제시해 주시기 바랍니다.
                       </li>
                       <li>
-                        본 홈페이지 요금은 할인 적용된 요금이며, 카드사 할인 등의
-                        중복 할인 혜택이 적용되지 않습니다.
+                        본 홈페이지 요금은 할인 적용된 요금이며, 카드사 할인
+                        등의 중복 할인 혜택이 적용되지 않습니다.
                       </li>
                       <li>
-                        어린이 동반 고객을 위한 영유아 용품(아기 욕조, 아기 침대,
-                        어린이 베개 및 아동용 배스 로브와 슬리퍼)은 객실예약과를
-                        통해 사전 요청 가능하며, 이용 상황에 따라 조기 마감될 수
-                        있습니다.(단, 유모차는 현장에서만 대여 가능합니다.)
+                        어린이 동반 고객을 위한 영유아 용품(아기 욕조, 아기
+                        침대, 어린이 베개 및 아동용 배스 로브와 슬리퍼)은
+                        객실예약과를 통해 사전 요청 가능하며, 이용 상황에 따라
+                        조기 마감될 수 있습니다.(단, 유모차는 현장에서만 대여
+                        가능합니다.)
                       </li>
                       <li>
                         대출 요청이 완료된 영유아 용품, 엑스트라 베드는 체크인
@@ -257,8 +300,8 @@ function Res_detail(props) {
                         3번째 수요일 정기 휴무입니다.
                       </li>
                       <li>
-                        체련장은 만 16세 이상, 실내 사우나는 만 13세 이상부터 이용
-                        가능합니다.
+                        체련장은 만 16세 이상, 실내 사우나는 만 13세 이상부터
+                        이용 가능합니다.
                       </li>
                       <li>
                         실내 수영장은 성인 고객 전용 시설로, 만 13세 미만 고객은
@@ -280,15 +323,17 @@ function Res_detail(props) {
                         고객은 성인 보호자의 보호 하에 구명조끼 착용 시에만 이용
                         가능합니다.
                       </li>
-                      <li>실내 및 야외 수영장에서 다이빙은 금지되어 있습니다.</li>
+                      <li>
+                        실내 및 야외 수영장에서 다이빙은 금지되어 있습니다.
+                      </li>
                       <li>
                         성인풀, 키즈풀 및 자쿠지 등의 시설 이용 시 현장 라이프
                         가드 직원의 안내를 받으시기 바랍니다.
                       </li>
                       <li>
-                        호텔 부대시설은 감염병 예방법, 재난 안전법 등 관련 법령 및
-                        방역당국 등의 규제, 조치 사항 등에 따라 사전 고지 없이
-                        이용이 제한되거나 변경될 수 있습니다.
+                        호텔 부대시설은 감염병 예방법, 재난 안전법 등 관련 법령
+                        및 방역당국 등의 규제, 조치 사항 등에 따라 사전 고지
+                        없이 이용이 제한되거나 변경될 수 있습니다.
                       </li>
                     </ul>
                   </div>
@@ -299,10 +344,11 @@ function Res_detail(props) {
                     <ul className="txt">
                       <li>숙박 예정일 1일 전 18시까지는 위약금 없음</li>
                       <li>
-                        숙박 예정일 1일 전 18시 이후 취소/변경/노쇼 발생 시<br />
+                        숙박 예정일 1일 전 18시 이후 취소/변경/노쇼 발생 시
+                        <br />
                         <strong>
-                          * 성수기(5월~10월, 12월24일~31일) : 최초 1일 숙박 요금의
-                          80%가 위약금으로 부과
+                          * 성수기(5월~10월, 12월24일~31일) : 최초 1일 숙박
+                          요금의 80%가 위약금으로 부과
                           <br />* 비수기(성수기 외 기간) : 최초 1일 숙박 요금의
                           10%가 위약금으로 부과
                         </strong>
@@ -345,12 +391,18 @@ function Res_detail(props) {
 
                     <p>
                       ※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가
-                      없을 경우 예약 서비스 제공과 관련된 제반 절차 진행이 불가능
-                      할 수 있음을 알려드립니다.
+                      없을 경우 예약 서비스 제공과 관련된 제반 절차 진행이
+                      불가능 할 수 있음을 알려드립니다.
                     </p>
                   </div>
                   <div className="chk-wrap">
-                    <input type="radio" name="personalInfoAgree" id="personalInfoAgree-agree" value="agree" onChange={(e) => setPersonalInfoAgree(e.target.value)} />
+                    <input
+                      type="radio"
+                      name="personalInfoAgree"
+                      id="personalInfoAgree-agree"
+                      value="agree"
+                      onChange={(e) => setPersonalInfoAgree(e.target.value)}
+                    />
                     <label htmlFor="personalInfoAgree-agree">동의함</label>
                     <input
                       type="radio"
@@ -359,7 +411,9 @@ function Res_detail(props) {
                       value="disagree"
                       onChange={(e) => setPersonalInfoAgree(e.target.value)}
                     />
-                    <label htmlFor="personalInfoAgree-disagree">동의하지 않음</label>
+                    <label htmlFor="personalInfoAgree-disagree">
+                      동의하지 않음
+                    </label>
                   </div>
                 </div>
                 <div className="suggest-agr">
@@ -384,7 +438,13 @@ function Res_detail(props) {
                     </p>
                   </div>
                   <div className="chk-wrap">
-                    <input type="radio" name="thirdPartyAgree" id="thirdPartyAgree-agree" value="agree" onChange={(e) => setThirdPartyAgree(e.target.value)} />
+                    <input
+                      type="radio"
+                      name="thirdPartyAgree"
+                      id="thirdPartyAgree-agree"
+                      value="agree"
+                      onChange={(e) => setThirdPartyAgree(e.target.value)}
+                    />
                     <label htmlFor="thirdPartyAgree-agree">동의함</label>
                     <input
                       type="radio"
@@ -393,7 +453,9 @@ function Res_detail(props) {
                       value="disagree"
                       onChange={(e) => setThirdPartyAgree(e.target.value)}
                     />
-                    <label htmlFor="thirdPartyAgree-disagree">동의하지 않음</label>
+                    <label htmlFor="thirdPartyAgree-disagree">
+                      동의하지 않음
+                    </label>
                   </div>
                 </div>
               </div>
@@ -404,23 +466,24 @@ function Res_detail(props) {
                   <span>원</span>
                 </div>
                 <div className="btn-wrap type1">
-                  <button
-                    className="btn btn-03"
-                    onClick={() => navigate(-1)}>
+                  <button className="btn btn-03" onClick={() => navigate(-1)}>
                     이전으로 돌아가기
                   </button>
                   <button
                     className="btn btn-01"
                     id="pay"
                     data-lybtn="pop-alert"
-                    onClick={handlePayment}>
+                    onClick={handlePayment}
+                  >
                     결제하기
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          {showModal && <PaymentModal message={modalMessage} onClose={closeModal} />}
+          {showModal && (
+            <PaymentModal message={modalMessage} onClose={closeModal} />
+          )}
         </section>
       </div>
     </div>
