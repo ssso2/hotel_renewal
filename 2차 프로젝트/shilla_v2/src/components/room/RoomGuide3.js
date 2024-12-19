@@ -1,10 +1,10 @@
 import React from 'react';
 
-const RoomGuide1 = ({ roomGuide1 }) => {
+const RoomGuide3 = ({ roomGuide3 }) => {
     return (
         <div className="guide">
-            <h3>객실 이용 안내</h3>
-            {roomGuide1.map((item, index) => (
+            <h3>더 이그제큐티브 라운지 혜택</h3>
+            {roomGuide3.map((item, index) => (
                 <div key={index} className="list">
                     <h4>{item.title}</h4>
                     <div className="txt-wrap">
@@ -15,7 +15,7 @@ const RoomGuide1 = ({ roomGuide1 }) => {
                                 ))}
                             </ul>
                         ) : (
-                            <p className="txt">{item.text}</p>
+                            <p className="txt">{item.description}</p>
                         )}
                     </div>
                 </div>
@@ -24,4 +24,4 @@ const RoomGuide1 = ({ roomGuide1 }) => {
     );
 };
 
-export default RoomGuide1;
+export default RoomGuide3;

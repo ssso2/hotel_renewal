@@ -1,4 +1,6 @@
 import React from 'react';
+import Standard_desc3 from './Standard_desc3';
+import Standard_desc4 from './Standard_desc4';
 
 const RoomGuide2 = ({ roomGuide2 }) => {
     return (
@@ -20,6 +22,8 @@ const RoomGuide2 = ({ roomGuide2 }) => {
                     </div>
                 </div>
             ))}
+            <Standard_desc4 />
+            <Standard_desc3 />
         </div>
     );
 };

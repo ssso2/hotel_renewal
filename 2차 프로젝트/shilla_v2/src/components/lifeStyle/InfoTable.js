@@ -9,17 +9,17 @@ const InfoTable = ({propData}) => {
                         <caption>Cabana 이용 안내</caption>
                         <colgroup>
                             {propData.headers.map((data, index)=> (
-                                <col />
+                                <col key={index} />
                             ))}
                         </colgroup>
                         <thead>
                             <tr>
                                 {propData.headers.map((head, index)=> (
-                                    <th scope="col">{head}</th>
+                                    <th key={index} scope="col">{head}</th>
                                 ))} 
                             </tr>
                         </thead>
-                        <tbody> {/* 어렵 */}
+                        <tbody> 
                             {propData.rows.map((row, rowIndex) => (
                                 <tr key={rowIndex}>
                                     <th scope="row">{row.구분}</th>
@@ -34,7 +34,6 @@ const InfoTable = ({propData}) => {
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
                 <p className="desc">카바나 요금 외 입장료는 별도 부과됩니다. (시즌별 입장료 상이)</p>
             </div>

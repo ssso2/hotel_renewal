@@ -7,9 +7,9 @@ import Popup from "../room/Popup";
 import RoomInfo from "../room/RoomInfo";
 import RoomAmenity from "../room/RoomAmenity";
 import RoomGuide from "../room/RoomGuide";
-import Standard_desc1 from "./Standard_desc1";
-import Standard_desc2 from "./Standard_desc2";
-import Standard_desc3 from "./Standard_desc3";
+// import Standard_desc1 from "./Standard_desc1";
+// import Standard_desc2 from "./Standard_desc2";
+// import Standard_desc3 from "./Standard_desc3";
 import Footer from  "../common/Footer";
 
 import "../../scss/common.scss";
@@ -181,10 +181,6 @@ function Standard() {
             ]
         },
     ]
-
-    const locationRoomGuide = [
-        { title: '위치', content: '서울신라호텔 3층' }
-    ];
 
     const [room, roomSet] = useState(roomIntro);
 

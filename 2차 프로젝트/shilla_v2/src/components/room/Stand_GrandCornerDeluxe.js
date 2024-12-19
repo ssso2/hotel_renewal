@@ -6,7 +6,7 @@ import Introduction from "./Introduction";
 import Popup from "../room/Popup";
 import RoomInfo from "../room/RoomInfo";
 import RoomAmenity from "../room/RoomAmenity";
-import RoomGuide from "./RoomGuide2";
+import RoomGuide from "./RoomGuide";
 import Footer from  "../common/Footer";
 
 import "../../scss/common.scss";
@@ -20,7 +20,7 @@ import "../../scss/swiperStyles.css";
 
 import React, { useState } from "react";
 
-function Stand_GrandCornerDeluxe(props) {
+function Stand_GrandCornerDeluxe() {
 
     const galleryImgs = [
         "../../img/sub/roomStandardGrand01.jpg",
@@ -39,7 +39,11 @@ function Stand_GrandCornerDeluxe(props) {
         {
             title: "그랜드 코너 디럭스",
             description: "스탠다드 객실 중 가장 큰 규모를 자랑하며 2개의 창문을 통해 들어오는 자연 채광이 여유로움을 더하는 공간입니다.",
-            subDescription: "글로벌 럭셔리 호텔 디자이너 피터 리미디오스가 디자인한 '시대를 아우르는 모던함'을 만나보십시오. 요트 콘셉트로 구성한 프라이빗 바와 세계적인 수준의 침구류와 함께 생애 최고의 휴식을 경험해보시기 바랍니다."
+            subDescription: [
+                "글로벌 럭셔리 호텔 디자이너 피터 리미디오스가 디자인한 '시대를 아우르는 모던함'을 만나보십시오.",
+                <br />,
+                "요트 콘셉트로 구성한 프라이빗 바와 세계적인 수준의 침구류와 함께 생애 최고의 휴식을 경험해보시기 바랍니다."
+            ]
         }
     ];
 
@@ -176,16 +180,6 @@ function Stand_GrandCornerDeluxe(props) {
                 "베이비 크립(무료)",
             ]
         },
-        {
-            title: "투숙기간 내 무료 주차 가능",
-            description: [
-                "[피트니스 클럽 이용 안내]",
-                "체육관(Gym) 무료 이용(만 16세 이상 입장 가능)",
-                "실내 수영장 무료 이용(만 13세 이상 입장 가능)",
-                "사우나 이용 시 유료(만 13세 이상 입장 가능)",
-                "피트니스 클럽은 매월 세 번째 수요일 정기휴일",
-            ]
-        }
     ]
 
     const [room, roomSet] = useState(roomIntro);
