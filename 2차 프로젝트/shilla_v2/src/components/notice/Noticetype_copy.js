@@ -2,12 +2,11 @@ import React, { useState } from "react";
 
 const Noticetype_copy = ({ Ntype, setNtype }) => {
     const [typeOpen, settypeOpen] = useState(false);
-    const typehandle = async e => {
-        // const selectType = e.target.getAttribute("data-type");
-        settypeOpen(true);
-        // setNtype(selectType);
-        // console.log("선택타입", selectType);
-    };
+    // const typehandle = e => {
+    //     setNtype(typedata.name);
+    //     settypeOpen(false);
+    // };
+
     const types = [
         {
             value: "all",
@@ -27,8 +26,8 @@ const Noticetype_copy = ({ Ntype, setNtype }) => {
             <div className={`dropdown type ${typeOpen ? "on" : ""}`}>
                 <div
                     className="typebox"
-                    data-type="all"
-                    onClick={() => typehandle(prev => !prev)}
+                    data-type="전체"
+                    onClick={() => settypeOpen(prev => !prev)}
                 >
                     {Ntype}
                 </div>
@@ -37,11 +36,9 @@ const Noticetype_copy = ({ Ntype, setNtype }) => {
                         return (
                             <li
                                 className="filter-type"
-                                data-type={typedata.value}
-                                onClick={e => {
-                                    setNtype(
-                                        e.target.getAttribute("data-type")
-                                    );
+                                data-type={typedata.name}
+                                onClick={() => {
+                                    setNtype(typedata.name);
                                     settypeOpen(false);
                                 }}
                                 key={i}

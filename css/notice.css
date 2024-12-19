@@ -84,6 +84,7 @@
   cursor: pointer;
 }
 .container .Nform .typebox {
+  background-color: #fff;
   width: 100%;
   border: 1px solid #ddd;
 }

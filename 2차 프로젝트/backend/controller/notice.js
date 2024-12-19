@@ -43,12 +43,12 @@ module.exports = upload => {
         var sql = "";
         const params = [`%${keyword}%`];
         console.log("notice 필터 접근", category, keyword);
-        if (category === "all") {
+        if (category === "전체") {
             sql = "select * from notice where title like ? or context like ?";
             params.push(`%${keyword}%`);
-        } else if (category === "title") {
+        } else if (category === "제목") {
             sql = " select * from notice where title like ?";
-        } else if (category === "con") {
+        } else if (category === "내용") {
             sql = " select * from notice where context like ?";
         } else if (category === "분류") {
             sql = "select * from notice where title like ?";

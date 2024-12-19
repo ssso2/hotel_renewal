@@ -8,7 +8,8 @@ import Pagination from "../sub/Pagination";
 
 const Noticelist = () => {
     const [Noticelists, setNoticelists] = useState([]);
-    const [Ntype, setNtype] = useState("all");
+    // const [Ntype, setNtype] = useState("all");
+    const [Ntype, setNtype] = useState("전체");
     const [Ntext, setNtext] = useState("");
     const navigate = useNavigate();
 
@@ -74,8 +75,9 @@ const Noticelist = () => {
     const handleSearch = async e => {
         e.preventDefault();
 
-        const frmData = new FormData(document.myFrm);
-        const myData = Object.fromEntries(frmData);
+        // const frmData = new FormData(document.myFrm);
+        // const myData = Object.fromEntries(frmData);
+        const myData = { category: Ntype, keyword: Ntext };
 
         try {
             console.log("폼데이터", myData);
@@ -86,7 +88,6 @@ const Noticelist = () => {
             console.log("필터데이터", res.data);
             alert("검색완료");
             setNoticelists(res.data);
-            setactivepop(true);
         } catch (err) {
             console.error("에러메세지", err);
         }
