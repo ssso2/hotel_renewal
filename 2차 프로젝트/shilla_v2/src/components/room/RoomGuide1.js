@@ -1,12 +1,10 @@
 import React from 'react';
-import Standard_desc2 from './Standard_desc2';
-import Standard_desc3 from './Standard_desc3';
 
-const RoomGuide = ({ roomGuide }) => {
+const RoomGuide1 = ({ roomGuide1 }) => {
     return (
         <div className="guide">
             <h3>객실 이용 안내</h3>
-            {roomGuide.map((item, index) => (
+            {roomGuide1.map((item, index) => (
                 <div key={index} className="list">
                     <h4>{item.title}</h4>
                     <div className="txt-wrap">
@@ -22,10 +20,8 @@ const RoomGuide = ({ roomGuide }) => {
                     </div>
                 </div>
             ))}
-            <Standard_desc2 />
-            <Standard_desc3 />
         </div>
     );
 };
 
-export default RoomGuide;
+export default RoomGuide1;

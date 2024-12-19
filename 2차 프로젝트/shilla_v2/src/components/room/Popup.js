@@ -2,20 +2,14 @@ import React from 'react';
 
 const Popup = ( { images } ) => {
 
-    console.log("팝업 작동 콘솔 내용1");
-
     const Closepop = (e) => {
         e.preventDefault()
-        console.log("팝업 작동 콘솔 내용12");
     }
 
     return (
         
         // 팝업 외부 클래스, data-lyopen 팝업을 여는 키
         <div className="lypop" data-lyopen="pop-eudInfo3">
-            {
-                console.log("팝업 작동 콘솔 내용123")
-            }
             <div className="lypop-wp big">
                 <div className="lypop-content">
                     <div className="lypop-title">
