@@ -8,8 +8,8 @@ import Pagination from "../sub/Pagination";
 
 const Noticelist = () => {
     const [Noticelists, setNoticelists] = useState([]);
-    // const [Ntype, setNtype] = useState("all");
-    const [Ntype, setNtype] = useState("전체");
+    const [Ntype, setNtype] = useState("all");
+    // const [Ntype, setNtype] = useState("전체");
     const [Ntext, setNtext] = useState("");
     const navigate = useNavigate();
 

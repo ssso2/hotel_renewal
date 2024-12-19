@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "../../scss/notice.scss";
 import Noticetype from "./Noticetype";
 import Noticebtn from "./Noticebtn";
-import Noticetype_copy from "./Noticetype_copy";
 
 const Noticesearch = ({ Ntype, setNtype, Ntext, setNtext, handleSearch }) => {
     console.log("분류", Ntype, "검색어", Ntext);
@@ -12,7 +11,7 @@ const Noticesearch = ({ Ntype, setNtype, Ntext, setNtext, handleSearch }) => {
     return (
         <div className="Nsearch-wrap">
             <form className="Nform" name="myFrm">
-                <Noticetype_copy Ntype={Ntype} setNtype={setNtype} />
+                <Noticetype Ntype={Ntype} setNtype={setNtype} />
                 <input
                     className="search-bar"
                     type="text"
