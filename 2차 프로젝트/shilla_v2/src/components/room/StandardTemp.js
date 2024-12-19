@@ -5,9 +5,9 @@ import { Outlet } from 'react-router-dom';
 function StandardTemp() {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <Outlet />
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }
