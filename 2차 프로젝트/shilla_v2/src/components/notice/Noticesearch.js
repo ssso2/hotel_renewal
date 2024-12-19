@@ -4,21 +4,15 @@ import { Link } from "react-router-dom";
 import "../../scss/notice.scss";
 import Noticetype from "./Noticetype";
 import Noticebtn from "./Noticebtn";
+import Noticetype_copy from "./Noticetype_copy";
 
-const Noticesearch = ({
-    Ntype,
-    setNtype,
-    Ntext,
-    setNtext,
-    handleSearch,
-    activepop,
-}) => {
+const Noticesearch = ({ Ntype, setNtype, Ntext, setNtext, handleSearch }) => {
     console.log("분류", Ntype, "검색어", Ntext);
 
     return (
         <div className="Nsearch-wrap">
             <form className="Nform" name="myFrm">
-                <Noticetype Ntype={Ntype} setNtype={setNtype} />
+                <Noticetype_copy Ntype={Ntype} setNtype={setNtype} />
                 <input
                     className="search-bar"
                     type="text"
@@ -27,7 +21,7 @@ const Noticesearch = ({
                     placeholder="검색어를 입력해주세요."
                     onChange={e => setNtext(e.target.value)}
                 />
-                <Noticebtn handleSearch={handleSearch} activepop={activepop} />
+                <Noticebtn handleSearch={handleSearch} />
             </form>
         </div>
     );

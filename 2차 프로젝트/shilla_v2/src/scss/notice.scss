@@ -78,12 +78,82 @@
         // background-color: #faf;
         display: flex;
         line-height: 40px;
-        .active {
+        //셀렉트박스
+        .dropdown {
+            width: 130px;
+            display: inline-block;
+            position: relative;
+        }
+        .sortbox,
+        .typebox {
+            appearance: none;
+            height: 30px;
+            background: url(../../public/img/icon/icn_collps01.png) no-repeat
+                right 10px center;
+            background-size: 10px auto;
+            padding-left: 8px;
+            line-height: 2;
+            cursor: pointer;
+        }
+        .typebox {
+            width: 100%;
+            border: 1px solid #ddd;
+            // border-bottom: 1px solid #ddd;
+        }
+        .sortbox {
+            border: 1px solid #ddd;
+        }
+        .dropdown-item-sort,
+        .dropdown-item-type {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            z-index: 1;
+            width: 130px;
+            list-style: none;
+            position: absolute;
+            display: none;
+        }
+        .dropdown.on > .dropdown-item-sort,
+        .dropdown.on > .dropdown-item-type {
             display: block;
         }
-        .lypop-wp {
-            top: 20%;
+        .dropdown.on > .sortbox,
+        .dropdown.on > .typebox {
+            background-image: url(../../public/img/icon/icn_collps02.png);
         }
+
+        .dropdown-item-sort > li,
+        .dropdown-item-type > li {
+            padding: 10px 0 8px 8px;
+            height: 30px;
+            line-height: 1;
+        }
+
+        .dropdown-item-sort > li:hover,
+        .dropdown-item-type > li:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        ////// 셀렉트박스 수정???
+        // .typebox {
+        //     appearance: none; /* 기본 드롭다운 화살표 제거 */
+        //     -moz-appearance: none;
+        //     -webkit-appearance: none;
+        //     border: none;
+        //     outline: none;
+        //     width: 100%;
+        //     height: 30px; /* 기존 높이 맞춤 */
+        //     background: url(../../public/img/icon/icn_collps01.png) no-repeat right 10px
+        //         center;
+        //     background-size: 10px auto;
+        //     padding-left: 8px;
+        //     line-height: 2;
+        //     cursor: pointer;
+        //     border-bottom: 1px solid #ddd;
+        // }
+        /////////
     }
     .Nfilter {
         // margin-left: 10%;
