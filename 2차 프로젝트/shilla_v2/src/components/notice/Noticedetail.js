@@ -71,7 +71,6 @@ const Noticedetail = () => {
                         <div>{Noticedetails.context}</div>
                     </div>
                 </div>
-                <NoticedetailOther id={id} Noticedetails={Noticedetails} />
                 <div className="button-container notice">
                     <Link to="/notice" className="listgo">
                         목록으로

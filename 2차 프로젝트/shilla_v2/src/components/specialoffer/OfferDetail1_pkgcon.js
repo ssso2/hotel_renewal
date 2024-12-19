@@ -10,7 +10,7 @@ const OfferDetail1_pkgcon = ({ img }) => {
                 "[수페리어 스위트] 1,400,000원 ~",
                 "[프리미어 스위트] 2,000,000원 ~",
             ],
-            link: "../sub/sub02.html",
+            link: "/room",
         },
         {
             title: "기간",

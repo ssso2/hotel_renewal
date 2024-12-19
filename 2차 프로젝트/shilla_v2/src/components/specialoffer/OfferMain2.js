@@ -22,14 +22,6 @@ const OfferMain2 = ({ setOfferlists }) => {
         kids: 0,
     });
 
-    // 데이트레인지피커 상태 초기화
-    // const handleReset = e => {
-    //     e.preventDefault();
-    //     setRange([{ startDate: null, endDate: null }]);
-    //     console.log("리셋눌림");
-    // };
-    // const [filtered, setfiltered] = useState();
-
     //검색버튼
     const handleSearch = async e => {
         // e.preventDefault();

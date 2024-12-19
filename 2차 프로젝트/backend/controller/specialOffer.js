@@ -87,7 +87,7 @@ module.exports = upload => {
         //날짜있을경우 조건처리
         // select * from specialoffer_pkg where  start_date< "2024-12-31" and end_date> "2024-12-10" and end_date< "2024-12-31"
         if (sqlData.date_range && sqlData.date_range.trim() !== "") {
-            whereSql += "start_date< ? and end_date> ? and end_date< ? and";
+            whereSql += "start_date< ? and end_date> ? and end_date<= ? and";
             whereData.push(sqlData.end_date);
             whereData.push(sqlData.start_date);
             whereData.push(sqlData.end_date);

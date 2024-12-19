@@ -12,7 +12,7 @@ const OfferMain3 = ({ offer }) => {
                 <span className="totalnum">{offer.length}</span>
                 <span>개 상품</span>
             </div>
-            <div
+            {/* <div
                 className={`dropdown sort ${sortOpen ? "on" : ""} `}
                 onClick={() => setsortOpen(prev => !prev)}
             >
@@ -30,7 +30,7 @@ const OfferMain3 = ({ offer }) => {
                         );
                     })}
                 </ul>
-            </div>
+            </div> */}
         </div>
     );
 };
