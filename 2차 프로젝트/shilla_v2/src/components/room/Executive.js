@@ -1,12 +1,13 @@
 import Header from  "../common/Header";
-import Tab3 from "./Tab3";
+import Tab2 from "./Tab2";
 import SubTitle from "./SubTitle";
 import SwiperGallery from "./SwiperGallery";
 import Introduction from "./Introduction";
-import Popup from "../room/Popup";
-import RoomInfo from "../room/RoomInfo";
-import RoomAmenity from "../room/RoomAmenity";
-import RoomGuide2 from "../room/RoomGuide2";
+import Popup from "./Popup";
+import RoomInfo from "./RoomInfo";
+import RoomAmenity from "./RoomAmenity";
+// import RoomGuide from "./RoomGuide";
+import RoomGuide2 from "./RoomGuide2";
 import Footer from  "../common/Footer";
 
 import "../../scss/common.scss";
@@ -20,31 +21,34 @@ import "../../scss/swiperStyles.css";
 
 import React, { useState } from "react";
 
-function Suite_Presidential() {
+function Executive() {
+
     const galleryImgs = [
-        "../../img/sub/roomSuitePresidential01.jpg",
-        "../../img/sub/roomSuitePresidential02.jpg",
-        "../../img/sub/roomSuitePresidential03.jpg",
-        "../../img/sub/roomSuitePresidential04.jpg",
+        "../../img/sub/roomExecutiveBusiness01.jpg",
+        "../../img/sub/roomExecutiveBusiness02.jpg",
+        "../../img/sub/roomExecutiveBusiness03.jpg",
+        "../../img/sub/roomExecutiveBusiness04.jpg",
     ];
 
     const roomFloorImages = [
         {
-            title: "South",
-            src: "../../img/sub/roomSuitePresidentialFloor01.jpg",
+            title: "이그제큐티브 비즈니스 디럭스 더블",
+            src: "../../img/sub/roomExecutiveBusinessFloor01.jpg",
         },
         {
-            title: "North",
-            src: "../../img/sub/roomSuitePresidentialFloor02.jpg",
+            title: "이그제큐티브 비즈니스 디럭스 트윈",
+            src: "../../img/sub/roomExecutiveBusinessFloor02.jpg",
         },
     ];
 
     const roomIntro = [
         {
-            title: "프레지덴셜 스위트",
-            description: "프레지덴셜 스위트는 서울신라호텔 최고의 객실로 전세계 국빈과 VIP 고객만을 위한 전용 객실입니다.",
+            title: "이그제큐티브 비즈니스 디럭스",
+            description: "여유로운 휴식 공간이 돋보이는 비즈니스 디럭스 룸에 더 이그제큐티브 라운지 서비스를 더한 객실입니다.",
             subDescription: [
-                "고풍스러운 프렌치 디자인의 North Wing 객실과 모던한 스타일 South Wing 객실로 2가지 타입의 프레지덴셜 스위트가 있습니다."
+                "글로벌 럭셔리 호텔 디자이너 피터 리미디오스가 디자인한 '시대를 아우르는 모던함'을 만나보십시오.",
+                <br />,
+                "요트 콘셉트로 구성한 프라이빗 바와 세계적인 수준의 침구류와 함께 생애 최고의 휴식을 경험해보시기 바랍니다."
             ]
         }
     ];
@@ -52,7 +56,7 @@ function Suite_Presidential() {
     const roomInfo = [
         {
             title: "위치",
-            description: "서울신라호텔 22층",
+            description: "서울신라호텔 7~22층",
         },
         {
             title: "전망",
@@ -60,19 +64,15 @@ function Suite_Presidential() {
         },
         {
             title: "침대",
-            description: "더블(킹 사이즈)"
+            description: "더블(킹 사이즈), 트윈"
         },
         {
             title: "크기",
-            description: "290㎡ / 380㎡"
+            description: "43㎡"
         },
         {
             title: "룸구성",
-            description: [
-                "North Wing : 침실 2, 욕실 2, 사우나 1, 화장실 3, 응접실 1, 집무실 1, 다이닝 룸 1",
-                <br />,
-                "South Wing : 침실 2, 욕실 2, 화장실 3, 응접실 1, 집무실 1, 다이닝 룸 1",
-            ]
+            description: "침실 1, 욕실 1, 화장실 1"
         },
         {
             title: "문의",
@@ -136,7 +136,6 @@ function Suite_Presidential() {
                 "슬리퍼(남, 여)",
                 "우산",
                 "구두 클리너",
-                "비상용 휴대 조명기기",
             ]
         }
     ]
@@ -158,15 +157,10 @@ function Suite_Presidential() {
         {
             title: "취소/변경/노쇼(No-show)",
             description: [
-                "[성수기(5월~10월, 12월24일~31일)]",
-                "숙박 예정일 7일 전 18시까지는 위약금 없음",
-                "숙박 예정일 7일 전 18시 이후 취소/변경 발생 시, 최초 1일 숙박 요금의 10%가 위약금으로 부과",
-                "숙박 예정일 5일 전 18시 이후 취소/변경 발생 시, 최초 1일 숙박 요금의 30%가 위약금으로 부과",
-                "숙박 예정일 3일 전 18시 이후 취소/변경 발생 시, 최초 1일 숙박 요금의 50%가 위약금으로 부과",
-                "숙박 예정일 1일 전 18시 이후 취소/변경 발생 시, 최초 1일 숙박 요금의 80%가 위약금으로 부과",
-                "[비수기(성수기 외 기간)]",
-                "숙박 예정일 2일 전 18시까지는 위약금 없음",
-                "숙박 예정일 2일 전 18시 이후 취소/변경/노쇼 발생 시, 최초 1일 숙박 요금의 10%가 위약금으로 부과",
+                "숙박 예정일 1일 전 18시까지는 위약금 없음",
+                "숙박 예정일 1일 전 18시 이후 취소/변경/노쇼 발생 시",
+                "성수기(5월~10월, 12월24일~31일) : 최초 1일 숙박 요금의 80%가 위약금으로 부과",
+                "비수기(성수기 외 기간) : 최초 1일 숙박 요금의 10%가 위약금으로 부과",
             ]
         },
         {
@@ -196,7 +190,7 @@ function Suite_Presidential() {
             <div className="container">
                 <div className="center">
                     <div className="depth3-tab-wrap">
-                        <Tab3 />
+                        <Tab2 />
                         <div className="tab-contents">
                             <div className="tab-cont cont1 on">
                                 <SubTitle />
@@ -218,4 +212,4 @@ function Suite_Presidential() {
     )
 }
 
-export default Suite_Presidential;
+export default Executive;

@@ -113,13 +113,10 @@ import Stand_BarrierFreeDeluxe from "./components/room/Stand_BarrierFreeDeluxe";
 import Stand_GrandCornerDeluxe from "./components/room/Stand_GrandCornerDeluxe";
 
 import ExecutiveTemp from "./components/room/ExecutiveTemp";
-import Exec_Executive from "./components/room/Exec_Executive";
-import Exec_ExecBusinessDeluxe from "./components/room/Exec_ExecBusinessDeluxe";
+import Executive from "./components/room/Executive";
 import Exec_GrandDeluxe from "./components/room/Exec_GrandDeluxe";
-
 import Suite from "./components/room/Suite";
 import SuiteTemp from "./components/room/SuiteTemp";
-import Suite_Superior from "./components/room/Suite_Superior";
 import Suite_Korean from "./components/room/Suite_Korean";
 import Suite_Corner from "./components/room/Suite_Corner";
 import Suite_Premier from "./components/room/Suite_Premier";
@@ -242,15 +239,13 @@ function App() {
                 
                 {/* 이그제큐티브 */}
                 <Route path="/executive" element={<ExecutiveTemp />} >
-                    <Route path="" element={<Exec_Executive />} />
-                    <Route path="execBusinessDeluxe" element={<Exec_ExecBusinessDeluxe />}/>
+                    <Route path="" element={<Executive />} />
                     <Route path="execGrandDeluxe" element={<Exec_GrandDeluxe />} />
                 </Route>
                 
                 {/* 스위트 */}
                 <Route path="/suite" element={<SuiteTemp />} >
                     <Route path="" element={<Suite />} />
-                    <Route path="superior" element={<Suite_Superior />} />
                     <Route path="korean" element={<Suite_Korean />} />
                     <Route path="corner" element={<Suite_Corner />} />
                     <Route path="premier" element={<Suite_Premier />} />

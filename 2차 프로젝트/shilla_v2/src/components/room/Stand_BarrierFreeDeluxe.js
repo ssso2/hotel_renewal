@@ -6,7 +6,7 @@ import Introduction from './Introduction';
 import Popup from '../room/Popup';
 import RoomInfo from '../room/RoomInfo';
 import RoomAmenity from '../room/RoomAmenity';
-import RoomGuide from './RoomGuide2';
+import RoomGuide from './RoomGuide';
 import Footer from  "../common/Footer";
 
 import '../../scss/common.scss';
@@ -171,24 +171,6 @@ function Stand_BarrierFreeDeluxe() {
                 "객실에서 즐기실 수 있는 다양한 룸서비스 메뉴가 준비되어 있습니다.",
                 "식사 및 음료 : 24시간 서비스",
                 "중식, 일식 : 점심 12:00~13:30, 저녁 17:30~20:30",
-            ]
-        },
-        {
-            title: "부대시설",
-            description: [
-                "투숙기간 내 무료 주차 가능",
-
-                "[피트니스 클럽 이용 안내]",
-                "체육관(Gym) 무료 이용(만 16세 이상 입장 가능)",
-                "실내 수영장 무료 이용(만 13세 이상 입장 가능)",
-                "사우나 이용 시 유료(만 13세 이상 입장 가능)",
-                "피트니스 클럽은 매월 세 번째 수요일 정기휴일",
-            ]
-        },
-        {
-            description: [
-                "실내 수영장은 주말 및 공휴일에는 성인 보호자의 보호 하에 만 13세 미만인 고객이 이용 가능하며, 신장 140cm 미만인 고객은 성인 보호자의 보호 하에 구명조끼 착용 시 이용 가능합니다.",
-                "피트니스 클럽은 매월 세 번째 수요일 정기휴일입니다.",
             ]
         },
     ]

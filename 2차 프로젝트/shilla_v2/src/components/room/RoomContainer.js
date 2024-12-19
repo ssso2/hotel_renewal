@@ -48,7 +48,7 @@ const RoomContainer = () => {
             type: '이그제큐티브',
             RoomBox: [
                 {
-                    link: "/executive/execBusinessDeluxe",
+                    link: "/executive",
                     img: "/img/sub/roomExecutiveBusiness01.jpg",
                     title: '이그제큐티브 비즈니스 디럭스',
                     subTitle: '휴식이 필요한 비즈니스 고객을 위한 공간',
@@ -69,7 +69,7 @@ const RoomContainer = () => {
             type: '스위트',
             RoomBox: [
                 {
-                    link: "/suite/superior",
+                    link: "/suite",
                     img: "/img/sub/roomSuiteCorner01.jpg",
                     title: '수페리어 스위트',
                     subTitle: '영빈관이 내려다 보이는 아늑하고 모던한 공간',
