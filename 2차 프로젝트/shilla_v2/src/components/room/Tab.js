@@ -16,15 +16,15 @@ const Tab = () => {
     return (
         <ul className="tab">
             <li className={`tab1 ${location.pathname === '/standard' ? 'on' : ''}`}>
-                <Link to="/standard/deluxe">디럭스</Link>
+                <Link to="/standard">디럭스</Link>
             </li>
-            <li className={`tab2 ${location.pathname === '/businessDeluxe' ? 'on' : ''}`}>
+            <li className={`tab2 ${location.pathname === '/standard/businessDeluxe' ? 'on' : ''}`}>
                 <Link to="/standard/businessDeluxe">비즈니스 디럭스</Link>
             </li>
-            <li className={`tab3 ${location.pathname === '/barrierFreeDeluxe' ? 'on' : ''}`}>
+            <li className={`tab3 ${location.pathname === '/standard/barrierFreeDeluxe' ? 'on' : ''}`}>
                 <Link to="/standard/barrierFreeDeluxe">배리어프리 비즈니스 디럭스</Link>
             </li>
-            <li className={`tab4 ${location.pathname === '/grandCornerDeluxe' ? 'on' : ''}`}>
+            <li className={`tab4 ${location.pathname === '/standard/grandCornerDeluxe' ? 'on' : ''}`}>
                 <Link to="/standard/grandCornerDeluxe">그랜드 코너 디럭스</Link>
             </li>
         </ul>
