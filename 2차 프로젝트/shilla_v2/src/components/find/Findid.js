@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import { title, commentid } from "./Finddata";
@@ -29,7 +29,7 @@ const Findid = () => {
                                 <h2 className="lost-id">{title[0]}</h2>
                                 <div className="comment">
                                     {commentid.map((des, i) => (
-                                        <p>{des}</p>
+                                        <p key={i}>{des}</p>
                                     ))}
                                 </div>
                                 <button

@@ -42,6 +42,7 @@
         }
 
         .content {
+            white-space: pre-line !important;
             &.ncontent {
                 box-sizing: border-box;
                 height: 100%;
@@ -54,9 +55,15 @@
                 border-radius: 10px;
                 margin-top: 10px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
                 .imgstyle {
                     width: 60%;
                     height: auto;
+                }
+                .Ntext {
+                    padding-right: 20px;
+                    min-width: 400px;
+                    max-width: 800px;
                 }
             }
         }
@@ -83,7 +90,6 @@
         }
     }
 }
-
 .Nother {
     box-sizing: border-box;
     height: 100px;

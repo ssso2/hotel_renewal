@@ -40,6 +40,9 @@ const Noticedetail = () => {
         hour12: false,
         timeZone: "Asia/Seoul",
     });
+    const context = Noticedetails.context || ""; // 빈문자열 경우의 수 처리
+    console.log("내용", typeof context);
+
     return (
         <div className="container board">
             <div className="center">
@@ -68,7 +71,13 @@ const Noticedetail = () => {
                     </div>
                     <div className="content ncontent">
                         {imgurl && <img src={imgurl} className="imgstyle" />}
-                        <div>{Noticedetails.context}</div>
+                        <div className="Ntext">
+                            {/* {Noticedetails.context} */}
+                            {/* 줄바꿈해결 */}
+                            {context.split("\\n").map((paragraph, index) => (
+                                <p key={index}>{paragraph}</p>
+                            ))}
+                        </div>
                     </div>
                 </div>
                 <div className="button-container notice">
