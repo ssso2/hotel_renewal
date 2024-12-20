@@ -122,8 +122,8 @@ function AllRoomPaymentPage() {
       );
 
       if (paymentResponse.status === 201) {
-        alert("결제가 완료되었습니다!");
-        const userConfirmed = window.confirm("예약페이지로 이동하시겠습니까?");
+        // alert("결제가 완료되었습니다!");
+        const userConfirmed = window.confirm("예약 내역을 확인하시겠습니까?");
         if (userConfirmed) {
           navigate("/myPage/myReservation"); // 사용자가 확인을 누른 경우 예약 페이지로 이동
         } else {

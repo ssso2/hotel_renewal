@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import '../../scss/packageRoomItem.scss'
 import { useNavigate } from "react-router-dom";
 
@@ -6,6 +6,7 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
   const imgurl = `http://localhost:5002/bk/files/${packageData.upSystem}`
+  const [isModalOpen, setIsModalOpen] = useState(false) // 모달 상태관리리
 
   console.log("packageData.start_date : ",packageData.start_date)
   console.log("packageData.end_date : ", packageData.end_date)
@@ -21,6 +22,10 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
   
     return `${year}-${month}-${day}`;
   };
+
+  // 모달 열기/닫기 핸들러
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const formatEndDate = (date) => {
     if (!date) return "미정"; // null 또는 undefined 처리
@@ -40,14 +45,14 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
 
   // 패키지의 기간 포맷
   const formattedStartDate = formatDate(packageData.start_date);
-  const formattedEndDate = formatEndDate(packageData.end_date);
+  const formattedEndDate = formatDate(packageData.end_date);
 
   // 체크인/체크아웃 날짜 포맷
   const formattedCheckInDate = formatDate(checkInDate);
   const formattedCheckOutDate = formatDate(checkOutDate);
 
   console.log("패키지 포맷 기간 시작날짜 : ",formattedStartDate)
-  console.log("패키지 포맷 기간 시작날짜 : ",formattedEndDate)
+  console.log("패키지 포맷 기간 종료날짜 : ",formattedEndDate)
   console.log("packageData.room_id : ",packageData.room_id)
 
 
@@ -80,8 +85,11 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
       alert("체크인 및 체크아웃 날짜를 선택해주세요");
     }
   };
+
+  const btnData = "혜택 및 이용 안내 +"
   
   return (
+    <>
     <ul className="tab-cont package on">
       <li>
           <div className="box-wrap">
@@ -110,6 +118,9 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
           </div>
       </li>
   </ul>
+  {/* 모달 컴포넌트
+  {isModalOpen && <BoonModal onClose={closeModal} />} */}
+  </>
   );
 } 
 
