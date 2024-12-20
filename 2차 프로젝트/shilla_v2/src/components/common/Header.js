@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import HeaderComp1 from "./HeaderComp1";
 import HeaderComp2 from "./HeaderComp2";
@@ -11,8 +11,12 @@ import '../../scss/header.scss'
 
 
 
-
 const Header = () => {
+
+    
+   // var winPage = useRef('/');
+   // console.log("Header : ", winPage);
+   console.log("Header : ");
     const navigate = useNavigate()
 
     const gnbTitle = [
@@ -79,13 +83,23 @@ const Header = () => {
     ];
 
     const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
-
     const [user,setUser] = useState(null)
     const [winSize,setWinSize] = useState("dt")
+    //const [winPage,setWinPage] = useState("/")
+
+    
+
+    function setWinPage(ww){
+        
+        
+
+       // winPage.current = ww;
+       // console.log("setWinPage : ", winPage.current );
+    }
 
 
     useEffect(()=>{
-
+        console.log("로그인 useEffect 실행");
         // 로그인 여부 확인
         const id = sessionStorage.getItem("id");
         const name = sessionStorage.getItem("name");
@@ -99,9 +113,11 @@ const Header = () => {
 
     },[])
 
+    
+
     useEffect(() => {
-        console.log("로그인 useEffect 실행");
-        
+       // console.log("로그인 useEffect 실행", winPage);
+       console.log("메뉴 useEffect 실행");
 
         const header = document.querySelector("header");
         const gnb = document.querySelector(".gnb");
@@ -154,9 +170,19 @@ const Header = () => {
                 lastScrollTop = scTop;
             });
             
-            
+            // 리사이즈 이벤트
+            window.addEventListener("resize",function(){
+                if(window.innerWidth > 1500){
+                    mWrap.classList.remove("move");
+                    setWinSize("dt");
+                }else{
+                    setWinSize("mobile");
+                }
+            });
+
             // 모바일 햄버거 버튼
             mBtn.addEventListener("click",function(){
+              //  console.log("mBtn 클릭 실행");
                 if(!mBtn.classList.contains("move")){
                     mWrap.classList.add("move");
                     mBtn.classList.add("move");
@@ -166,14 +192,7 @@ const Header = () => {
                     mBtn.classList.remove("move");
                 }
             });
-            window.addEventListener("resize",function(){
-                if(window.innerWidth > 1500){
-                    mWrap.classList.remove("move");
-                    setWinSize("dt");
-                }else{
-                    setWinSize("mobile");
-                }
-            });
+
             
             // 모바일 GNB
             for(let i = 0; i < depth1.length; i++){
@@ -191,9 +210,15 @@ const Header = () => {
                 });
             }
         }
+
         
-        
-    },[user, winSize]);
+    },[]);
+//user, winSize, winPage
+
+    function aaa(uuu, wp){
+        console.log("aaa : ", uuu, wp)
+     //   setWinPage(wp)
+    }
 
 
     return (
@@ -206,7 +231,7 @@ const Header = () => {
                             <img src="/img/common/logo.png" alt="" />
                         </Link>
                     </h1>
-                    <HeaderComp1 gnbMenu={gnbMenu}/>
+                    <HeaderComp1 gnbMenu={gnbMenu} />
                     <HeaderComp2 user={user}/>
                     
                     {/* <!-- 모바일 햄버거 버튼 --> */}
@@ -216,7 +241,8 @@ const Header = () => {
             {/* <!-- 모바일 메뉴 --> */}
             <div className="m_wrap" >
                 <HeaderComp4 user={user}/>
-                <HeaderComp5 gnbMenu={gnbMenu}/>
+                <HeaderComp5 gnbMenu={gnbMenu} />
+                {/* <HeaderComp5 gnbMenu={gnbMenu} winPage={winPage} setWinPage={setWinPage} aaa = {aaa}/> */}
             </div>
         </>
     );

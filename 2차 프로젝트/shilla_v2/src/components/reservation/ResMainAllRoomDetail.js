@@ -31,7 +31,7 @@ function ResMainAllRoomDetail(props) {
 
   
   // 전달된 데이터
-  const { checkInDate, checkOutDate, dayPrice, roomType, roomId, productId} = location.state || {};
+  const { checkInDate, checkOutDate, dayPrice, roomType, roomId, productId, adultCount, childrenCount} = location.state || {};
 
   console.log("받은 데이터")
   console.log("product아이디 : ",productId)
@@ -145,6 +145,8 @@ function ResMainAllRoomDetail(props) {
       roomId: roomId,
       productId: productId,
       paySum: paySum,
+      adultCount: adultCount,
+      childrenCount: childrenCount
     },
   });
 };
@@ -173,6 +175,7 @@ function ResMainAllRoomDetail(props) {
                     type="text"
                     name="rsv-date"
                     value={`${formattedCheckInDate} ~ ${formattedCheckOutDate}`}
+                    readOnly
                   />
                 </li>
                 <li className="list">
@@ -183,6 +186,7 @@ function ResMainAllRoomDetail(props) {
                       type="text"
                       name="rsv-date"
                       value={`${roomType} [${roomId}호]`}
+                      readOnly
                     />
                   </div>
                 </li>
@@ -190,11 +194,11 @@ function ResMainAllRoomDetail(props) {
                   <h4>인원수</h4>
                   <div className="box adult">
                     <span>성인</span>
-                    <span className="mem-num">1</span>
+                    <span className="mem-num"> {adultCount}</span>
                   </div>
                   <div className="box child">
                     <span>어린이</span>
-                    <span className="mem-num">0</span>
+                    <span className="mem-num"> {childrenCount}</span>
                   </div>
                 </li>
                 <li className="list">

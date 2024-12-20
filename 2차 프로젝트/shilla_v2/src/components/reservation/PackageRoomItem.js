@@ -2,26 +2,45 @@ import React from "react";
 import '../../scss/packageRoomItem.scss'
 import { useNavigate } from "react-router-dom";
 
-function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
+function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, childrenCount}) {
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
   const imgurl = `http://localhost:5002/bk/files/${packageData.upSystem}`
+
+  console.log("packageData.start_date : ",packageData.start_date)
+  console.log("packageData.end_date : ", packageData.end_date)
 
   const formatDate = (date) => {
     if (!date) return "미정"; // null 또는 undefined 처리
     const parsedDate = new Date(date); // date가 ISO 문자열이어도 Date 객체로 변환
     if (isNaN(parsedDate)) return "유효하지 않은 날짜"; // 유효하지 않은 날짜 처리
   
-    const year = parsedDate.getUTCFullYear(); // UTC 기준으로 연도 추출
-    const month = String(parsedDate.getUTCMonth() + 1).padStart(2, '0'); // UTC 기준으로 월 추출
-    const day = String(parsedDate.getUTCDate()).padStart(2, '0'); // UTC 기준으로 일 추출
+    const year = parsedDate.getFullYear(); // 연도 추출
+    const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); // 월 추출
+    const day = String(parsedDate.getDate()).padStart(2, '0'); // 일 추출
   
     return `${year}-${month}-${day}`;
   };
 
+  const formatEndDate = (date) => {
+    if (!date) return "미정"; // null 또는 undefined 처리
+    const parsedDate = new Date(date); // 날짜 파싱
+    if (isNaN(parsedDate)) return "유효하지 않은 날짜"; // 유효하지 않은 날짜 처리
+  
+    // 하루 빼기
+    parsedDate.setDate(parsedDate.getDate() - 1);
+  
+    // 날짜 포맷팅
+    const year = parsedDate.getFullYear(); // 연도 추출
+    const month = String(parsedDate.getMonth() + 1).padStart(2, '0'); // 월 추출
+    const day = String(parsedDate.getDate()).padStart(2, '0'); // 일 추출
+  
+    return `${year}-${month}-${day}`; // 결과 반환
+  };
+
   // 패키지의 기간 포맷
   const formattedStartDate = formatDate(packageData.start_date);
-  const formattedEndDate = formatDate(packageData.end_date);
+  const formattedEndDate = formatEndDate(packageData.end_date);
 
   // 체크인/체크아웃 날짜 포맷
   const formattedCheckInDate = formatDate(checkInDate);
@@ -51,9 +70,12 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate }) {
           offerName: packageData.offer_name,
           roomId: packageData.room_id,
           productId: packageData.product_id,
+          upSystem: packageData.upSystem,
+          adultCount: adultCount,
+          childrenCount: childrenCount
         },
       });
-      console.log(checkInDate, checkOutDate, packageData.offer_price, packageData.offer_name, packageData.room_id, packageData.product_id);
+      console.log(checkInDate, checkOutDate, packageData.offer_price, packageData.offer_name, packageData.room_id, packageData.product_id, packageData.upSystem);
     } else {
       alert("체크인 및 체크아웃 날짜를 선택해주세요");
     }

@@ -18,16 +18,19 @@ function Res_search() {
   const [availableRooms, setAvailableRooms] = useState([]); // 예약 가능한 객실 목록
   const [showPicker, setShowPicker] = useState(false); // 날짜 선택기 표시 여부
   const [tab, setTab] = useState("package"); // 'package' or 'room' 탭 선택 상태
-  const [popupAdultCount, setPopupAdultCount] = useState(0); // 팝업에서 사용하는 성인 수
+  const [popupAdultCount, setPopupAdultCount] = useState(1); // 팝업에서 사용하는 성인 수
   const [popupChildrenCount, setPopupChildrenCount] = useState(0); // 팝업에서 사용하는 어린이 수
-  const [confirmedAdultCount, setConfirmedAdultCount] = useState(0); // 확인버튼을 누를 때의 성인 수
+  const [confirmedAdultCount, setConfirmedAdultCount] = useState(1); // 확인버튼을 누를 때의 성인 수
   const [confirmedChildrenCount, setConfirmedChildrenCount] = useState(0); // 확인버튼을 누를 때의 어린이 수
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [sortingOrder, setSortingOrder] = useState(""); // 정렬 상태 (낮은 가격 순 / 높은 가격 순)
+  const [isSortingOpen, setIsSortingOpen] = useState(false); // 정렬 옵션 드롭다운 열기/닫기
 
   const togglePicker = () => setShowPicker(!showPicker);
   // 팝업 상태 토글
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
+    console.log("Popup Visible:", !isPopupVisible);
 
     // 팝업이 열릴 때 현재 확인된 값을 팝업 초기 값으로 설정
     if (!isPopupVisible) {
@@ -49,15 +52,67 @@ function Res_search() {
   };
 
   const incrementCount = (type) => {
-    if (type === "adult") setPopupAdultCount((prev) => prev + 1);
-    if (type === "children") setPopupChildrenCount((prev) => prev + 1);
+    if (type === "adult" && popupAdultCount < 2) {
+      setPopupAdultCount((prev) => prev + 1);
+    }
+    if (type === "children" && popupChildrenCount < 3) {
+      setPopupChildrenCount((prev) => prev + 1);
+    }
   };
 
   const decrementCount = (type) => {
-    if (type === "adult" && popupAdultCount > 0)
+    if (type === "adult" && popupAdultCount > 1) {
       setPopupAdultCount((prev) => prev - 1);
-    if (type === "children" && popupChildrenCount > 0)
+    }
+    if (type === "children" && popupChildrenCount > 0) {
       setPopupChildrenCount((prev) => prev - 1);
+    }
+  };
+
+  // 가격 정렬 함수
+  const sortPackages = (packages) => {
+    return packages.sort((a, b) => {
+      if (sortingOrder === "lowToHigh") {
+        return a.offer_price - b.offer_price;
+      } else if (sortingOrder === "highToLow") {
+        return b.offer_price - a.offer_price;
+      } else {
+        return 0; // 기본 정렬 없음
+      }
+    });
+  };
+
+  const sortRooms = (rooms) => {
+    return rooms.sort((a, b) => {
+      if (sortingOrder === "lowToHigh") {
+        return a.day_price - b.day_price;
+      } else if (sortingOrder === "highToLow") {
+        return b.day_price - a.day_price;
+      } else {
+        return 0; // 기본 정렬 없음
+      }
+    });
+  };
+
+  // 정렬 기준 변경 함수
+  const handleSortChange = (order) => {
+    setSortingOrder(order);
+    setIsSortingOpen(false); // 드롭다운을 닫음
+  };
+
+  useEffect(() => {
+    if (tab === "package") {
+      const sortedPackages = sortPackages([...availablePackages]);
+      setAvailablePackages(sortedPackages);
+    } else if (tab === "room") {
+      const sortedRooms = sortRooms([...availableRooms]);
+      setAvailableRooms(sortedRooms);
+    }
+  }, [sortingOrder, tab]);
+
+  // 드롭다운 토글 함수
+  const toggleSortingDropdown = () => {
+    setIsSortingOpen(!isSortingOpen); // 드롭다운 열기/닫기
   };
 
   // Axios 요청에서 오류 처리
@@ -127,7 +182,7 @@ function Res_search() {
             <div className="room-wrap" onClick={togglePopup}>
               <div className="box adult">
                 <span className="tit">ADULT</span>
-                <span className="num">1</span>
+                <span className="num">{confirmedAdultCount}</span>
               </div>
               <div className="box children">
                 <span className="tit">CHILDREN</span>
@@ -141,30 +196,46 @@ function Res_search() {
             >
               검색
             </button>
-            <div className="reservation-popup">
+            <div className={`reservation-popup ${isPopupVisible ? "on" : ""}`}>
               <form action="">
                 <ul className="popup-left">
                   <li>
                     <div className="tit">객실 1</div>
                     <div className="count-wrap adult">
-                      <button type="button" className="btn-down">
+                      <button
+                        type="button"
+                        className="btn-down"
+                        onClick={() => decrementCount("adult")}
+                      >
                         <span className="blind">숫자 내리기</span>
                       </button>
                       <p className="adult">
-                        성인 <span className="num">0</span>
+                        성인 <span className="num">{popupAdultCount}</span>
                       </p>
-                      <button type="button" className="btn-up">
+                      <button
+                        type="button"
+                        className="btn-up"
+                        onClick={() => incrementCount("adult")}
+                      >
                         <span className="blind">숫자 올리기</span>
                       </button>
                     </div>
                     <div className="count-wrap children">
-                      <button type="button" className="btn-down">
+                      <button
+                        type="button"
+                        className="btn-down"
+                        onClick={() => decrementCount("children")}
+                      >
                         <span className="blind">숫자 내리기</span>
                       </button>
                       <p className="children">
-                        어린이 <span className="num">0</span>
+                        어린이 <span className="num">{popupChildrenCount}</span>
                       </p>
-                      <button type="button" className="btn-up">
+                      <button
+                        type="button"
+                        className="btn-up"
+                        onClick={() => incrementCount("children")}
+                      >
                         <span className="blind">숫자 올리기</span>
                       </button>
                     </div>
@@ -172,11 +243,16 @@ function Res_search() {
                 </ul>
                 <div className="popup-right">
                   <p className="desc">* 어린이 기준 : 37개월 - 12세</p>
-                  <button type="button">확인</button>
+                  <button type="button" onClick={handleConfirm}>
+                    확인
+                  </button>
                 </div>
               </form>
 
-              <button className="close-btn">
+              <button
+                className="close-btn"
+                onClick={() => setIsPopupVisible(false)}
+              >
                 <span className="blind">닫기</span>
               </button>
             </div>
@@ -214,70 +290,39 @@ function Res_search() {
               </ul>
 
               <div className="keyword-sorting">
-                <div className="keyword-wrap">
-                  <button className="keyword-btn">키워드</button>
-                </div>
                 <div className="sorting-wrap">
-                  <div className="selected">낮은 가격 순</div>
-                  <ul className="select-sort">
-                    <li className="on">낮은 가격 순</li>
-                    <li>높은 가격 순</li>
-                    <li>최신 순</li>
-                    <li>인기 순</li>
-                    <li>추천 순</li>
-                  </ul>
+                  <div
+                    className={`selected ${isSortingOpen ? "on" : ""}`}
+                    onClick={toggleSortingDropdown}
+                  >
+                    {sortingOrder === ""
+                      ? "필터 가격 순"
+                      : sortingOrder === "lowToHigh"
+                      ? "낮은 가격 순"
+                      : "높은 가격 순"}
+                  </div>
+                  {isSortingOpen && (
+                    <ul className="select-sort">
+                      <li
+                        className={sortingOrder === "lowToHigh" ? "on" : ""}
+                        onClick={() =>
+                          handleSortChange("lowToHigh", "낮은 가격 순")
+                        }
+                      >
+                        낮은 가격 순
+                      </li>
+                      <li
+                        className={sortingOrder === "highToLow" ? "on" : ""}
+                        onClick={() =>
+                          handleSortChange("highToLow", "높은 가격 순")
+                        }
+                      >
+                        높은 가격 순
+                      </li>
+                    </ul>
+                  )}
                 </div>
               </div>
-            </div>
-            <div className="keyword-box">
-              <form action="">
-                <div className="top-wrap">
-                  <span>키워드 검색</span>
-                  <button type="reset">선택해제</button>
-                </div>
-                <div className="bottom-wrap">
-                  <ul className="chk-boxs">
-                    <li>
-                      <input
-                        type="checkbox"
-                        name="keyword"
-                        id="breakfast"
-                        value="breakfast"
-                      />
-                      <label htmlFor="breakfast">조식</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="keyword" id="lounge" />
-                      <label htmlFor="lounge">라운지 혜택</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="keyword" id="special-day" />
-                      <label htmlFor="special-day">기념일</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="keyword" id="outdoor-pool" />
-                      <label htmlFor="outdoor-pool">야외수영장</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="keyword" id="adults-3" />
-                      <label htmlFor="adults-3">성인3인</label>
-                    </li>
-                    <li>
-                      <input
-                        type="checkbox"
-                        name="keyword"
-                        id="more-than-2day"
-                      />
-                      <label htmlFor="more-than-2day">2박이상</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="keyword" id="kids" />
-                      <label htmlFor="kids">키즈</label>
-                    </li>
-                  </ul>
-                  <button type="button">적용</button>
-                </div>
-              </form>
             </div>
 
             {/* 선택된 탭에 따라 콘텐츠 표시 */}
@@ -290,6 +335,8 @@ function Res_search() {
                       packageData={pkg}
                       checkInDate={checkInDate}
                       checkOutDate={checkOutDate}
+                      adultCount={confirmedAdultCount}
+                      childrenCount={confirmedChildrenCount}
                     />
                   ))}
                 </div>
@@ -299,6 +346,8 @@ function Res_search() {
                     rooms={availableRooms}
                     checkInDate={checkInDate}
                     checkOutDate={checkOutDate}
+                    adultCount={confirmedAdultCount}
+                    childrenCount={confirmedChildrenCount}
                   />
                 </div>
               )}

@@ -57,10 +57,10 @@ router.post("/save", async (req, res) => {
     );
 
     // 저장 성공 시, 성공 메시지 반환
-    res.status(201).json({ message: "예약이 성공적으로 저장되었습니다.", reservationId: result[0].insertId });
+    res.status(201).json({ message: "예약이 성공적으로 저장됨됨", reservationId: result[0].insertId });
   } catch (error) {
     console.error("예약 저장 오류:", error);
-    res.status(500).send("서버 오류로 예약을 저장할 수 없습니다.");
+    res.status(500).send("서버 오류 예약을 저장할 수 없음");
   }
 });
 
@@ -81,10 +81,35 @@ router.post('/savepayment', async (req, res) => {
     );
 
     // 결제 정보 저장이 성공적으로 완료되면 성공 메시지 반환
-    res.status(201).json({ message: '결제가 성공적으로 완료되었습니다.' });
+    res.status(201).json({ message: '결제가 성공적으로 완료' });
   } catch (error) {
     console.error("결제 저장 오류:", error);
-    res.status(500).send("서버 오류로 결제를 저장할 수 없습니다.");
+    res.status(500).send("서버 오류 결제를 저장할 수 없음음");
+  }
+});
+
+// reserve/detail 페이지에서 productId를 가지고 specialoffer_pkg upSystem 이미지 가져오기
+router.post('/detail', async (req, res) => {
+  const { productId } = req.body;
+
+  try {
+    const [result] = await db.execute(
+      `SELECT sp.upSystem 
+       FROM product p 
+       JOIN specialoffer_pkg sp ON p.offer_id = sp.offer_id 
+       WHERE p.product_id = ?`,
+      [productId]
+    );
+
+    if (result.length > 0) {
+      const upSystemPath = `http://localhost:5002/bk/files/${result[0].upSystem}`;
+      res.json({ upSystem: upSystemPath });
+    } else {
+      res.status(404).json({ message: "이미지를 찾을 수 없음" });
+    }
+  } catch (error) {
+    console.error("SQL 에러 :", error);
+    res.status(500).send("서버 오류 발생");
   }
 });
 

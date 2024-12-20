@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../scss/oneRoomItem.scss";
 import { useNavigate } from "react-router-dom";
 
-function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
+function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCount }) {
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
 
@@ -54,6 +54,8 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate }) {
           roomType: room.room_type,
           roomId: room.room_id,
           productId: room.product_id,
+          adultCount: adultCount,
+          childrenCount: childrenCount
         },
       });
       console.log(checkInDate, checkOutDate, room.day_price, room.room_type, room.room_id, room.product_id);
