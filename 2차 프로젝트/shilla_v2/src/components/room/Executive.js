@@ -6,7 +6,6 @@ import Introduction from "./Introduction";
 import Popup from "./Popup";
 import RoomInfo from "./RoomInfo";
 import RoomAmenity from "./RoomAmenity";
-// import RoomGuide from "./RoomGuide";
 import RoomGuide2 from "./RoomGuide2";
 import Footer from  "../common/Footer";
 
@@ -47,7 +46,7 @@ function Executive() {
             description: "여유로운 휴식 공간이 돋보이는 비즈니스 디럭스 룸에 더 이그제큐티브 라운지 서비스를 더한 객실입니다.",
             subDescription: [
                 "글로벌 럭셔리 호텔 디자이너 피터 리미디오스가 디자인한 '시대를 아우르는 모던함'을 만나보십시오.",
-                <br />,
+                // <br />,
                 "요트 콘셉트로 구성한 프라이빗 바와 세계적인 수준의 침구류와 함께 생애 최고의 휴식을 경험해보시기 바랍니다."
             ]
         }

@@ -2,7 +2,7 @@ import Header from  "../common/Header";
 import Tab from './Tab';
 import SubTitle from './SubTitle';
 import SwiperGallery from './SwiperGallery';
-import Introduction from './Introduction';
+import Introduction4 from './Introduction4';
 import Popup from '../room/Popup';
 import RoomInfo from '../room/RoomInfo';
 import RoomAmenity from '../room/RoomAmenity';
@@ -189,7 +189,8 @@ function Stand_BarrierFreeDeluxe() {
                                 <SubTitle />
                                 <SwiperGallery galleryImgs={ galleryImgs } />
                                 <div className="context">
-                                    <Introduction introItem={roomIntro[0]} />
+                                    {/* <Introduction introItem={roomIntro[0]} /> */}
+                                    <Introduction4 introItem={roomIntro[0]} />
                                     <Popup images={roomFloorImages} />
                                     <RoomInfo roomInfo={roomInfo} />
                                     <RoomAmenity roomAmenity={roomAmenity} />

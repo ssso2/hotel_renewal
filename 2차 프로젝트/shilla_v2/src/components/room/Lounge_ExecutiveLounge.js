@@ -1,9 +1,9 @@
 import Header from  "../common/Header";
 import SubTitle from "./SubTitle";
 import SwiperGallery from "./SwiperGallery";
-import Introduction2 from "./Introduction2";
+import Introduction3 from "./Introduction3";
 import Popup from "../room/Popup";
-import RoomInfo from "../room/RoomInfo";
+import RoomInfo2 from "../room/RoomInfo2";
 import RoomGuide3 from "../room/RoomGuide3";
 import Footer from  "../common/Footer";
 
@@ -39,24 +39,18 @@ function Lounge_ExecutiveLounge() {
             description: "세계 어느 곳에서도 찾을 수 없는 최고 수준의 더 이그제큐티브 라운지",
             subDescription: [
                 "신라만의 품격이 묻어나는 차별화된 비즈니스 라이프스타일을 제안합니다.",
-                <br />,
-                <br />,
                 "더 이그제큐티브 라운지는 고급스러운 펜트하우스의 응접실을 콘셉트로 구현한 투숙객 전용 비즈니스 공간입니다.",
-                <br />,
                 "23층 최상층에 위치해 남산의 사계절 풍광과 도시의 전경이 그림처럼 펼쳐지는 더 이그제큐티브 라운지에서 특별한 다이닝 경험을 체험해보시기 바랍니다.",
             ]
         }
     ];
 
-    const roomInfo = [
+    const roomInfo2 = [
         {
             title: "Breakfast",
             description: [
                 "06:30 ~ 10:00",
-                <br />,
-                <br />,
                 "단, 토, 일요일 및 공휴일은 06:30~10:30",
-                <br />,
                 "호텔 사정에 따라 더 파크뷰 조식으로 대체 제공될 수 있으며, 체크인 시 확인 가능합니다.",
             ]
         },
@@ -93,7 +87,7 @@ function Lounge_ExecutiveLounge() {
     return (
         <>
             <Header />
-            <div className="container">
+            <div className="container lounge">
                 <div className="center">
                     <div className="depth3-tab-wrap">
                         <div className="tab-contents">
@@ -101,9 +95,9 @@ function Lounge_ExecutiveLounge() {
                                 <SubTitle />
                                 <SwiperGallery galleryImgs={ galleryImgs } />
                                 <div className="context">
-                                    <Introduction2 introItem={roomIntro[0]} />
+                                    <Introduction3 introItem={roomIntro[0]} />
                                     <Popup images={roomFloorImages} />
-                                    <RoomInfo roomInfo={roomInfo} />
+                                    <RoomInfo2 roomInfo2={roomInfo2} />
                                     <RoomGuide3 roomGuide3={roomGuide3} />
                                 </div>
                             </div>

@@ -7,12 +7,12 @@ const ListItem = ({ title, description }) => (
     </li>
 );
 
-const RoomInfo = ({ roomInfo }) => {
+const RoomInfo2 = ({ roomInfo2 }) => {
     return (
         <ul className="info">
-            <h3>객실 정보</h3>
+            <h3>상세 운영 시간</h3>
             {
-                roomInfo.map((item, index) => (
+                roomInfo2.map((item, index) => (
                     <ListItem
                         key={ index }
                         title={ item.title }
@@ -24,4 +24,4 @@ const RoomInfo = ({ roomInfo }) => {
     );
 }
 
-export default RoomInfo;
+export default RoomInfo2;

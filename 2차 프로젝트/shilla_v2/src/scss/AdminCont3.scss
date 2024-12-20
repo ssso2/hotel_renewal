@@ -146,8 +146,6 @@
           cursor: pointer;
           transition: background-color 0.3s ease;
         }
-
-
       }
       
       td {
@@ -170,11 +168,15 @@
         text-align: center;
       }
     }
+
+    h2 {
+      text-align: center;
+    }
   
     // 회원관리 회원정보 테이블
     .board-memberInfo-table {
       width: 100%;
-      margin: 15px auto;
+      margin: 20px auto;
       border-collapse: collapse;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
