@@ -77,7 +77,7 @@ const Findpwchk = ({ id }) => {
                             </div>
                         </div>
                         <div className="chkwrap">
-                            <span className="title">새로운비밀번호</span>
+                            <span className="title">새 비밀번호</span>
                             <div className="input-wrap">
                                 <input
                                     type="password"
