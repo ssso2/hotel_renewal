@@ -1,8 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import '../../scss/packageRoomItem.scss'
 import { useNavigate } from "react-router-dom";
+import BtnModal from "./BtnModal";
 
-function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, childrenCount}) {
+function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, childrenCount,index}) {
+
+  const dataTitle = `pop-benefit-guide${index}`;
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
   const imgurl = `http://localhost:5002/bk/files/${packageData.upSystem}`
@@ -24,8 +27,9 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
   };
 
   // 모달 열기/닫기 핸들러
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  // const openModal = () => setIsModalOpen(true);
+  // const closeModal = () => setIsModalOpen(false);
+
 
   const formatEndDate = (date) => {
     if (!date) return "미정"; // null 또는 undefined 처리
@@ -87,6 +91,33 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
   };
 
   const btnData = "혜택 및 이용 안내 +"
+
+
+  useEffect(()=>{
+
+    $(function () {
+      // 레이어 팝업
+      $(".lypop_close").on("click", function () {
+          $(".lypop").hide();
+      });
+  
+      $("[data-lybtn]").each(function () {
+          var lypop = $(this).attr("data-lybtn");
+          $(this).click(function () {
+              $(".lypop").hide();
+              $("[data-lyOpen =" + lypop + "]")
+                  .show()
+                  .focus();
+          });
+          $("[data-lyclose]").click(function () {
+              var lypopClose = $(this).attr("data-lyclose");
+              $("[data-lyOpen =" + lypop + "]").hide();
+              $("[data-lybtn =" + lypopClose + "]").focus();
+          });
+      });
+
+  });
+  })
   
   return (
     <>
@@ -104,7 +135,7 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
                           <p className="desc">{packageData.offer_description}</p>
                           <p className="desc">패키지 기간: {formattedStartDate} ~ {formattedEndDate}</p>
                           <p className="desc">해당 호실 : {packageData.room_id} 호 </p>
-                          <button type="button" className="pop-btn" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                          <button type="button" className="pop-btn" data-lybtn={dataTitle} title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
                       </div>
                   </div>
                   
@@ -120,6 +151,8 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
   </ul>
   {/* 모달 컴포넌트
   {isModalOpen && <BoonModal onClose={closeModal} />} */}
+  <BtnModal dataTitle={dataTitle}/>
+
   </>
   );
 } 

@@ -335,10 +335,11 @@ function Res_search() {
             <div className="tab-cont-wrap">
               {tab === "package" ? (
                 <div className="tab-cont package on">
-                  {availablePackages.map((pkg) => (
+                  {availablePackages.map((pkg,index) => (
                     <PackageRoomItem
                       key={pkg.offer_id}
                       packageData={pkg}
+                      index={index}
                       checkInDate={checkInDate}
                       checkOutDate={checkOutDate}
                       adultCount={confirmedAdultCount}
