@@ -11,7 +11,7 @@ const AdminCont5_Modify_require = ({
         // console.log("수정가능", key, data);
         setmodify({ ...modify, [key]: data });
     };
-
+    const [inputValue, setinputValue] = useState("");
     return (
         <div className="listwrap">
             <table className="r-table">
@@ -55,7 +55,7 @@ const AdminCont5_Modify_require = ({
                             {" "}
                             <input
                                 type="text"
-                                value={modify.title}
+                                value={modify.title || ""}
                                 name="title"
                                 className="title"
                                 onChange={e =>
@@ -69,7 +69,7 @@ const AdminCont5_Modify_require = ({
                         <td className="N-con areabox">
                             <textarea
                                 className="area"
-                                value={modify.context}
+                                value={modify.context || ""}
                                 name="context"
                                 onChange={e =>
                                     modifyChange("context", e.target.value)

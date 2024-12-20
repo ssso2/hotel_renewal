@@ -36,7 +36,7 @@ const EventDetail_des = ({ pmt, event }) => {
             ) : (
                 <div className="event-li">
                     <div className="a-wrap">
-                        <Link to="/specialOffer/event">
+                        <Link to="/event">
                             <div className="aList">목록</div>
                         </Link>
                     </div>
