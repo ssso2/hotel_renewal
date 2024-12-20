@@ -14,16 +14,10 @@ const Introduction = ({ title, restaurantName, paragraphs, includeTimeTable = fa
       {paragraphs.map((para, index) => (
         <React.Fragment key={index}>
           {para.strong && <strong>{para.strong}</strong>}
-          <p className={para.className}>
-            {para.text.split('\n').map((line, i) => (
-              <React.Fragment key={i}>
-                {line}
-                {i < para.text.split('\n').length - 1 && <br />}
-              </React.Fragment>
-            ))}
-          </p>
+          <p className={para.className} dangerouslySetInnerHTML={{ __html: para.text }} />
         </React.Fragment>
       ))}
+
 
     </div>
   );
