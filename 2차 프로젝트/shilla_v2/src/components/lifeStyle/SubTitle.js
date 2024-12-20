@@ -37,7 +37,7 @@ const SubTitle = () => {
             <ul className="location">
                 <li><Link to="/">홈</Link></li>
                 <li><Link to="/lifeStyle">라이프스타일</Link></li>
-                <li><Link to="javascrip:void();">{breadcrumb}</Link></li>
+                <li><Link to="#self">{breadcrumb}</Link></li>
             </ul>
         </div>
     );

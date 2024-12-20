@@ -11,7 +11,7 @@ const MainCont5 = () => {
     const MainCont5Data = [
         {
             delay : "0",
-            link : "javascrip:void();",
+            link : "#self",
             title : "신라호텔 지점 찾기 팝업 열림",
             target : '',
             dataLybtn : "pop-hotel-box",
