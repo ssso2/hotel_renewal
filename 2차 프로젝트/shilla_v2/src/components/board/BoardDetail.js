@@ -91,18 +91,26 @@ const BoardDetail = () => {
     }
 
     function delGo() {
-
-        console.log('delGo 진입', `${bkURL}/board/delete/${num}`);
-
-        axios.delete(`${bkURL}/board/delete/${num}`)
-        .then(res =>{
-            console.log('삭제완료',res.data);
-            alert('삭제되었습니다.');
-            navigate('/board'); //location 써도 되지만 이렇게 써도 된다.
-        })
-        .catch(err =>{
-            console.log('삭제오류',err);
-        })
+        // 삭제 확인 창 표시
+        const isConfirmed = window.confirm("해당 게시글을 삭제하시겠습니까?");
+        
+        if (isConfirmed) {
+            // 사용자가 '확인'을 클릭한 경우 삭제 진행
+            console.log('delGo 진입', `${bkURL}/board/delete/${num}`);
+    
+            axios.delete(`${bkURL}/board/delete/${num}`)
+                .then(res => {
+                    console.log('삭제완료', res.data);
+                    alert('삭제되었습니다.');
+                    navigate('/board'); 
+                })
+                .catch(err => {
+                    console.log('삭제오류', err);
+                });
+        } else {
+            // 사용자가 '취소'를 클릭한 경우 아무것도 하지 않음
+            console.log('삭제 취소');
+        }
     }
 
     function commentDelGo(no) {

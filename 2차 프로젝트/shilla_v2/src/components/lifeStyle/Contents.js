@@ -14,7 +14,7 @@ const Contents = ({ sections }) => {
           </div>
           <ul className="location">
             <li><Link to="/">홈</Link></li>
-            <li><Link to="javascrip:void();">라이프스타일</Link></li>
+            <li><Link to="#self">라이프스타일</Link></li>
           </ul>
         </div>
 

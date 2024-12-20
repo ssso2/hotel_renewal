@@ -33,7 +33,7 @@ function Shopping2() {
         { title: '서울점 운영시간', content: '09:30 ~ 20:00 (연중무휴)' },
     ]
 
-    const btnData = "신라면세점 홈페이지 바로가기"
+    const btnData = "신라면세점 홈페이지"
 
     return (
         <>
@@ -51,7 +51,7 @@ function Shopping2() {
                                 <div className="info-wrap mt-0">
                                     <Location propLocation={locationData} />
                                 </div>
-                                <Button2 />
+                                <Button2 propBtn={btnData} />
                             </div>
                         </div>
                     </div>

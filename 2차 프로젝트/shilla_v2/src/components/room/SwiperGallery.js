@@ -24,6 +24,7 @@ const SwiperGallery = ( { galleryImgs } ) => {
                 className="mySwiper2"
             >
 
+
             <div className="standard-delux-gallery gallery">
                 <div className="swiper mySwiper2">
                     <div className="swiper-wrapper">
@@ -44,14 +45,23 @@ const SwiperGallery = ( { galleryImgs } ) => {
             </Swiper>
 
             <Swiper
-                onSwiper={setThumbsSwiper}
+                onSwiper={setThumbsSwiper}                                       
                 loop={true}
                 spaceBetween={10}
-                slidesPerView={4}
+                slidesPerView={2}
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper" >
+                className="mySwiper"
+                breakpoints={{
+                    0: {
+                        slidesPerView: 2,
+                    },
+                    1240: {
+                        slidesPerView: 4,
+                    }
+                }}
+                >
             
             <div thumbsSlider="" className="swiper mySwiper">
                 <div className="swiper-wrapper">

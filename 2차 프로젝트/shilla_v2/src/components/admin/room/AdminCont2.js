@@ -77,7 +77,7 @@ const AdminCont2 = () => {
                         <div className="cell small">침대</div>
                         <div className="cell">금액</div>
                         <div className="cell small">최대인원</div>
-                        <div className="cell small"></div>
+                        <div className="cell small">변경</div>
                     </div>
                 </div>
                 <div className="table-body">

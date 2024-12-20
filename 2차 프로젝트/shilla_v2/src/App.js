@@ -1,5 +1,6 @@
 // setting
-import { Route, Routes } from "react-router-dom";
+import React from 'react';
+import { Route, Routes, useLocation } from "react-router-dom";
 
 // main
 import Main from "./components/main/Main";
@@ -148,9 +149,20 @@ import Findid from "./components/find/Findid";
 import Findpw from "./components/find/Findpw";
 import EventTemp from "./components/specialoffer/EventTemp";
 
+function ScrollToTop() {
+    const location = useLocation();
+
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
+    return null;
+}
+
 function App() {
     return (
         <>
+            <ScrollToTop />{/* 스크롤 상단 이동 컴포넌트 */}
             <Routes>
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
