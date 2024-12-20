@@ -36,6 +36,7 @@
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: 500;
 }
 .container .depth3-tab-wrap .lost-info .indentity-confirm:hover {
   background-color: #333;
@@ -48,6 +49,7 @@
   align-items: center;
   justify-content: center;
   margin: 100px 0;
+  font-weight: 500;
 }
 .id-chk .my-id {
   margin: 20px auto;

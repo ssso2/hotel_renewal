@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const EventDetail_des = ({ pmt, event }) => {
-    console.log(event);
+    // console.log(event);
     return (
         <>
             {pmt ? (
@@ -15,7 +15,7 @@ const EventDetail_des = ({ pmt, event }) => {
                 <div className="event-li">
                     <ul className="event-wrap">
                         {event.map((des, i) => (
-                            <li className="event-detail">
+                            <li className="event-detail" key={i}>
                                 <h3>{des.title}</h3>
                                 <span className="img-txt">
                                     {des.item.map((add, idx) => (
@@ -36,7 +36,7 @@ const EventDetail_des = ({ pmt, event }) => {
             ) : (
                 <div className="event-li">
                     <div className="a-wrap">
-                        <Link to="/specialOffer/event">
+                        <Link to="/event">
                             <div className="aList">목록</div>
                         </Link>
                     </div>

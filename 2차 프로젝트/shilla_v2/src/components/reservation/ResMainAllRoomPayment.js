@@ -20,6 +20,8 @@ function AllRoomPaymentPage() {
     roomId,
     productId,
     paySum,
+    adultCount,
+    childrenCount,
   } = location.state || {};
 
   console.log("체크인, 체크아웃 날짜 : ", reservationDate);
@@ -60,8 +62,8 @@ function AllRoomPaymentPage() {
       startDate: reservationDate.split(" ~ ")[0],
       endDate: reservationDate.split(" ~ ")[1],
       totPrice: paySum,
-      adultCnt: 1,
-      childCnt: 0,
+      adultCnt: adultCount,
+      childCnt: childrenCount,
       cancel: 0, // 기본 취소 여부
     };
 
@@ -144,10 +146,14 @@ function AllRoomPaymentPage() {
     <div className={styles.paymentContainer}>
       <h2>결제 페이지</h2>
       <form className={styles.paymentForm}>
-        <div> 예약날짜 : {reservationDate}</div>
-        <div>
+        <div className={styles.reserveDate}> 예약날짜 : {reservationDate}</div>
+        <div className={styles.roomType}>
           {" "}
           룸이름 : {roomType} [{roomId}호]
+        </div>
+        <div className={styles.avaCount}>
+          {" "}
+          이용인원 : 성인: {adultCount} 어린이: {childrenCount}
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="accountNumber">카드번호:</label>
@@ -184,7 +190,7 @@ function AllRoomPaymentPage() {
           <li>어린이 조식: {childBf}</li>
           <li>엑스트라 베드: {extraBed}</li>
         </ul> */}
-        <p>총 결제 금액: {paySum.toLocaleString()}원</p>
+        <p className={styles.totPrice}>총 결제 금액: {paySum.toLocaleString()}원</p>
       </form>
       <div className={styles.buttonContainer}>
         <button onClick={handleBoth}>결제 완료</button>

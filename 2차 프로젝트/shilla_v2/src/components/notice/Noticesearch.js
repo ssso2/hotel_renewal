@@ -7,6 +7,7 @@ import Noticebtn from "./Noticebtn";
 
 const Noticesearch = ({ Ntype, setNtype, Ntext, setNtext, handleSearch }) => {
     console.log("분류", Ntype, "검색어", Ntext);
+
     return (
         <div className="Nsearch-wrap">
             <form className="Nform" name="myFrm">

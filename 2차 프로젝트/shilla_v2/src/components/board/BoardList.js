@@ -80,7 +80,7 @@ const BoardList = () => {
     return (
         <div className="container">
             <div className="center">
-                <h2 className="title">1:1문의</h2>
+                <h2 className="title">문의하기</h2>
                 <ul className="board-nav">
                     <li className="post-num">번호</li>
                     <li className="post-title">제목</li>
@@ -100,7 +100,7 @@ const BoardList = () => {
                 }
 
                 <div className="btn-wrap type4">
-                    <div className="align">
+                    <div className="align right">
                         <Link to="/board/join" className="btn btn-01">문의하기</Link>
                     </div>
                 </div>

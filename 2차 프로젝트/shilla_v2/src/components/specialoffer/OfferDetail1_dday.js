@@ -6,18 +6,22 @@ const OfferDetail1_dday = ({ endDate, pID }) => {
     const [deadline, setdeadline] = useState(null);
     console.log("마감일", endDate);
     useEffect(() => {
-        const deadT = new Date(endDate).getTime();
+        const deadT = new Date(endDate).getTime(); // 9시간을 밀리초로 변환;
+
+        console.log("데드라인", deadT);
+
         setdeadline(deadT);
     }, [endDate]); // 로드전 NaN방지
 
     // 현재 및 남은 시간 상태관리
     // const [deadline] = useState(new Date("2024-12-04").getTime());
-    const [now, setnow] = useState(Date.now());
+    // const [now, setnow] = useState(Date.now());
     const [remain, setremain] = useState(null);
 
     // 타이머 업데이트 함수
     const updateTimer = () => {
         const current = Date.now();
+        console.log("현재", current);
         // console.log("current", current);
         const timeRemaining = deadline - current;
 

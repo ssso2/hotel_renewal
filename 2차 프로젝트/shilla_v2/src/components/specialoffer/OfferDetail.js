@@ -45,7 +45,7 @@ const OfferDetail = () => {
     //     return <div> Offerdetails 없음</div>;
     // }
     if (!Offerdetails) {
-        console.log("Offerdetails 없어서 <>");
+        console.log("Offerdetails 없음");
         return <></>;
     }
 

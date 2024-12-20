@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import { title, commentid } from "./Finddata";
@@ -14,7 +14,7 @@ const Findid = () => {
             <Header />
             <div className="container">
                 <div className="center">
-                    <div className="depth3-tab-wrap">
+                    <div className="depth3-tab-wrap find">
                         <ul className="tab">
                             <li className="tab1 on">
                                 <span>아이디 찾기</span>
@@ -29,7 +29,7 @@ const Findid = () => {
                                 <h2 className="lost-id">{title[0]}</h2>
                                 <div className="comment">
                                     {commentid.map((des, i) => (
-                                        <p>{des}</p>
+                                        <p key={i}>{des}</p>
                                     ))}
                                 </div>
                                 <button

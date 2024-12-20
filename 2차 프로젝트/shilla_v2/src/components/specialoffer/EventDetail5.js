@@ -9,7 +9,7 @@ const EventDetail5 = () => {
     return (
         <div className="container">
             <div className="center">
-                <EventDetail1_header title="Shilla Bear X Blue Dragon Keyring Limited Edition" />
+                <EventDetail1_header title="A Match Made In Heaven, Bingsky" />
                 <EventDetail_con img={img[4]} section={section[4]} />
                 <EventDetail_des />
                 <EventDetail_othercard pkglist={pkglist.slice(4, 7)} />

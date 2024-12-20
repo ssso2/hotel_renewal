@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import HeaderComp1 from "./HeaderComp1";
 import HeaderComp2 from "./HeaderComp2";
@@ -11,9 +11,10 @@ import '../../scss/header.scss'
 
 
 
-
 const Header = () => {
-    const navigate = useNavigate()
+
+   
+    
 
     const gnbTitle = [
         {
@@ -78,14 +79,16 @@ const Header = () => {
         },
     ];
 
-    const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
-
+    //const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
     const [user,setUser] = useState(null)
 
 
-    useEffect(()=>{
+    
 
-        // 로그인 여부 확인
+
+
+    useEffect(()=>{
+       
         const id = sessionStorage.getItem("id");
         const name = sessionStorage.getItem("name");
         const grade = sessionStorage.getItem("grade");
@@ -98,7 +101,11 @@ const Header = () => {
 
     },[])
 
+    
+
     useEffect(() => {
+      
+        
 
         const header = document.querySelector("header");
         const gnb = document.querySelector(".gnb");
@@ -151,9 +158,16 @@ const Header = () => {
                 lastScrollTop = scTop;
             });
             
-            
+            // 리사이즈 이벤트
+            window.addEventListener("resize",function(){
+                if(window.innerWidth > 1500){
+                    mWrap.classList.remove("move");
+                }
+            });
+
             // 모바일 햄버거 버튼
             mBtn.addEventListener("click",function(){
+              //  console.log("mBtn 클릭 실행");
                 if(!mBtn.classList.contains("move")){
                     mWrap.classList.add("move");
                     mBtn.classList.add("move");
@@ -163,11 +177,7 @@ const Header = () => {
                     mBtn.classList.remove("move");
                 }
             });
-            window.addEventListener("resize",function(){
-                if(window.innerWidth > 1500){
-                    mWrap.classList.remove("move");
-                }
-            });
+
             
             // 모바일 GNB
             for(let i = 0; i < depth1.length; i++){
@@ -185,9 +195,10 @@ const Header = () => {
                 });
             }
         }
+
         
-        
-    },[user]);
+    },[]);
+
 
 
     return (
@@ -200,7 +211,7 @@ const Header = () => {
                             <img src="/img/common/logo.png" alt="" />
                         </Link>
                     </h1>
-                    <HeaderComp1 gnbMenu={gnbMenu}/>
+                    <HeaderComp1 gnbMenu={gnbTitle} />
                     <HeaderComp2 user={user}/>
                     
                     {/* <!-- 모바일 햄버거 버튼 --> */}
@@ -210,7 +221,8 @@ const Header = () => {
             {/* <!-- 모바일 메뉴 --> */}
             <div className="m_wrap" >
                 <HeaderComp4 user={user}/>
-                <HeaderComp5 gnbMenu={gnbMenu}/>
+                <HeaderComp5 gnbMenu={gnbTitle} />
+               
             </div>
         </>
     );

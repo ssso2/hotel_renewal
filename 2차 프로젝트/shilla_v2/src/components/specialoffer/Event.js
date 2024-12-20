@@ -1,5 +1,6 @@
 import React from "react";
 import EventMain from "./EventMain";
+import { Link } from "react-router-dom";
 
 const Event = () => {
     return (

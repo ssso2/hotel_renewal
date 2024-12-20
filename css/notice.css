@@ -8,9 +8,6 @@
   font-weight: bold;
   color: #333;
 }
-.container .Nboard-nav {
-  font-weight: bold;
-}
 .container .Nboard-nav,
 .container .listwrap {
   height: 50px;
@@ -19,6 +16,11 @@
   text-align: center;
   line-height: 50px;
   background-color: #faf8f4;
+  border-bottom: 1px solid #ddd;
+}
+.container .Nboard-nav {
+  font-weight: bold;
+  border: none;
 }
 .container .listwrap {
   background-color: transparent;
@@ -65,6 +67,59 @@
   justify-content: space-around;
   display: flex;
   line-height: 40px;
+}
+.container .Nform .dropdown {
+  width: 130px;
+  display: inline-block;
+  position: relative;
+}
+.container .Nform .sortbox,
+.container .Nform .typebox {
+  appearance: none;
+  height: 30px;
+  background: url(../../public/img/icon/icn_collps01.png) no-repeat right 10px center;
+  background-size: 10px auto;
+  padding-left: 8px;
+  line-height: 2;
+  cursor: pointer;
+}
+.container .Nform .typebox {
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+.container .Nform .sortbox {
+  border: 1px solid #ddd;
+}
+.container .Nform .dropdown-item-sort,
+.container .Nform .dropdown-item-type {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  z-index: 1;
+  width: 130px;
+  list-style: none;
+  position: absolute;
+  display: none;
+}
+.container .Nform .dropdown.on > .dropdown-item-sort,
+.container .Nform .dropdown.on > .dropdown-item-type {
+  display: block;
+}
+.container .Nform .dropdown.on > .sortbox,
+.container .Nform .dropdown.on > .typebox {
+  background-image: url(../../public/img/icon/icn_collps02.png);
+}
+.container .Nform .dropdown-item-sort > li,
+.container .Nform .dropdown-item-type > li {
+  padding: 10px 0 8px 8px;
+  height: 30px;
+  line-height: 1;
+}
+.container .Nform .dropdown-item-sort > li:hover,
+.container .Nform .dropdown-item-type > li:hover {
+  background-color: #333;
+  color: #fff;
 }
 .container .Nfilter {
   width: 20%;

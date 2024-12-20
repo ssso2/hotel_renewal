@@ -20,6 +20,21 @@ module.exports = upload => {
             ret.status(500).send("db오류");
         }
     });
+    //클릭조회수
+    router.put("/:id", async (req, res) => {
+        const { id } = req.params;
+        const sql =
+            "update notice set view_point = view_point+1 where notice_id = ?";
+        console.log("notice 조회수 접근", id);
+        try {
+            const [ret] = await conn.execute(sql, [id]);
+            // console.log("조회수업데이트 성공")
+            // res.json(ret);
+        } catch (error) {
+            console.log("sql 실패 : ", error.message);
+            res.status(500).send("db오류");
+        }
+    });
 
     //filter
     router.put("/", async (req, res) => {

@@ -1,6 +1,6 @@
 .paymentContainer {
   max-width: 600px;
-  height: 550px;
+  height: 570px;
   margin: 200px auto;
   padding: 20px;
   background-color: #f8f9fa;
@@ -33,8 +33,21 @@
       margin-bottom: 8px;
     }
 
-    .formGroup {
+    .roomType{
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .avaCount{
+      font-size: 17px;
+      font-weight: 600;
       margin-bottom: 15px;
+    }
+
+    .formGroup {
+      margin-bottom: 17px;
+      font-weight: 600;
 
       label {
         display: block;

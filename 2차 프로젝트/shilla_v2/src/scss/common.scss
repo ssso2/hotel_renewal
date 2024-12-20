@@ -385,6 +385,9 @@ body::-webkit-scrollbar-track {
             width: 200px;
             display: flex;
             justify-content: space-between;
+            &.right {
+                justify-content: end;
+            }
         }
     }
     &.type5 {
@@ -1051,6 +1054,55 @@ body::-webkit-scrollbar-track {
     .swiper-button-prev {
         &::after {
             font-size: 30px;
+        }
+    }
+
+    /* 3depth tab 공통 */
+    .depth3-tab-wrap {
+        padding-top: 100px;
+        /* tab */
+        .tab {
+            border-bottom: 0;
+            flex-wrap: wrap;
+            & > li {
+                margin: 0;
+                min-width: calc(100% / 2);
+                font-size: 14px;
+                border: 1px solid #ddd;
+                border-top: 0;
+                border-right: 0;
+                &:last-child,
+                &:nth-child(2n) {
+                    border-right: 1px solid #ddd;
+                }
+                &:nth-child(1),
+                &:nth-child(2) {
+                    border-top: 1px solid #ddd;
+                }
+
+            }
+            // &.tab-long {
+            //     & > li {
+            //         min-width: calc(100% / 2) !important;
+            //         &:last-child,
+            //         &:nth-child(2) {
+            //             border-right: 1px solid #ddd;
+            //         }
+            //         &:nth-child(3),
+            //         &:nth-child(4) {
+            //             border-top: 0;
+            //         }
+            //     }
+            // }
+        }
+        .sub-title {
+            display: block;
+            h2 {
+                margin-bottom: 20px;
+            }
+            .location {
+                justify-content: end;
+            }
         }
     }
 }

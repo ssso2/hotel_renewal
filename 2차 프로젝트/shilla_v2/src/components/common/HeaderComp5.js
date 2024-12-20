@@ -1,22 +1,31 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import '../../scss/reset.css'
 import '../../scss/common.scss'
 import '../../scss/header.scss'
 import '../../scss/main.scss'
 
-const HeaderComp5 = ({gnbMenu}) => {
+
+    const HeaderComp5 = ({gnbMenu}) => {    
+    
+   
+       
+
     return (
         <ul className="m_gnb">
             {
                 gnbMenu.map((item,index)=>{
                     return  <li key={index} >
-                                <Link to='javascrip:void();'>{item.title}</Link>
-                                <ul className="m_sub">
+                               
+                                <Link to='#self'>{item.title}</Link>
+                                <ul className="m_sub" >
                                     {
+                                        
                                         item.gnbMenu.map((depth2,idx)=>{
-                                            return <li key={idx}><Link to={depth2.link}>{depth2.text}</Link></li>
+                                            return <li key={idx}><Link to={depth2.link} >{depth2.text}</Link></li>  
+                                   
                                         })
+                                        
                                     }
                                 </ul>
                             </li>
