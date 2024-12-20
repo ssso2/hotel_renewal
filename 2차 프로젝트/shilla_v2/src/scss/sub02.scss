@@ -45,6 +45,7 @@
                 img{
                     border-radius: 10px;
                     width: 100%;
+                    transition: all 0.3s;
                 }
             }
             .txt-wrap{
@@ -80,7 +81,7 @@
             &:hover {
                 .img-wrap {
                     img {
-                        transform: scale(1.1);
+                        transform: scale(1.05);
                     }
                 }
                 .view-more {
