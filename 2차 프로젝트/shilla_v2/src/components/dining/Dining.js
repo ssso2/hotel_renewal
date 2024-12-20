@@ -37,7 +37,7 @@ const Dining = () => {
                 </div>
                 <ul className="location">
                     <li><Link to="/">홈</Link></li>
-                    <li><Link to="javascrip:void();">다이닝</Link></li>
+                    <li><Link to="#self">다이닝</Link></li>
                 </ul>
             </div>
           <div className="sub-list-wrap">

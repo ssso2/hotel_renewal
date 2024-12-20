@@ -70,7 +70,6 @@ function Suite_Presidential() {
             title: "룸구성",
             description: [
                 "North Wing : 침실 2, 욕실 2, 사우나 1, 화장실 3, 응접실 1, 집무실 1, 다이닝 룸 1",
-                <br />,
                 "South Wing : 침실 2, 욕실 2, 화장실 3, 응접실 1, 집무실 1, 다이닝 룸 1",
             ]
         },
