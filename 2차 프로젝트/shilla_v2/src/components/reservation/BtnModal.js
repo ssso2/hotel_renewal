@@ -1,28 +1,20 @@
 import React from "react";
 
-const BtnModal = ({propBtn}) => {
+const BtnModal = ({dataTitle}) => {
   return (
-    <div>
-      <div class="lypop" data-lyOpen="pop-benefit-guide">
-        <div class="lypop-wp mid">
-          <div class="lypop-content">
-            <div class="lypop-title">
-              <strong>혜택 및 이용 안내</strong>
-              <a
-                href="javascrip:void();"
-                class="lypop-close"
-                data-lyClose="pop-benefit-guide"
-              >
-                <span class="hide">닫기</span>
-              </a>
+    <div className="lypop" data-lyOpen={dataTitle}>
+    <div className="lypop-wp mid">
+        <div className="lypop-content">
+            <div className="lypop-title">
+                <strong>혜택 및 이용 안내</strong>
+                <a href="javascrip:void();" className="lypop-close" data-lyClose={dataTitle} ><span className="hide">닫기</span></a>
             </div>
-            <div class="lypop-ct scroll">
-              <iframe src="../pop/sub03_01_01_pop.html" title="내용"></iframe>
+            <div className="lypop-ct scroll">
+                <iframe src="/reserve/pop" title="내용"></iframe>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</div>
   );
 };
 
