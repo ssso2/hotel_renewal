@@ -162,7 +162,7 @@ function ScrollToTop() {
 function App() {
     return (
         <>
-            <ScrollToTop />{/* 스크롤 상단 이동을 위한 컴포넌트 */}
+            <ScrollToTop />{/* 스크롤 상단 이동 컴포넌트 */}
             <Routes>
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>

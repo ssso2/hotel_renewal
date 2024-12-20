@@ -99,7 +99,7 @@ const AdminRoomDetail = () => {
                             )}
 
                             <button className="back-button" onClick={() => navigate(-1)}>
-                                목록으로 가기
+                                목록으로
                             </button>
                         </div>
                     </div>

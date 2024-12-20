@@ -2,10 +2,8 @@
     position: relative; /* 자식 요소를 기준으로 정렬 가능 */
 
     .back-button {
-        position: absolute;
-        top: -9px;
-        right: 10px;
         padding: 7px 15px;
+        margin-top: 15px;
         margin-bottom: 30px;
         background-color: grey;
         color: #ffffff;
