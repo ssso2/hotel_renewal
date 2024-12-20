@@ -13,11 +13,8 @@ import '../../scss/header.scss'
 
 const Header = () => {
 
+   
     
-   // var winPage = useRef('/');
-   // console.log("Header : ", winPage);
-   console.log("Header : ");
-    const navigate = useNavigate()
 
     const gnbTitle = [
         {
@@ -82,25 +79,16 @@ const Header = () => {
         },
     ];
 
-    const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
+    //const [gnbMenu,gnbMenuSet] = useState(gnbTitle);
     const [user,setUser] = useState(null)
-    const [winSize,setWinSize] = useState("dt")
-    //const [winPage,setWinPage] = useState("/")
+
 
     
 
-    function setWinPage(ww){
-        
-        
-
-       // winPage.current = ww;
-       // console.log("setWinPage : ", winPage.current );
-    }
 
 
     useEffect(()=>{
-        console.log("로그인 useEffect 실행");
-        // 로그인 여부 확인
+       
         const id = sessionStorage.getItem("id");
         const name = sessionStorage.getItem("name");
         const grade = sessionStorage.getItem("grade");
@@ -116,8 +104,8 @@ const Header = () => {
     
 
     useEffect(() => {
-       // console.log("로그인 useEffect 실행", winPage);
-       console.log("메뉴 useEffect 실행");
+      
+        
 
         const header = document.querySelector("header");
         const gnb = document.querySelector(".gnb");
@@ -174,9 +162,6 @@ const Header = () => {
             window.addEventListener("resize",function(){
                 if(window.innerWidth > 1500){
                     mWrap.classList.remove("move");
-                    setWinSize("dt");
-                }else{
-                    setWinSize("mobile");
                 }
             });
 
@@ -213,12 +198,7 @@ const Header = () => {
 
         
     },[]);
-//user, winSize, winPage
 
-    function aaa(uuu, wp){
-        console.log("aaa : ", uuu, wp)
-     //   setWinPage(wp)
-    }
 
 
     return (
@@ -231,7 +211,7 @@ const Header = () => {
                             <img src="/img/common/logo.png" alt="" />
                         </Link>
                     </h1>
-                    <HeaderComp1 gnbMenu={gnbMenu} />
+                    <HeaderComp1 gnbMenu={gnbTitle} />
                     <HeaderComp2 user={user}/>
                     
                     {/* <!-- 모바일 햄버거 버튼 --> */}
@@ -241,8 +221,8 @@ const Header = () => {
             {/* <!-- 모바일 메뉴 --> */}
             <div className="m_wrap" >
                 <HeaderComp4 user={user}/>
-                <HeaderComp5 gnbMenu={gnbMenu} />
-                {/* <HeaderComp5 gnbMenu={gnbMenu} winPage={winPage} setWinPage={setWinPage} aaa = {aaa}/> */}
+                <HeaderComp5 gnbMenu={gnbTitle} />
+               
             </div>
         </>
     );
