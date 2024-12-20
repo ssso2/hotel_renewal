@@ -55,7 +55,7 @@ const Findpw = () => {
             <Header />
             <div className="container">
                 <div className="center">
-                    <div className="depth3-tab-wrap">
+                    <div className="depth3-tab-wrap find">
                         <ul className="tab">
                             <li className="tab1">
                                 <Link to="/findid">아이디 찾기</Link>
