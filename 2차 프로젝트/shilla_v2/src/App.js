@@ -70,6 +70,13 @@ import EventDetail2 from "./components/specialoffer/EventDetail2";
 import EventDetail3 from "./components/specialoffer/EventDetail3";
 import EventDetail4 from "./components/specialoffer/EventDetail4";
 import EventDetail5 from "./components/specialoffer/EventDetail5";
+import EventDetail6 from "./components/specialoffer/EventDetail6";
+import EventDetail7 from "./components/specialoffer/EventDetail7";
+import EventDetail8 from "./components/specialoffer/EventDetail8";
+import EventDetail9 from "./components/specialoffer/EventDetail9";
+import EventDetail10 from "./components/specialoffer/EventDetail10";
+import EventDetail11 from "./components/specialoffer/EventDetail11";
+import EventDetail12 from "./components/specialoffer/EventDetail12";
 
 // admin
 import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
@@ -206,6 +213,13 @@ function App() {
                     <Route path="detail/3" element={<EventDetail3 />} />
                     <Route path="detail/4" element={<EventDetail4 />} />
                     <Route path="detail/5" element={<EventDetail5 />} />
+                    <Route path="detail/6" element={<EventDetail6 />} />
+                    <Route path="detail/7" element={<EventDetail7 />} />
+                    <Route path="detail/8" element={<EventDetail8 />} />
+                    <Route path="detail/9" element={<EventDetail9 />} />
+                    <Route path="detail/10" element={<EventDetail10 />} />
+                    <Route path="detail/11" element={<EventDetail11 />} />
+                    <Route path="detail/12" element={<EventDetail12 />} />
                 </Route>
 
                 {/* 아이디, 비밀번호 찾기 */}
