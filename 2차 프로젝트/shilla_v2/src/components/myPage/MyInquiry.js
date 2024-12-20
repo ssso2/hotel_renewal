@@ -15,7 +15,7 @@ const MyInquiry = () => {
             <Header/>
             <div className="container">
                 <div className="center">
-                    <div className="depth3-tab-wrap">
+                    <div className="depth3-tab-wrap  my-page">
                         <MyPageTab/>
                         <div id="board-container">
                             <div className="inquiry-info" id="inquiry-info">
