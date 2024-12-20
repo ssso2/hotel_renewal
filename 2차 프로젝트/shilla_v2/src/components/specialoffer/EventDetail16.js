@@ -5,17 +5,17 @@ import EventDetail_con from "./EventDetail_con";
 import EventDetail_des from "./EventDetail_des";
 import EventDetail_othercard from "./EventDetail_othercard";
 
-const EventDetail12 = () => {
+const EventDetail16 = () => {
     return (
         <div className="container">
             <div className="center">
-                <EventDetail1_header title="Birthday Bear Key Ring Special" />
-                <EventDetail_con img={img[11]} section={section[11]} />
+                <EventDetail1_header title="Urban Cabana" />
+                <EventDetail_con img={img[15]} section={section[15]} />
                 <EventDetail_des />
-                <EventDetail_othercard pkglist={pkglist.slice(11, 14)} />
+                <EventDetail_othercard pkglist={pkglist.slice(15, 18)} />
             </div>
         </div>
     );
 };
 
-export default EventDetail12;
+export default EventDetail16;

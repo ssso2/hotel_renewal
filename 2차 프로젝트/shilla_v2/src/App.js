@@ -77,6 +77,10 @@ import EventDetail9 from "./components/specialoffer/EventDetail9";
 import EventDetail10 from "./components/specialoffer/EventDetail10";
 import EventDetail11 from "./components/specialoffer/EventDetail11";
 import EventDetail12 from "./components/specialoffer/EventDetail12";
+import EventDetail13 from "./components/specialoffer/EventDetail13";
+import EventDetail14 from "./components/specialoffer/EventDetail14";
+import EventDetail15 from "./components/specialoffer/EventDetail15";
+import EventDetail16 from "./components/specialoffer/EventDetail16";
 
 // admin
 import AdminDashboard from "./components/admin/dashboard/AdminDashboard";
@@ -220,6 +224,10 @@ function App() {
                     <Route path="detail/10" element={<EventDetail10 />} />
                     <Route path="detail/11" element={<EventDetail11 />} />
                     <Route path="detail/12" element={<EventDetail12 />} />
+                    <Route path="detail/13" element={<EventDetail13 />} />
+                    <Route path="detail/14" element={<EventDetail14 />} />
+                    <Route path="detail/15" element={<EventDetail15 />} />
+                    <Route path="detail/16" element={<EventDetail16 />} />
                 </Route>
 
                 {/* 아이디, 비밀번호 찾기 */}
