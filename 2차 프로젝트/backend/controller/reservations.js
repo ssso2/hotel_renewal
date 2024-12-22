@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
         JOIN product p ON res.product_id = p.product_id
         WHERE (res.start_date <= ?  AND res.end_date >= ? and Cancel = 0)
       )
-      AND sp.start_date <= ?  AND sp.end_date >= ? )  t1
+      AND sp.start_date < ?  AND sp.end_date > ? )  t1
 join product on product.offer_id = t1.offer_id and t1.room_id = product.room_id
     `, [endDate, startDate, endDate, startDate]);
 
@@ -71,7 +71,9 @@ router.post('/savepayment', async (req, res) => {
   try {
     // 8자리 랜덤 결제 ID 생성
     const paymentId = Math.floor(Math.random() * 90000000) + 10000000; // 8자리 랜덤 결제 ID 생성
-    const paymentDate = new Date().toISOString().slice(0, 19).replace('T', ' '); // 결제 시각 (현재 시각)
+    const now = new Date();
+    const koreanTime = new Date(now.getTime() + 9 * 60 * 60 * 1000); // UTC + 9시간
+    const paymentDate = koreanTime.toISOString().slice(0, 19).replace('T', ' '); // KST 시간으로 포맷
 
     // 결제 정보를 payment 테이블에 저장
     const result = await db.execute(

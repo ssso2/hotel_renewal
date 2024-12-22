@@ -10,6 +10,8 @@
   cursor: pointer;
   position: relative;
   top: 20px;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .date-picker-popup {
@@ -53,4 +55,11 @@
     background-color: #007bff;
     color: white;
   }
+
+  //반응형
+@media screen and (max-width: 768px) {
+  .date-picker-input{
+    font-size: 20px;
+  }
+}
   

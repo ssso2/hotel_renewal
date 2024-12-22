@@ -19,6 +19,8 @@ const DateRangePicker = ({ onDateChange, showPicker, togglePicker }) => {
     setRange([ranges.selection]);
     const { startDate, endDate } = ranges.selection;
     onDateChange({ startDate, endDate });
+    console.log("데이트피커 시작일",startDate)
+    console.log("데이트피커 종료일",endDate)
   };
 
   const formatDate = (date) => format(date, "yyyy-MM-dd");

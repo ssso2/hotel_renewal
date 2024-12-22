@@ -132,8 +132,10 @@ function Res_search() {
       newDate.setDate(newDate.getDate() + 1); // 하루 더하기
       return newDate;
     };
-    const startDate = addOneDay(checkInDate).toISOString().split("T")[0];
-    const endDate = addOneDay(checkOutDate).toISOString().split("T")[0];
+    // const startDate = addOneDay(checkInDate).toISOString().split("T")[0];
+    // const endDate = addOneDay(checkOutDate).toISOString().split("T")[0];
+    const startDate = checkInDate
+    const endDate = checkOutDate
 
     console.log("시작일:", startDate);
     console.log("종료일:", endDate);
