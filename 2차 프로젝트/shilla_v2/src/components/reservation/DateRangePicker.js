@@ -51,7 +51,7 @@ const DateRangePicker = ({ onDateChange, showPicker, togglePicker }) => {
         )}`}
         onClick={togglePicker}
         style={{ cursor: "pointer" }}
-        className="date-picker-input"
+        className="date-picker-input1"
       />
       {showPicker && (
         <div className="date-picker-popup">

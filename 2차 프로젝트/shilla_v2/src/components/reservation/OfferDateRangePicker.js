@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import ko from "date-fns/locale/ko";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import "../../scss/dateRangePicker.scss";
+import "../../scss/spofferdateRangePicker.scss";
 
 const OfferDateRangePicker = ({
   onDateChange,
@@ -96,7 +96,7 @@ const OfferDateRangePicker = ({
         readOnly
         value={`${formatDate(range[0].startDate)} ~ ${formatDate(range[0].endDate)}`}
         onClick={togglePicker}
-        className="date-picker-input"
+        className="date-picker-input2"
         style={{ cursor: "pointer" }}
       />
       {showPicker && (
