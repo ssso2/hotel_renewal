@@ -108,13 +108,13 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
             var lypop = $(this).attr("data-lybtn");
             $(this).click(function () {
                 $(".lypop").hide();
-                $("[data-lyOpen =" + lypop + "]")
+                $("[data-lyopen =" + lypop + "]")
                     .show()
                     .focus();
             });
             $("[data-lyclose]").click(function () {
                 var lypopClose = $(this).attr("data-lyclose");
-                $("[data-lyOpen =" + lypop + "]").hide();
+                $("[data-lyopen =" + lypop + "]").hide();
                 $("[data-lybtn =" + lypopClose + "]").focus();
             });
         });
