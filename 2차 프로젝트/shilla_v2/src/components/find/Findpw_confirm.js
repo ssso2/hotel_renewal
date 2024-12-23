@@ -28,7 +28,7 @@ const Findpw_confirm = ({ idchkhandle, iderr, id, confirmbtn }) => {
                         </div>
                     </div>
                     <button id="edit" onClick={idchkhandle}>
-                        확인완료
+                        확인
                     </button>
                 </>
             )}

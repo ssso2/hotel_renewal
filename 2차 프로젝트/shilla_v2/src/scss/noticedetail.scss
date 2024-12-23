@@ -27,13 +27,14 @@
                     display: flex;
                     justify-content: space-between;
                     .titlecategory {
-                        width: 80px;
+                        width: 100px;
                     }
-                    .titlecategory,
+                    // .titlecategory,
+                    // .subject {
+                    //     padding-right: 10px;
+                    // }
                     .subject {
                         padding-right: 10px;
-                    }
-                    .subject {
                         width: 100%;
                         font-size: 14px;
                         font-weight: 800;

@@ -23,6 +23,7 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
             alert("공지사항을 찾을 수 없습니다.");
             return;
         }
+
         console.log("파일이름", targetNotice.system_name);
         try {
             const res = await axios.delete(
@@ -34,8 +35,6 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
                     },
                 }
             );
-            // console.log("삭제성공", res.data);
-            confirm("삭제하시겠습니까?");
             alert("삭제되었습니다.");
 
             setNoticelists(prev => prev.filter(item => item.notice_id !== id));
