@@ -27,10 +27,10 @@ const BoonModal = () => {
                                         <img src="../../img/sub/urban-04.jpg"/>
                                     </div>
                                 </div>
-                                <div className="swiper-button-next"></div>
-                                <div className="swiper-button-prev"></div>
+                                {/* <div className="swiper-button-next"></div>
+                                <div className="swiper-button-prev"></div> */}
                             </div>
-                            <div thumbsSlider="" className="swiper mySwiper">
+                            {/* <div thumbsSlider="" className="swiper mySwiper">
                                 <div className="swiper-wrapper">
                                     <div className="swiper-slide">
                                         <img src="../../img/sub/urban-01.jpg"/>
@@ -45,7 +45,7 @@ const BoonModal = () => {
                                         <img src="../../img/sub/urban-04.jpg"/>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="context">
                             <div className="Introduction">
