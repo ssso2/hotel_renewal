@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import "../../scss/oneRoomItem.scss";
 import { useNavigate } from "react-router-dom";
 import BtnModalRoom from "./BtnModalRoom";
@@ -67,6 +67,34 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCou
     }
   };
 
+
+  useEffect(()=>{
+
+    $(function () {
+        // 레이어 팝업
+        $(".lypop_close").on("click", function () {
+            $(".lypop").hide();
+        });
+    
+        $("[data-lybtn]").each(function () {
+            var lypop = $(this).attr("data-lybtn");
+            $(this).click(function () {
+                $(".lypop").hide();
+                $("[data-lyOpen =" + lypop + "]")
+                    .show()
+                    .focus();
+            });
+            $("[data-lyclose]").click(function () {
+                var lypopClose = $(this).attr("data-lyclose");
+                $("[data-lyOpen =" + lypop + "]").hide();
+                $("[data-lybtn =" + lypopClose + "]").focus();
+            });
+        });
+
+    });
+  })
+
+
   return (
     <>
     <ul className="tab-cont room on">
@@ -82,7 +110,7 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCou
                     <div className="context">
                         <h3 className="tit room">{roomType}</h3>
                         <p className="desc">총 개수: {roomList.length}개</p>
-                        <button type="button" className="pop-btn room" data-lybtn={dataTitle} title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                        <button type="button" className="pop-btn room" data-lybtn={`pop-benefit-guide`} title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
 
                     </div>
                 </div>
@@ -95,6 +123,10 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCou
 
             </div>
           </div>
+
+
+          {/* 모달 컴포넌트 */}
+          <BtnModalRoom />
           
           <div className="room-type-list">
               {expandedRoomType === roomType && (
@@ -115,8 +147,7 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCou
         </li>
       ))}
     </ul>
-    {/* 모달 컴포넌트 */}
-    <BtnModalRoom dataTitle={dataTitle}/>
+
     </>
   );
 }

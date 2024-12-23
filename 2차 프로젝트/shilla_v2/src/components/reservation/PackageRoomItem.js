@@ -96,27 +96,27 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
   useEffect(()=>{
 
     $(function () {
-      // 레이어 팝업
-      $(".lypop_close").on("click", function () {
-          $(".lypop").hide();
-      });
-  
-      $("[data-lybtn]").each(function () {
-          var lypop = $(this).attr("data-lybtn");
-          $(this).click(function () {
-              $(".lypop").hide();
-              $("[data-lyOpen =" + lypop + "]")
-                  .show()
-                  .focus();
-          });
-          $("[data-lyclose]").click(function () {
-              var lypopClose = $(this).attr("data-lyclose");
-              $("[data-lyOpen =" + lypop + "]").hide();
-              $("[data-lybtn =" + lypopClose + "]").focus();
-          });
-      });
+        // 레이어 팝업
+        $(".lypop_close").on("click", function () {
+            $(".lypop").hide();
+        });
+    
+        $("[data-lybtn]").each(function () {
+            var lypop = $(this).attr("data-lybtn");
+            $(this).click(function () {
+                $(".lypop").hide();
+                $("[data-lyOpen =" + lypop + "]")
+                    .show()
+                    .focus();
+            });
+            $("[data-lyclose]").click(function () {
+                var lypopClose = $(this).attr("data-lyclose");
+                $("[data-lyOpen =" + lypop + "]").hide();
+                $("[data-lybtn =" + lypopClose + "]").focus();
+            });
+        });
 
-  });
+    });
   })
   
   return (
