@@ -90,7 +90,7 @@ const RoomModal = () => {
                                     </p>
                                 </li>
                             </ul>
-                            <ul class = "amenity">
+                            <ul className= "amenity">
                                 <h3>객실 어메니티</h3>
                                 <li className="list">
                                     <h4>Bath Room</h4>
