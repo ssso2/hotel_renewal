@@ -2,9 +2,9 @@ import React from 'react'
 
 const RoomModal = () => {
   return (
-    <div class="container">
+    <div class="container pop">
         <div class="center">
-            <div class="depth3-tab-wrap">
+            <div class="depth3-tab-wrap pop">
                 <div class="tab-contents">
                     <div class="tab-cont cont1 on">
                         <div class="sub-title">

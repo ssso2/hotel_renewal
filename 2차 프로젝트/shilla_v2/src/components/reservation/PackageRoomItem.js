@@ -149,8 +149,8 @@ function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, c
           </div>
       </li>
   </ul>
-  {/* 모달 컴포넌트
-  {isModalOpen && <BoonModal onClose={closeModal} />} */}
+
+  {/* 모달 컴포넌트 */}
   <BtnModal dataTitle={dataTitle}/>
 
   </>

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "../../scss/oneRoomItem.scss";
 import { useNavigate } from "react-router-dom";
+import BtnModalRoom from "./BtnModalRoom";
 
-function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCount }) {
+function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCount,index }) {
+
+  const dataTitle = `pop-benefit-guide${index}`;
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
 
@@ -65,6 +68,7 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCou
   };
 
   return (
+    <>
     <ul className="tab-cont room on">
         {Object.entries(roomGroups).map(([roomType, roomList]) => (
         <li key={roomType} className="room-type">
@@ -78,7 +82,7 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCou
                     <div className="context">
                         <h3 className="tit room">{roomType}</h3>
                         <p className="desc">총 개수: {roomList.length}개</p>
-                        <button type="button" className="pop-btn room" data-lybtn="pop-benefit-guide" title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
+                        <button type="button" className="pop-btn room" data-lybtn={dataTitle} title="혜택 및 이용 안내 상세내용 팝업 열림">혜택 및 이용 안내 +</button>
 
                     </div>
                 </div>
@@ -111,6 +115,9 @@ function OneRoomItem({ rooms, checkInDate, checkOutDate, adultCount, childrenCou
         </li>
       ))}
     </ul>
+    {/* 모달 컴포넌트 */}
+    <BtnModalRoom dataTitle={dataTitle}/>
+    </>
   );
 }
 
