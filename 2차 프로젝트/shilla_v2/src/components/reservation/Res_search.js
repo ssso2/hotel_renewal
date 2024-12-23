@@ -132,8 +132,10 @@ function Res_search() {
       newDate.setDate(newDate.getDate() + 1); // 하루 더하기
       return newDate;
     };
-    const startDate = addOneDay(checkInDate).toISOString().split("T")[0];
-    const endDate = addOneDay(checkOutDate).toISOString().split("T")[0];
+    // const startDate = addOneDay(checkInDate).toISOString().split("T")[0];
+    // const endDate = addOneDay(checkOutDate).toISOString().split("T")[0];
+    const startDate = checkInDate
+    const endDate = checkOutDate
 
     console.log("시작일:", startDate);
     console.log("종료일:", endDate);
@@ -335,10 +337,11 @@ function Res_search() {
             <div className="tab-cont-wrap">
               {tab === "package" ? (
                 <div className="tab-cont package on">
-                  {availablePackages.map((pkg) => (
+                  {availablePackages.map((pkg,index) => (
                     <PackageRoomItem
                       key={pkg.offer_id}
                       packageData={pkg}
+                      index={index}
                       checkInDate={checkInDate}
                       checkOutDate={checkOutDate}
                       adultCount={confirmedAdultCount}

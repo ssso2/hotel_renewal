@@ -115,6 +115,8 @@ import Res_temp from "./components/reservation/Res_temp";
 import ResMainAllRoomDetail from "./components/reservation/ResMainAllRoomDetail";
 import ResMainAllRoomPayment from "./components/reservation/ResMainAllRoomPayment";
 import Res_detail from "./components/reservation/Res_detail";
+import BoonModal from "./components/reservation/BoonModal";
+import RoomModal from "./components/reservation/RoomModal";
 
 // room
 import Room from "./components/room/Room";
@@ -269,6 +271,8 @@ function App() {
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
                 <Route path="/reserve/:product_id" element={<ResOffer />} />
+                <Route path="/reserve/pop" element={<BoonModal />} />
+                <Route path="/reserve/pop2" element={<RoomModal />} />
 
                 {/* 객실 */}
                 <Route path="/room" element={<Room />} />
