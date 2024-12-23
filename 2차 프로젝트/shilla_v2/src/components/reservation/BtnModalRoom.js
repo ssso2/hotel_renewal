@@ -2,7 +2,7 @@ import React from "react";
 
 const BtnModalRoom = ({}) => {
   return (
-    <div className="lypop room" data-lyOpen={`pop-benefit-guide`}>
+    <div className="lypop room" data-lyopen={`pop-benefit-guide`}>
     <div className="lypop-wp mid">
         <div className="lypop-content">
             <div className="lypop-title">
