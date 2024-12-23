@@ -29,7 +29,7 @@ module.exports = upload => {
         try {
             const [ret] = await conn.execute(sql, [id]);
             // console.log("조회수업데이트 성공")
-            // res.json(ret);
+            res.json(ret);
         } catch (error) {
             console.log("sql 실패 : ", error.message);
             res.status(500).send("db오류");
