@@ -6,7 +6,12 @@ import NoticedetailOther from "./NoticedetailOther";
 const Noticedetail = () => {
     const [Noticedetails, setNoticedetails] = useState([]);
     const { id } = useParams();
-
+    if (Noticedetails == undefined) {
+        return <div>로딩중</div>;
+    }
+    if (!Noticedetails || !id) {
+        return <div>로딩중</div>;
+    }
     const fetchData = async () => {
         try {
             const res = await axios.get(
@@ -24,11 +29,8 @@ const Noticedetail = () => {
     }, [id]);
     const imgurl = Noticedetails.system_name
         ? `http://localhost:5002/bk/files/${Noticedetails.system_name}`
-        : null;
+        : "";
 
-    if (!Noticedetails) {
-        return <div>로딩중</div>;
-    }
     // 날짜출력
     const formatter = new Intl.DateTimeFormat("ko-KR", {
         year: "numeric",
@@ -50,8 +52,17 @@ const Noticedetail = () => {
                 <div className="text-container">
                     <div className="title-wrap">
                         <div className="title">
-                            <span> [{Noticedetails.category}]</span>
-                            <p className="subject">{Noticedetails.title}</p>
+                            <div className="N_maintitle">
+                                <p className="titlecategory">
+                                    {/* Noticedetails가 null 또는 undefined일 경우 허용 조건*/}
+                                    {Noticedetails?.category
+                                        ? `[${Noticedetails.category}]`
+                                        : ""}
+                                    {/* [{Noticedetails.category || " "}] */}
+                                </p>
+                                <p className="subject">{Noticedetails.title}</p>
+                            </div>
+
                             <div className="writer-wrap">
                                 {/* 초기값 undefinded 처리작업 필요*/}
                                 {/* {Noticedetails.reg_date &&

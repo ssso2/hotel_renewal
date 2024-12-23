@@ -117,7 +117,17 @@ const OfferMain4 = ({ offer }) => {
                                                         /-\d{2}:\d{2}:\d{2}$/,
                                                         ""
                                                     )}{" "}
-                                                ~ {data.end_date.split("T")[0]}
+                                                ~
+                                                {/* {data.end_date.split("T")[0]} */}
+                                                {formatter
+                                                    .format(
+                                                        new Date(data.end_date)
+                                                    )
+                                                    .replace(/\. /g, "-") // 날짜 구분자를 "-"로 변경
+                                                    .replace(
+                                                        /-\d{2}:\d{2}:\d{2}$/,
+                                                        ""
+                                                    )}{" "}
                                             </p>
                                         </div>
                                         <div className="bottom-wrapper">

@@ -27,7 +27,20 @@ const OfferMain = () => {
         document.title = "신라호텔 - 스페셜오퍼";
         fetchData();
     }, []);
+    const [currentPage, setCurrentPage] = useState(1); // 페이지 초기값을 1로 설정
 
+    function ScrollToTop() {
+        const location = useLocation();
+        const isPaginationPage = location.pathname.includes("/specialOffer"); // 페이지 경로 확인
+
+        React.useEffect(() => {
+            if (isPaginationPage) {
+                window.scrollTo(0, 0);
+            }
+        }, [location.pathname]);
+
+        return null;
+    }
     return (
         <div>
             <div className="container offerdetail">
