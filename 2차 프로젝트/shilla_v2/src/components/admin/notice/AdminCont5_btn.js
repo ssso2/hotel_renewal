@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const AdminCont5_btn = ({ handleReset, handleSearch }) => {
     return (
         <div className="button-container">
-            <button type="button" className="reset" onClick={handleReset}>
+            <button className="reset" onClick={handleReset}>
                 초기화
             </button>
             <button

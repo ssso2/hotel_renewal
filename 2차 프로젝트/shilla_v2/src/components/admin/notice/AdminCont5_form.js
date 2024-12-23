@@ -13,14 +13,19 @@ const AdminCont5_form = ({
     handleSearch,
 }) => {
     console.log("제목과타입", Txtinput, Ntype);
-    const handleReset = () => {
+    const handleReset = e => {
         setTxtinput(""); // 상태 초기화
-        setNtype("all"); // 상태 초기화
+        setNtype(""); // 상태 초기화
     };
 
     return (
         <form className="searchwrap" name="myfrm">
-            <AdminCont5_search Txtinput={Txtinput} setTxtinput={setTxtinput} setNtype={setNtype} Ntype={Ntype} />
+            <AdminCont5_search
+                Txtinput={Txtinput}
+                setTxtinput={setTxtinput}
+                setNtype={setNtype}
+                Ntype={Ntype}
+            />
             {/* <AdminCont5_type setNtype={setNtype} Ntype={Ntype} /> */}
             <AdminCont5_btn
                 handleReset={handleReset}
