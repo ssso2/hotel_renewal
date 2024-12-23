@@ -6,12 +6,7 @@ import NoticedetailOther from "./NoticedetailOther";
 const Noticedetail = () => {
     const [Noticedetails, setNoticedetails] = useState([]);
     const { id } = useParams();
-    if (Noticedetails == undefined) {
-        return <div>로딩중</div>;
-    }
-    if (!Noticedetails || !id) {
-        return <div>로딩중</div>;
-    }
+
     const fetchData = async () => {
         try {
             const res = await axios.get(
@@ -42,9 +37,20 @@ const Noticedetail = () => {
         hour12: false,
         timeZone: "Asia/Seoul",
     });
+    //// 오류 해결해야함!!
+    if (!Noticedetails) {
+        console.log("Noticedetails 없음");
+        return <></>;
+    }
+    if (Noticedetails == undefined) {
+        return <div>로딩중</div>;
+    }
+    if (!Noticedetails || !id) {
+        return <div>로딩중</div>;
+    }
     const context = Noticedetails.context || ""; // 빈문자열 경우의 수 처리
     console.log("내용", typeof context);
-
+    //////
     return (
         <div className="container board">
             <div className="center">

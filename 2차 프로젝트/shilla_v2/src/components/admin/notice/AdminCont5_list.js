@@ -14,6 +14,7 @@ const AdminCont5_list = ({ Noticelists, setNoticelists }) => {
         startIndex,
         startIndex + itemsPerPage
     );
+    //삭제버튼
     const delGo = async id => {
         console.log("삭제요청 id:", id);
         const targetNotice = Noticelists.find(item => item.notice_id === id);
