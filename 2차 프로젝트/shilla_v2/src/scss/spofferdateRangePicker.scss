@@ -1,4 +1,4 @@
-.date-picker-input1 {
+.date-picker-input2 {
   width: auto;
   height: auto;
   padding: 2px; /* 내부 여백 */
@@ -9,9 +9,10 @@
   text-align: center;
   cursor: pointer;
   position: relative;
+  top: 20px;
   width: auto;
   background-color: rgba(0, 0, 0, 0);
-  line-height: 2.6;
+  top: 100%;  /* 부모 div 아래에 위치하도록 설정 */
 }
 
 .date-picker-popup {
@@ -58,8 +59,8 @@
 
   //반응형
 @media screen and (max-width: 768px) {
-  .date-picker-input1{
+  .date-picker-input2{
     font-size: 20px;
-    line-height: 2.8;
   }
 }
+  

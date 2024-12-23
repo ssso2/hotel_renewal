@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import ko from "date-fns/locale/ko";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import "../../scss/dateRangePicker.scss";
+import "../../scss/spofferdateRangePicker.scss";
 
 const OfferDateRangePicker = ({
   onDateChange,
@@ -18,23 +18,23 @@ const OfferDateRangePicker = ({
   // today.setHours(0, 0, 0, 0);
 
   // 날짜에 하루를 빼는 함수
-  const minusOneDay = (date) => {
-    const newDate = new Date(date);
-    newDate.setDate(newDate.getDate() - 1); // 하루 빼기
-    return newDate;
-  };
+  // const minusOneDay = (date) => {
+  //   const newDate = new Date(date);
+  //   newDate.setDate(newDate.getDate() - 1); // 하루 빼기
+  //   return newDate;
+  // };
 
   // validMinDate 설정 (하루를 빼되 오늘 날짜 이전이 되지 않도록)
   const rawMinDate =
     minDate instanceof Date && !isNaN(minDate) ? minDate : today;
 
   const validMinDate = new Date(
-    Math.max(today, minusOneDay(rawMinDate)) // 오늘과 rawMinDate-1 중 더 늦은 날짜
+    Math.max(today, rawMinDate) // 오늘과 rawMinDate-1 중 더 늦은 날짜
   );
 
   // validMaxDate 설정
   const validMaxDate =
-    maxDate instanceof Date && !isNaN(maxDate) ? minusOneDay(maxDate) : null;
+    maxDate instanceof Date && !isNaN(maxDate) ? maxDate : null;
 
   console.log("오늘 날짜 (today):", today);
   console.log("validMinDate (조정된 최소 날짜):", validMinDate);
@@ -96,7 +96,7 @@ const OfferDateRangePicker = ({
         readOnly
         value={`${formatDate(range[0].startDate)} ~ ${formatDate(range[0].endDate)}`}
         onClick={togglePicker}
-        className="date-picker-input"
+        className="date-picker-input2"
         style={{ cursor: "pointer" }}
       />
       {showPicker && (
