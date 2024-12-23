@@ -988,7 +988,7 @@ const JoinCont1 = () => {
 
 
             {/* <!-- alert --> */}
-            <div className="lypop join" data-lyOpen="pop-alert" tabindex="0">
+            <div className="lypop join" data-lyopen="pop-alert" tabindex="0">
                 <div className="lypop-wp min">
                     <div className="lypop-content">
                         <div className="lypop-title">

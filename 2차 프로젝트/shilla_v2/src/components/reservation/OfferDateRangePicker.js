@@ -24,6 +24,13 @@ const OfferDateRangePicker = ({
   //   return newDate;
   // };
 
+  // 날짜에 하루를 더하는 함수
+  const plusOneDay = (date) => {
+    const newDate = new Date(date);
+    newDate.setDate(newDate.getDate() + 1); // 하루 빼기
+    return newDate;
+  };
+
   // validMinDate 설정 (하루를 빼되 오늘 날짜 이전이 되지 않도록)
   const rawMinDate =
     minDate instanceof Date && !isNaN(minDate) ? minDate : today;
@@ -34,7 +41,7 @@ const OfferDateRangePicker = ({
 
   // validMaxDate 설정
   const validMaxDate =
-    maxDate instanceof Date && !isNaN(maxDate) ? maxDate : null;
+  plusOneDay(maxDate) instanceof Date && !isNaN(plusOneDay(maxDate)) ? plusOneDay(maxDate) : null;
 
   console.log("오늘 날짜 (today):", today);
   console.log("validMinDate (조정된 최소 날짜):", validMinDate);

@@ -172,7 +172,7 @@ const JoinCont2 = () => {
 
             {/* 레이어 팝업 */}
             {isPopupVisible && (
-                <div className="lypop pop-using" data-lyOpen="pop-using" tabIndex="0">
+                <div className="lypop pop-using" data-lyopen="pop-using" tabIndex="0">
                     <div className="lypop-wp min">
                         <div className="lypop-content">
                             <div className="lypop-title">
