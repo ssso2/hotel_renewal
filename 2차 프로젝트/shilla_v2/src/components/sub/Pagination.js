@@ -20,18 +20,24 @@ const Pagination = ({
         (_, i) => startPage + i
     );
 
+    // 페이지 변경 시 스크롤 최상단으로 이동하는 함수
+    const handlePageChange = (page) => {
+        onPageChange(page); // 기존 페이지 변경 함수 호출
+        window.scrollTo({ top: 0, behavior: "smooth" }); 
+    };
+
     return (
         <div className="pagination">
             <button
                 className="first"
-                onClick={() => onPageChange(1)}
+                onClick={() => handlePageChange(1)}
                 disabled={currentPage === 1}
             >
                 처음
             </button>
             <button
                 className="prev"
-                onClick={() => onPageChange(startPage - 1)}
+                onClick={() => handlePageChange(startPage - 1)}
                 disabled={currentGroup === 1}
             >
                 이전
@@ -40,21 +46,21 @@ const Pagination = ({
                 <button
                     key={page}
                     className={`page ${page === currentPage ? "active" : ""}`}
-                    onClick={() => onPageChange(page)}
+                    onClick={() => handlePageChange(page)}
                 >
                     {page}
                 </button>
             ))}
             <button
                 className="next"
-                onClick={() => onPageChange(endPage + 1)}
+                onClick={() => handlePageChange(endPage + 1)}
                 disabled={currentGroup === totalGroups}
             >
                 다음
             </button>
             <button
                 className="last"
-                onClick={() => onPageChange(totalPages)}
+                onClick={() => handlePageChange(totalPages)}
                 disabled={currentPage === totalPages}
             >
                 마지막
