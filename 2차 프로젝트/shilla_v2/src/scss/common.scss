@@ -132,6 +132,9 @@ body::-webkit-scrollbar-track {
 /* 3depth title 공통 */
 .container {
     margin: 80px 0 50px;
+    &.pop {
+        margin: 0;
+    }
 }
 .sub-title {
     display: flex;
@@ -224,6 +227,9 @@ body::-webkit-scrollbar-track {
 /* 3depth tab 공통 */
 .depth3-tab-wrap {
     padding-top: 100px;
+    &.pop {
+        padding: 0;
+    }
     /* tab */
     .tab {
         display: flex;
@@ -596,6 +602,9 @@ body::-webkit-scrollbar-track {
             width: auto;
         }
     }
+    &.room {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
 }
 
 .lypop-wp {
@@ -683,6 +692,10 @@ body::-webkit-scrollbar-track {
         line-height: 1.7;
         text-align: center;
     }
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: #fff !important;
 }
 
 // daterangepicker 팜업

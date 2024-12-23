@@ -15,7 +15,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                width: 100%;
+                // width: 100%;
                 box-sizing: border-box;
                 padding: 20px 30px;
                 border: 1px solid #e0e0e0;
@@ -23,31 +23,39 @@
                 border-radius: 10px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 word-break: break-word;
-                span,
-                .subject,
-                .writer-wrap {
-                    padding-right: 10px;
-                }
-                .subject {
-                    font-size: 16px;
-                    font-weight: 800;
-                    text-align: left;
-                    word-break: break-word;
+                .N_maintitle {
+                    display: flex;
+                    justify-content: space-between;
+                    .titlecategory {
+                        width: 80px;
+                    }
+                    .titlecategory,
+                    .subject {
+                        padding-right: 10px;
+                    }
+                    .subject {
+                        width: 100%;
+                        font-size: 14px;
+                        font-weight: 800;
+                        text-align: left;
+                        word-break: break-word;
+                    }
                 }
                 .writer-wrap {
                     text-align: right;
                     line-height: 1.7;
+                    padding-right: 10px;
                 }
             }
         }
 
         .content {
-            white-space: pre-line !important;
+            // white-space: pre-line !important;
             &.ncontent {
                 box-sizing: border-box;
                 height: 100%;
                 overflow: auto;
-                line-height: 1.7;
+                // line-height: 1.7;
                 padding: 20px 30px;
                 overflow: auto;
                 border: 1px solid #e0e0e0;
@@ -55,7 +63,6 @@
                 border-radius: 10px;
                 margin-top: 10px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
                 .imgstyle {
                     width: 60%;
                     height: auto;
@@ -64,6 +71,9 @@
                     padding-right: 20px;
                     min-width: 400px;
                     max-width: 800px;
+                    p {
+                        line-height: 2;
+                    }
                 }
             }
         }
@@ -72,7 +82,7 @@
         &.notice {
             margin-top: 30px;
             display: flex;
-            justify-content: center;
+            justify-content: start;
             width: 100%; // 버튼 컨테이너의 너비를 100%로 설정
             .listgo {
                 box-sizing: border-box;

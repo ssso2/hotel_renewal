@@ -81,8 +81,8 @@
                     @include flex-center;
                     &:hover {
                         transition: background-color 0.4s ease;
-                        background-color: #7a6c64;
-                        color: #fff;
+                        background-color: #7a6c64 !important;
+                        color: #fff !important;
                         border: none;
                     }
                 }
@@ -322,13 +322,14 @@
                     font-size: 18px;
                     margin-bottom: 0px;
                     display: inline-block;
-                    width: 50%;
+                    width: 80px;
+                }
+                .img-txt {
+                    width: calc(100% - 80px);
+                    padding-left: 50px;
                 }
                 img {
                     display: inline-block;
-                }
-                .img-txt {
-                    padding-left: 50px;
                 }
             }
         }

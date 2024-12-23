@@ -6,7 +6,9 @@ const OfferDetail1_dday = ({ endDate, pID }) => {
     const [deadline, setdeadline] = useState(null);
     console.log("마감일", endDate);
     useEffect(() => {
-        const deadT = new Date(endDate).getTime(); // 9시간을 밀리초로 변환;
+        const newendDate = new Date(endDate);
+        newendDate.setDate(newendDate.getDate() + 1);
+        const deadT = newendDate.getTime(); // 9시간을 밀리초로 변환;
 
         console.log("데드라인", deadT);
 

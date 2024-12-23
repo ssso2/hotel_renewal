@@ -284,6 +284,11 @@
                 width: 100%;
                 height: 100%;
                 position: relative;
+                &.event-btn {
+                    &::after {
+                        background: transparent;
+                    }
+                }
                 .img-wrapper {
                     aspect-ratio: 1/0.582587;
                     position: relative;
