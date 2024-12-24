@@ -3,20 +3,24 @@ import React from 'react';
 const ListItem = ({ title, description }) => (
     <li className="list">
         <h4>{title}</h4>
-        <p className="txt">{ description }</p>
+        <div className="txt">
+            {description.map((line, index) => (
+                <p key={index}>{line}</p>  // 각 항목을 <p> 태그로 감싸서 한 줄씩 표시
+            ))}
+        </div>
     </li>
 );
 
 const RoomInfo2 = ({ roomInfo2 }) => {
     return (
         <ul className="info">
-            <h3>상세 운영 시간</h3>
+            <h3>객실 정보</h3>
             {
                 roomInfo2.map((item, index) => (
                     <ListItem
-                        key={ index }
+                        key={ index + roomInfo2.length }
                         title={ item.title }
-                        description={ item.description }
+                        description={ Array.isArray(item.description) ? item.description : [item.description] }  // description이 배열이 아니면 배열로 변환
                     />
                 ))
             }

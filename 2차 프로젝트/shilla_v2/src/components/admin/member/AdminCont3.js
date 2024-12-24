@@ -117,7 +117,7 @@ function AdminCont3() {
                             <input
                                 type="text"
                                 maxLength={20}
-                                value={modify[item.member_id]?.description || item.description}
+                                value={modify[item.member_id]?.description || item.description || ''}
                                 onChange={(e) => handleChange(e.target.value, item.member_id)}
                             />
                         </li>

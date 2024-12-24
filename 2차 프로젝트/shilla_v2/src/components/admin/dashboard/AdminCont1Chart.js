@@ -40,7 +40,7 @@ const options = {
         },
       },
       grid: {
-        display: true,
+        display: false,
       },
     },
     y: {
@@ -54,6 +54,9 @@ const options = {
   plugins: {
     legend: {
       position: "top",
+    },
+    datalabels: {
+      display: false,
     },
   },
 };
@@ -84,8 +87,8 @@ const AdminCont1Chart = () => {
             {
               label: "월별 방문자 수",
               data: personCnt,
-              backgroundColor: "#0CD3FF",
-              borderColor: "#0CD3FF",
+              backgroundColor: "#7a6c64",
+              borderColor: "#7a6c64",
               fill: false,
               tension: 0.1,
             },
@@ -101,7 +104,7 @@ const AdminCont1Chart = () => {
 
   return (
     <div>
-      <Line options={options} data={chartData} width={350} height={300} />
+      <Line options={options} data={chartData} width={350} height={350} />
     </div>
   )
 }

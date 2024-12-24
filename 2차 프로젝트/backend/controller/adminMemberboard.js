@@ -26,7 +26,7 @@ module.exports = () => {
     })
 
     // 회원관리 detail 연결
-    router.get("/detail/:member_id", async (req, res) => { // 
+    router.get("/detail/:member_id", async (req, res) => {
         const { member_id } = req.params
         console.log("받은 member_id: ", member_id)
 

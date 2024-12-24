@@ -1,6 +1,8 @@
 import '../../scss/reset.css';
 import '../../scss/common.scss';
 import '../../scss/sub02.scss';
+import "../../scss/sub-list.scss";
+import "../../scss/sub-detail.scss";
 import { useState } from 'react';
 import RoomCont1 from './RoomCont1';
 import RoomCont2 from './RoomCont2';
