@@ -430,7 +430,7 @@ const JoinCont2 = () => {
             </div>
 
 
-            <div className="lypop pop-using" data-lyOpen="pop-using" tabindex="0">
+            <div className="lypop pop-using" data-lyopen="pop-using" tabindex="0">
                 <div className="lypop-wp min">
                     <div className="lypop-content">
                         <div className="lypop-title">

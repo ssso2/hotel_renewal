@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import ko from "date-fns/locale/ko";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import "../../scss/dateRangePicker.scss";
+import "../../scss/spofferdateRangePicker.scss";
 
 const OfferDateRangePicker = ({
   onDateChange,
@@ -15,12 +15,19 @@ const OfferDateRangePicker = ({
 }) => {
   // 오늘 날짜를 자정으로 초기화
   const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  // today.setHours(0, 0, 0, 0);
 
   // 날짜에 하루를 빼는 함수
-  const minusOneDay = (date) => {
+  // const minusOneDay = (date) => {
+  //   const newDate = new Date(date);
+  //   newDate.setDate(newDate.getDate() - 1); // 하루 빼기
+  //   return newDate;
+  // };
+
+  // 날짜에 하루를 더하는 함수
+  const plusOneDay = (date) => {
     const newDate = new Date(date);
-    newDate.setDate(newDate.getDate() - 1); // 하루 빼기
+    newDate.setDate(newDate.getDate() + 1); // 하루 빼기
     return newDate;
   };
 
@@ -29,12 +36,12 @@ const OfferDateRangePicker = ({
     minDate instanceof Date && !isNaN(minDate) ? minDate : today;
 
   const validMinDate = new Date(
-    Math.max(today, minusOneDay(rawMinDate)) // 오늘과 rawMinDate-1 중 더 늦은 날짜
+    Math.max(today, rawMinDate) // 오늘과 rawMinDate-1 중 더 늦은 날짜
   );
 
   // validMaxDate 설정
   const validMaxDate =
-    maxDate instanceof Date && !isNaN(maxDate) ? minusOneDay(maxDate) : null;
+  plusOneDay(maxDate) instanceof Date && !isNaN(plusOneDay(maxDate)) ? plusOneDay(maxDate) : null;
 
   console.log("오늘 날짜 (today):", today);
   console.log("validMinDate (조정된 최소 날짜):", validMinDate);
@@ -50,12 +57,23 @@ const OfferDateRangePicker = ({
 
   const handleSelect = (ranges) => {
     const { startDate, endDate } = ranges.selection;
-
-    if (startDate < validMinDate || (validMaxDate && endDate > validMaxDate)) {
+  
+    // 날짜만 비교 (시간 제외)
+    const startDateOnly = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+    const endDateOnly = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+    const validMinDateOnly = new Date(validMinDate.getFullYear(), validMinDate.getMonth(), validMinDate.getDate());
+    const validMaxDateOnly = validMaxDate
+      ? new Date(validMaxDate.getFullYear(), validMaxDate.getMonth(), validMaxDate.getDate())
+      : null;
+  
+    if (
+      startDateOnly < validMinDateOnly || 
+      (validMaxDateOnly && endDateOnly > validMaxDateOnly)
+    ) {
       alert("선택 가능한 날짜 범위를 벗어났습니다.");
       return;
     }
-
+  
     setRange([ranges.selection]);
     onDateChange({ startDate, endDate });
   };
@@ -85,7 +103,7 @@ const OfferDateRangePicker = ({
         readOnly
         value={`${formatDate(range[0].startDate)} ~ ${formatDate(range[0].endDate)}`}
         onClick={togglePicker}
-        className="date-picker-input"
+        className="date-picker-input2"
         style={{ cursor: "pointer" }}
       />
       {showPicker && (

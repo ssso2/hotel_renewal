@@ -1,4 +1,4 @@
-.date-picker-input {
+.date-picker-input1 {
   width: auto;
   height: auto;
   padding: 2px; /* 내부 여백 */
@@ -9,7 +9,9 @@
   text-align: center;
   cursor: pointer;
   position: relative;
-  top: 20px;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0);
+  line-height: 2.6;
 }
 
 .date-picker-popup {
@@ -53,4 +55,11 @@
     background-color: #007bff;
     color: white;
   }
-  
+
+  //반응형
+@media screen and (max-width: 768px) {
+  .date-picker-input1{
+    font-size: 20px;
+    line-height: 2.8;
+  }
+}

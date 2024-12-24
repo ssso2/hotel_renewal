@@ -1,5 +1,6 @@
 // setting
-import { Route, Routes } from "react-router-dom";
+import React from 'react';
+import { Route, Routes, useLocation } from "react-router-dom";
 
 // main
 import Main from "./components/main/Main";
@@ -114,6 +115,8 @@ import Res_temp from "./components/reservation/Res_temp";
 import ResMainAllRoomDetail from "./components/reservation/ResMainAllRoomDetail";
 import ResMainAllRoomPayment from "./components/reservation/ResMainAllRoomPayment";
 import Res_detail from "./components/reservation/Res_detail";
+import BoonModal from "./components/reservation/BoonModal";
+import RoomModal from "./components/reservation/RoomModal";
 
 // room
 import Room from "./components/room/Room";
@@ -148,9 +151,20 @@ import Findid from "./components/find/Findid";
 import Findpw from "./components/find/Findpw";
 import EventTemp from "./components/specialoffer/EventTemp";
 
+function ScrollToTop() {
+    const location = useLocation();
+
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
+    return null;
+}
+
 function App() {
     return (
         <>
+            <ScrollToTop />{/* 스크롤 상단 이동 컴포넌트 */}
             <Routes>
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
@@ -257,6 +271,8 @@ function App() {
                     <Route path="detail/payment" element={<PaymentPage />} />
                 </Route>
                 <Route path="/reserve/:product_id" element={<ResOffer />} />
+                <Route path="/reserve/pop" element={<BoonModal />} />
+                <Route path="/reserve/pop2" element={<RoomModal />} />
 
                 {/* 객실 */}
                 <Route path="/room" element={<Room />} />

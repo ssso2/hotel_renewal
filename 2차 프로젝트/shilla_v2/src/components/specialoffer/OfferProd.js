@@ -30,7 +30,11 @@ function OfferProd({ rec, index }) {
                             .replace(/\. /g, "-") // 날짜 구분자를 "-"로 변경
                             .replace(/-\d{2}:\d{2}:\d{2}$/, "")}{" "}
                         ~{/* {rec.start_date.split("T")[0]} ~{" "} */}
-                        {rec.end_date.split("T")[0]}
+                        {/* {rec.end_date.split("T")[0]} */}
+                        {formatter
+                            .format(new Date(rec.end_date))
+                            .replace(/\. /g, "-") // 날짜 구분자를 "-"로 변경
+                            .replace(/-\d{2}:\d{2}:\d{2}$/, "")}{" "}
                     </p>
                 </div>
             </Link>

@@ -4,16 +4,28 @@ import "../../scss/noticedetail.scss";
 import NoticedetailOther from "./NoticedetailOther";
 
 const Noticedetail = () => {
-    const [Noticedetails, setNoticedetails] = useState([]);
+    const [Noticedetails, setNoticedetails] = useState(null);
+    const [imgurl, setImgUrl] = useState(null);
+
     const { id } = useParams();
 
     const fetchData = async () => {
         try {
+            const cnt = await axios.put(
+                `http://localhost:5002/bk/notice/${id}`
+            );
+            console.log("조회수증가 성공");
             const res = await axios.get(
                 `http://localhost:5002/bk/notice/detail/${id}`
             );
-            console.log("갔다옴 : ", res.data);
+            console.log("디테일갔다옴 : ", res.data);
             setNoticedetails(res.data);
+
+            setImgUrl(
+                res.data.system_name
+                    ? `http://localhost:5002/bk/files/${res.data.system_name}`
+                    : ""
+            );
         } catch (err) {
             console.error("에러발생 : ", err);
         }
@@ -22,13 +34,7 @@ const Noticedetail = () => {
         document.title = "공지사항";
         fetchData();
     }, [id]);
-    const imgurl = Noticedetails.system_name
-        ? `http://localhost:5002/bk/files/${Noticedetails.system_name}`
-        : null;
 
-    if (!Noticedetails) {
-        return <div>로딩중</div>;
-    }
     // 날짜출력
     const formatter = new Intl.DateTimeFormat("ko-KR", {
         year: "numeric",
@@ -40,9 +46,14 @@ const Noticedetail = () => {
         hour12: false,
         timeZone: "Asia/Seoul",
     });
-    const context = Noticedetails.context || ""; // 빈문자열 경우의 수 처리
-    console.log("내용", typeof context);
 
+    //// 오류 해결해야함!!
+    if (!Noticedetails) {
+        console.log("Noticedetails 없음");
+        return <></>;
+    }
+
+    //////
     return (
         <div className="container board">
             <div className="center">
@@ -50,8 +61,17 @@ const Noticedetail = () => {
                 <div className="text-container">
                     <div className="title-wrap">
                         <div className="title">
-                            <span> [{Noticedetails.category}]</span>
-                            <p className="subject">{Noticedetails.title}</p>
+                            <div className="N_maintitle">
+                                <p className="titlecategory">
+                                    {/* Noticedetails가 null 또는 undefined일 경우 허용 조건*/}
+                                    {Noticedetails?.category
+                                        ? `[${Noticedetails.category}]`
+                                        : ""}
+                                    {/* [{Noticedetails.category || " "}] */}
+                                </p>
+                                <p className="subject">{Noticedetails.title}</p>
+                            </div>
+
                             <div className="writer-wrap">
                                 {/* 초기값 undefinded 처리작업 필요*/}
                                 {/* {Noticedetails.reg_date &&
@@ -74,9 +94,11 @@ const Noticedetail = () => {
                         <div className="Ntext">
                             {/* {Noticedetails.context} */}
                             {/* 줄바꿈해결 */}
-                            {context.split("\\n").map((paragraph, index) => (
-                                <p key={index}>{paragraph}</p>
-                            ))}
+                            {Noticedetails.context
+                                .split("\\n")
+                                .map((paragraph, index) => (
+                                    <p key={index}>{paragraph}</p>
+                                ))}
                         </div>
                     </div>
                 </div>

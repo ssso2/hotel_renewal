@@ -4,7 +4,7 @@ const MapPopUp = ( {propImage, propBtn} ) => {
 
     return (
         <div className="lypop" data-lyopen="pop-map">
-            <div className="lypop-wp mid">
+            <div className="lypop-wp mid cabanaBtn">
                 <div className="lypop-content">
                     <div className="lypop-title">
                         <strong>{propBtn}</strong>

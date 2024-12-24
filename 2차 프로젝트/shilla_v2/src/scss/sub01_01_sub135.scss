@@ -297,7 +297,8 @@
                         width: 100%;
                         font-weight: 400;
                         font-size: 22px;
-                        margin: 20px 0 20px 0;
+                        line-height: 1.5;
+                        margin: 16px 0;
                         @include ellipsis();
                     }
                     .other-date {

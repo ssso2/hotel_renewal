@@ -25,6 +25,7 @@ function Res_search() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [sortingOrder, setSortingOrder] = useState(""); // 정렬 상태 (낮은 가격 순 / 높은 가격 순)
   const [isSortingOpen, setIsSortingOpen] = useState(false); // 정렬 옵션 드롭다운 열기/닫기
+  const [isSearchClicked, setIsSearchClicked] = useState(false); // 검색 버튼 클릭 여부
 
   const togglePicker = () => setShowPicker(!showPicker);
   // 팝업 상태 토글
@@ -122,14 +123,19 @@ function Res_search() {
       alert("날짜를 선택해주세요");
       return;
     }
+
+    setIsSearchClicked(true); // 검색 버튼 클릭 여부 설정
+    
     // 날짜에 하루를 더하는 함수
     const addOneDay = (date) => {
       const newDate = new Date(date); // 새로운 날짜 객체 생성
       newDate.setDate(newDate.getDate() + 1); // 하루 더하기
       return newDate;
     };
-    const startDate = addOneDay(checkInDate).toISOString().split("T")[0];
-    const endDate = addOneDay(checkOutDate).toISOString().split("T")[0];
+    // const startDate = addOneDay(checkInDate).toISOString().split("T")[0];
+    // const endDate = addOneDay(checkOutDate).toISOString().split("T")[0];
+    const startDate = checkInDate
+    const endDate = checkOutDate
 
     console.log("시작일:", startDate);
     console.log("종료일:", endDate);
@@ -257,10 +263,12 @@ function Res_search() {
               </button>
             </div>
           </div>
-          <div className="no-select">
+          <div className={`no-select ${isSearchClicked ? "" : "on"}`}>
             예약을 원하시는 날짜, 인원을 선택해주세요.
           </div>
-          <div className="search-results-wrap on">
+          <div className={`search-results-wrap ${isSearchClicked ? "on" : ""}`}>
+            {isSearchClicked && (
+              <div>
             <div className="tab-wrap">
               <ul className="tab">
                 <li
@@ -329,10 +337,11 @@ function Res_search() {
             <div className="tab-cont-wrap">
               {tab === "package" ? (
                 <div className="tab-cont package on">
-                  {availablePackages.map((pkg) => (
+                  {availablePackages.map((pkg,index) => (
                     <PackageRoomItem
                       key={pkg.offer_id}
                       packageData={pkg}
+                      index={index}
                       checkInDate={checkInDate}
                       checkOutDate={checkOutDate}
                       adultCount={confirmedAdultCount}
@@ -352,6 +361,8 @@ function Res_search() {
                 </div>
               )}
             </div>
+            </div>
+            )}
           </div>
         </div>
       </section>

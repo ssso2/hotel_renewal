@@ -27,6 +27,7 @@ function ResOfferRoomId(props) {
   const [offerData, setOfferData] = useState({});
   const [sortingOrder, setSortingOrder] = useState(""); // 정렬 상태 기본값 ""
   const [isSortingOpen, setIsSortingOpen] = useState(false); // 정렬 옵션 드롭다운 열기/닫기
+  const [isSearchClicked, setIsSearchClicked] = useState(false); // 검색 버튼 클릭 여부
 
   const togglePicker = () => setShowPicker(!showPicker);
   // 팝업 상태 토글
@@ -129,6 +130,8 @@ function ResOfferRoomId(props) {
       alert("날짜를 선택해주세요");
       return;
     }
+
+    setIsSearchClicked(true); // 검색 버튼 클릭 여부 설정
 
     try {
       const response = await axios.post("http://localhost:5002/bk/reserve", {
@@ -245,7 +248,7 @@ function ResOfferRoomId(props) {
               </button>
             </div>
           </div>
-          <div className="no-select">
+          <div className={`no-select ${isSearchClicked ? "" : "on"}`}>
             예약을 원하시는 날짜, 인원을 선택해주세요.
           </div>
           <div className="search-results-wrap on">

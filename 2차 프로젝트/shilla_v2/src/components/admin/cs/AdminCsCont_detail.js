@@ -100,17 +100,26 @@ const AdminCsCont_detail = () => {
 
     // 게시글 삭제 함수
     function delGo() {
-        console.log('delGo 진입', `${bkURL}/admin/cs/detail/${num}`);
-
-        axios.delete(`${bkURL}/admin/cs/detail/${num}`)  // 게시글 삭제 요청
-        .then(res => {
-            console.log('삭제완료', res.data);
-            alert('삭제되었습니다.');
-            navigate('/admin/cs');  // 목록 페이지로 이동
-        })
-        .catch(err => {
-            console.log('삭제오류', err);
-        });
+        // 삭제 확인 창 표시
+        const isConfirmed = window.confirm("해당 게시글을 삭제하시겠습니까?");
+        
+        if (isConfirmed) {
+            // 사용자가 '확인'을 클릭한 경우 삭제 진행
+            console.log('delGo 진입', `${bkURL}/board/delete/${num}`);
+    
+            axios.delete(`${bkURL}/board/delete/${num}`)
+                .then(res => {
+                    console.log('삭제완료', res.data);
+                    alert('삭제되었습니다.');
+                    navigate('/admin/cs'); 
+                })
+                .catch(err => {
+                    console.log('삭제오류', err);
+                });
+        } else {
+            // 사용자가 '취소'를 클릭한 경우 아무것도 하지 않음
+            console.log('삭제 취소');
+        }
     }
 
 

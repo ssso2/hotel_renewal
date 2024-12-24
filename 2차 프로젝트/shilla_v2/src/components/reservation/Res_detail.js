@@ -43,24 +43,24 @@ function Res_detail(props) {
   }
 
   // 날짜에 하루를 더하는 함수
-  const addOneDay = (date) => {
-    const newDate = new Date(date); // 새로운 날짜 객체 생성
-    newDate.setDate(newDate.getDate() + 1); // 하루 더하기
-    return newDate;
-  };
+  // const addOneDay = (date) => {
+  //   const newDate = new Date(date); // 새로운 날짜 객체 생성
+  //   newDate.setDate(newDate.getDate() + 1); // 하루 더하기
+  //   return newDate;
+  // };
 
-  const formattedCheckInDate = addOneDay(checkInDate)
-    .toISOString()
-    .split("T")[0];
-  const formattedCheckOutDate = addOneDay(checkOutDate)
-    .toISOString()
-    .split("T")[0];
+  // const formattedCheckInDate = addOneDay(checkInDate)
+  //   .toISOString()
+  //   .split("T")[0];
+  // const formattedCheckOutDate = addOneDay(checkOutDate)
+  //   .toISOString()
+  //   .split("T")[0];
 
   console.log("체크인 : ", checkInDate);
   console.log("체크아웃 : ", checkOutDate);
 
-  console.log("포멧체크인 : ", formattedCheckInDate);
-  console.log("포멧체크아웃 : ", formattedCheckOutDate);
+  // console.log("포멧체크인 : ", formattedCheckInDate);
+  // console.log("포멧체크아웃 : ", formattedCheckOutDate);
 
   const [options, setOptions] = useState({
     adultBf: 0, // 성인 조식 수
@@ -162,7 +162,7 @@ function Res_detail(props) {
     // PaymentPage로 이동
     navigate("/reserve/detail/payment", {
       state: {
-        reservationDate: `${formattedCheckInDate} ~ ${formattedCheckOutDate}`, // 예약 날짜
+        reservationDate: `${checkInDate} ~ ${checkOutDate}`, // 예약 날짜
         roomName: offerName, // offerName 객실
         // adultBf: options.adultBf,
         // childBf: options.childBf,
@@ -203,7 +203,7 @@ function Res_detail(props) {
                       className="date"
                       type="text"
                       name="rsv-date"
-                      value={`${formattedCheckInDate} ~ ${formattedCheckOutDate}`}
+                      value={`${checkInDate} ~ ${checkOutDate}`}
                       readOnly
                     />
                   </li>

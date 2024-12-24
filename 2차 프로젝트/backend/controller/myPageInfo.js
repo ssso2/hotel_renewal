@@ -17,7 +17,7 @@ module.exports = upload => {
         }
     
         try {
-            const [ret] = await conn.execute('SELECT *, DATE_FORMAT(date,\'%Y-%m-%d\') as reg_str FROM board WHERE member_id = ?', [member_id]);
+            const [ret] = await conn.execute('SELECT *, DATE_FORMAT(date,\'%Y-%m-%d\') as reg_str FROM board WHERE member_id = ? ORDER BY board_id DESC', [member_id]);
     
             if (ret.length === 0) {
                 res.status(500).send("문의 내역이 없습니다.");

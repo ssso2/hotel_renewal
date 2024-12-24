@@ -163,12 +163,13 @@ function Res_search() {
           {/* 객실만 보이도록 탭 제거 */}
           <div className="room-list">
             <h3>객실</h3>
-            {availableRooms.map((room) => (
+            {availableRooms.map((room,index) => (
               <OneRoomItem
                 key={room.room_id}
                 roomData={room}
                 checkInDate={checkInDate}
                 checkOutDate={checkOutDate}
+                index={index}
               />
             ))}
           </div>

@@ -46,16 +46,16 @@ const Noticelist = () => {
 
     //조회수
     // const id = Noticelists.filter(item => item.notice_id);
-    const handleview = async id => {
-        console.log("제목클릭");
-        try {
-            const res = axios.put(`http://localhost:5002/bk/notice/${id}`);
-            console.log("조회수증가 성공");
-            // navigate(`http://localhost:5002/bk/notice/detail/${id}`);
-        } catch (error) {
-            console.error("갔다옴실패", error);
-        }
-    };
+    // const handleview = async id => {
+    //     console.log("제목클릭");
+    //     try {
+    //         // const res = axios.put(`http://localhost:5002/bk/notice/${id}`);
+    //         //console.log("조회수증가 성공");
+    //         // navigate(`http://localhost:5002/bk/notice/detail/${id}`);
+    //     } catch (error) {
+    //         console.error("갔다옴실패", error);
+    //     }
+    // };
 
     //페이지네이션
     const [currentPage, setCurrentPage] = useState(1);
@@ -121,9 +121,9 @@ const Noticelist = () => {
                                 <div className="N-title">
                                     <Link
                                         to={`detail/${data.notice_id}`}
-                                        onClick={() =>
-                                            handleview(data.notice_id)
-                                        }
+                                        // onClick={() =>
+                                        //     handleview(data.notice_id)
+                                        // }
                                         className="Nlink"
                                     >
                                         {data.title}

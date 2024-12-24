@@ -20,18 +20,29 @@ const Pagination = ({
         (_, i) => startPage + i
     );
 
+    // 페이지 번호를 눌렀을 때만 최상단 이동
+    const handleDirectPageChange = (page) => {
+        onPageChange(page);
+        window.scrollTo(0, 0); 
+    };
+
+    // 처음/이전/다음/마지막 버튼을 눌렀을 때는 스크롤 유지
+    const handleNavigationPageChange = (page) => {
+        onPageChange(page);
+    };
+
     return (
         <div className="pagination">
             <button
                 className="first"
-                onClick={() => onPageChange(1)}
+                onClick={() => handleNavigationPageChange(1)}
                 disabled={currentPage === 1}
             >
                 처음
             </button>
             <button
                 className="prev"
-                onClick={() => onPageChange(startPage - 1)}
+                onClick={() => handleNavigationPageChange(startPage - 1)}
                 disabled={currentGroup === 1}
             >
                 이전
@@ -40,21 +51,21 @@ const Pagination = ({
                 <button
                     key={page}
                     className={`page ${page === currentPage ? "active" : ""}`}
-                    onClick={() => onPageChange(page)}
+                    onClick={() => handleDirectPageChange(page)} 
                 >
                     {page}
                 </button>
             ))}
             <button
                 className="next"
-                onClick={() => onPageChange(endPage + 1)}
+                onClick={() => handleNavigationPageChange(endPage + 1)}
                 disabled={currentGroup === totalGroups}
             >
                 다음
             </button>
             <button
                 className="last"
-                onClick={() => onPageChange(totalPages)}
+                onClick={() => handleNavigationPageChange(totalPages)}
                 disabled={currentPage === totalPages}
             >
                 마지막
