@@ -3,18 +3,18 @@ const db = require('mysql2');
 
 
 // 데이터베이스 연결 객체 생성
-// const conn = db.createPool({
-//     host : 'localhost', //127.0.0.1 써도 됨
-//     user : 'tj',
-//     password : '1234',
-//     database : 'study_db'
-// });
 const conn = db.createPool({
-    host : 'gagaclub.cafe24app.com', //127.0.0.1 써도 됨
-    user : 'gagaclub',
-    password : 'qwer123!',
-    database : 'gagaclub'
+    host : 'localhost', //127.0.0.1 써도 됨
+    user : 'tj',
+    password : '1234',
+    database : 'study_db'
 });
+// const conn = db.createPool({
+//     host : 'gagaclub.cafe24app.com', //127.0.0.1 써도 됨
+//     user : 'gagaclub',
+//     password : 'qwer123!',
+//     database : 'gagaclub'
+// });
 
 
 
