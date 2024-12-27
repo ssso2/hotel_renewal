@@ -53,10 +53,9 @@ const AdminCont2Chart = () => {
         const labels = response.data.map((item) => item.dateCalc);
         const prices = response.data.map((item) => item.totalPrice);
         
-        // 다양한 색상 배열 생성
         const backgroundColors = [
-          "#ACE2E1", "#A5B68D", "#C9C19F", "#D2E0FB", "#F4D9D0", "#FFCF81",
-          "#D1BB9E", "#D6DAC8", "#B784B7", "#747264", "#C39898", "#eebfd7",
+          "#ACE2E1", "#A5B68D", "#C6DCBA", "#D2E0FB", "#F4D9D0", "#FFCF81",
+          "#D1BB9E", "#E4B1F0", "#C65BCF", "#747264", "#C39898", "#FF6969",
         ];
 
         setChartData({

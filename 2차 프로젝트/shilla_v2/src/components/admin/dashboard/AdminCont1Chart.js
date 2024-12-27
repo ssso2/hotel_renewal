@@ -65,7 +65,7 @@ const AdminCont1Chart = () => {
         const personCnt = response.data.map((item) => item.personCnt)
 
         setChartData({
-          labels: labels,
+          labels: labels, 
           datasets: [
             {
               label: "월별 방문자 수",

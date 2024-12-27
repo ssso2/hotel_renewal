@@ -13,7 +13,7 @@ router.get("/person", async (req, res) => {
         const [reservationValue] = await conn.execute(`SELECT DATE_FORMAT(end_date,'%y-%m')
             as dateCalc, sum(adult_cnt + child_cnt - cancel) as personCnt from reservation
             where date_format(end_date, '%y-%m') != '25-01'
-            group by DATE_FORMAT(end_date,'%y-%m')`)
+            group by DATE_FORMAT(end_date,'%y-%m')`) 
             console.log("연결 성공1", reservationValue)
             res.json(reservationValue)
         } catch (err) {
