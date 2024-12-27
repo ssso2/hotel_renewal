@@ -73,14 +73,8 @@ const AdminCont1Chart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5002/bk/admin/dashboard/person')
-        
-        const filteredData = response.data.filter(item => {
-          const date = new Date(item.dateCalc);
-          return !(date.getFullYear() === 2025 && date.getMonth() === 0); // 0은 1월을 의미
-        });
-
-        const labels = filteredData.map((item) => item.dateCalc);
-        const personCnt = filteredData.map((item) => item.personCnt);
+        const labels =  response.data.map((item) => item.dateCalc)
+        const personCnt = response.data.map((item) => item.personCnt)
 
         setChartData({
           labels: labels,
