@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
         JOIN product p ON res.product_id = p.product_id
         WHERE (res.start_date <= ?  AND res.end_date >= ? and Cancel = 0)
       )
-      AND sp.start_date < ?  AND sp.end_date > ? )  t1
+      AND sp.start_date <= ?  AND sp.end_date >= ? )  t1
 join product on product.offer_id = t1.offer_id and t1.room_id = product.room_id
     `, [endDate, startDate, endDate, startDate]);
 

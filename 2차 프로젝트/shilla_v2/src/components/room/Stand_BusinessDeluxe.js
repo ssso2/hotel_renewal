@@ -18,7 +18,7 @@ import '../../scss/sub-detail.scss';
 import '../../scss/sub-room.scss';
 import '../../scss/swiperStyles.css';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Stand_BusinessDeluxe() {
     const galleryImgs = [
@@ -181,6 +181,10 @@ function Stand_BusinessDeluxe() {
         },
     ]
     
+    useEffect(() => {
+        document.title = "신라호텔 - 비즈니스 디럭스";
+    }, []);
+
     const [room, roomSet] = useState(roomIntro);
 
     return (

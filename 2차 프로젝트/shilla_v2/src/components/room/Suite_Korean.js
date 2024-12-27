@@ -18,6 +18,8 @@ import "../../scss/sub-detail.scss";
 import "../../scss/sub-room.scss";
 import "../../scss/swiperStyles.css";
 
+import { useEffect } from "react";
+
 function Suite_Korean(props) {
     const galleryImgs = [
         "../../img/sub/roomSuiteKorean01.jpg",
@@ -175,6 +177,10 @@ function Suite_Korean(props) {
             ]
         },
     ]
+
+    useEffect(() => {
+        document.title = "신라호텔 - 코리안 스위트";
+    }, []);
 
     return (
         <>

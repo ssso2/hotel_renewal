@@ -1,7 +1,9 @@
 import '../../scss/reset.css';
 import '../../scss/common.scss';
 import '../../scss/sub02.scss';
-import { useState } from 'react';
+import "../../scss/sub-list.scss";
+import "../../scss/sub-detail.scss";
+import { useState, useEffect } from 'react';
 import RoomCont1 from './RoomCont1';
 import RoomCont2 from './RoomCont2';
 
@@ -140,6 +142,10 @@ const RoomContainer = () => {
             ]
         },
     ]
+
+    useEffect (() => {
+        document.title = "신라호텔 - 객실"
+    }, [])
 
     const [space, spaceSet] = useState(RoomTypeData)
 

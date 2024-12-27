@@ -23,7 +23,6 @@ const AdminCont3Detail = () => {
                 // GET 요청을 보내서 특정 회원의 정보를 가져오는 작업을 수행, 요청 대기 후 response 할당
                 reservationSet(response.data.reserve) // reservation의 상태 업데이트 함수, reservationSet의 응답 데이터인 reserve(예약정보 데이터)를 실행
                 memberSet(response.data.mem) // member의 상태 업데이트 함수, 회원 정보를 담음, memberSet 함수에 전달해 member 상태를 업데이트
-                console.log("reservationSet",response.data) // 콘솔로 응답 데이터 출력
             } catch (err) {
                 console.error("예약 정보 가져오는 중 오류 발생:", err) // 오류 발생
             }

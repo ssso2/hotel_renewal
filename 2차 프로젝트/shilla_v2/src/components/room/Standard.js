@@ -7,9 +7,6 @@ import Popup from "../room/Popup";
 import RoomInfo from "../room/RoomInfo";
 import RoomAmenity from "../room/RoomAmenity";
 import RoomGuide from "../room/RoomGuide";
-// import Standard_desc1 from "./Standard_desc1";
-// import Standard_desc2 from "./Standard_desc2";
-// import Standard_desc3 from "./Standard_desc3";
 import Footer from  "../common/Footer";
 
 import "../../scss/common.scss";
@@ -21,7 +18,7 @@ import "../../scss/sub-detail.scss";
 import "../../scss/sub-room.scss";
 import "../../scss/swiperStyles.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Standard() {
     const galleryImgs = [
@@ -182,11 +179,11 @@ function Standard() {
         },
     ]
 
-    const [room, roomSet] = useState(roomIntro);
+    useEffect(() => {
+        document.title = "신라호텔 - 디럭스";
+    }, []);
 
-    // redux, reduce, context 사용
-    // react redux, context 차이점 (chatGPT로 이거 하나만 물어보기)
-    // 상위 컴포넌트에서 하위 컴포넌트로 받아 내려가기
+    const [room, roomSet] = useState(roomIntro);
 
     return (
         <>

@@ -18,6 +18,7 @@ import "../../scss/sub-detail.scss";
 import "../../scss/sub-room.scss";
 import "../../scss/swiperStyles.css";
 
+import { useEffect } from "react";
 
 function Suite_Premier() {
     const galleryImgs = [
@@ -175,6 +176,10 @@ function Suite_Premier() {
             ]
         },
     ]
+
+    useEffect(() => {
+        document.title = "신라호텔 - 프리미어 스위트";
+    }, []);
     
     return (
         <>

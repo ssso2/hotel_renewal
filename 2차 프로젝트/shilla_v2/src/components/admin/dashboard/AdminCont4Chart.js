@@ -25,7 +25,7 @@ ChartJS.register(
 // 차트 옵션 설정
 const options = {
   type: 'bar',
-  indexAxis: 'y',
+  indexAxis: 'x',
   responsive: true,
   interaction: {
     intersect: true,
@@ -49,6 +49,11 @@ const options = {
       }
     },
   },
+  plugins: {
+    datalabels: {
+      display: false,
+    },
+  },
 };
 
 const AdminCont4Chart = () => {
@@ -61,12 +66,19 @@ const AdminCont4Chart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5002/bk/admin/dashboard/cancel')
-        console.log(response.data)
-
         const lastCancel = response.data.lastCancel
         const nowCancel = response.data.nowCancel
+        const labels = lastCancel.map((item) => {
+          if (item.room_type === '베리어프리 비지니스 디럭스') {
+            return '베리어프리 비지니스'
+          } else if (item.room_type === '이그제큐티브 그랜드 디럭스') {
+            return '이그제큐티브 그랜드'
+          } else if (item.room_type === '이그제큐티브 비지니스 디럭스') {
+            return '이그제큐티브 비지니스'
+          }
+          return item.room_type;
+        })
 
-        const labels = lastCancel.map((item) => item.room_type)
         const roomCancel = lastCancel.map((item) => item.cancel)
         const roomNowCancel = nowCancel.map((item) => item.cancel)
 
@@ -76,16 +88,16 @@ const AdminCont4Chart = () => {
             {
               label: "객실별 지난 달 현황",
               data: roomCancel,
-              backgroundColor: "#ffb1c1",
-              borderColor: "#ff6384",
+              backgroundColor: "#D7D3BF",
+              borderColor: "#D7D3BF",
               fill: false,
               tension: 0.1,
             },
             {
               label: "객실별 이번 달 현황",
               data: roomNowCancel,
-              backgroundColor: "#63ce2a",
-              borderColor: "#63ce2a",
+              backgroundColor: "#B6A28E",
+              borderColor: "#B6A28E",
               fill: false,
               tension: 0.1,
             },

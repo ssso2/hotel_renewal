@@ -3,7 +3,12 @@ import React from 'react';
 const ListItem = ({ title, description }) => (
     <li className="list">
         <h4>{title}</h4>
-        <p className="txt">{ description }</p>
+        <div className="txt">
+            {Array.isArray(description) 
+                ? description.map((item, index) => <p key={index}>{item}</p>)
+                : <p>{description}</p>
+            }
+        </div>
     </li>
 );
 
