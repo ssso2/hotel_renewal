@@ -52,7 +52,7 @@ const AdminCont5_Modify = () => {
             );
             console.log("백수정성공res.send", res.data);
             setmodify(res.data);
-            alert("수정완료");
+            alert("수정되었습니다.");
             navigate(`/admin/notice`);
         } catch (error) {
             console.error("정보수정실패 : ", error);
