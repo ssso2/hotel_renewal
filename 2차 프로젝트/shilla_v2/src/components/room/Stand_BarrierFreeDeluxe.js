@@ -18,7 +18,7 @@ import '../../scss/sub-detail.scss';
 import '../../scss/sub-room.scss';
 import '../../scss/swiperStyles.css';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Stand_BarrierFreeDeluxe() {
     const galleryImgs = [
@@ -39,7 +39,7 @@ function Stand_BarrierFreeDeluxe() {
             description: "배리어프리 비즈니스 디럭스 룸은 휠체어 사용자를 포함한 모든 투숙객이 보다 편리하게 이용할 수 있도록 특별하게 설계된 객실입니다.",
             subDescription: "'시대를 아우르는 모던함'을 만날 수 있는 안락한 공간과 세계적인 수준의 침구류와 함께 생애 최고의 휴식을 경험해보시기 바랍니다.",
         }
-    ]
+    ]    
     
     const roomInfo = [
         {
@@ -174,6 +174,10 @@ function Stand_BarrierFreeDeluxe() {
             ]
         },
     ]
+
+    useEffect(() => {
+        document.title = "신라호텔 - 배리어프리 비즈니스 디럭스";
+    }, []);
 
     const [room, roomSet] = useState(roomIntro);
 

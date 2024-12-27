@@ -73,13 +73,8 @@ const AdminCont1Chart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5002/bk/admin/dashboard/person')
-        console.log(response.data)
-
         const labels =  response.data.map((item) => item.dateCalc)
-        console.log("labels" , labels)
-        
         const personCnt = response.data.map((item) => item.personCnt)
-        
 
         setChartData({
           labels: labels,

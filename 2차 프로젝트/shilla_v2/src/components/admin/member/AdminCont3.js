@@ -6,28 +6,26 @@ import "../../../scss/AdminCont3.scss";
 
 
 function AdminCont3() {
-    const [member, memberSet] = useState([]); 
-    const [modify, modifySet] = useState({});
-    const navigate = useNavigate();
-
-    const [currentPage, setCurrentPage] = useState(1);
+    const [member, memberSet] = useState([])
+    const [modify, modifySet] = useState({})
+    const navigate = useNavigate()
+    const [currentPage, setCurrentPage] = useState(1)
     const itemsPerPage = 5;
 
     // 회원 데이터 가져오기
     const fetchData = () => {
         axios.get('http://localhost:5002/bk/admin/member')
             .then(res => {
-                console.log("회원 데이터 성공", res.data);
-                memberSet(res.data.members);
+                memberSet(res.data.members)
             })
             .catch(err => {
-                console.error("에러 발생 : ", err);
-            });
-    };
+                console.error("에러 발생 : ", err)
+            })
+    }
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [])
 
     // 현재 페이지 데이터 계산
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -52,12 +50,12 @@ function AdminCont3() {
                 ...prev[member_id],
                 description: value,
             },
-        }));
-    };
+        }))
+    }
 
     // 수정 버튼 클릭 시 API 호출
     const handleUpdate = (item) => {
-        const modifiedData = modify[item.member_id] || {};
+        const modifiedData = modify[item.member_id] || {}
 
         // 수정된 grade와 description 값을 확인하고, 없으면 원본 값을 사용
         const updatedData = {
@@ -76,8 +74,8 @@ function AdminCont3() {
             })
             .catch(err => {
                 console.error("회원 데이터 수정 오류", err);
-            });
-    };
+            })
+    }
 
     return (
         <div className="cont cont3">

@@ -18,7 +18,7 @@ import "../../scss/sub-detail.scss";
 import "../../scss/sub-room.scss";
 import "../../scss/swiperStyles.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Suite() {
     const galleryImgs = [
@@ -178,6 +178,9 @@ function Suite() {
         },
     ]
 
+    useEffect(() => {
+        document.title = "신라호텔 - 수페리어 스위트";
+    }, []);
 
     return (
         <>

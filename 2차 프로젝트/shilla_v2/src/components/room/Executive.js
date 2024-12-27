@@ -18,7 +18,7 @@ import "../../scss/sub-detail.scss";
 import "../../scss/sub-room.scss";
 import "../../scss/swiperStyles.css";
 
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
 function Executive() {
 
@@ -182,6 +182,11 @@ function Executive() {
             ]
         },
     ]
+
+    useEffect(() => {
+        document.title = "신라호텔 - 이그제큐티브 비즈니스 디럭스";
+    }, []);
+
 
     return (
         <>

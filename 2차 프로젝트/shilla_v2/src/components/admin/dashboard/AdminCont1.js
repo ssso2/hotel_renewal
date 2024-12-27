@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AdminCont1Chart from './AdminCont1Chart'
 import AdminCont2Chart from './AdminCont2Chart'
 import AdminCont3Chart from './AdminCont3Chart'
@@ -6,6 +6,10 @@ import AdminCont4Chart from './AdminCont4Chart'
 import '../../../scss/admin.scss'
 
 const AdminCont1 = () => {
+    // useEffect (() => {
+    //     document.title = "신라호텔:관리자 - 대시보드"
+    // }, [])
+
     return (
         <div className="cont cont1 on">
             <h2>대시보드</h2>
@@ -37,6 +41,8 @@ const AdminCont1 = () => {
             </div>
         </div>
     );
+
+    
 };
 
 export default AdminCont1;

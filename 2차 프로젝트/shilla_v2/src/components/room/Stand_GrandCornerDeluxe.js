@@ -18,7 +18,7 @@ import "../../scss/sub-detail.scss";
 import "../../scss/sub-room.scss";
 import "../../scss/swiperStyles.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Stand_GrandCornerDeluxe() {
 
@@ -41,7 +41,6 @@ function Stand_GrandCornerDeluxe() {
             description: "스탠다드 객실 중 가장 큰 규모를 자랑하며 2개의 창문을 통해 들어오는 자연 채광이 여유로움을 더하는 공간입니다.",
             subDescription: [
                 "글로벌 럭셔리 호텔 디자이너 피터 리미디오스가 디자인한 '시대를 아우르는 모던함'을 만나보십시오.",
-                // <br />,
                 "요트 콘셉트로 구성한 프라이빗 바와 세계적인 수준의 침구류와 함께 생애 최고의 휴식을 경험해보시기 바랍니다."
             ]
         }
@@ -181,6 +180,10 @@ function Stand_GrandCornerDeluxe() {
             ]
         },
     ]
+
+    useEffect(() => {
+        document.title = "신라호텔 - 그랜드 코너 디럭스";
+    }, []);
 
     const [room, roomSet] = useState(roomIntro);
 

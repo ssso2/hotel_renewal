@@ -16,7 +16,7 @@ import "../../scss/sub-detail.scss";
 import "../../scss/sub-room.scss";
 import "../../scss/swiperStyles.css";
 
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
 function Lounge_ExecutiveLounge() {
     const galleryImgs = [
@@ -83,6 +83,11 @@ function Lounge_ExecutiveLounge() {
             ]
         },
     ]
+
+    useEffect(() => {
+        document.title = "신라호텔 - 더 이그제큐티브 라운지";
+    }, []);
+    
 
     return (
         <>

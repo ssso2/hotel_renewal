@@ -66,13 +66,9 @@ const AdminCont3Chart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5002/bk/admin/dashboard/sell')
-        console.log(response.data)
-        
-        const lastMM = response.data.lastMM;
-        const nowMM = response.data.nowMM;
-
+        const lastMM = response.data.lastMM
+        const nowMM = response.data.nowMM
         const labels = lastMM.map((item) => {
-
           if (item.room_type === '베리어프리 비지니스 디럭스') {
             return '베리어프리 비지니스'
           } else if (item.room_type === '이그제큐티브 그랜드 디럭스') {

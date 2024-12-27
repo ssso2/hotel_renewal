@@ -66,15 +66,9 @@ const AdminCont4Chart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5002/bk/admin/dashboard/cancel')
-        console.log(response.data)
-
         const lastCancel = response.data.lastCancel
         const nowCancel = response.data.nowCancel
-
-        // const labels = lastCancel.map((item) => item.room_type)
-
         const labels = lastCancel.map((item) => {
-
           if (item.room_type === '베리어프리 비지니스 디럭스') {
             return '베리어프리 비지니스'
           } else if (item.room_type === '이그제큐티브 그랜드 디럭스') {

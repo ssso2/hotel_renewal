@@ -18,7 +18,7 @@ import "../../scss/sub-detail.scss";
 import "../../scss/sub-room.scss";
 import "../../scss/swiperStyles.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Suite_Shilla() {
     const galleryImgs = [
@@ -41,7 +41,6 @@ function Suite_Shilla() {
             description: "신라 스위트는 신라 브랜드만의 특별한 서비스와 경험을 누릴 수 있는 시그니처 객실입니다.",
             subDescription: [
                 "글로벌 럭셔리 호텔 디자이너 피터 리미디오스가 디자인한 '시대를 아우르는 모던함'을 만나보십시오.",
-                // <br />,
                 "요트 콘셉트로 구성한 프라이빗 바와 세계적인 수준의 침구류와 함께 생애 최고의 휴식을 경험해보시기 바랍니다."
             ]
         }
@@ -183,6 +182,10 @@ function Suite_Shilla() {
             ]
         },
     ]
+
+    useEffect(() => {
+        document.title = "신라호텔 - 신라 스위트";
+    }, []);
 
     return (
         <>
