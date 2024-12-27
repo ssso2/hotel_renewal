@@ -31,18 +31,6 @@ const options = {
     intersect: true,
   },
   scales: {
-    x: {
-      title: {
-        display: true,
-        text: "월별",
-        font: {
-          size: 14,
-        },
-      },
-      grid: {
-        display: false,
-      },
-    },
     y: {
       ticks: {
         beginAtZero: {

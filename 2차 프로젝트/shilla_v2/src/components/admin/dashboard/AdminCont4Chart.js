@@ -30,17 +30,6 @@ const options = {
   interaction: {
     intersect: true,
   },
-  scales: {
-    x: {
-      title: {
-        display: true,
-        text: "방 이름",
-        font: {
-          size: 14,
-        },
-      }
-    },
-  },
   options: {
     indexAxis: 'x',
     elements: {

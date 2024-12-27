@@ -26,29 +26,12 @@ ChartJS.register(
 
 const options = {
   responsive: true,
-  scales: {
-    x: {
-      title: {
-        display: true,
-        text: "월별",
-        font: {
-          size: 14,
-        },
-      },
-      grid: {
-        display: false,
-      },
-    },
-  },
   plugins: {
     datalabels: {
       formatter: (value, context) => {
-        // context.chart.data.labels를 사용하여 해당 데이터의 레이블을 가져옵니다.
         return context.chart.data.labels[context.dataIndex];
       },
-      color: '#000', // 데이터 라벨 색상 설정
-      // anchor: 'end',
-      // align: 'start',
+      color: '#000',
       offset: 25,
     },
     legend: {      
@@ -73,7 +56,7 @@ const AdminCont2Chart = () => {
         // 다양한 색상 배열 생성
         const backgroundColors = [
           "#ACE2E1", "#A5B68D", "#C9C19F", "#D2E0FB", "#F4D9D0", "#FFCF81",
-          "#D1BB9E", "#D6DAC8", "#B784B7", "#747264", "#C39898", "#eebfd7", "#C6EBC5",
+          "#D1BB9E", "#D6DAC8", "#B784B7", "#747264", "#C39898", "#eebfd7",
         ];
 
         setChartData({

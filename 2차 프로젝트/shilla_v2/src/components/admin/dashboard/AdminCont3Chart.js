@@ -31,30 +31,38 @@ const options = {
     intersect: true,
   },
   scales: {
-    x: {
+    y: {
       title: {
-        display: true,
-        text: "방 이름",
-        font: {
-          size: 14,
-        },
-      }
-    },
-  },
-  options: {
-    indexAxis: 'y',
-    elements: {
-      bar: {
-        borderWidth: 2,
-      }
+        display: false, // y축의 매출액 (원) 제목을 제거
+      },
     },
   },
   plugins: {
+    legend: {
+      display: true,
+      position: 'top', // 범례를 차트 위로 위치
+      align: 'center',   // 범례를 중앙에 정렬
+      labels: {
+        padding: 20,
+        font: {
+          size: 12
+        }
+      },
+    },
     datalabels: {
       display: false,
     },
+    // 범례와 차트 제목을 통합
+    title: {
+      display: true,
+      text: '매출액 (원)', // 차트 제목을 매출액 (원)으로 설정
+      font: {
+        size: 16
+      }
+    },
   },
 };
+
 
 const AdminCont3Chart = () => {
   const [chartData, setChartData] = useState({

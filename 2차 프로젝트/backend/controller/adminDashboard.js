@@ -12,6 +12,7 @@ router.get("/person", async (req, res) => {
     try {
         const [reservationValue] = await conn.execute(`SELECT DATE_FORMAT(end_date,'%y-%m')
             as dateCalc, sum(adult_cnt + child_cnt - cancel) as personCnt from reservation
+            where date_format(end_date, '%y-%m') != '25-01'
             group by DATE_FORMAT(end_date,'%y-%m')`)
             console.log("연결 성공1", reservationValue)
             res.json(reservationValue)
@@ -27,6 +28,7 @@ router.get("/price", async (req, res) => {
     try {
         const [priceValue] = await conn.execute(`select date_format(end_date, '%y-%m')
             as dateCalc, sum(tot_price) as totalPrice from reservation
+            where date_format(end_date, '%y-%m') != '25-01'
             group by date_format(end_date, '%y-%m')`)
         console.log("연결 성공2", priceValue)
         res.json(priceValue)
