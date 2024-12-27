@@ -9,6 +9,12 @@ const conn = db.createPool({
     password : '1234',
     database : 'study_db'
 });
+// const conn = db.createPool({
+//     host : 'gagaclub.cafe24app.com', //127.0.0.1 써도 됨
+//     user : 'gagaclub',
+//     password : 'qwer123!',
+//     database : 'gagaclub'
+// });
 
 
 
