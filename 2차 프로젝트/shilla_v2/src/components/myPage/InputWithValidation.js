@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-const InputWithValidation = ({ label, id, name, value, onChange, validationFn, error, type = "text" }) => {
+const InputWithValidation = ({ label, id, name, value, onChange, validationFn, error, type = "text", validateOnSubmit }) => {
     const [validationError, setValidationError] = useState('');
 
     useEffect(() => {
-        if (validationFn) {
-            setValidationError(validationFn(value));
+        if (validateOnSubmit && validationFn) {
+            setValidationError(validationFn(value)); // 버튼 클릭 시만 검증
         }
-    }, [value, validationFn]);
+    }, [value, validationFn, validateOnSubmit]); // validateOnSubmit이 true일 때만 유효성 검사
 
     return (
         <label className="my-info">
@@ -24,5 +24,7 @@ const InputWithValidation = ({ label, id, name, value, onChange, validationFn, e
         </label>
     );
 };
+
+
 
 export default InputWithValidation;
