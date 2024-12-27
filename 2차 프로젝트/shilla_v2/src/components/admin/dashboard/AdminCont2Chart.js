@@ -72,8 +72,8 @@ const AdminCont2Chart = () => {
         
         // 다양한 색상 배열 생성
         const backgroundColors = [
-          "#ECEBDE", "#D7D3BF", "#C9C19F", "#FDDBBB", "#B6A28E", "#E4E0E1",
-          "#ECEBDE", "#D7D3BF", "#C9C19F", "#FDDBBB", "#B6A28E", "#E4E0E1",
+          "#ACE2E1", "#A5B68D", "#C9C19F", "#D2E0FB", "#F4D9D0", "#FFCF81",
+          "#D1BB9E", "#D6DAC8", "#B784B7", "#747264", "#C39898", "#eebfd7",
         ];
 
         setChartData({

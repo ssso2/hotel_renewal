@@ -34,7 +34,7 @@ const options = {
     x: {
       title: {
         display: true,
-        text: "매출금액",
+        text: "방 이름",
         font: {
           size: 14,
         },
@@ -88,16 +88,16 @@ const AdminCont3Chart = () => {
             {
               label: "객실별 지난 달 현황",
               data: roomSell,
-              backgroundColor: "#D7D3BF",
-              borderColor: "##D7D3BF",
+              backgroundColor: "#a3a6e0",
+              borderColor: "##a3a6e0",
               fill: false,
               tension: 0.1,
             },
             {
               label: "객실별 이번 달 현황",
               data: roomNowSell,
-              backgroundColor: "#B6A28E",
-              borderColor: "#B6A28E",
+              backgroundColor: "#eebfd7",
+              borderColor: "#eebfd7",
               fill: false,
               tension: 0.1,
             },
