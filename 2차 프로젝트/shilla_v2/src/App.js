@@ -1,5 +1,5 @@
 // setting
-import React from 'react';
+import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 // main
@@ -141,7 +141,6 @@ import Suite_Presidential from "./components/room/Suite_Presidential";
 import Lounge_ExecutiveLounge from "./components/room/Lounge_ExecutiveLounge";
 
 //notice
-// import Noticelist from "./components/notice/Noticelist";
 import NoticeTemp from "./components/notice/NoticeTemp";
 import Noticelist from "./components/notice/Noticelist";
 import Noticedetail from "./components/notice/Noticedetail";
@@ -164,7 +163,8 @@ function ScrollToTop() {
 function App() {
     return (
         <>
-            <ScrollToTop />{/* 스크롤 상단 이동 컴포넌트 */}
+            <ScrollToTop />
+            {/* 스크롤 상단 이동 컴포넌트 */}
             <Routes>
                 {/* 메인 */}
                 <Route index element={<Main></Main>}></Route>
@@ -249,12 +249,10 @@ function App() {
                 <Route path="/findpw" element={<Findpw />} />
 
                 {/* 공지사항 */}
-
                 <Route path="/notice" element={<NoticeTemp />}>
                     <Route path="" element={<Noticelist />} />
                     <Route path="detail/:id" element={<Noticedetail />} />
                 </Route>
-
                 {/* 예약페이지 */}
                 <Route path="/reserve" element={<Res_temp />}>
                     <Route path="" element={<Res_search />} />
