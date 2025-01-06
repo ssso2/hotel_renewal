@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "../../scss/paymentPage.module.scss";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 function AllRoomPaymentPage() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -70,7 +72,7 @@ function AllRoomPaymentPage() {
     try {
       // axios를 사용하여 서버로 예약 데이터를 전송합니다.
       const response = await axios.post(
-        "http://localhost:5002/bk/reserve/save",
+        `${bkURL}/reserve/save`,
         reservationData
       );
 
@@ -117,7 +119,7 @@ function AllRoomPaymentPage() {
 
     try {
       const paymentResponse = await axios.post(
-        "http://localhost:5002/bk/reserve/savepayment", // 결제 저장 API
+        `${bkURL}/reserve/savepayment`, // 결제 저장 API
         paymentData
       );
 

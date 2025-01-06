@@ -3,13 +3,14 @@ import '../../scss/packageRoomItem.scss'
 import { useNavigate } from "react-router-dom";
 import BtnModal from "./BtnModal";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 function PackageRoomItem({ packageData, checkInDate, checkOutDate, adultCount, childrenCount,index}) {
 
   const dataTitle = `pop-benefit-guide${index}`;
   const navigate = useNavigate();
   const memberId = sessionStorage.getItem("id");
-  const imgurl = `http://localhost:5002/bk/files/${packageData.upSystem}`
-  const [isModalOpen, setIsModalOpen] = useState(false) // 모달 상태관리리
+  const imgurl = `${bkURL}/files/${packageData.upSystem}`
 
   console.log("packageData.start_date : ",packageData.start_date)
   console.log("packageData.end_date : ", packageData.end_date)

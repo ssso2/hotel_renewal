@@ -8,6 +8,8 @@ import OneRoomItem from "./OneRoomItem"; // 객실 컴포넌트
 import "../../scss/common.scss";
 import "../../scss/reservation.scss";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 function Res_search() {
   const navigate = useNavigate();
 
@@ -141,7 +143,7 @@ function Res_search() {
     console.log("종료일:", endDate);
 
     try {
-      const response = await axios.post("http://localhost:5002/bk/reserve", {
+      const response = await axios.post(`${bkURL}/reserve`, {
         startDate,
         endDate,
       });
