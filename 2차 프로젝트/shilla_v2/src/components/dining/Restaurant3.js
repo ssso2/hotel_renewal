@@ -65,7 +65,6 @@ const Restaurant3 = () => {
       },
     ];
     
-    // 가이드 데이터
     const guideData = {
       reservationInfo: `예약 접수 시작일은 '2개월 전 1일' 입니다.<br>
       예&#41; 7월 예약 : 5월 1일 9시부터 가능<br>

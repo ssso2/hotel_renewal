@@ -36,7 +36,7 @@ const AdminCont6 = () => {
     useEffect(() => {
         const fetchFilterData = async () => {
             try {
-                const response = await axios.get("http://localhost:5002/bk/sales/filters");
+                const response = await axios.get(`${bkURL}/sales/filters`);
                 setYears(response.data.years);
                 setMonths(response.data.months);
                 setRooms(response.data.rooms);
@@ -52,7 +52,7 @@ const AdminCont6 = () => {
     useEffect(() => {
         const fetchSalesData = async () => {
             try {
-                const response = await axios.get("http://localhost:5002/bk/sales", {
+                const response = await axios.get(`${bkURL}/sales`, {
                     params: {
                         year: selectedYear,
                         month: selectedMonth,

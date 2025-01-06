@@ -29,7 +29,7 @@ const AdminRoomDetail = () => {
         document.title = "신라호텔:관리자"
         const fetchRoomDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:5002/bk/admin/roomManagement/detail/${id}`);
+                const response = await axios.get(`${bkURL}/admin/roomManagement/detail/${id}`);
                 setRoomDetails(response.data);
             } catch (err) {
                 console.error("방 정보 가져오는 중 오류 발생:", err);
@@ -39,7 +39,7 @@ const AdminRoomDetail = () => {
 
         const fetchReservations = async () => {
             try {
-                const response = await axios.get(`http://localhost:5002/bk/admin/roomManagement/reservations/${id}`);
+                const response = await axios.get(`${bkURL}/admin/roomManagement/reservations/${id}`);
                 setReservations(response.data);
             } catch (err) {
                 console.error("예약 정보 가져오는 중 오류 발생:", err);
