@@ -17,7 +17,7 @@ const AdminCont2 = () => {
     // 객실 목록 가져오는 함수
     const fetchRooms = () => {
         axios
-            .get("http://localhost:5002/bk/admin/roomManagement")
+            .get(`${bkURL}/admin/roomManagement`)
             .then((response) => {
                 setRooms(response.data);
             })
@@ -45,7 +45,7 @@ const AdminCont2 = () => {
     const handleUpdate = (roomId) => {
 
         axios
-            .post(`http://localhost:5002/bk/admin/roomManagement/update`, {
+            .post(`${bkURL}/admin/roomManagement/update`, {
                 roomId,
                 ...editedRooms[roomId],
             })
