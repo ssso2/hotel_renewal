@@ -4,6 +4,7 @@ import Pagination from "../../sub/Pagination";
 import axios from 'axios';
 import "../../../scss/AdminCont3.scss";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
 
 function AdminCont3() {
     const [member, memberSet] = useState([]); // 회원 목록
@@ -14,7 +15,7 @@ function AdminCont3() {
 
     // 회원 데이터 가져오기
     const fetchData = () => {
-        axios.get('http://localhost:5002/bk/admin/member')
+        axios.get(`${bkURL}/admin/member`)
             .then(res => {
                 memberSet(res.data.members);
             })
@@ -66,7 +67,7 @@ function AdminCont3() {
 
         console.log("수정된 데이터", updatedData);
 
-        axios.put("http://localhost:5002/bk/admin/member", updatedData)
+        axios.put(`${bkURL}/admin/member`, updatedData)
             .then(() => {
                 alert("수정되었습니다");
                 fetchData();
