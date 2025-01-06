@@ -22,6 +22,8 @@ ChartJS.register(
   Legend
 );
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 // 차트 옵션 설정
 const options = {
   type: 'bar',
@@ -54,7 +56,7 @@ const AdminCont4Chart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/cancel')
+        const response = await axios.get(`${bkURL}/admin/dashboard/cancel`)
         const lastCancel = response.data.lastCancel
         const nowCancel = response.data.nowCancel
         const labels = lastCancel.map((item) => {

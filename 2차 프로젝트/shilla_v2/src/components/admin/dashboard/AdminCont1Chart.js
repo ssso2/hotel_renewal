@@ -14,6 +14,7 @@ import {
 // Chart.js import 불러오기
 
 
+
 // Chart.js 등록
 ChartJS.register(
   CategoryScale,
@@ -24,6 +25,8 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
+const bkURL = process.env.REACT_APP_BACK_URL;
 
 // 차트 옵션 설정
 const options = {
@@ -60,7 +63,7 @@ const AdminCont1Chart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/person')
+        const response = await axios.get(`${bkURL}/admin/dashboard/person`)
         const labels =  response.data.map((item) => item.dateCalc)
         const personCnt = response.data.map((item) => item.personCnt)
 

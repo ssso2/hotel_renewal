@@ -24,6 +24,8 @@ ChartJS.register(
   ChartDataLabels
 );
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 const options = {
   responsive: true,
   plugins: {
@@ -49,7 +51,7 @@ const AdminCont2Chart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/bk/admin/dashboard/price');
+        const response = await axios.get(`${bkURL}/admin/dashboard/price`);
         const labels = response.data.map((item) => item.dateCalc);
         const prices = response.data.map((item) => item.totalPrice);
         
