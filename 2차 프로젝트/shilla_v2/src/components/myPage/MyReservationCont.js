@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 const MyReservationCont = () => {
   const [reservations, setReservations] = useState([]);
   const [error, setError] = useState(null);
@@ -37,7 +39,7 @@ const MyReservationCont = () => {
       const fetchReservations = async () => {
         try {
           const response = await axios.get(
-            "http://localhost:5002/bk/myPage/myReservation",
+            `${bkURL}/myPage/myReservation`,
             { params: { member_id: memberId } }
           );
 
@@ -78,7 +80,7 @@ const MyReservationCont = () => {
     if (confirmCancel) {
       try {
         await axios.post(
-          "http://localhost:5002/bk/myPage/myReservation/cancel",
+          `${bkURL}/myPage/myReservation/cancel`,
           {
             reservationId,
             totPrice,
