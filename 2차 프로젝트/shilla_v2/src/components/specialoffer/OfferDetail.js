@@ -13,6 +13,8 @@ import OfferDetail1_pkgdesA from "./OfferDetail1_pkgdesA";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 const OfferDetail = () => {
     // 스페셜오퍼 리스트
     const [Offerdetails, setOfferdetails] = useState(null);
@@ -23,9 +25,7 @@ const OfferDetail = () => {
         //     return;
         // }
         try {
-            const res = await axios.get(
-                `http://localhost:5002/bk/specialOffer/detail/${id}`
-            );
+            const res = await axios.get(`${bkURL}/specialOffer/detail/${id}`);
             console.log("갔다옴 : ", res.data);
             setOfferdetails(res.data);
         } catch (err) {

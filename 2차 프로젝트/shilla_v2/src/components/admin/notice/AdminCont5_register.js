@@ -4,6 +4,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import AdminCont5_register_btn from "./AdminCont5_register_btn";
 import AdminCont5_register_require from "./AdminCont5_register_require";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 const AdminCont5_register = () => {
     const navigate = useNavigate();
     const [category, setcategory] = useState({});
@@ -25,15 +27,11 @@ const AdminCont5_register = () => {
 
         try {
             console.log("입력폼데이터", mydata);
-            const res = await axios.post(
-                "http://localhost:5002/bk/notice/register",
-                mydata,
-                {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                    },
-                }
-            );
+            const res = await axios.post(`${bkURL}/notice/register`, mydata, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
             console.log(res.data);
             alert("등록되었습니다.");
             navigate("/admin/notice");

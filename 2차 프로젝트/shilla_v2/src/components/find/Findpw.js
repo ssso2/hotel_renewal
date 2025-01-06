@@ -8,6 +8,8 @@ import Findpwchk from "./Findpwchk";
 import axios from "axios";
 import Findpw_confirm from "./Findpw_confirm";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 const Findpw = () => {
     const [click, setclick] = useState(false);
     const handleclick = () => {
@@ -33,10 +35,7 @@ const Findpw = () => {
         } else setiderr("");
 
         try {
-            const res = await axios.put(
-                "http://localhost:5002/bk/find/idchk",
-                mydata
-            );
+            const res = await axios.put(`${bkURL}/find/idchk`, mydata);
             // console.log("res.data", res.data, "값", res.data.success);
             if (res.data.success) {
                 // console.log("갔다옴", res.data);

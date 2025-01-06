@@ -6,6 +6,8 @@ import Noticesearch from "./Noticesearch";
 import Pagination from "../sub/Pagination";
 // import { useParams } from "react-router-dom";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 const Noticelist = () => {
     const [Noticelists, setNoticelists] = useState([]);
     const [Ntype, setNtype] = useState("all");
@@ -31,7 +33,7 @@ const Noticelist = () => {
     //공지사항 전체
     const fetchData = async () => {
         try {
-            const res = await axios.get("http://localhost:5002/bk/notice");
+            const res = await axios.get(`${bkURL}/notice`);
             console.log("전체데이터", res.data);
             setNoticelists(res.data);
         } catch (err) {
@@ -77,10 +79,7 @@ const Noticelist = () => {
 
         try {
             console.log("폼데이터", myData);
-            const res = await axios.put(
-                "http://localhost:5002/bk/notice",
-                myData
-            );
+            const res = await axios.put(`${bkURL}/notice`, myData);
             console.log("필터데이터", res.data);
             alert("검색완료");
             setNoticelists(res.data);

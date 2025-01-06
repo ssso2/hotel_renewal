@@ -5,6 +5,8 @@ import AdminCont5_list from "./AdminCont5_list";
 import AdminCont5_form from "./AdminCont5_form";
 import axios from "axios";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 const AdminCont5 = () => {
     const [Noticelists, setNoticelists] = useState([]);
     const [Txtinput, setTxtinput] = useState("");
@@ -13,7 +15,7 @@ const AdminCont5 = () => {
     //전체
     const fetchData = async () => {
         try {
-            const res = await axios.get("http://localhost:5002/bk/notice");
+            const res = await axios.get(`${bkURL}/notice`);
             console.log("갔다옴", res.data);
             setNoticelists(res.data);
         } catch (error) {
@@ -36,10 +38,7 @@ const AdminCont5 = () => {
 
         try {
             console.log("폼데이터", myData);
-            const res = await axios.put(
-                "http://localhost:5002/bk/notice",
-                myData
-            );
+            const res = await axios.put(`${bkURL}/notice`, myData);
             console.log("필터데이터", res.data);
             alert("검색완료");
             setNoticelists(res.data);
