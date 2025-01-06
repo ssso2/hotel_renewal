@@ -35,7 +35,7 @@ const Restaurant = () => {
         restaurantName: "라연",
         paragraphs: [
           {
-            strong: null, // strong 텍스트가 없으므로 null
+            strong: null, 
             className: "txt",
             text: "전통의 맛을 세심하고 세련되게 표현한 한식당, 羅宴 \n禮와 格을 갖추어정성으로 차려낸 라연만의 한식 정찬을 선보입니다."
           },
