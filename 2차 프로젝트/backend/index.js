@@ -127,6 +127,6 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.listen(5002, () => {
-    console.log("5002 2차 프로젝트 DB 연결 서버 실행");
+app.listen(8005, () => {
+    console.log("8005 2차 프로젝트 DB 연결 서버 실행");
 });
