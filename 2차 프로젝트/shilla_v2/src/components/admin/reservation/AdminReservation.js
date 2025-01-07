@@ -4,6 +4,8 @@ import Footer from "../../common/Footer";
 import AdminTabMenu from "../AdminTabMenu";
 import AdminTodayRes from "./AdminTodayRes";
 import "../../../scss/admin.scss";
+
+const bkURL = process.env.REACT_APP_BACK_URL;
       
       const AdminReservation = () => {
         const [todayReservations, setTodayReservations] = useState([]);
@@ -17,7 +19,7 @@ import "../../../scss/admin.scss";
       
           // DB에서 오늘 예약 정보를 가져오는 API 호출
           axios
-            .get(`http://localhost:5002/bk/admin/reservation?date=${today}`)
+            .get(`${bkURL}/admin/reservation?date=${today}`)
             .then((response) => {
               setTodayReservations(response.data);  // 서버 응답 데이터 설정
             })
@@ -26,7 +28,7 @@ import "../../../scss/admin.scss";
             });
       
           // db에서 오늘 취소된 예약 정보 가져오기
-          axios.get("http://localhost:5002/bk/admin/reservation/cancelled")
+          axios.get(`${bkURL}/admin/reservation/cancelled`)
           .then((response) =>{
             setCancelledReservations(response.data)
           })
