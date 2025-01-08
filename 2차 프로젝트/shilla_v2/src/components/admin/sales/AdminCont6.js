@@ -3,6 +3,7 @@ import axios from "axios";
 import "../../../scss/AdminCont6.scss";
 import Pagination from "../../sub/Pagination";
 
+const bkURL = process.env.REACT_APP_BACK_URL;
 
 const AdminCont6 = () => {
     const [selectedYear, setSelectedYear] = useState('');
