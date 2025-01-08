@@ -13,7 +13,7 @@ const OfferDetail1_other = () => {
         },
         {
             link: "/specialOffer/detail/65",
-            img: "../../img/sub/offerstay.jpg",
+            img: "../../img/sub/offerStay.jpg",
             title: "Urban Morning",
             date: "2024-12-18 ~ 2025-01-22",
             pay: "360,000 원 ~",
